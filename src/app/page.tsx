@@ -16,7 +16,7 @@ export default function Home() {
           <li className="mb-2">
             Get started by editing{" "}
             <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
+              src/app/page.tsx kljl 
             </code>
             .
           </li>
@@ -90,8 +90,8 @@ export default function Home() {
             aria-hidden
             src="/globe.svg"
             alt="Globe icon"
-            width={16}
-            height={16}
+            width={161}
+            height={161}
           />
           Go to nextjs.org →
         </a>
