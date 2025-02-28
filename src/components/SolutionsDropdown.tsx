@@ -75,7 +75,7 @@ const SolutionsDropdown = () => {
             <ul className="space-y-2  ml-[10px]">
               {sectores.map((sector) => (
                 <li key={sector.id_sector} className="text-[14px] text-[#010D3D] font-bold leading-[20px] mt-[-7.5px]">
-                  <Link href={`/sector/${sector.id_sector}`} className="hover:underline font-mulish text-[14px] text-[#010D3D] font-bold leading-[26px]">
+                  <Link href={`/sector/${sector.slug}`} className="hover:underline font-mulish text-[14px] text-[#010D3D] font-bold leading-[26px]">
                     {sector.description}
                   </Link>
                 </li>

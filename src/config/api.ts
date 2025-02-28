@@ -2,6 +2,8 @@ const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "https://api-store.
 
 const API_ENDPOINTS = {
   AMBITOS: `${API_BASE_URL}/v1/store/ambitos`,
+  AMBITOS_SOLUCIONES: `${API_BASE_URL}/v1/store/ambitosWithSolCounter`,
+  LISTSOLUCIONES: `${API_BASE_URL}/v1/store/listsoluciones`,
   SECTORES: `${API_BASE_URL}/v1/store/sectores`,
   HIGLIGHTEDPACKS: `${API_BASE_URL}/v1/store/highlighted/packs`,
   CLIENTES: `${API_BASE_URL}/v1/store/clientes`,
