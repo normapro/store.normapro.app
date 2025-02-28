@@ -3,22 +3,17 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import API_ENDPOINTS from "../config/api"; // Importamos las APIs centralizadas
+import { Solucion } from "../types/solucion";
+import  PackHighlightedButton  from "./packHighlightedButton";
 
-interface Ambito {
-  id_ambito: number;
-  description: string;
-}
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserTie } from "@fortawesome/free-solid-svg-icons"; // Import the icon
 
-interface Sector {
-  id_sector: number;
-  description: string;
-}
+import { Ambito } from "../types/ambito";
+import { Sector } from "../types/sector";
 
-interface Solucion {
-  id_pack: number;
-  description: string;
-  uriIcon: string;
-}
+
+
 
 const SolutionsDropdown = () => {
   const [ambitos, setAmbitos] = useState<Ambito[]>([]);
@@ -33,7 +28,7 @@ const SolutionsDropdown = () => {
         const [ambitosRes, sectoresRes, solucionesRes] = await Promise.all([
           fetch(API_ENDPOINTS.AMBITOS).then((res) => res.json()),
           fetch(API_ENDPOINTS.SECTORES).then((res) => res.json()),
-          fetch(API_ENDPOINTS.SOLUCIONES).then((res) => res.json()),
+          fetch(API_ENDPOINTS.HIGLIGHTEDPACKS).then((res) => res.json()),
         ]);
 
         setAmbitos(ambitosRes);
@@ -65,8 +60,8 @@ const SolutionsDropdown = () => {
             <h3 className="mb-4 text-[14px] text-[#010D3D] opacity-50 font-mulish leading-[20px]">Elige tu ámbito</h3>
             <ul className="space-y-2 ml-[10px]">
               {ambitos.map((ambito) => (
-                <li key={ambito.id_ambito} className="text-[14px] text-[#010D3D] font-bold leading-[20px]">
-                  <Link href={`/ambito/${ambito.id_ambito}`} className="hover:text-blue-600 font-mulish text-[14px] text-[#010D3D] font-bold leading-[26px]" >
+                <li key={ambito.id_ambito} className="text-[14px] text-[#010D3D] font-bold leading-[20px] mt-[-7.5px]">
+                  <Link href={`/ambito/${ambito.id_ambito}`} className="hover:underline font-mulish text-[14px] text-[#010D3D] font-bold leading-[26px]" >
                     {ambito.description}
                   </Link>
                 </li>
@@ -79,8 +74,8 @@ const SolutionsDropdown = () => {
             <h3 className="mb-4 text-[14px] text-[#010D3D] opacity-50 font-mulish leading-[20px]">Elige tu sector</h3>
             <ul className="space-y-2  ml-[10px]">
               {sectores.map((sector) => (
-                <li key={sector.id_sector} className="text-[14px] text-[#010D3D] font-bold leading-[20px]">
-                  <Link href={`/sector/${sector.id_sector}`} className="hover:text-blue-600 font-mulish text-[14px] text-[#010D3D] font-bold leading-[26px]">
+                <li key={sector.id_sector} className="text-[14px] text-[#010D3D] font-bold leading-[20px] mt-[-7.5px]">
+                  <Link href={`/sector/${sector.id_sector}`} className="hover:underline font-mulish text-[14px] text-[#010D3D] font-bold leading-[26px]">
                     {sector.description}
                   </Link>
                 </li>
@@ -90,31 +85,28 @@ const SolutionsDropdown = () => {
 
           {/* Columna 3: Soluciones destacadas 60% */}
           <div className="col-span-23">
-            <h3 className="mb-4 text-[14px] text-[#010D3D] opacity-50 font-mulish leading-[20px]">
+            <div className="grid grid-cols-2">
+            <h3 className="mb-4 text-[14px] text-[#010D3D] opacity-50 font-mulish leading-[20px] ">
                 Soluciones destacadas con servicio de consultoría
-                <span className="ml-2 text-gray-500 text-sm">🧑‍💼 Incluye consultoría</span>
+                
             </h3>
+            <h3 className="mb-4 text-[14px] text-[#010D3D] opacity-50 font-mulish leading-[20px] text-right">                
+                <span className="ml-2 text-gray-500 text-sm">  
+                <FontAwesomeIcon icon={faUserTie} className="mr-2 text-[20px] text-[#010D3D] opacity-100" />  
+                  Incluye consultoría
+                </span>
+            </h3>
+            </div>
 
             {/* Grid con dos columnas */}
             <div className="grid grid-cols-2 gap-4">
-                {soluciones.map((solucion) => (
-                <Link
-                    key={solucion.id_pack}
-                    href={`/solucion/${solucion.id_pack}`}
-                    className="block bg-[#E4F6FC] p-4 rounded-lg shadow hover:shadow-lg transition"
-                >
-                    <div className="flex items-center space-x-4">
-                    <img src={"/" + solucion.uriIcon} alt={solucion.description} className="w-16 h-16 object-contain" />
-                    <div>
-                        <h4 className="font-mulish text-[14px] text-[#010D3D] font-bold leading-[20px]">
-                        {solucion.description}
-                        </h4>
-                    </div>
-                    </div>
-                </Link>
-                ))}
+            {soluciones.map((solucion, index) => (
+              <PackHighlightedButton key={index} solucion={solucion} />
+            ))}
+
+
             </div>
-            <Link href="/todas-las-soluciones" className="block text-blue-600 mt-4 text-right hover:underline">
+            <Link href="/todas-las-soluciones" className="block text-[#010D3D] text-[14px] font-mulish font-bold mt-4 text-right underline">
               Ver todas nuestras soluciones
             </Link>
           </div>

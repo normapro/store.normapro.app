@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Navbar from "./components/Navbar";
-import "./lib/fontawesome"; 
+import Navbar from "../components/Navbar";
+import "../libs/fontawesome"; 
 
 import { Mulish } from "next/font/google";
 import "./globals.css";

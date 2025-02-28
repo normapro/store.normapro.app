@@ -37,7 +37,7 @@ const Navbar = () => {
               <div
                 className="relative"
                 onMouseEnter={() => setIsSolutionsOpen(true)}
-                //onMouseLeave={() => setIsSolutionsOpen(false)}
+                //
               >
                 <button className="text-gray-900 hover:text-blue-600">
                   Soluciones ▼
@@ -71,17 +71,18 @@ const Navbar = () => {
         </div>
       </nav>
       <AnimatePresence>
-                  {isSolutionsOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      className="absolute left-0"
-                    >
-                      <SolutionsDropdown />
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+        {isSolutionsOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="absolute left-0"
+            onMouseLeave={() => setIsSolutionsOpen(false)}
+          >
+            <SolutionsDropdown  />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
