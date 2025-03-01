@@ -21,7 +21,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="es" className={mulish.variable}>
       <body className="font-sans">
         <Navbar />
-        <main className="container mx-auto p-4">{children}</main>
+        {/* Main content */}
+        {/* <main className="container mx-auto p-4">{children}</main> */}
+        <main className="">{children}</main>
       </body>
     </html>
   );

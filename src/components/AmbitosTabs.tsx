@@ -7,6 +7,7 @@ import { Solucion } from "@/types/solucion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library, IconPrefix, IconName, IconProp } from "@fortawesome/fontawesome-svg-core";
 import { fas, faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 // Agregamos los iconos a la librería
 library.add(fas, faChevronLeft, faChevronRight);
@@ -100,12 +101,14 @@ const AmbitosTabs = ({ sectorSlug, ambitoIdSelected }: Props) => {
 
   return (
     <div className="w-full">
+    <div className="max-w-7xl mx-auto px-6">
       {/* Contenedor de la TAB con los botones de desplazamiento */}
       <div className="relative w-full flex items-center">
         {/* Botón Izquierdo */}
         {canScrollLeft && (
           <button
             onClick={() => scroll("left")}
+            
             className="absolute left-0 z-10 bg-white shadow-lg p-3 rounded-full transform -translate-y-1/2 top-1/2"
           >
             <FontAwesomeIcon icon={faChevronLeft} className="text-gray-600 w-5 h-5" />
@@ -152,29 +155,38 @@ const AmbitosTabs = ({ sectorSlug, ambitoIdSelected }: Props) => {
           </button>
         )}
       </div>
+      </div>
 
       {/* 🔥 Lista de Soluciones debajo de la TAB */}
-      <div className="mt-6">
+      <div className="bg-[#f2f2f5]">
+      <div className="max-w-7xl mx-auto px-6 min-h-[200px]">
         {isLoading ? (
-          <p className="text-center text-gray-500">Cargando soluciones...</p>
+          <p className="text-center text-gray-500 mt-10">Cargando soluciones...</p>
         ) : soluciones.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-21 gap-4">
+          <div className="col-span-11 mt-8">
+            <h3 className="mb-4 text-[#7F859D] font-semibold">Soluciones</h3>
+
             {soluciones.map((sol) => {
               const iconParts = sol.uriIcon.split(" ");
               const icon: IconProp = iconParts.length === 2 ? (iconParts as [IconPrefix, IconName]) : ["fas", "fa-question"];
               return (
-                <div key={sol.id_solucion} className="p-4 bg-white shadow rounded-lg flex items-center">
-                  <FontAwesomeIcon icon={icon} className="w-6 h-6 text-blue-600 mr-4" />
+                <Link key={sol.id_solucion} href={`/solucion/${sol.slug}`} rel="noopener noreferrer">
+                <div className="py-2 px-3 bg-white shadow rounded-lg flex items-center mb-2">
+                  <FontAwesomeIcon icon={icon} className="w-6 h-6 text-[#010D3D] mr-4" />
                   <div>
-                    <h3 className="font-semibold">{sol.description}</h3>
+                    <h3 className="font-bold">{sol.description}</h3>
                   </div>
                 </div>
+                </Link>
               );
             })}
           </div>
+          </div>
         ) : (
-          <p className="text-center text-gray-500">No hay soluciones disponibles.</p>
+          <p className="text-center text-gray-500 mt-10">No hay soluciones disponibles.</p>
         )}
+      </div>
       </div>
     </div>
   );
