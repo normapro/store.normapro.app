@@ -7,6 +7,7 @@ const API_ENDPOINTS = {
   SECTORES: `${API_BASE_URL}/v1/store/sectores`,
   HIGLIGHTEDPACKS: `${API_BASE_URL}/v1/store/highlighted/packs`,
   CLIENTES: `${API_BASE_URL}/v1/store/clientes`,
+  LISTPACKS: `${API_BASE_URL}/v1/store/listpacks`,
 };
 
 export default API_ENDPOINTS;
