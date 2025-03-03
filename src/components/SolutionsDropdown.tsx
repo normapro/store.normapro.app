@@ -7,10 +7,12 @@ import { Solucion } from "../types/solucion";
 import  PackHighlightedButton  from "./packHighlightedButton";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUserTie } from "@fortawesome/free-solid-svg-icons"; // Import the icon
+import { faUserTie, faChevronDown } from "@fortawesome/free-solid-svg-icons"; // Import the icon
 
 import { Ambito } from "../types/ambito";
 import { Sector } from "../types/sector";
+import AmbitoSelectModal from "./AmbitoSelectModal";
+
 
 
 
@@ -21,6 +23,9 @@ const SolutionsDropdown = () => {
   const [soluciones, setSoluciones] = useState<Solucion[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedSector, setSelectedSector] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -45,7 +50,7 @@ const SolutionsDropdown = () => {
     fetchData();
   }, []);
 
-  return (
+  return (<>
     <div className="absolute w-screen bg-[#f8f8fa] shadow-md z-50 p-8 w-full rounded-lg">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {isLoading ? (
@@ -61,7 +66,7 @@ const SolutionsDropdown = () => {
             <ul className="space-y-2 ml-[10px]">
               {ambitos.map((ambito) => (
                 <li key={ambito.id_ambito} className="text-[14px] text-[#010D3D] font-bold leading-[20px] mt-[-7.5px]">
-                  <Link href={`/ambito/${ambito.id_ambito}`} className="hover:underline font-mulish text-[14px] text-[#010D3D] font-bold leading-[26px]" >
+                  <Link href={`/lista-de-soluciones/${ambito.slug}`} className="hover:underline font-mulish text-[14px] text-[#010D3D] font-bold leading-[26px]" >
                     {ambito.description}
                   </Link>
                 </li>
@@ -74,10 +79,18 @@ const SolutionsDropdown = () => {
             <h3 className="mb-4 text-[14px] text-[#010D3D] opacity-50 font-mulish leading-[20px]">Elige tu sector</h3>
             <ul className="space-y-2  ml-[10px]">
               {sectores.map((sector) => (
-                <li key={sector.id_sector} className="text-[14px] text-[#010D3D] font-bold leading-[20px] mt-[-7.5px]">
-                  <Link href={`/sector/${sector.slug}`} className="hover:underline font-mulish text-[14px] text-[#010D3D] font-bold leading-[26px]">
+                <li key={sector.id_sector} className="text-[14px] text-[#010D3D] font-bold leading-[20px] mt-[-7.5px] justify-left">
+                  
+                  <span
+                    onClick={() => {
+                      setSelectedSector(sector.slug);
+                      setModalOpen(true);
+                    }}
+                    className="hover:underline font-mulish text-[14px] text-[#010D3D] font-bold leading-[26px] cursor-pointer"
+                  >
                     {sector.description}
-                  </Link>
+                  </span>
+
                 </li>
               ))}
             </ul>
@@ -106,7 +119,7 @@ const SolutionsDropdown = () => {
 
 
             </div>
-            <Link href="/todas-las-soluciones" className="block text-[#010D3D] text-[14px] font-mulish font-bold mt-4 text-right underline">
+            <Link href="/lista-de-soluciones/all" className="block text-[#010D3D] text-[14px] font-mulish font-bold mt-4 text-right underline">
               Ver todas nuestras soluciones
             </Link>
           </div>
@@ -114,6 +127,15 @@ const SolutionsDropdown = () => {
       )}
     </div>
     </div>
+    <AmbitoSelectModal
+      isOpen={modalOpen}
+      onClose={() => setModalOpen(false)}
+      ambitos={ambitos}
+      onSelectAmbito={(ambitoSlug) => {
+        window.location.href = `/lista-de-soluciones/${ambitoSlug}/${selectedSector}`;
+      }}
+    />
+  </> 
   );
 };
 

@@ -21,3 +21,8 @@ body {
   background: var(--background);
   font-family: var(--font-mulish);
 }
+
+.backdrop-custom {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+}

@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import SolutionsDropdown from "./SolutionsDropdown";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faC, faCaretDown, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
@@ -39,8 +41,8 @@ const Navbar = () => {
                 onMouseEnter={() => setIsSolutionsOpen(true)}
                 //
               >
-                <button className="text-gray-900 hover:text-blue-600">
-                  Soluciones ▼
+                <button className="text-gray-900 text-[16px] hover:text-blue-600">
+                  Soluciones <FontAwesomeIcon icon={faChevronDown} className="text-[14px]"/>
                 </button>                
               </div>
 

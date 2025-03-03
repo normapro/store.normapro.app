@@ -8,6 +8,8 @@ const API_ENDPOINTS = {
   HIGLIGHTEDPACKS: `${API_BASE_URL}/v1/store/highlighted/packs`,
   CLIENTES: `${API_BASE_URL}/v1/store/clientes`,
   LISTPACKS: `${API_BASE_URL}/v1/store/listpacks`,
+  SECTOR_INFO : `${API_BASE_URL}/v1/store/sector`,
+  SOLUCION: `${API_BASE_URL}/v1/store/solucion`,
 };
 
 export default API_ENDPOINTS;
