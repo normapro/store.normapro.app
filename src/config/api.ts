@@ -10,6 +10,10 @@ const API_ENDPOINTS = {
   LISTPACKS: `${API_BASE_URL}/v1/store/listpacks`,
   SECTOR_INFO : `${API_BASE_URL}/v1/store/sector`,
   SOLUCION: `${API_BASE_URL}/v1/store/solucion`,
+  TESTIMONIOS: `${API_BASE_URL}/v1/store/testimonios`,
+  MAINPACKS: `${API_BASE_URL}/v1/store/mainpacks`,
+  APLICACIONES: `${API_BASE_URL}/v1/store/aplicaciones`,
+
 };
 
 export default API_ENDPOINTS;

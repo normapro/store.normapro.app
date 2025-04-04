@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import SolutionsDropdown from "./SolutionsDropdown";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faC, faCaretDown, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import NormaProAccessButton from "./NormaproAccessButton";
 
 const Navbar = () => {
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
@@ -13,7 +14,7 @@ const Navbar = () => {
   return (
     <>
       {/* Barra superior */}
-      <div className="bg-gradient-to-r from-[#b2e8f7] via-[#ede3f5] to-[#d0f3f0] shadow-md relative">
+      <div className="bg-gradient-to-r from-[#b2e8f7] via-[#ede3f5] to-[#d0f3f0]  relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center py-2 text-sm text-gray-700">
             Encuentra productos específicos para tu empresa en 60 segundos.{" "}
@@ -23,7 +24,7 @@ const Navbar = () => {
       </div>
 
       {/* Navbar */}
-      <nav className="relative bg-white shadow-md">
+      <nav className="relative bg-white sticky top-0 left-0 right-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
             {/* Logo */}
@@ -63,11 +64,7 @@ const Navbar = () => {
             {/* Botón de búsqueda e inicio de sesión */}
             <div className="flex items-center space-x-4">
               <button className="p-2 rounded-full hover:bg-gray-200">🔍</button>
-              <Link href="/login">
-                <button className="bg-blue-700 text-white px-4 py-2 rounded-lg hover:bg-blue-800">
-                  Entrar
-                </button>
-              </Link>
+              <NormaProAccessButton></NormaProAccessButton>
             </div>
           </div>
         </div>

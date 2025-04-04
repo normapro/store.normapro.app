@@ -13,6 +13,7 @@ export interface ItemListPack{
 export interface Pack{
     id_pack: number;
     description: string;
+    shortDescription: string;
     uriIcon: string;
     slug: string;
     id_ambito: number;

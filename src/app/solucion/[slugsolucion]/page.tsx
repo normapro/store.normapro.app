@@ -11,6 +11,9 @@ import API_ENDPOINTS from "@/config/api";
 import Link from "next/link";
 import MultimediaPlayer from "@/components/MultimediaPlayer";
 import Testimonios from "@/components/Testimonios";
+import SolutionsRefered from "@/components/solutionsRefered";
+import TestimonioCard from "@/components/TestimonioCard";
+import { TestimonioConCliente } from "@/types/testimonio";
 
 const SolucionPage = () => {
   const { slugsolucion } = useParams();
@@ -47,6 +50,31 @@ const SolucionPage = () => {
 
     fetchSolucion();
   }, [slugsolucion]);
+
+
+  const [testimonios, setTestimonios] = useState<TestimonioConCliente[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchTestimonios = async () => {
+      try {
+        const response = await fetch(`${API_ENDPOINTS.TESTIMONIOS+"?maxItems=1"}`);
+        if (!response.ok) throw new Error("Error al obtener testimonios");
+        const data = await response.json();
+        setTestimonios(data);
+      } catch (err) {
+        setError("No se pudieron cargar los testimonios.");
+        console.error(err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchTestimonios();
+  }, []);
+
+  const hasTestimonios = Array.isArray(testimonios) && testimonios.length > 0;
 
   return (
     <main>
@@ -98,7 +126,7 @@ const SolucionPage = () => {
       {solucion.caracteristicasPragma}
     </p>
   )}
-    {solucion?.caracteristicas?.length > 0 && (
+    {solucion?.caracteristicas!== undefined && solucion?.caracteristicas?.length > 0 && (
       <ul className="list-disc ml-5 text-[15px] text-[#010D3D]">
         {solucion.caracteristicas.map((caracteristica) => (
           <li key={caracteristica.id_caracteristica}>
@@ -121,10 +149,10 @@ const SolucionPage = () => {
       </p>
     )}
 
-    {solucion?.casosdeuso?.length > 0 && (
+    {solucion?.casosdeuso!== undefined  && solucion?.casosdeuso?.length > 0 && (
       <ul className="list-disc ml-5 text-[15px] text-[#010D3D]">
         {solucion.casosdeuso.map((caso) => (
-          <li key={caso.id_casodeuso}>{caso.description}</li>
+          <li key={caso.id_casosdeuso}>{caso.description}</li>
         ))}
       </ul>
     )}
@@ -178,7 +206,21 @@ const SolucionPage = () => {
       </Link>
     </div>
 
-    <Testimonios testimonios={[]} />
+    {isLoading ? (
+        <p className="text-center text-gray-500">Cargando testimonios...</p>
+      ) : error ? (
+        <p className="text-center text-red-500">{error}</p>
+      ) : hasTestimonios ? (
+        <div className="mt-[20px]">
+          {testimonios.map((testimonio) => (
+            <TestimonioCard key={testimonio.id_testimonio} {...testimonio} />
+          ))}
+        </div>
+      ) : (
+        <p className="text-center text-gray-400">Aún no hay testimonios disponibles.</p>
+      )}
+
+    
     </div>
   </div>
 
@@ -213,7 +255,20 @@ const SolucionPage = () => {
     </div>
   </section>
 )}
+    <section className="max-w-7xl mx-auto px-6 text-center min-h-[350px] flex justify-center items-center flex-col">
+    <h3 className="text-[16px] font-bold">{solucion?.secondCtaTitle}</h3>
+    <p className="mt-2 text-[15px] text-[#010D3D]">{solucion?.secondCtaPragma}</p>
+    <Link href="/contacto">
+        <button className="mt-4 bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] shadow-md text-white text-[16px] px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
+          {solucion?.firstCtaTitle? solucion?.firstCtaTitle : "Solicita un diagnóstico gratuito"}
+        </button>
+      </Link>
+    </section>
 
+
+    <section>
+      <SolutionsRefered ambitoSlug={solucion?.slug_ambito}   />
+    </section>
 
     </main>
   );
