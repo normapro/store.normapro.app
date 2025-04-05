@@ -20,5 +20,6 @@ export interface Pack{
     id_sector: number;
     slug_ambito: string;
     slug_sector: string;
+    descriptionForHighLight: string;
     
 }

@@ -10,7 +10,7 @@ const images = [
 const MainHeroCarousel = () => {
   return (
     <section
-      className="relative w-full h-[85vh] mh-[800px]  flex flex-col items-center justify-center text-center text-[#010D3D] overflow-hidden"
+      className="relative w-full h-[100vh] mh-[800px]  flex flex-col items-center justify-center text-center text-[#010D3D] overflow-hidden bg-[#FFFFFF] mb-100"
       
     >
 
@@ -22,7 +22,7 @@ const MainHeroCarousel = () => {
       > </div>
 
       {/* Contenedor del texto y CTA */}
-      <div className="relative z-10 mt-[-300px]">
+      <div className="relative z-10 mt-[-300px] ">
         <h1 className="text-5xl font-black">Digitalización sin límites</h1>
         <p className="text-lg mt-2">
           Navegamos contigo hacia una evolución tecnológica accesible, segura y sin barreras.

@@ -7,6 +7,7 @@ import SolutionsDropdown from "./SolutionsDropdown";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faC, faCaretDown, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import NormaProAccessButton from "./NormaproAccessButton";
+import { faMagnifyingGlass } from "@fortawesome/pro-duotone-svg-icons";
 
 const Navbar = () => {
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
@@ -63,13 +64,15 @@ const Navbar = () => {
 
             {/* Botón de búsqueda e inicio de sesión */}
             <div className="flex items-center space-x-4">
-              <button className="p-2 rounded-full hover:bg-gray-200">🔍</button>
+              <button className="p-2 rounded-full hover:bg-gray-200">
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
+              </button>
               <NormaProAccessButton></NormaProAccessButton>
             </div>
           </div>
         </div>
-      </nav>
-      <AnimatePresence>
+        <div className="break"></div>
+        <AnimatePresence>
         {isSolutionsOpen && (
           <motion.div
             initial={{ opacity: 0, y: -10 }}
@@ -78,10 +81,12 @@ const Navbar = () => {
             className="absolute left-0"
             onMouseLeave={() => setIsSolutionsOpen(false)}
           >
-            <SolutionsDropdown  />
+            <div className="top-0"><SolutionsDropdown  /></div>
           </motion.div>
         )}
       </AnimatePresence>
+      </nav>
+      
     </>
   );
 };
