@@ -2,19 +2,16 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import API_ENDPOINTS from "../config/api"; // Importamos las APIs centralizadas
-import { Solucion } from "../types/solucion";
-import  PackHighlightedButton  from "./packHighlightedButton";
+import API_ENDPOINTS from "@/config/api"; // Importamos las APIs centralizadas
+import { Solucion } from "@/types/solucion";
+import  PackHighlightedButton  from "@/components/menu/packHighlightedButton";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserTie, faChevronDown } from "@fortawesome/free-solid-svg-icons"; // Import the icon
 
-import { Ambito } from "../types/ambito";
-import { Sector } from "../types/sector";
-import AmbitoSelectModal from "./AmbitoSelectModal";
-
-
-
+import { Ambito } from "@/types/ambito";
+import { Sector } from "@/types/sector";
+import AmbitoSelectModal from "@/components/AmbitoSelectModal";
 
 
 const SolutionsDropdown = () => {
@@ -66,7 +63,7 @@ const SolutionsDropdown = () => {
             <ul className="space-y-2 ml-[10px]">
               {ambitos.map((ambito) => (
                 <li key={ambito.id_ambito} className="text-[14px] text-[#010D3D] font-bold leading-[20px] mt-[-7.5px]">
-                  <Link href={`/lista-de-soluciones/${ambito.slug}`} className="hover:underline font-mulish text-[14px] text-[#010D3D] font-bold leading-[26px]" >
+                  <Link href={`/soluciones/${ambito.slug}`} className="hover:underline font-mulish text-[14px] text-[#010D3D] font-bold leading-[26px]" >
                     {ambito.description}
                   </Link>
                 </li>
@@ -119,7 +116,7 @@ const SolutionsDropdown = () => {
 
 
             </div>
-            <Link href="/lista-de-soluciones/all" className="block text-[#010D3D] text-[14px] font-mulish font-bold mt-4 text-right underline">
+            <Link href="/soluciones/all" className="block text-[#010D3D] text-[14px] font-mulish font-bold mt-4 text-right underline">
               Ver todas nuestras soluciones
             </Link>
           </div>
@@ -132,7 +129,7 @@ const SolutionsDropdown = () => {
       onClose={() => setModalOpen(false)}
       ambitos={ambitos}
       onSelectAmbito={(ambitoSlug) => {
-        window.location.href = `/lista-de-soluciones/${ambitoSlug}/${selectedSector}`;
+        window.location.href = `/soluciones/${ambitoSlug}/sector/${selectedSector}`;
       }}
     />
   </> 

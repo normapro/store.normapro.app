@@ -15,7 +15,7 @@ import SolutionsRefered from "@/components/solutionsRefered";
 import TestimonioCard from "@/components/TestimonioCard";
 import { TestimonioConCliente } from "@/types/testimonio";
 
-const SolucionPage = () => {
+const SolucionAmbitoPage = () => {
   const { slugsolucion } = useParams();
   const [solucion, setSolucion] = useState<Solucion | null>(null);
   const [breadcrumbData, setBreadcrumbData] = useState<BreadcrumbItem>({
@@ -274,4 +274,4 @@ const SolucionPage = () => {
   );
 };
 
-export default SolucionPage;
+export default SolucionAmbitoPage;

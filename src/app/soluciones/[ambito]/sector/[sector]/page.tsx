@@ -4,7 +4,7 @@ import { useParams } from "next/navigation";
 import SolutionsHeroSector from "@/components/SolutionsHeroSector";
 import AmbitosTabs from "@/components/AmbitosTabs";
 
-const ListaDeSoluciones = () => {
+const ListaSolucionesSector = () => {
   const { ambito, sector } = useParams(); // Obtiene los parámetros de la URL
 
   return (
@@ -17,4 +17,4 @@ const ListaDeSoluciones = () => {
   );
 };
 
-export default ListaDeSoluciones;
+export default ListaSolucionesSector;

@@ -1,16 +1,26 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import SolutionsDropdown from "./SolutionsDropdown";
+import SolutionsDropdown from "@/components/menu/SolutionsDropdown";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faC, faCaretDown, faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import NormaProAccessButton from "./NormaproAccessButton";
+import NormaProAccessButton from "@/components/NormaproAccessButton";
 import { faMagnifyingGlass } from "@fortawesome/pro-duotone-svg-icons";
+import AplicacionesDropdown from "./AplicationsDropDown";
+import ConsultoriaDropdown from "./ConsultoriaDropdown";
 
 const Navbar = () => {
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
+  const [isAplicacionesOpen, setIsAplicacionesOpen] = useState(false);
+  const [isConsultoriaOpen, setIsConsultoriaOpen] = useState(false);
+  const setAllDropdownsToFalse = () => {
+    setIsSolutionsOpen(false);
+    setIsAplicacionesOpen(false);
+    setIsConsultoriaOpen(false);
+  };
+ 
 
   return (
     <>
@@ -40,20 +50,33 @@ const Navbar = () => {
               {/* Soluciones con Submenú */}
               <div
                 className="relative"
-                onMouseEnter={() => setIsSolutionsOpen(true)}
+                onMouseEnter={() => {setAllDropdownsToFalse();setIsSolutionsOpen(true)}}
                 //
               >
                 <button className="text-gray-900 text-[16px] hover:text-blue-600">
                   Soluciones <FontAwesomeIcon icon={faChevronDown} className="text-[14px]"/>
                 </button>                
               </div>
-
-              <Link href="/aplicaciones" className="text-gray-900 hover:text-blue-600">
-                Aplicaciones
-              </Link>
-              <Link href="/consultoria" className="text-gray-900 hover:text-blue-600">
-                Consultoría
-              </Link>
+              <div
+                className="relative"
+                onMouseEnter={() => {setAllDropdownsToFalse();setIsAplicacionesOpen(true)}}
+                //
+              >
+                <button className="text-gray-900 text-[16px] hover:text-blue-600">
+                  Aplicaciones <FontAwesomeIcon icon={faChevronDown} className="text-[14px]"/>
+                </button>                
+              </div>
+              <div
+                className="relative"
+                onMouseEnter={() => {setAllDropdownsToFalse();setIsConsultoriaOpen(true)}}
+                //
+              >
+                <button className="text-gray-900 text-[16px] hover:text-blue-600">
+                Consultoría <FontAwesomeIcon icon={faChevronDown} className="text-[14px]"/>
+                </button>                
+              </div>
+              
+              
               <Link href="/formacion" className="text-gray-900 hover:text-blue-600">
                 Formación
               </Link>
@@ -82,6 +105,32 @@ const Navbar = () => {
             onMouseLeave={() => setIsSolutionsOpen(false)}
           >
             <div className="top-0"><SolutionsDropdown  /></div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {isAplicacionesOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="absolute left-0"
+            onMouseLeave={() => setIsAplicacionesOpen(false)}
+          >
+            <div className="top-0"><AplicacionesDropdown  /></div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {isConsultoriaOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="absolute left-0"
+            onMouseLeave={() => setIsConsultoriaOpen(false)}
+          >
+            <div className="top-0"><ConsultoriaDropdown  /></div>
           </motion.div>
         )}
       </AnimatePresence>

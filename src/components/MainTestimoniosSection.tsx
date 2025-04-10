@@ -1,6 +1,7 @@
-"use client";
+'use client';
 
 import { useEffect, useState } from "react";
+import Masonry from "react-masonry-css";
 import API_ENDPOINTS from "@/config/api";
 import { TestimonioConCliente } from "@/types/testimonio";
 import TestimonioCard from "./TestimonioCard";
@@ -30,6 +31,12 @@ const MainTestimoniosSection = () => {
 
   const hasTestimonios = Array.isArray(testimonios) && testimonios.length > 0;
 
+  const breakpointColumnsObj = {
+    default: 3,
+    1024: 2,
+    640: 1,
+  };
+
   return (
     <section className="max-w-7xl mx-auto px-6 py-16">
       <h2 className="text-3xl font-extrabold text-center text-[#010D3D] mb-12">
@@ -41,11 +48,15 @@ const MainTestimoniosSection = () => {
       ) : error ? (
         <p className="text-center text-red-500">{error}</p>
       ) : hasTestimonios ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="flex w-auto -ml-6"
+          columnClassName="pl-6 space-y-6"
+        >
           {testimonios.map((testimonio) => (
             <TestimonioCard key={testimonio.id_testimonio} {...testimonio} />
           ))}
-        </div>
+        </Masonry>
       ) : (
         <p className="text-center text-gray-400">Aún no hay testimonios disponibles.</p>
       )}

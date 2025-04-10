@@ -10,7 +10,7 @@ const images = [
 const MainHeroCarousel = () => {
   return (
     <section
-      className="relative w-full h-[100vh] mh-[800px]  flex flex-col items-center justify-center text-center text-[#010D3D] overflow-hidden bg-[#FFFFFF] mb-100"
+      className="relative w-full h-[100vh] mh-[800px]  flex flex-col items-center justify-center text-center text-[#010D3D] overflow-hidden bg-[#FFFFFF] "
       
     >
 

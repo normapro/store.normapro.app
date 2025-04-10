@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/menu/Navbar";
 import "@/libs/fontawesome.config";
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
 import { Mulish } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
-import Head from "next/head";
+import Script from "next/script";
+import { Providers } from './providers';
 
 const mulish = Mulish({
   variable: "--font-mulish",
   subsets: ["latin"],
-  weight: ["300", "400", "600", "700","800","900"], 
+  weight: ["300", "400", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -22,19 +23,17 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className={mulish.variable}>
-      <Head>
-        <script
-          src="https://kit.fontawesome.com/0fe2009133.js"
-          crossOrigin="anonymous"
-          defer
-        ></script>
-      </Head>
       <body className="font-sans">
         <Navbar />
-        {/* Main content */}
-        {/* <main className="container mx-auto p-4">{children}</main> */}
-        <main className="">{children}</main>
+        <Providers>{children}</Providers>
         <Footer />
+
+        {/* Carga de FontAwesome via script */}
+        <Script
+          src="https://kit.fontawesome.com/0fe2009133.js"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

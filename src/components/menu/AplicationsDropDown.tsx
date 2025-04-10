@@ -6,7 +6,7 @@ import API_ENDPOINTS from "@/config/api";
 import { Aplicacion } from "@/types/aplicacion";
 import Link from "next/link";
 
-const MainAplicacionesSection = () => {
+const AplicacionesDropdown = () => {
   const [apps, setApps] = useState<Aplicacion[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -29,12 +29,13 @@ const MainAplicacionesSection = () => {
   }, []);
 
   return (
-    <section className="w-full bg-gradient-to-r from-[#00B2E350] to-[#64D8CC50] py-16 px-6">
+    <div className="absolute w-screen bg-[#f8f8fa] shadow-md z-50 p-8 w-full rounded-lg">
+
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-[38px] font-extrabold color-[#010D3D] mb-[10px]">Aplicaciones</h2>
-        <p className="text-[#010D3D] text-[16px] mb-10 px-79 font-semibold">
-        NormaPro es un ecosistema completo de herramientas diseñadas para llevar tu negocio al siguiente nivel. Cada producto dentro de nuestra plataforma está interconectado para ofrecerte una experiencia fluida y resultados tangibles.
-        </p>
+        <h2 className="text-2xl font-bold text-[#010D3D] mb-4">
+          Tecnología
+          </h2>
+        
 
         {isLoading ? (
           <p className="text-white">Cargando aplicaciones...</p>
@@ -68,8 +69,8 @@ const MainAplicacionesSection = () => {
           </div>
         )}
       </div>
-    </section>
+    </div>
   );
 };
 
-export default MainAplicacionesSection;
+export default AplicacionesDropdown;

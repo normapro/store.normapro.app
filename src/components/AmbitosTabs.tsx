@@ -66,8 +66,8 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 		fetchSoluciones(ambitoSlug, sectorSlug);
 		fetchPacks(ambitoSlug, sectorSlug);
 		//podemos cambiar la URL para que el ambito seleccionado se refleje en la URL
-		if (sectorSlug) window.history.pushState(null, "", `/lista-de-soluciones/${ambitoSlug}/${sectorSlug}`);
-		else window.history.pushState(null, "", `/lista-de-soluciones/${ambitoSlug}`);
+		if (sectorSlug) window.history.pushState(null, "", `/soluciones/${ambitoSlug}/sector/${sectorSlug}`);
+		else window.history.pushState(null, "", `/soluciones/${ambitoSlug}`);
 
 	};
 
@@ -224,11 +224,12 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 									const iconParts = sol.uriIcon.split(" ");
 									const icon: IconProp = iconParts.length === 2 ? (iconParts as [IconPrefix, IconName]) : ["fas", "fa-question"];
 									return (
-										<Link key={sol.id_solucion} href={`/solucion/${sol.slug}`} rel="noopener noreferrer">
+										<Link key={sol.id_solucion} href={`/soluciones/${ambitoSlug}/${sol.slug}`} rel="noopener noreferrer">
 											<div className="py-2 px-3 bg-white shadow rounded-lg flex items-center mb-2">
 												<FontAwesomeIcon icon={icon} className="w-6 h-6 text-[#010D3D] mr-4" />
 												<div>
 													<h3 className="font-bold">{sol.description}</h3>
+													<small>{sol.subtitle}</small>
 												</div>
 											</div>
 										</Link>
@@ -239,7 +240,7 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 								<h3 className="mb-4 text-[#7F859D] font-semibold">Packs</h3>
 								{packs.map((pack) => {
 									return (
-										<Link key={pack.id_pack} href={`/pack/${pack.slug}`} rel="noopener noreferrer">
+										<Link key={pack.id_pack} href={`/soluciones/${ambitoSlug}/pack/${pack.slug}`} rel="noopener noreferrer">
 											<div className="py-2 px-3 bg-[#e4f6fc] shadow rounded-lg mb-2 cursor-pointer h-[200px] px-7 ">
 												<div className="grid grid-cols-12">
 													<div className="col-span-8 mt-7">

@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { Solucion } from "../types/solucion";
+import { Solucion } from "../../types/solucion";
 
 const PackHighlightedButton = ({ solucion }: { solucion: Solucion }) => {
   return (
     <Link
-      key={solucion.id_pack}
-      href={`/solucion/${solucion.id_pack}`}
+      key={solucion.id_solucion}
+      href={`/soluciones/${solucion.slug_ambito}/packs/${solucion.slug}`}
       className="block bg-[#E4F6FC] p-1 pl-3 rounded-lg shadow hover:shadow-lg transition"
     >
       <div className="flex items-center space-x-4 relative">
