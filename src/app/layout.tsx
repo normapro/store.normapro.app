@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Navbar from "../components/menu/Navbar";
-import "@/libs/fontawesome.config";
-import '@fortawesome/fontawesome-svg-core/styles.css';
+import "@/libs/fontawesome.config"; // Carga de configuración de iconos
+// ❌ Eliminado: import '@fortawesome/fontawesome-svg-core/styles.css';
 
 import { Mulish } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Script from "next/script";
-import { Providers } from './providers';
+import { Providers } from "./providers";
 
 const mulish = Mulish({
   variable: "--font-mulish",
@@ -28,7 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Providers>{children}</Providers>
         <Footer />
 
-        {/* Carga de FontAwesome via script */}
+        {/* FontAwesome Kit */}
         <Script
           src="https://kit.fontawesome.com/0fe2009133.js"
           crossOrigin="anonymous"

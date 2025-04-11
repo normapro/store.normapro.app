@@ -2,28 +2,33 @@
 
 import Image from "next/image";
 
-const images = [
- 
-  "/main/main@2x.png"
+const heroImages = [
+  "head_img1@2x.png",
+  "head_img2@2x.png",
+  "head_img3@2x.png",
+  "head_img4@2x.png",
+  "head_img5@2x.png",
 ];
 
 const MainHeroCarousel = () => {
   return (
-    <section
-      className="relative w-full h-[100vh] mh-[800px]  flex flex-col items-center justify-center text-center text-[#010D3D] overflow-hidden bg-[#FFFFFF] "
-      
-    >
+    <section className="relative w-full h-screen min-h-[800px] flex flex-col items-center justify-center text-center text-[#010D3D] overflow-hidden bg-[#FFFFFF]">
 
-      <div className="absolute w-[100%] h-[100%] top-[-200px] left-0 bg-no-repeat z-0 bg-left bg-[length:25%]"
-           style={{ backgroundImage: "url(/main/hielo1.png)" }}
-      > </div>
-      <div className="absolute w-[100%] h-[100%] top-[200px] right-0 bg-no-repeat z-0 bg-right bt-bottom bg-[length:25%]"
-           style={{ backgroundImage: "url(/main/hielo1.png)" }}
-      > </div>
+      {/* Fondo decorativo izquierdo */}
+      <div
+        className="absolute inset-0 z-0 bg-no-repeat bg-left bg-[length:25%] top-[-200px]"
+        style={{ backgroundImage: "url(/main/hielo1.png)" }}
+      />
 
-      {/* Contenedor del texto y CTA */}
-      <div className="relative z-10 mt-[-300px] ">
-        <h1 className="text-5xl font-black">Digitalización sin límites</h1>
+      {/* Fondo decorativo derecho */}
+      <div
+        className="absolute inset-0 z-0 bg-no-repeat bg-right bg-[length:25%] top-[200px]"
+        style={{ backgroundImage: "url(/main/hielo1.png)" }}
+      />
+
+      {/* Texto y CTA */}
+      <div className="relative z-10 mt-[-300px] px-4 max-w-4xl">
+        <h1 className="text-4xl md:text-5xl font-black">Digitalización sin límites</h1>
         <p className="text-lg mt-2">
           Navegamos contigo hacia una evolución tecnológica accesible, segura y sin barreras.
         </p>
@@ -32,12 +37,19 @@ const MainHeroCarousel = () => {
           Solicita un diagnóstico gratuito
         </button>
       </div>
+      
 
-      {/* Contenedor de imágenes estáticas en la misma disposición del diseño */}
-      <div className="absolute bottom-[-10%] w-[80%]">
-        <div className="relative ">
-          <img src="/main/main@2x.png" className="w-[100%]"></img>
-        </div>
+      {/* Composición de imágenes con fadeIn desde abajo */}
+      <div className="absolute bottom-0 w-full flex justify-center items-end gap-4 z-20 px-4">
+        {heroImages.map((img, index) => (
+          <img
+            key={img}
+            src={`/main/${img}`}
+            alt={`Hero ${index + 1}`}
+            className="w-[150px] md:w-[180px] lg:w-[220px] opacity-0 animate-fadeInUp"
+            style={{ animationDelay: `${index * 0.3}s`, animationFillMode: 'forwards' }}
+          />
+        ))}
       </div>
     </section>
   );

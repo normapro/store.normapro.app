@@ -1,33 +1,31 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-  --font-family: var(--font-mulish);
+body {
+  font-family: var(--font-mulish);
+  background: #ffffff;
+  color: #171717;
 }
-
+/* Variables globales */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-family: var(--font-mulish);
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #ffffff;
-    --foreground: #171717;
-  }
-}
-
+/*
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-mulish);
-}
+}*/
 
 .backdrop-custom {
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(6px);
 }
 
-
+/* Tu animación extra */
 @keyframes slide {
   0% {
     transform: translateX(0%);
