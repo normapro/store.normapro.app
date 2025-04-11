@@ -1,6 +1,7 @@
 'use client';
 import MainAplicacionesSection from "@/components/MainAplicacionesSection";
 import MainConsultoriaSection from "@/components/MainConsultoriaSection";
+import MainFormacionSection from "@/components/MainFormacionSection";
 import MainHeroCarousel from "@/components/MainHeroCarousel";
 import MainSolucionesSection from "@/components/MainSolucionesSection";
 import MainTestimoniosSection from "@/components/MainTestimoniosSection";
@@ -65,6 +66,9 @@ export default function Home() {
         <MainConsultoriaSection />
       </FadeInOnScroll>
 
+      <FadeInOnScroll>
+        <MainFormacionSection />
+      </FadeInOnScroll>
       <FadeInOnScroll>
         <MainTestimoniosSection />
       </FadeInOnScroll>

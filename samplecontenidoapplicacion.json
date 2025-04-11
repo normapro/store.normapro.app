@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "tipo": "HeroSection",
+    "data": {
+      "cta": "¡Da el salto al futuro de la gestión de recursos humanos!",
+      "claim": [
+        "Descubre cómo mejorar la productividad y",
+        "satisfacción de tus empleados"
+      ],
+      "title": "Portal del Empleado",
+      "imgUrl": "portal-empleado",
+      "pragma": "El portal del empleado NormaPro es tu centro digital para todo lo relacionado con tus empleados. Gestiona documentos, comunica noticias, controla asistencia y más, todo en un solo lugar. Fácil, rápido y seguro",
+      "imgType": "lottie"
+    }
+  },
+  {
+    "id": 2,
+    "tipo": "ClientCarouselWrapper",
+    "data": {
+      "claim": "Clientes que ya utilizan soluciones del ecosistema NormaPro",
+      "scope": "portal-del-empleado"
+    }
+  },
+  {
+    "id": 3,
+    "tipo": "TextSection",
+    "data": {
+      "background": "gray",
+      "level2": [
+        "","Es el momento de decidir si quieres contar con", "una herramienta que te ayudará a evitar problemas de comunicación, errores administrativos, falta de transparencia, pérdida de tiempo y falta de compromiso."
+      ],
+      "level3": [
+        "","Puedes mejorar la eficiencia y la productividad de la empresa, o bien continuar navegando en un mar de ineficiencias, desperdiciando recursos valiosos y perdiendo oportunidades de crecimiento y desarrollo tanto para tus empleados como para tu empresa."
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "tipo": "VideoSection",
+    "data": {
+      "title": "Reserva una sesión demostrativa o mira el video si...",
+      "items": [
+        "... Quieres ahorrar en Tiempo y Dinero reduciendo papeleo y trámites",
+        "... Necesitas Seguridad en datos diciendo adiós a correos y documentos físicos.",
+        "... Optas por Teletrabajo eficiente con acceso desde cualquier lugar.",
+        "... Buscas Autonomía para tus empleados y que gestionen sus propios datos.",
+        "... Tener Comunicación directa con todo tu equipo.",
+        "... Reforzar la Cultura empresarial: Eventos, noticias y más."
+      ],
+      "url_video": "https://www.youtube.com/embed/8eOcErLRY08"
+    }
+  },
+  {
+    "id": 5,
+    "tipo": "ClientPerceptionSection",
+    "data": {
+      "title": "La percepción de nuestros clientes es nuestra realidad",
+      "items": [
+        "Transformar una preocupación en tranquilidad.",
+        "Reducir de media un 40% los costes de operación de muchos procesos internos de su empresa (e incluso casi eliminarlos en algunos)."
+      ],
+      "id_testimonio": 3
+    }
+  }
+]

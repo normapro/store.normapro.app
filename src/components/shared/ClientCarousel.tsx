@@ -31,7 +31,7 @@ const ClientCarousel: React.FC<ClientCarouselProps> = ({ scope, claim }) => {
   const logos = [...clientes, ...clientes, ...clientes, ...clientes, ...clientes];
 
   return (
-    <section className="mx-auto  py-12 text-center border-t border-gray-200 overflow-hidden">
+    <section className="mx-auto  py-12 text-center overflow-hidden">
       <h3 className="text-gray-500 mb-6 font-semibold text-lg">{claim}</h3>
 
       <div className="relative w-full overflow-hidden">

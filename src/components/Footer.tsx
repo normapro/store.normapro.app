@@ -2,79 +2,146 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fab,faLinkedin,faYoutube } from "@fortawesome/free-brands-svg-icons";
-
+import { faLinkedin, faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
-  return (
-    <footer className=" py-10 mt-10">
-    <div className="bg-[#010D3D] text-white">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-12 gap-8">
-        {/* Logo y enlaces */}
-        <div className="col-span-3 flex flex-col space-y-4">
-          <Image src="/cropped-NormaPro_red.png" alt="NormaPro Logo" width={100} height={100} />
-          <p className="text-sm opacity-70">NormaPro® es una marca registrada por Instituto de Innovación, Ciencia y Empresa</p>
-        </div>
+	return (
+		<footer className="mt-20">
+			{/* Bloque azul */}
+			<div className="bg-[#010D3D] text-white">
+				<div className="max-w-7xl mx-auto px-6 py-8">
+					{/* Newsletter + RRSS */}
+					<div className="flex flex-col md:flex-row justify-between items-center border-b border-white/20 pb-8 gap-6">
+						<div className="w-full md:w-2/3">
 
-        {/* Sección de navegación */}
-        <div className="col-span-6 grid grid-cols-2 gap-4">
-          <div>
-            <h3 className="font-bold mb-3">Soluciones</h3>
-            <ul className="space-y-2">
-              <li><Link href="/soluciones">Soluciones</Link></li>
-              <li><Link href="/formacion">Formación</Link></li>
-              <li><Link href="/historias">Historias con clientes</Link></li>
-              <li><Link href="/actualidad">Actualidad</Link></li>
-              <li><Link href="/informes">Informes</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-bold mb-3">Información</h3>
-            <ul className="space-y-2">
-              <li><Link href="/nosotros">Quiénes somos</Link></li>
-              <li><Link href="/partners">Programa de Partners</Link></li>
-              <li><Link href="/trabaja">Trabaja en NormaPro</Link></li>
-              <li><Link href="/politicas">Políticas</Link></li>
-              <li><Link href="/contacto">Contacto</Link></li>
-            </ul>
-          </div>
-        </div>
+							<div className="flex">
+								<label className="text-sm block mb-1 w-[300px] justify-center item-center py-2">Mantente informado</label>
+								<input
+									type="email"
+									placeholder="Escribe tu email"
+									className="px-4 rounded-l-md w-full text-black placeholder:text-gray-500 text-sm bg-white h-[40px]"
+								/>
+								<button className="bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] px-4 py-2 rounded-r-md text-white text-sm font-semibold h-[40px] w-[400px] ">
+									Suscribirme a la newsletter
+								</button>
+							</div>
+						</div>
+						<div className="flex items-center gap-4 text-sm">
+							<span>Síguenos en</span>
+							<Link href="https://www.linkedin.com/company/normapro" target="_blank">
+								<FontAwesomeIcon icon={faLinkedin} className="w-5 h-5" />
+							</Link>
+							<Link href="https://www.youtube.com/@normapro" target="_blank">
+								<FontAwesomeIcon icon={faYoutube} className="w-5 h-5" />
+							</Link>
+						</div>
+					</div>
 
-        {/* Redes Sociales */}
-        <div className="col-span-3 flex flex-col space-y-4 items-end">
-          <h3 className="font-bold">Síguenos en</h3>
-          <div className="flex space-x-4">
-            <Link href="https://www.linkedin.com" target="_blank">
-              
-              <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6" />
-            </Link>
-            <Link href="https://www.youtube.com" target="_blank">
-               <FontAwesomeIcon icon={faYoutube} className="w-6 h-6" />              
-            </Link>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div>
-      {/* Logos de certificaciones */}
-      <div className="max-w-7xl mx-auto px-6 mt-10 grid grid-cols-5 gap-6 items-center">
-        <Image src="/LOGO-AENOR-CALIDAD-ISO-9001.png" alt="AENOR ISO 9001" width={120} height={60} />
-        <Image src="/Marca-ER-ISO-45001-INF.webp" alt="AENOR ISO 45001" width={120} height={60} />
-        <Image src="/Marca-ER-Segur_Info_27001_INF-Logo-de-Seguridad-informacion.jpeg" alt="AENOR ISO 27001" width={120} height={60} />
-        <Image src="/IQnet-logo-4E8976D382-seeklogo.com_.webp" alt="IQNet" width={120} height={60} />
-        <Image src="/qaec.png" alt="Asociación Española para la Calidad" width={120} height={60} />
-      </div>
+					{/* Navegación y logos */}
+					<div className="grid grid-cols-12 gap-6 py-10">
+						{/* Logo Pingüino */}
+						<div className="col-span-12 md:col-span-2">
+							<Image
+								src="/iconopinguino@2x.png"
+								alt="Logo NormaPro"
+								width={64}
+								height={64}
+								className="rounded-xl"
+							/>
+						</div>
 
-      {/* Aviso legal */}
-      <div className="max-w-7xl mx-auto px-6 mt-6 text-center text-sm opacity-70">
-        <p>
-          <Link href="/aviso-legal">Aviso Legal</Link> | <Link href="/privacidad">Política de privacidad</Link> | <Link href="/cookies">Política de cookies</Link>
-        </p>
-      </div>
-      </div>
-    </footer>
-  );
+						{/* Menú navegación */}
+						<div className="col-span-12 md:col-span-6 grid grid-cols-2 gap-6 text-sm font-semibold">
+							<div className="space-y-1">
+								<Link href="/soluciones">Soluciones</Link><br />
+								<Link href="/formacion">Formación</Link><br />
+								<Link href="/historias">Historias con clientes</Link><br />
+								<Link href="/actualidad">Actualidad</Link><br />
+								<Link href="/informes">Informes</Link><br />
+							</div>
+							<div className="space-y-1">
+								<Link href="/nosotros">Quiénes somos</Link><br />
+								<Link href="/partners">Programa de Partners</Link><br />
+								<Link href="/trabaja">Trabaja en NormaPro</Link><br />
+								<Link href="/politicas">Políticas</Link><br />
+								<Link href="/contacto">Contacto</Link><br />
+							</div>
+						</div>
+
+						{/* Logo Instituto */}
+						<div className="col-span-12 md:col-span-4 flex justify-end">
+							<Image
+								src="/footer/iconoInstituto.svg"
+								alt="Instituto de Innovación Ciencia y Empresa"
+								width={180}
+								height={80}
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			{/* Bloque blanco */}
+			<div className="bg-white text-[#171717] text-sm">
+				<div className="max-w-7xl mx-auto px-6 py-8">
+					{/* Certificaciones + miembros */}
+					<div className="flex flex-wrap justify-between items-center gap-6">
+						{/* Certificaciones */}
+						<div className="flex flex-wrap items-center gap-6">
+							{[
+								"Grupo 4494@2x.png",
+								"Grupo 4506@2x.png",
+								"Grupo 4502@2x.png",
+							].map((img, i) => (
+								<Image
+									key={i}
+									src={`/footer/${img}`}
+									alt={`Certificación ${i}`}
+									width={150}
+									height={150}
+								/>
+							))}
+						</div>
+
+						{/* Separador vertical */}
+						<div className="hidden md:block w-[1px] h-10 bg-gray-300" />
+
+						{/* Miembros de */}
+						<div className="flex flex-col items-center">
+							<span className="text-xs text-gray-600 ">Somos miembros de</span><br />
+							<div className="flex items-center gap-4">
+
+								<Image
+									src="/footer/Grupo 4492@2x.png"
+									alt="ASCOM"
+									width={150}
+									height={150}
+								/>
+								<Image
+									src="/footer/Grupo 4490@2x.png"
+									alt="AEC"
+									width={150}
+									height={150}
+								/>
+							</div>
+						</div>
+					</div>
+
+					{/* Texto legal */}
+					<div className="mt-6 text-center text-xs text-gray-500 space-y-1">
+						<p>
+							NormaPro® es una marca registrada por Instituto de Innovación, Ciencia y Empresa
+						</p>
+						<p className="space-x-4">
+							<Link href="/aviso-legal" className="hover:underline">Aviso Legal</Link>
+							<Link href="/privacidad" className="hover:underline">Política de privacidad</Link>
+							<Link href="/cookies" className="hover:underline">Política de cookies</Link>
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+	);
 };
 
 export default Footer;

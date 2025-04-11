@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "../components/menu/Navbar";
 import "@/libs/fontawesome.config"; // Carga de configuración de iconos
-// ❌ Eliminado: import '@fortawesome/fontawesome-svg-core/styles.css';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 
 import { Mulish } from "next/font/google";
 import "./globals.css";

@@ -1,9 +1,16 @@
 import HeroSection from "@/components/landings/HeroSection";
-import ClientCarousel from "@/components/shared/ClientCarousel";
+import ClientCarouselWrapper from "@/components/landings/ClientCarouselWrapper";
+import TextSection from "@/components/landings/TextSection";
+import VideoSection from "@/components/landings/VideoSection";
+import ClientPerceptionSection from "@/components/landings/ClientPerceptionSection";
 
 const sectionMap: Record<string, any> = {
   HeroSection,
-  ClientCarousel,
+  ClientCarouselWrapper,
+  TextSection,
+  VideoSection,
+  ClientPerceptionSection,
+  
 };
 
 async function getAplicacion(slug: string) {
@@ -22,7 +29,7 @@ export default async function AplicacionPage({
   const data = await getAplicacion(params.aplicacion);
 
   return (
-    <main className="w-full flex flex-col items-center justify-center gap-8 px-6 py-12 lg:px-24">
+    <main className="w-full flex flex-col items-center justify-center py-12 ">
       {data.contenidos.map((bloque: any) => {
         const Component = sectionMap[bloque.tipo];
         if (!Component) return null;
