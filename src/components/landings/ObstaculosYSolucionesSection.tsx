@@ -1,0 +1,78 @@
+'use client';
+
+import { FC } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faHourglass,
+  faCommentSlash,
+  faFaceFrownSlight,
+  faChartLineDown,
+} from '@fortawesome/pro-duotone-svg-icons';
+
+const iconMap: Record<string, any> = {
+  'fa-hourglass': faHourglass,
+  'fa-comment-slash': faCommentSlash,
+  'fa-face-frown-slight': faFaceFrownSlight,
+  'fa-chart-line-down': faChartLineDown,
+};
+
+type Celda = {
+  idcelda: number;
+  icono: string;
+  title: string;
+  pragma: string;
+};
+
+type Props = {
+  title: string;
+  claim: string;
+  table: Celda[];
+  pragma: string[];
+};
+
+const ObstaculosYSolucionesSection: FC<Props> = ({ title, claim, table, pragma }) => {
+  return (
+    <section className="max-w-7xl mx-auto w-full flex flex-col items-center justify-center py-16 px-6 md:px-12">
+      {/* Título y subtítulo */}
+      <div className="text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#010d3d] mb-6">{title}</h2>
+        <p className="text-lg text-gray-700">{claim}</p>
+      </div>
+
+      {/* Tabla horizontal sin separación entre columnas */}
+      <div className="grid grid-cols-1 md:grid-cols-4 w-full border border-gray-300 rounded-2xl overflow-hidden mb-12">
+        {table.map((celda, index) => {
+          const isFirst = index === 0;
+          const isLast = index === table.length - 1;
+
+          return (
+            <div
+              key={celda.idcelda}
+              className={`flex flex-col items-center text-center p-6 bg-white border-l border-gray-300 last:border-r 
+                ${isFirst ? 'rounded-l-2xl' : ''} 
+                ${isLast ? 'rounded-r-2xl' : ''} 
+                ${isFirst ? 'border-l-0' : ''}`}
+            >
+              <div className="text-[#010d3d] text-3xl mb-4">
+                <FontAwesomeIcon icon={iconMap[celda.icono]} className="fa-duotone" />
+              </div>
+              <h3 className="text-lg font-semibold text-[#010d3d] mb-2">{celda.title}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{celda.pragma}</p>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Párrafos finales */}
+      <div className="max-w-4xl text-center">
+        {pragma.map((p, i) => (
+          <p key={i} className="text-base md:text-lg text-gray-700 mb-4">
+            {p}
+          </p>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default ObstaculosYSolucionesSection;

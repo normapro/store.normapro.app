@@ -9,6 +9,10 @@ type HeroSectionProps = {
   cta: string;
   imgType: "lottie" | "img";
   imgUrl: string;
+  backgroundImg?: string;
+  backgroundRepeat?: string;
+  backgroundSize?: string;
+  backgroundPositionX?: string;
 };
 
 const HeroSection: React.FC<HeroSectionProps> = ({
@@ -18,6 +22,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   cta,
   imgType,
   imgUrl,
+  backgroundImg,
+  backgroundRepeat = "no-repeat",
+  backgroundSize = "cover",
+  backgroundPositionX = "center",
 }) => {
   const colors = ["#010d3d", "#797f98"];
   const [animationData, setAnimationData] = useState<any>(null);
@@ -54,9 +62,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </button>
       </div>
 
-      <div className="flex-1 flex justify-center">
+      <div className="flex-1 flex justify-center " >
         {imgType === "lottie" && animationData ? (
-          <Lottie animationData={animationData} loop={true} className="max-w-md w-full h-auto" />
+          <div className="max-w-md w-full h-auto" 
+            style={{ backgroundImage: `url(/apps/${backgroundImg})`, backgroundSize: backgroundSize, backgroundPositionX: backgroundPositionX, backgroundRepeat: backgroundRepeat }}
+          >
+            <Lottie animationData={animationData} loop={true}  />
+          </div>
         ) : imgType === "img" ? (
           <img src={finalUrl} alt="hero visual" className="max-w-md w-full h-auto" />
         ) : null}

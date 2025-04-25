@@ -16,62 +16,51 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
   id_testimonio
 }) => {
   const [testimonio, setTestimonio] = useState<TestimonioConCliente | null>(null);
-    /*
+  /*
   useEffect(() => {
     fetch(`http://localhost:3010/v1/getTestimonio?id=${id_testimonio}`)
       .then((res) => res.json())
       .then(setTestimonio)
-      .catch(()=>{
-        return ({
-            "id_testimonio": 3,
-            "id_cliente": 1,
-            "description": "Una plataforma en evolución continua...",
-            "persona": "José María Comas Hermoso",
-            "cargo": "Director RRHH y Compliance Officer",
-            "miniImg": "/testimonios/jose-comas.jpg",
-            "cliente": {
-              "id_cliente": 1,
-              "description": "SOMAJASA",
-              "url": "https://www.somajasa.es",
-              "logo": "somajasa.svg",
-              "logoType": "square"
-            }
-          });
-        
-        console.error;
-
-    }
+      .catch(console.error)
+    });
+  }, [id_testimonio]);
+  */
 
 
-        
-      );
-
-
-  }, [id_testimonio]);*/
   useEffect(() => {
-    // modo sin API para desarrollo o pruebas
+    // Demo estático (puedes cambiar por fetch real)
     setTestimonio({
       id_testimonio: 3,
       id_cliente: 1,
-      description: "Una plataforma en evolución continua...",
-      persona: "José María Comas Hermoso",
-      cargo: "Director RRHH y Compliance Officer",
-      miniImg: "/testimonios/jose-comas.jpg",
+      description:
+        'Una plataforma en evolución continua con muchas posibilidades de adaptación.',
+      persona: 'José María Comas Hermoso',
+      cargo: 'Director RRHH y Compliance Officer',
+      miniImg: '/testimonios/josecomas.png',
       cliente: {
         id_cliente: 1,
-        description: "SOMAJASA",
-        url: "https://www.somajasa.es",
-        logo: "somajasa.svg",
-        logoType: "square"
+        description: 'SOMAJASA',
+        url: 'https://www.somajasa.es',
+        logo: 'somajasa.svg',
+        logoType: 'square'
       }
     });
   }, []);
 
   return (
-    <section className="w-full bg-[#f1f1f7] py-16 px-6 flex flex-col gap-10">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section className="w-full relative py-24 overflow-hidden">
+      {/* Curva superior */}
+      <div className="absolute top-0 left-0 w-full">
+        <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
+          <path fill="#f1f1f7" d="M0,0 C480,80 960,80 1440,0 L1440,80 L0,80 Z" />
+        </svg>
+        
+      </div>
+      <div className="w-full relative bg-[#f1f1f7] py-24 overflow-hidden">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+        {/* Texto izquierdo */}
         <div>
-          <h2 className="text-[30px] md:text-[36px] font-extrabold text-[#010d3d] mb-6">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#010d3d] mb-8">
             {title}
           </h2>
           <ul className="space-y-4 text-lg text-[#1a1a1a]">
@@ -82,7 +71,7 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
               </li>
             ))}
           </ul>
-          <div className="mt-8 flex gap-4">
+          <div className="mt-10 flex gap-4 flex-wrap">
             <button className="bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] text-white px-6 py-3 rounded-xl font-semibold shadow-md">
               Contratar ahora
             </button>
@@ -92,44 +81,43 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
           </div>
         </div>
 
+        {/* Testimonio derecho */}
         {testimonio && (
-          <div className="bg-white p-8 rounded-xl shadow-xl relative">
-            <div className="mb-4">
-              <Image
-                src={`/logos/${testimonio.cliente.logo}`}
-                alt={testimonio.cliente.description}
-                width={120}
-                height={60}
-                className="mb-4 object-contain h-auto"
-              />
-              <p className="italic text-gray-700 mb-4">
-                <strong className="block mb-2 text-lg text-[#010d3d]">
-                  {testimonio.description}
-                </strong>
-                {testimonio.persona && (
-                  <>
-                    <span>{testimonio.persona}</span>
-                    <br />
-                    <span className="text-sm text-gray-500">
-                      {testimonio.cargo}
-                    </span>
-                  </>
-                )}
-              </p>
-              {testimonio.miniImg && (
-                <div className="w-16 h-16 mt-4 rounded-full overflow-hidden border-2 border-gray-300">
-                  <Image
-                    src={testimonio.miniImg}
-                    alt={testimonio.persona || 'Foto'}
-                    width={64}
-                    height={64}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-              )}
+          <div className="bg-white p-8 rounded-2xl shadow-xl flex flex-col items-center text-center">
+            <Image
+              src={`/logos/${testimonio.cliente.logo}`}
+              alt={testimonio.cliente.description}
+              width={100}
+              height={60}
+              className="object-contain mb-6"
+            />
+            <p className="text-[#010d3d] italic font-medium text-lg mb-4 leading-relaxed max-w-lg">
+              “{testimonio.description}”
+            </p>
+            <div className="text-sm text-gray-700 leading-snug">
+              <strong className="block text-[#010d3d]">{testimonio.persona}</strong>
+              {testimonio.cargo}
             </div>
+            {testimonio.miniImg && (
+              <div className="w-16 h-16 mt-6 rounded-full overflow-hidden border-2 border-gray-300 shadow-sm">
+                <Image
+                  src={testimonio.miniImg}
+                  alt={testimonio.persona || 'Foto'}
+                  width={64}
+                  height={64}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+            )}
           </div>
         )}
+      </div>
+      </div>
+      {/* Curva inferior */}
+      <div className="absolute bottom-0 left-0 w-full">
+        <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
+          <path fill="#f1f1f7" d="M0,80 C480,0 960,0 1440,80 L1440,0 L0,0 Z" />
+        </svg>
       </div>
     </section>
   );

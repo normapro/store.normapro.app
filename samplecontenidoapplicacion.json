@@ -28,10 +28,11 @@
     "data": {
       "background": "gray",
       "level2": [
-        "","Es el momento de decidir si quieres contar con", "una herramienta que te ayudará a evitar problemas de comunicación, errores administrativos, falta de transparencia, pérdida de tiempo y falta de compromiso."
+        "Es el momento de decidir si quieres contar con",
+        "una herramienta que te ayudará a evitar problemas de comunicación, errores administrativos, falta de transparencia, pérdida de tiempo y falta de compromiso."
       ],
       "level3": [
-        "","Puedes mejorar la eficiencia y la productividad de la empresa, o bien continuar navegando en un mar de ineficiencias, desperdiciando recursos valiosos y perdiendo oportunidades de crecimiento y desarrollo tanto para tus empleados como para tu empresa."
+        "Puedes mejorar la eficiencia y la productividad de la empresa, o bien continuar navegando en un mar de ineficiencias, desperdiciando recursos valiosos y perdiendo oportunidades de crecimiento y desarrollo tanto para tus empleados como para tu empresa."
       ]
     }
   },
@@ -61,6 +62,86 @@
         "Reducir de media un 40% los costes de operación de muchos procesos internos de su empresa (e incluso casi eliminarlos en algunos)."
       ],
       "id_testimonio": 3
+    }
+  },
+  {
+    "id": 6,
+    "tipo": "CaracteristicasIncorporadas",
+    "data": {
+      "data": [
+        {
+          "id_data": 1,
+          "title": "Acceso a documentación de la empresa",
+          "icon": "fa-file-lines",
+          "mainTitle": "Biblioteca de evidencias",
+          "subtitle": "Acceso a documentación personal y compartida de la empresa",
+          "description": "Centraliza y accede fácilmente a toda la documentación clave, optimizando tiempo y mejorando la organización. Dile adiós a la desorganización. Todo tu archivo en un solo lugar, al alcance de un clic. Evita la tediosa búsqueda y el acceso restringido a documentos clave.",
+          "img": "fichasdocumentales.png"
+        },
+        {
+          "id_data": 2,
+          "title": "Comunicaciones, Noticias y Publicaciones",
+          "icon": "fa-bullhorn",
+          "mainTitle": "Comunicaciones, Noticias y Publicaciones",
+          "subtitle": "",
+          "description": "Mantén informado a tu equipo al instante. Fortalece la cultura empresarial y la cohesión del grupo. Conecta, informa, involucra. Haz de tu empresa un ecosistema vibrante de información. Mejora la alineación entre equipos con comunicaciones personalizadas. La desinformación puede disminuir el compromiso y la eficiencia de tus empleados",
+          "img": "noticias.png"
+        },
+        {
+          "id_data": 3,
+          "title": "Entrega y Firma de Documentos/Formularios",
+          "icon": "fa-file-signature",
+          "mainTitle": "Entrega y Firma de Documentos/Formularios",
+          "subtitle": "Acceso a documentación personal y compartida de la empresa",
+          "description": "Digitaliza y agiliza los procesos administrativos. Adiós al papeleo y a la espera. Digitalización en su máxima expresión. Cierra trámites en minutos, no en días. Elimina los procesos manuales en la firma de documentos. Retrasos y falta de control pueden resultar en incumplimientos y pérdidas administrativas.",
+          "img": "firma.png"
+        },
+        {
+          "id_data": 4,
+          "title": "Gestión de solicitudes",
+          "icon": "fa-file-lines",
+          "mainTitle": "Biblioteca de evidencias",
+          "subtitle": "Acceso a documentación personal y compartida de la empresa",
+          "description": "Centraliza y accede fácilmente a toda la documentación clave, optimizando tiempo y mejorando la organización. Dile adiós a la desorganización. Todo tu archivo en un solo lugar, al alcance de un clic. Evita la tediosa búsqueda y el acceso restringido a documentos clave.",
+          "img": "fichasdocumentales.png"
+        },
+        {
+          "id_data": 5,
+          "title": "Acceso a la documentación de la empresa",
+          "icon": "fa-file-lines",
+          "mainTitle": "Biblioteca de evidencias",
+          "subtitle": "Acceso a documentación personal y compartida de la empresa",
+          "description": "Centraliza y accede fácilmente a toda la documentación clave, optimizando tiempo y mejorando la organización. Dile adiós a la desorganización. Todo tu archivo en un solo lugar, al alcance de un clic. Evita la tediosa búsqueda y el acceso restringido a documentos clave.",
+          "img": "fichasdocumentales.png"
+        },
+        {
+          "id_data": 6,
+          "title": "Acceso a la documentación de la empresa",
+          "icon": "fa-file-lines",
+          "mainTitle": "Biblioteca de evidencias",
+          "subtitle": "Acceso a documentación personal y compartida de la empresa",
+          "description": "Centraliza y accede fácilmente a toda la documentación clave, optimizando tiempo y mejorando la organización. Dile adiós a la desorganización. Todo tu archivo en un solo lugar, al alcance de un clic. Evita la tediosa búsqueda y el acceso restringido a documentos clave.",
+          "img": "fichasdocumentales.png"
+        },
+        {
+          "id_data": 7,
+          "title": "Acceso a la documentación de la empresa",
+          "icon": "fa-file-lines",
+          "mainTitle": "Biblioteca de evidencias",
+          "subtitle": "Acceso a documentación personal y compartida de la empresa",
+          "description": "Centraliza y accede fácilmente a toda la documentación clave, optimizando tiempo y mejorando la organización. Dile adiós a la desorganización. Todo tu archivo en un solo lugar, al alcance de un clic. Evita la tediosa búsqueda y el acceso restringido a documentos clave.",
+          "img": "fichasdocumentales.png"
+        },
+        {
+          "id_data": 8,
+          "title": "Acceso a la documentación de la empresa",
+          "icon": "fa-file-lines",
+          "mainTitle": "Biblioteca de evidencias",
+          "subtitle": "Acceso a documentación personal y compartida de la empresa",
+          "description": "Centraliza y accede fácilmente a toda la documentación clave, optimizando tiempo y mejorando la organización. Dile adiós a la desorganización. Todo tu archivo en un solo lugar, al alcance de un clic. Evita la tediosa búsqueda y el acceso restringido a documentos clave.",
+          "img": "fichasdocumentales.png"
+        }
+      ]
     }
   }
 ]
