@@ -14,6 +14,7 @@ const API_ENDPOINTS = {
   MAINPACKS: `${API_BASE_URL}/v1/store/mainpacks`,
   APLICACIONES: `${API_BASE_URL}/v1/store/aplicaciones`,
   CONSULTORIA: `${API_BASE_URL}/v1/store/consultoria`,
+  PACKS: `${API_BASE_URL}/v1/store/packs`,
 };
 
 export default API_ENDPOINTS;

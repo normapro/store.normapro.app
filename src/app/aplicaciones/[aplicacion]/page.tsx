@@ -1,60 +1,27 @@
-// app/aplicaciones/[aplicacion]/page.tsx
+import LandingBuilder from "@/components/LandingBuilder";
 
-import HeroSection from "@/components/landings/HeroSection";
-import ClientCarouselWrapper from "@/components/landings/ClientCarouselWrapper";
-import TextSection from "@/components/landings/TextSection";
-import VideoSection from "@/components/landings/VideoSection";
-import ClientPerceptionSection from "@/components/landings/ClientPerceptionSection";
-import CaracteristicasIncorporadasSection from "@/components/landings/CaracteristicasIncorporadasSection";
-import CaracteristicasStorytellingSection from "@/components/landings/CaracteristicasStorytellingSection";
-import ObstaculosYSolucionesSection from "@/components/landings/ObstaculosYSolucionesSection";
-import MovilPortalSection from "@/components/landings/MovilPortalSection";
-import CertificacionesSection from "@/components/landings/CertificacionesSection";
-import ResumenSection from "@/components/landings/ResumenSection";
-
-
-
-// 🔁 Importante para páginas totalmente dinámicas
-
-
-const sectionMap: Record<string, any> = {
-  HeroSection,
-  ClientCarouselWrapper,
-  TextSection,
-  VideoSection,
-  ClientPerceptionSection,
-  CaracteristicasIncorporadas: CaracteristicasStorytellingSection,
-  ObstaculosYSolucionesSection: ObstaculosYSolucionesSection,
-  MovilPortalSection: MovilPortalSection,
-  CertificacionesSection: CertificacionesSection,
-  ResumenSection: ResumenSection,
-};
-
+// 🔁 Fetch server-side de la aplicación
 async function getAplicacion(slug: string) {
   const res = await fetch(`http://localhost:3010/v1/aplicaciones/${slug}`, {
-    next: { revalidate: 60 },
+    next: { revalidate: 60 }, // ISR cada 60 segundos
   });
   if (!res.ok) throw new Error("Error al cargar aplicación");
   return res.json();
 }
 
-export const dynamic = "force-dynamic";
-export const dynamicParams = true;
+// ✅ Tipos compatibles con Next.js 15+
+type Params = { aplicacion: string };
+type SearchParams = { [key: string]: string | string[] | undefined };
 
-export default async function AplicacionPage({
-  params: { aplicacion },
+export default async function Page({
+  params,
+  searchParams,
 }: {
-  params: { aplicacion: string };
+  params: Params;
+  searchParams: SearchParams;
 }) {
+  const { aplicacion } = await params; // 👈 Esto evita el warning oficial
   const data = await getAplicacion(aplicacion);
 
-  return (
-    <main className="w-full flex flex-col items-center justify-center py-12">
-      {data.contenidos.map((bloque: any) => {
-        const Component = sectionMap[bloque.tipo];
-        if (!Component) return null;
-        return <Component key={bloque.id} {...bloque.data} />;
-      })}
-    </main>
-  );
+  return <LandingBuilder bloques={data.contenidos} />;
 }

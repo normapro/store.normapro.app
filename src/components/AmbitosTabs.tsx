@@ -240,7 +240,7 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 								<h3 className="mb-4 text-[#7F859D] font-semibold">Packs</h3>
 								{packs.map((pack) => {
 									return (
-										<Link key={pack.id_pack} href={`/soluciones/${ambitoSlug}/pack/${pack.slug}`} rel="noopener noreferrer">
+										<Link key={pack.id_pack} href={`/soluciones/${ambitoSlug}/packs/${pack.slug}`} rel="noopener noreferrer">
 											<div className="py-2 px-3 bg-[#e4f6fc] shadow rounded-lg mb-2 cursor-pointer h-[200px] px-7 ">
 												<div className="grid grid-cols-12">
 													<div className="col-span-8 mt-7">
