@@ -1,8 +1,7 @@
 import LandingBuilder from "@/components/LandingBuilder";
-
-// 🔁 Fetch server-side de la aplicación
+import API_ENDPOINTS from "@/config/api";// 🔁 Fetch server-side de la aplicación
 async function getAplicacion(slug: string) {
-  const res = await fetch(`http://localhost:3010/v1/aplicaciones/${slug}`, {
+  const res = await fetch(`${API_ENDPOINTS.APLICACIONES}/${slug}`, {
     next: { revalidate: 60 }, // ISR cada 60 segundos
   });
   if (!res.ok) throw new Error("Error al cargar aplicación");

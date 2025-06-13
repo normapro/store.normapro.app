@@ -133,9 +133,9 @@ const Footer = () => {
 							NormaPro® es una marca registrada por Instituto de Innovación, Ciencia y Empresa
 						</p>
 						<p className="space-x-4">
-							<Link href="/aviso-legal" className="hover:underline">Aviso Legal</Link>
-							<Link href="/privacidad" className="hover:underline">Política de privacidad</Link>
-							<Link href="/cookies" className="hover:underline">Política de cookies</Link>
+							<Link href="https://normapro.es/aviso-legal/" className="hover:underline">Aviso Legal</Link>
+							<Link href="https://normapro.es/politica-de-privacidad/" className="hover:underline">Política de privacidad</Link>
+							<Link href="https://normapro.es/politica-de-cookies-ue/" className="hover:underline">Política de cookies</Link>
 						</p>
 					</div>
 				</div>
