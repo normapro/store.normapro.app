@@ -1,0 +1,299 @@
+[
+  {
+    "id": 1,
+    "tipo": "HeroSection",
+    "data": {
+      "cta": "Quiero una demostración",
+      "claim": [
+        "Optimiza y automatiza tus procesos sin complicaciones, en semanas"
+      ],
+      "title": "NormaPro BPM",
+      "imgUrl": "",
+      "pragma": "",
+      "imgType": ""
+    }
+  },
+  {
+    "id": 2,
+    "tipo": "ClientCarouselWrapper",
+    "data": {
+      "claim": "Clientes que ya utilizan soluciones del ecosistema NormaPro",
+      "scope": "gestor-documental"
+    }
+  },
+  {
+    "id": 4,
+    "tipo": "TextSection",
+    "data": {
+        "background": "gray",
+        "level2": [
+            "",
+            "Puedes conseguir la optimización de tus procesos de negocio usando métodos manuales o soluciones convencionales. Sin embargo, hay un alto riesgo de ineficiencia y errores debido a la falta de automatización y adaptabilidad.\n\n",
+            "NormaPro BPM resuelve estos desafíos en tan solo semanas, evitando pérdidas de tiempo y recursos mediante una plataforma integrada y adaptable."
+        ]
+    }
+  },
+  {
+    "id": 5,
+    "tipo": "ResumenSection",
+    "data": {
+      "imgCabecera": "",
+      "title": "Con NormaPro BPM, convierte complejidad en claridad y toma decisiones con confianza.",
+      "claim": "Es el momento de decidir si quieres contar con una herramienta que te ayudará a evitar problemas de incoherencia en procesos, demoras innecesarias y errores humanos costosos, lo que puede mejorar la claridad operativa, aumentar la eficiencia y garantizar decisiones basadas en datos fiables. O bien continuar navegando en un mar de ineficiencias, desperdiciando recursos valiosos y perdiendo oportunidades de crecimiento y desarrollo para tu negocio.",
+      "titlelist": "",
+      "list": [],
+      "cta": {
+        "title": "",
+        "buttonText": "",
+        "pragma": ""
+      }
+    }
+  },
+  {
+    "id": 6,
+    "tipo": "VideoSection",
+    "data": {
+      "title": "Reserva una sesión demostrativa o mira el video si…",
+      "items": [
+        "… Quieres optimizar y automatizar tus procesos de forma eficiente y sin complicaciones.",
+        "… Necesitas una visión clara y en tiempo real de tus operaciones para tomar decisiones informadas.",
+        "… Buscas adaptarte rápidamente a los cambios del mercado manteniendo la coherencia operativa.",
+        "… Precisas reforzar la colaboración y cohesión entre departamentos.",
+        "… Deseas tener un control total sobre la gestión y el flujo de trabajo, minimizando errores y retrasos."
+      ],
+      "url_video": "https://www.youtube.com/embed/iKzPr7_yfA0?controls=1&rel=0&playsinline=0&cc_load_policy=0&autoplay=0&enablejsapi=1&origin=https%3A%2F%2Fnormapro.es&widgetid=1&forigin=https%3A%2F%2Fnormapro.es%2Fbpm%2F&aoriginsup=0&vf=6"
+    }
+  },
+  {
+    "id": 8,
+    "tipo": "ObstaculosYSolucionesSection",
+    "data": {
+      "title": "Los costes ocultos de no actuar",
+      "claim": "En un mundo empresarial en constante evolución, quedarse atrás o elegir soluciones inadecuadas no es solo ineficiente, es costoso:",
+      "pragma": [
+        "Con NormaPro BPM, no solo evitarás estos desafíos, sino que te posicionas al frente de la innovación empresarial. Nuestra solución brinda claridad, eficiencia y la adaptabilidad que tu negocio necesita para prosperar en el mercado actual."
+      ],
+      "buttonText": "Reserva una reunión con nosotros",
+      "table": [
+        {
+          "idcelda": "1",
+          "icono": "fa-comment-slash",
+          "title": "Inconsistencia operativa",
+          "pragma": "Las soluciones tradicionales o mal diseñadas pueden llevar a errores y falta de coherencia en tus operaciones, afectando directamente a la calidad y reputación de tu negocio."
+        },
+        {
+          "idcelda": "2",
+          "icono": "fa-comment-slash",
+          "title": "Adaptabilidad Limitada",
+          "pragma": "En un mercado que cambia rápidamente, no contar con una herramienta BPM flexible te deja a merced de la competencia, limitando tus oportunidades de crecimiento."
+        },
+        {
+          "idcelda": "3",
+          "icono": "fa-comment-slash",
+          "title": "Malgasto de recursos valiosos",
+          "pragma": "La falta de automatización y visión clara significa un mayor gasto de tiempo y recursos en tareas manuales y correcciones."
+        },
+        {
+          "idcelda": "4",
+          "icono": "fa-comment-slash",
+          "title": "Costo de oportunidad",
+          "pragma": "¿Cuál es el precio real de no optimizar? Cada día sin una herramienta BPM adecuada es una pérdida potencial en eficiencia, crecimiento y, en última instancia, en ingresos."
+        }
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "tipo": "TextSection",
+    "data": {
+        "background": "gray",
+        "level1": [
+            "NormaPro BPM: Trasnformando Desafíos en Oportunidades"
+        ],
+        "level4": [
+            "",
+            "Enfrenta los retos operativos con la potencia de NormaPro BPM. Nuestra herramienta convierte problemas de ineficiencia y adaptabilidad en soluciones ágiles y cohesivas.\n\nSimplifica tareas repetitivas y mejora en eficiencia. Frente a tareas manuales y propensas a errores, la automatización aporta precisión y constancia. Reduce tiempos, minimiza errores y optimiza el rendimienot operativo de tu equipo."
+        ]
+    }
+  },
+  {
+    "id": 10,
+    "tipo": "TextSection",
+    "data": {
+      "background": "white",
+      "level1": [
+        "Funcionalidades Destacadas"
+      ],
+      "level3": [
+        "Descubre la potencia detrás de NormaPro BPM y cómo puede revolucionar tu operativa diaria. Adéntrate en sus capacidades y descubre con detalle cada funcionalidad que lo distingue:"
+      ]
+    }
+  },
+  {
+    "id": 11,
+    "tipo": "CaracteristicasIncorporadas",
+    "data": {
+      "data": [
+        {
+          "id_data": 1,
+          "title": "Interfaz de creación de flujos",
+          "icon": "fa-file-signature",
+          "mainTitle": "Diseña procesos empresariales de manera visual y eficiente.",
+          "subtitle": "Interfaz de creación de flujos",
+          "description": "Simplifica la creación y gestión de flujos de trabajo, reduciendo la complejidad y la necesidad de habilidades técnicas avanzadas. Nuestra interfaz permite configurar flujos de trabajo de manera visual, arrastrando y soltando elementos, definiendo reglas de negocio y asignando responsabilidades de manera sencilla.",
+          "img": ""
+        },
+        {
+          "id_data": 2,
+          "title": "Personalización de flujos",
+          "icon": "fa-file-signature",
+          "mainTitle": "Flujos de trabajo específicos para tu empresa.",
+          "subtitle": "Personalización de flujos",
+          "description": "Los flujos de trabajo genéricos no siempre se ajustan a los requisitos únicos de su empresa.\n\nNormaPro BPM permite la personalización completa de flujos, incluida la definición de reglas de negocio específicas y la adaptación a las necesidades de su organización.",
+          "img": ""
+        },
+        {
+          "id_data": 3,
+          "title": "Biblioteca de componentes",
+          "icon": "fa-file-signature",
+          "mainTitle": "Acelera la creación de flujos utilizando componentes predefinidos",
+          "subtitle": "Biblioteca de componentes",
+          "description": "Crear flujos desde cero puede ser lento y complejo. NormaPro BPM ofrece una biblioteca de componentes predefinidos, como formularios, aprobaciones y notificaciones, que agilizan la creación de flujos.\n\nAhorro de tiempo, flujos consistentes y capacidad de implementar rápidamente nuevas iniciativas.",
+          "img": ""
+        },
+        {
+          "id_data": 4,
+          "title": "Editor de formularios",
+          "icon": "fa-file-signature",
+          "mainTitle": "Crea formularios personalizados para capturar y gestionar datos",
+          "subtitle": "Editor de formularios",
+          "description": "Diseña y personaliza formularios que se integran perfectamente en tus flujos de trabajo. Tú mismo puedes definir campos, lógica condicional y validaciones para recopilar datos de manera eficiente.\n\nReducción de errores, mejora de la precisión y agilización de los procesos de negocio.",
+          "img": ""
+        },
+        {
+          "id_data": 5,
+          "title": "Sistemas de comunicaciones y alertas",
+          "icon": "fa-file-signature",
+          "mainTitle": "Mantén a todos los participantes informados en tiempo real",
+          "subtitle": "Sistemas de comunicaciones y alertas",
+          "description": "Nuestra herramienta incluye un sistema de comunicaciones y alertas que notifica automáticamente a los participantes sobre tareas pendientes, actualizaciones importantes y cambios en los flujos de trabajo.\n\nComunicación efectiva, cumplimiento de plazos, reducción de errores y flujo de trabajo colaborativo mejorado.",
+          "img": ""
+        },
+        {
+          "id_data": 6,
+          "title": "Gestor documental",
+          "icon": "fa-file-signature",
+          "mainTitle": "Documentos centralizados y organizados",
+          "subtitle": "Gestor documental",
+          "description": "Los documentos dispersos y la dificultad para acceder a información relevante pueden ralentizar los procesos y dificultar la toma de decisiones.\n\nNuestro gestor documental permite almacenar y organizar documentos de manera centralizada, vinculándolos a flujos de trabajo específicos. Puedes buscar, recuperar y colaborar en documentos de manera eficiente.",
+          "img": ""
+        },
+        {
+          "id_data": 7,
+          "title": "Panel de seguimiento y supervisión",
+          "icon": "fa-file-signature",
+          "mainTitle": "Control total sobre los flujos de trabajo",
+          "subtitle": "Panel de seguimieneto y supervisión",
+          "description": "La falta de visibilidad puede dificultar la supervisión efectiva de tus procesos empresariales.\n\nNormaPro BPM permite un seguimiento en tiempo real del estado y el progreso de los flujos de trabajo en ejecución, junto con informes detallados y análisis.\n\nMayor control, capacidad de tomar decisiones informadas y mejora de la eficiencia operativa.",
+          "img": ""
+        },
+        {
+          "id_data": 8,
+          "title": "Simulación y pruebas de flujo",
+          "icon": "fa-file-signature",
+          "mainTitle": "Identifica y resuelve problemas antes de implementar flujos en producción",
+          "subtitle": "Simulación y pruebas de flujos",
+          "description": "Nuestra herramienta permite la simulación y las pruebas exhaustivas de flujos antes de implementarlos, lo que ayuda a identificar problemas y optimizar el rendimiento.\n\nReducción de riesgos, ahorro de costos, lanzamiento más seguro de flujos de trabajo.",
+          "img": ""
+        }
+      ]
+    }
+  },
+  {
+    "id": 12,
+    "tipo": "MovilPortalSection",
+    "data": {
+      "title": "Y todo esto, hazlo también desde tu móvil",
+      "subtitle": "Potencia la movilidad y la eficiencia fuera de la oficina.",
+      "images": [
+        "portalmovil1.png",
+        "portalmovil2.png",
+        "portalmovil3.png",
+        "portalmovil4.png"
+      ]
+    }
+  },
+  {
+    "id": 13,
+    "tipo": "ClientPerceptionSection",
+    "data": {
+      "title": "NormaPro: Más que Software, una alianza estratégica",
+      "items": [
+        "Innovación Constante: Aseguramos que NormaPro BPM esté siempre a la vanguardia, adaptándose a las demandas cambiantes del mercado.",
+        "Consultoría Personalizada: Nuestros consultores NormaPro trabajan codo con codo con usted, entendiendo sus desafíos y proponiendo soluciones a medida.",
+        "Integración Flexible: Nuestro software se integra sin problemas con otros sistemas, garantizando una adaptabilidad sin precedentes.",
+        "Soporte Dedicado: Más allá de la implementación, nuestro equipo está siempre disponible para asistencia y orientación."
+      ],
+      "id_testimonio": 3
+    }
+  },
+  {
+    "id": 14,
+    "tipo": "CertificacionesSection",
+    "data": {
+      "title": "Calidad y seguridad certificada",
+      "subtitle": "Nuestros productos y servidios cuentan con certificación AENOR:",
+      "images": [
+        "27001.png",
+        "9001.png",
+        "45001.png",
+        "iqnet.png"
+      ]
+    }
+  },
+  {
+    "id": 15,
+    "tipo": "TextSection",
+    "data": {
+      "background": "white",
+      "level2": [
+        "",
+        "¿Listo para llevar tu festión de procesos al siguiente nivel con un socio de confianza a tu lado?\n\n",
+        "Habla con uno de nuestros consultores y descubre cómo NormaPro BPM puede transformar tu negocio."
+      ],
+      "buttonText": "Reserva una sesión demostrativa"
+    }
+  },
+  {
+    "id": 16,
+    "tipo": "ResumenSection",
+    "data": {
+      "imgCabecera": "",
+      "title": "Con NormaPro BPM, da el paso hacia el futuro empresarial.",
+      "claim": "En el cambiante paisaje del mundo empresarial, aquellos que se adaptan y optimizan prosperan. No te quedes atrás. Descubre lo que muchos directivos ya están experimentando con NormaPro BPM y eleva tus operaciones al siguiente nivel. ¿Estás listo para desbloquear el potencial oculto de tu negocio? No esperes más. Habla con nosotros y adéntrate en el camino hacia la excelencia operativa.",
+      "titlelist": "",
+      "list": [],
+      "cta": {
+        "title": "¡Descubre lo que NormaPro BPM puede hacer por ti!",
+        "buttonText": "Contacta con nuestro equipo ahora",
+        "pragma": ""
+      }
+    }
+  },
+  {
+    "id": 17,
+    "tipo": "ResumenSection",
+    "data": {
+      "imgCabecera": "",
+      "title": "Con NormaPro BPM, da el paso hacia el futuro empresarial.",
+      "claim": "En el cambiante paisaje del mundo empresarial, aquellos que se adaptan y optimizan prosperan. No te quedes atrás. Descubre lo que muchos directivos ya están experimentando con NormaPro BPM y eleva tus operaciones al siguiente nivel. ¿Estás listo para desbloquear el potencial oculto de tu negocio? No esperes más. Habla con nosotros y adéntrate en el camino hacia la excelencia operativa.",
+      "titlelist": "",
+      "list": [],
+      "cta": {
+        "title": "¡Descubre lo que NormaPro BPM puede hacer por ti!",
+        "buttonText": "Contacta con nuestro equipo ahora",
+        "pragma": ""
+      }
+    }
+  }
+]
