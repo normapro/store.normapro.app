@@ -86,10 +86,14 @@ const ResumenSection: FC<Props> = ({
 
       {/* CTA final */}
       <div className="text-center max-w-3xl">
-        <p className="text-lg font-bold text-[#6C6C91] mb-6">{cta.title}</p>
-        <button className="bg-[#010d3d] text-white font-semibold px-6 py-3 rounded-xl mb-4 shadow-md hover:bg-[#04176f] transition">
-          {cta.buttonText}
-        </button>
+        {cta.title && (
+          <p className="text-lg font-bold text-[#6C6C91] mb-6">{cta.title}</p>
+        )}
+        {cta.buttonText && (
+          <button className="bg-[#010d3d] text-white font-semibold px-6 py-3 rounded-xl mb-4 shadow-md hover:bg-[#04176f] transition">
+            {cta.buttonText}
+          </button>
+        )}
         <p className="text-[#010d3d] text-base">{cta.pragma}</p>
       </div>
     </section>

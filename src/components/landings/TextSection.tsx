@@ -8,7 +8,7 @@ type TextSectionProps = {
   level2?: string[];
   level3?: string[];
   level4?: string[];
-  
+  buttonText?: string;
 };
 
 const TextSection: React.FC<TextSectionProps> = ({
@@ -17,6 +17,7 @@ const TextSection: React.FC<TextSectionProps> = ({
   level2,
   level3,
   level4,
+  buttonText
 }) => {
   const colors = ["#010d3d", "#797f98"];
   const bgcolors = ["#ffffff","#eaeaf2" ]
@@ -42,7 +43,7 @@ const TextSection: React.FC<TextSectionProps> = ({
           </h4>
         )}
         {level2 && (
-          <h4 className="text-[24px] font-[900] text-gray-500 mb-15">
+          <h4 className="text-[24px] font-[900] text-gray-500 mb-15 whitespace-pre-line">
             {level2.map((text, i) => (
               <span key={i} style={{ color: colors[i % colors.length] }}>
                 {text + " "}
@@ -51,7 +52,7 @@ const TextSection: React.FC<TextSectionProps> = ({
           </h4>
         )}
         {level3 && (
-          <h4 className="text-[20px] font-[800] text-gray-500 mb-15">
+          <h4 className="text-[20px] font-[800] text-gray-500 mb-15 whitespace-pre-line">
             {level3.map((text, i) => (
               <span key={i} style={{ color: colors[i % colors.length] }}>
                 {text + " "}
@@ -60,13 +61,18 @@ const TextSection: React.FC<TextSectionProps> = ({
             </h4>
         )}
         {level4 && (
-            <h4 className="text-[30px] font-[900] text-gray-500 mb-15">
+            <h4 className="text-[30px] font-[900] text-gray-500 mb-15 whitespace-pre-line">
             {level4.map((text, i) => (
               <span key={i} style={{ color: colors[i % colors.length] }}>
                 {text + " "}
               </span>
             ))}
             </h4>
+        )}
+        {buttonText && (
+            <button className="bg-[#010d3d] text-white font-semibold px-6 py-3 rounded-xl mb-4 shadow-md hover:bg-[#04176f] transition">
+              {buttonText}
+            </button>
         )}
       </div>
     </section>

@@ -71,14 +71,6 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
               </li>
             ))}
           </ul>
-          <div className="mt-10 flex gap-4 flex-wrap">
-            <button className="bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] text-white px-6 py-3 rounded-xl font-semibold shadow-md">
-              Contratar ahora
-            </button>
-            <button className="border-2 border-[#010d3d] text-[#010d3d] px-6 py-3 rounded-xl font-semibold">
-              Quiero una demostración
-            </button>
-          </div>
         </div>
 
         {/* Testimonio derecho */}
@@ -111,6 +103,11 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
             )}
           </div>
         )}
+      </div>
+      <div className="flex justify-center mt-16">
+        <button className="bg-[#010d3d] text-white py-3 px-6 rounded-xl font-bold">
+          Quiero una demostración
+        </button>
       </div>
       </div>
       {/* Curva inferior */}
