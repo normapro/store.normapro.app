@@ -7,6 +7,9 @@ import {
   faCommentSlash,
   faFaceFrownSlight,
   faChartLineDown,
+  faCalendarClock,
+  faDatabase,
+  faFaceSadSweat,
 } from '@fortawesome/pro-duotone-svg-icons';
 
 const iconMap: Record<string, any> = {
@@ -14,6 +17,10 @@ const iconMap: Record<string, any> = {
   'fa-comment-slash': faCommentSlash,
   'fa-face-frown-slight': faFaceFrownSlight,
   'fa-chart-line-down': faChartLineDown,
+  'fa-calendar-clock': faCalendarClock,
+  'fa-database': faDatabase,
+  'fa-face-sad-sweat': faFaceSadSweat,
+
 };
 
 type Celda = {
@@ -54,7 +61,7 @@ const ObstaculosYSolucionesSection: FC<Props> = ({ title, claim, table, pragma, 
                 ${isLast ? 'rounded-r-2xl' : ''} 
                 ${isFirst ? 'border-l-0' : ''}`}
             >
-              <div className="text-[#010d3d] text-3xl mt-5 mb-10">
+              <div className="text-[#010d3d] text-3xl mb-10">
                 <FontAwesomeIcon icon={iconMap[celda.icono]} className="fa-duotone" />
               </div>
               <h3 className="text-lg font-black text-[#010d3d]">{celda.title}</h3>

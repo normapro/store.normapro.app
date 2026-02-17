@@ -11,14 +11,14 @@ type VideoSectionProps = {
 
 const VideoSection: React.FC<VideoSectionProps> = ({ title, items, url_video, buttonText }) => {
   return (
-    <section className="w-full px-6 py-16 flex flex-col items-center justify-center gap-10 text-center mb-5">
-      <h2 className="text-[28px] md:text-[36px] font-extrabold text-[#010d3d]">
+    <section className="w-full px-6 py-10 flex flex-col items-center justify-center gap-10 text-center mb-5">
+      <h2 className="text-[28px] md:text-[30px] font-black text-[#010d3d]">
         {title}
       </h2>
 
-      <ul className="space-y-3 text-[17px] md:text-lg text-[#3f3f3f] max-w-3xl mx-auto">
+      <ul className="space-y-5 text-[17px] md:text-lg text-[#010d3d] font-semibold max-w-2xl mx-auto mb-15">
         {items.map((item, index) => (
-          <li key={index} className="leading-relaxed">
+          <li key={index} className="text-left leading-tight">
             {item}
           </li>
         ))}
@@ -35,7 +35,7 @@ const VideoSection: React.FC<VideoSectionProps> = ({ title, items, url_video, bu
       </div>
 
       {buttonText && (
-        <button className="mt-6 bg-[#010d3d] text-white py-3 px-6 rounded-xl font-semibold">
+        <button className="mt-6 bg-[#010d3d] text-white py-3 px-6 rounded-xl font-bold">
           {buttonText}
         </button>
       )}

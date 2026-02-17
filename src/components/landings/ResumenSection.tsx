@@ -31,6 +31,7 @@ type Props = {
   titlelist: string;
   list: Bloque[];
   cta: {
+    pretitle?: string;
     title: string;
     buttonText: string;
     pragma: string;
@@ -58,15 +59,17 @@ const ResumenSection: FC<Props> = ({
 
       {/* Título y claim */}
       <div className="text-center max-w-3xl mb-10">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-[#010d3d] mb-6">
+        <h2 className="text-3xl md:text-[40px] font-black text-[#010d3d] mb-6">
           {title}
         </h2>
         <p className="text-base md:text-lg text-gray-700">{claim}</p>
       </div>
 
       {/* Lista destacada */}
-      <div className="w-full max-w-4xl mb-12">
-        <h3 className="text-xl text-[#010d3d] font-semibold mb-6">{titlelist}</h3>
+      <div className="w-full max-w-3xl mb-12">
+        {titlelist.length > 0 && (
+          <h3 className="text-xl text-[#010d3d] font-semibold mb-6">{titlelist}</h3>
+        )}
         <div className="flex flex-col gap-8">
           {list.map((item, i) => (
             <div key={i} className="flex items-start gap-4">
@@ -74,10 +77,10 @@ const ResumenSection: FC<Props> = ({
                 <FontAwesomeIcon icon={iconMap[item.icon]} className="fa-duotone" />
               </div>
               <div>
-                <h4 className="text-lg font-bold text-[#010d3d] mb-1">
+                {item.title.length > 0 && (<h4 className="text-xl font-black text-[#010d3d] mb-2">
                   {item.title}
-                </h4>
-                <p className="text-gray-600 text-base leading-relaxed">{item.pragma}</p>
+                </h4>)}
+                <p className="text-base text-[#010d3d] leading-tight whitespace-pre-line">{item.pragma}</p>
               </div>
             </div>
           ))}
@@ -85,12 +88,15 @@ const ResumenSection: FC<Props> = ({
       </div>
 
       {/* CTA final */}
-      <div className="text-center max-w-3xl">
+      <div className="text-center max-w-xl">
+        {cta.pretitle && (
+          <p className="text-2xl font-black text-[#010d3d] mb-6">{cta.pretitle}</p>
+        )}
         {cta.title && (
-          <p className="text-lg font-bold text-[#6C6C91] mb-6">{cta.title}</p>
+          <p className="text-2xl font-black text-[#6C6C91] mb-6">{cta.title}</p>
         )}
         {cta.buttonText && (
-          <button className="bg-[#010d3d] text-white font-semibold px-6 py-3 rounded-xl mb-4 shadow-md hover:bg-[#04176f] transition">
+          <button className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl mb-4 shadow-md hover:bg-[#04176f] transition">
             {cta.buttonText}
           </button>
         )}

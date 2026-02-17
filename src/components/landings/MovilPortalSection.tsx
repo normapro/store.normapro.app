@@ -12,11 +12,11 @@ const MovilPortalSection: FC<Props> = ({ title, subtitle, images }) => {
   return (
     <section className="relative max-w-7xl mx-auto w-full flex flex-col items-center justify-center py-24 px-6 md:px-12 overflow-hidden">
       {/* Títulos */}
-      <div className="text-center mb-12 z-10">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-[#010d3d] mb-4 leading-tight">
+      <div className="text-center text-[#010d3d] max-w-md mb-12 z-10">
+        <h2 className="text-3xl md:text-4xl font-black mb-10 leading-tight">
           {title}
         </h2>
-        <p className="text-lg text-gray-600">{subtitle}</p>
+        <p className="text-sm font-semibold">{subtitle}</p>
       </div>
 
       {/* Composición de imágenes escalonadas con animación */}

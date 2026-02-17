@@ -48,16 +48,11 @@
   },
   {
     "id": 5,
-    "tipo": "TextSection",
+    "tipo": "ImgTextSection",
     "data": {
-      "background": "white",
-      "level1": [
-        "Transforma tu gestión normativa: eficiencia y seguridad en un solo clic"
-      ],
-      "level2": [
-        "",
-        "Es el momento de decidir si quieres contar con una herramienta que te ayudará a evitar problemas de sanciones, incumplimientos y pérdida de reputación. Todo esto puede mejorar tu posición en el mercado, tu eficiencia y la confianza de tus stakeholders. O bien, puedes seguir navegando en un mar de ineficiencias, desperdiciando recursos valiosos y perdiendo oportunidades de crecimiento."
-      ]
+      "imgCabecera": "Grupo-4593@2x.png",
+      "title": "Transforma tu gestión normativa: eficiencia y seguridad en un solo clic",
+      "subtitle": "Es el momento de decidir si quieres contar con una herramienta que te ayudará a evitar problemas de sanciones, incumplimientos y pérdida de reputación. Todo esto puede mejorar tu posición en el mercado, tu eficiencia y la confianza de tus stakeholders. O bien, puedes seguir navegando en un mar de ineficiencias, desperdiciando recursos valiosos y perdiendo oportunidades de crecimiento."
     }
   },
   {
@@ -97,25 +92,25 @@
       "table": [
         {
           "idcelda": "1",
-          "icono": "fa-comment-slash",
+          "icono": "fa-calendar-clock",
           "title": "Desactualización constante",
           "pragma": "El mundo normativo cambia. Sin una herramienta adecuada, te quedas atrás."
         },
         {
           "idcelda": "2",
-          "icono": "fa-comment-slash",
+          "icono": "fa-database",
           "title": "Sanciones costosas",
           "pragma": "Un error puede costarte miles. ¿El coste de no modernizarte? Incalculable."
         },
         {
           "idcelda": "3",
-          "icono": "fa-comment-slash",
+          "icono": "fa-hourglass",
           "title": "Procesos lentos",
           "pragma": "La eficiencia es esencial. Sin ella, desperdicias tiempo y recursos."
         },
         {
           "idcelda": "4",
-          "icono": "fa-comment-slash",
+          "icono": "fa-face-sad-sweat",
           "title": "Descoordinación de equipos",
           "pragma": "Sin una herramienta central, la comunicación se desmorona."
         }
@@ -128,10 +123,10 @@
     "data": {
       "background": "gray",
       "imgCabecera": "scaleUp.png",
-      "level1": [
+      "level5": [
         "NormaPro: Tu escudo contra el incumplimiento"
       ],
-      "level2": [
+      "level6": [
         "",
         "Frente a los desafíos del mundo normativo, el gestor documental NormaPro para cumplimiento normativo emerge como la solución integral que protege, optimiza y transforma.\n\nEnfrenta la maraña de regulaciones y responsabilidades con nuestra herramienta líder. Convierte esos desafíos en soluciones integradas, y ve cómo tu empressa se beneficia de una gestión más ágil y un cumplimienot normativo sin fallos."
       ]
@@ -277,9 +272,15 @@
     "data": {
       "imgCabecera": "",
       "title": "Consultoria Personalizada de Expertos",
-      "claim": "Mas allá de una herramienta, te brindamos acceso directo a especialistas. Con NormaPro, no solo adquieres un software, sino también la experiencia y sabiduría de nuestros consultores. Estarán a tu lado, asesorándote y trabajando contigo en cada paso, garantizando que saques el máximo provecho de todas las funcionalidades.",
+      "claim": "",
       "titlelist": "",
-      "list": [],
+      "list": [
+        {
+          "icon": "",
+          "title": "",
+          "pragma": "Mas allá de una herramienta, te brindamos acceso directo a especialistas. Con NormaPro, no solo adquieres un software, sino también la experiencia y sabiduría de nuestros consultores. Estarán a tu lado, asesorándote y trabajando contigo en cada paso, garantizando que saques el máximo provecho de todas las funcionalidades."
+        }
+      ],
       "cta": {
         "title": "",
         "buttonText": "Reserva una reunión con nosotros",
@@ -313,9 +314,10 @@
         }
       ],
       "cta": {
-        "title": "Hablemos de números",
+        "pretitle": "Hablemos de números",
+        "title": "Si estás listo para descubir el verdadero valor de NormaPro y cómo puede encajar en tu presupuesto, no lo dudes más",
         "buttonText": "Contáctanos ahora",
-        "pragma": "Si estás listo para descubir el verdadero valor de NormaPro y cómo puede encajar en tu presupuesto, no lo dudes más"
+        "pragma": ""
       }
     }
   },
@@ -325,9 +327,15 @@
     "data": {
       "imgCabecera": "",
       "title": "Descubre la Revolución Normativa",
-      "claim": "¿Listo para transformar el cumplimiento en tu aliado estratégico? Con NormaPro, no solo cambiarás la forma en que gestionas las normas, sino que elevarás tu negocio a niveles insospechados. Imagina un mundo donde cada regulación se convierte en una oportunidad, y no en un obstáculo. Ese mundo es posible. Y está a solo un clic de distancia.",
+      "claim": "",
       "titlelist": "",
-      "list": [],
+      "list": [
+        {
+          "icon": "",
+          "title": "",
+          "pragma": "¿Listo para transformar el cumplimiento en tu aliado estratégico? Con NormaPro, no solo cambiarás la forma en que gestionas las normas, sino que elevarás tu negocio a niveles insospechados. Imagina un mundo donde cada regulación se convierte en una oportunidad, y no en un obstáculo. Ese mundo es posible. Y está a solo un clic de distancia."
+        }
+      ],
       "cta": {
         "title": "",
         "buttonText": "Emprende el viaje. Contacta con nosotros",
