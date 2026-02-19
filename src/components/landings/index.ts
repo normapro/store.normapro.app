@@ -11,3 +11,4 @@ export { default as CertificacionesSection } from "./CertificacionesSection";
 export { default as ResumenSection } from "./ResumenSection";
 export { default as PresentacionSection } from "./PresentacionSection";
 export { default as ImgTextSection }from "./ImgTextSection"
+export { default as FaqSection }from "./FaqSection"

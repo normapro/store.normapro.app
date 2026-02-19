@@ -59,7 +59,7 @@ const ResumenSection: FC<Props> = ({
 
       {/* Título y claim */}
       <div className="text-center max-w-3xl mb-10">
-        <h2 className="text-3xl md:text-[40px] font-black text-[#010d3d] mb-6">
+        <h2 className="text-3xl md:text-[40px] font-black text-[#010d3d] whitespace-pre-line mb-6">
           {title}
         </h2>
         <p className="text-base md:text-lg text-gray-700">{claim}</p>

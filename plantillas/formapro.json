@@ -1,0 +1,201 @@
+[
+  {
+    "id": 1,
+    "tipo": "HeroSection",
+    "data": {
+      "title": "FormaPro",
+      "claim": [
+        "Formación empresarial sin complicaciones, a tu medida"
+      ],
+      "pragma": "FormaPro es la solución integral para que las empresas personalicen y gestionen su propia plataforma de formación online, adaptada a sus necesidades y sin complicaciones técnicas.",
+      "cta": "Quiero una demostración",
+      "imgType": "",
+      "imgUrl": ""
+    }
+  },
+  {
+    "id": 2,
+    "tipo": "ClientCarouselWrapper",
+    "data": {
+      "claim": "Clientes que ya utilizan soluciones del ecosistema NormaPro",
+      "scope": "formapro"
+    }
+  },
+  {
+    "id": 3,
+    "tipo": "PresentacionSection",
+    "data": {
+      "imgBottom": "Grupo-5260@2x.png"
+    }
+  },
+  {
+    "id": 4,
+    "tipo": "ObstaculosYSolucionesSection",
+    "data": {
+      "title": "Dale a tu equipo el poder de crecer y evolucionar, y observa cómo tu empresa alcanza nuevos horizontes con FormaPro.",
+      "claim": "",
+      "pragma": [],
+      "table": [
+        {
+          "idcelda": 1,
+          "icono": "fa-user-graduate",
+          "title": "Impulsa el desarrollo profesional",
+          "pragma": ""
+        },
+        {
+          "idcelda": 2,
+          "icono": "fa-chart-user",
+          "title": "Monitoriza en tiempo real el progreso",
+          "pragma": ""
+        },
+        {
+          "idcelda": 3,
+          "icono": "fa-gem",
+          "title": "Aumenta la retención del talento",
+          "pragma": ""
+        },
+        {
+          "idcelda": 4,
+          "icono": "fa-coins",
+          "title": "Optimiza recursos y tiempo",
+          "pragma": ""
+        },
+        {
+          "idcelda": 5,
+          "icono": "fa-users",
+          "title": "Refuerza la identidad corporativa",
+          "pragma": ""
+        }
+      ],
+      "background": "gray"
+    }
+  },
+  {
+    "id": 5,
+    "tipo": "TextSection",
+    "data": {
+      "background": "white",
+      "level4": [
+        "",
+        "Puedes conseguir la formación de tu equipo usando métodos tradicionales. Sin embargo, hay un alto coste asociado y falta de flexibilidad debido a las restricciones de tiempo y lugar.\n\n",
+        "FormaPro resuelve estas limitaciones en cuestión de días, ofreciendo una solución adaptada para empresas, evitando gastos innecesarios y permitiendo un aprendizaje autónomo y adaptado al ritmo de cada empleado."
+      ],
+      "buttonText": "Quiero una desmostración"
+    }
+  },
+  {
+    "id": 6,
+    "tipo": "ResumenSection",
+    "data": {
+      "imgCabecera": "Grupo-4593@2x.png",
+      "title": "Capacita a tu equipo, maximiza resultados: todo en tu control con FormaPro.",
+      "claim": "",
+      "titlelist": "",
+      "list": [
+        {
+          "icon": "",
+          "title": "",
+          "pragma": "Es el momento de decidir si quieres contar con una herramienta que te ayudará:\n\nA evitar problemas de desorganización en la formación, inconsistencias en la capacitación y demoras en el desarrollo de habilidades de tu equipo.\n\nA mejorar la cohesión del equipo, potenciar el crecimiento profesional y asegurar una formación de calidad y homogénea para todos.\n\nO bien, puedes continuar navegando en un mar de ineficiencias, desperdiciando recursos valiosos y perdiendo oportunidades de crecimiento y desarrollo para tu equipo y empresa."
+        }
+      ],
+      "cta": {
+        "title": "",
+        "buttonText": "",
+        "pragma": ""
+      }
+    }
+  },
+  {
+    "id": 7,
+    "tipo": "VideoSection",
+    "data": {
+      "title": "Reserva una sesión demostrativa o mira el video si…",
+      "items": [
+        "… Quieres ofrecer una formación homogénea y de calidad a todos tus empleados sin importar su ubicación.",
+        "… Necesitas una herramienta personalizable que se adapte a las características y necesidades específicas de tu negocio.",
+        "… Buscas optimizar el tiempo y recursos en la capacitación, con un seguimiento detallado del progreso de cada empleado.",
+        "… Deseas reforzar la identidad y valores de tu marca mediante la formación, garantizando la cohesión y alineación de tu equipo.",
+        "… Estás comprometido con el desarrollo continuo de tu personal y quieres brindarles una plataforma intuitiva y fácil de usar."
+      ],
+      "url_video": "https://www.youtube.com/embed/XGNeMjcfdP0?controls=1&rel=0&playsinline=0&cc_load_policy=0&autoplay=0&enablejsapi=1&origin=https%3A%2F%2Fnormapro.es&widgetid=1&forigin=https%3A%2F%2Fnormapro.es%2Fgestor-documental%2F&aoriginsup=0&gporigin=https%3A%2F%2Fnormapro.es%2F&vf=5",
+      "buttonText": "Reserva una sesión estratégica"
+    }
+  },
+  {
+    "id": 9,
+    "tipo": "ObstaculosYSolucionesSection",
+    "data": {
+      "title": "El alto coste de no avanzar",
+      "claim": "En un mundo donde la formación digital marca la diferencia, ¿puede tu empresa permitirse quedarse atrás con soluciones obsoletas o inexistentes?:",
+      "pragma": [],
+      "table": [
+        {
+          "idcelda": "1",
+          "icono": "fa-hourglass",
+          "title": "Ineficiencia en capacitación",
+          "pragma": "Las soluciones de formación tradicionales o mal diseñadas pueden consumir más tiempo y recursos de lo necesario."
+        },
+        {
+          "idcelda": "2",
+          "icono": "fa-coins",
+          "title": "Costos elevados",
+          "pragma": "No adaptar la formación al mundo digital puede implicar grandes costes en términos de materiales, espacios y tiempo perdido."
+        },
+        {
+          "idcelda": "3",
+          "icono": "fa-calendar-clock",
+          "title": "Desactualización de contenidos",
+          "pragma": "Sin una plataforma adecuada, mantener el contenido de formación actualizado se vuelve una tarea ardua dejando a tu empresa rezagada."
+        },
+        {
+          "idcelda": "4",
+          "icono": "fa-face-sad-sweat",
+          "title": "Falta de personalización ",
+          "pragma": "Las soluciones genéricas no consideran las necesidades particulares de tu empresa y el resultado son formaciones irrelevantes o poco efectivas."
+        }
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "tipo": "TextSection",
+    "data": {
+      "background": "gray",
+      "level1": [
+        "FormaPro es la Solución definitiva para la Formación de tus empleados"
+      ],
+      "level4": [
+        "",
+        "Transforma tu capacitación, ahorra costos, y garanztiza una formación de calidad y acertada para tus empleados. Es hora de liderar en la formación interna que precisa tu negocio."
+      ]
+    }
+  },
+  {
+    "id": 12,
+    "tipo": "MovilPortalSection",
+    "data": {
+      "title": "Y todo esto, hazlo también desde tu móvil",
+      "subtitle": "Potencia la movilidad y la eficiencia fuera de la oficina.",
+      "images": [
+        "portalmovil1.png",
+        "portalmovil2.png",
+        "portalmovil3.png",
+        "portalmovil4.png"
+      ]
+    }
+  },
+  {
+    "id": 13,
+    "tipo": "CertificacionesSection",
+    "data": {
+      "title": "Calidad y seguridad certificada",
+      "subtitle": "Nuestros productos y servidios cuentan con certificación AENOR:",
+      "images": [
+        "27001.png",
+        "9001.png",
+        "45001.png",
+        "iqnet.png"
+      ]
+    }
+  }
+]

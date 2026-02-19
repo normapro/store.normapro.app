@@ -1,6 +1,21 @@
 [
   {
     "id": 2,
+    "tipo": "TextSection",
+    "data": {
+      "background": "gray",
+      "level2": [
+        "Ticketing NormaPro es tu aliado digital para transformar el caos de las solicitudes en una operación fluida y orquestada."
+      ],
+      "level3": [
+        "",
+        "Con nuestra herramienta, tendrás la capacidad de monitorizar cada ticket en tiempo real, optimizar la productividad del equipo, tomar decisiones basadas en datos concretos y, sobre todo, mejorar exponencialmente la satisfacción de tus clientes y empleados.\n\nNo dejes que las demandas diarias frenen tu crecimiento, ¡haz que trabajen a tu favor con NormaPro Ticketing."
+      ],
+      "buttonText": "Reserva una sesión estratégica"
+    }
+  },
+  {
+    "id": 3,
     "tipo": "ClientCarouselWrapper",
     "data": {
       "claim": "Clientes que ya utilizan soluciones del ecosistema NormaPro",
@@ -8,7 +23,7 @@
     }
   },
   {
-    "id": 3,
+    "id": 4,
     "tipo": "TextSection",
     "data": {
         "background": "white",
@@ -19,23 +34,16 @@
     }
   },
   {
-    "id": 4,
-    "tipo": "ResumenSection",
+    "id": 5,
+    "tipo": "ImgTextSection",
     "data": {
-      "imgCabecera": "",
+      "imgCabecera": "Grupo-4593@2x.png",
       "title": "Con NormaPro Ticketing: Menos tiempo en gestión, más tiempo para innovación.",
-      "claim": "Es el momento de decidir si quieres contar con una herramienta que te ayudará a evitar problemas de retrasos en la respuesta, acumulación de tickets sin resolver y descontento de tus clientes.\nUsar NormaPro Ticketing puede mejorar la eficiencia de tu equipo, ofrecer respuestas más rápidas y mejorar tus procesos internos y la satisfacción del cliente.\nO bien, puedes continuar navegando en un mar de ineficiencias, desperdiciando recursos valiosos y perdiendo oportunidades de crecimiento y fidelización.",
-      "titlelist": "",
-      "list": [],
-      "cta": {
-        "title": "",
-        "buttonText": "",
-        "pragma": ""
-      }
+      "subtitle": "Es el momento de decidir si quieres contar con una herramienta que te ayudará a evitar problemas de retrasos en la respuesta, acumulación de tickets sin resolver y descontento de tus clientes.\n\nUsar NormaPro Ticketing puede mejorar la eficiencia de tu equipo, ofrecer respuestas más rápidas y mejorar tus procesos internos y la satisfacción del cliente.\n\nO bien, puedes continuar navegando en un mar de ineficiencias, desperdiciando recursos valiosos y perdiendo oportunidades de crecimiento y fidelización."
     }
   },
   {
-    "id": 5,
+    "id": 6,
     "tipo": "VideoSection",
     "data": {
       "title": "Reserva una sesión demostrativa o mira el video si…",
@@ -47,11 +55,12 @@
         "…quieres tener la seguridad de que cada ticket es manejado con la máxima eficiencia, asegurando la calidad de servicio y la productividad.",
         "…necesitas una trazabilidad clara de los problemas"
       ],
-      "url_video": "https://www.youtube.com/embed/khIWXMAjXic?controls=1&rel=0&playsinline=0&cc_load_policy=0&autoplay=0&enablejsapi=1&origin=https%3A%2F%2Fnormapro.es&widgetid=1&forigin=https%3A%2F%2Fnormapro.es%2Fticketing%2F&aoriginsup=0&gporigin=https%3A%2F%2Fnormapro.es%2Fbpm%2F&vf=6"
+      "url_video": "https://www.youtube.com/embed/khIWXMAjXic?controls=1&rel=0&playsinline=0&cc_load_policy=0&autoplay=0&enablejsapi=1&origin=https%3A%2F%2Fnormapro.es&widgetid=1&forigin=https%3A%2F%2Fnormapro.es%2Fticketing%2F&aoriginsup=0&gporigin=https%3A%2F%2Fnormapro.es%2Fbpm%2F&vf=6",
+      "buttonText": "Reserva una sesión demostrativa"
     }
   },
   {
-    "id": 6,
+    "id": 7,
     "tipo": "ClientPerceptionSection",
     "data": {
       "title": "Voces reales, experiencias auténticas",
@@ -62,10 +71,10 @@
     }
   },
   {
-    "id": 7,
+    "id": 8,
     "tipo": "ObstaculosYSolucionesSection",
     "data": {
-      "title": "El doste oculto de no actuar",
+      "title": "El coste oculto de no actuar",
       "claim": "En un mundo digital, confiar en soluciones obsoletas o mal diseñadas es un juego arriesgado que muchos negocios no pueden permitirse:",
       "pragma": [
         "NormaPro Ticketing no es solo una herramienta; es la inversión hacia una gestión eficiente, comunicación clara y un crecimiento sostenido.",
@@ -74,7 +83,7 @@
       "table": [
         {
           "idcelda": "1",
-          "icono": "fa-comment-slash",
+          "icono": "fa-hourglass",
           "title": "Ineficiencia en la gestión",
           "pragma": "Usar herramientas desactualizadas o inadecuadas lleva a una gestión de tickets lenta, creando retrasos y frustración en el equipo y en los clientes."
         },
@@ -86,13 +95,13 @@
         },
         {
           "idcelda": "3",
-          "icono": "fa-comment-slash",
+          "icono": "fa-coins",
           "title": "Costos ocultos",
           "pragma": "Mantener soluciones antiguas o invertir en herramientas no especializadas puede parecer ahorrar en el corto plazo. Pero ¿cuál es el coste real de no atender a un cliente a tiempo o perder ventas potenciales?"
         },
         {
           "idcelda": "4",
-          "icono": "fa-comment-slash",
+          "icono": "fa-calendar-clock",
           "title": "Inadaptabilidad",
           "pragma": "Con tecnologías que evolucionan rápidamente, usar plataformas que no se adaptan a las necesidades cambiantes del mercado puede dejar a tu negocio atrás."
         }
@@ -100,21 +109,21 @@
     }
   },
   {
-    "id": 8,
+    "id": 9,
     "tipo": "TextSection",
     "data": {
       "background": "gray",
       "level1": [
         "NormaPro: Solucionando el caos, impulsando el éxito"
       ],
-      "level4": [
+      "level6": [
         "",
-        "Enfrentar probleas de gestión es desgastante y costoso, pero con NormaPro Ticketing, esas ineficiencias se conviertes en historias del pasado.\nOptimiza, comunica y prospera al tener todas las soluciones en un solo lugar."
+        "Enfrentar probleas de gestión es desgastante y costoso, pero con NormaPro Ticketing, esas ineficiencias se conviertes en historias del pasado.\n\nOptimiza, comunica y prospera al tener todas las soluciones en un solo lugar."
       ]
     }
   },
   {
-    "id": 9,
+    "id": 10,
     "tipo": "TextSection",
     "data": {
       "background": "white",
@@ -127,7 +136,7 @@
     }
   },
   {
-    "id": 10,
+    "id": 11,
     "tipo": "CaracteristicasIncorporadas",
     "data": {
       "data": [
@@ -207,7 +216,7 @@
     }
   },
   {
-    "id": 11,
+    "id": 12,
     "tipo": "MovilPortalSection",
     "data": {
       "title": "Y todo esto, hazlo también desde tu móvil",
@@ -221,36 +230,43 @@
     }
   },
   {
-    "id": 12,
-    "tipo": "TextSection",
+    "id": 13,
+    "tipo": "ResumenSection",
     "data": {
-      "background": "white",
-      "level1": [
-        "NormaPro Ticketing es mucho más, ¡descubre todo lo que tiene reservado para ti!"
+      "imgCabecera": "",
+      "title": "NormaPro Ticketing es mucho más, ¡descubre todo lo que tiene reservado para ti!",
+      "claim": "",
+      "titlelist": "",
+      "list": [
+        {
+          "icon": "",
+          "title": "",
+          "pragma": "Estas son solo algunas funcionalidades de las que NormaPro Ticketing podría ofrecer. Para descubrir todas las capacidades que este sistema puede ofrecerte, te invitamos a concertar una demostración con nosotros y explorar todo su potencial en detalle."
+        }
       ],
-      "level3": [
-        "Estas son solo algunas funcionalidades de las que NormaPro Ticketing podría ofrecer. Para descubrir todas las capacidades que este sistema puede ofrecerte, te invitamos a concertar una demostración con nosotros y explorar todo su potencial en detalle."
-      ],
-      "buttonText": "Descubre lo que NormaPro puede hacer por ti"
+      "cta": {
+        "title": "",
+        "buttonText": "Descubre lo que NormaPro puede hacer por ti",
+        "pragma": ""
+      }
     }
   },
   {
-    "id": 13,
+    "id": 14,
     "tipo": "TextSection",
     "data": {
       "background": "gray",
       "level1": [
         "Descubre lo que hace único a NormaPro Ticketing"
       ],
-      "level2": [
+      "level6": [
         "",
         "En un mundo inundado de soluciones de ticketing, NormaPro Ticketing se alza con características y funciones distintivas. Sin embargo, lo que realmente nos posiciona en una liga aparte no es solo nuestra plataforma de vanguardia, sino algo más profundo y significativo: nuestra consultoría personalizada."
-      ],
-      "buttonText": "Descubre lo que NormaPro puede hacer por ti"
+      ]
     }
   },
   {
-    "id": 14,
+    "id": 15,
     "tipo": "CertificacionesSection",
     "data": {
       "title": "Calidad y seguridad certificada",
@@ -261,6 +277,79 @@
         "45001.png",
         "iqnet.png"
       ]
+    }
+  },
+  {
+    "id": 16,
+    "tipo": "ResumenSection",
+    "data": {
+      "imgCabecera": "",
+      "title": "Consultoría NormaPro:\nUna Experiencia Única",
+      "claim": "",
+      "titlelist": "",
+      "list": [
+        {
+          "icon": "",
+          "title": "",
+          "pragma": "La consultoría en NormaPro Ticketing va más allá de simples recomendaciones. Es una experiencia inmersiva que empieza con entender a fondo tu negocio, tus desafíos y tus objetivos.\n\nNuestros consultores, con su amplia experiencia y conocimientos, trabajan mano a mano contigo para adaptar y personalizar nuestra herramienta, asegurándose de que se alinee perfectamente con tus necesidades y aspiraciones. Esto no solo garantiza una implementación sin problemas, sino que también asegura que tu equipo y tú saquéis el máximo provecho de cada función. Con nuestra consultoría, tu éxito es nuestro éxito."
+        },
+        {
+          "icon": "",
+          "title": "¿Preparado para transformar la gestión de tu empresa con NormaProTicketing?",
+          "pragma": "No queremos que solo tomes nuestra palabra. Te invitamos a experimentar por ti mismo la diferencia que NormaPro puede aportar. Solicita una demostración y consulta directamente con nuestros expertos. Descubre cómo NormaPro Ticketing y nuestro compromiso personalizado pueden marcar un antes y un después en tu empresa."
+        }
+      ],
+      "cta": {
+        "title": "",
+        "buttonText": "Hablemos de tu trasformación",
+        "pragma": ""
+      }
+    }
+  },
+  {
+    "id": 17,
+    "tipo": "ResumenSection",
+    "data": {
+      "imgCabecera": "",
+      "title": "Invierte en una solución a la medida de tus necesidades",
+      "claim": "",
+      "titlelist": "",
+      "list": [
+        {
+          "icon": "",
+          "title": "",
+          "pragma": "Entendemos que cada empresa es única, y con ello, sus necesidades y presupuestos. Es por ello que NormaPro Ticketing no tiene un precio fijo. Lo que ofrecemos es una inversión adaptada y personalizada para ti."
+        },
+        {
+          "icon": "",
+          "title": "¿Por qué no mostramos precios directamente?",
+          "pragma": "Porque no creemos en las soluciones “talla única”. Lo que para una empresa puede ser esencial, para otra puede ser adicional. Queremos que pagues solo por lo que realmente necesitas y que obtengas un retorno de inversión tangible. Además, ofrecemos facilidades de pago y opciones ajustables que se adaptan a diferentes presupuestos. "
+        },
+        {
+          "icon": "",
+          "title": "Hablemos de Tu Inversión",
+          "pragma": "No solo es el producto; es el servicio, el soporte, el expertise. En NormaPro, creemos en ofrecer valor más allá del precio. Nuestro equipo de consultores está aquí para ayudarte, asesorarte y garantizar que obtienes el máximo retorno de tu inversión."
+        }
+      ],
+      "cta": {
+        "title": "",
+        "buttonText": "Solicitar cotización personalizada",
+        "pragma": ""
+      }
+    }
+  },
+  {
+    "id": 18,
+    "tipo": "TextSection",
+    "data": {
+      "background": "gray",
+      "level2": [
+        "Con NormaPro, descubre el futuro del ticketing"
+      ],
+      "level3": [
+        "Imagina un mundo sin complicaciones, donde la comunicación es eficiente y las decisiones se toman con precisión. Con NormaPro, ese mundo es posible.\n\nAgiliza, optimiza, y transforma. Porque tu empresa merece lo mejor.\n\nPero, ¿por qué contarte todo ahora? Mejor experimenta la diferencia por ti mismo. Contacta con nosotros y da el salto al siguiente nivel."
+      ],
+      "buttonText": "Empieza tu revolución ahora"
     }
   }
 ]

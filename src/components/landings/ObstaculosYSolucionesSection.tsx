@@ -8,8 +8,13 @@ import {
   faFaceFrownSlight,
   faChartLineDown,
   faCalendarClock,
-  faDatabase,
+  faCoins,
   faFaceSadSweat,
+  faFileExclamation,
+  faUserGraduate,
+  faChartUser,
+  faGem,
+  faUsers,
 } from '@fortawesome/pro-duotone-svg-icons';
 
 const iconMap: Record<string, any> = {
@@ -18,9 +23,13 @@ const iconMap: Record<string, any> = {
   'fa-face-frown-slight': faFaceFrownSlight,
   'fa-chart-line-down': faChartLineDown,
   'fa-calendar-clock': faCalendarClock,
-  'fa-database': faDatabase,
+  'fa-coins': faCoins,
   'fa-face-sad-sweat': faFaceSadSweat,
-
+  'fa-file-exclamation': faFileExclamation,
+  'fa-user-graduate': faUserGraduate,
+  'fa-chart-user': faChartUser,
+  'fa-gem': faGem,
+  'fa-users': faUsers,
 };
 
 type Celda = {
@@ -36,10 +45,20 @@ type Props = {
   table: Celda[];
   pragma: string[];
   buttonText?: string;
+  background?: string;
 };
 
-const ObstaculosYSolucionesSection: FC<Props> = ({ title, claim, table, pragma, buttonText }) => {
+const ObstaculosYSolucionesSection: FC<Props> = ({ title, claim, table, pragma, buttonText, background = "white" }) => {
+  const bgcolors = ["#ffffff","#eaeaf2" ];
+  let bgColor = bgcolors[1];
+  if (background === "gray") {
+     bgColor = bgcolors[1];
+  }else{
+     bgColor = bgcolors[0];
+  }
+
   return (
+    <div className="w-full" style={{ backgroundColor: bgColor }}>
     <section className="max-w-7xl mx-auto w-full flex flex-col items-center justify-center py-16 px-6 md:px-12">
       {/* Título y subtítulo */}
       <div className="text-center mb-12">
@@ -56,7 +75,7 @@ const ObstaculosYSolucionesSection: FC<Props> = ({ title, claim, table, pragma, 
           return (
             <div
               key={celda.idcelda}
-              className={`flex flex-col p-6 bg-white border-l border-gray-300 last:border-r 
+              className={`flex flex-col p-6 border-l border-gray-300 last:border-r 
                 ${isFirst ? 'rounded-l-2xl' : ''} 
                 ${isLast ? 'rounded-r-2xl' : ''} 
                 ${isFirst ? 'border-l-0' : ''}`}
@@ -85,6 +104,7 @@ const ObstaculosYSolucionesSection: FC<Props> = ({ title, claim, table, pragma, 
         )}
       </div>
     </section>
+    </div>
   );
 };
 

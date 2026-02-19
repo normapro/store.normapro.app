@@ -28,7 +28,7 @@ const ImgTextSection: FC<Props> = ({
         <h2 className="text-2xl md:text-[38px] font-black text-[#010d3d] mb-8">
           {title}
         </h2>
-          <p className="text-base md:text-2xl font-black text-[#6F7F95]">{subtitle}</p>
+          <p className="text-base md:text-2xl font-extrabold text-[#6F7F95] whitespace-pre-line">{subtitle}</p>
       </div>
 
     </section>

@@ -3,14 +3,14 @@
     "id": 1,
     "tipo": "HeroSection",
     "data": {
-      "cta": "Quiero una demostración",
+      "title": "NormaPro BPM",
       "claim": [
         "Optimiza y automatiza tus procesos sin complicaciones, en semanas"
       ],
-      "title": "NormaPro BPM",
-      "imgUrl": "",
       "pragma": "",
-      "imgType": ""
+      "cta": "Quiero una demostración",
+      "imgType": "",
+      "imgUrl": ""
     }
   },
   {
@@ -22,31 +22,35 @@
     }
   },
   {
+    "id": 3,
+    "tipo": "PresentacionSection",
+    "data": {
+      "title": "NormaPro BPM es tu aliado estratégico en la transformación digital, simplificando y acelerando la gestión y optimización de tus procesos de negocio.",
+      "claim": "Con nuestra solución, estarás equipado para aumentar la eficiencia operativa, garantizar la consistencia en tus operaciones, y adaptarte rápidamente a los cambiantes requisitos del mercado.",
+      "imgBottom": ""
+    }
+  },
+  {
     "id": 4,
     "tipo": "TextSection",
     "data": {
         "background": "gray",
-        "level2": [
-            "",
-            "Puedes conseguir la optimización de tus procesos de negocio usando métodos manuales o soluciones convencionales. Sin embargo, hay un alto riesgo de ineficiencia y errores debido a la falta de automatización y adaptabilidad.\n\n",
-            "NormaPro BPM resuelve estos desafíos en tan solo semanas, evitando pérdidas de tiempo y recursos mediante una plataforma integrada y adaptable."
+        "level3": [
+          "",
+          "Puedes conseguir la optimización de tus procesos de negocio usando métodos manuales o soluciones convencionales. Sin embargo, hay un alto riesgo de ineficiencia y errores debido a la falta de automatización y adaptabilidad."
+        ],
+        "level4": [
+          "NormaPro BPM resuelve estos desafíos en tan solo semanas, evitando pérdidas de tiempo y recursos mediante una plataforma integrada y adaptable."
         ]
     }
   },
   {
     "id": 5,
-    "tipo": "ResumenSection",
+    "tipo": "ImgTextSection",
     "data": {
-      "imgCabecera": "",
+      "imgCabecera": "Grupo-4593@2x.png",
       "title": "Con NormaPro BPM, convierte complejidad en claridad y toma decisiones con confianza.",
-      "claim": "Es el momento de decidir si quieres contar con una herramienta que te ayudará a evitar problemas de incoherencia en procesos, demoras innecesarias y errores humanos costosos, lo que puede mejorar la claridad operativa, aumentar la eficiencia y garantizar decisiones basadas en datos fiables. O bien continuar navegando en un mar de ineficiencias, desperdiciando recursos valiosos y perdiendo oportunidades de crecimiento y desarrollo para tu negocio.",
-      "titlelist": "",
-      "list": [],
-      "cta": {
-        "title": "",
-        "buttonText": "",
-        "pragma": ""
-      }
+      "subtitle": "Es el momento de decidir si quieres contar con una herramienta que te ayudará a evitar problemas de incoherencia en procesos, demoras innecesarias y errores humanos costosos, lo que puede mejorar la claridad operativa, aumentar la eficiencia y garantizar decisiones basadas en datos fiables. O bien continuar navegando en un mar de ineficiencias, desperdiciando recursos valiosos y perdiendo oportunidades de crecimiento y desarrollo para tu negocio."
     }
   },
   {
@@ -61,7 +65,8 @@
         "… Precisas reforzar la colaboración y cohesión entre departamentos.",
         "… Deseas tener un control total sobre la gestión y el flujo de trabajo, minimizando errores y retrasos."
       ],
-      "url_video": "https://www.youtube.com/embed/iKzPr7_yfA0?controls=1&rel=0&playsinline=0&cc_load_policy=0&autoplay=0&enablejsapi=1&origin=https%3A%2F%2Fnormapro.es&widgetid=1&forigin=https%3A%2F%2Fnormapro.es%2Fbpm%2F&aoriginsup=0&vf=6"
+      "url_video": "https://www.youtube.com/embed/iKzPr7_yfA0?controls=1&rel=0&playsinline=0&cc_load_policy=0&autoplay=0&enablejsapi=1&origin=https%3A%2F%2Fnormapro.es&widgetid=1&forigin=https%3A%2F%2Fnormapro.es%2Fbpm%2F&aoriginsup=0&vf=6",
+      "buttonText": "Reserva una sesión estratégica"
     }
   },
   {
@@ -77,25 +82,25 @@
       "table": [
         {
           "idcelda": "1",
-          "icono": "fa-comment-slash",
+          "icono": "fa-file-exclamation",
           "title": "Inconsistencia operativa",
           "pragma": "Las soluciones tradicionales o mal diseñadas pueden llevar a errores y falta de coherencia en tus operaciones, afectando directamente a la calidad y reputación de tu negocio."
         },
         {
           "idcelda": "2",
-          "icono": "fa-comment-slash",
+          "icono": "fa-chart-line-down",
           "title": "Adaptabilidad Limitada",
           "pragma": "En un mercado que cambia rápidamente, no contar con una herramienta BPM flexible te deja a merced de la competencia, limitando tus oportunidades de crecimiento."
         },
         {
           "idcelda": "3",
-          "icono": "fa-comment-slash",
+          "icono": "fa-hourglass",
           "title": "Malgasto de recursos valiosos",
           "pragma": "La falta de automatización y visión clara significa un mayor gasto de tiempo y recursos en tareas manuales y correcciones."
         },
         {
           "idcelda": "4",
-          "icono": "fa-comment-slash",
+          "icono": "fa-coins",
           "title": "Costo de oportunidad",
           "pragma": "¿Cuál es el precio real de no optimizar? Cada día sin una herramienta BPM adecuada es una pérdida potencial en eficiencia, crecimiento y, en última instancia, en ingresos."
         }
@@ -229,10 +234,25 @@
     "data": {
       "title": "NormaPro: Más que Software, una alianza estratégica",
       "items": [
-        "Innovación Constante: Aseguramos que NormaPro BPM esté siempre a la vanguardia, adaptándose a las demandas cambiantes del mercado.",
-        "Consultoría Personalizada: Nuestros consultores NormaPro trabajan codo con codo con usted, entendiendo sus desafíos y proponiendo soluciones a medida.",
-        "Integración Flexible: Nuestro software se integra sin problemas con otros sistemas, garantizando una adaptabilidad sin precedentes.",
-        "Soporte Dedicado: Más allá de la implementación, nuestro equipo está siempre disponible para asistencia y orientación."
+        "En un mundo lleno de soluciones digitales, NormaPro BPM se destaca por la profundidad de comprensión y compromiso que ofrecemos. Lo que nos diferencia es la sinergia entre una herramienta BPM avanzada y el apoyo constante de nuestros expertos consultores:"
+      ],
+      "list": [
+        {
+          "title": "Innovación Constante: ",
+          "claim": "Aseguramos que NormaPro BPM esté siempre a la vanguardia, adaptándose a las demandas cambiantes del mercado."
+        },
+        {
+          "title": "Consultoría Personalizada: ",
+          "claim": "Nuestros consultores NormaPro trabajan codo con codo con usted, entendiendo sus desafíos y proponiendo soluciones a medida."
+        },
+        {
+          "title": "Integración Flexible: ",
+          "claim": "Nuestro software se integra sin problemas con otros sistemas, garantizando una adaptabilidad sin precedentes."
+        },
+        {
+          "title": "Soporte Dedicado: ",
+          "claim": "Más allá de la implementación, nuestro equipo está siempre disponible para asistencia y orientación."
+        }
       ],
       "id_testimonio": 3
     }
@@ -256,7 +276,7 @@
     "tipo": "TextSection",
     "data": {
       "background": "white",
-      "level2": [
+      "level4": [
         "",
         "¿Listo para llevar tu festión de procesos al siguiente nivel con un socio de confianza a tu lado?\n\n",
         "Habla con uno de nuestros consultores y descubre cómo NormaPro BPM puede transformar tu negocio."
@@ -269,12 +289,23 @@
     "tipo": "ResumenSection",
     "data": {
       "imgCabecera": "",
-      "title": "Con NormaPro BPM, da el paso hacia el futuro empresarial.",
-      "claim": "En el cambiante paisaje del mundo empresarial, aquellos que se adaptan y optimizan prosperan. No te quedes atrás. Descubre lo que muchos directivos ya están experimentando con NormaPro BPM y eleva tus operaciones al siguiente nivel. ¿Estás listo para desbloquear el potencial oculto de tu negocio? No esperes más. Habla con nosotros y adéntrate en el camino hacia la excelencia operativa.",
+      "title": "Invirtiendo en Valor: Descubre el coste de NormaPro BPM",
+      "claim": "",
       "titlelist": "",
-      "list": [],
+      "list": [
+        {
+          "icon": "",
+          "title": "",
+          "pragma": "En el mundo empresarial, todos sabemos que el valor real no siempre se mide por el precio en sí, sino por el retorno de la inversión. Con NormaPro BPM, no estás pagando solo por un software; estás invirtiendo en una solución que potenciará tu negocio, en consultores que serán tus aliados y en una herramienta que promete crecimiento y eficiencia.\n\nEntendemos que el tema del costo es crucial para cualquier decisión de negocio. Y es precisamente por eso que hemos estructurado nuestros precios pensando en ti. No solo te ofrecemos una herramienta competitiva, sino también un modelo de costos que se adapta a las necesidades y realidades de tu empresa.\n\n¿Quieres saber más? Nuestro equipo está listo para despejar tus dudas y ofrecerte un plan adaptado a ti. "
+        },
+        {
+          "icon": "",
+          "title": "Descubre cómo NormaPro BPM se adapta a tu presupuesto",
+          "pragma": ""
+        }
+      ],
       "cta": {
-        "title": "¡Descubre lo que NormaPro BPM puede hacer por ti!",
+        "title": "",
         "buttonText": "Contacta con nuestro equipo ahora",
         "pragma": ""
       }
@@ -286,11 +317,22 @@
     "data": {
       "imgCabecera": "",
       "title": "Con NormaPro BPM, da el paso hacia el futuro empresarial.",
-      "claim": "En el cambiante paisaje del mundo empresarial, aquellos que se adaptan y optimizan prosperan. No te quedes atrás. Descubre lo que muchos directivos ya están experimentando con NormaPro BPM y eleva tus operaciones al siguiente nivel. ¿Estás listo para desbloquear el potencial oculto de tu negocio? No esperes más. Habla con nosotros y adéntrate en el camino hacia la excelencia operativa.",
+      "claim": "",
       "titlelist": "",
-      "list": [],
+      "list": [
+        {
+          "icon": "",
+          "title": "",
+          "pragma": "En el cambiante paisaje del mundo empresarial, aquellos que se adaptan y optimizan prosperan. No te quedes atrás. Descubre lo que muchos directivos ya están experimentando con NormaPro BPM y eleva tus operaciones al siguiente nivel. ¿Estás listo para desbloquear el potencial oculto de tu negocio? No esperes más. Habla con nosotros y adéntrate en el camino hacia la excelencia operativa."
+        },
+        {
+          "icon": "",
+          "title": "¡Descubre lo que NormaPro BPM puede hacer por ti!",
+          "pragma": ""
+        }
+      ],
       "cta": {
-        "title": "¡Descubre lo que NormaPro BPM puede hacer por ti!",
+        "title": "",
         "buttonText": "Contacta con nuestro equipo ahora",
         "pragma": ""
       }

@@ -3,16 +3,14 @@
     "id": 1,
     "tipo": "HeroSection",
     "data": {
-      "cta": "Reserva una sesión estratégica",
+      "title": "Gestor Documental para Cumplimiento normativo",
       "claim": [
         "Logra un cumplimiento normativo sin complicaciones en tan solo semanas"
       ],
-      "title": "Gestor Documental para Cumplimiento normativo",
-      "imgUrl": "portal-empleado",
       "pragma": "",
-      "imgType": "lottie",
-      "backgroundImg": "hielo1.png",
-      "backgroundSize": "89%"
+      "cta": "Reserva una sesión estratégica",
+      "imgType": "",
+      "imgUrl": ""
     }
   },
   {
@@ -98,7 +96,7 @@
         },
         {
           "idcelda": "2",
-          "icono": "fa-database",
+          "icono": "fa-coins",
           "title": "Sanciones costosas",
           "pragma": "Un error puede costarte miles. ¿El coste de no modernizarte? Incalculable."
         },

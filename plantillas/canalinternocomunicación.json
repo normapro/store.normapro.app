@@ -1,0 +1,39 @@
+[
+  {
+    "id": 2,
+    "tipo": "TextSection",
+    "data": {
+      "background": "gray",
+      "level2": [
+        "Bienvenidos a nuestro canal de denuncias NormaPro"
+      ],
+      "level3": [
+        "",
+        "La solución rápida y adaptada a las necesidades específicas de tu organización en cuanto a ",
+        "denuncias y procesos de investigación.\n\n",
+        "Nuestro objetivo es asegurar que todas las denuncias sean atendidas y gestionadas de manera ética y transparente, acorde a las normativas aplicables."
+      ],
+      "buttonText": "Reserva una sesión estratégica",
+      "level7": [
+        "",
+        "Es es momento de decidir:\n",
+        "¿Quieres gestionar trámites delicados y confidenciales y evitar consecuencias legales y pérdidas de reputación? ¿O prefieres arriesgarte a un incidente inesperado de ámbito penal en tu empresa?"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "tipo": "VideoSection",
+    "data": {
+      "title": "Reserva una sesión demostrativa o mira el video si…",
+      "items": [
+        "… quieres detener la tranquilidad de saber que cuentas con un canal de denuncias que te ayudará a prevenir y detectar irregularidades justo a tiempo.",
+        "… quieres mejorar la cultura ética y de cumplimiento en tu empresa y saber que todo está en orden. ",
+        "… quieres cumplir con la ley, reducir los riesgos legales y proteger la reputación de tu empresa."
+      ],
+      "url_video": "https://www.youtube.com/embed/jP1VoImiIVc?controls=1&rel=0&playsinline=0&cc_load_policy=0&autoplay=0&enablejsapi=1&origin=https%3A%2F%2Fnormapro.es&widgetid=1&forigin=https%3A%2F%2Fnormapro.es%2Fcanal-de-denuncias%2F&aoriginsup=0&gporigin=https%3A%2F%2Fnormapro.es%2Fcanal-de-denuncias%2F&vf=6",
+      "buttonText": "Reserva una estratégica"
+    }
+
+  }
+]
