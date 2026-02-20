@@ -112,13 +112,13 @@ const CaracteristicasStorytellingSection = ({ data }: Props) => {
                                 <p className="text-base text-gray-700 leading-relaxed">
                                     {data[currentStep].description}
                                 </p>
-                                <div className="mt-8">
-                                    <button className="bg-[#010d3d] text-white px-6 py-3 rounded-xl font-semibold shadow-lg">
-                                        Quiero una demostración
-                                    </button>
-                                </div>
                             </div>
                         </div>
+                    </div>
+                    <div className="mt-8">
+                        <button className="bg-[#010d3d] text-white px-6 py-3 rounded-xl font-semibold shadow-lg">
+                            Quiero una demostración
+                        </button>
                     </div>
                 </div>
             </div>

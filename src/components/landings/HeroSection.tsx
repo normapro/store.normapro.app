@@ -56,8 +56,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </span>
           ))}
         </h1>
-        <p className="text-lg text-gray-700 mb-6">{pragma}</p>
-        <button className="bg-[#010d3d] text-white px-6 py-3 rounded-xl shadow-lg font-semibold">
+        <p className="text-lg text-[#010d3d] mb-6">{pragma}</p>
+        <button className="bg-[#010d3d] text-white px-6 py-3 rounded-xl shadow-lg font-bold">
           {cta}
         </button>
       </div>

@@ -3,16 +3,26 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { TestimonioConCliente } from '@/interfaces/testimonio';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+
+
+type Elemento = {
+  title: string;
+  claim: string;
+}
 
 type ClientPerceptionSectionProps = {
   title: string;
-  items: string[];
+  items?: string[];
+  list?: Elemento[];
   id_testimonio: number;
 };
 
 const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
   title,
-  items,
+  items = [],
+  list = [],
   id_testimonio
 }) => {
   const [testimonio, setTestimonio] = useState<TestimonioConCliente | null>(null);
@@ -47,38 +57,45 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
     });
   }, []);
 
+  const weights = ["bold","semibold"];
+
   return (
     <section className="w-full relative py-24 overflow-hidden">
       {/* Curva superior */}
-      <div className="absolute top-0 left-0 w-full">
+      <div className="w-full leadimg-[0] z-20 relative">
         <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
           <path fill="#f1f1f7" d="M0,0 C480,80 960,80 1440,0 L1440,80 L0,80 Z" />
         </svg>
         
       </div>
-      <div className="w-full relative bg-[#f1f1f7] py-24 overflow-hidden">
+      <div className="w-full relative bg-[#f1f1f7] py-12 z-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
         {/* Texto izquierdo */}
         <div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#010d3d] mb-8">
+          <h2 className="text-3xl md:text-4xl font-black text-[#010d3d] mb-8">
             {title}
           </h2>
-          <ul className="space-y-4 text-lg text-[#1a1a1a]">
+          <ul className="space-y-4 text-lg text-[#1a1a1a] mb-8">
             {items.map((item, index) => (
-              <li key={index} className="flex items-start gap-2">
-                <span className="text-[#00b2e3] mt-1">✔</span>
-                <span className="font-semibold">{item}</span>
+              <li key={index} className="flex items-start leading-tight">
+              <span key={index} style={{ fontWeight: weights[index % weights.length] }}>
+                {item + " "}
+              </span>
               </li>
             ))}
           </ul>
-          <div className="mt-10 flex gap-4 flex-wrap">
-            <button className="bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] text-white px-6 py-3 rounded-xl font-semibold shadow-md">
-              Contratar ahora
-            </button>
-            <button className="border-2 border-[#010d3d] text-[#010d3d] px-6 py-3 rounded-xl font-semibold">
-              Quiero una demostración
-            </button>
-          </div>
+          <ul className="space-y-4 text-lg text-[#1a1a1a] ">
+            {list.map((item, index) => (
+              <li key={index} className="flex items-start leading-tight gap-2">
+              <div className="text-[#010d3d] text-2xl mt-1">
+                <FontAwesomeIcon icon={faCheckCircle} className="fa-duotone" />
+              </div>
+              <span className="font-bold">
+                {item.title} <span className="font-medium"> {item.claim} </span>
+              </span>
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* Testimonio derecho */}
@@ -112,9 +129,14 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
           </div>
         )}
       </div>
+      <div className="flex justify-center mt-16">
+        <button className="bg-[#010d3d] text-white py-3 px-6 rounded-xl font-bold">
+          Quiero una demostración
+        </button>
+      </div>
       </div>
       {/* Curva inferior */}
-      <div className="absolute bottom-0 left-0 w-full">
+      <div className="w-full leadimg-[0] z-20 relative">
         <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
           <path fill="#f1f1f7" d="M0,80 C480,0 960,0 1440,80 L1440,0 L0,0 Z" />
         </svg>

@@ -106,11 +106,11 @@ const SolutionsRefered = ({ sectorSlug, ambitoSlug }: Props) => {
 											<div className="py-2 px-3 bg-[#e4f6fc] shadow rounded-lg mb-2 cursor-pointer h-[200px] px-7 ">
 												<div className="grid grid-cols-12">
 													<div className="col-span-8 mt-7">
-														<h3 className="font-bold text-[16px]">{pack.description}</h3>
-														<p className="text-[#7F859D] text-[15px] mt-7">{pack.shortDescription}</p>
+														<h3 className="font-bold text-[16px] overflow-hidden text-ellipsis">{pack.description}</h3>
+														<p className="text-[#7F859D] text-[15px] mt-7 overflow-hidden text-ellipsis">{pack.shortDescription}</p>
 													</div>
 													<div className="col-span-4 flex justify-end">
-														<div className="relative w-[135px] flex items-center justify-center mt-4">
+														<div className="relative w-[135px] flex items-center justify-center">
 															{/* Imagen de fondo */}
 															<img src="/aura@2x.png" alt="Fondo" className="absolute w-full h-full object-cover" />
 
@@ -118,7 +118,7 @@ const SolutionsRefered = ({ sectorSlug, ambitoSlug }: Props) => {
 															<img
 																src={"/" + pack.uriIcon}
 																alt={pack.description}
-																className="mt-3 object-contain relative z-10"
+																className="object-contain relative z-10"
 															/>
 														</div>
 													</div>

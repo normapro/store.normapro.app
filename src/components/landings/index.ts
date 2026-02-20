@@ -9,3 +9,6 @@ export { default as ObstaculosYSolucionesSection } from "./ObstaculosYSoluciones
 export { default as MovilPortalSection } from "./MovilPortalSection";
 export { default as CertificacionesSection } from "./CertificacionesSection";
 export { default as ResumenSection } from "./ResumenSection";
+export { default as PresentacionSection } from "./PresentacionSection";
+export { default as ImgTextSection }from "./ImgTextSection"
+export { default as FaqSection }from "./FaqSection"
