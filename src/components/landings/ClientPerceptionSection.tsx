@@ -2,9 +2,10 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { TestimonioConCliente } from '@/interfaces/testimonio';
+import { TestimonioConCliente } from '@/types/testimonio';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle, faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
+
 
 
 type Elemento = {
@@ -26,17 +27,15 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
   id_testimonio
 }) => {
   const [testimonio, setTestimonio] = useState<TestimonioConCliente | null>(null);
-  /*
+
   useEffect(() => {
-    fetch(`http://localhost:3010/v1/getTestimonio?id=${id_testimonio}`)
+    fetch(`http://localhost:3010/v1/store/testimonios/${id_testimonio}`)
       .then((res) => res.json())
       .then(setTestimonio)
       .catch(console.error)
-    });
   }, [id_testimonio]);
-  */
 
-
+/*
   useEffect(() => {
     // Demo estático (puedes cambiar por fetch real)
     setTestimonio({
@@ -51,11 +50,12 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
         id_cliente: 1,
         description: 'SOMAJASA',
         url: 'https://www.somajasa.es',
-        logo: 'somajasa.svg',
+        logo: 'Somajasa@2x.png',
         logoType: 'square'
       }
     });
   }, []);
+*/
 
   const weights = ["bold","semibold"];
 
@@ -77,7 +77,7 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
           </h2>
           <ul className="space-y-4 text-lg text-[#1a1a1a] mb-8">
             {items.map((item, index) => (
-              <li key={index} className="flex items-start leading-tight">
+              <li key={index} className="text-[#010d3d] flex items-start leading-tight">
               <span key={index} style={{ fontWeight: weights[index % weights.length] }}>
                 {item + " "}
               </span>
@@ -100,32 +100,39 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
 
         {/* Testimonio derecho */}
         {testimonio && (
-          <div className="bg-white p-8 rounded-2xl shadow-xl flex flex-col items-center text-center">
+          <div className="flex flex-col items-center text-center">
             <Image
               src={`/logos/${testimonio.cliente.logo}`}
-              alt={testimonio.cliente.description}
+              alt={testimonio.cliente.descripcion}
               width={100}
               height={60}
-              className="object-contain mb-6"
+              className="object-contain -mb-12 z-10"
             />
-            <p className="text-[#010d3d] italic font-medium text-lg mb-4 leading-relaxed max-w-lg">
-              “{testimonio.description}”
-            </p>
-            <div className="text-sm text-gray-700 leading-snug">
-              <strong className="block text-[#010d3d]">{testimonio.persona}</strong>
-              {testimonio.cargo}
-            </div>
-            {testimonio.miniImg && (
-              <div className="w-16 h-16 mt-6 rounded-full overflow-hidden border-2 border-gray-300 shadow-sm">
-                <Image
-                  src={testimonio.miniImg}
-                  alt={testimonio.persona || 'Foto'}
-                  width={64}
-                  height={64}
-                  className="object-cover w-full h-full"
-                />
+            <div className="bg-white p-8 rounded-2xl shadow-xl">
+              <div className="text-[#d1d5db] text-4xl text-left mt-5">
+                <FontAwesomeIcon icon={faQuoteLeft} className="fa-duotone" />
               </div>
-            )}
+              <p className="text-[#010d3d] italic font-medium text-lg leading-relaxed max-w-lg">
+                {testimonio.description}
+              </p>
+              <div className="text-[#d1d5db] text-4xl text-right mb-5">
+                <FontAwesomeIcon icon={faQuoteRight} className="fa-duotone" />
+              </div>
+            </div>
+            <div className="w-20 h-20 rounded-full overflow-hidden shadow-sm mb-4 -mt-12">
+              <Image
+                src={`/testimonios/${testimonio.cliente.descripcion}.png`}
+                alt={testimonio.persona || 'Foto'}
+                width={64}
+                height={64}
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <div className="text-sm text-[#010d3d] leading-snug">
+              <p>{testimonio.persona}</p>
+              <p className="font-bold">{testimonio.cargo}</p>
+              <p className="font-bold">{testimonio.cliente.descripcion}</p>
+            </div>
           </div>
         )}
       </div>

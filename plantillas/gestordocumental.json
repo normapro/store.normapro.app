@@ -9,8 +9,12 @@
       ],
       "pragma": "",
       "cta": "Reserva una sesión estratégica",
-      "imgType": "",
-      "imgUrl": ""
+      "imgType": "lottie",
+      "imgUrl": "gestor-documental",
+      "backgroundImg": "hielo1.png",
+      "backgroundSize": "90%",
+      "backgroundRepeat": "no-repeat",
+      "backgroundPositionX": "center"
     }
   },
   {
@@ -37,7 +41,7 @@
       "background": "gray",
       "level3": [
         "",
-        "Puedes intentar alcanzar el cumplimiento normativo usando métodos anticuados. Sin embargo, hay un alto riesgo de incumplimiento debido a la constante evolución de las regurlaciones."
+        "\n\nPuedes intentar alcanzar el cumplimiento normativo usando métodos anticuados. Sin embargo, hay un alto riesgo de incumplimiento debido a la constante evolución de las regurlaciones."
       ],
       "level4": [
         "Resuelve este desafio en menos tiempo con NormaPro, diseñado específicamente para lideres empresariales, evitando sanciones y optimizando recursos"
@@ -108,7 +112,7 @@
         },
         {
           "idcelda": "4",
-          "icono": "fa-face-sad-sweat",
+          "icono": "fa-face-frown-slight",
           "title": "Descoordinación de equipos",
           "pragma": "Sin una herramienta central, la comunicación se desmorona."
         }
@@ -120,7 +124,6 @@
     "tipo": "TextSection",
     "data": {
       "background": "gray",
-      "imgCabecera": "scaleUp.png",
       "level5": [
         "NormaPro: Tu escudo contra el incumplimiento"
       ],
@@ -151,7 +154,7 @@
         {
           "id_data": 1,
           "title": "Mapa de evidencias personalizado",
-          "icon": "fa-file-signature",
+          "icon": "fa-list-tree",
           "mainTitle": "Transforma la complejidad en claridad",
           "subtitle": "Mapa de evidencias personalizado",
           "description": "Sortea la confusión de perderte en una maraña de regulaciones sin saber cómo aplicarlas, ofrecemos un conjunto completo de cuestionarios que generan mapas normativos personalizados para guiarte con precisión. Siempre estarás al día con referencias, comentarios expertos y enlaces a normativas, garantizando trazabilidad y orden. ",
@@ -160,65 +163,65 @@
         {
           "id_data": 2,
           "title": "Gestor documental",
-          "icon": "fa-file-signature",
+          "icon": "fa-file-lines",
           "mainTitle": "Almacena, organiza y accede a archvios en tus procesos",
           "subtitle": "Gestor documental",
           "description": "La gestión de documentos dispersos y la dificultad para acceder a información relevante pueden ralentizar los procesos y dificultar la toma de decisiones. Nuestro gestor documental permite almacenar y organizar documentos de manera centralizada, vinculándolos a flujos de trabajo específicos. Puedes buscar, recuperar y colaborar en documentos de manera eficiente.",
-          "img": ""
+          "img": "fichasdocumentales.png"
         },
         {
           "id_data": 3,
           "title": "Gestión de competencias",
-          "icon": "fa-file-signature",
+          "icon": "fa-briefcase",
           "mainTitle": "Organiza y supervisa con precisión",
           "subtitle": "Gestión de competencias",
           "description": "Evita lo desorganización y falta de seguimiento de responsabilidades asignando roles y estructura con supervisores fácilmente.\n\nEvalúa riesgos y sanciones en tempo real. asegurando que cado miembro del equipo conozco su misión.",
-          "img": ""
+          "img": "gestioncompetencias.png"
         },
         {
           "id_data": 4,
           "title": "Biblioteca de normas",
-          "icon": "fa-file-signature",
+          "icon": "fa-book-law",
           "mainTitle": "Siempre informado y actualizado",
           "subtitle": "Biblioteca de normas",
           "description": "Previene quedar desactualizado con nuestro  Biblioteca de Normas que organiza y notifica sobre las últimas regulaciones más importantes.\n\nSiempre estarás al día adaptándote con las actualizaciones más recientes.",
-          "img": ""
+          "img": "bibliotecanormas.png"
         },
         {
           "id_data": 5,
           "title": "Archivo inteligente",
-          "icon": "fa-file-signature",
+          "icon": "fa-file-lock",
           "mainTitle": "Acceso y protección, siempre",
           "subtitle": "Archivo inteligente",
           "description": "Di adiós a la perdida de información con un sistema robusto que resguardo y estructura tus documentos de monera eficiente.\n\nGarantiza que la información esté disponible en cualquier momento, sin importar los cambios internos, a salvo de bajas o sustituciones.",
-          "img": ""
+          "img": "archivointeligente.png"
         },
         {
           "id_data": 6,
           "title": "Sistemas de comunicaciones y alertas",
-          "icon": "fa-file-signature",
+          "icon": "fa-bell",
           "mainTitle": "Mantén a todos los participantes informados en tiempo real",
           "subtitle": "Sistemas de comunicaciones y alertas",
           "description": "Nuestra herramienta incluye un sistema de comunicaciones y alertas que notifica automáticamente a los participantes sobre tareas pendientes, actualizaciones importantes y cambios en los flujos de trabajo.\n\nComunicación efectiva, cumplimiento de plazos, reducción de errores y flujo de trabajo colaborativo mejorado.",
-          "img": ""
+          "img": "alertas.png"
         },
         {
           "id_data": 7,
           "title": "Calendario de eventos",
-          "icon": "fa-file-signature",
+          "icon": "fa-calendar",
           "mainTitle": "Nunca pierdas de vista las fechas clave",
           "subtitle": "Calendario de eventos",
           "description": "Deja atrás preocuparte por los olvidos y asegura el cumplimiento puntual con una agenda que rastrea y te alerta de fechas cruciales.\n\nVisualiza responsabilidades a corto y largo plazo, asegurando que ningún deadline sea pasado por alto.",
-          "img": ""
+          "img": "calendario.png"
         },
         {
           "id_data": 8,
           "title": "Informes y cuadro de mandos",
-          "icon": "fa-file-signature",
+          "icon": "fa-chart-pie",
           "mainTitle": "Control total sobre los flujos de trabajo en ejecución",
           "subtitle": "Panel de seguimieneto y supervisión",
           "description": "La falta de visibilidad puede dificultar la supervisión efectiva de tus procesos empresariales.\n\nNormaPro permite el seguimiento en tiempo real del estado y el progreso de los documentos de trabajo en ejecución, junto con informes detallados y análisis.\n\nMayor control, capacidad de tomar decisiones informadas y mejora de la eficiencia operativa.",
-          "img": ""
+          "img": "panelcontrol.png"
         }
       ]
     }
@@ -230,10 +233,10 @@
       "title": "Y todo esto, hazlo también desde tu móvil",
       "subtitle": "Potencia la movilidad y la eficiencia fuera de la oficina.",
       "images": [
-        "portalmovil1.png",
-        "portalmovil2.png",
-        "portalmovil3.png",
-        "portalmovil4.png"
+        "gestordocumental1.png",
+        "gestordocumental2.png",
+        "gestordocumental3.png",
+        "gestordocumental4.png"
       ]
     }
   },
@@ -247,7 +250,7 @@
         "NormaPro no es solo una herramienta; es la evolución en gestión documental para cumplimiento normativo. Mientras otros. sistemas simplemente archivan, nosotros transformamos el caos normativo en un mapa estructurado y claro. Cada funcionalidad se diseña pensando en tu negocio, garantizando que cada detalle cuente y todas las piezas encajen, ya busques una visión general o un análisis detallado.",
         "La confianza de nuestros clientes es testimonio de la excelencia de NormaPro. "
       ],
-      "id_testimonio": 3
+      "id_testimonio": 5
     }
   },
   {
@@ -290,7 +293,7 @@
     "id": 16,
     "tipo": "ResumenSection",
     "data": {
-      "imgCabecera": "",
+      "imgCabecera": "Grupo-4596@2x.png",
       "title": "El valor de NormaPro",
       "claim": "",
       "titlelist": "",
