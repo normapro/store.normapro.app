@@ -9,7 +9,6 @@ import {
   faChartLineDown,
   faCalendarClock,
   faCoins,
-  faFaceSadSweat,
   faFileExclamation,
   faUserGraduate,
   faChartUser,
@@ -24,7 +23,6 @@ const iconMap: Record<string, any> = {
   'fa-chart-line-down': faChartLineDown,
   'fa-calendar-clock': faCalendarClock,
   'fa-coins': faCoins,
-  'fa-face-sad-sweat': faFaceSadSweat,
   'fa-file-exclamation': faFileExclamation,
   'fa-user-graduate': faUserGraduate,
   'fa-chart-user': faChartUser,
@@ -67,7 +65,10 @@ const ObstaculosYSolucionesSection: FC<Props> = ({ title, claim, table, pragma, 
       </div>
 
       {/* Tabla horizontal sin separación entre columnas */}
-      <div className="grid grid-cols-1 md:grid-cols-4 w-full border-2 border-gray-300 rounded-2xl overflow-hidden mb-12 divide-y md:divide-y-0 md:divide-x divide-2 divide-gray-300">
+      <div
+        className="grid grid-cols-1 md:[grid-template-columns:repeat(var(--cols),minmax(0,1fr))] w-full border-2 border-gray-300 rounded-2xl overflow-hidden mb-12 divide-y md:divide-y-0 md:divide-x divide-2 divide-gray-300"
+        style={{ "--cols": table.length }}
+      >
         {table.map((celda, index) => {
           const isFirst = index === 0;
           const isLast = index === table.length - 1;
