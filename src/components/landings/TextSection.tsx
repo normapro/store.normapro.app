@@ -11,6 +11,7 @@ type TextSectionProps = {
   level5?: string[];
   level6?: string[];
   level7?: string[];
+  level8?: string[];
   buttonText?: string;
 };
 
@@ -23,6 +24,7 @@ const TextSection: React.FC<TextSectionProps> = ({
   level5,
   level6,
   level7,
+  level8,
   buttonText
 }) => {
   const colors = ["#010d3d", "#797f98"];
@@ -87,6 +89,15 @@ const TextSection: React.FC<TextSectionProps> = ({
         {level6 && (
             <h4 className="text-[22px] font-[800] text-gray-500 mb-10 whitespace-pre-line">
             {level6.map((text, i) => (
+              <span key={i} style={{ color: colors[i % colors.length] }}>
+                {text + " "}
+              </span>
+            ))}
+            </h4>
+        )}
+        {level8 && (
+          <h4 className="text-[16px] text-gray-500 mb-10 whitespace-pre-line">
+            {level8.map((text, i) => (
               <span key={i} style={{ color: colors[i % colors.length] }}>
                 {text + " "}
               </span>

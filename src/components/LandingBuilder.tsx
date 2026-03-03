@@ -15,6 +15,8 @@ import {
     FaqSection,
     HeroSection2,
     ClientsMuralSection,
+    PresentacionSection2,
+    CarouselPerceptionsSection,
   } from "@/components/landings"; // si tienes un index.ts que los agrupe
   
   const sectionMap: Record<string, React.ComponentType<any>> = {
@@ -33,6 +35,8 @@ import {
     FaqSection,
     HeroSection2,
     ClientsMuralSection,
+    PresentacionSection2,
+    CarouselPerceptionsSection,
   };
   
   export default function LandingBuilder({ bloques }: { bloques: any[] }) {

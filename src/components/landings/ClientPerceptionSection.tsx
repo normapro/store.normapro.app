@@ -75,7 +75,7 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
           <h2 className="text-3xl md:text-4xl font-black text-[#010d3d] mb-8">
             {title}
           </h2>
-          <ul className="space-y-4 text-lg text-[#1a1a1a] mb-8">
+          <ul className="space-y-4 text-lg text-[#1a1a1a] mb-8 whitespace-pre-line">
             {items.map((item, index) => (
               <li key={index} className="text-[#010d3d] flex items-start leading-tight">
               <span key={index} style={{ fontWeight: weights[index % weights.length] }}>
@@ -121,7 +121,7 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
             </div>
             <div className="w-20 h-20 rounded-full overflow-hidden shadow-sm mb-4 -mt-12">
               <Image
-                src={`/testimonios/${testimonio.cliente.descripcion}.png`}
+                src={`/testimonios/${testimonio.cliente.descripcion.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "")}.png`}
                 alt={testimonio.persona || 'Foto'}
                 width={64}
                 height={64}
