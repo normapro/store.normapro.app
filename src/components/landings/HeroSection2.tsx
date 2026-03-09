@@ -1,6 +1,6 @@
 'use client'
 
-import { FC, useState } from 'react';
+import { FC } from 'react';
 
 type Props = {
   title?: string[];
@@ -15,7 +15,6 @@ const HeroSection2: FC<Props> = ({
   pragma,
   imgBottom,
 }) => {
-  const [cargado, setCargado] = useState(false);
   const colors = ["#010d3d", "#9a9fb2"];
 
   return (

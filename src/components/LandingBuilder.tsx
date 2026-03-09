@@ -17,6 +17,11 @@ import {
     ClientsMuralSection,
     PresentacionSection2,
     CarouselPerceptionsSection,
+    RazonesSection,
+    SideImgTextSection,
+    AportacionesSection,
+    RegaloSection,
+    ServiciosSection,
   } from "@/components/landings"; // si tienes un index.ts que los agrupe
   
   const sectionMap: Record<string, React.ComponentType<any>> = {
@@ -37,6 +42,11 @@ import {
     ClientsMuralSection,
     PresentacionSection2,
     CarouselPerceptionsSection,
+    RazonesSection,
+    SideImgTextSection,
+    AportacionesSection,
+    RegaloSection,
+    ServiciosSection,
   };
   
   export default function LandingBuilder({ bloques }: { bloques: any[] }) {

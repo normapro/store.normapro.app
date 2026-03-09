@@ -14,6 +14,10 @@ import {
   faChartUser,
   faGem,
   faUsers,
+  faComment,
+  faEnvelopeDot,
+  faTimelineArrow,
+  faFileCircleCheck,
 } from '@fortawesome/pro-duotone-svg-icons';
 
 const iconMap: Record<string, any> = {
@@ -28,6 +32,10 @@ const iconMap: Record<string, any> = {
   'fa-chart-user': faChartUser,
   'fa-gem': faGem,
   'fa-users': faUsers,
+  'fa-comment': faComment,
+  'fa-envelope-dot': faEnvelopeDot,
+  'fa-timeline-arrow': faTimelineArrow,
+  'fa-file-circle-check': faFileCircleCheck
 };
 
 type Celda = {
@@ -40,13 +48,14 @@ type Celda = {
 type Props = {
   title: string;
   claim: string;
+  tabletitle?: string;
   table: Celda[];
   pragma: string[];
   buttonText?: string;
   background?: string;
 };
 
-const ObstaculosYSolucionesSection: FC<Props> = ({ title, claim, table, pragma, buttonText, background = "white" }) => {
+const ObstaculosYSolucionesSection: FC<Props> = ({ title, claim, tabletitle, table, pragma, buttonText, background = "white" }) => {
   const bgcolors = ["#ffffff","#eaeaf2" ];
   let bgColor = bgcolors[1];
   if (background === "gray") {
@@ -58,10 +67,15 @@ const ObstaculosYSolucionesSection: FC<Props> = ({ title, claim, table, pragma, 
   return (
     <div className="w-full" style={{ backgroundColor: bgColor }}>
     <section className="max-w-7xl mx-auto w-full flex flex-col items-center justify-center py-16 px-6 md:px-12">
-      {/* Título y subtítulo */}
-      <div className="text-center mb-12">
+      {/* Título, subtítulo y título tabla */}
+      <div className="text-center">
         <h2 className="text-3xl md:text-4xl font-black text-[#010d3d] mb-12">{title}</h2>
-        <p className="text-base text-[#010d3d] whitespace-pre-line">{claim}</p>
+        <p className="text-base text-[#010d3d] whitespace-pre-line mb-12">{claim}</p>
+        {tabletitle && (
+          <h3 className="text-xl md:text-2xl font-black text-[#010d3d] mb-12">
+            {tabletitle}
+          </h3>
+        )}
       </div>
 
       {/* Tabla horizontal sin separación entre columnas */}

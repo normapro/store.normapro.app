@@ -7,7 +7,7 @@ import { Cliente } from "@/types/cliente";
 
 type ClientsMuralProps = {
   scope: string;
-  claim: string;
+  claim: string[];
 };
 
 const ClientsMuralSection: React.FC<ClientsMuralProps> = ({ scope, claim }) => {
@@ -20,9 +20,17 @@ const ClientsMuralSection: React.FC<ClientsMuralProps> = ({ scope, claim }) => {
       .catch(console.error);
   }, [scope]);
 
+  const colors = ["#010d3d", "#797f98"];
+
   return (
     <section className="mx-auto  py-12 text-center overflow-hidden">
-      <h3 className="text-gray-500 mb-6 font-semibold text-lg">{claim}</h3>
+     <h3 className="max-w-3xl mx-auto w-full text-[30px] font-[900] text-gray-500 mb-10">
+            {claim.map((text, i) => (
+              <span key={i} style={{ color: colors[i % colors.length] }}>
+                {text + " "}
+              </span>
+            ))}
+      </h3>
 
       <div className="relative w-full overflow-hidden">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center p-10">

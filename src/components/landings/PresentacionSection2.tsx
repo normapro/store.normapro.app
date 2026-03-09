@@ -15,8 +15,13 @@ const PresentacionSection2: FC<Props> = ({
   images,
   bottomText,
 }) => {
+  const marginBottom = bottomText ? "10px" : "-250px";
+
   return (
-    <section className="max-w-7xl mx-auto w-full flex flex-col items-center justify-center py-20 px-6 md:px-12 mb-[-250px]">
+    <section
+      className="max-w-7xl mx-auto w-full flex flex-col items-center justify-center py-20 px-6 md:px-12"
+      style={{ marginBottom: marginBottom }}
+    >
       {/* Título y claim */}
       {title && claim && (
         <div className="text-center max-w-3xl mb-15">
@@ -46,6 +51,10 @@ const PresentacionSection2: FC<Props> = ({
           );
         })}
       </div>
+      {/* Texto final */}
+      {bottomText && (
+        <p className="text-center text-base text-[#010d3d]">{bottomText}</p>
+      )}
     </section>
   );
 };

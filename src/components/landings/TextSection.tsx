@@ -69,7 +69,7 @@ const TextSection: React.FC<TextSectionProps> = ({
             </h4>
         )}
         {level4 && (
-            <h4 className="text-[25px] font-[900] text-gray-500 mb-10 whitespace-pre-line">
+            <h4 className="text-[26px] font-[900] text-gray-500 mb-10 whitespace-pre-line">
             {level4.map((text, i) => (
               <span key={i} style={{ color: colors[i % colors.length] }}>
                 {text + " "}

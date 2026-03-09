@@ -7,12 +7,14 @@ import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 
 type Props = {
   title: string;
-  claim: string;
+  subtitle?: string;
+  claim?: string;
   listIds: number[];
 }
 
 const CarouselPerceptionsSection: React.FC<Props> = ({
   title,
+  subtitle,
   claim,
   listIds,
 }) => {
@@ -69,9 +71,16 @@ const CarouselPerceptionsSection: React.FC<Props> = ({
         <h2 className="max-w-2xl mx-auto text-[28px] md:text-[40px] font-black text-[#010d3d] text-center whitespace-pre-line mb-15">
           {title}
         </h2>
-        <p className="space-y-5 text-[17px] md:text-lg text-[#010d3d] text-center font-semibold max-w-2xl mx-auto mb-15 whitespace-pre-line">
-          {claim}
-        </p>
+        {subtitle && (
+          <h3 className="max-w-2xl mx-auto text-[20px] md:text-[28px] font-black text-[#797f98] text-center whitespace-pre-line mb-15">
+            {subtitle}
+          </h3>
+        )}
+        {claim && (
+          <p className="space-y-5 text-[17px] md:text-lg text-[#010d3d] text-center font-semibold max-w-2xl mx-auto mb-15 whitespace-pre-line">
+            {claim}
+          </p>
+        )}
       {/* Testimonios */}
       <div 
         className="flex flex-row items-center justify-center gap-4 md:gap-8 min-h-[500px]"
