@@ -114,7 +114,7 @@ const RazonesSection: FC<Props> = ({
           </div>
         </div>
       </div>
-      <button className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl mb-4 shadow-md hover:bg-[#04176f] transition">
+      <button className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition">
         {buttonText}
       </button>
     </section>

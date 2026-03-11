@@ -137,7 +137,7 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
         )}
       </div>
       <div className="flex justify-center mt-16">
-        <button className="bg-[#010d3d] text-white py-3 px-6 rounded-xl font-bold">
+        <button className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition">
           Quiero una demostración
         </button>
       </div>

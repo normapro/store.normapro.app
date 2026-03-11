@@ -64,7 +64,7 @@ const RegaloSection: FC<Props> = ({
       <p className="max-w-2xl text-center font-bold mb-10">
         {pragma}
       </p>
-      <button className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl mb-4 shadow-md hover:bg-[#04176f] transition">
+      <button className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition">
         {buttonText}
       </button>
 

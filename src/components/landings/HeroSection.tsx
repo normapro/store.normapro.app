@@ -64,7 +64,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </span>
           ))}
         </p>
-        <button className="bg-[#010d3d] text-white px-6 py-3 rounded-xl shadow-lg font-bold">
+        <button className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition">
           {cta}
         </button>
       </div>

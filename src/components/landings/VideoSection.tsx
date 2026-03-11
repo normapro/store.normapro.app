@@ -35,7 +35,7 @@ const VideoSection: React.FC<VideoSectionProps> = ({ title, items, url_video, bu
       </div>
 
       {buttonText && (
-        <button className="mt-6 bg-[#010d3d] text-white py-3 px-6 rounded-xl font-bold">
+        <button className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition">
           {buttonText}
         </button>
       )}
