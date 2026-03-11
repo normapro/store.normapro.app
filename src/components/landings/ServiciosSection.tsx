@@ -57,11 +57,11 @@ const ServiciosSection: FC<Props> = ({
                 key={index}
                 className="bg-[#eaeaf2] rounded-2xl p-6 text-center flex flex-col items-center"
               >
-                <div className="bg-white rounded-xl p-4 mb-4">
+                <div className="bg-white rounded-xl mb-4">
                   <img
-                    src={service.image}
+                    src={`/apps/${service.image}`}
                     alt={service.title}
-                    className="w-20 h-20 object-contain"
+                    className="w-30 h-30 object-contain"
                   />
                 </div>
 
@@ -91,11 +91,11 @@ const ServiciosSection: FC<Props> = ({
                 key={index}
                 className="bg-[#f5f5f7] border-3 border-dashed border-[#eaeaf2] rounded-2xl p-6 text-center flex flex-col items-center"
               >
-                <div className="bg-white rounded-xl p-4 mb-4">
+                <div className="bg-white rounded-xl mb-4">
                   <img
-                    src={service.image}
+                    src={`/apps/${service.image}`}
                     alt="Imagen"
-                    className="w-20 h-20 object-contain"
+                    className="w-30 h-30 object-contain"
                   />
                 </div>
                 {service.claim.map((item, index) => (

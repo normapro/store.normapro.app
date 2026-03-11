@@ -1,11 +1,29 @@
 [
   {
+    "id": 1,
+    "tipo": "HeroSection2",
+    "data": {
+      "title": [
+        "",
+        "NormaPro Tickets"
+      ],
+      "claim": [
+        "Cómo lograr respuestas ágiles sin sobrecarga"
+      ],
+      "pragma": [
+        "",
+        "Operativo en menos de 24 horas"
+      ],
+      "imgBottom": "portatiltickets.png"
+    }
+  },
+  {
     "id": 2,
     "tipo": "TextSection",
     "data": {
       "background": "gray",
       "level2": [
-        "Ticketing NormaPro es tu aliado digital para transformar el caos de las solicitudes en una operación fluida y orquestada."
+        "\n\n\n\n\nTicketing NormaPro es tu aliado digital para transformar el caos de las solicitudes en una operación fluida y orquestada."
       ],
       "level3": [
         "",
@@ -67,7 +85,7 @@
       "items": [
         "Nada habla mejor de nuestro producto que aquellos que ya lo han experimentado en sus negocios. Descubre las historias de éxito y cómo NormaPro Ticketing ha transformado la gestión de tickets para empresas como la tuya."
       ],
-      "id_testimonio": 3
+      "id_testimonio": 1
     }
   },
   {
@@ -143,74 +161,74 @@
         {
           "id_data": 1,
           "title": "Dashboard Interactivo",
-          "icon": "fa-file-signature",
+          "icon": "fa-chart-pie",
           "mainTitle": "Visión panorámica y dinámica de todas tus operaciones en tiempo real",
           "subtitle": "",
           "description": "¿Estás constantemente abrumado intentando mantener el pulso a múltiples tareas? Nuestro Dashboard Interactivo concentra todos los datos relevantes en una sola pantalla, ofreciéndote claridad y control al instante. Adquiere una perspectiva clara de todas las operaciones, identifica cuellos de botella y toma decisiones informadas rápidamente, impulsando la eficiencia y productividad.",
-          "img": "fichasdocumentales.png"
+          "img": "dashboard.png"
         },
         {
           "id_data": 2,
           "title": "Asignación Automática",
-          "icon": "fa-file-signature",
+          "icon": "fa-list-check",
           "mainTitle": "Simplifica y acelera tus procesos diarios sin esfuerzo",
           "subtitle": "",
-          "description": "La repetición de tareas manuales consume tiempo y energía. Con nuestra función de automatización, elimina la redundancia y delega esas tareas a NormaPro.\nMaximiza la eficiencia, reduce errores humanos y libera tiempo y recursos para tareas de mayor valor.",
-          "img": "fichasdocumentales.png"
+          "description": "La repetición de tareas manuales consume tiempo y energía. Con nuestra función de automatización, elimina la redundancia y delega esas tareas a NormaPro.\n\nMaximiza la eficiencia, reduce errores humanos y libera tiempo y recursos para tareas de mayor valor.",
+          "img": "calendariotickets.png"
         },
         {
           "id_data": 3,
           "title": "Automatización de Tareas Rutinarias",
-          "icon": "fa-file-signature",
+          "icon": "fa-paper-plane",
           "mainTitle": "Optimiza la distribución de tickets con precisión",
           "subtitle": "",
-          "description": "La incorrecta asignación de tickets puede generar  demoras e insatisfacción. Con la Asignación Automática, los tickets se dirigen eficazmente al agente adecuado basándose en criterios específicos establecidos por ti.\nAlcanza una gestión de tareas más ágil, asegura respuestas rápidas que mejorarán tus procesos y consolida un equipo de soporte sincronizado y bien coordinado.",
-          "img": "fichasdocumentales.png"
+          "description": "La incorrecta asignación de tickets puede generar  demoras e insatisfacción. Con la Asignación Automática, los tickets se dirigen eficazmente al agente adecuado basándose en criterios específicos establecidos por ti.\n\nAlcanza una gestión de tareas más ágil, asegura respuestas rápidas que mejorarán tus procesos y consolida un equipo de soporte sincronizado y bien coordinado.",
+          "img": "asignaciontickets.png"
         },
         {
           "id_data": 4,
           "title": "Reportes Personalizados",
-          "icon": "fa-file-signature",
+          "icon": "fa-file-chart-pie",
           "mainTitle": "Analiza y comprende tus datos a tu manera",
           "subtitle": "",
-          "description": "La generación de informes estándar a menudo no aborda las necesidades específicas de cada empresa. Con nuestros reportes personalizables, moldea y entiende tus datos según tus criterios.\nObtén insights relevantes, toma decisiones basadas en datos y presenta la información en el formato que más se adecue a tu audiencia.",
-          "img": "fichasdocumentales.png"
+          "description": "La generación de informes estándar a menudo no aborda las necesidades específicas de cada empresa. Con nuestros reportes personalizables, moldea y entiende tus datos según tus criterios.\n\nObtén insights relevantes, toma decisiones basadas en datos y presenta la información en el formato que más se adecue a tu audiencia.",
+          "img": "reportes.png"
         },
         {
           "id_data": 5,
           "title": "Clasificación Inteligente de Tickets",
-          "icon": "fa-file-signature",
+          "icon": "fa-rectangle-history",
           "mainTitle": "Ordena y prioriza solicitudes con precisión y rapidez",
           "subtitle": "",
-          "description": "Enfrentarse a una avalancha de tickets sin un orden  claro puede ser abrumador. La clasificación inteligente categoriza automáticamente cada solicitud según su urgencia e importancia.\nRespuestas más rápidas a tickets prioritarios, reduciendo tiempos de espera y aumentando la satisfacción del cliente o usuario.",
-          "img": "fichasdocumentales.png"
+          "description": "Enfrentarse a una avalancha de tickets sin un orden  claro puede ser abrumador. La clasificación inteligente categoriza automáticamente cada solicitud según su urgencia e importancia.\n\nRespuestas más rápidas a tickets prioritarios, reduciendo tiempos de espera y aumentando la satisfacción del cliente o usuario.",
+          "img": "clasificacion.png"
         },
         {
           "id_data": 6,
           "title": "Historial Detallado de Interacciones",
-          "icon": "fa-file-signature",
+          "icon": "fa-list-time-line",
           "mainTitle": "Accede al registro completo de todas las comunicaciones con un clic",
           "subtitle": "",
-          "description": "Revisar comunicaciones pasadas puede ser una tarea titánica si no se tiene un sistema organizado. Con nuestro historial detallado, todas las interacciones están registradas y listas para ser consultadas.\nMejora la atención al cliente, evita repeticiones y entiende mejor las necesidades y preocupaciones históricas de cada usuario o cliente.",
-          "img": "fichasdocumentales.png"
+          "description": "Revisar comunicaciones pasadas puede ser una tarea titánica si no se tiene un sistema organizado. Con nuestro historial detallado, todas las interacciones están registradas y listas para ser consultadas.\n\nMejora la atención al cliente, evita repeticiones y entiende mejor las necesidades y preocupaciones históricas de cada usuario o cliente.",
+          "img": "historial.png"
         },
         {
           "id_data": 7,
           "title": "Alertas y Notificaciones Personalizadas",
-          "icon": "fa-file-signature",
+          "icon": "fa-bell",
           "mainTitle": "Mantente informado sobre eventos críticos en tiempo real.",
           "subtitle": "",
-          "description": "Perderse en la maraña de actualizaciones puede  llevar a omitir eventos cruciales. Nuestras alertas personalizadas te aseguran de estar siempre al tanto de lo que más importa.\nReacción inmediata ante problemas o urgencias,  asegurando una gestión proactiva y una operación ininterrumpida.",
-          "img": "fichasdocumentales.png"
+          "description": "Perderse en la maraña de actualizaciones puede  llevar a omitir eventos cruciales. Nuestras alertas personalizadas te aseguran de estar siempre al tanto de lo que más importa.\n\nReacción inmediata ante problemas o urgencias,  asegurando una gestión proactiva y una operación ininterrumpida.",
+          "img": "alertastickets.png"
         },
         {
           "id_data": 8,
           "title": "Centro de Respuestas y Conocimiento Integrado",
-          "icon": "fa-file-signature",
+          "icon": "fa-robot",
           "mainTitle": "Soluciones inmediatas y coherentes para un soporte sin fisuras",
           "subtitle": "",
-          "description": "Responder manualmente a consultas repetitivas consume tiempo y recursos valiosos. Con el Centro de Respuestas y Conocimiento Integrado, los agentes tienen a su disposición respuestas prediseñadas para enviar soluciones coherentes de inmediato, mientras que los usuarios pueden acceder a una Base de Conocimientos para encontrar respuestas por sí mismos.\nEsto garantiza que tanto los agentes como los usuarios tengan las herramientas para resolver rápidamente las dudas más comunes.",
-          "img": "fichasdocumentales.png"
+          "description": "Responder manualmente a consultas repetitivas consume tiempo y recursos valiosos. Con el Centro de Respuestas y Conocimiento Integrado, los agentes tienen a su disposición respuestas prediseñadas para enviar soluciones coherentes de inmediato, mientras que los usuarios pueden acceder a una Base de Conocimientos para encontrar respuestas por sí mismos.\n\nEsto garantiza que tanto los agentes como los usuarios tengan las herramientas para resolver rápidamente las dudas más comunes.",
+          "img": "centrorespuestas.png"
         }
       ]
     }
@@ -222,33 +240,24 @@
       "title": "Y todo esto, hazlo también desde tu móvil",
       "subtitle": "Potencia la movilidad y la eficiencia fuera de la oficina.",
       "images": [
-        "portalmovil1.png",
-        "portalmovil2.png",
-        "portalmovil3.png",
-        "portalmovil4.png"
+        "ticketing1.png",
+        "ticketing2.png",
+        "ticketing3.png",
+        "ticketing4.png"
       ]
     }
   },
   {
     "id": 13,
-    "tipo": "ResumenSection",
+    "tipo": "TextSection",
     "data": {
-      "imgCabecera": "",
-      "title": "NormaPro Ticketing es mucho más, ¡descubre todo lo que tiene reservado para ti!",
-      "claim": "",
-      "titlelist": "",
-      "list": [
-        {
-          "icon": "",
-          "title": "",
-          "pragma": "Estas son solo algunas funcionalidades de las que NormaPro Ticketing podría ofrecer. Para descubrir todas las capacidades que este sistema puede ofrecerte, te invitamos a concertar una demostración con nosotros y explorar todo su potencial en detalle."
-        }
+      "level5": [
+        "NormaPro Ticketing es mucho más, ¡descubre todo lo que tiene reservado para ti!"
       ],
-      "cta": {
-        "title": "",
-        "buttonText": "Descubre lo que NormaPro puede hacer por ti",
-        "pragma": ""
-      }
+      "level8": [
+        "Estas son solo algunas funcionalidades de las que NormaPro Ticketing podría ofrecer. Para descubrir todas las capacidades que este sistema puede ofrecerte, te invitamos a concertar una demostración con nosotros y explorar todo su potencial en detalle."
+      ],
+      "buttonText": "Descubre lo que NormaPro puede hacer por ti"
     }
   },
   {
@@ -283,7 +292,8 @@
     "id": 16,
     "tipo": "ResumenSection",
     "data": {
-      "imgCabecera": "",
+      "imgCabecera": "IICE_LandingCompliance_Etapa1.png",
+      "imgBackground": "hielo3.png",
       "title": "Consultoría NormaPro:\nUna Experiencia Única",
       "claim": "",
       "titlelist": "",
@@ -310,7 +320,8 @@
     "id": 17,
     "tipo": "ResumenSection",
     "data": {
-      "imgCabecera": "",
+      "imgCabecera": "IICE_Medioambiente.png",
+      "imgBackground": "hielo2.png",
       "title": "Invierte en una solución a la medida de tus necesidades",
       "claim": "",
       "titlelist": "",
@@ -350,6 +361,136 @@
         "Imagina un mundo sin complicaciones, donde la comunicación es eficiente y las decisiones se toman con precisión. Con NormaPro, ese mundo es posible.\n\nAgiliza, optimiza, y transforma. Porque tu empresa merece lo mejor.\n\nPero, ¿por qué contarte todo ahora? Mejor experimenta la diferencia por ti mismo. Contacta con nosotros y da el salto al siguiente nivel."
       ],
       "buttonText": "Empieza tu revolución ahora"
+    }
+  },
+  {
+    "id": 19,
+    "tipo": "FaqSection",
+    "data": {
+      "faqs": [
+        {
+          "question": "¿Qué es NormaPro Ticketing y para qué sirve?",
+          "answer": [
+            "",
+            "NormaPro Ticketing",
+            " es una plataforma avanzada de gestión de tickets diseñada para simplificar y automatizar la organización y el seguimiento de las solicitudes de servicio y soporte, tanto internas como externas, dentro de una empresa. Sirve como un sistema centralizado que facilita la captura, clasificación y resolución de incidencias, peticiones o consultas, permitiendo a los equipos trabajar de manera más eficiente y ofreciendo una mejor experiencia a los usuarios finales. Con NormaPro Ticketing, las empresas pueden asegurar que cada solicitud reciba la atención adecuada y se maneje de manera oportuna, mejorando la comunicación y la productividad en todos los niveles de la organización."
+          ],
+          "link": [
+            "¿Listo para transformar la gestión de soporte en tu empresa? ",
+            "Contacta con nosotros",
+            " para una demostración de NormaPro Ticketing y empieza a mejorar tu flujo de trabajo hoy mismo."
+          ]
+        },
+        {
+          "question": "¿Cómo puede NormaPro Ticketing mejorar mi servicio al cliente?",
+          "answer": [
+            "NormaPro Ticketing puede elevar significativamente tu servicio al cliente al proporcionar una plataforma donde todas las consultas se gestionan con eficiencia y transparencia. La herramienta asegura que ningún ticket se pierda o quede sin respuesta, permitiendo que tu equipo responda de manera rápida y efectiva. Las funcionalidades de seguimiento y reporte aseguran que puedes monitorear constantemente la calidad del servicio y encontrar áreas de mejora. Con la automatización y la capacidad de asignar tickets a los agentes más adecuados, se incrementa la eficiencia y se disminuye el tiempo de resolución, lo que resulta en clientes más satisfechos."
+          ],
+          "link": [
+            "Para ver cómo NormaPro Ticketing puede llevar tu servicio al cliente al siguiente nivel, contacta con nosotros y ",
+            "agenda una demostración personalizada."
+          ]
+        },
+        {
+          "question": "¿La plataforma es intuitiva y fácil de usar?",
+          "answer": [
+            "Absolutamente, NormaPro Ticketing está diseñada con una interfaz intuitiva y fácil de navegar, lo que permite a los usuarios, independientemente de su destreza tecnológica, manejarla con facilidad desde el primer uso. La claridad visual, junto con flujos de trabajo lógicos y guiados, ayuda a los usuarios a realizar sus tareas de manera eficiente y sin complicaciones. Además, ofrecemos tutoriales y soporte para asegurar que todos los usuarios se sientan cómodos y competentes al utilizar la plataforma."
+          ],
+          "link": [
+            "¿Interesado en una plataforma que combine potencia y simplicidad? ",
+            "Contacta con nosotros",
+            " para descubrir cómo NormaPro Ticketing puede simplificar tu gestión de tickets."
+          ]
+        },
+        {
+          "question": "¿Qué soporte técnico ofrece NormaPro Ticketing?",
+          "answer": [
+            "Sí, NormaPro Ticketing es una herramienta versátil que se adapta a las necesidades tanto de pequeñas empresas como de grandes corporaciones. Su estructura modular y opciones de personalización permiten que las empresas pequeñas elijan y paguen solo por las características que necesitan, sin la complejidad o el costo de funcionalidades que no utilizarán. A medida que la empresa crece, NormaPro Ticketing puede escalar para incorporar más usuarios, procesos y departamentos, asegurando que siempre sea una solución adecuada."
+          ],
+          "link": [
+            "¿Quieres saber cómo NormaPro Ticketing puede ajustarse a tu negocio en crecimiento? ",
+            "Contáctanos hoy",
+            " para obtener más información y planificar una demostración adaptada a tu empresa."
+          ]
+        },
+        {
+          "question": "¿Se puede personalizar NormaPro Ticketing según las necesidades de mi empresa?",
+          "answer": [
+            "NormaPro Ticketing se destaca por su alto nivel de personalización. Entendemos que cada empresa tiene sus propios procesos y desafíos únicos, por lo que nuestra plataforma permite una configuración detallada para adaptarse a sus necesidades específicas. Desde la personalización de flujos de trabajo y formularios de tickets hasta la creación de campos y categorías específicos, NormaPro Ticketing se puede moldear para alinearse con la forma en que su equipo trabaja y la manera en que desea interactuar con sus clientes."
+          ],
+          "link": [
+            "¿Listo para una solución que se ajuste a la perfección con tu negocio? ",
+            "Pont en contacto",
+            " con nosotros y descubre cómo personalizar NormaPro Ticketing a la medida de tus requisitos operativos."
+          ]
+        },
+        {
+          "question": "¿Cuánto te costará implementar NormaPro Ticketing en tu empresa?",
+          "answer": [
+            "El coste de implementar NormaPro Ticketing en tu empresa se estructura para adaptarse a la medida de tus necesidades y presupuesto. Nuestro enfoque flexible significa que proporcionamos una solución asequible tanto para pequeñas empresas como para grandes corporaciones, sin cargos ocultos ni sorpresas. Te invitamos a discutir tus necesidades con nosotros para que podamos ofrecerte un paquete personalizado que no solo se ajuste a tus expectativas económicas sino que también impulse la eficiencia y el crecimiento de tu empresa."
+          ],
+          "link": [
+            "¿Interesado en una solución de ticketing que ofrezca valor real sin exceder tu presupuesto? ",
+            "Contacta con nosotros hoy",
+            " mismo para explorar nuestras opciones de precios y encontrar un plan que se ajuste perfectamente a tu negocio."
+          ]
+        },
+        {
+          "question": "¿Qué diferencia a NormaPro Ticketing de otras herramientas similares?",
+          "answer": [
+            "NormaPro Ticketing se distingue de otras herramientas del mercado por su combinación única de facilidad de uso, potentes funcionalidades y personalización sin igual. Lo que realmente nos pone por delante es nuestro compromiso con el servicio al cliente a través de una consultoría personalizada y un soporte técnico excepcional. Creemos firmemente que cada empresa merece una solución que se adapte a su manera de trabajar y evolucione junto con sus desafíos únicos. Por eso, más que una simple herramienta de ticketing, NormaPro es un socio estratégico en el crecimiento y la optimización de tu empresa."
+          ],
+          "link": [
+            "¿Curioso por saber cómo NormaPro Ticketing puede hacer una diferencia tangible en tu organización? ",
+            "Contacta con nosotros",
+            "para una demostración y descubre lo que nos hace únicos."
+          ]
+        },
+        {
+          "question": "¿Pueod integrar NormaPro Ticketing con otras herramientas que ya uso?",
+          "answer": [
+            "Sí, NormaPro Ticketing está diseñado para integrarse a la perfección con una amplia variedad de herramientas y plataformas que ya podrías estar utilizando en tu empresa. Nuestra solución facilita la sincronización y el intercambio de datos entre sistemas para proporcionar una experiencia fluida y sin interrupciones, lo que aumenta la productividad y minimiza la curva de aprendizaje para los usuarios.\n\nPero lo que maximiza su potencial es cuando se combina con otras aplicaciones dentro del ecosistema de NormaPro. Esta integración ampliada permite una sinergia entre aplicaciones, optimizando aún más tus flujos de trabajo y centralizando la gestión de datos. Al formar parte de un sistema unificado, podrás disfrutar de una visibilidad completa y controlar todos tus procesos empresariales en un único lugar."
+          ],
+          "link": [
+            "¿Listo para experimentar la integración completa y llevar tus operaciones al siguiente nivel? ",
+            "Contáctanos",
+            " para explorar cómo NormaPro Ticketing y su ecosistema de aplicaciones pueden transformar tu empresa."
+          ]
+        },
+        {
+          "question": "¿Hay algún contrato o compromiso de tiempo al suscribirse a NormaPro Ticketing?",
+          "answer": [
+            "En NormaPro Ticketing, ofrecemos flexibilidad en nuestros términos de servicio para adaptarnos a las diversas necesidades y preferencias de nuestros clientes. No existe un compromiso de tiempo forzoso; puedes optar por un plan mensual o anual, según lo que mejor se ajuste a la estrategia y presupuesto de tu empresa. Nuestro objetivo es proporcionarte la libertad de elegir y la capacidad de escalar o ajustar tu suscripción conforme a las demandas cambiantes de tu negocio."
+          ],
+          "link": [
+            "¿Quieres más información sobre nuestros planes y cómo pueden alinearse con tus requisitos específicos? ",
+            "Contacta con nosotros para una conversación",
+            " detallada sobre nuestros contratos y para encontrar la opción que mejor se adapte a tu empresa."
+          ]
+        },
+        {
+          "question": "¿Cómo maneja NormaPro Ticketing la seguridad de la información?",
+          "answer": [
+            "NormaPro Ticketing toma la seguridad de la información con la máxima seriedad. Nuestra plataforma emplea las últimas tecnologías en cifrado y medidas de seguridad para proteger todos los datos contra accesos no autorizados. Nos adherimos a las mejores prácticas de la industria y cumplimos con las regulaciones de protección de datos pertinentes para garantizar que la información de tu empresa y tus clientes esté segura y manejada con la confidencialidad que merece. Nuestra certificación ISO 27001 de seguridad de la información nos avala."
+          ],
+          "link": [
+            "¿Preocupado por la seguridad de tus datos? ",
+            "Contáctanos para obtener más detalles",
+            " sobre nuestras rigurosas políticas de seguridad y cómo NormaPro Ticketing puede salvaguardar la información de tu empresa."
+          ]
+        },
+        {
+          "question": "¿NormaPro Ticketing ofrece formación o capacitación?",
+          "answer": [
+            "Sí, NormaPro Ticketing entiende la importancia de una implementación efectiva y por eso ofrece formación y capacitación completa para asegurarse de que tu equipo pueda aprovechar al máximo todas las características y funcionalidades de la herramienta. Ofrecemos sesiones de entrenamiento personalizadas, recursos en línea y material de apoyo continuo para facilitar una transición suave y una adopción exitosa de la plataforma."
+          ],
+          "link": [
+            "¿Listo para capacitar a tu equipo con las herramientas necesarias para triunfar? ",
+            "Ponte en contacto con nosotros",
+            " para programar una sesión de formación con NormaPro Ticketing y da el primer paso hacia una gestión de tickets sin contratiempos."
+          ]
+        }
+      ]
     }
   }
 ]

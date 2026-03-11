@@ -7,10 +7,14 @@
       "claim": [
         "Optimiza y automatiza tus procesos sin complicaciones, en semanas"
       ],
-      "pragma": "",
+      "pragma": [],
       "cta": "Quiero una demostración",
-      "imgType": "",
-      "imgUrl": ""
+      "imgType": "lottie",
+      "imgUrl": "bpm",
+      "backgroundImg": "hielo3.png",
+      "backgroundSize": "100%",
+      "backgroundRepeat": "no-repeat",
+      "backgroundPositionX": "center"
     }
   },
   {
@@ -23,11 +27,15 @@
   },
   {
     "id": 3,
-    "tipo": "PresentacionSection",
+    "tipo": "PresentacionSection2",
     "data": {
       "title": "NormaPro BPM es tu aliado estratégico en la transformación digital, simplificando y acelerando la gestión y optimización de tus procesos de negocio.",
       "claim": "Con nuestra solución, estarás equipado para aumentar la eficiencia operativa, garantizar la consistencia en tus operaciones, y adaptarte rápidamente a los cambiantes requisitos del mercado.",
-      "imgBottom": ""
+      "images": [
+        "Grupo-5210.png",
+        "Grupo-4574.png",
+        "Grupo-4575.png"
+      ]
     }
   },
   {
@@ -67,6 +75,15 @@
       ],
       "url_video": "https://www.youtube.com/embed/iKzPr7_yfA0?controls=1&rel=0&playsinline=0&cc_load_policy=0&autoplay=0&enablejsapi=1&origin=https%3A%2F%2Fnormapro.es&widgetid=1&forigin=https%3A%2F%2Fnormapro.es%2Fbpm%2F&aoriginsup=0&vf=6",
       "buttonText": "Reserva una sesión estratégica"
+    }
+  },
+  {
+    "id": 7,
+    "tipo": "CarouselPerceptionsSection",
+    "data": {
+      "title": "Voces reales,\nExperiencias verdaderas",
+      "claim": "Descubre cómo NormaPro BPM ha transformado las operaciones y ha impulsado el crecimiento de empresas como la tuya.\nEstas son las historias y opiniones de quienes han adoptado nuestra solución y han visto resultados tangibles.",
+      "listIds": [9,7,3,1]
     }
   },
   {
@@ -142,74 +159,74 @@
         {
           "id_data": 1,
           "title": "Interfaz de creación de flujos",
-          "icon": "fa-file-signature",
+          "icon": "fa-timeline-arrow",
           "mainTitle": "Diseña procesos empresariales de manera visual y eficiente.",
           "subtitle": "Interfaz de creación de flujos",
           "description": "Simplifica la creación y gestión de flujos de trabajo, reduciendo la complejidad y la necesidad de habilidades técnicas avanzadas. Nuestra interfaz permite configurar flujos de trabajo de manera visual, arrastrando y soltando elementos, definiendo reglas de negocio y asignando responsabilidades de manera sencilla.",
-          "img": ""
+          "img": "creacionflujos.png"
         },
         {
           "id_data": 2,
           "title": "Personalización de flujos",
-          "icon": "fa-file-signature",
+          "icon": "fa-briefcase",
           "mainTitle": "Flujos de trabajo específicos para tu empresa.",
           "subtitle": "Personalización de flujos",
           "description": "Los flujos de trabajo genéricos no siempre se ajustan a los requisitos únicos de su empresa.\n\nNormaPro BPM permite la personalización completa de flujos, incluida la definición de reglas de negocio específicas y la adaptación a las necesidades de su organización.",
-          "img": ""
+          "img": "personalizacionflujos.png"
         },
         {
           "id_data": 3,
           "title": "Biblioteca de componentes",
-          "icon": "fa-file-signature",
+          "icon": "fa-grid-2-plus",
           "mainTitle": "Acelera la creación de flujos utilizando componentes predefinidos",
           "subtitle": "Biblioteca de componentes",
           "description": "Crear flujos desde cero puede ser lento y complejo. NormaPro BPM ofrece una biblioteca de componentes predefinidos, como formularios, aprobaciones y notificaciones, que agilizan la creación de flujos.\n\nAhorro de tiempo, flujos consistentes y capacidad de implementar rápidamente nuevas iniciativas.",
-          "img": ""
+          "img": "bibliotecacomponentes.png"
         },
         {
           "id_data": 4,
           "title": "Editor de formularios",
-          "icon": "fa-file-signature",
+          "icon": "fa-pen-to-square",
           "mainTitle": "Crea formularios personalizados para capturar y gestionar datos",
           "subtitle": "Editor de formularios",
           "description": "Diseña y personaliza formularios que se integran perfectamente en tus flujos de trabajo. Tú mismo puedes definir campos, lógica condicional y validaciones para recopilar datos de manera eficiente.\n\nReducción de errores, mejora de la precisión y agilización de los procesos de negocio.",
-          "img": ""
+          "img": "editorformularios.png"
         },
         {
           "id_data": 5,
           "title": "Sistemas de comunicaciones y alertas",
-          "icon": "fa-file-signature",
+          "icon": "fa-bell",
           "mainTitle": "Mantén a todos los participantes informados en tiempo real",
           "subtitle": "Sistemas de comunicaciones y alertas",
           "description": "Nuestra herramienta incluye un sistema de comunicaciones y alertas que notifica automáticamente a los participantes sobre tareas pendientes, actualizaciones importantes y cambios en los flujos de trabajo.\n\nComunicación efectiva, cumplimiento de plazos, reducción de errores y flujo de trabajo colaborativo mejorado.",
-          "img": ""
+          "img": "alertas.png"
         },
         {
           "id_data": 6,
           "title": "Gestor documental",
-          "icon": "fa-file-signature",
+          "icon": "fa-file-lines",
           "mainTitle": "Documentos centralizados y organizados",
           "subtitle": "Gestor documental",
           "description": "Los documentos dispersos y la dificultad para acceder a información relevante pueden ralentizar los procesos y dificultar la toma de decisiones.\n\nNuestro gestor documental permite almacenar y organizar documentos de manera centralizada, vinculándolos a flujos de trabajo específicos. Puedes buscar, recuperar y colaborar en documentos de manera eficiente.",
-          "img": ""
+          "img": "mapadocumental.png"
         },
         {
           "id_data": 7,
           "title": "Panel de seguimiento y supervisión",
-          "icon": "fa-file-signature",
+          "icon": "fa-chart-pie",
           "mainTitle": "Control total sobre los flujos de trabajo",
           "subtitle": "Panel de seguimieneto y supervisión",
           "description": "La falta de visibilidad puede dificultar la supervisión efectiva de tus procesos empresariales.\n\nNormaPro BPM permite un seguimiento en tiempo real del estado y el progreso de los flujos de trabajo en ejecución, junto con informes detallados y análisis.\n\nMayor control, capacidad de tomar decisiones informadas y mejora de la eficiencia operativa.",
-          "img": ""
+          "img": "controlflujos.png"
         },
         {
           "id_data": 8,
           "title": "Simulación y pruebas de flujo",
-          "icon": "fa-file-signature",
+          "icon": "fa-list-check",
           "mainTitle": "Identifica y resuelve problemas antes de implementar flujos en producción",
           "subtitle": "Simulación y pruebas de flujos",
           "description": "Nuestra herramienta permite la simulación y las pruebas exhaustivas de flujos antes de implementarlos, lo que ayuda a identificar problemas y optimizar el rendimiento.\n\nReducción de riesgos, ahorro de costos, lanzamiento más seguro de flujos de trabajo.",
-          "img": ""
+          "img": "pruebasflujos.png"
         }
       ]
     }
@@ -221,10 +238,10 @@
       "title": "Y todo esto, hazlo también desde tu móvil",
       "subtitle": "Potencia la movilidad y la eficiencia fuera de la oficina.",
       "images": [
-        "portalmovil1.png",
-        "portalmovil2.png",
-        "portalmovil3.png",
-        "portalmovil4.png"
+        "portalmovil5.png",
+        "portalmovil6.png",
+        "portalmovil7.png",
+        "portalmovil8.png"
       ]
     }
   },
@@ -254,7 +271,7 @@
           "claim": "Más allá de la implementación, nuestro equipo está siempre disponible para asistencia y orientación."
         }
       ],
-      "id_testimonio": 3
+      "id_testimonio": 6
     }
   },
   {
@@ -288,7 +305,8 @@
     "id": 16,
     "tipo": "ResumenSection",
     "data": {
-      "imgCabecera": "",
+      "imgCabecera": "IICE_Medioambiente.png",
+      "imgBackground": "hielo2.png",
       "title": "Invirtiendo en Valor: Descubre el coste de NormaPro BPM",
       "claim": "",
       "titlelist": "",
@@ -315,7 +333,8 @@
     "id": 17,
     "tipo": "ResumenSection",
     "data": {
-      "imgCabecera": "",
+      "imgCabecera": "IICE_FormaPro_NormaPro.png",
+      "imgBackground": "hielo1.png",
       "title": "Con NormaPro BPM, da el paso hacia el futuro empresarial.",
       "claim": "",
       "titlelist": "",
@@ -336,6 +355,174 @@
         "buttonText": "Contacta con nuestro equipo ahora",
         "pragma": ""
       }
+    }
+  },
+  {
+    "id": 18,
+    "tipo": "FaqSection",
+    "data": {
+      "faqs": [
+        {
+          "question": "¿Qué es NormaPro BPM?",
+          "answer": [
+            "NormaPro BPM es una herramienta avanzada de gestión de procesos empresariales diseñada para optimizar y automatizar las operaciones, brindando eficiencia y productividad a tu negocio.\n\nSe trata de una solución de vanguardia en Gestión de Procesos de Negocio (BPM) diseñada para transformar la forma en que las empresas gestionan sus operaciones. Esta potente plataforma ofrece una interfaz intuitiva y visual que permite a las  organizaciones modelar, automatizar y optimizar sus procesos empresariales de manera eficiente. \n\nNormaPro BPM se destaca por su capacidad para simplificar la creación y gestión de flujos de trabajo, mejorar la eficiencia operativa, brindar control total sobre los procesos, garantizar el cumplimiento normativo y fomentar una cultura de mejora  continua. Al elegir NormaPro BPM, las empresas pueden aumentar su competitividad, reducir costos, mejorar la calidad y  satisfacción del cliente, y tomar decisiones informadas basadas en datos en tiempo real."
+          ],
+          "link": [
+            "",
+            "Solicita una reunión para conocer más detalles."
+          ]
+        },
+        {
+          "question": "¿Es fácil de implementar y usar?",
+          "answer": [
+            "Sí, NormaPro BPM Suite se ha diseñado pensando en la facilidad de implementación y uso. Nuestra plataforma ofrece una interfaz intuitiva y de usuario amigable que permite a las empresas ponerse en marcha rápidamente. No es necesario contar con conocimientos técnicos avanzados para empezar a crear y gestionar flujos de trabajo."
+          ],
+          "link": [
+            "Además, nuestro equipo de soporte y capacitación está disponible para ayudar a los clientes en cada paso del proceso de implementación. Esto significa que puede comenzar a experimentar los beneficios de NormaPro BPM Suite de manera efectiva y sin complicaciones. ",
+            "Agenda una demo para verlo en acción."
+          ]
+        },
+        {
+          "question": "¿Qué diferencia a NormaPro BPM de otras herramientas BPM?",
+          "answer": [
+            "Lo que nos distingue es la combinación de funcionalidades avanzadas y nuestro nivel de consultoría personalizada, asegurando una experiencia única y a medida para tu empresa.\n\nA diferencia de algunas soluciones más complejas, nuestra plataforma se destaca por su interfaz intuitiva y de fácil uso, lo que significa que los usuarios pueden comenzar a diseñar y gestionar flujos de trabajo sin una curva de aprendizaje empinada.\n\nAdemás, NormaPro BPM Suite ofrece una amplia gama de funcionalidades personalizables que se adaptan a las necesidades específicas de su empresa, lo que le permite crear flujos de trabajo a medida sin problemas. También proporcionamos una biblioteca de componentes predefinidos para agilizar el proceso de diseño.\n\nNuestra plataforma se destaca por su capacidad para mejorar la eficiencia operativa, el control de procesos, el cumplimiento normativo y la colaboración entre equipos, lo que se traduce en un impacto positivo en la productividad y la rentabilidad. En resumen, lo que nos diferencia es nuestra capacidad para ofrecer una solución BPM completa y poderosa que es a la vez fácil de usar y altamente adaptable a las necesidades únicas de su empresa."
+          ],
+          "link": [
+            "",
+            "Hablemos sobre cómo podemos personalizarlo para ti."
+          ]
+        },
+        {
+          "question": "¿Es adecuado para mi tipo de negocio?",
+          "answer": [
+            "Seguro, NormaPro BPM Suite es adecuado para una amplia variedad de tipos de negocios, independientemente de su tamaño o industria. Nuestra plataforma está diseñada para ser altamente personalizable, lo que significa que puede adaptarse a las necesidades específicas de su negocio, ya sea una pequeña empresa, una empresa mediana o una corporación a gran escala.\n\nNormaPro BPM Suite ha demostrado ser beneficioso en diversas industrias, como la alimentaria, la sanitaria, la logística y otras. Nuestra flexibilidad y capacidad para adaptarnos a diferentes requisitos hacen que NormaPro BPM Suite sea una opción viable para prácticamente cualquier tipo de negocio.\n\nSiempre estamos dispuestos a colaborar con nuestros clientes para asegurarnos de que nuestra solución se adapte perfectamente a sus necesidades y objetivos específicos. Por lo tanto, si está buscando optimizar sus procesos, mejorar la eficiencia y aumentar la competitividad, NormaPro BPM Suite es una excelente elección sin importar la industria en la que opere."
+          ],
+          "link": [
+            "",
+            "Solicita una consulta personalizada."
+          ]
+        },
+        {
+          "question": "¿Cuál es el coste de NormaPro BPM?",
+          "answer": [
+            "El costo de NormaPro BPM Suite puede variar según las necesidades específicas de tu empresa y el alcance de la implementación. Nuestra estructura de precios es flexible y está diseñada para adaptarse a diferentes tamaños de empresa y requisitos individuales. Para obtener una cotización precisa y detallada, le recomendamos ponerse en contacto con nuestro equipo de ventas o solicitar una evaluación gratuita. Estaremos encantados de discutir sus necesidades y proporcionarle una estimación de costo personalizada."
+          ],
+          "link": [
+            "Es importante destacar que, si bien puede haber un costo asociado a la implementación de NormaPro BPM Suite, los beneficios en términos de eficiencia, control de procesos y mejora continua suelen superar con creces la inversión inicial. Nuestra plataforma está diseñada para brindar un retorno de inversión sólido al ayudar a las empresas a reducir costos operativos, aumentar la productividad y mejorar la competitividad. ",
+            "Pide una cotización adaptada a tus necesidades."
+          ]
+        },
+        {
+          "question": "¿Cómo se garantiza la seguridad de mis datos?",
+          "answer": [
+            "La seguridad de tus datos es una prioridad fundamental en NormaPro BPM Suite. Implementamos medidas sólidas para garantizar la protección y confidencialidad de tu información. Algunas de las prácticas y características que empleamos para garantizar la seguridad de tus datos incluyen:\n\n",
+            "Acceso Controlado:",
+            " NormaPro BPM Suite ofrece un control riguroso de acceso, lo que significa que solo las personas que tú autorices pueden acceder a los datos y procesos relevantes.\n\n",
+            "Cifrado de Datos:",
+            " Todos los datos en tránsito se cifran utilizando protocolos de seguridad estándar de la industria para protegerlos contra la interceptación no autorizada.\n\n",
+            "Respaldo y Recuperación:",
+            " Implementamos soluciones de respaldo y recuperación para garantizar que tus datos estén protegidos contra pérdidas accidentales y puedan ser restaurados en caso de interrupciones.\n\n",
+            "Auditoría y Registro:",
+            " NormaPro BPM Suite registra todas las actividades y cambios en los flujos de trabajo, lo que permite un seguimiento y auditoría exhaustivos para garantizar la transparencia y el cumplimiento normativo.\n\n",
+            "Cumplimiento Normativo:",
+            " Nuestra plataforma cumple con las regulaciones de seguridad y privacidad de datos aplicables, y estamos comprometidos en mantener nuestros sistemas actualizados de acuerdo con los requisitos de la norma ISO 19601, la más exigente en seguridad de la información.\n\nNos tomamos la seguridad de los datos en serio y trabajamos continuamente para garantizar la integridad y la confidencialidad de su información. Si tienes preguntas específicas sobre las medidas de seguridad implementadas o deseas obtener más detalles sobre nuestras prácticas de seguridad, no dudes en ponerte en contacto con nuestro equipo de seguridad y cumplimiento. La seguridad es nuestra máxima prioridad. Utilizamos tecnologías de punta para garantizar que tu información esté protegida en todo momento. Conoce más sobre nuestras medidas de seguridad."
+          ]
+        },
+        {
+          "question": "¿Ofrecen formación para el uso de la herramienta?",
+          "answer": [
+            "Sí, en NormaPro BPM Suite ofrecemos formación integral para garantizar que nuestros clientes puedan aprovechar al máximo nuestra herramienta. Nuestro programa de formación está diseñado para satisfacer las necesidades de usuarios de todos los niveles, desde principiantes hasta usuarios avanzados.\n\nOfrecemos:",
+            "Capacitación Inicial:",
+            " Proporcionamos formación inicial para ayudar a los usuarios a familiarizarse con la herramienta, incluyendo la creación de flujos de trabajo, el uso de la interfaz y la configuración básica\n\n.",
+            "Formación Avanzada:",
+            " Para usuarios que deseen profundizar en las capacidades de NormaPro BPM Suite, ofrecemos formación avanzada que cubre temas como la automatización avanzada, la integración con otras aplicaciones y la personalización de flujos de trabajo.\n\n",
+            "Recursos en Línea:",
+            " También ofrecemos recursos en línea, como tutoriales, guías y documentación detallada, para que los usuarios puedan acceder a información útil en cualquier momento.\n\nNuestro objetivo es asegurarnos de que los usuarios se sientan cómodos y confiados al utilizar NormaPro BPM Suite y que puedan aprovechar al máximo todas sus capacidades. Siempre estamos disponibles para responder preguntas y proporcionar asistencia adicional cuando sea necesario."
+          ],
+          "link": [
+            "",
+            "Agenda tu sesión de formación ahora."
+          ]
+        },
+        {
+          "question": "¿En qué consiste vuestro programa de consultoría para Modelado y digitalización de procesos internos de negocio con NormaPro BPM Suite?",
+          "answer": [
+            "Nuestro programa de consultoría BPM es un servicio integral diseñado para ayudar a las empresas a aprovechar al máximo NormaPro BPM y garantizar una implementación con éxito de la herramienta en tus procesos empresariales. Nuestros consultores trabajan en estrecha colaboración con tu empresa para:\n\n• Modelar y analizar los procesos existentes.\n• Adaptar y optimizar estos procesos para la automatización.\n• Configurar y montar NormaPro BPM según tus necesidades específicas.\n• Planificar y coordinar el despliegue de la herramienta.\n• Proporcionar formación a los usuarios involucrados en los procesos.\n• Ofrecer mentoría y seguimiento continuo para garantizar una implementación efectiva.\n\nNuestro programa de consultoría BPM está diseñado para brindarte la orientación y el apoyo necesarios en cada paso del camino, desde el diseño inicial hasta la implementación y más allá. Esto asegura que tu empresa aproveche al máximo NormaPro BPM y logre una mejora sustancial en la eficiencia y el control de sus procesos empresariales. "
+          ],
+          "link": [
+            "",
+            "Contacta con nuestro equipo de consultores."
+          ]
+        },
+        {
+          "question": "¿Puedo integrar NormaPro BPM Suite con otras herramientas que ya uso?",
+          "answer": [
+            "Sí, NormaPro BPM Suite es altamente flexible y admite la integración con otras herramientas y sistemas que su empresa ya utiliza. Nuestra plataforma está diseñada para ser interoperable y compatible con una variedad de aplicaciones empresariales comunes, como sistemas de gestión de recursos empresariales (ERP), software de contabilidad, sistemas de CRM, soluciones de correo electrónico y más.\n\nLa integración de NormaPro BPM Suite con herramientas ya existentes te permite:\n\n",
+            "Automatizar Flujos de Trabajo:",
+            " Puede automatizar y optimizar procesos que involucran múltiples sistemas y aplicaciones, lo que mejora la eficiencia.\n\n",
+            "Centralizar Datos:",
+            " La información se sincroniza en tiempo real entre NormaPro BPM Suite y otras herramientas, lo que garantiza que todos tengan acceso a datos actualizados.\n\n",
+            "Mejorar la Colaboración:",
+            " Facilita la colaboración al eliminar la duplicación de datos y mejorar la comunicación entre departamentos.\n\n",
+            "Tomar Decisiones Informadas:",
+            " Al tener datos integrados y actualizados, puede tomar decisiones más informadas y estratégicas.\n\nNuestro equipo de soporte y consultores de integración está disponible para ayudarte a configurar y optimizar las integraciones según tus necesidades específicas. La capacidad de integración de NormaPro BPM Suite te permite crear un ecosistema de software más completo y eficiente para su empresa."
+          ],
+          "link": [
+            "",
+            "Hablemos sobre las integraciones que te interesan."
+          ]
+        },
+        {
+          "question": "¿Cómo se mantiene actualizada la herramienta?",
+          "answer": [
+            "Realizamos actualizaciones periódicas basadas en feedback de clientes y avances tecnológicos, asegurando que siempre cuentes con la versión más avanzada. Nuestra estrategia de mantenimiento y actualización incluye los siguientes aspectos:\n\n",
+            "Actualizaciones Regulares:",
+            " Lanzamos actualizaciones periódicas de NormaPro BPM Suite que incluyen mejoras funcionales, correcciones de errores y actualizaciones de seguridad. Estas actualizaciones se realizan de manera programada y comunicamos los cambios importantes a nuestros clientes.\n\n",
+            "Retroalimentación de los Usuarios:",
+            " Valoramos la retroalimentación de nuestros usuarios y la utilizamos para mejorar constantemente la herramienta. Si los usuarios identifican oportunidades de mejora o tienen solicitudes específicas, las consideramos en futuras actualizaciones.\n\n",
+            "Cumplimiento Normativo:",
+            " Mantenemos la herramienta actualizada con los últimos requisitos normativos y estándares de seguridad basados en la norma ISO 27001 en la que estamos certificados para garantizar que nuestros clientes estén en conformidad con las regulaciones aplicables.\n\n",
+            "Soporte Técnico Continuo:",
+            " Nuestro equipo de soporte técnico está disponible para ayudarte a implementar y mantener las actualizaciones de manera efectiva, brindando asistencia en caso de problemas o preguntas.\n\n",
+            "Comunicación Transparente:",
+            " Comunicamos claramente las actualizaciones y cambios a nuestros clientes para que estén al tanto de las nuevas características y mejoras.\n\nNos esforzamos por mantener NormaPro BPM Suite actualizado y seguro para garantizarte siempre el acceso a una herramienta de vanguardia que cumple con sus necesidades en constante evolución."
+          ],
+          "link": [
+            "",
+            "Conoce más sobre nuestras actualizaciones."
+          ]
+        },
+        {
+          "question": "¿Puedo personalizar NormaPro BPM Suite según mis necesidades?",
+          "answer": [
+            "Sí, una de nuestras principales ventajas es la capacidad de personalización para adaptarnos a cada empresa.\n\nEntendemos que cada empresa tiene necesidades específicas, y por eso hemos diseñado nuestra plataforma para ser altamente personalizable:\n\n",
+            "Diseño de Flujos de Trabajo Personalizados:",
+            " Puedes diseñar flujos de trabajo específicos para adaptarlos a los procesos únicos de tu empresa, definiendo pasos, reglas de negocio y roles a medida.\n\n",
+            "Personalización de Formularios:",
+            " Nuestra herramienta le permite crear formularios personalizados para recopilar datos de manera específica según tus necesidades.\n\n",
+            "Configuración de Reglas de Negocio:",
+            " Puedes establecer reglas de negocio y lógica personalizada para controlar el flujo de trabajo y la toma de decisiones. Integración con Otras Herramientas: API de integración de NormaPro BPM Suite con otras aplicaciones y sistemas que ya utiliza en su empresa. Personalización de Informes y Paneles: Adapta los informes y paneles de control para obtener información relevante de acuerdo con tus objetivos empresariales.\n\nNuestro equipo de soporte y consultores está disponible para ayudarte en el proceso de personalización y asegurarse de que NormaPro BPM Suite se ajuste perfectamente a tus necesidades específicas. La capacidad de personalización de la herramienta te brinda la flexibilidad necesaria para adaptarse a un entorno empresarial en constante cambio."
+          ],
+          "link": [
+            "",
+            "Descubre cómo podemos adaptarnos a tu negocio."
+          ]
+        },
+        {
+          "question": "¿Qué sucede si deseo expandir las capacidades de mi paquete en el futuro?",
+          "answer": [
+            "Sabemos que las necesidades de su empresa evolucionan con el tiempo. Por lo tanto, si en el futuro deseas expandir las capacidades del paquete que hayas adquirido, estamos preparados para ayudarte a hacerlo de manera eficiente:\n\n",
+            "Agregación de Usuarios:",
+            " Puedes aumentar la cantidad de usuarios que utilizan NormaPro BPM Suite según las necesidades de crecimiento de tu empresa.\n\n",
+            "Adición de Funcionalidades:",
+            " Si necesitas acceso a funcionalidades adicionales que no están incluidas en tu paquete actual, podemos ayudarte a personalizar su configuración para incluir estas nuevas capacidades.\n\nNormaPro es un ecosistema de aplicaciones diseñadas para ayudar a las empresas a ser más eficientes, y dispone de un universo de aplicaciones empresariales que se pueden añadir en cualquier momento al paquete que hayan adquirido, lo que le brinda la flexibilidad necesaria para adaptarse a las cambiantes necesidades de su negocio.\n\n",
+            "Formación Adicional:",
+            " Ofrecemos formación adicional para usuarios nuevos o para aquellos que deseen aprovechar al máximo las características avanzadas de la herramienta.\n\n",
+            "Soporte Continuo:",
+            " Nuestro equipo de soporte seguirá estando disponible para ayudarte con cualquier pregunta o necesidad que surja a medida que expandas sus capacidades.\n\nNuestra flexibilidad y enfoque orientado al cliente nos permiten adaptarnos a su crecimiento y evolución. Siempre estamos listos para colaborar estrechamente contigo para garantizar que tu inversión en NormaPro BPM Suite continúe satisfaciendo las necesidades de tu empresa en constante cambio. Explora nuestras opciones de escalabilidad."
+          ]
+        }
+      ]
     }
   }
 ]

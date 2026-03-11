@@ -42,10 +42,11 @@ const FaqSection: FC<FaqProps> = ({ faqs }) => {
                 </button>
                 
                 <div
-                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                    isOpen ? 'max-h-96 pb-6' : 'max-h-0'
+                  className={`grid transition-all duration-300 ease-in-out ${
+                    isOpen ? 'grid-rows-[1fr] opacity-100 pb-6' : 'grid-rows-[0fr] opacity-0'
                   }`}
                 >
+                  <div className="overflow-hidden">
                   <p className="text-[#010d3d] leading-relaxed whitespace-pre-line">
                     {faq.answer.map((text, i) => (
                       <span key={i} style={{ fontWeight: weights[i % weights.length] }}>
@@ -57,23 +58,24 @@ const FaqSection: FC<FaqProps> = ({ faqs }) => {
                   {faq.link && (
                     <div className="mt-4">
                       {faq.link.map((text, i) => {
-                      const isLink = i % 2 !== 0;
-                      const Tag = isLink ? 'a' : 'span';
-                      return (
-                        <Tag
-                          key={i}
-                          href={isLink ? '#' : undefined}
-                          style={{
-                            fontWeight: weights[i % weights.length],
-                            textDecoration: isLink ? 'underline' : 'none'
-                          }}
-                        >
-                          {text + " "}
-                        </Tag>
-                      );
-                    })}
+                        const isLink = i % 2 !== 0;
+                        const Tag = isLink ? 'a' : 'span';
+                        return (
+                          <Tag
+                            key={i}
+                            href={isLink ? '#' : undefined}
+                            style={{
+                              fontWeight: weights[i % weights.length],
+                              textDecoration: isLink ? 'underline' : 'none'
+                            }}
+                          >
+                            {text + " "}
+                          </Tag>
+                        );
+                      })}
+                    </div>
+                  )}
                   </div>
-                )}
                 </div>
               </div>
             );

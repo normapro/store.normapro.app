@@ -1,0 +1,544 @@
+[
+  {
+    "id": 1,
+    "tipo": "HeroSection2",
+    "data": {
+      "claim": [
+        "Cómo activar en un solo día un ",
+        "canal de denuncias ",
+        "acorde a la normativa."
+      ],
+      "pragma": [
+        "100% adaptado a las necesidades específicas de tu empresa"
+      ],
+      "imgBottom": "portatilcanaldenuncias.png"
+    }
+  },
+  {
+    "id": 2,
+    "tipo": "TextSection",
+    "data": {
+      "background": "gray",
+      "level2": [
+        "\n\n\n\n\nBienvenidos a nuestro canal de denuncias NormaPro"
+      ],
+      "level3": [
+        "",
+        "La solución rápida y adaptada a las necesidades específicas de tu organización en cuanto a ",
+        "denuncias y procesos de investigación.\n\n",
+        "Nuestro objetivo es asegurar que todas las denuncias sean atendidas y gestionadas de manera ética y transparente, acorde a las normativas aplicables."
+      ],
+      "buttonText": "Reserva una sesión estratégica",
+      "level7": [
+        "",
+        "Es es momento de decidir:\n",
+        "¿Quieres gestionar trámites delicados y confidenciales y evitar consecuencias legales y pérdidas de reputación? ¿O prefieres arriesgarte a un incidente inesperado de ámbito penal en tu empresa?"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "tipo": "VideoSection",
+    "data": {
+      "title": "Reserva una sesión demostrativa o mira el video si…",
+      "items": [
+        "… quieres detener la tranquilidad de saber que cuentas con un canal de denuncias que te ayudará a prevenir y detectar irregularidades justo a tiempo.",
+        "… quieres mejorar la cultura ética y de cumplimiento en tu empresa y saber que todo está en orden. ",
+        "… quieres cumplir con la ley, reducir los riesgos legales y proteger la reputación de tu empresa."
+      ],
+      "url_video": "https://www.youtube.com/embed/jP1VoImiIVc?controls=1&rel=0&playsinline=0&cc_load_policy=0&autoplay=0&enablejsapi=1&origin=https%3A%2F%2Fnormapro.es&widgetid=1&forigin=https%3A%2F%2Fnormapro.es%2Fcanal-de-denuncias%2F&aoriginsup=0&gporigin=https%3A%2F%2Fnormapro.es%2Fcanal-de-denuncias%2F&vf=6",
+      "buttonText": "Reserva una estratégica"
+    }
+  },
+  {
+    "id": 4,
+    "tipo": "ClientsMuralSection",
+    "data": {
+      "scope": "canal-comunicacion-interno",
+      "claim": [
+        "La Plataforma Digital NormaPro es la que utilizan ",
+        "grandes empresas ",
+        "para gestionar y monitorizar riesgos de cumplimiento normativo:"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "tipo": "ClientPerceptionSection",
+    "data": {
+      "title": "La percepción de nuestros clientes es nuestra realidad",
+      "items": [
+        "Desde Instituto de Innovación, Ciencia y Empresa llevamos más de veinte años ayudando a muchos empresarios y directivos con los que trabajamos mano a mano en Compliance."
+      ],
+      "id_testimonio": 3
+    }
+  },
+  {
+    "id": 6,
+    "tipo": "RazonesSection",
+    "data": {
+      "imgCabecera": "IICE_LandingCompliance_Etapa5.png",
+      "imgBackground": "hielo3.png",
+      "title": "¿Por qué mi empresa debería tener un canal de denuncias?",
+      "claim": "Son diarios los casos que se suceden en los juzgados derivados de incumplimientos con consecuencias legales graves. Son situaciones muy desagradables que podían dar al traste con vuestro futuro profesional y personal. En un principio se trata de una exigencia legal, tanto a nivel europeo como nacional si tiene más de 50 trabajadores.\n\nDisponer de un canal de denuncias para delitos penales es la mejor demostración de voluntad decidida para favorecer la consolidación de una cultura ética y de cumplimiento.",
+      "titleList": "5 Razones principales",
+      "list": [
+        {
+          "icon": "fa-chart-line-up",
+          "title": "Prevenir y detectar irregularidades",
+          "pragma": "El canal de denuncias permite que los empleados, clientes, proveedores y otras partes interesadas informen sobre cualquier tipo de irregularidad o conducta inapropiada en la empresa. Esto ayuda a prevenir y detectar posibles problemas antes de que se conviertan en situaciones más graves."
+        },
+        {
+          "icon": "fa-people-pants",
+          "title": "Mejorar la cultura organizacional",
+          "pragma": "El canal de denuncias promueve una cultura de transparencia y ética dentro de la empresa. Al fomentar la denuncia de conductas inapropiadas, se crea un ambiente más saludable para los empleados y se fortalece la confianza en la empresa."
+        },
+        {
+          "icon": "fa-scale-balanced",
+          "title": "Cumplir con la ley",
+          "pragma": "En algunos países, existen regulaciones que obligan a las empresas a contar con canales de denuncia para asegurar el cumplimiento de las normativas. Un canal de denuncias adecuado puede ayudar a la empresa a cumplir con estas regulaciones."
+        },
+        {
+          "icon": "fa-gavel",
+          "title": "Reducir riesgos legales",
+          "pragma": "Al tener un canal de denuncias, la empresa puede abordar y resolver los problemas antes de que se conviertan en situaciones más graves que puedan generar demandas y litigios legales."
+        },
+        {
+          "icon": "fa-comments",
+          "title": "Proteger la reputación de la empresa",
+          "pragma": "Un canal de denuncias puede ayudar a la empresa a proteger su reputación al permitirle actuar de manera rápida y efectiva ante cualquier irregularidad reportada. Esto demuestra el compromiso de la empresa con la ética y la transparencia."
+        }
+      ],
+      "buttonText": "Reserva una reunión con nosotros"
+    }
+  },
+  {
+    "id": 7,
+    "tipo": "ImgTextSection",
+    "data": {
+      "imgCabecera": "IICE_NormaPro1.png",
+      "imgBackground": "hielo4.png",
+      "title": "¿Te preguntas cómo activar un canal de denuncias en un solo día?",
+      "subtitle": "Acorde a la normativa y 100% adaptado a las necesidades específicas de tu empresa",
+      "claim": "¡Es posible! Desde nuestra Plataforma Digital NormaPro, podrás implementar un canal de denuncias avanzada, confiable y seguro un muy poco tiempo."
+    }
+  },
+  {
+    "id": 8,
+    "tipo": "PresentacionSection2",
+    "data": {
+      "images": [
+        "canaldenuncias1.png",
+        "canaldenuncias2.png",
+        "canaldenuncias3.png"
+      ],
+      "bottomText": "Nuestro canal de denuncias avanzado NormaPro te ofrece la opción de denunciar nominativamente o anónimamente, garantizando siempre la confidencialidad del denunciante. Además, podrás hacer seguimiento del estado de tu denuncia en todo momento, sin necesidad de aplicaciones adicionales."
+    }
+  },
+  {
+    "id": 9,
+    "tipo": "ObstaculosYSolucionesSection",
+    "data": {
+      "title": "¿Necesitas hacer entrevistar o informes intermedios?",
+      "claim": "No hay problema! Todo el proceso de denuncia se encuentra centralizado en una misma plataforma, facilitando la gestión y la trazabilidad de la información.",
+      "tabletitle": "Con nuestro sistema, podrás:",
+      "pragma": ["Tode el proceso de denuncia es customizable, desde los formularios previos hasta la integracioń con la web corporativa de la organización."],
+      "table": [
+        {
+          "id_celda": 1,
+          "icono": "fa-comment",
+          "title": "Comunicarte con el denunciante manteniendo su anonimato y notificar la apertura de la denuncia a todas las personas implicadas.",
+          "pragma": ""
+        },
+        {
+          "id_celda": 2,
+          "icono": "fa-envelope-dot",
+          "title": "Recibir un acuse de recibo automático, así como la firma digital de los documentos y la comunicación de la admisión o inadmisión de la denuncia de forma automática.",
+          "pragma": ""
+        },
+        {
+          "id_celda": 3,
+          "icono": "fa-timeline-arrow",
+          "title": "Planificar los tiempos, recibir alertas para los plazos y adaptar el flujo de proceso de denuncia a las necesidades específicas de tu empresa.",
+          "pragma": "Si no tienes un flujograma de proceso de denuncia, te ayudamos a modelarlo con nuestra consultoría especializada."
+        },
+        {
+          "id_celda": 4,
+          "icono": "fa-file-circle-check",
+          "title": "Podrás nombrar instructores, recibir notificaciones selectivas y conservar las actas de entrevistas como información documentada.",
+          "pragma": "Y además, obtener informes de investigación, seleccionar decisores, resolver con notificaciones y cerrar con comprobación."
+        }
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "tipo": "ClientPerceptionSection",
+    "data": {
+      "title": "Garantizar la transparencia y la ética en el manejo de denuncias en tu organización.",
+      "items": [
+        "¡Contáctanos y activa hoy mismo tu canal de denuncias avanzado!"
+      ],
+      "id_testimonio": 6
+    }
+  },
+  {
+    "id": 11,
+    "tipo": "AportacionesSection",
+    "data": {
+      "title": "Todavía tenemos más aportaciones de valor pensadas para ti",
+      "claim": "En Instituto de Innovación, Ciencia y Empresa no paramos de pensar cómo mejorar nuestra oferta de valor cada día y, en este caso, para que puedas aprovechar al máximo esta experiencia, tenemos dos aportaciones adicionales incluidas el paquete de servicios:",
+      "aportaciones": [
+        {
+          "image": "IICE_LandingCompliance_Expertos.png",
+          "imageBackground": "hielo5.png",
+          "title": "El Cuadro de Expertos",
+          "claim": "Muy valorado y utilizado por tods nuestros clientes",
+          "items": [
+            "Tendrás acceso ilimitado desde el primer día.",
+            "Ellos estarán ahí los 365 días del año para ayudarte.",
+            "Resuelve tus dudas.",
+            "Pídeles opinión."
+          ],
+          "buttonText": "Quiero saber en qué consiste"
+        },
+        {
+          "image": "IICE_Academia_FormaPro.png",
+          "imageBackground": "hielo2.png",
+          "title": "Academia FormaPro",
+          "claim": "Una selección de cursos y conferencias pensados para facilitar las cosas",
+          "items": [
+            "Para conocer un detalle la normativa sin perder tiempo",
+            "Para transmitirse los consejos más prácticos",
+            "Para sacarle el máximo partido a tu canal de denuncias.",
+            "Para conocer todo lo que puede hacer por ti la Plataforma Digital NormaPro "
+          ],
+          "buttonText": "Descubre los cursos gratuitos"
+        }
+      ]
+    }
+  },
+  {
+    "id": 12,
+    "tipo": "SideImgTextSection",
+    "data": {
+      "image": "IICE_LandingCompliance_Etapa3.png",
+      "imgBackground": "hielo6.png",
+      "title": "El Modelo más completo y avanzado para implementar un Canal de denuncias",
+      "claim": "Además de todo lo anterior, el canal de denuncias NormaPro está respaldado por servicios especializados de consultoría para modelar los procesos, asistir durante el proceso de gestión tramitación e investigación de la denuncia y adaptarse a las necesidades específicas de tu empresa. (ver opciones de contratación)."
+    }
+  },
+  {
+    "id": 13,
+    "tipo": "CertificacionesSection",
+    "data": {
+      "title": "Calidad y seguridad certificada",
+      "subtitle": "Un Modelo original con el software más avanzado",
+      "images": [
+        "27001.png",
+        "9001.png",
+        "ascom.png",
+        "qaec.png"
+      ]
+    }
+  },
+  {
+    "id": 14,
+    "tipo": "CarouselPerceptionsSection",
+    "data": {
+      "title": "Más de 2.000 directivos y técnicos han trabajado mano a mano en el último año con nuestros consultores",
+      "subtitle": "Mira lo que dicen de nosotros:",
+      "listIds": [1,7,3,9]
+    }
+  },
+  {
+    "id": 15,
+    "tipo": "TextSection",
+    "data": {
+      "background": "white",
+      "level4": [
+        "",
+        "¿Te preocupa proteger a tu empresa de posibles conductas inapropiadas, fraude o corrupción?\n\n¿Quieres fomentar una cultura ética y transparente en tu empresa, mejorar el ambiente laboral y aumentar la confianza de tus empleados y otras partes interesadas?\n\n¿Quieres un canal que permita hacer las denuncias de forma anónima para que el/la denunciante se sienta seguro/a?"
+      ]
+    }
+  },
+  {
+    "id": 16,
+    "tipo": "TextSection",
+    "data": {
+      "background": "gray",
+      "level2": [
+        "Si has respondido sí a alguna de estas preguntas no lo dudes:"
+      ],
+      "level3": [
+        "Debes ser una de las personas que comience a trabajar con nosotros y aplicar nuestro método y empezar ya a implementar un modelo avanzado de canal de denuncias con el que puedes evitar sanciones, mantener a salvo la reputación de tu empresa y ganar en tranquilidad."
+      ],
+      "buttonText": "Reserva una reunión con nosotros"
+    }
+  },
+  {
+    "id": 17,
+    "tipo": "ServiciosSection",
+    "data": {
+      "title": "Cuánto cuesta el canal de denuncias avanzado NormaPro?",
+      "basicTitle": "Nuesto servicio básico incluye:",
+      "extraTitle": "Pero puedes añadir otros servicios",
+      "basicServices": [
+        {
+          "image": "IICE_NormaPro2.png",
+          "title": "Licencia de uso de la Plataforma",
+          "claim": "Para las personas que intervengan en la gestión de denuncias."
+        },
+        {
+          "image": "IICE_LandingCompliance_Expertos.png",
+          "title": "Cuadro de expertos",
+          "claim": "Acceso para consultas generales a través de la plataforma."
+        },
+        {
+          "image": "IICE_Academia_FormaPro.png",
+          "title": "Academia FormaPro",
+          "claim": "Para formaciones en materia de canal de denuncias."
+        }
+      ],
+      "extraServices": [
+        {
+          "image": "IICE_LandingCompliance_Etapa1.png",
+          "claim": [
+            "Consultoría para modelar un ",
+            "procedimienot adaptado 100% ",
+            "a las circunstancias específicas de tu empresa."
+          ]
+        },
+        {
+          "image": "IICE_LandingCompliance_Etapa6.png",
+          "claim": [
+            "Asesoramiento y acompañamiento durante la ",
+            "investigación y tramitación ",
+            "de casos concretos de denuncia"
+          ]
+        }
+      ],
+      "buttonText": "Reserva una sesión estratégica"
+    }
+  },
+  {
+    "id": 18,
+    "tipo": "RegaloSection",
+    "data": {
+      "image": "IICE_LandingCompliance_regalo.svg",
+      "imageBackground": "hielo4.png",
+      "title": "Para ello te proponemos una opción aún mejor:",
+      "subtitle": "Puedes concertar una sesión",
+      "claim": "En la que te haremos una demo de cómo funciona el canal y podrás mantener una sesión con un experto.",
+      "titleSection": "Un regalo único que vas a apreciar enormemente.",
+      "claimSection": "Te informaremos de todos los pormenores de la normativa del canal de denuncias, te aconsejaremos, de forma totalmente gratuita, sobre la solución que más se ajusta a las necesidades específicas de tu empresa.\n\n¿Cuanto tiempo deberías invertir en conocer por tu cuenta todos los requisitos que esta nueva normativa y cómo han de aplicarse en tu empresa? bastantes horas seguro, y probablemente te cueste mucho trabajo encontrar el momento para hacerlo, con lo que el riesgo de incumplimiento iría en aumento con las sanciones tan elevadas que esta Ley determina.\n\nEsta opción está a tu entera disposición y te servirá para conocer el canal de denuncias avanzado NormaPro por dentro y a nuestros consultores sin compromiso alguno. incluso podrás si así lo deseas hablar con alguno de nuestros clientes para preguntarle dudas y que te orienten para saber si esto es realmente lo que te interesa.",
+      "pragma": "Ahora, si quieres aprovechar este regalo y conocer más de cerca este canal de denuncias avanzado que te aportará tranquilidad y que te ayudará a poner a tu empresa en la vanguardia de la ética y la transparencia a la vez que en la transformación digital haz clic en el botón y reserva una sesión con nosotros.",
+      "buttonText": "Reserva una reunión con nosotros"
+    }
+  },
+  {
+    "id": 19,
+    "tipo": "ResumenSection",
+    "data": {
+      "imgCabecera": "IICE_LandingCompliance_medalla.svg",
+      "imgBackground": "hielo2.png",
+      "title": "Nuestros servicios están garantizados",
+      "claim": "",
+      "titlelist": "",
+      "list": [
+        {
+          "icon": "",
+          "title": "",
+          "pragma": "No hay compromiso de permanencia, es decir si una vez iniciado el canal veis que no os convence o que por cualquier circunstancia sentís que no es lo que esperabais no pasa nada, puedes interrumpir el servicio tan solo con comunicárnoslo y listo; así que riesgo cero.\n\nDe cualquier manera, intuimos que esto no va a ocurrir. Hace 9 años que diseñamos la primera versión de la plataforma digital NormaPro y, a día de hoy, ningún cliente nos ha solicitado la baja. Increíble ¿no?"
+        }
+      ],
+      "cta": {
+        "title": "",
+        "buttonText": "",
+        "pragma": ""
+      }
+    }
+  },
+  {
+    "id": 20,
+    "tipo": "ResumenSection",
+    "data": {
+      "imgCabecera": "IICE_FormaPro_NormaPro.png",
+      "imgBackground": "hielo1.png",
+      "title": "Confianza para inversores",
+      "claim": "",
+      "titlelist": "",
+      "list": [
+        {
+          "icon": "",
+          "title": "",
+          "pragma": "Hay clientes que nos manifiestan que están muy pendientes de la cotización de sus acciones y que buscan con la plataforma digital NormaPro la clave que necesitan para conseguir una organización más transparente, visible, ordenada y eficiente desde todos los puntos de vista y donde los parámetros de valoración de su compañía se disparan."
+        }
+      ],
+      "cta": {
+        "title": "",
+        "buttonText": "",
+        "pragma": ""
+      }
+    }
+  },
+  {
+    "id": 21,
+    "tipo": "TextSection" ,
+    "data": {
+     "background": "gray", 
+      "level4": [
+        "",
+        "Ahora te toca a ti elegir.\n\nEs el momento de tomar decisiones, de dar el paso hacia la tranquilidad. puedes recoger toda la información que te vamos a regalar en la reunión demo y empezar a caminar tú solo.\n\nO bien, contrata nuestro programa canal de denuncias avanzado NormaPro y ábrenos la puerta para que te acompañemos en este camino que debería llevarte a disponer, por un precio asequible y competitivo, de una plataforma segura y confidencial para que tus empleados y colaboradores puedan informar informar de cualquier problema o conducta inapropia.\n\n",
+        "No esperes más para proteger a tu empresa y mejorar su reputación. Contáctanos hoy mismo para conocer nuestros precios y cómo podemos ayudarte a crear una cultura ética y transparente en tu empresa."
+      ],
+      "buttonText": "Reserva una sesión estratégica"
+    }
+  },
+  {
+    "id": 22,
+    "tipo": "FaqSection",
+    "data": {
+      "faqs": [
+        {
+          "question": "¿Qué es un canal de denuncias para empresas y cómo funciona?",
+          "answer": [
+            "Un canal de denuncias para empresas es un sistema que permite a los empleados, clientes, proveedores u otras partes interesadas reportar cualquier tipo de irregularidad o conducta inapropiada dentro de la empresa, como fraude, acoso laboral, discriminación, incumplimiento de leyes o políticas internas, entre otros.\n\nEl canal de denuncias puede funcionar de diversas maneras, dependiendo de la empresa y de sus necesidades específicas. Generalmente, los canales de denuncias están disponibles en línea, mediante un formulario de denuncia en la página web de la empresa, o por medio de una línea telefónica o correo electrónico dedicados exclusivamente a la recepción de denuncias. Algunas empresas también pueden ofrecer un buzón de denuncias físico en las instalaciones de la empresa.\n\nUna vez que se recibe una denuncia, se debe analizar y evaluar de manera confidencial y objetiva para determinar si existe una violación a las políticas de la empresa o a las leyes aplicables. Si se encuentra que hay una conducta inapropiada o irregularidad, la empresa debe tomar medidas para abordar y resolver el problema.\n\nEs importante que sepas que el canal de denuncias NormaPro está respaldado por un proceso sólido y transparente que permite a la empresa investigar y abordar adecuadamente las denuncias reportadas."
+          ]
+        },
+        {
+          "question": "¿Qué tipos de denuncias pueden reportarse a través del canal?",
+          "answer": [
+            "A través de un canal de denuncias para empresas, se pueden reportar diferentes tipos de denuncias. A continuación, te exponemos algunos a modo de ejemplo:\n\n",
+            "1. Fraude: ",
+            "por ejemplo, robo, malversación de fondos, falsificación de documentos, facturas falsas, entre otros.\n\n",
+            "2. Acoso laboral: ",
+            "como el hostigamiento, discriminación, abuso verbal o físico, intimidación, entre otros.\n\n",
+            "3. Violaciones de políticas internas: ",
+            "como el incumplimiento de políticas de seguridad de la información, políticas de recursos humanos, políticas de compras, entre otros.\n\n",
+            "4. Conflictos de interés: ",
+            "como situaciones en las que un empleado o funcionario de la empresa utiliza su posición en la empresa para beneficiarse a sí mismo o a terceros.\n\n",
+            "5. Incumplimiento de leyes y regulaciones: ",
+            "como el incumplimiento de regulaciones ambientales, regulaciones de salud y seguridad, regulaciones laborales, entre otros.\n\n",
+            "6. Corrupción: ",
+            "como el soborno, el cohecho, el tráfico de influencias, entre otros.\n\n",
+            "7. Otros tipos de denuncias: ",
+            "cualquier otro tipo de irregularidad o conducta inapropiada que viole las políticas de la empresa o las leyes aplicables.\n\nEs importante que el canal de denuncias esté diseñado para recibir denuncias de todo tipo, sin importar lo complejas que sean, y que el proceso de gestión de las denuncias sea transparente y confidencial. También es importante que los denunciantes se sientan seguros al reportar las irregularidades y que la empresa tome medidas efectivas para abordar y resolver los problemas reportados."
+          ]
+        },
+        {
+          "question": "¿Quiénes pueden reportar una denuncia a través del canal de denuncias?",
+          "answer": [
+            "Cualquier persona puede reportar una denuncia a través del canal de denuncias para empresas, incluyendo empleados, clientes, proveedores, contratistas, accionistas y cualquier otra parte interesada. El objetivo es que cualquier persona que tenga información sobre una conducta inapropiada o irregularidad en la empresa pueda informarla de manera segura y confidencial.\nEs importante que el canal de denuncias esté diseñado para recibir denuncias de cualquier persona, sin importar su nivel jerárquico o posición en la empresa. Además, el canal debe garantizar la confidencialidad y protección de los denunciantes para evitar represalias o cualquier tipo de retaliación.\n\nEs común que los canales de denuncia permitan hacer las denuncias de forma anónima, para que los denunciantes se sientan más seguros al hacer su reporte. Sin embargo, es importante tener en cuenta que algunos reportes anónimos pueden ser más difíciles de investigar y corroborar, por lo que la empresa debe tener políticas y procedimientos adecuados para manejar estos casos."
+          ]
+        },
+        {
+          "question": "¿Cómo se asegura la confidencialidad de las denuncias reportadas?",
+          "answer": [
+            "La confidencialidad es un aspecto clave en la gestión de un canal de denuncias para empresas, ya que garantiza que los denunciantes se sientan seguros y protegidos al hacer su reporte. Para asegurar la confidencialidad de las denuncias, se pueden implementar las siguientes medidas:\n\n",
+            "1. Canal seguro: ",
+            "La empresa debe asegurarse de que el canal de denuncias sea seguro y confidencial. Esto puede incluir el uso de tecnología de encriptación, sistemas de seguridad de la información, y cualquier otra medida de seguridad necesaria para proteger la privacidad de los denunciantes.\n\n",
+            "2. Política de confidencialidad: ",
+            "La empresa debe contar con una política de confidencialidad que establezca cómo se manejarán y protegerán los datos personales de los denunciantes y de los involucrados en la denuncia.\n\n",
+            "3. Anonimato: ",
+            "El canal de denuncias puede permitir hacer las denuncias de forma anónima, para que los denunciantes se sientan más seguros al hacer su reporte. Sin embargo, es importante tener en cuenta que algunos reportes anónimos pueden ser más difíciles de investigar y corroborar, por lo que la empresa debe tener políticas y procedimientos adecuados para manejar estos casos.\n\n",
+            "4. Acceso restringido: ",
+            "La información recibida a través del canal de denuncias debe ser de acceso restringido solo a las personas involucradas en el proceso de investigación y resolución de la denuncia. Esto puede incluir a los miembros del equipo de investigación, los miembros del comité de ética o cualquier otro grupo designado para manejar las denuncias.\n\n",
+            "5. Comunicación segura: ",
+            "La empresa debe asegurarse de que la comunicación con los denunciantes sea segura y confidencial. Esto puede incluir el uso de correos electrónicos seguros, mensajes cifrados, y cualquier otra medida de seguridad necesaria para proteger la privacidad de los denunciantes.\n\nEn resumen, la confidencialidad es fundamental en la gestión de un canal de denuncias para empresas. La empresa debe asegurarse de implementar medidas de seguridad adecuadas para garantizar la privacidad de los denunciantes y de los involucrados en la denuncia, y de tener políticas y procedimientos claros para manejar y proteger la información recibida a través del canal de denuncias."
+          ]
+        },
+        {
+          "question": "¿Cómo se manejan las denuncias reportadas a través del canal?",
+          "answer": [
+            "El manejo de las denuncias reportadas a través del canal de denuncias puede variar dependiendo de la empresa y de la naturaleza de la denuncia. Sin embargo, en general, el proceso de manejo de las denuncias suele seguir los siguientes pasos:\n\n",
+            "1. Recepción de la denuncia: ",
+            "La denuncia es recibida a través del canal de denuncias y es registrada en un sistema para su posterior análisis.\n\n",
+            "2. Evaluación preliminar: ",
+            "Un equipo designado por la empresa evalúa la denuncia para determinar su relevancia, veracidad y gravedad. En algunos casos, se puede solicitar información adicional al denunciante para corroborar la denuncia.\n\n",
+            "3. Investigación: ",
+            "Si la denuncia es considerada relevante y veraz, se inicia una investigación para recopilar evidencias y corroborar la denuncia. La investigación puede ser realizada por un equipo interno o por un equipo externo, dependiendo de la naturaleza de la denuncia.\n\n",
+            "4. Análisis y resolución: ",
+            "Con base en los resultados de la investigación, se analiza la denuncia y se determina si se requiere tomar alguna acción. Si se determina que se ha cometido una conducta inapropiada, se toman medidas para corregirla y prevenir su repetición.\n\n",
+            "5. Informe y seguimiento: ",
+            "Se elabora un informe detallado sobre la denuncia, la investigación y la resolución adoptada, el cual se puede compartir con los denunciantes y otros interesados en la denuncia. Además, se realiza un seguimiento para garantizar que la resolución adoptada ha sido efectiva y que no se han presentado represalias contra el denunciante.\n\nEs importante que la empresa tenga políticas y procedimientos claros para manejar las denuncias reportadas a través del canal de denuncias, y que estos sean comunicados claramente a los empleados y otras partes interesadas en la empresa. De esta manera, se garantiza que las denuncias sean manejadas de manera efectiva, justa y transparente."
+          ]
+        },
+        {
+          "question": "¿Cómo se resuelve una denuncia reportada a través del canal?",
+          "answer": [
+            "La resolución de una denuncia reportada a través del canal de denuncias depende de la naturaleza de la denuncia y de los resultados de la investigación correspondiente. En general, la resolución puede incluir las siguientes acciones:\n\n",
+            "1. Corrección de la conducta inapropiada: ",
+            "Si se determina que se ha cometido una conducta inapropiada, se toman medidas para corregirla. Esto puede incluir, por ejemplo, la imposición de sanciones disciplinarias o el establecimiento de medidas para prevenir que la conducta se repita.\n\n",
+            "2. Indemnización a las partes afectadas: ",
+            "Si se determina que una parte ha sufrido un perjuicio, se puede acordar una compensación o indemnización para compensar los daños sufridos.\n\n",
+            "3. Mejoras en los procesos y políticas de la empresa: ",
+            "Si se identifican fallas en los procesos o políticas de la empresa que hayan contribuido a la conducta inapropiada, se pueden establecer mejoras para prevenir su repetición.\n\nEs importante que la empresa tenga un protocolo claro y transparente para manejar las denuncias reportadas a través del canal de denuncias, de manera que se asegure que se tomen medidas efectivas y justas. Además, es esencial que se brinde seguimiento a las denuncias para garantizar que las acciones adoptadas hayan sido efectivas y que no se hayan presentado represalias contra el denunciante."
+          ]
+        },
+        {
+          "question": "¿Cómo se informa al denunciante sobre el progreso de su denuncia?",
+          "answer": [
+            "Es importante que las empresas informen a los denunciantes sobre el progreso de su denuncia reportada a través del canal de denuncias para mantener la transparencia y generar confianza en el proceso. A continuación, se presentan algunas formas en que se puede informar al denunciante sobre el progreso de su denuncia a través de la Plataforma NormaPro:\n\n",
+            "Confirmación de la recepción de la denuncia: ",
+            "Después de que se ha recibido la denuncia a través del canal de denuncias, se debe enviar una confirmación al denunciante de que su denuncia ha sido recibida. Esto puede incluir información sobre el tiempo estimado que tomará el proceso de investigación.\n\n",
+            "Actualizaciones periódicas: ",
+            "A medida que la investigación avanza, se pueden enviar actualizaciones periódicas al denunciante sobre el progreso de su denuncia. Esto puede incluir información sobre la fase actual de la investigación y cualquier acción que se haya tomado.\n\n",
+            "Resultados finales: ",
+            "Después de que se ha concluido la investigación y se ha tomado una acción, se debe informar al denunciante sobre los resultados finales. Esto puede incluir información sobre las medidas que se han tomado en respuesta a la denuncia y cualquier seguimiento que se llevará a cabo. Es importante que la empresa mantenga la confidencialidad de la información durante todo el proceso y solo comparta la información relevante con el denunciante. A demás de deben establecer canales seguros y confidenciales para comunicarse con el denunciante, de manera que se garantice la privacidad y protección de su identidad."
+          ]
+        },
+        {
+          "question": "¿Qué medidas han de tomar las empresas para prevenir represalias contra los denunciantes?",
+          "answer": [
+            "Las empresas pueden tomar una serie de medidas para prevenir represalias contra los denunciantes y garantizar que el proceso de denuncia sea seguro y efectivo. Algunas de estas medidas son las siguientes:\n\n",
+            "1. Establecer políticas claras: ",
+            "Es importante que la empresa tenga políticas claras que prohíban las represalias contra los denunciantes y establezcan sanciones en caso de que se produzcan. Estas políticas deben ser comunicadas a todos los empleados de la empresa.\n\n",
+            "2. Capacitación: ",
+            "La capacitación de los empleados es fundamental para prevenir represalias contra los denunciantes. Todos los empleados deben recibir capacitación sobre los riesgos de represalias y cómo evitarlas.\n\n",
+            "3. Protección de la identidad del denunciante: ",
+            "Es esencial que la identidad del denunciante se mantenga en confidencialidad durante todo el proceso de denuncia. La empresa puede tomar medidas para garantizar que la información sobre la identidad del denunciante se mantenga segura y no se divulgue.\n\n",
+            "4. Seguimiento de las denuncias: ",
+            "La empresa debe llevar un registro de todas las denuncias reportadas a través del canal de denuncias y realizar un seguimiento de cada una de ellas para asegurarse de que no haya represalias contra el denunciante.\n\n",
+            "5. Fomentar una cultura ética y de transparencia: ",
+            "Es importante que la empresa fomente una cultura ética y de transparencia para prevenir las represalias. Esto puede incluir el establecimiento de valores éticos, la comunicación abierta y la creación de un ambiente de trabajo donde se alienta a los empleados a reportar cualquier conducta inapropiada sin temor a represalias.\n\nEn general, es importante que la empresa tome medidas efectivas para prevenir las represalias contra los denunciantes y proteger su seguridad y privacidad durante todo el proceso de denuncia."
+          ]
+        },
+        {
+          "question": "¿Cómo se garantiza la integridad del canal de denuncias?",
+          "answer": [
+            "Para garantizar la integridad del canal de denuncias, es importante que la empresa tome medidas para asegurar que el proceso de denuncia sea confiable, seguro y efectivo. Algunas de estas medidas son las siguientes:\n\n",
+            "1. Protección de la confidencialidad: ",
+            "La empresa debe tomar medidas para garantizar la confidencialidad de las denuncias reportadas a través del canal de denuncias. Esto puede incluir el uso de tecnología de encriptación, el establecimiento de protocolos claros para el manejo de la información y la restricción del acceso a la información solo a personal autorizado.\n\n",
+            "2. Selección de proveedores confiables: ",
+            "Si la empresa utiliza un proveedor externo para la implementación del canal de denuncias, es importante que se seleccione un proveedor confiable y de buena reputación. El proveedor debe cumplir con los estándares de seguridad y privacidad y tener una política clara para el manejo de la información.\n\n",
+            "3. Capacitación y comunicación: ",
+            "Es importante que la empresa capacite a todos los empleados sobre el proceso de denuncia y las políticas y procedimientos relacionados con el canal de denuncias. También es fundamental que la empresa comunique de manera clara y efectiva la existencia del canal de denuncias a todos los empleados y otros interesados.\n\n",
+            "4. Monitoreo y seguimiento: ",
+            "La empresa debe llevar un registro de todas las denuncias reportadas a través del canal de denuncias y hacer un seguimiento de cada una de ellas para asegurarse de que se toman medidas efectivas para resolver la denuncia. Además, es importante que la empresa realice auditorías periódicas del canal de denuncias para detectar cualquier problema o vulnerabilidad.\n\n",
+            "5. Evaluación continua: ",
+            "La empresa debe realizar una evaluación continua del canal de denuncias para asegurarse de que el proceso sea efectivo y que se estén implementando medidas para prevenir y abordar las denuncias de manera oportuna y eficaz.\n\nEn general, es importante que la empresa tome medidas para garantizar la integridad del canal de denuncias y promover una cultura ética y de transparencia."
+          ]
+        },
+        {
+          "question": "¿Cómo establecer en mi empresa una política de canal de denuncias de Compliance penal?",
+          "answer": [
+            "Para establecer una política de canal de denuncias de Compliance penal en tu empresa, puedes seguir los siguientes pasos:\n\n",
+            "Designar a una persona responsable: ",
+            "Lo primero que debes hacer es designar a una persona responsable para gestionar el canal de denuncias. Esta persona debe tener conocimientos y experiencia en Compliance penal y debe ser alguien en quien los empleados confíen y se sientan cómodos al informar.\n\n",
+            "Establecer un procedimiento claro: ",
+            "Debes establecer un procedimiento claro para el canal de denuncias, detallando cómo los empleados pueden presentar sus denuncias, quién las recibirá, cómo se investigarán y cómo se tomarán medidas.\n\n",
+            "Informar a los empleados: ",
+            "Debes informar a todos los empleados de la existencia del canal de denuncias, cómo pueden usarlo y que se garantiza la confidencialidad. Esto debe ser parte de la capacitación en Compliance penal y también debe estar disponible en un documento escrito.\n\n",
+            "Establecer un medio seguro para las denuncias: ",
+            "Debes establecer un medio seguro y confidencial para que los empleados presenten sus denuncias, como una línea telefónica anónima, una dirección de correo electrónico o un formulario en línea.\n\n",
+            "Investigar y tomar medidas: ",
+            "Debes investigar todas las denuncias presentadas y tomar medidas si es necesario, incluyendo medidas disciplinarias contra los infractores. Es importante mantener al denunciante informado del progreso de la investigación y de cualquier acción tomada.\n\n",
+            "Evaluar y mejorar: ",
+            "Debes evaluar regularmente el funcionamiento del canal de denuncias y hacer mejoras según sea necesario. Esto puede incluir encuestas de satisfacción de los empleados y análisis de datos de denuncias para identificar patrones o áreas problemáticas.\n\nAl establecer una política de canal de denuncias de compliance penal, estás demostrando un compromiso con la integridad y la ética en tu empresa. Esto puede mejorar la confianza de los empleados y aumentar la eficacia en la prevención y detección de conductas delictivas."
+          ]
+        }
+      ]
+    }
+  }
+]

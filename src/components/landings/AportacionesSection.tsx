@@ -40,7 +40,7 @@ const AportacionesSection: React.FC<Props> = ({
             className="flex flex-col items-center text-center"
           >
             {/* Imagen */}
-            <div className="relative w-64 h-64 flex items-center justify-center">
+            <div className="relative w-64 h-64 flex items-center justify-center -mb-10">
               <img
                 src={`/apps/${tarjeta.imageBackground}`}
                 alt=""
@@ -49,20 +49,20 @@ const AportacionesSection: React.FC<Props> = ({
               <img
                 src={`/apps/${tarjeta.image}`}
                 alt={tarjeta.title}
-                className="relative w-32 h-32 object-contain"
+                className="relative w-64 h-64 object-contain z-2"
               />
             </div>
-            <div className="bg-[#f5f5f7] rounded-2xl p-8 text-left">
+            <div className="bg-[#f5f5f7] rounded-2xl p-8 text-left z-1">
             {/* Texto */}
-            <h3 className="text-2xl font-black text-[#010d3d]">
+            <h3 className="text-2xl font-black text-[#010d3d] mb-6">
               {tarjeta.title}
             </h3>
-            <p className="text-base text-[#010d3d] font-bold">
+            <p className="text-base text-[#010d3d] font-bold mb-6">
               {tarjeta.claim}
             </p>
             <ul className="text-sm text-[#010d3d] space-y-2 mt-2">
               {tarjeta.items.map((item, i) => (
-                <li key={i} className="flex gap-2">
+                <li key={i} className="flex gap-2 mb-4">
                   <span>•</span>
                   <span>{item}</span>
                 </li>

@@ -26,6 +26,7 @@ type Bloque = {
 
 type Props = {
   imgCabecera: string;
+  imgBackground: string;
   title: string;
   claim: string;
   titlelist: string;
@@ -40,6 +41,7 @@ type Props = {
 
 const ResumenSection: FC<Props> = ({
   imgCabecera,
+  imgBackground,
   title,
   claim,
   titlelist,
@@ -49,11 +51,16 @@ const ResumenSection: FC<Props> = ({
   return (
     <section className="max-w-7xl mx-auto w-full flex flex-col items-center justify-center py-20 px-6 md:px-12">
       {/* Imagen de cabecera */}
-      <div className="mb-10">
+      <div className="relative mb-10">
+        <img
+          src={`/apps/${imgBackground}`}
+          alt=""
+          className="absolute inset-0 w-full h-full object-contain"
+        />
         <img
           src={`/apps/${imgCabecera}`}
-          alt="Ilustración cabecera"
-          className="h-[120px] md:h-[160px]"
+          alt="Imagen cabecera"
+          className="relative h-[120px] md:h-[160px] object-contain"
         />
       </div>
 

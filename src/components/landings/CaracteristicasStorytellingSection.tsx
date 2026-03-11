@@ -27,7 +27,10 @@ import {
     faLock,
     faTimelineArrow,
     faGrid2Plus,
-    faPenToSquare
+    faPenToSquare,
+    faTimer,
+    faSirenOn,
+    faTicketSimple
 } from '@fortawesome/pro-duotone-svg-icons';
 
 const iconMap = {
@@ -37,7 +40,7 @@ const iconMap = {
     'fa-book-law': faBookLaw,
     'fa-file-lock': faFileLock,
     'fa-bell': faBell,
-    'fa-calendar': faCalendarDays,
+    'fa-calendar-days': faCalendarDays,
     'fa-list-tree': faListTree,
     'fa-chart-pie': faChartPie,
     'fa-briefcase': faBriefcase,
@@ -55,7 +58,10 @@ const iconMap = {
     'fa-lock': faLock,
     'fa-timeline-arrow': faTimelineArrow,
     'fa-grid-2-plus': faGrid2Plus,
-    'fa-pen-to-square': faPenToSquare
+    'fa-pen-to-square': faPenToSquare,
+    'fa-timer': faTimer,
+    'fa-siren-on': faSirenOn,
+    'fa-ticket-simple': faTicketSimple
 };
 
 type Caracteristica = {

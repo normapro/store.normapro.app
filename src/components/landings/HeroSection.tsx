@@ -5,7 +5,7 @@ import Lottie from "lottie-react";
 type HeroSectionProps = {
   title: string;
   claim: string[];
-  pragma: string;
+  pragma: string[];
   cta: string;
   imgType: "lottie" | "img";
   imgUrl: string;
@@ -28,6 +28,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   backgroundPositionX = "center",
 }) => {
   const colors = ["#010d3d", "#797f98"];
+  const weights = ["semibold", "bold"];
   const [animationData, setAnimationData] = useState<any>(null);
 
   const isExternal = imgUrl.startsWith("http");
@@ -56,7 +57,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </span>
           ))}
         </h1>
-        <p className="text-lg text-[#010d3d] mb-6">{pragma}</p>
+        <p className="text-lg text-[#010d3d] mb-6">
+          {pragma.map((text, i) => (
+            <span key={i} style={{ fontWeight: weights[i % weights.length] }}>
+              {text + " "}
+            </span>
+          ))}
+        </p>
         <button className="bg-[#010d3d] text-white px-6 py-3 rounded-xl shadow-lg font-bold">
           {cta}
         </button>
