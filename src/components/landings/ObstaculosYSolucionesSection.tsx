@@ -1,6 +1,7 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, useState } from 'react';
+import Formulario from "@/components/Formulario";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHourglass,
@@ -56,6 +57,7 @@ type Props = {
 };
 
 const ObstaculosYSolucionesSection: FC<Props> = ({ title, claim, tabletitle, table, pragma, buttonText, background = "white" }) => {
+  const [openModal, setOpenModal] = useState(false);
   const bgcolors = ["#ffffff","#eaeaf2" ];
   let bgColor = bgcolors[1];
   if (background === "gray") {
@@ -113,12 +115,19 @@ const ObstaculosYSolucionesSection: FC<Props> = ({ title, claim, tabletitle, tab
           </p>
         ))}
         {buttonText && (
-            <button className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition">
-              {buttonText}
-            </button>
+          <button
+            onClick={() => setOpenModal(true)}
+            className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition"
+          >
+            {buttonText}
+          </button>
         )}
       </div>
     </section>
+    {/* Formulario contacto */}
+      {openModal && (
+        <Formulario onClose={() => setOpenModal(false)} />
+      )}
     </div>
   );
 };

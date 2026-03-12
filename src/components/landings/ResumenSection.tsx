@@ -1,6 +1,7 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, useState } from 'react';
+import Formulario from "@/components/Formulario";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFolderGear,
@@ -48,6 +49,8 @@ const ResumenSection: FC<Props> = ({
   list,
   cta,
 }) => {
+  const [openModal, setOpenModal] = useState(false);
+  
   return (
     <section className="max-w-7xl mx-auto w-full flex flex-col items-center justify-center py-20 px-6 md:px-12">
       {/* Imagen de cabecera */}
@@ -103,12 +106,20 @@ const ResumenSection: FC<Props> = ({
           <p className="text-2xl font-black text-[#6C6C91] mb-6">{cta.title}</p>
         )}
         {cta.buttonText && (
-          <button className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition">
+          <button
+            onClick={() => setOpenModal(true)}
+            className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition"
+          >
             {cta.buttonText}
           </button>
         )}
         <p className="text-[#010d3d] text-base">{cta.pragma}</p>
       </div>
+
+      {/* Formulario contacto */}
+      {openModal && (
+        <Formulario onClose={() => setOpenModal(false)} />
+      )}
     </section>
   );
 };

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { FC, useState } from 'react';
+import Formulario from "@/components/Formulario";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
@@ -15,6 +16,7 @@ type FaqProps = {
 
 const FaqSection: FC<FaqProps> = ({ faqs }) => {
   const [openIndex, setOpenIndex] = useState<number|null>(null);
+  const [openModal, setOpenModal] = useState(false);
   const weights = ["semibold","bold"];
   
   return (
@@ -63,7 +65,14 @@ const FaqSection: FC<FaqProps> = ({ faqs }) => {
                         return (
                           <Tag
                             key={i}
-                            href={isLink ? '#' : undefined}
+                            onClick={
+                              isLink
+                                ? (e) => {
+                                  e.preventDefault();
+                                  setOpenModal(true);
+                                }
+                                : undefined
+                            }
                             style={{
                               fontWeight: weights[i % weights.length],
                               textDecoration: isLink ? 'underline' : 'none'
@@ -82,8 +91,11 @@ const FaqSection: FC<FaqProps> = ({ faqs }) => {
           })}
         </div>
       </div>
+      {/* Formulario contacto */}
+      {openModal && (
+        <Formulario onClose={() => setOpenModal(false)} />
+      )}
     </section>
-
   );
 };
 

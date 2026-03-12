@@ -1,8 +1,9 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBracketCurly } from '@fortawesome/pro-duotone-svg-icons';
+import Formulario from "@/components/Formulario";
 
 type BasicService = {
   image: string;
@@ -32,6 +33,7 @@ const ServiciosSection: FC<Props> = ({
   extraServices,
   buttonText,
 }) => {
+  const [openModal, setOpenModal] = useState(false);
   const weights = ["semibold","bold"];
 
   return (
@@ -113,9 +115,19 @@ const ServiciosSection: FC<Props> = ({
       </div>
 
       {/* Botón */}
-      <button className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition">
-        {buttonText}
-      </button>
+      {buttonText && (
+        <button
+          onClick={() => setOpenModal(true)}
+          className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition"
+        >
+          {buttonText}
+        </button>
+      )}
+
+      {/* Formulario contacto */}
+      {openModal && (
+        <Formulario onClose={() => setOpenModal(false)} />
+      )}
     </section>
   );
 };

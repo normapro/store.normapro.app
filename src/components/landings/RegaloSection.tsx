@@ -1,6 +1,7 @@
 'use client'
 
-import { FC } from 'react';
+import { FC, useState } from 'react';
+import Formulario from "@/components/Formulario";
 
 type Props = {
   image: string;
@@ -25,6 +26,8 @@ const RegaloSection: FC<Props> = ({
   pragma,
   buttonText,
 }) => {
+  const [openModal, setOpenModal] = useState(false);
+  
   return (
     <section className="max-w-7xl mx-auto w-full flex flex-col items-center justify-center py-10 px-6 md:px-12 text-[#010d3d]">
       {/* Imagen de cabecera */}
@@ -64,10 +67,17 @@ const RegaloSection: FC<Props> = ({
       <p className="max-w-2xl text-center font-bold mb-10">
         {pragma}
       </p>
-      <button className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition">
+      <button
+        onClick={() => setOpenModal(true)}
+        className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition"
+      >
         {buttonText}
       </button>
 
+      {/* Formulario contacto */}
+      {openModal && (
+        <Formulario onClose={() => setOpenModal(false)} />
+      )}
     </section>
   );
 };

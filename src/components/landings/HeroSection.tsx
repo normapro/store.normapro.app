@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect, useState } from "react";
+import Formulario from "@/components/Formulario";
 import Lottie from "lottie-react";
 
 type HeroSectionProps = {
@@ -46,6 +47,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     }
   }, [finalUrl, imgType]);
 
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <section className="max-w-7xl mx-auto w-full px-6 py-12 flex flex-col-reverse lg:flex-row items-center justify-between gap-8">
       <div className="flex-1">
@@ -64,7 +67,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </span>
           ))}
         </p>
-        <button className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition">
+        <button
+          onClick={() => setOpenModal(true)}
+          className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition"
+        >
           {cta}
         </button>
       </div>
@@ -80,6 +86,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           <img src={finalUrl} alt="hero visual" className="max-w-md w-full h-auto" />
         ) : null}
       </div>
+
+      {/* Formulario contacto */}
+      {openModal && (
+        <Formulario onClose={() => setOpenModal(false)} />
+      )}
     </section>
   );
 };

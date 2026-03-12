@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import Formulario from "@/components/Formulario";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faFileLines,
@@ -67,7 +68,8 @@ const iconMap = {
 type Caracteristica = {
     id_data: number;
     title: string;
-    icon: string;
+    icon?: string;
+    iconImg?: string;
     mainTitle: string;
     subtitle: string;
     description: string;
@@ -102,6 +104,8 @@ const CaracteristicasStorytellingSection = ({ data }: Props) => {
         return () => window.removeEventListener('scroll', onScroll);
     }, [data.length, currentStep]);
 
+    const [openModal, setOpenModal] = useState(false);
+
     return (
         <section className="max-w-7xl mx-auto w-full flex flex-col items-center justify-center py-12">
 
@@ -128,12 +132,19 @@ const CaracteristicasStorytellingSection = ({ data }: Props) => {
                                         ' text-[#010d3d] bg-[#f2f2f5] hover:text-white hover:bg-[#333333]'
                                     }`}
                             >
-                                <FontAwesomeIcon
-                                    icon={iconMap[item.icon]}
-                                    size="3x"
-                                    className={`${currentStep === i ? 'fa-duotone text-gray-300' : ''
-                                        }`}
-                                />
+                                {item.iconImg ? (
+                                    <img
+                                        src={`/apps/${item.iconImg}`}
+                                        alt={item.title}
+                                        className="w-10 h-10 object-contain"
+                                    />
+                                ) : (
+                                    <FontAwesomeIcon
+                                        icon={iconMap[item.icon]}
+                                        size="3x"
+                                        className={`${currentStep === i ? 'fa-duotone text-gray-300' : ''}`}
+                                    />
+                                )}
                                 <span className="text-sm text-center mt-1">{item.title}</span>
                             </div>
                         ))}
@@ -166,12 +177,20 @@ const CaracteristicasStorytellingSection = ({ data }: Props) => {
                         </div>
                     </div>
                     <div className="mt-8">
-                        <button className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition">
+                        <button
+                            onClick={() => setOpenModal(true)}
+                            className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition"
+                        >
                             Quiero una demostración
                         </button>
                     </div>
                 </div>
             </div>
+
+            {/* Formulario contacto */}
+            {openModal && (
+                <Formulario onClose={() => setOpenModal(false)} />
+            )}
         </section>
     );
 };

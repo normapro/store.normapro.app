@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useState } from "react";
 import Lottie from "lottie-react";
+import Formulario from "@/components/Formulario";
 
 type TextSectionProps = {
   background: string;
@@ -27,6 +28,7 @@ const TextSection: React.FC<TextSectionProps> = ({
   level8,
   buttonText
 }) => {
+  const [openModal, setOpenModal] = useState(false);
   const colors = ["#010d3d", "#797f98"];
   const bgcolors = ["#ffffff","#eaeaf2" ]
   let bgColor =  bgcolors[1];
@@ -105,7 +107,10 @@ const TextSection: React.FC<TextSectionProps> = ({
             </h4>
         )}
         {buttonText && (
-            <button className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition">
+            <button
+              onClick={() => setOpenModal(true)}
+              className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition"
+            >
               {buttonText}
             </button>
         )}
@@ -120,6 +125,10 @@ const TextSection: React.FC<TextSectionProps> = ({
         )}
       </div>
     </section>
+    {/* Formulario contacto */}
+      {openModal && (
+        <Formulario onClose={() => setOpenModal(false)} />
+      )}
     </div>
   );
 };

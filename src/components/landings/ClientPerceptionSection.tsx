@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Formulario from "@/components/Formulario";
 import Image from 'next/image';
 import { TestimonioConCliente } from '@/types/testimonio';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -27,6 +28,7 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
   id_testimonio
 }) => {
   const [testimonio, setTestimonio] = useState<TestimonioConCliente | null>(null);
+  const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
     fetch(`http://localhost:3010/v1/store/testimonios/${id_testimonio}`)
@@ -137,7 +139,10 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
         )}
       </div>
       <div className="flex justify-center mt-16">
-        <button className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition">
+        <button
+          onClick={() => setOpenModal(true)}
+          className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition"
+        >
           Quiero una demostración
         </button>
       </div>
@@ -148,6 +153,11 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
           <path fill="#f1f1f7" d="M0,80 C480,0 960,0 1440,80 L1440,0 L0,0 Z" />
         </svg>
       </div>
+
+      {/* Formulario contacto */}
+      {openModal && (
+        <Formulario onClose={() => setOpenModal(false)} />
+      )}
     </section>
   );
 };

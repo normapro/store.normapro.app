@@ -1,6 +1,7 @@
 'use client';
 
-import React from "react";
+import React, { useState } from "react";
+import Formulario from "@/components/Formulario";
 
 type VideoSectionProps = {
   title: string;
@@ -10,6 +11,8 @@ type VideoSectionProps = {
 };
 
 const VideoSection: React.FC<VideoSectionProps> = ({ title, items, url_video, buttonText }) => {
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <section className="w-full px-6 py-10 flex flex-col items-center justify-center gap-10 text-center mb-5">
       <h2 className="text-[28px] md:text-[30px] font-black text-[#010d3d]">
@@ -35,9 +38,17 @@ const VideoSection: React.FC<VideoSectionProps> = ({ title, items, url_video, bu
       </div>
 
       {buttonText && (
-        <button className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition">
+        <button
+          onClick={() => setOpenModal(true)}
+          className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition"
+        >
           {buttonText}
         </button>
+      )}
+
+      {/* Formulario contacto */}
+      {openModal && (
+        <Formulario onClose={() => setOpenModal(false)} />
       )}
     </section>
   );

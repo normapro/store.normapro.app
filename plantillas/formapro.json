@@ -251,7 +251,7 @@
         {
           "id_data": 7,
           "title": "Integración potenciada con NormaPro",
-          "icon": "",
+          "iconImg": "icono-normapro.svg",
           "mainTitle": "Maximiza la eficiencia de FormaPro",
           "subtitle": "Integración potenciada con NormaPro",
           "description": "Muchas empresas se enfrentan a dificultades al intentar que diferentes plataformas trabajen conjuntamente. Con FormaPro, no solo garantizas una integración perfecta con herramientas de terceros, sino que también aprovechas la sinergia natural con todas las soluciones del ecosistema NormaPro.",

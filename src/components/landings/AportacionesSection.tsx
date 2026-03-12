@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from "react";
+import Formulario from "@/components/Formulario";
 
 type Aportacion = {
   image: string;
@@ -22,6 +23,8 @@ const AportacionesSection: React.FC<Props> = ({
   claim,
   aportaciones
 }) => {
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <section className="max-w-7xl mx-auto w-full flex flex-col items-center justify-center py-10 px-6 md:px-12">
       <h2 className="max-w-5xl text-2xl md:text-[38px] font-black text-[#010d3d] text-center mb-8">
@@ -68,13 +71,20 @@ const AportacionesSection: React.FC<Props> = ({
                 </li>
               ))}
             </ul>
-            <button className="mt-4 border border-[#010d3d] bg-white rounded-lg px-6 py-2 font-semibold text-[#010d3d] hover:bg-[#010d3d] hover:text-white transition">
+            <button
+              onClick={() => setOpenModal(true)}
+              className="mt-4 border border-[#010d3d] bg-white rounded-lg px-6 py-2 font-semibold text-[#010d3d] hover:bg-[#010d3d] hover:text-white transition"
+            >
               {tarjeta.buttonText}
             </button>
             </div>
           </div>
         ))}
       </div>
+      {/* Formulario contacto */}
+      {openModal && (
+        <Formulario onClose={() => setOpenModal(false)} />
+      )}
     </section>
   )
 }
