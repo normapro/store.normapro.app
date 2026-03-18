@@ -1,0 +1,91 @@
+[
+  {
+    "id": 1,
+    "tipo": "HeroSection",
+    "data": {
+      "title": "",
+      "claim": [
+        "Implementa el Modelo ",
+        "más completo y avanzado ",
+        "de gestión del Cumplimiento Normativo en menos de ",
+        "3 meses."
+      ],
+      "pragma": [
+        "Haz realidad la posibilidad de disfrutar de la tranquilidad de tener bajo control la normativa que aplica al área de la que eres responsable a la vez que contribuyes de forma significativa al éxito de tu empresa."
+      ],
+      "cta": "Reserva una sesión estratégica",
+      "imgType": "lottie",
+      "imgUrl": "compliance-tecnico",
+      "backgroundImg": "hielo1.png",
+      "backgroundSize": "90%",
+      "backgroundRepeat": "no-repeat",
+      "backgroundPositionX": "center"
+    }
+  },
+  {
+    "id": 2,
+    "tipo": "TextSection",
+    "data": {
+      "background": "gray",
+      "level2": [
+        "",
+        "Es el momento de decidir si quieres distribuir adecuadamente las tareas necesarias para mantener un nivel óptimo de cumplimiento y ",
+        "evitar contratiempos desagradables en forma de sanciones u otras consecuencias civiles o penales y pérdidas de reputación ",
+        "o bien, si quieres quedarte con el miedo y la incertidumbre de qué podría ocurrir si sucede un incidente inesperado o una inspección reglamentaria."
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "tipo": "VideoSection",
+    "data": {
+      "title": "Reserva una sesión demostrativa o mira el video si…",
+      "items": [
+        "… quieres descubrir como lograr esta transformación y obtener mejores resultados en tu empresa gracias al cumplimiento normativo",
+        "… quieres saber cómo puedes conseguir grandes beneficios para tu proyecto empresarial alineando objetivos de cumplimiento y el fomento de una cultura ética en el seno de tu organización, con una mejora continua en los procesos internos",
+        "… quieres conocer el método NormaPro, el mismo con el que un gran número de empresarios, directivos y técnicos ya han “conseguido implementar un modelo transversal de cumplimiento y convertirlo en una realidad."
+      ],
+      "url_video": "https://www.youtube.com/e7cfc645-88a1-4c20-beb5-2de7ebe0daa7",
+      "buttonText": "Quiero una sesión estratégica"
+    }
+  },
+  {
+    "id": 4,
+    "tipo": "ClientsMuralSection",
+    "data": {
+      "scope": "compliance-tecnico",
+      "claim": [
+        "Estas marcas ya trabajan con nosotros"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "tipo": "ClientPerceptionSection",
+    "data": {
+      "title": "La percepción de nuestros clientes es nuestra realidad",
+      "items": [
+        "Desde Instituto de Innovación, Ciencia y Empresa llevamos más de veinte años ayudando a muchos empresarios y directivos con los que trabajamos mano a mano y cuyos equipos gestionan y monitorizan con nuestra plataforma digital NormaPro miles de evidencias de cumplimiento en distintos alcances como son: Medio Ambiente, Instalaciones, equipos y máquinas, Seguridad industrial y PRL, Sanitaria o Seguridad alimentaria entre otros."
+      ],
+      "id_testimonio": 3
+    }
+  },
+  {
+    "id": 10,
+    "tipo": "ClientPerceptionSection",
+    "data": {
+      "title": "Ellos decidieron dar un paso adelante y NormaPro les ayudó a hacer realidad se deseo y lo que lograron fue:",
+      "list": [
+        {
+          "title": "Transformar una preocupación en tranqulidad.",
+          "claim": ""
+        },
+        {
+          "title": "Reducir de media un 40% los costes de operación de muchos procesos internos de su empresa (e incluso casi eliminarlos en algunos)",
+          "claim": ""
+        }
+      ],
+      "id_testimonio": 5
+    }
+  }
+]
