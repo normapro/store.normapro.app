@@ -77,7 +77,7 @@
       "title": "Ellos decidieron dar un paso adelante y NormaPro les ayudó a hacer realidad se deseo y lo que lograron fue:",
       "list": [
         {
-          "title": "Transformar una preocupación en tranqulidad.",
+          "title": "Transformar una preocupación en tranquilidad.",
           "claim": ""
         },
         {
@@ -86,6 +86,108 @@
         }
       ],
       "id_testimonio": 5
+    }
+  },
+  {
+    "id": 11,
+    "tipo": "ImgTextSection",
+    "data": {
+      "imgCabecera": "Grupo-4593@2x.png",
+      "title": "¿Quieres acabar con Excels y emails que generan un sinfín de trabajos manuales con errores, tiempo mal invertido y que acaban siendo abandonados si no estás pendiente de todo tu personal?",
+      "subtitle": "La Plataforma digital NormaPro pertenece a las llamadas Reg-Tech, es decir, a las nuevas tecnologías enfocadas gestionar y mitigar riesgos relativos al cumplimiento normativo o Compliance."
+    }
+  },
+  {
+    "id": 12,
+    "tipo": "TextSection",
+    "data": {
+      "background": "white",
+      "level1": [
+        "Dispone de 7 aplicaciones"
+      ],
+      "level3": [
+        "Con las que configurar soluciones innovadoras que te permitiran simplificar, estandarizar y automatizar todos los procesos eliminando los costes de adaptación a los requerimientos y aprovechando los sistemas y datos ya existentes:"
+      ]
+    }
+  },
+  {
+    "id": 13,
+    "tipo": "CaracteristicasIncorporadas",
+    "data": {
+      "data": [
+        {
+          "id_data": 1,
+          "title": "Interfaz de creación de flujos",
+          "icon": "fa-list-tree",
+          "mainTitle": "Editor de mapas de evidencias normativas",
+          "subtitle": "",
+          "description": "Gracias a una completa colección de prácticos cuestionarios podréis confeccionar estos mapas a medida de las circunstancias específicas de tu empresa y contarás con referencias normativas, comentarios de expertos, enlaces directos a las normas para su consulta, almacenamiento automático y ordenado del histórico de versiones y todo ello guardando trazabilidad de manipulación. También podrás asignar responsables, crear un árbol de supervisores o calcular del riesgo por sanción en tiempo real.",
+          "img": "fichasdocumentales.png"
+        },
+        {
+          "id_data": 2,
+          "title": "Biblioteca de normas",
+          "icon": "fa-book-law",
+          "mainTitle": "Biblioteca de normas",
+          "subtitle": "",
+          "description": "NormaPro conecta cada evidencia con su norma correspondiente, destacando las principales regulaciones aplicables y proporcionando enlaces directos para un acceso fácil y eficiente.",
+          "img": "bibliotecanormas.png"
+        },
+        {
+          "id_data": 3,
+          "title": "",
+          "icon": "",
+          "mainTitle": "",
+          "subtitle": "",
+          "description": "",
+          "img": ""
+        },
+        {
+          "id_data": 4,
+          "title": "",
+          "icon": "",
+          "mainTitle": "",
+          "subtitle": "",
+          "description": "",
+          "img": ""
+        },
+        {
+          "id_data": 5,
+          "title": "",
+          "icon": "",
+          "mainTitle": "",
+          "subtitle": "",
+          "description": "",
+          "img": ""
+        },
+        {
+          "id_data": 6,
+          "title": "",
+          "icon": "",
+          "mainTitle": "",
+          "subtitle": "",
+          "description": "",
+          "img": ""
+        },
+        {
+          "id_data": 7,
+          "title": "",
+          "icon": "",
+          "mainTitle": "",
+          "subtitle": "",
+          "description": "",
+          "img": ""
+        },
+        {
+          "id_data": 8,
+          "title": "",
+          "icon": "",
+          "mainTitle": "",
+          "subtitle": "",
+          "description": "",
+          "img": ""
+        }
+      ]
     }
   }
 ]
