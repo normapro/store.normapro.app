@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "tipo": "HeroSection",
+        "data": {
+            "title": "Modelo Avanzado de Compliance Penal NormaPro",
+            "claim": [
+                "Cómo blindar tu empresa contra riesgos penales"
+            ],
+            "pragma": [
+                "Sin complicaciones, solo soluciones"
+            ],
+            "cta": "Reserva una sesión estratégica",
+            "imgType": "lottie",
+            "imgUrl": "compliancepenal",
+            "backgroundImg": "hielo1.png",
+            "backgroundSize": "90%",
+            "backgroundRepeat": "no-repeat",
+            "backgroundPositionX": "center"
+        }
+    },
+    {
+        "id": 2,
+        "tipo": "SideImgTextSection",
+        "data": {
+            "plagma": "Puedes intentar navegar solo por el laberinto legal, pero sin una brújula ética y sólida, te expones a sanciones, daños reputacionales y una cultura empresarial débil. Con NormaPro, logra una solución personalizada y eficaz en mucho menos tiempo y esfuerzo del que imaginas, además de ofrecerte una guía ética para tu negocio.",
+            "claim": "La falta de recursos, conocimiento especializado y apoyo directivo, junto con la complejidad de las regulaciones, representan los mayores desafíos para los empresarios al implantar un modelo de compliance penal.",
+            "image": "IICE_LandingCompliance_Bitacora.svg",
+            "imgBackground": "hielo6.png",
+            "backgroundSize": "100%"
+        }
+    },
+    {
+        "id": 3,
+        "tipo": "TextSection",
+        "data": {
+            "background": "gray",
+            "level2": [
+                "En Instituto de Innovación hemos diseñado el MODELO AVANZADO NORMAPRO DE COMPLIANCE PENAL para ayudar a evitar la responsabilidad penal de las empresas, a sus representantes legales y directivos."
+            ],
+            "level6": [
+                "",
+                "Con este modelo, podrás implementar un sistema de gestión de compliance penal efectivo, adaptado a las necesidades específicas de tu empresa, y alineado con los requisitos legales y éticos aplicables."
+            ],
+            "remarkableText": [
+                "Modelo + Controles + Tecnología - Riesgos"
+            ]
+        }
+    }
+]
