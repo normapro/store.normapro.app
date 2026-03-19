@@ -31,7 +31,10 @@ import {
     faPenToSquare,
     faTimer,
     faSirenOn,
-    faTicketSimple
+    faTicketSimple,
+    faCalendarClock,
+    faClipboardListCheck,
+    faFileChartColumn
 } from '@fortawesome/pro-duotone-svg-icons';
 
 const iconMap = {
@@ -62,7 +65,10 @@ const iconMap = {
     'fa-pen-to-square': faPenToSquare,
     'fa-timer': faTimer,
     'fa-siren-on': faSirenOn,
-    'fa-ticket-simple': faTicketSimple
+    'fa-ticket-simple': faTicketSimple,
+    'fa-calendar-clock': faCalendarClock,
+    'fa-clipboard-list-check': faClipboardListCheck,
+    'fa-file-chart-column': faFileChartColumn
 };
 
 type Caracteristica = {

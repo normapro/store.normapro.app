@@ -89,7 +89,7 @@
     }
   },
   {
-    "id": 11,
+    "id": 13,
     "tipo": "ImgTextSection",
     "data": {
       "imgCabecera": "Grupo-4593@2x.png",
@@ -98,7 +98,7 @@
     }
   },
   {
-    "id": 12,
+    "id": 14,
     "tipo": "TextSection",
     "data": {
       "background": "white",
@@ -111,7 +111,7 @@
     }
   },
   {
-    "id": 13,
+    "id": 15,
     "tipo": "CaracteristicasIncorporadas",
     "data": {
       "data": [
@@ -135,58 +135,84 @@
         },
         {
           "id_data": 3,
-          "title": "",
-          "icon": "",
-          "mainTitle": "",
+          "title": "Gestor de tareas",
+          "icon": "fa-calendar-clock",
+          "mainTitle": "Gestor de tareas",
           "subtitle": "",
-          "description": "",
-          "img": ""
+          "description": "Enriquecida con una agenda inteligente, un calendario compartido para que tu equipo y tu estéis coordinados y un panel para que configures las alertas de cumplimiento que creas más conveniente. ",
+          "img": "gestortareas.png"
         },
         {
           "id_data": 4,
-          "title": "",
-          "icon": "",
-          "mainTitle": "",
+          "title": "Editor de formularios",
+          "icon": "fa-clipboard-list-check",
+          "mainTitle": "Editor de formularios",
           "subtitle": "",
-          "description": "",
-          "img": ""
+          "description": "Te permite crear y personalizar fácilmente cuestionarios y registros específicos. Facilita la recopilación y análisis de datos clave para un seguimiento automatizado, riguroso y documentado de las obligaciones establecidas por ti.",
+          "img": "editorformularios2.png"
         },
         {
           "id_data": 5,
-          "title": "",
-          "icon": "",
-          "mainTitle": "",
+          "title": "Informes",
+          "icon": "fa-file-chart-column",
+          "mainTitle": "Informes",
           "subtitle": "",
-          "description": "",
-          "img": ""
+          "description": "Que se autocompletaran y actualizarán en tiempo real con posibilidad de incluir y configurar todos los indicadores que te permitirán medir objetivos y hacerles un seguimiento puntual, diseñando tu propio cuadro de mando con gráficos y alertas por desviaciones que os permitirá tomar las mejores decisiones justo a tiempo.",
+          "img": "panelcontrol2.png"
         },
         {
           "id_data": 6,
-          "title": "",
-          "icon": "",
-          "mainTitle": "",
+          "title": "Editor de procesos",
+          "icon": "fa-timeline-arrow",
+          "mainTitle": "Editor de procesos (BPM)",
           "subtitle": "",
-          "description": "",
-          "img": ""
+          "description": "Esta herramienta es especialmente potente ya que, gracias a ella, cientos de centros de trabajo de las empresas que actualmente utilizan NormaPro han podido automatizar trámites y procesos internos de negocio, generar expedientes a medida y coordinar automáticamente a todas las personas que han de intervenir informando en cada momento del estado y la evolución al detalle.",
+          "img": "editorprocesos.png"
         },
         {
           "id_data": 7,
-          "title": "",
-          "icon": "",
-          "mainTitle": "",
+          "title": "Canal de denuncias",
+          "icon": "fa-siren-on",
+          "mainTitle": "Canal de denuncias",
           "subtitle": "",
-          "description": "",
-          "img": ""
+          "description": "Fomenta un ambiente de trabajo ético y transparente, donde cada voz cuenta y es escuchada. Transparencia total, tolerancia cero. Un espacio seguro para hacer lo correcto. Ofrece un medio confidencial para canalizar denuncias. Sin transparencia, arriesgas el bienestar de tus empleados y la reputación de tu empresa.",
+          "img": "canaldenuncias.png"
         },
         {
           "id_data": 8,
-          "title": "",
-          "icon": "",
-          "mainTitle": "",
+          "title": "Gestion de Competencias",
+          "icon": "fa-briefcase",
+          "mainTitle": "Gestión de Competencias",
           "subtitle": "",
-          "description": "",
-          "img": ""
+          "description": "Evita la desorganización y falta de seguimiento de responsabilidades asignando roles y estructura con supervisores fácilmente. Evalúa riesgos y sanciones en tiempo real, asegurando que cada miembro del equipo conozca su misión.",
+          "img": "gestioncompetencias.png"
         }
+      ]
+    }
+  },
+  {
+    "id": 19,
+    "tipo": "CarouselPerceptionsSection",
+    "data": {
+      "title": "Voces reales,\nExperiencias verdaderas",
+      "pragma": "Son cientos los centros de trabajo que ya han conseguido su objetivo y están gestionando y monitorizando miles de evidencias de cumplimiento lo que permite obtener una visión pormenorizada de la marcha y evolución del negocio, evaluar los riesgos de sanción económica y medir su grado de cumplimiento en tiempo real.",
+      "subtitle": "Adelantate y actua a tiempo para anular o disminuir los riesgos y gana en tranquilidad.",
+      "listIds": [9,7,3,1]
+    }
+  },
+  {
+    "id": 21,
+    "tipo": "CertificacionesSection",
+    "data": {
+      "title": "Calidad y seguridad certificada",
+      "subtitle": "Nuestros productos y servicios cuentan con certificación de AENOR:",
+      "images": [
+        "27001.png",
+        "9001.png",
+        "45001.png",
+        "iqnet.png",
+        "iqnet.png",
+        "qaec.png"
       ]
     }
   }
