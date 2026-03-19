@@ -29,7 +29,7 @@ const ConsultoriaDropdown = () => {
                     {consultorias.map((consultoria) => (
                         <a
                             key={consultoria.id_consultoria}
-                            href={`/soluciones/${consultoria.slug}`}    
+                            href={`/consultorias/${consultoria.slug}`}    
                             className="bg-[#FFFFFF] p-6 rounded-xl text-[#010D3D] relative grid grid-cols-3 gap-4 block"
                         >
                             <Image
