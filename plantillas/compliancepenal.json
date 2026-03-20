@@ -95,5 +95,15 @@
             "id_testimonio": 4
 
         }
+    },
+    {
+        "id": 8,
+        "tipo": "VentajasSection",
+        "data": {
+            "title": "Cuando implementas un Sistema Avanzado de gestión de Compliance los parámetros de valoración de tu compañía se disparan. Todos se fijan en ella.",
+            "claim":[
+                "La vorágine legislativa supone un problema cada vez mayor para las empresas, pero existen mecanismos para establecer líneas solidas de defensa que convierten la gestión de Compliance penal en una inversión inteligente más que en un mero costo ya que aportan beneficios que contribuyen a la salud a largo plazo de la empresa:"
+            ]
+        }
     }
 ]

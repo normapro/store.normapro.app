@@ -21,3 +21,4 @@ export { default as SideImgTextSection } from "./SideImgTextSection";
 export { default as AportacionesSection } from "./AportacionesSection";
 export { default as RegaloSection } from "./RegaloSection";
 export { default as ServiciosSection } from "./ServiciosSection";
+export { default as VentajasSection } from "./VentajasSection";
