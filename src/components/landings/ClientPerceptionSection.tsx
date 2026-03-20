@@ -16,9 +16,9 @@ type Elemento = {
 
 type ClientPerceptionSectionProps = {
   title: string;
-  items?: string[];
+  items?: string | string[];
   list?: Elemento[];
-  id_testimonio: number;
+  id_testimonio?: number;
 };
 
 const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
@@ -29,12 +29,32 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
 }) => {
   const [testimonio, setTestimonio] = useState<TestimonioConCliente | null>(null);
   const [openModal, setOpenModal] = useState(false);
+  const itemsList = Array.isArray(items) ? items : items ? [items] : [];
 
   useEffect(() => {
-    fetch(`http://localhost:3010/v1/store/testimonios/${id_testimonio}`)
-      .then((res) => res.json())
-      .then(setTestimonio)
-      .catch(console.error)
+    if (!id_testimonio) return;
+
+    fetch("http://localhost:3010/v1/store/testimonios?maxItems=100")
+      .then(async (res) => {
+        if (!res.ok) {
+          throw new Error("No se pudieron cargar los testimonios");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        const testimonios = Array.isArray(data) ? data : [];
+        const selected = testimonios.find(
+          (t) => Number(t?.id_testimonio) === Number(id_testimonio)
+        );
+
+        if (selected && selected.cliente && selected.description) {
+          setTestimonio(selected);
+          return;
+        }
+
+        setTestimonio(null);
+      })
+      .catch(() => setTestimonio(null));
   }, [id_testimonio]);
 
 /*
@@ -78,7 +98,7 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
             {title}
           </h2>
           <ul className="space-y-4 text-lg text-[#1a1a1a] mb-8 whitespace-pre-line">
-            {items.map((item, index) => (
+            {itemsList.map((item, index) => (
               <li key={index} className="text-[#010d3d] flex items-start leading-tight">
               <span key={index} style={{ fontWeight: weights[index % weights.length] }}>
                 {item + " "}
@@ -103,9 +123,18 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
         {/* Testimonio derecho */}
         {testimonio && (
           <div className="flex flex-col items-center text-center">
+            {/** Soporta ambas variantes del backend: description/descripcion */}
+            {(() => {
+              const clientName = (testimonio.cliente as any).descripcion || testimonio.cliente.description;
+              const imageSlug = clientName
+                ? clientName.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "")
+                : "default";
+
+              return (
+                <>
             <Image
               src={`/logos/${testimonio.cliente.logo}`}
-              alt={testimonio.cliente.descripcion}
+              alt={clientName}
               width={100}
               height={60}
               className="object-contain -mb-12 z-10"
@@ -123,7 +152,7 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
             </div>
             <div className="w-20 h-20 rounded-full overflow-hidden shadow-sm mb-4 -mt-12">
               <Image
-                src={`/testimonios/${testimonio.cliente.descripcion.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "")}.png`}
+                src={`/testimonios/${imageSlug}.png`}
                 alt={testimonio.persona || 'Foto'}
                 width={64}
                 height={64}
@@ -133,8 +162,11 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
             <div className="text-sm text-[#010d3d] leading-snug">
               <p>{testimonio.persona}</p>
               <p className="font-bold">{testimonio.cargo}</p>
-              <p className="font-bold">{testimonio.cliente.descripcion}</p>
+              <p className="font-bold">{clientName}</p>
             </div>
+                </>
+              );
+            })()}
           </div>
         )}
       </div>

@@ -46,5 +46,54 @@
                 "Modelo + Controles + Tecnología - Riesgos"
             ]
         }
+    },
+    {
+        "id": 4,
+        "tipo": "VideoSection",
+        "data": {
+            "title": "¿Te gustaría…",
+            "items": [
+                "… evitar tu responsabilidad penal como empresario o directivo?",
+                "… saber qué necesitas para sentirte protegido?",
+                "… disponer de las herramientas que te faciliten y simplifiquen el trabajo?"
+            ]
+        }
+    },
+    {
+        "id": 5,
+        "tipo": "VideoSection",
+        "data": {
+            "title": "Y si eres un Compliance Officer…",
+            "items": [
+                "… Olvídate de farragosos sistemas imposibles de entender",
+                "… Olvídate de los Excel y archivos de documentos en papel",
+                "… Olvídate de tener un modelo idéntico al resto"
+            ],
+            "url_video": "https://youtu.be/mbT2lY-UQ-I?si=yQTIVdAdd91yw2sL",
+            "buttonText": "Reserva una sesión estratégica",
+            "imgBackground": "hielo7.png"
+        }
+    },
+    {
+        "id": 6,
+        "tipo": "ClientsMuralSection",
+        "data": {
+            "scope": "compliance-tecnico",
+            "claim": [
+                "Estas marcas ya trabajan con nosotros"
+            ]
+        }
+    },
+    {
+        "id": 7,
+        "tipo": "ClientPerceptionSection",
+        "data": {
+            "title": "La percepción de nuestros clientes es nuestra realidad",
+            "items":[
+                "Más de veinte años ayudando en esta materia a muchos directivos con los que trabajamos mano a mano y cuyos equipos gestionan y monitorizan con NormaPro cientos de controles y miles de evidencias de sus sistemas de gestión de Compliance penal, y en otros alcances normativos como Medio Ambiente, Instalaciones, Seguridad industrial y PRL, Sanitaria o Seguridad alimentaria entre otros"
+            ],
+            "id_testimonio": 4
+
+        }
     }
 ]
