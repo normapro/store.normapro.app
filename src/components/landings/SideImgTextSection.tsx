@@ -4,7 +4,7 @@ import { FC } from 'react';
 
 type Props = {
   image: string;
-  imgBackground: string;
+  imgBackground?: string;
   title?: string;
   claim: string;
   plagma?: String;
@@ -21,11 +21,13 @@ const SideImgTextSection: FC<Props> = ({
     <section className="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center justify-between gap-1  py-10 px-6 md:px-12">
       {/* Imagen de cabecera */}
       <div className="relative w-[220px] md:w-[360px] overflow-visible ">
-        <img
-          src={`/apps/${imgBackground}`}
-          alt=""
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[160%] max-w-none h-auto object-contain"
-        />
+        {imgBackground && (
+          <img
+            src={`/apps/${imgBackground}`}
+            alt=""
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[160%] max-w-none h-auto object-contain"
+          />
+        )}
         <img
           src={`/apps/${image}`}
           alt="Imagen cabecera"

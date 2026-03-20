@@ -58,7 +58,7 @@ const FaqSection: FC<FaqProps> = ({ faqs }) => {
                   </p>
 
                   {faq.link && (
-                    <div className="mt-4">
+                    <div className="mt-4 whitespace-pre-line">
                       {faq.link.map((text, i) => {
                         const isLink = i % 2 !== 0;
                         const Tag = isLink ? 'a' : 'span';

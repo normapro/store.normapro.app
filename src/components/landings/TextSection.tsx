@@ -15,6 +15,7 @@ type TextSectionProps = {
   level8?: string[];
   buttonText?: string;
   remarkableText?: string;
+  remarkableText2?: string;
 };
 
 const TextSection: React.FC<TextSectionProps> = ({
@@ -29,6 +30,7 @@ const TextSection: React.FC<TextSectionProps> = ({
   level8,
   buttonText,
   remarkableText,
+  remarkableText2
 
 }) => {
   const [openModal, setOpenModal] = useState(false);
@@ -100,15 +102,6 @@ const TextSection: React.FC<TextSectionProps> = ({
             ))}
             </h4>
         )}
-        {level7 && (
-          <h4 className="text-[20px] font-[800] text-gray-500 mb-10 whitespace-pre-line">
-            {level7.map((text, i) => (
-              <span key={i} style={{ color: colors[i % colors.length] }}>
-                {text + " "}
-              </span>
-            ))}
-            </h4>
-        )}
         {level8 && (
           <h4 className="text-[16px] text-gray-500 mb-10 whitespace-pre-line">
             {level8.map((text, i) => (
@@ -126,10 +119,26 @@ const TextSection: React.FC<TextSectionProps> = ({
               {buttonText}
             </button>
         )}
+        {level7 && (
+          <h4 className="text-[20px] font-[800] text-gray-500 mb-10 whitespace-pre-line">
+            {level7.map((text, i) => (
+              <span key={i} style={{ color: colors[i % colors.length] }}>
+                {text + " "}
+              </span>
+            ))}
+            </h4>
+        )}
         {remarkableText && (
           <div className="bg-white rounded-2xl px-8 py-6 mb-10 shadow-sm inline-block max-w-full">
             <h4 className="text-[36px] font-[800] text-[#010d3d] leading-tight">
               {remarkableText}
+            </h4>
+          </div>
+        )}
+        {remarkableText2 && (
+          <div className="bg-white rounded-2xl px-8 py-6 mb-10 shadow-sm inline-block max-w-full">
+            <h4 className="text-[22px] font-[800] text-[#010d3d] leading-tight">
+              {remarkableText2}
             </h4>
           </div>
         )}
