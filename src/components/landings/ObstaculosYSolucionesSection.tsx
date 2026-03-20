@@ -19,6 +19,7 @@ import {
   faEnvelopeDot,
   faTimelineArrow,
   faFileCircleCheck,
+  faFileZipper
 } from '@fortawesome/pro-duotone-svg-icons';
 
 const iconMap: Record<string, any> = {
@@ -36,7 +37,8 @@ const iconMap: Record<string, any> = {
   'fa-comment': faComment,
   'fa-envelope-dot': faEnvelopeDot,
   'fa-timeline-arrow': faTimelineArrow,
-  'fa-file-circle-check': faFileCircleCheck
+  'fa-file-circle-check': faFileCircleCheck,
+  'fa-file-zipper': faFileZipper
 };
 
 type Celda = {
