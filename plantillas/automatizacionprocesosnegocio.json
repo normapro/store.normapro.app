@@ -223,6 +223,67 @@
     }
   },
   {
+    "id": 11,
+    "tipo": "EtapasSection",
+    "data": {
+      "title": "Descubre el programa paso a paso que transforma la gestión empresarial",
+      "subtitle": "En nuestro compromiso por impulsar la eficiencia y el éxito empresarial, hemos desarrollado un programa paso a paso que ha revolucionado la forma en que las empresas gestionan sus procesos internos.",
+      "claim": "A lo largo de las siguientes etapas, te guiaremos a través de un camino probado y estructurado que ha llevado a otras empresas a lograr sus objetivos de manera efectiva.\n\nCada etapa está diseñada para brindarte las herramientas y conocimientos necesarios para transformar tu empresa y alcanzar tu propio éxito:",
+      "buttonText": "Quiero saber más de vuestro sistema",
+      "etapas": [
+        {
+          "imgBackground": "hielo3.png",
+          "image": "IICE_LandingCompliancePenal_Nivel2_9-1.svg",
+          "title": "Análisis de los procesos actuales",
+          "objective": "Objetivo: Identificaremos y documentaremos los procesos de negocio actuales, destacando áreas de mejora y cuellos de botella.",
+          "claim": "Disponer de buena información detallada de los procesos actuales, destacando ineficiencias y oportunidades de mejora, nos permitirá entender profundamente los procesos existentes, esencial para planificar intervenciones efectivas y personalizadas."
+        },
+        {
+          "imgBackground": "hielo3.png",
+          "image": "IICE_LandingCompliancePenal_Nivel1_2.svg",
+          "title": "Planificación estratégica",
+          "objective": "Objetivo: Desarrollaremos un plan de digitalización que se alinee con los objetivos específicos de tu negocio y las áreas de mejora identificadas.",
+          "claim": "Un plan estratégico personalizado para la implementación de soluciones digitales, alineado con tus objetivos del negocio te asegura una transición fluida y eficiente hacia procesos digitalizados, minimizando riesgos y optimizando recursos."
+        },
+        {
+          "imgBackground": "hielo6.png",
+          "image": "IICE_LandingCompliancePenal_Nivel3_4.svg",
+          "title": "Configuración y personalización de la solución",
+          "objective": "Objetivo: Adaptaremos y configuraremos la solución de digitalización con NormaPro para satisfacer las necesidades específicas.",
+          "claim": "Una solución digital ajustada específicamente a tus necesidades y procesos garantiza una mayor efectividad y adopción de la solución, maximizando el impacto en la eficiencia operativa."
+        },
+        {
+          "imgBackground": "hielo8.png",
+          "image": "IICE_LandingCompliancePenal_Nivel1_5-1.svg",
+          "title": "Formación y capacitación del equipo",
+          "objective": "Objetivo: Capacitaremos a tu equipo en el uso eficiente de la nueva solución digital, asegurando su competencia y confianza.",
+          "claim": "Dispondréis en tu empresa de personas competentes y seguras en el uso de la nueva solución digital. Con una formación adecuada facilitaremos la adaptación rápida y efectiva a la solución, y verás mejorada su productividad y eficiencia."
+        },
+        {
+          "imgBackground": "hielo3.png",
+          "image": "IICE_LandingCompliancePenal_Nivel1_3-1.svg",
+          "title": "Implementación y despliegue",
+          "objective": "Objetivo: Implementaremos contigo la solución en el entorno de trabajo asegurando que funcione de manera efectiva y eficiente.",
+          "claim": "Una solución digital completamente operativa e integrada en el entorno de tu empresa, asegurará que todas las funciones y procesos trabajen según lo planeado. Esta etapa concreta las mejoras planificadas, permitiéndote experimentar directamente los beneficios de la digitalización."
+        },
+        {
+          "imgBackground": "hielo6.png",
+          "image": "IICE_LandingCompliance_Etapa5.png",
+          "title": "Ajustes y soporte",
+          "objective": "Objetivo: Realizar ajustes para conseguir que la solución esté alineada con los objetivos establecidos y proporcionar soporte constante.",
+          "claim": "Un proceso de revisión y ajuste inmediato post-implementación, te asegura que la solución digital funcione según lo previsto y se integre perfectamente en los procesos de negocio. Estos ajustes tempranos y el soporte te garantizan que cualquier desafío operativo o técnico se resuelva rápidamente y garantizando una transición fluida."
+        },
+        {
+          "imgBackground": "hielo3.png",
+          "image": "IICE_LandingCompliancePenal_Nivel3_7.svg",
+          "title": "Monitorización y mejora continua",
+          "objective": "Objetivo: Establecer un sistema de monitorización constante para evaluar el rendimiento de la solución digital e identificar oportunidades para mejoras adicionales.",
+          "claim": "Obtendrás información continua sobre el rendimiento de la solución digital, identificando oportunidades para mejoras y refinamientos. La monitorización constante te permitirá la adaptación y evolución de la solución para enfrentar retos emergentes, mantenerla alineada con las metas de tu negocio y asegurando su efectividad operativa."
+        }
+      ]
+    }
+  },
+  {
     "id": 13,
     "tipo": "CertificacionesSection",
     "data": {
