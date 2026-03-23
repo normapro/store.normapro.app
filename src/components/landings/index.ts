@@ -24,3 +24,4 @@ export { default as RegaloSection } from "./RegaloSection";
 export { default as ServiciosSection } from "./ServiciosSection";
 export { default as VentajasSection } from "./VentajasSection";
 export { default as EtapasSection } from "./EtapasSection";
+export { default as QuestionsSection } from "./QuestionsSection";

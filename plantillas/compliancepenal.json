@@ -124,5 +124,38 @@
                 "Ahora la tendencia es lograr implementar un modelo eficaz de cumplimiento normativo que te lleve a contribuir de forma significativa al éxito de tu empresa y ser reconocido  como un empresario o un directivo brillante."
             ]
         }
+    },
+    {
+        "id": 10,
+        "tipo": "TextSection",
+        "data": {
+            "background": "white",
+            "level1": [
+                "¿Cuándo vas poner en marcha un Modelo de gestión de Compliance penal o actualizar el que ya tienes?"
+            ],
+            "level8": [
+                "Son diarios los casos que se suceden en los juzgados derivados de incumplimientos con consecuencias legales graves; son situaciones muy desagradables que pueden dar al traste con tu futuro profesional y personal."
+            ]
+        }
+    },
+    {
+        "id": 11,
+        "tipo": "QuestionsSection",
+        "data": {
+            "title": "¿Cuándo vas poner en marcha un Modelo de gestión de Compliance penal o actualizar el que ya tienes?",
+            "intro": [
+                "Son diarios los casos que se suceden en los juzgados derivados de incumplimientos con consecuencias legales graves; son situaciones muy desagradables que pueden dar al traste con tu futuro profesional y personal.",
+                "Puedes seguir dando palos de ciego con hojas de cálculo y correos electrónicos que generan un sinfín de trabajos manuales con errores, fallos, tiempo mal invertido y que acaban siendo descuidados y poniendo en riesgo a tu organización y ti mismo."
+            ],
+            "preQuestionsText": "Lo normal es que en estos momentos solo sabes:",
+            "questions": [
+                "Que no sabes por dónde empezar",
+                "Que no cuentas con los recursos financieros o humanos necesarios para implementar un sistema de Compliance penal efectivo.",
+                "Que las leyes y regulaciones en torno al Compliance son a menudo complejas y cambiantes, lo que hace difícil que tu empresa se mantenga actualizada.",
+                "¿Que no dispones del expertise legal necesario para interpretar y aplicar las leyes y regulaciones de manera efectiva.?",
+                "Que puede haber resistencia por parte de algunos empleados para adoptar nuevas prácticas o cambios que implique un sistema de Compliance."
+            ],
+            "buttonText":"Reserva una sesión estratégica"
+        }
     }
 ]
