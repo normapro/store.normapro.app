@@ -89,11 +89,10 @@
         "tipo": "ClientPerceptionSection",
         "data": {
             "title": "La percepción de nuestros clientes es nuestra realidad",
-            "items":[
+            "items": [
                 "Más de veinte años ayudando en esta materia a muchos directivos con los que trabajamos mano a mano y cuyos equipos gestionan y monitorizan con NormaPro cientos de controles y miles de evidencias de sus sistemas de gestión de Compliance penal, y en otros alcances normativos como Medio Ambiente, Instalaciones, Seguridad industrial y PRL, Sanitaria o Seguridad alimentaria entre otros"
             ],
             "id_testimonio": 4
-
         }
     },
     {
@@ -101,8 +100,28 @@
         "tipo": "VentajasSection",
         "data": {
             "title": "Cuando implementas un Sistema Avanzado de gestión de Compliance los parámetros de valoración de tu compañía se disparan. Todos se fijan en ella.",
-            "claim":[
+            "claim": [
                 "La vorágine legislativa supone un problema cada vez mayor para las empresas, pero existen mecanismos para establecer líneas solidas de defensa que convierten la gestión de Compliance penal en una inversión inteligente más que en un mero costo ya que aportan beneficios que contribuyen a la salud a largo plazo de la empresa:"
+            ]
+        }
+    },
+    {
+        "id": 9,
+        "tipo": "SideLeftImgTextSection",
+        "data": {
+            "title": "Tu tiempo y tu tranquilidad es lo primero",
+            "claim": [
+                "Actualmente toda la actividad empresarial se desarrolla en medio de una avalancha regulatoria hiper dinámica; tan solo en España se vienen publicando desde los años 70 una media de un millón de páginas de Boletines Oficiales, de las cuales la mitad aproximadamente están  dedicadas a la promulgación de normas nuevas o  modificación de las existentes."
+            ],
+            "image": "IICE_LandingCompliance_tiempo.png",
+            "imgBackground": "hielo3.png",
+            "backgroundSize": "100%",
+            "paragraphs": [
+                "¡¡Imagínate!! Cada vez que alguien decide iniciar una actividad empresarial ha de rebuscar entre más de veinte millones de estas páginas para saber qué le aplica y qué no.",
+                "Por otro lado, la Ley Orgánica 1/2015, de 30 de marzo cual amplía el ámbito de aplicación de la responsabilidad penal de las personas jurídicas tanto en la vertiente de los sujetos responsables (representantes legales, apoderados, directivos, consejeros, patronos etc) como en la de los delitos por los que pueden ser imputados y las penas asociadas a los mismos.",
+                "Por lo tanto, las responsabilidades penales en España se extienden a las personas jurídicas siempre y cuando no ejecuten unas tareas de prevención, supervisión, vigilancia y - control.",
+                "Ante esto, muchos empresarios, directivos y técnicos de empresas están pasando a la acción para conseguir aumentar la tranquilidad que viene de saber que el cumplimento normativo en su área de responsabilidad está bajo control.",
+                "Ahora la tendencia es lograr implementar un modelo eficaz de cumplimiento normativo que te lleve a contribuir de forma significativa al éxito de tu empresa y ser reconocido  como un empresario o un directivo brillante."
             ]
         }
     }

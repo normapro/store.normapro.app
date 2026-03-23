@@ -18,6 +18,7 @@ export { default as PresentacionSection2 } from "./PresentacionSection2";
 export { default as CarouselPerceptionsSection } from "./CarouselPerceptionsSection";
 export { default as RazonesSection } from "./RazonesSection";
 export { default as SideImgTextSection } from "./SideImgTextSection";
+export { default as SideLeftImgTextSection } from "./SideLeftImgTextSection";
 export { default as AportacionesSection } from "./AportacionesSection";
 export { default as RegaloSection } from "./RegaloSection";
 export { default as ServiciosSection } from "./ServiciosSection";

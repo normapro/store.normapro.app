@@ -46,7 +46,7 @@ const VentajasSection: FC<Props> = ({
 	};
 
 	return (
-		<section className={`w-full py-16 md:py-20 px-6 ${bgColor}`}>
+		<section className={`w-full py-16 md:py-20 px-6`}>
 			<div className="max-w-7xl mx-auto">
 				<div className="max-w-3xl mx-auto text-center md:text-left">
 					<h2 className="text-[25px] md:text-[35px] leading-tight font-black text-[#010d3d] text-center ">
