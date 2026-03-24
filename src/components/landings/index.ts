@@ -25,4 +25,6 @@ export { default as ServiciosSection } from "./ServiciosSection";
 export { default as VentajasSection } from "./VentajasSection";
 export { default as EtapasSection } from "./EtapasSection";
 export { default as QuestionsSection } from "./QuestionsSection";
-export { default as OpcionesSeleccionesSection } from "./OpcionesSeleccionesSection";
+export { default as ClavesSection } from "./ClavesSection";
+export { default as PorcentajesSection } from "./PorcentajesSection";
+export { default as SideTextSection } from "./SideTextSection";
