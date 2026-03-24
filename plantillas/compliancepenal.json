@@ -127,19 +127,6 @@
     },
     {
         "id": 10,
-        "tipo": "TextSection",
-        "data": {
-            "background": "white",
-            "level1": [
-                "¿Cuándo vas poner en marcha un Modelo de gestión de Compliance penal o actualizar el que ya tienes?"
-            ],
-            "level8": [
-                "Son diarios los casos que se suceden en los juzgados derivados de incumplimientos con consecuencias legales graves; son situaciones muy desagradables que pueden dar al traste con tu futuro profesional y personal."
-            ]
-        }
-    },
-    {
-        "id": 11,
         "tipo": "QuestionsSection",
         "data": {
             "title": "¿Cuándo vas poner en marcha un Modelo de gestión de Compliance penal o actualizar el que ya tienes?",
@@ -155,7 +142,54 @@
                 "¿Que no dispones del expertise legal necesario para interpretar y aplicar las leyes y regulaciones de manera efectiva.?",
                 "Que puede haber resistencia por parte de algunos empleados para adoptar nuevas prácticas o cambios que implique un sistema de Compliance."
             ],
-            "buttonText":"Reserva una sesión estratégica"
+            "buttonText": "Reserva una sesión estratégica"
+        }
+    },
+    {
+        "id": 11,
+        "tipo": "ClientPerceptionSection",
+        "data": {
+            "title": "Ellos decidieron dar un paso adelante y NormaPro les ayudó a hacer realidad su deseo y lo que lograron fue:",
+            "id_testimonio": 3,
+            "list": [
+                {
+                    "title": "Transformar una preocupación en tranquilidad."
+                },
+                {
+                    "title": "Reducir de media un 40% los costes de operación de muchos procesos internos de su empresa (e incluso casi eliminarlos en algunos)"
+                }
+    
+            ]
+        }
+    },
+    {
+        "id": 12,
+        "tipo": "OpcionesSeleccionesSection",
+        "data": {
+            "title": "Llevamos más de veinte años aportando tranquilidad a empresarios y directivos y ahora queremos hacer lo mismo contigo",
+            "intro": "En grandes empresas como Robert Bosch, Calidad Pascual, Asisa, Grupo Fuertes, Acciona Agua, el grupo Coren o Macrosoft entre otras se están gestionando y monitorizando miles de evidencias de cumplimiento disponiendo de cuadros de mando que combinan información de todos sus departamentos y centros de forma selectiva.",
+            "leftTitle": "Todo esto les permite",
+            "leftItems": [
+                "Obtener una visión pormenorizada de la marcha y evolución de su negocio",
+                "Evaluar los riesgos de sanción económica y penales",
+                "Medir la evolución del grado de cumplimiento en tiempo real a nivel de compañía"
+            ],
+            "rightTitle": "Y todo ello seleccionado por",
+            "rightItems": [
+                "Alcances normativos",
+                "Centros de trabajo",
+                "Departamentos",
+                "Empleado"
+            ],
+            "paragraphs": [
+                "Gracias a esto han podido actuar a tiempo para anular o disminuir los riesgos y ganar en tranquilidad.",
+                "Además, tienen perfectamente inventariada y controlada desde un mismo lugar toda la información y documentación relativa a sus instalaciones y equipos de trabajo, los empleados, así como los contratos y los proveedores.",
+                "No hay semana en la que no nos contacte algún empresario o directivo para pedirnos consejo sobre cómo tener control sobre su Sistema de gestión de Compliance penal sin que suponga un coste extra para su empresa. Son personas conscientes del riesgo que están asumiendo y les preocupa o ya han puesto en marcha algún tipo de mecanismo de control pero no termina de funcionar o les genera un sobre esfuerzo inasumible.",
+                "Y tú seguramente has llegado leyendo hasta aquí porque buscas lo mismo.",
+                "Quedarse con los brazos cruzados no es una opción. Con una guía clara y certera, una plataforma digital y la ayuda de consultores expertos el camino se vislumbra seguro y sencillo."
+            ],
+            "buttonText": "Reserva una reunión con nosotros",
+            "imgBackground": "hielo7.png"
         }
     }
 ]
