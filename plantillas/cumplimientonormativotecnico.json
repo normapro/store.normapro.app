@@ -217,6 +217,31 @@
     }
   },
   {
+    "id": 24,
+    "tipo": "ClavesSection",
+    "data": {
+      "title": "4 claves indispensables para organizar y automatizar tareas de cumplimiento",
+      "claves": [
+        {
+          "image": "IICE_LandingCompliance_automatizar_tareas1.svg",
+          "claim": "Disponer de un inventario con toda la información precisa de cada equipo de trabajo."
+        },
+        {
+          "image": "IICE_LandingCompliance_automatizar_tareas2.svg",
+          "claim": "Saber qué norma es aplicable a cada caso concreto y cual no, tenerla toda inventariada y accesible."
+        },
+        {
+          "image": "IICE_LandingCompliance_automatizar_tareas3.svg",
+          "claim": "Discernir qué evidencias hemos de tener disponibles."
+        },
+        {
+          "image": "IICE_LandingCompliance_automatizar_tareas4.svg",
+          "claim": "Estar preparado en todo momento para dar la respuesta adecuada ante una auditoría, inspección o accidente."
+        }
+      ]
+    }
+  },
+  {
     "id": 25,
     "tipo": "TextSection",
     "data": {
@@ -232,7 +257,7 @@
     "tipo": "TextSection",
     "data": {
       "background": "white",
-      "level1": [
+      "level5": [
         "La mayor parte de las empresas no encuentran todo ese tiempo."
       ],
       "level8": [
@@ -243,6 +268,34 @@
   },
   {
     "id": 28,
+    "tipo": "PorcentajesSection",
+    "data": {
+      "title": "¿Por qué deberías acceder a este programa?",
+      "subtitle": "Porque cientos de empresas son sancionadas por diversos motivos cada día y porque creemos firmemente que implementando el Modelo Avanzado de gestión del cumplimiento NormaPro tendrás sensación de tranquilidad y seguridad.",
+      "claim": "El problema es que la mayoría de las empresas no disponen de una metodología que sea capaz de integrar hábitos de cumplimiento en su plantilla ya que, o no dedican los recursos necesarios o los que disponen se pierden en un consumo excesivo de tiempo y tareas improductivas que no consiguen evitar consecuencias desagradables cuando se encuentran con una inspección o se produce un incidente.",
+      "pragma": "Nosotros no queremos que esto te ocurra a ti y de hecho las empresas que ya tienen el Modelo Avanzado NormaPro ahora mismo tienen a su personal sensibilizado y sus Sistemas de gestión funcionando en piloto automático.",
+      "datos": [
+        {
+          "porcentaje": "20%",
+          "claim": [
+            "En materia de",
+            "prevención de riesgos en el trabajo",
+            "el Gobierno español aumentará un 20% la presión a las empresas que irán desde 49.141 euros hasta 982.914 euros."
+          ]
+        },
+        {
+          "porcentaje": "57%",
+          "claim": [
+            "",
+            "La vulneración de las normativas europeas en materia de medio ambiente",
+            "ha ascendido un 57% en tan solo cinco años y, en su mayor parte, estas infracciones están relacionadas con la festión de residuos y vertidos, lo que ha hecho que las autoridades competentes de la Unión Europea aumenten sus acciones de control, detección y denuncia."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 29,
     "tipo": "TextSection",
     "data": {
       "background": "white",
@@ -253,7 +306,7 @@
     }
   },
   {
-    "id": 29,
+    "id": 30,
     "tipo": "TextSection",
     "data": {
       "background": "gray",
@@ -264,6 +317,16 @@
         "Debes ser una de las personas que comience a trabajar con nosotros y aplicar nuestro método y empezar ya a implementar un modelo avanzado de gestión del cumplimiento con el que puedes evitar sanciones, mantener a salvo la reputación de tu empresa y ganar en tranquilidad."
       ],
       "buttonText": "Reserva una sesión con nosotros"
+    }
+  },
+  {
+    "id": 32,
+    "tipo": "SideTextSection",
+    "data": {
+      "title": "El propósito de Instituto de Innovación, Ciencia y Empresa es el de democratizar el Cumplimiento normativo alineado con la Transformación digital de las organizaciones y así contribuir de forma significativa a su éxito empresarial.",
+      "claim": "El disponer de una metodología bien estructurada, unos recursos tecnológicos muy evolucionados y hacer las sesiones online nos permiten poder ofertar todo este paquete de servicios por una cuota mensual más que razonable que dependerá del tamaño de tu empresa y los alcances normativos que más te preocupen controlar en este momento.",
+      "pragma": "Si quieres conocer la cantidad de esta cuota te invito a que cumplimentes un sencillo y escueto cuestionario de apenas 5 preguntas. En uno o dos días tendrás en tu correo el coste muy aproximado.",
+      "buttonText": "Cumplimentar cuestionario"
     }
   },
   {
