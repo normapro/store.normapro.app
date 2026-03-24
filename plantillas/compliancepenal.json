@@ -158,7 +158,6 @@
                 {
                     "title": "Reducir de media un 40% los costes de operación de muchos procesos internos de su empresa (e incluso casi eliminarlos en algunos)"
                 }
-    
             ]
         }
     },
@@ -190,6 +189,22 @@
             ],
             "buttonText": "Reserva una reunión con nosotros",
             "imgBackground": "hielo7.png"
+        }
+    },
+    {
+        "id": 13,
+        "tipo": "ClientPerceptionSection",
+        "data": {
+            "id_testimonio": 1,
+            "items": [
+                "La gran diferencia entre gestionar por tu cuenta y hacerlo con un método, un mentor y un software diseñado para ello, es que no vas a fallar.",
+                "Realizar por ti mismo todas las tareas que implica cumplir con las normas y tener controlada toda la información en un cuadro de mando supone un esfuerzo titánico. Gastarás muchas horas solo buscando cómo es el mejor modo de hacerlo.",
+                "Por eso precisamente hemos creado este programa, para ayudar a todos los empresarios, directivos y técnicos que como tú, necesitan soluciones para pasar del “no sé por donde empezar para lograr tener los riesgos de cumplimiento bajo control” al “tenemos implantado un sistema que me produce mucha tranquilidad y además contribuye a la buena marcha de mi negocio”."
+            ],
+            "downtext": "Ahora tienes la oportunidad de decidir si quieres disfrutar de la tranquilidad de tener bajo control la normativa que aplica al área de tu empresa de la que eres responsable, o si prefieres seguir ahí donde estás sintiendo frustración porque el día a día te impide avanzar con esto o bien no sabes por dónde empezar.",
+            "supertitle": "Modelo Avanzado NormaPro",
+            "image": "Grupo5015.png",
+            "subtitle": "La metodología para gestionar el cumplimiento normativo a través de la Plataforma Digital que utilizan las empresas de prestigio para controlar sus riesgos."
         }
     }
 ]
