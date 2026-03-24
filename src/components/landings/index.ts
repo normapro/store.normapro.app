@@ -28,3 +28,4 @@ export { default as QuestionsSection } from "./QuestionsSection";
 export { default as ClavesSection } from "./ClavesSection";
 export { default as PorcentajesSection } from "./PorcentajesSection";
 export { default as SideTextSection } from "./SideTextSection";
+export { default as OpcionesSeleccionesSection } from "./OpcionesSeleccionesSection";

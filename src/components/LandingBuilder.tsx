@@ -29,6 +29,7 @@ import {
     ClavesSection,
     PorcentajesSection,
     SideTextSection,
+    OpcionesSeleccionesSection,
   } from "@/components/landings"; // si tienes un index.ts que los agrupe
   
   const sectionMap: Record<string, React.ComponentType<any>> = {
@@ -60,7 +61,8 @@ import {
     QuestionsSection,
     ClavesSection,
     PorcentajesSection,
-    SideTextSection
+    SideTextSection,
+    OpcionesSeleccionesSection,
   };
   
   export default function LandingBuilder({ bloques }: { bloques: any[] }) {
