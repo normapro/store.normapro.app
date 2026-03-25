@@ -33,7 +33,7 @@ const ImgTextSection: FC<Props> = ({
         <img
           src={`/apps/${imgCabecera}`}
           alt="Imagen cabecera"
-          className="relative h-[120px] md:h-[200px] object-contain"
+          className="relative h-[180px] md:h-[300px] object-contain"
         />
       </div>
       {/* Título, subtitulo y claim */}

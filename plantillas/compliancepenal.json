@@ -229,5 +229,155 @@
             "image": "Grupo5015.png",
             "subtitle": "La metodología para gestionar el cumplimiento normativo a través de la Plataforma Digital que utilizan las empresas de prestigio para controlar sus riesgos."
         }
+    },
+    {
+        "id": 14,
+        "tipo": "ImgTextSection",
+        "data": {
+            "imgCabecera": "Grupo-4593@2x.png",
+            "title": "¿Quieres acabar con Excels y emails que generan un sinfín de trabajos manuales con errores, tiempo mal invertido y que acaban siendo abandonados si no estás pendiente de todo tu personal?",
+            "subtitle": "La Plataforma digital NormaPro pertenece a las llamadas Reg-Tech, es decir, a las nuevas tecnologías enfocadas gestionar y mitigar riesgos relativos al cumplimiento normativo o Compliance."
+        }
+    },
+    {
+        "id": 15,
+        "tipo": "TextSection",
+        "data": {
+            "background": "white",
+            "level1": [
+                "Dispone de 7 aplicaciones"
+            ],
+            "level3": [
+                "Con las que configurar soluciones innovadoras que te permitiran simplificar, estandarizar y automatizar todos los procesos eliminando los costes de adaptación a los requerimientos y aprovechando los sistemas y datos ya existentes:"
+            ]
+        }
+    },
+    {
+        "id": 16,
+        "tipo": "CaracteristicasIncorporadas",
+        "data": {
+            "data": [
+                {
+                    "id_data": 1,
+                    "title": "Interfaz de creación de flujos",
+                    "icon": "fa-list-tree",
+                    "mainTitle": "Editor de mapas de evidencias normativas",
+                    "subtitle": "",
+                    "description": "Gracias a una completa colección de prácticos cuestionarios podréis confeccionar estos mapas a medida de las circunstancias específicas de tu empresa y contarás con referencias normativas, comentarios de expertos, enlaces directos a las normas para su consulta, almacenamiento automático y ordenado del histórico de versiones y todo ello guardando trazabilidad de manipulación. También podrás asignar responsables, crear un árbol de supervisores o calcular del riesgo por sanción en tiempo real.",
+                    "img": "fichasdocumentales.png"
+                },
+                {
+                    "id_data": 2,
+                    "title": "Biblioteca de normas",
+                    "icon": "fa-book-law",
+                    "mainTitle": "Biblioteca de normas",
+                    "subtitle": "",
+                    "description": "NormaPro conecta cada evidencia con su norma correspondiente, destacando las principales regulaciones aplicables y proporcionando enlaces directos para un acceso fácil y eficiente.",
+                    "img": "bibliotecanormas.png"
+                },
+                {
+                    "id_data": 3,
+                    "title": "Gestor de tareas",
+                    "icon": "fa-calendar-clock",
+                    "mainTitle": "Gestor de tareas",
+                    "subtitle": "",
+                    "description": "Enriquecida con una agenda inteligente, un calendario compartido para que tu equipo y tu estéis coordinados y un panel para que configures las alertas de cumplimiento que creas más conveniente. ",
+                    "img": "gestortareas.png"
+                },
+                {
+                    "id_data": 4,
+                    "title": "Editor de formularios",
+                    "icon": "fa-clipboard-list-check",
+                    "mainTitle": "Editor de formularios",
+                    "subtitle": "",
+                    "description": "Te permite crear y personalizar fácilmente cuestionarios y registros específicos. Facilita la recopilación y análisis de datos clave para un seguimiento automatizado, riguroso y documentado de las obligaciones establecidas por ti.",
+                    "img": "editorformularios2.png"
+                },
+                {
+                    "id_data": 5,
+                    "title": "Informes",
+                    "icon": "fa-file-chart-column",
+                    "mainTitle": "Informes",
+                    "subtitle": "",
+                    "description": "Que se autocompletaran y actualizarán en tiempo real con posibilidad de incluir y configurar todos los indicadores que te permitirán medir objetivos y hacerles un seguimiento puntual, diseñando tu propio cuadro de mando con gráficos y alertas por desviaciones que os permitirá tomar las mejores decisiones justo a tiempo.",
+                    "img": "panelcontrol2.png"
+                },
+                {
+                    "id_data": 6,
+                    "title": "Editor de procesos",
+                    "icon": "fa-timeline-arrow",
+                    "mainTitle": "Editor de procesos (BPM)",
+                    "subtitle": "",
+                    "description": "Esta herramienta es especialmente potente ya que, gracias a ella, cientos de centros de trabajo de las empresas que actualmente utilizan NormaPro han podido automatizar trámites y procesos internos de negocio, generar expedientes a medida y coordinar automáticamente a todas las personas que han de intervenir informando en cada momento del estado y la evolución al detalle.",
+                    "img": "editorprocesos.png"
+                },
+                {
+                    "id_data": 7,
+                    "title": "Canal de denuncias",
+                    "icon": "fa-siren-on",
+                    "mainTitle": "Canal de denuncias",
+                    "subtitle": "",
+                    "description": "Fomenta un ambiente de trabajo ético y transparente, donde cada voz cuenta y es escuchada. Transparencia total, tolerancia cero. Un espacio seguro para hacer lo correcto. Ofrece un medio confidencial para canalizar denuncias. Sin transparencia, arriesgas el bienestar de tus empleados y la reputación de tu empresa.",
+                    "img": "canaldenuncias.png"
+                },
+                {
+                    "id_data": 8,
+                    "title": "Gestion de Competencias",
+                    "icon": "fa-briefcase",
+                    "mainTitle": "Gestión de Competencias",
+                    "subtitle": "",
+                    "description": "Evita la desorganización y falta de seguimiento de responsabilidades asignando roles y estructura con supervisores fácilmente. Evalúa riesgos y sanciones en tiempo real, asegurando que cada miembro del equipo conozca su misión.",
+                    "img": "gestioncompetencias.png"
+                }
+            ],
+            "downtext":[
+                "Evita la desorganización y falta de seguimiento de responsabilidades asignando roles y estructura con supervisores fácilmente.",
+                "Evalúa riesgos y sanciones en tiempo real, asegurando que cada miembro del equipo conozca su misión."
+
+            ]
+        }
+    },
+     {
+    "id": 17,
+    "tipo": "ClavesSection",
+    "data": {
+      "title": "El Modelo más completo y Avanzado de gestión de Compliance penal",
+      "claves": [
+        {
+          "image": "Grupo3531.png",
+          "claim": "Una metodología probada y que funciona desde hace más de 10 años"
+        },
+        {
+          "image": "icons/earth-americas.svg",
+          "claim": "Saber qué norma es aplicable a cada caso concreto y cual no, tenerla toda inventariada y accesible."
+        },
+        {
+          "image": "Grupo3550.png",
+          "claim": "Discernir qué evidencias hemos de tener disponibles."
+        }
+      ],
+      "showDividers": true
     }
+  },
+  {
+        "id": 18,
+        "tipo": "TextSection",
+        "data": {
+            "background": "white",
+            "level5": [
+                "¿Listo para llevar el Compliance penal de tu empresa al siguiente nivel?"
+            ],
+            "level8": [
+                "Aquí tienes los contenidos del programa. Es el que utilizan los empresarios y Compliance Officers de éxito y con el que implementarás un modelo con el que conseguirás que todas las personas de tu organización conozcan cuál es su papel y su responsabilidad e interioricen hábitos de cumplimiento en sus procesos productivos."
+            ]
+        }
+    },
+    {
+        "id": 19,
+        "tipo": "ClientPerceptionSection",
+        "data": {
+            "id_testimonio": 6     
+        }
+    }
+  
 ]

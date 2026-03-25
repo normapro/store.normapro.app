@@ -69,12 +69,14 @@ const iconMap = {
     'fa-calendar-clock': faCalendarClock,
     'fa-clipboard-list-check': faClipboardListCheck,
     'fa-file-chart-column': faFileChartColumn
-};
+} as const;
+
+type IconName = keyof typeof iconMap;
 
 type Caracteristica = {
     id_data: number;
     title: string;
-    icon?: string;
+    icon?: IconName;
     iconImg?: string;
     mainTitle: string;
     subtitle: string;
@@ -84,9 +86,10 @@ type Caracteristica = {
 
 type Props = {
     data: Caracteristica[];
+    downtext?: string[];
 };
 
-const CaracteristicasStorytellingSection = ({ data }: Props) => {
+const CaracteristicasStorytellingSection = ({ data, downtext }: Props) => {
     const stickyRef = useRef<HTMLDivElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const [currentStep, setCurrentStep] = useState(0);
@@ -112,6 +115,14 @@ const CaracteristicasStorytellingSection = ({ data }: Props) => {
 
     const [openModal, setOpenModal] = useState(false);
 
+    const getIconByName = (iconName?: string) => {
+        if (iconName && iconName in iconMap) {
+            return iconMap[iconName as IconName];
+        }
+
+        return faFileLines;
+    };
+
     return (
         <section className="max-w-7xl mx-auto w-full flex flex-col items-center justify-center py-12">
 
@@ -132,9 +143,9 @@ const CaracteristicasStorytellingSection = ({ data }: Props) => {
                                 onClick={() => setCurrentStep(i)}
                                 className={`flex flex-col items-center justify-between min-w-[135px] max-w-[135px] p-4  
                                     rounded-xl cursor-pointer font-extrabold 
-                                    ${currentStep === i ? 
-                                        ' text-white bg-[#010d3d] border-[#010d3d]' 
-                                    : 
+                                    ${currentStep === i ?
+                                        ' text-white bg-[#010d3d] border-[#010d3d]'
+                                        :
                                         ' text-[#010d3d] bg-[#f2f2f5] hover:text-white hover:bg-[#333333]'
                                     }`}
                             >
@@ -146,7 +157,7 @@ const CaracteristicasStorytellingSection = ({ data }: Props) => {
                                     />
                                 ) : (
                                     <FontAwesomeIcon
-                                        icon={iconMap[item.icon]}
+                                        icon={getIconByName(item.icon)}
                                         size="3x"
                                         className={`${currentStep === i ? 'fa-duotone text-gray-300' : ''}`}
                                     />
@@ -182,7 +193,16 @@ const CaracteristicasStorytellingSection = ({ data }: Props) => {
                             </div>
                         </div>
                     </div>
-                    <div className="mt-8">
+                    <div className="mt-8 text-center ">
+                        {downtext && downtext.length > 0 && (
+                            <div className="mb-25 mt-10">
+                                {downtext.map((text, index) => (
+                                    <p key={index} className="text-lg leading-relaxed whitespace-pre-line text-left mb-6 text-[#010d3d]">
+                                        {text}
+                                    </p>
+                                ))}
+                            </div>
+                        )}
                         <button
                             onClick={() => setOpenModal(true)}
                             className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition"

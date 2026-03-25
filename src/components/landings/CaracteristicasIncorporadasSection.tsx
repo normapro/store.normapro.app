@@ -26,12 +26,13 @@ type Caracteristica = {
 
 type Props = {
   data: Caracteristica[];
+  downtext: string | string[];
 };
 
-const CaracteristicasIncorporadasSection = ({ data }: Props) => {
+const CaracteristicasIncorporadasSection = ({ data, downtext }: Props) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const steps = data.length;
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const downtextList = Array.isArray(downtext) ? downtext : downtext ? [downtext] : [];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -87,7 +88,9 @@ const CaracteristicasIncorporadasSection = ({ data }: Props) => {
       {data.map((item, i) => (
         <div
           key={item.id_data}
-          ref={(el) => (sectionRefs.current[i] = el)}
+          ref={(el) => {
+            sectionRefs.current[i] = el;
+          }}
           data-index={i}
           className="h-screen w-full flex flex-col lg:flex-row items-center justify-center px-6 py-10 scroll-mt-20"
         >
@@ -102,6 +105,16 @@ const CaracteristicasIncorporadasSection = ({ data }: Props) => {
             <h2 className="text-[30px] font-bold text-[#010d3d]">{item.mainTitle}</h2>
             {item.subtitle && <h3 className="text-xl text-gray-600 font-semibold mt-2 mb-4">{item.subtitle}</h3>}
             <p className="text-base text-gray-700 leading-relaxed">{item.description}</p>
+
+            {/*Texto debajo del carrousel*/}
+            {data.length - 1 === i && downtextList.length > 0 && (
+              <div className="mt-5 space-y-3 text-base text-[#010d3d] font-semibold leading-relaxed">
+                {downtextList.map((text, index) => (
+                  <p key={index}>{text}</p>
+                ))}
+              </div>
+            )}
+
             <button className="mt-6 bg-[#010d3d] text-white py-3 px-6 rounded-xl font-semibold">
               Quiero una demostración
             </button>

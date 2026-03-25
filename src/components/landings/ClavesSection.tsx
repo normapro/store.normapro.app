@@ -10,11 +10,13 @@ type Clave = {
 type Props = {
   title: string;
   claves: Clave[];
+  showDividers?: boolean;
 }
 
 const ClavesSection: FC<Props> = ({
   title,
   claves,
+  showDividers = false,
 }) => {
   return (
     <section className="max-w-7xl mx-auto w-full flex flex-col items-center justify-center py-12 px-6 md:px-12 text-[#010d3d]">
@@ -23,9 +25,12 @@ const ClavesSection: FC<Props> = ({
       </h2>
       
       {/* Claves */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-12 w-full max-w-6xl">
+      <div className="grid grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(220px,1fr))] justify-center gap-12 w-full max-w-6xl ">
         {claves.map((clave, index) => (
-          <div key={index} className="flex flex-col items-center text-center group">
+          <div
+            key={index}
+            className={`flex flex-col items-center text-center  group ${showDividers ? 'md:border-r md:border-[#d9dce8] last:md:border-r-0 md:px-6' : ''}`}
+          >
             
             {/* Imagen */}
             <div className="h-40 w-full flex items-end justify-center mb-6">
