@@ -71,6 +71,39 @@
     }
   },
   {
+    "id": 6,
+    "tipo": "VentajasSection",
+    "data": {
+      "title": "Cuando implementas un Sistema Avanzado de gestión de Compliance los parámetros de valoración de tu compañía se disparan.",
+      "highlightText": "Todos se fijan en ella.",
+      "claim": [
+        "La vorágine legislativa supone un problema cada vez mayor para las empresas, pero existen mecanismos para establecer líneas solidas de defensa que, ademásconviertan esta situación en un filón de oportunidades favorables de:"
+      ],
+      "items": [
+        {
+          "title": "Mejora de los procesos internos de negocio",
+          "icon": "fa-chart-line-up"
+        },
+        {
+          "title": "Aumento de la competitividad",
+          "icon": "fa-trophy-star"
+        },
+        {
+          "title": "Mejora del clima laboral",
+          "icon": "fa-handshake"
+        },
+        {
+          "title": "Engrandecimiento de la credibilidad de la marca",
+          "icon": "fa-award"
+        },
+        {
+          "title": "Y un largo etc",
+          "icon": "fa-pegasus"
+        }
+      ]
+    }
+  },
+  {
     "id": 7,
     "tipo": "SideLeftImgTextSection",
     "data": {

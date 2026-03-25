@@ -2,48 +2,44 @@
 
 import React, { FC, useState } from 'react';
 import Formulario from '@/components/Formulario';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';;
+import { 
+	faAward,
+	faChartLineUp,
+	faHandshake,
+	faPegasus,
+	faTrophyStar
+} from '@fortawesome/pro-duotone-svg-icons';
+
+const iconMap: Record<string, any> = {
+	'fa-chart-line-up': faChartLineUp,
+	'fa-award': faAward,
+	'fa-handshake': faHandshake,
+	'fa-trophy-star': faTrophyStar,
+	'fa-pegasus': faPegasus
+}
 
 type VentajaItem = {
 	title: string;
-	image?: string;
+	icon: string;
 };
 
 type Props = {
 	title: string;
 	highlightText?: string;
 	claim: string;
-	items?: VentajaItem[];
-	buttonText?: string;
+	items: VentajaItem[];
 	background?: 'white' | 'gray';
 };
-
-
-//La coleccion de los iconos de abajo(por ahora son estaticos a menos que encuentre este mismo componente con otros :) 
-const defaultItems: VentajaItem[] = [
-	{ title: 'Reduccion de Riesgo Legal', image: '/apps/icons/chart-line-up.svg' },
-	{ title: 'Proteccion de la Reputacion', image: '/apps/icons/award.svg' },
-	{ title: 'Fomento de la Cultura Etica', image: '/apps/icons/handshake.svg' },
-	{ title: 'Eficiencia Operativa', image: '/apps/icons/trophy-star.svg' },
-	{ title: 'Ventaja competitiva', image: '/apps/icons/pegasus.svg' },
-];
 
 const VentajasSection: FC<Props> = ({
 	title,
 	highlightText,
 	claim,
-	items = defaultItems,
-	buttonText,
+	items,
 	background = 'gray',
 }) => {
-	const [openModal, setOpenModal] = useState(false);
 	const bgColor = background === 'gray' ? 'bg-[#f1f1f7]' : 'bg-white';
-
-	const resolveImagePath = (image: string | undefined, index: number) => {
-		const fallback = `ventaja-${index + 1}.png`;
-		if (!image) return `/apps/${fallback}`;
-		if (image.startsWith('/')) return image;
-		return `/apps/${image}`;
-	};
 
 	return (
 		<section className={`w-full py-16 md:py-20 px-6`}>
@@ -68,11 +64,9 @@ const VentajasSection: FC<Props> = ({
 								key={`${item.title}-${index}`}
 								className="flex flex-col items-center justify-center text-center px-6 py-10 min-h-[220px] lg:border-r lg:border-[#d9dce8] last:lg:border-r-0"
 							>
-								<img
-									src={resolveImagePath(item.image, index)}
-									alt={item.title}
-									className="w-14 h-14 object-contain mb-6"
-								/>
+								<div className="text-[#010d3d] text-5xl mb-10">
+									<FontAwesomeIcon icon={iconMap[item.icon]} className="fa-duotone" />
+								</div>
 								<p className="text-[20px] leading-tight font-bold text-[#010d3d]">
 									{item.title}
 								</p>
@@ -80,20 +74,7 @@ const VentajasSection: FC<Props> = ({
 						))}
 					</div>
 				</div>
-
-				{buttonText && (
-					<div className="flex justify-center mt-12">
-						<button
-							onClick={() => setOpenModal(true)}
-							className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition"
-						>
-							{buttonText}
-						</button>
-					</div>
-				)}
 			</div>
-
-			{openModal && <Formulario onClose={() => setOpenModal(false)} />}
 		</section>
 	);
 };
