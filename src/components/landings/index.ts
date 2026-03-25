@@ -29,3 +29,6 @@ export { default as ClavesSection } from "./ClavesSection";
 export { default as PorcentajesSection } from "./PorcentajesSection";
 export { default as SideTextSection } from "./SideTextSection";
 export { default as OpcionesSeleccionesSection } from "./OpcionesSeleccionesSection";
+export { default as EstudioSection } from "./EstudioSection";
+export { default as PasosSection } from "./PasosSection";
+export { default as DesgraneSection } from "./DesgraneSection"
