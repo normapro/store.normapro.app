@@ -143,6 +143,54 @@
     }
   },
   {
+    "id": 9,
+    "tipo": "EstudioSection",
+    "data": {
+      "title": "¿Cuánto dinero nos estamos dejando por el camino?",
+      "claim": [
+        "Un estudio realizado por Instituto de Innovación, Ciencia y Empresa en el que han participado los responsables de Instalaciones y equipos, Seguridad Industrial, Alimentaria, y Medio Ambiente de 50 empresas de España revela que",
+        " los costes actuales de operación y/o gestión en estas áreas pueden reducirse al menos en un 40%."
+      ],
+      "pragma": [
+        "¿Cuál puede ser el coste para tu empresa por un fallo de control de control normativo?"
+      ],
+      "datos": [
+        {
+          "icon": "fa-display-slash",
+          "porcentaje": "75%",
+          "claim": [
+            "de los encuestados no disponen de",
+            "ninguna herramienta digital",
+            "específica (Siglo pasado)"
+          ]
+        },
+        {
+          "icon": "fa-file-excel",
+          "porcentaje": "100%",
+          "claim": [
+            "Reconocen usar múltiples",
+            "hojas de cálculo.",
+            "(Edad Media)"
+          ]
+        },
+        {
+          "icon": "fa-file-pen",
+          "porcentaje": "100%",
+          "claim": [
+            "Reconocen utilizar aún formularios en papel en algún proceso (¡Paleolítico!)"
+          ]
+        },
+        {
+          "icon": "fa-calendar-clock",
+          "porcentaje": "40%",
+          "claim": [
+            "De liberación de tiempo necesario que puedes destinar a nuevas tareas productivas"
+          ]
+        }
+      ]
+    }
+  },
+  {
     "id": 10,
     "tipo": "ClientPerceptionSection",
     "data": {
@@ -188,6 +236,25 @@
     ],
     "buttonText": "Reserva una reunión con nosotros",
     "imgBackground": "hielo7.png"
+    }
+  },
+    {
+    "id": 12,
+    "tipo": "ClientPerceptionSection",
+    "data": {
+      "id_testimonio": 1,
+      "items": [
+        "",
+        "La gran diferencia entre gestionar por tu cuenta y hacerlo con un método, un mentor y un software diseñado para ello, es que no vas a fallar.",
+        "",
+        "Realizar por ti mismo todas las tareas que implica cumplir con las normas y tener controlada toda la información en un cuadro de mando supone un esfuerzo titánico. Gastarás muchas horas solo buscando cómo es el mejor modo de hacerlo.",
+        "",
+        "Por eso precisamente hemos creado este programa, para ayudar a todos los empresarios, directivos y técnicos que como tú, necesitan soluciones para pasar del “no sé por donde empezar para lograr tener los riesgos de cumplimiento bajo control” al “tenemos implantado un sistema que me produce mucha tranquilidad y además contribuye a la buena marcha de mi negocio”."
+      ],
+      "downtext": "Ahora tienes la oportunidad de decidir si quieres disfrutar de la tranquilidad de tener bajo control la normativa que aplica al área de tu empresa de la que eres responsable, o si prefieres seguir ahí donde estás sintiendo frustración porque el día a día te impide avanzar con esto o bien no sabes por dónde empezar.",
+      "supertitle": "Modelo Avanzado NormaPro",
+      "image": "Grupo5015.png",
+      "subtitle": "La metodología para gestionar el cumplimiento normativo a través de la Plataforma Digital que utilizan las empresas de prestigio para controlar sus riesgos."
     }
   },
   {
@@ -293,6 +360,81 @@
     }
   },
   {
+    "id": 18,
+    "tipo": "EtapasSection",
+    "data": {
+      "title": "El Modelo más completo y Avanzado de gestión del Cumplimiento Normativo",
+      "subtitle": "Una metodología exclusiva probada y que funciona.",
+      "claim": "Aquí tienes los contenidos del programa. Es la que utilizan empresarios y directivos de éxito y con la que implementarás, paso a paso y ayudados por nuestros consultores, un modelo con el que conseguirás que todas las personas de tu organización conozcan cuál es su papel y su responsabilidad e interioricen hábitos de cumplimiento en los procesos productivos.",
+      "buttonText": "Quiero saber más de vuestro sistema",
+      "etapas": [
+        {
+          "imgBackground": "hielo3.png",
+          "image": "IICE_LandingCompliance_Etapa1.png",
+          "title": "Primeros pasos",
+          "objective": "Objetivos: Veremos qué es y para qué sirve una política de cumplimiento.",
+          "list": [
+            "Acota bien los alcances y establece un procedimiento general de actuación para dejar constancia de qué documentar y cómo actuar.",
+            "El compromiso de la Dirección de la empresa es fundamental para garantizar el éxito del proyecto… aquí verás como se establece la función de cumplimiento.",
+            "Establecerás unas bases sólidas de alto nivel asentadas en principios de Compliance, Compromiso y liderazgo."
+          ]
+        },
+        {
+          "imgBackground": "hielo3.png",
+          "image": "IICE_LandingCompliance_Etapa2.svg",
+          "title": "Arquitectura de la organización",
+          "objective": "Objetivos: Configuraremos la Plataforma Digital NormaPro para tu empresa que se compondrá a su vez, de tantas plataformas como sociedades y sedes o centros de trabajo se dispongan en tu organización.",
+          "list": [
+            "Tendréis plena autonomía desde el principio.",
+            "Distribuye las tareas entre los miembros de tu equipo, el cumplimiento normativo es cosa de todos, no concentres toda la carga en ti, asigna roles y permisos."
+          ]
+        },
+        {
+          "imgBackground": "hielo6.png",
+          "image": "IICE_LandingCompliance_Etapa3.png",
+          "title": "Formación del equipo",
+          "objective": "Objetivos: Que todo tu equipo de colaboradores alcancen un nivel adecuado para usar la Plataforma Digital NormaPro para automatizar todas las tareas de cumplimiento y eliminar tiempos improductivos y trabajos repetitivos o manuales.",
+          "list": [
+            "Gracias a 3 sencillos módulos conocerán los fundamentos del método y los beneficios que reporta implementar un modelo de cumplimiento.",
+            "Cada miembro de tu equipo interiorizará y seran sensibles a los fines que persigue la empresa que no es otro sino el que florezca una cultura ética y de cumplimiento en el seno de la misma como seña de identidad."
+          ]
+        },
+        {
+          "imgBackground": "hielo8.png",
+          "image": "IICE_LandingCompliance_Etapa4.svg",
+          "title": "Mapa de evidencias",
+          "objective": "Objetivos: Fabricaréis mapas de evidencias que permitan demostrar ante terceros el cumplimiento de la normativa en cada uno de los alcances elegidos.",
+          "list": [
+            "Realizar esta labor podría llevar a cualquier organización meses de estudio de normas y trabajo de campo, pero para ello NormaPro dispone de un número cada vez mayor de cuestionarios que os ayudan a diseñar estos mapas de manera fácil y guiada en cuestión de unos minutos.",
+            "Tan solo por esta potente herramienta ya merece la pena la inversión en NormaPro y podrás dar de alta a los empleados, instalaciones y equipos de trabajo tanto de tu empresa como de las contratas y proveedores que colaboran con vosotros y, de esta forma, tener control de las evidencias que son obligatorias por norma."
+          ]
+        },
+        {
+          "imgBackground": "hielo3.png",
+          "image": "IICE_LandingCompliance_Etapa5.png",
+          "title": "Evaluación y monitorización",
+          "objective": "Objetivos: Hacer que todo funcione según lo planeado y en piloto automático.",
+          "list": [
+            "Todo tu equipo comenzará a integrar hábitos de cumplimiento en sus tareas productivas cotidianas auxiliados por un sistema de alertas que impedirá que ningún plazo se pueda pasar sin atender.",
+            "En un completo cuadro de mando gráfico, podrás hacer seguimiento de la evolución favorable del grado de cumplimiento de tu empresa, midiendo en continuo y detectando posibles desviaciones justo en el momento en que se produzcan.",
+            "Adopta medidas correctoras justo a tiempo de evitar riesgos que supongan un peligro para la organización."
+          ]
+        },
+        {
+          "imgBackground": "hielo6.png",
+          "image": "IICE_LandingCompliance_Etapa6.png",
+          "title": "Mejora continua del sistema",
+          "objective": "Objetivos: Veremos cómo evaluar en tiempo real tanto los riesgos específicos detectados del cumplimiento normativo, como los propios del sistema implantado.",
+          "list": [
+            "Con nuestro método será muy sencillo descubrir oportunidades de mejora y establecer eficaces planes de acción que contribuyan claramente al éxito de vuestro proyecto empresarial.",
+            "Veremos qué elementos conviene incluir en un informe anual para reportar toda la información que necesita la Dirección de la compañía de manera clara, concisa y eficaz que les será, seguro, de vital importancia para tomar decisiones de carácter estratégico.",
+            "Al finalizar esta etapa habrás establecido un proceso completo de evaluación y control de los riesgos derivados del cumplimiento normativo para que tengas la tranquilidad de que el Modelo funciona."
+          ]
+        }
+      ]
+    }
+  },
+  {
     "id": 19,
     "tipo": "CarouselPerceptionsSection",
     "data": {
@@ -315,6 +457,33 @@
         "iqnet.png",
         "iqnet.png",
         "qaec.png"
+      ]
+    }
+  },
+  {
+    "id": 22,
+    "tipo": "PasosSection",
+    "data": {
+      "title": "¿Cuál debería ser el valor de este paquete de servicios",
+      "subtitle": "Hagamos un ejercicio muy simple:",
+      "pasos": [
+        {
+          "claim": [
+            "Imagina que ya tienes la idea de cómo organizar toda la actividad relativa a la gestión del cumplimiento de tu empresa o de tu departamento y sabes aproximadamente los alcances normativos que te afectan pero, por falta de tiempo o conocimientos específicos, necesitas contratar a un consultor que te ayude a establecer un mapa de obligaciones legales específico a medida de vuestras circunstancias y te oriente sobre qué documentación es la mejor para evidenciar el cumplimiento ante terceros. ",
+            "Todo este proceso te puede costar un mínimo de 6.000€ dependiendo del tamaño de tu organización"
+          ]
+        },
+        {
+          "claim": [
+            "Pongámonos ahora en el caso de que todo eso puedes hacerlo por ti mismo porque conoces perfectamente tu empresa y el sector en el que operáis etc, perfecto, pero quizás tengas dudas sobre cómo establecer un sistema para mantenerlo todo actualizado y cuidando que no se pase ningún plazo y, sobre todo, disponer de algunas herramientas de software que te funcione a la hora de coordinaros y ahorrar tiempo.",
+            "Podrías entonces contratar a una consultora con un software para hacerlo, ¿verdad? un programa de consultoría más las licencias del software te puede costar un mínimo de otros 6.000 € al año."
+          ]
+        },
+        {
+          "claim": [
+            "Ahora seguramente estás pensando que en realidad todo eso te lo puedes ahorrar y lo puedes hacer tú mismo y podrías hacerlo, pero ¿cuánto tiempo vas a tardar en resolver todas las dudas que te van a ir saliendo por el camino por tu cuenta y riesgo? Piénsalo, ¿meses?, y algo muy importante y es que tu tiempo también vale dinero. Ponle un valor a tu tiempo y al de tu equipo, ¿cuánto vale una hora de vuestro trabajo? ¿40€?, ¿60€?, ¿80€? eso tú lo sabes mejor."
+          ]
+        }
       ]
     }
   },
@@ -419,6 +588,38 @@
         "Debes ser una de las personas que comience a trabajar con nosotros y aplicar nuestro método y empezar ya a implementar un modelo avanzado de gestión del cumplimiento con el que puedes evitar sanciones, mantener a salvo la reputación de tu empresa y ganar en tranquilidad."
       ],
       "buttonText": "Reserva una sesión con nosotros"
+    }
+  },
+  {
+    "id": 31,
+    "tipo": "DesgraneSection",
+    "data": {
+      "title": "¿Aún no lo tienes claro?",
+      "claim": "Queremos ayudarte a recorrer todo el camino hasta que tu sistema de cumplimiento alcance la madurez aconsejándote en cada decisión que debas tomar, ayudándote a resolver cada duda que puedas tener y asesorándote en todo aquello que puedas necesitar y, sobre todo, animándote a llegar hasta el final hasta ver cómo tu empresa o departamento alcanza el máximo nivel posible de grado de cumplimiento gracias al método avanzado NormaPro.",
+      "pragma": "Todo este proceso te puede costar un mínimo de 6.000 € dependiendo del tamaño de tu organización.",
+      "listTitle": "Te desgranamos 1 a 1 el valor real de todo lo que te hemos contado:",
+      "list": [
+        {
+          "image": "IICE_NormaPro2.png",
+          "title": "La Plataforma digital NormaPro",
+          "claim": "Con todas las aplicaciones que necesitas para automatizar todos los procesos eliminando costes por tareas improductivas. Seguro que has pedido presupuestos para implementar una aplicación tipo ERP y sabrás que para una pequeña o mediana empresa el coste del desarrollo supera los 9.000 € más licencias de 50 a 100 € por usuario y mes para uso indefinido. Por supuesto, estas cifras se disparan para una empresa de mayor envergadura, además de que casi siempre aparecen costos ocultos o inesperados una vez que el proyecto ya está en marcha."
+        },
+        {
+          "image": "IICE_LandingCompliance_Bitacora.svg",
+          "title": "El programa de consultoría",
+          "claim": "El programa de consultoría de 6 etapas que incluyen 21 módulos con cuestionarios, asistido por la Plataforma Bitácora de NormaPro con plantillas y contenidos técnicos en continua renovación por lo que tiene un valor incalculable."
+        },
+        {
+          "image": "IICE_LandingCompliance_Expertos.png",
+          "title": "El cuadro de expertos",
+          "claim": "Un cuadro de expertos en cada materia según los alcances normativos seleccionados para hacerles llegar cuantas consultas creáis necesarias valorado en más de 3.000 € por año. Te recordamos que el acceso es ilimitado."
+        },
+        {
+          "image": "IICE_Academia_FormaPro.png",
+          "title": "Acceso a la Academia FormaPro",
+          "claim": "En la que vamos añadiendo cursos de los contenidos más interesantes de las normas vigentes, así como para aprender a manejar con soltura todas las herramientas de la Plataforma Digital NormaPro. Gracias a los cursos podrás formarte tanto tú como todo tu equipo y sacar el mayor partido para ayudar a la transformación digital de vuestros procesos. Piensa que cada curso tiene un coste medio por alumno de 150 € y disponemos de decenas de ellos para que podáis acceder de forma ilimitada a todos ellos."
+        }
+      ]
     }
   },
   {

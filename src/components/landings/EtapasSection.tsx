@@ -8,7 +8,8 @@ type Etapa = {
   image: string;
   title: string;
   objective: string;
-  claim: string;
+  claim?: string;
+  list?: string[];
 };
 
 type Props = {
@@ -85,9 +86,21 @@ const EtapasSection: FC<Props> = ({
                   {etapa.objective}
                 </p>
 
-                <p className="text-base mb-20">
-                  {etapa.claim}
-                </p>
+                {etapa.claim && (
+                  <p className="text-base">
+                    {etapa.claim}
+                  </p>
+                )}
+
+                {etapa.list && etapa.list.length > 0 && (
+                  <ul className="list-disc list-outside ml-5 space-y-4 text-base font-bold text-[#010d3d] mb-10">
+                    {etapa.list.map((item, i) => (
+                      <li key={i} className="pl-2">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
 
               {/* Imagen*/}
