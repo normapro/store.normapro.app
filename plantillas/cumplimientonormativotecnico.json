@@ -361,6 +361,28 @@
   },
   {
     "id": 18,
+    "tipo": "TextSection",
+    "data": {
+      "level8": [
+        "Esto no es una aplicación informática en el que aparece un listado de normas que aplican a las empresas de un sector con 4 o 5 funcionalidades para generar unas alertas clasificadas por colores."
+      ],
+      "remarkableText3": "NO",
+      "level9": [
+        "Esto es un señor programa pensado para que dispongas todas las herramientas que necesitas para llevar a buen puerto la misión de obtener importantes mejoras en la gestión de los procesos internos de tu empresa o departamento gracias vincular estos con los objetivos de cumplimiento."
+      ],
+      "buttonText": "Reserva una demo personal"
+    }
+  },
+  {
+    "id": 17,
+    "tipo": "SimpleClientPerceptionSection",
+    "data": {
+      "title": "Más de 2.000 directivos y técnicos han trabajado mano a mano en el último año con nuestros consultores",
+      "id_testimonio": 8
+    }
+  },
+  {
+    "id": 18,
     "tipo": "EtapasSection",
     "data": {
       "title": "El Modelo más completo y Avanzado de gestión del Cumplimiento Normativo",
@@ -445,6 +467,49 @@
     }
   },
   {
+    "id": 20,
+    "tipo": "AportacionesSection2",
+    "data": {
+      "title": "Todavía tenemos más aportaciones de valor pensadas para ti",
+      "claim": "En Instituto de Innovación, Ciencia y Empresa no paramos de pensar cómo mejorar nuestra oferta de valor cada día y, en este caso, para que puedas aprovechar al máximo esta experiencia, tenemos dos aportaciones adicionales incluidas el paquete de servicios:",
+      "buttonText": "Reserva un demo personal",
+      "aportaciones": [
+        {
+          "image": "IICE_LandingCompliance_Bitacora.svg",
+          "imageBackground": "hielo2.png",
+          "title": "Bitácora de NormaPro",
+          "claim": "La guía que necesitas para aplicar nuestra metodología. Implenta con éxito el Modelo más avanzado de cumplimiento.",
+          "pragma": "Tendrás a tu disposición contenidos muy valiosos en forma de guías y artículos técnicos para que comprendas cada nuevo paso, así como plantillas de documentos y vídeos tutoriales con las mismas temáticas que trataréis en directo con nuestros consultores. Podrás volver a verlas cuantas veces quieras en el momento que te apetezca."
+        },
+        {
+          "image": "IICE_LandingCompliance_Expertos.png",
+          "imageBackground": "hielo5.png",
+          "title": "El Cuadro de Expertos",
+          "claim": "Muy valorado y utilizado por todos nuestros clientes",
+          "items": [
+            "Tendréiss acceso ilimitado desde el primer día.",
+            "Ellos estarán ahí los 365 días del año para ayudarte.",
+            "Resuelve tus dudas.",
+            "Pídeles opinión."
+          ]
+        },
+        {
+          "image": "IICE_Academia_FormaPro.png",
+          "imageBackground": "hielo2.png",
+          "title": "Academia FormaPro",
+          "claim": "Una selección de cursos y conferencias pensados para facilitar las cosas",
+          "items": [
+            "Para conocer un detalle la normativa sin perder tiempo",
+            "Para transmitirse los consejos más prácticos",
+            "Para sacarle el máximo partido a tu canal de denuncias.",
+            "Para conocer todo lo que puede hacer por ti la Plataforma Digital NormaPro "
+          ],
+          "buttonText": "Descubre los cursos gratuitos"
+        }
+      ]
+    }
+  },
+  {
     "id": 21,
     "tipo": "CertificacionesSection",
     "data": {
@@ -484,6 +549,21 @@
             "Ahora seguramente estás pensando que en realidad todo eso te lo puedes ahorrar y lo puedes hacer tú mismo y podrías hacerlo, pero ¿cuánto tiempo vas a tardar en resolver todas las dudas que te van a ir saliendo por el camino por tu cuenta y riesgo? Piénsalo, ¿meses?, y algo muy importante y es que tu tiempo también vale dinero. Ponle un valor a tu tiempo y al de tu equipo, ¿cuánto vale una hora de vuestro trabajo? ¿40€?, ¿60€?, ¿80€? eso tú lo sabes mejor."
           ]
         }
+      ]
+    }
+  },
+  {
+    "id": 23,
+    "tipo": "NecesidadesSection",
+    "data": {
+      "imgBackground": "hielo4.png",
+      "image": "IICE_NormaPro1.png",
+      "title": "Ahora piensa:",
+      "subtitle": "¿Cuánto tiempo vas a dedicarle a implantar un sistema de gestión del cumplimiento?",
+      "titlelist": "Para ello necesitas:",
+      "list": [
+        "Conocer las normas que afectan a tus instalaciones, a tus equipos de trabajo y a tus máquinas, o en materia ambiental desde gestión de residuos y vertidos hasta emisiones, formaciones obligatorias de tu personal o entrega de EPI’s, almacenamiento de productos químicos, legionela o normativa sanitaria, por nombrar algunas.",
+        "Descubrir por ti mismo cómo funciona el ordenamiento jurídico en este ámbito porque no te estoy hablando solo de diseñar un modelo me refiero a todos los pasos que necesitas dar para que finalmente consigas implantarlo, ponerlo en marcha y que se mantenga funcionando en el tiempo gracias a que tu equipo ha integrado los hábitos necesarios para que os aporte la tranquilidad que necesitas."
       ]
     }
   },
@@ -535,6 +615,49 @@
         "Tiempo que, realmente, lo necesitas para no desviarte de tus objetivos de producción ya que sabes que nunca vas a poder recuperarlo y que vale mucho más que el precio que cuesta el paquete de servicios que te ofrecemos para establecer entre los miembros de tu plantilla los hábitos de cumplimiento necesarios que estarán alineados con vuestros procesos y ayuden a mejorar vuestros resultados."
       ],
       "buttonText": "Quiero una demostración"
+    }
+  },
+  {
+    "id": 27,
+    "tipo": "ClientPerceptionSection",
+    "data": {
+      "id_testimonio": 9,
+      "supertitle": "A través de nuestra Plataforma Digital y nuestro Método Avanzado NormaPro de gestión del Cumplimiento normativo os aportamos:",
+      "items": [
+        "",
+        "No lo pensaría dos veces y contrataría sin dudarlo",
+        "",
+        "Nuestro método te contará de golpe todo lo que necesitas saber para conseguir implementar un sistema ágil y eficaz de cumplimiento normativo combinado con una plataforma digital que coordine toda la actividad, la integre en vuestros procesos y eliminarás tiempos y costes adicionales."
+      ],
+      "secondtitle": "Evita dar palos de ciego.\nTu tiempo y tu tranquilidad es lo primero.",
+      "pragma": "Piensa que la metodología y el software va a correr a cargo de un reconocido equipo consultor con años de experiencia y que ha trabajado con empresas de las más importantes.",
+      "secondsupertitle": "¿Cuándo empezamos?",
+      "tabla": [
+        {
+          "icon": "fa-clipboard-list-check",
+          "claim": "Sencillos cuestionarios para que hagáis inventarios de normas y mapas documentales en cuestión de minutos."
+        },
+        {
+          "icon": "fa-glasses-round",
+          "claim": "Analizamos normas para vosotros"
+        },
+        {
+          "icon": "fa-fish",
+          "claim": "Os explicamos cómo funcionan las normas para que sepáis moveros por ellas como pez en el agua para que no andéis dando tumbos y evitéis sorpresos desagradables"
+        },
+        {
+          "icon": "fa-book-section",
+          "claim": "Os ayudamos a seleccionar bien los alcances normativos que aplican a tu empresa o departamento"
+        },
+        {
+          "icon": "fa-file-chart-column",
+          "claim": "Os asesoramos a la hora de redactar la información documentada de vuestro modelo de cumplimineto aportando plantillas y guías"
+        },
+        {
+          "icon": "fa-comment-question",
+          "claim": "Trabajamos para ayudaros a resolver cuantas dudas os puedan surgir a la hora de realizar un tramite"
+        }
+      ]
     }
   },
   {

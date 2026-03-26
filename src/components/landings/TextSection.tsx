@@ -13,9 +13,11 @@ type TextSectionProps = {
   level6?: string[];
   level7?: string[];
   level8?: string[];
+  level9?: string[];
   buttonText?: string;
   remarkableText?: string;
   remarkableText2?: string;
+  remarkableText3?: string;
 };
 
 const TextSection: React.FC<TextSectionProps> = ({
@@ -28,9 +30,11 @@ const TextSection: React.FC<TextSectionProps> = ({
   level6,
   level7,
   level8,
+  level9,
   buttonText,
   remarkableText,
-  remarkableText2
+  remarkableText2,
+  remarkableText3
 
 }) => {
   const [openModal, setOpenModal] = useState(false);
@@ -105,6 +109,22 @@ const TextSection: React.FC<TextSectionProps> = ({
         {level8 && (
           <h4 className="text-[16px] text-gray-500 mb-10 whitespace-pre-line">
             {level8.map((text, i) => (
+              <span key={i} style={{ color: colors[i % colors.length] }}>
+                {text + " "}
+              </span>
+            ))}
+            </h4>
+        )}
+        {remarkableText3 && (
+          <div className="flex items-center justify-center bg-[#f5f5f5] rounded-full w-25 h-25 mb-10 inline-flex">
+            <h4 className="text-[36px] font-[700] text-[#010d3d] leading-tight text-center">
+              {remarkableText3}
+            </h4>
+          </div>
+        )}
+        {level9 && (
+          <h4 className="text-[16px] text-gray-500 mb-10 whitespace-pre-line">
+            {level9.map((text, i) => (
               <span key={i} style={{ color: colors[i % colors.length] }}>
                 {text + " "}
               </span>
