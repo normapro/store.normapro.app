@@ -374,10 +374,10 @@
     },
     {
         "id": 19,
-        "tipo": "ClientPerceptionSection",
+        "tipo": "SimpleClientPerceptionSection",
         "data": {
             "id_testimonio": 6     
         }
     }
-  
 ]
+    
