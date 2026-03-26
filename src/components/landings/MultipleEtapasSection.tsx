@@ -2,6 +2,7 @@
 
 import { FC, useMemo, useRef, useState } from 'react';
 import Formulario from "@/components/Formulario";
+import EtapasMiddleHighlight from "@/components/landings/EtapasMiddleHighlight";
 
 type EtapaListItem =
   | string
@@ -17,9 +18,19 @@ type Etapa = {
   objective: string;
   claim?: string;
   list?: EtapaListItem[];
+  finalText?: string;
 };
 
 type Opcion = {
+  midSection?: {
+    title?: string;
+    items?: {
+      title: string;
+      content: string;
+    }[];
+    footerTop?: string;
+    footerBottom?: string;
+  };
   pretitle?: string;
   title: string;
   claim?: string;
@@ -28,6 +39,7 @@ type Opcion = {
   cardButtonText?: string;
   introTitle?: string;
   introClaim?: string | string[];
+  finalText?: string;
   etapas: Etapa[];
 };
 
@@ -146,46 +158,49 @@ const MultipleEtapasSection: FC<Props> = ({
         })}
       </div>
 
-      {/* Etapas de la opción seleccionada */}
-      <div ref={etapasRef} className="w-full mb-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {options.map((option, index) => {
-            const isActive = index === activeOptionIndex;
-            return (
-              <button
-                key={`level-${option.title}-${index}`}
-                onClick={() => handleSelectOption(index, true)}
-                className={`rounded-2xl px-3 py-5 text-center border transition-all duration-200 ${isActive
-                  ? 'bg-[#010d3d] text-white border-[#010d3d] shadow-md'
-                  : 'bg-[#f3f4f8] text-[#010d3d] border-[#e4e6ef] hover:border-[#010d3d]/40'
-                  }`}
-              >
-                {option.pretitle && (
-                  <p className={`text-md font-extrabold mb-3 ${isActive ? 'text-[#c3cbe6]' : 'text-[#9098b3]'}`}>
-                    {option.pretitle}
-                  </p>
-                )}
-                <p className="text-3xl font-black">{option.title}</p>
-              </button>
-            );
-          })}
+      <div ref={etapasRef} className="w-full">
+        {/* Etapas de la opción seleccionada */}
+        <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-sm py-3 mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {options.map((option, index) => {
+              const isActive = index === activeOptionIndex;
+              return (
+                <button
+                  key={`level-${option.title}-${index}`}
+                  onClick={() => handleSelectOption(index, true)}
+                  className={`rounded-2xl px-3 py-5 text-center border transition-all duration-200 ${isActive
+                    ? 'bg-[#010d3d] text-white border-[#010d3d] shadow-md'
+                    : 'bg-[#f3f4f8] text-[#010d3d] border-[#e4e6ef] hover:border-[#010d3d]/40'
+                    }`}
+                >
+                  {option.pretitle && (
+                    <p className={`text-md font-extrabold mb-3 ${isActive ? 'text-[#c3cbe6]' : 'text-[#9098b3]'}`}>
+                      {option.pretitle}
+                    </p>
+                  )}
+                  <p className="text-3xl font-black">{option.title}</p>
+                </button>
+              );
+            })}
+          </div>
         </div>
-      </div>
 
-      {/* Sección de etapas */}
-      <div className="w-full max-w-5xl mb-10 border-t border-[#d9dbe7] pt-8">
-        <div className="mb-30 text-center">
-          <h3 className="text-4xl md:text-5xl font-black text-[#010d3d] mb-15 mx-auto max-w-2xl mt-15">
-            {selectedOption.introTitle || selectedOption.title}
-          </h3>
-          {introClaimList.length > 0 && (
-            <div className="text-[#010d3d] text-lg md:text-2xl leading-relaxed whitespace-pre-line space-y-3 font-bold text-center">
-              {introClaimList.map((claimText, index) => (
-                <p key={index} className="mb-10">{claimText}</p>
-              ))}
-            </div>
-          )}
-        </div>
+        {/* Sección de etapas */}
+        <div className="w-full max-w-5xl mb-10 border-t border-[#d9dbe7] pt-8 mx-auto">
+          <div className="mb-30 text-center">
+            <h3 className="text-4xl md:text-5xl font-black text-[#010d3d] mb-15 mx-auto max-w-2xl mt-15">
+              {selectedOption.introTitle || selectedOption.title}
+            </h3>
+            {introClaimList.length > 0 && (
+              <div className="text-[#010d3d] text-lg md:text-2xl leading-relaxed whitespace-pre-line space-y-3 font-bold text-center">
+                {introClaimList.map((claimText, index) => (
+                  <p key={index} className="mb-10">{claimText}</p>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <EtapasMiddleHighlight data={selectedOption.midSection} />
 
         <div className="relative max-w-6xl mx-auto w-full">
           {selectedOption.etapas.map((etapa, index) => {
@@ -249,6 +264,7 @@ const MultipleEtapasSection: FC<Props> = ({
                       })}
                     </div>
                   )}
+
                 </div>
 
                 {/* Imagen */}
@@ -275,6 +291,12 @@ const MultipleEtapasSection: FC<Props> = ({
               </div>
             );
           })}
+          {selectedOption.finalText && (
+            <p className="mt-10 text-center text-base md:text-xl font-extrabold text-[#9098b3] whitespace-pre-line">
+              {selectedOption.finalText}
+            </p>
+          )}
+        </div>
         </div>
       </div>
     </section>
