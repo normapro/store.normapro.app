@@ -33,3 +33,4 @@ export { default as EstudioSection } from "./EstudioSection";
 export { default as PasosSection } from "./PasosSection";
 export { default as DesgraneSection } from "./DesgraneSection"
 export { default as SimpleClientPerceptionSection } from "./SimpleClientPerceptionSection";
+export { default as MultipleEtapasSection } from "./MultipleEtapasSection";
