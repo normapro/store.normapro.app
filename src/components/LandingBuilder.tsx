@@ -34,6 +34,9 @@ import {
     PasosSection,
     DesgraneSection,
     SimpleClientPerceptionSection,
+    NecesidadesSection,
+    AportacionesSection2
+    SimpleClientPerceptionSection,
     MultipleEtapasSection,
   } from "@/components/landings"; // si tienes un index.ts que los agrupe
   
@@ -72,6 +75,8 @@ import {
     PasosSection,
     DesgraneSection,
     SimpleClientPerceptionSection,
+    NecesidadesSection,
+    AportacionesSection2
     MultipleEtapasSection,
   };
   

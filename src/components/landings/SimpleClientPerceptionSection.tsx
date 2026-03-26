@@ -7,10 +7,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 
 type ClientPerceptionSectionProps = {
+    title?: string;
     id_testimonio: number;
 };
 
-const SimpleClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({ id_testimonio }) => {
+const SimpleClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({ title, id_testimonio }) => {
     const [testimonio, setTestimonio] = useState<TestimonioConCliente | null>(null);
 
     useEffect(() => {
@@ -38,7 +39,7 @@ const SimpleClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
     }, [id_testimonio]);
 
     return (
-        <section className="w-full relative py-24 overflow-hidden ">
+        <section className="w-full relative py-24 overflow-hidden">
             {/* Curva superior */}
             <div className="w-full leadimg-[0] z-20 relative">
                 <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
@@ -47,6 +48,13 @@ const SimpleClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
             </div>
 
             <div className="w-full relative bg-[#f1f1f7] py-12 z-10 pb-30 pt-30">
+                {title && (
+                    <div className="flex justify-center mb-16 px-6">
+                        <h2 className="max-w-4xl text-center text-4xl font-black text-[#011442] tracking-tight leading-snug">
+                            {title}
+                        </h2>
+                    </div>
+                )}
                 <div className="max-w-3xl mx-auto px-6 flex justify-center">
                     {testimonio && (
                         <div className="flex flex-col items-center text-center">

@@ -6,34 +6,55 @@ import Image from 'next/image';
 import { TestimonioConCliente } from '@/types/testimonio';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle, faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
+import { faBookSection, faClipboardListCheck, faCommentQuestion, faFileChartColumn, faFish, faGlassesRound } from '@fortawesome/pro-duotone-svg-icons';
 
-
+const iconMap = {
+  'fa-clipboard-list-check': faClipboardListCheck,
+  'fa-glasses-round': faGlassesRound,
+  'fa-fish': faFish,
+  'fa-book-section': faBookSection,
+  'fa-file-chart-column': faFileChartColumn,
+  'fa-comment-question': faCommentQuestion
+}
 
 type Elemento = {
   title: string;
   claim: string;
 }
 
+type ElementoTabla = {
+  icon: string;
+  claim: string;
+}
+
 type ClientPerceptionSectionProps = {
-  title: string;
+  title?: string;
   items?: string | string[];
   list?: Elemento[];
+  secondtitle?: string;
+  pragma?: string;
   id_testimonio?: number;
   downtext?: string;
   supertitle?: string;
   image?: string;
   subtitle?: string;
+  secondsupertitle?: string;
+  tabla: ElementoTabla[];
 };
 
 const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
   title,
   items = [],
   list = [],
+  secondtitle,
+  pragma,
   id_testimonio,
   downtext,
   supertitle,
   image,
-  subtitle
+  subtitle,
+  secondsupertitle,
+  tabla
 }) => {
   const [testimonio, setTestimonio] = useState<TestimonioConCliente | null>(null);
   const [openModal, setOpenModal] = useState(false);
@@ -100,7 +121,7 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
 
       <div className="w-full relative bg-[#f1f1f7] py-12 z-10">
         {supertitle && (
-          <h1 className="text-center text-[#010d3d] mb-20 mt-25 font-extrabold text-5xl md:text-5xl ">
+          <h1 className="max-w-2xl mx-auto text-center text-[#010d3d] mb-20 mt-25 font-black text-5xl md:text-5xl">
             {supertitle}
           </h1>
         )}
@@ -110,6 +131,38 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
             {subtitle}
           </h2>
         )}
+
+        {tabla && tabla.length > 0 && (
+  <div className="max-w-6xl mx-auto mt-12 mb-20 px-6">
+    <div className="grid grid-cols-1 md:grid-cols-3">
+      {tabla.map((item, index) => {
+        const IconComponent = iconMap[item.icon as keyof typeof iconMap];
+
+        return (
+          <div
+            key={index}
+            className={`flex flex-col items-center p-12 text-center min-h-[300px] justify-center
+              ${index % 3 !== 2 ? 'md:border-r border-gray-300' : ''} 
+              ${index >= 3 ? 'border-t border-gray-300' : 'max-md:border-t border-gray-300'}
+            `}
+          >
+            
+            {IconComponent && (
+              <div className="text-[#010d3d] text-6xl mb-8">
+                <FontAwesomeIcon icon={IconComponent} className="fa-duotone" />
+              </div>
+            )}
+
+            
+            <p className="text-[#010d3d] font-extrabold text-base leading-snug max-w-sm">
+              {item.claim}
+            </p>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+)}
 
         {image && (
           <div className="text-center mb-8 mt-20">
@@ -125,9 +178,11 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
           {/* Texto izquierdo */}
           <div>
-            <h2 className="text-3xl md:text-4xl font-black text-[#010d3d] mb-8">
-              {title}
-            </h2>
+            {title && (
+              <h2 className="text-3xl md:text-4xl font-black text-[#010d3d] mb-8">
+                {title}
+              </h2>
+            )}
             <ul className="space-y-4 text-lg text-[#1a1a1a] mb-8 whitespace-pre-line">
               {itemsList.map((item, index) => (
                 <li key={index} className="text-[#010d3d] flex items-start leading-tight">
@@ -149,6 +204,12 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
                 </li>
               ))}
             </ul>
+            <h1 className="text-[#797f98] text-2xl font-black whitespace-pre-line mb-6">
+              {secondtitle}
+            </h1>
+            <p className="text-[#010d3d]">
+              {pragma}
+            </p>
           </div>
 
           {/* Testimonio derecho */}
@@ -201,15 +262,20 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
             </div>
           )}
         </div>
-        <div className="flex justify-center mt-16">
-          <button
-            onClick={() => setOpenModal(true)}
-            className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition"
-          >
-            Quiero una demostración
-          </button>
-
-        </div>
+        <div className="flex flex-col items-center mt-16"> {/* <- Añadido flex-col e items-center */}
+          {secondsupertitle && (
+            <h1 className="max-w-2xl text-center text-[#010d3d] mb-10 font-black text-5xl md:text-5xl">
+              {secondsupertitle}
+            </h1>
+          )}
+  
+  <button
+    onClick={() => setOpenModal(true)}
+    className="bg-[#010d3d] text-white font-bold px-8 py-4 text-lg rounded-xl shadow-md hover:bg-[#04176f] transition"
+  >
+    Quiero una demostración
+  </button>
+</div>
 
         {/* Texto de debajo del boton*/}
         {downtext && (
