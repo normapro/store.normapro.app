@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "tipo": "ClientCarouselWrapper",
+    "data": {
+      "scope": "historias",
+      "claim": "Empresas que ya confian en nosotros"
+    }
+  }
+]

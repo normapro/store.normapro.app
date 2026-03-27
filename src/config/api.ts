@@ -1,4 +1,8 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "https://api-store.normapro.app";
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_BASE_URL ||
+  (process.env.NODE_ENV === "development"
+    ? "http://localhost:3010"
+    : "https://api-store.normapro.app");
 
 const API_ENDPOINTS = {
   AMBITOS: `${API_BASE_URL}/v1/store/ambitos`,
@@ -11,6 +15,7 @@ const API_ENDPOINTS = {
   SECTOR_INFO : `${API_BASE_URL}/v1/store/sector`,
   SOLUCION: `${API_BASE_URL}/v1/store/solucion`,
   TESTIMONIOS: `${API_BASE_URL}/v1/store/testimonios`,
+  HISTORIAS: `${API_BASE_URL}/v1/store/historias`,
   MAINPACKS: `${API_BASE_URL}/v1/store/mainpacks`,
   APLICACIONES: `${API_BASE_URL}/v1/store/aplicaciones`,
   CONSULTORIA: `${API_BASE_URL}/v1/store/consultoria`,
