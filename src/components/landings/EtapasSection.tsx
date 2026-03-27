@@ -58,14 +58,14 @@ const EtapasSection: FC<Props> = ({
               }`}
             >
               {/* Línea por tramos */}
-              <div className="absolute left-3 md:left-1/2 -translate-x-1/2 h-full w-[4px]">
+              <div className="absolute left-3 md:left-1/2 -translate-x-1/2 h-full w-[10px]">
                 {!isLast && (
                   <div className="absolute top-0 bottom-0 left-0 right-0 bg-[#0a1a44]" />
                 )}
                 {!isFirst && (
                   <div className="absolute -top-16 h-16 left-0 right-0 bg-[#0a1a44]" />
                 )}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-6 bg-white border-4 border-[#0a1a44] rounded-full z-10" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-10 h-10 bg-white border-10 border-[#0a1a44] rounded-full z-10" />
               </div>
 
               {/* Contenido*/}

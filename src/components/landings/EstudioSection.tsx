@@ -1,13 +1,14 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, useState} from 'react';
+import Formulario from "@/components/Formulario";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faDisplaySlash,
   faFileExcel,
   faFilePen,
   faCalendarClock,
-  faArrowDownToBracket // Para el botón de descarga
+  faClipboard // Para el botón de descarga
 } from '@fortawesome/pro-duotone-svg-icons';
 
 const iconMap: Record<string, any> = {
@@ -40,6 +41,7 @@ type Props = {
 
 const EstudioSection: FC<Props> = ({ title, claim, pragma, datos }) => {
   const weights = ["semibold", "bold"];
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <section className="max-w-7xl mx-auto w-full py-16 px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center text-[#010d3d]">
@@ -66,8 +68,11 @@ const EstudioSection: FC<Props> = ({ title, claim, pragma, datos }) => {
             {pragma}
           </p>
           
-          <button className="flex items-center gap-3 bg-transparent border-2 border-[#010d3d] text-[#010d3d] font-bold px-6 py-3 rounded-xl hover:bg-[#010d3d] hover:text-white transition-all duration-300">
-            <FontAwesomeIcon icon={faArrowDownToBracket} className="text-lg" />
+          <button
+            onClick={() => setOpenModal(true)}
+            className="flex items-center gap-3 bg-transparent border-2 border-[#010d3d] text-[#010d3d] font-bold px-6 py-3 rounded-xl hover:bg-[#010d3d] hover:text-white transition-all duration-300"
+          >
+            <FontAwesomeIcon icon={faClipboard} className="text-lg" />
             Descarga aquí el informe
           </button>
         </div>
@@ -108,7 +113,10 @@ const EstudioSection: FC<Props> = ({ title, claim, pragma, datos }) => {
           );
         })}
       </div>
-
+      {/* Formulario contacto */}
+      {openModal && (
+        <Formulario onClose={() => setOpenModal(false)} />
+      )}
     </section>
   );
 };

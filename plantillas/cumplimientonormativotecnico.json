@@ -45,7 +45,7 @@
         "… quieres saber cómo puedes conseguir grandes beneficios para tu proyecto empresarial alineando objetivos de cumplimiento y el fomento de una cultura ética en el seno de tu organización, con una mejora continua en los procesos internos",
         "… quieres conocer el método NormaPro, el mismo con el que un gran número de empresarios, directivos y técnicos ya han “conseguido implementar un modelo transversal de cumplimiento y convertirlo en una realidad."
       ],
-      "url_video": "https://www.youtube.com/e7cfc645-88a1-4c20-beb5-2de7ebe0daa7",
+      "url_video": "https://www.youtube.com/watch?v=aCcVlvEcE_A&t=1s",
       "buttonText": "Quiero una sesión estratégica"
     }
   },
@@ -460,7 +460,7 @@
     "id": 19,
     "tipo": "CarouselPerceptionsSection",
     "data": {
-      "title": "Voces reales,\nExperiencias verdaderas",
+      "title": "NormaPro es un programa con resultados probados",
       "pragma": "Son cientos los centros de trabajo que ya han conseguido su objetivo y están gestionando y monitorizando miles de evidencias de cumplimiento lo que permite obtener una visión pormenorizada de la marcha y evolución del negocio, evaluar los riesgos de sanción económica y medir su grado de cumplimiento en tiempo real.",
       "subtitle": "Adelantate y actua a tiempo para anular o disminuir los riesgos y gana en tranquilidad.",
       "listIds": [9,7,3,1]
@@ -520,7 +520,7 @@
         "9001.png",
         "45001.png",
         "iqnet.png",
-        "iqnet.png",
+        "ascom.png",
         "qaec.png"
       ]
     }

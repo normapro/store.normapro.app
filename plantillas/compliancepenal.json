@@ -329,10 +329,6 @@
                     "description": "Evita la desorganización y falta de seguimiento de responsabilidades asignando roles y estructura con supervisores fácilmente. Evalúa riesgos y sanciones en tiempo real, asegurando que cada miembro del equipo conozca su misión.",
                     "img": "gestioncompetencias.png"
                 }
-            ],
-            "downtext": [
-                "Evita la desorganización y falta de seguimiento de responsabilidades asignando roles y estructura con supervisores fácilmente.",
-                "Evalúa riesgos y sanciones en tiempo real, asegurando que cada miembro del equipo conozca su misión."
             ]
         }
     },
@@ -853,7 +849,7 @@
                                     "title": "Integración y Control de Compliance",
                                     "content": "Implementaremos controles financieros y no financieros robustos, extendiendo la uniformidad de cumplimiento a filiales y socios de negocio. Además, reforzaremos tus contratos con cláusulas de cumplimiento. Asegurarás transparencia, minimizarás riesgos y fortalecerás las relaciones contractuales y corporativas, garantizando una gestión integral alineada con el Compliance penal."
                                 },
-                                 {
+                                {
                                     "title": "Sistema Interno de Información (Canal de Denuncias)",
                                     "content": "Instauraremos un canal efectivo para reportar y gestionar incidentes o preocupaciones. Mantendrás la transparencia y fomentarás una cultura de reporte, asegurando una respuesta rápida a posibles desviaciones."
                                 }
@@ -906,6 +902,330 @@
         "tipo": "SimpleClientPerceptionSection",
         "data": {
             "id_testimonio": 6
+        }
+    },
+    {
+        "id": 20,
+        "tipo": "AportacionesSection2",
+        "data": {
+            "title": "Todavía tenemos más aportaciones de valor pensadas para ti",
+            "claim": "En Instituto de Innovación, Ciencia y Empresa no paramos de pensar cómo mejorar nuestra oferta de valor cada día y, en este caso, para que puedas aprovechar al máximo esta experiencia, tenemos dos aportaciones adicionales incluidas el paquete de servicios:",
+            "buttonText": "Reserva un demo personal",
+            "aportaciones": [
+                {
+                    "image": "IICE_LandingCompliance_Bitacora.svg",
+                    "imageBackground": "hielo2.png",
+                    "title": "Bitácora de NormaPro",
+                    "claim": "La guía que necesitas para aplicar nuestra metodología. Implenta con éxito el Modelo más avanzado de cumplimiento.",
+                    "pragma": "Tendrás a tu disposición contenidos muy valiosos en forma de guías y artículos técnicos para que comprendas cada nuevo paso, así como plantillas de documentos y vídeos tutoriales con las mismas temáticas que trataréis en directo con nuestros consultores. Podrás volver a verlas cuantas veces quieras en el momento que te apetezca."
+                },
+                {
+                    "image": "IICE_LandingCompliance_Expertos.png",
+                    "imageBackground": "hielo5.png",
+                    "title": "El Cuadro de Expertos",
+                    "claim": "Muy valorado y utilizado por todos nuestros clientes",
+                    "items": [
+                        "Tendréiss acceso ilimitado desde el primer día.",
+                        "Ellos estarán ahí los 365 días del año para ayudarte.",
+                        "Resuelve tus dudas.",
+                        "Pídeles opinión."
+                    ]
+                },
+                {
+                    "image": "IICE_Academia_FormaPro.png",
+                    "imageBackground": "hielo2.png",
+                    "title": "Academia FormaPro",
+                    "claim": "Una selección de cursos y conferencias pensados para facilitar las cosas",
+                    "items": [
+                        "Para conocer un detalle la normativa sin perder tiempo",
+                        "Para transmitirse los consejos más prácticos",
+                        "Para sacarle el máximo partido a tu canal de denuncias.",
+                        "Para conocer todo lo que puede hacer por ti la Plataforma Digital NormaPro "
+                    ],
+                    "buttonText": "Descubre los cursos gratuitos"
+                }
+            ]
+        }
+    },
+    {
+        "id": 21,
+        "tipo": "CertificacionesSection",
+        "data": {
+            "title": "Calidad y seguridad certificada",
+            "subtitle": "Nuestros productos y servicios cuentan con certificación de AENOR:",
+            "images": [
+                "27001.png",
+                "9001.png",
+                "45001.png",
+                "iqnet.png",
+                "iqnet.png",
+                "qaec.png"
+            ]
+        }
+    },
+    {
+        "id": 22,
+        "tipo": "NecesidadesSection",
+        "data": {
+            "imgBackground": "hielo4.png",
+            "image": "IICE_NormaPro1.png",
+            "title": "Ahora piensa:",
+            "subtitle": "¿Cuánto tiempo vas a dedicarle a implantar un sistema de gestión del cumplimiento?",
+            "titlelist": "Para ello necesitas:",
+            "claim": "Descubrir por ti mismo cómo funciona el ordenamiento jurídico en este ámbito. Y no se trata solo de diseñar un modelo, sino de todos los pasos que necesitas dar para que finalmente consigas implantarlo, ponerlo en marcha y que se mantenga funcionando en el tiempo gracias a que tu equipo ha integrado los hábitos necesarios para que os aporte la tranquilidad que necesitas."
+        }
+    },
+    {
+        "id": 23,
+        "tipo": "ClavesSection",
+        "data": {
+            "title": "4 claves indispensables para organizar y automatizar tareas de cumplimiento",
+            "claves": [
+                {
+                    "image": "IICE_LandingCompliance_automatizar_tareas1.svg",
+                    "claim": "Conocer a fondo toda la información relativa a cada actividad, área o departamento."
+                },
+                {
+                    "image": "IICE_LandingCompliance_automatizar_tareas2.svg",
+                    "claim": "Saber qué norma es aplicable a cada caso concreto y cual no, tenerla toda inventariada y accesible."
+                },
+                {
+                    "image": "IICE_LandingCompliance_automatizar_tareas3.svg",
+                    "claim": "Discernir qué evidencias hemos de tener disponibles."
+                },
+                {
+                    "image": "IICE_LandingCompliance_automatizar_tareas4.svg",
+                    "claim": "Estar preparado en todo momento para dar la respuesta adecuada ante una auditoría, inspección o accidente."
+                }
+            ]
+        }
+    },
+    {
+        "id": 24,
+        "tipo": "TextSection",
+        "data": {
+            "background": "white",
+            "level2": [
+                "",
+                "¿Te haces una idea de cuánto tiempo necesitas invertir en todo esto?\n\n¿Cuántas horas piensas que serán tiempo perdido porque en realidad aún no tenéis identificadas las fuentes normativas, ni el método concreto que vais a seguir para coordinar toda la actividad que el cumplimiento conlleva, ni los recursos que vais a necesitar para mantenerlo todo actualizado?\n\n¿Cuándo vas a encontrar el momento adecuado para poner un plan de control del cumplimiento normativo en marcha en medio de vuestras labores propias de producción?\n\n¿Cómo sabrás quién de tu organización está realizando las tareas asignadas de cumplimiento y quién está comprometiendo la reputación de la compañía por una actitud impropia?\n\n¿Cómo mantener toda esta información tan valiosa a salvo de bajas o sustituciones?"
+            ]
+        }
+    },
+    {
+        "id": 25,
+        "tipo": "TextSection",
+        "data": {
+            "background": "white",
+            "level5": [
+                "La mayor parte de las empresas no encuentran todo ese tiempo."
+            ],
+            "level8": [
+                "Tiempo que, realmente, lo necesitas para no desviarte de tus objetivos de producción ya que sabes que nunca vas a poder recuperarlo y que vale mucho más que el precio que cuesta el paquete de servicios que te ofrecemos para establecer entre los miembros de tu plantilla los hábitos de cumplimiento necesarios que estarán alineados con vuestros procesos y ayuden a mejorar vuestros resultados."
+            ],
+            "buttonText": "Quiero una demostración"
+        }
+    },
+    {
+        "id": 26,
+        "tipo": "ClientPerceptionSection",
+        "data": {
+            "id_testimonio": 9,
+            "items": [
+                "",
+                "No lo pensaría dos veces y contrataría sin dudarlo",
+                "",
+                "Nuestro método te contará de golpe todo lo que necesitas saber para conseguir implementar un sistema ágil y eficaz de cumplimiento normativo combinado con una plataforma digital que coordine toda la actividad, la integre en vuestros procesos y eliminarás tiempos y costes adicionales."
+            ],
+            "secondtitle": "Evita dar palos de ciego.\nTu tiempo y tu tranquilidad es lo primero.",
+            "pragma": "Piensa que la metodología y el software va a correr a cargo de un reconocido equipo consultor con años de experiencia y que ha trabajado con empresas de las más importantes.",
+            "secondsupertitle": "¿Cuándo empezamos?"
+        }
+    },
+    {
+        "id": 27,
+        "tipo": "PorcentajesSection",
+        "data": {
+            "title": "¿Por qué deberías acceder a este programa?",
+            "subtitle": "Porque cientos de empresas son sancionadas por diversos motivos cada día y porque creemos firmemente que implementando el Modelo Avanzado de gestión del cumplimiento NormaPro tendrás sensación de tranquilidad y seguridad.",
+            "claim": "El problema es que la mayoría de las empresas no disponen de una metodología que sea capaz de integrar hábitos de cumplimiento en su plantilla ya que, o no dedican los recursos necesarios o los que disponen se pierden en un consumo excesivo de tiempo y tareas improductivas que no consiguen evitar consecuencias desagradables cuando se encuentran con una inspección o se produce un incidente.",
+            "pragma": "Nosotros no queremos que esto te ocurra a ti y de hecho las empresas que ya tienen el Modelo Avanzado NormaPro ahora mismo tienen a su personal sensibilizado y sus Sistemas de gestión funcionando en piloto automático.",
+            "datos": [
+                {
+                    "porcentaje": "20%",
+                    "claim": [
+                        "En materia de",
+                        "prevención de riesgos en el trabajo",
+                        "el Gobierno español aumentará un 20% la presión a las empresas que irán desde 49.141 euros hasta 982.914 euros."
+                    ]
+                },
+                {
+                    "porcentaje": "57%",
+                    "claim": [
+                        "",
+                        "La vulneración de las normativas europeas en materia de medio ambiente",
+                        "ha ascendido un 57% en tan solo cinco años y, en su mayor parte, estas infracciones están relacionadas con la festión de residuos y vertidos, lo que ha hecho que las autoridades competentes de la Unión Europea aumenten sus acciones de control, detección y denuncia."
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "id": 28,
+        "tipo": "SideTextSection",
+        "data": {
+            "title": "El propósito de Instituto de Innovación, Ciencia y Empresa es el de democratizar el Cumplimiento normativo alineado con la Transformación digital de las organizaciones y así contribuir de forma significativa a su éxito empresarial.",
+            "claim": "El disponer de una metodología bien estructurada, unos recursos tecnológicos muy evolucionados y hacer las sesiones online nos permiten poder ofertar todo este paquete de servicios por una cuota mensual más que razonable que dependerá del tamaño de tu empresa y los alcances normativos que más te preocupen controlar en este momento.",
+            "pragma": "Si quieres conocer la cantidad de esta cuota te invito a que cumplimentes un sencillo y escueto cuestionario de apenas 5 preguntas. En uno o dos días tendrás en tu correo el coste muy aproximado.",
+            "buttonText": "Cumplimentar cuestionario"
+        }
+    },
+    {
+        "id": 29,
+        "tipo": "ResumenSection",
+        "data": {
+            "imgCabecera": "IICE_LandingCompliance_medalla.svg",
+            "imgBackground": "hielo2.png",
+            "title": "Nuestros servicios están garantizados",
+            "claim": "",
+            "titlelist": "",
+            "list": [
+                {
+                    "icon": "",
+                    "title": "",
+                    "pragma": "No hay compromiso de permanencia, es decir, si una vez arrancado el programa veis que no os convence o que por cualquier circunstancia sentís que no avanzáis no pasa nada, puedes interrumpir el servicio tan solo con comunicárnoslo y listo; así que riesgo cero.\n\nDe cualquier manera, intuimos que esto no va a ocurrir. Hace 9 años que diseñamos la primera versión de este programa y, a día de hoy, ningún cliente nos ha solicitado la baja. Increible ¿no?"
+                }
+            ],
+            "cta": {
+                "title": "",
+                "buttonText": "",
+                "pragma": ""
+            }
+        }
+    },
+    {
+        "id": 30,
+        "tipo": "ResumenSection",
+        "data": {
+            "imgCabecera": "IICE_FormaPro_NormaPro.png",
+            "imgBackground": "hielo1.png",
+            "title": "Confianza para inversores",
+            "claim": "",
+            "titlelist": "",
+            "list": [
+                {
+                    "icon": "",
+                    "title": "",
+                    "pragma": "Hay clientes que nos manifiestan que están muy pendientes de la cotización de sus acciones y que buscan con la plataforma digital NormaPro la clave que necesitan para conseguir una organización más transparente, visible, ordenada y eficiente desde todos los puntos de vista y donde los parámetros de valoración de su compañía se disparan."
+                }
+            ],
+            "cta": {
+                "title": "",
+                "buttonText": "",
+                "pragma": ""
+            }
+        }
+    },
+    {
+        "id": 31,
+        "tipo": "TextSection",
+        "data": {
+            "background": "gray",
+            "level4": [
+                "Ahora te toca a ti elegir. Es el momento de tomar decisiones, de dar el paso hacia la tranquilidad. Puedes recoger toda la información que te vamos a regalar en la reunión demo y empezar a caminar tú solo.\n\nContrata nuestro programa NormaPro y ábrenos la puerta para que te acompañemos en este camino que debería llevarte a disponer del Modelo más avanzado de gestión del cumplimiento normativo y conseguir tenerlo todo bajo control."
+            ],
+            "buttonText": "Reserva una sesión estratégica"
+        }
+    },
+    {
+        "id": 32,
+        "tipo": "FaqSection",
+        "data": {
+            "faqs": [
+                {
+                    "question": "¿Qué es exactamente el Compliance Penal y por qué mi pequeña empresa lo necesita?",
+                    "answer": [
+                        "El Compliance Penal se refiere al conjunto de políticas y procedimientos que tu empresa implementa para actuar siempre en conformidad con las normativas penales vigentes. Incluso las pequeñas empresas se benefician al evitar sanciones legales, proteger su reputación y crear un ambiente de trabajo ético y seguro."
+                    ]
+                },
+                {
+                    "question": "¿Es obligatorio tener un programa de Compliance Penal? ",
+                    "answer": [
+                        "Aunque el Compliance penal puede no ser estrictamente obligatorio para todas las empresas, implementarlo proactivamente significa asegurarte de que tu negocio opera de manera ética y legal, minimizando cualquier riesgo de incurrir en responsabilidades penales y las sanciones correspondientes."
+                    ]
+                },
+                {
+                    "question": "¿Cómo saber si mi empresa está en riesgo de incumplir normativas penales? ",
+                    "answer": [
+                        "Identificar riesgos penales involucra evaluar todos los aspectos de tu operación empresarial, desde relaciones laborales hasta transacciones financieras. Nuestro programa de Compliance ayuda a destacar áreas de riesgo y a implementar medidas preventivas."
+                    ]
+                },
+                {
+                    "question": "¿Cómo el programa de Compliance afectará la operatividad diaria de mi negocio?",
+                    "answer": [
+                        "El programa está diseñado para integrarse paso a paso a paso en las operaciones diarias y, después de un período inicial de formación y ajuste, debería operar como una parte esencial pero discreta de tu negocio, promoviendo una operativa más segura y eficiente."
+                    ]
+                },
+                {
+                    "question": "¿Es el programa de Compliance Penal asequible para pequeños negocios? ",
+                    "answer": [
+                        "Sí, adaptamos nuestro programa a la escala y necesidades de tu empresa, asegurando que obtienes los beneficios del Compliance penal de una manera coste-efectiva y provechosa. Puedes volver en esta página a los tres niveles que tenemos establecidos, pero ¡Ojo! los aplicaremos siempre bajo un principio de proporcionalidad, no hay que volverse loco."
+                    ]
+                },
+                {
+                    "question": "¿Cómo me aseguro de que todo mi equipo comprenda y siga las pautas de Compliance?",
+                    "answer": [
+                        "A través de nuestro módulo de Formación, Comunicación y Sensibilización, aseguramos que tu equipo no solo entienda, sino que también interiorice la importancia y práctica del Compliance, creando una cultura corporativa de cumplimiento y ética."
+                    ]
+                },
+                {
+                    "question": "¿Cómo se identifican y gestionan los riesgos en el programa de Compliance? ",
+                    "answer": [
+                        "Mediante una evaluación de riesgos exhaustiva, identificamos áreas vulnerables, creamos un mapa de riesgos y establecemos controles y procedimientos específicos para mitigarlos, asegurando que tu negocio esté protegido."
+                    ]
+                },
+                {
+                    "question": "¿Qué sucede si mi empresa tiene una infracción durante o después de la implementación del programa?",
+                    "answer": [
+                        "La implementación de un programa de Compliance penal refuerza la posición de tu empresa ante posibles infracciones, demostrando una proactividad y compromiso con el cumplimiento normativo. Aun así, en caso de infracciones, trabajamos contigo para analizar lo ocurrido, corregirlo y fortalecer el programa para futuras prevenciones."
+                    ]
+                },
+                {
+                    "question": "¿Cuánto tiempo se tarda en implementar el programa de Compliance Penal? ",
+                    "answer": [
+                        "El tiempo de implementación puede variar según el tamaño y complejidad de tu empresa. Nos esforzamos por hacer el proceso lo más eficiente y menos intrusivo posible, asegurando que tu negocio puede seguir operando sin interrupciones significativas. Te aconsejamos que agendes una reunión con nosotros y podremos estudiar tu caso concreto sin compromiso alguno."
+                    ]
+                },
+                {
+                    "question": "¿Cómo ayuda el Planning Anual en la gestión del Compliance a lo largo del tiempo? ",
+                    "answer": [
+                        "El Planning Anual te proporciona una hoja de ruta clara de las actividades y revisiones de Compliance, asegurando que todos los elementos del programa estén actualizados y adaptándose a cualquier cambio en tu negocio y teniendo en cuenta la legislación aplicable."
+                    ]
+                },
+                {
+                    "question": "¿Qué tipo de apoyo y seguimiento se proporciona después de la implementación del programa?",
+                    "answer": [
+                        "Proporcionamos un seguimiento continuo y actualizaciones periódicas para asegurarnos de que tu programa de Compliance penal sigue siendo robusto y relevante, ayudándote a navegar a través de cualquier cambio en la legislación o en las condiciones de tu negocio."
+                    ]
+                },
+                {
+                    "question": "¿En qué se diferencia este programa para pequeñas empresas de los programas para empresas más grandes? ",
+                    "answer": [
+                        "Nuestro programa para pequeñas empresas está diseñado para ser accesible, fácil de implementar y específicamente ajustado a las necesidades y recursos de los negocios más pequeños, sin sacrificar la efectividad en la gestión del Compliance penal."
+                    ]
+                },
+                {
+                    "question": "¿Cómo puede ayudarme su programa de Compliance Penal a obtener la certificación UNE 19601 y cuál es su importancia?",
+                    "answer": [
+                        "La certificación UNE 19601 establece los requisitos para implementar y operar un sistema de gestión de Compliance penal eficaz, ayudando a las empresas a prevenir y detectar delitos. Nuestro programa de Compliance Penal está diseñado siguiendo las directrices y requerimientos de la norma UNE 19601, lo que facilita que tu empresa no solo esté alineada con las mejores prácticas en materia de prevención de riesgos penales, sino que también esté preparada para obtener esta certificación si decides hacerlo. La obtención de la certificación UNE 19601 es un reconocimiento de la robustez y eficacia de tu sistema de gestión de Compliance penal y refuerza la imagen de tu empresa como una entidad comprometida con la ética y el cumplimiento legal."
+                    ]
+                },
+                {
+                    "question": "¿Cómo se involucra mi equipo en el proceso de Compliance Penal? ",
+                    "answer": [
+                        "Tu equipo será una parte integral del proceso, participando en la formación, implementando nuevas políticas y procedimientos, y potencialmente asumiendo roles de Compliance. La colaboración y el compromiso de tu equipo son clave para el éxito del programa."
+                    ]
+                }
+            ]
         }
     }
 ]

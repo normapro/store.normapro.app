@@ -54,7 +54,7 @@
         "… Estás buscando una forma de dotar a tu equipo con tecnología avanzada para una gestión de procesos más inteligente.",
         "… Deseas asegurar que tu equipo tenga las habilidades y herramientas necesarias para adaptarse a cambios y desafíos del mercado rápidamente."
       ],
-      "url_video": "https://www.youtube.com/b58f3af8-df1a-4dee-b265-976982c99ab9",
+      "url_video": "https://www.youtube.com/watch?v=eCvgvSQZ_4g",
       "buttonText": "Reserva una sesión estratégica"
     }
   },
@@ -279,6 +279,45 @@
           "title": "Monitorización y mejora continua",
           "objective": "Objetivo: Establecer un sistema de monitorización constante para evaluar el rendimiento de la solución digital e identificar oportunidades para mejoras adicionales.",
           "claim": "Obtendrás información continua sobre el rendimiento de la solución digital, identificando oportunidades para mejoras y refinamientos. La monitorización constante te permitirá la adaptación y evolución de la solución para enfrentar retos emergentes, mantenerla alineada con las metas de tu negocio y asegurando su efectividad operativa."
+        }
+      ]
+    }
+  },
+  {
+    "id": 12,
+    "tipo": "ObstaculosYSolucionesSection",
+    "data": {
+      "imgBackground": "hielo4.png",
+      "image": "IICE_NormaPro1.png",
+      "title": "¿Por qué decidirse por nuestro Programa?",
+      "claim": "La respuesta es simple: ofrecemos una combinación única de innovación tecnológica y consultoría personalizada que transforma radicalmente la eficiencia y la gestión de tu empresa.",
+      "pragma": [],
+      "buttonText": "Concertar una reunión",
+      "backgroundtable": "gray",
+      "table": [
+        {
+          "idcelda": "1",
+          "icono": "fa-laptop-mobile",
+          "title": "Innovación constante",
+          "pragma": "Integrando las últimas tecnologías nuestro programa asegura que tu empresa siempre esté a la vanguardia de la eficiencia operativa."
+        },
+        {
+          "idcelda": "2",
+          "icono": "fa-sliders",
+          "title": "Personalización",
+          "pragma": "Entendemos que cada negocio es único. Por eso, nuestra solución se adapta específicamente a tus necesidades y procesos."
+        },
+        {
+          "idcelda": "3",
+          "icono": "fa-handshake-simple",
+          "title": "Consultoría especializada",
+          "pragma": "Nuestro equipo de consultores no solo implementa soluciones. También trabaja contigo para entender y atender las necesidades específicas de tu negocio."
+        },
+        {
+          "idcelda": "4",
+          "icono": "fa-chart-column",
+          "title": "Resultados tangibles",
+          "pragma": "Nos enfocamos en resultados que puedes ver y medir, desde mejoras en la eficiencia hasta reducciones en costos y tiempos de procesamiento."
         }
       ]
     }

@@ -86,10 +86,9 @@ type Caracteristica = {
 
 type Props = {
     data: Caracteristica[];
-    downtext?: string[];
 };
 
-const CaracteristicasStorytellingSection = ({ data, downtext }: Props) => {
+const CaracteristicasStorytellingSection = ({ data }: Props) => {
     const stickyRef = useRef<HTMLDivElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const [currentStep, setCurrentStep] = useState(0);
@@ -194,15 +193,6 @@ const CaracteristicasStorytellingSection = ({ data, downtext }: Props) => {
                         </div>
                     </div>
                     <div className="mt-8 text-center ">
-                        {downtext && downtext.length > 0 && (
-                            <div className="mb-25 mt-10">
-                                {downtext.map((text, index) => (
-                                    <p key={index} className="text-lg leading-relaxed whitespace-pre-line text-left mb-6 text-[#010d3d]">
-                                        {text}
-                                    </p>
-                                ))}
-                            </div>
-                        )}
                         <button
                             onClick={() => setOpenModal(true)}
                             className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition"

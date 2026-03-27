@@ -19,7 +19,11 @@ import {
   faEnvelopeDot,
   faTimelineArrow,
   faFileCircleCheck,
-  faFileZipper
+  faFileZipper,
+  faChartColumn,
+  faHandshakeSimple,
+  faSliders,
+  faLaptopMobile
 } from '@fortawesome/pro-duotone-svg-icons';
 
 const iconMap: Record<string, any> = {
@@ -38,7 +42,11 @@ const iconMap: Record<string, any> = {
   'fa-envelope-dot': faEnvelopeDot,
   'fa-timeline-arrow': faTimelineArrow,
   'fa-file-circle-check': faFileCircleCheck,
-  'fa-file-zipper': faFileZipper
+  'fa-file-zipper': faFileZipper,
+  'fa-chart-column': faChartColumn,
+  'fa-handshake-simple': faHandshakeSimple,
+  'fa-sliders': faSliders,
+  'fa-laptop-mobile': faLaptopMobile
 };
 
 type Celda = {
@@ -49,6 +57,8 @@ type Celda = {
 };
 
 type Props = {
+  imgBackground?: string;
+  image?: string;
   title: string;
   claim: string;
   tabletitle?: string;
@@ -56,21 +66,47 @@ type Props = {
   pragma: string[];
   buttonText?: string;
   background?: string;
+  backgroundtable?: string;
 };
 
-const ObstaculosYSolucionesSection: FC<Props> = ({ title, claim, tabletitle, table, pragma, buttonText, background = "white" }) => {
+const ObstaculosYSolucionesSection: FC<Props> = ({ imgBackground, image, title, claim, tabletitle, table, pragma, buttonText, background = "white", backgroundtable = "white" }) => {
   const [openModal, setOpenModal] = useState(false);
-  const bgcolors = ["#ffffff","#eaeaf2" ];
+  const bgcolors = ["#ffffff","#eaeaf2", "#fafafb"];
   let bgColor = bgcolors[1];
+  let bgTableColor = bgcolors[2];
   if (background === "gray") {
      bgColor = bgcolors[1];
   }else{
      bgColor = bgcolors[0];
   }
 
+  if (backgroundtable === "gray") {
+     bgTableColor = bgcolors[2];
+  }else{
+     bgTableColor = bgcolors[0];
+  }
+
   return (
     <div className="w-full" style={{ backgroundColor: bgColor }}>
     <section className="max-w-7xl mx-auto w-full flex flex-col items-center justify-center py-16 px-6 md:px-12">
+      {/* Imagen de cabecera */}
+      {image && (
+        <div className="relative w-[120px] md:w-[220px] overflow-visible ">
+          {imgBackground && (
+            <img
+              src={`/apps/${imgBackground}`}
+              alt=""
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] max-w-none h-auto object-contain"
+            />
+          )}
+          <img
+            src={`/apps/${image}`}
+            alt="Imagen cabecera"
+            className="relative z-10 h-[80px] md:h-[220px] object-contain"
+          />
+        </div>
+      )}
+
       {/* Título, subtítulo y título tabla */}
       <div className="text-center">
         <h2 className="text-3xl md:text-4xl font-black text-[#010d3d] mb-12">{title}</h2>
@@ -85,7 +121,7 @@ const ObstaculosYSolucionesSection: FC<Props> = ({ title, claim, tabletitle, tab
       {/* Tabla horizontal sin separación entre columnas */}
       <div
         className="grid grid-cols-1 md:[grid-template-columns:repeat(var(--cols),minmax(0,1fr))] w-full border-2 border-gray-300 rounded-2xl overflow-hidden mb-12 divide-y md:divide-y-0 md:divide-x divide-2 divide-gray-300"
-        style={{ "--cols": table.length }}
+        style={{ "--cols": table.length, backgroundColor: bgTableColor }}
       >
         {table.map((celda, index) => {
           const isFirst = index === 0;

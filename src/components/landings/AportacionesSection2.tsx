@@ -81,12 +81,12 @@ const AportacionesSection2: React.FC<Props> = ({
                 </ul>
               )}
               {tarjeta.buttonText && (
-                <button
-                  onClick={() => setOpenModal(true)}
-                  className="mt-4 border border-[#010d3d] bg-white rounded-lg px-6 py-2 font-semibold text-[#010d3d] hover:bg-[#010d3d] hover:text-white transition"
+                <a
+                  href="#"
+                  className="mt-4 border border-[#010d3d] bg-white rounded-lg px-6 py-2 font-semibold text-[#010d3d] hover:bg-[#010d3d] hover:text-white transition inline-block text-center"
                 >
                   {tarjeta.buttonText}
-                </button>
+                </a>
               )}
             </div>
           </div>
