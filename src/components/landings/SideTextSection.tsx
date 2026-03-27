@@ -32,14 +32,14 @@ const SideTextSection: FC<Props> = ({
           </div>
           {/* Columna derecha */}
           <div className="md:w-1/2 max-w-xl">
-            {pragma && (
+            {claim && (
               <p className="text-sm md:text-base text-[#010d3d] mb-6 leading-tight">
-                {pragma}
+                {claim}
               </p>
             )}
-            {claim && (
+            {pragma && (
               <p className="text-sm md:text-base font-bold text-[#010d3d] leading-tight">
-                {claim}
+                {pragma}
               </p>
             )}
           </div>

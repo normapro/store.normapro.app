@@ -8,7 +8,8 @@ type Props = {
   title: string;
   subtitle: string;
   titlelist: string;
-  list: string[];
+  list?: string[];
+  claim?: string;
 }
 
 const NecesidadesSection: FC<Props> = ({
@@ -17,7 +18,8 @@ const NecesidadesSection: FC<Props> = ({
   title,
   subtitle,
   titlelist,
-  list
+  list,
+  claim
 }) => {
   // Función para convertir un índice numérico en letras (0 -> a, 1 -> b, etc.)
   const getLetter = (index: number) => String.fromCharCode(97 + index) + ')'
@@ -50,21 +52,28 @@ const NecesidadesSection: FC<Props> = ({
         <p className="text-2xl font-extrabold text-[#797f98]">
           {titlelist}
         </p>
+        {claim && (
+          <p className="text-base">
+            {claim}
+          </p>
+        )}
 
         {/* Lista */}
-        <ul className="space-y-8">
-          {list.map((item, index) => (
-            <li key={index} className="flex items-start space-x-6">
-              <span className="text-4xl font-black tracking-tight">
-                {getLetter(index)}
-              </span>
-              <p className="pt-2 text-base font-bold">
-                {item}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </div>
+        {list && (
+          <ul className="space-y-8">
+            {list.map((item, index) => (
+              <li key={index} className="flex items-start space-x-6">
+                <span className="text-4xl font-black tracking-tight">
+                  {getLetter(index)}
+                </span>
+                <p className="pt-2 text-base font-bold">
+                  {item}
+                </p>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div> 
     </section>
   )
 }
