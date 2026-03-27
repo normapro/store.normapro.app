@@ -542,26 +542,6 @@
                         },
                         {
                             "imgBackground": "hielo8.png",
-                            "image": ".svg",
-                            "title": "",
-                            "objective": "",
-                            "list": [
-                                {
-                                    "title": "",
-                                    "content": ""
-                                },
-                                {
-                                    "title": "",
-                                    "content": ""
-                                },
-                                {
-                                    "title": "",
-                                    "content": ""
-                                }
-                            ]
-                        },
-                        {
-                            "imgBackground": "hielo8.png",
                             "image": "IICE_LandingCompliancePenal_Nivel2_2.svg",
                             "title": "La Organización y la toma de Decisiones",
                             "objective": "Objetivo: Analizar la estructura y dinámica de decisiones de tu empresa para incorporar una estrategia de Compliance coherente y personalizada.",
@@ -642,61 +622,101 @@
                         },
                         {
                             "imgBackground": "hielo8.png",
-                            "image": ".svg",
-                            "title": "",
-                            "objective": "",
+                            "image": "IICE_LandingCompliancePenal_Nivel1_3.svg",
+                            "title": "Información Documentada de Compliance",
+                            "objective": "Objetivo: Documentar y organizar de manera clara y accesible todos los aspectos del Compliance, garantizando coherencia, transparencia y eficiencia en nuestras acciones.",
                             "list": [
                                 {
-                                    "title": "",
-                                    "content": ""
+                                    "title": "Código ético",
+                                    "content": "Crearemos o perfeccionaremos tu código ético para que refleje la esencia y los valores de tu empresa que ayude a fortalecer tu imagen corporativa, inspire confianza y garantice que todos en la organización se rijan por principios y valores alineados."
                                 },
                                 {
-                                    "title": "",
-                                    "content": ""
+                                    "title": "Políticas",
+                                    "content": "Definiremos políticas claras que marquen las pautas de actuación en diversas áreas de la empresa. Facilitarás la toma de decisiones, reducirás ambigüedades y asegurarás un funcionamiento coherente y conforme a los estándares que deseas mantener."
                                 },
                                 {
-                                    "title": "",
-                                    "content": ""
+                                    "title": "Organización en NormaPro",
+                                    "content": "Configuraremos esta herramienta para que se ajuste perfectamente a tus necesidades. NormaPRO te permitirá acceder de manera rápida y eficiente a la información crucial, optimizando tiempo y garantizando que todas las tareas de Compliance estén siempre al alcance de tu mano."
                                 }
                             ]
                         },
                         {
                             "imgBackground": "hielo8.png",
-                            "image": ".svg",
-                            "title": "",
-                            "objective": "",
+                            "image": "IICE_LandingCompliancePenal_Nivel1_4.svg",
+                            "title": "Denunciar y Sancionar",
+                            "objective": "Objetivo: Establecer sistemas robustos de reporte y respuesta para proteger la integridad de la empresa y fomentar una cultura de responsabilidad y transparencia.",
                             "list": [
                                 {
-                                    "title": "",
-                                    "content": ""
+                                    "title": "Canal interno de comunicación (Canal de denuncias)",
+                                    "content": "Pondremos en marcha un sistema que permita el reporte de cualquier irregularidad. Esta herramienta refuerza la transparencia y la confianza, demostrando a empleados, clientes y proveedores que te tomas en serio la integridad y el buen gobierno corporativo."
                                 },
                                 {
-                                    "title": "",
-                                    "content": ""
+                                    "title": "Proceso interno",
+                                    "content": "Definiremos una metodología para gestionar y resolver las denuncias de manera efectiva de acuerdo a la Ley 2/2023 que requiere un proceso bien estructurado. De esta forma aseguras una respuesta oportuna y adecuada a cada situación, minimizando impactos negativos y fortaleciendo la cultura de integridad en tu organización."
                                 },
                                 {
-                                    "title": "",
-                                    "content": ""
+                                    "title": "Tolerancia cero",
+                                    "content": "Estableceremos un enfoque estricto contra cualquier tipo de incumplimiento. Con esta postura, no solo proteges a tu empresa de posibles sanciones o daños a su reputación, sino que también atraes y retienes a aquellos empleados y socios que valoran y respetan un ambiente laboral ético y profesional."
                                 }
                             ]
                         },
                         {
                             "imgBackground": "hielo8.png",
-                            "image": ".svg",
-                            "title": "",
-                            "objective": "",
+                            "image": "IICE_LandingCompliancePenal_Nivel1_5.svg",
+                            "title": "Formación, Comunicación y Sensibilización",
+                            "objective": "Objetivo: Integrar activamente el Compliance en las operaciones y mentalidad de la empresa, asegurando una comprensión y compromiso profundos a todos los niveles.",
                             "list": [
                                 {
-                                    "title": "",
-                                    "content": ""
+                                    "title": "Formación",
+                                    "content": "Brindaremos formación integral a tu equipo, asegurando que todos comprendan y se comprometan con las prácticas de cumplimiento. Un equipo bien formado reduce los errores de cumplimiento y fortalece la cultura organizacional, lo que a su vez mejora la reputación y confianza de la empresa en el mercado."
                                 },
                                 {
-                                    "title": "",
-                                    "content": ""
+                                    "title": "Uso de NormaPro",
+                                    "content": "Instruiremos a tu personal en la utilización efectiva de NormaPRO. Al optimizar el uso de la plataforma, garantizas una gestión más eficiente y coherente del cumplimiento, lo que se traduce en menos errores y mayor productividad. Estudiaremos la esencia de tu negocio, la estructura organizacional y cómo tomas decisiones. Esto nos permitirá ofrecerte una estrategia de Compliance personalizada. Sabemos que cada empresa es única y, por ello, te proporcionaremos soluciones hechas a medida, asegurándonos de que entiendas y te sientas cómodo con cada paso del proceso. Plataforma NormaPro Definiendo tu Estructura de Compliance Tranquilidad y Seguridad"
                                 },
                                 {
-                                    "title": "",
-                                    "content": ""
+                                    "title": "Comunicación",
+                                    "content": "Potenciaremos la comunicación interna y externa acerca de la relevancia del Compliance en tu organización. Al comunicar activamente tus esfuerzos y compromisos en materia de cumplimiento, refuerzas la imagen de tu empresa como una entidad responsable y transparente, atrayendo a clientes y socios alineados con estos valores."
+                                }
+                            ]
+                        },
+                        {
+                            "imgBackground": "hielo8.png",
+                            "image": "IICE_LandingCompliancePenal_Nivel2_9.svg",
+                            "title": "Evaluación del desempeño",
+                            "objective": "Objetivo: Asegurar la eficacia y adaptabilidad del sistema de Compliance mediante la monitorización proactiva y la mejora continua.",
+                            "list": [
+                                {
+                                    "title": "Activación del sistema",
+                                    "content": "Juntos, activaremos un sistema de seguimiento robusto y eficaz. Gracias a NormaPro tendrás la seguridad de contar con una infraestructura sólida que monitorea constantemente el cumplimiento, permitiéndote detectar y abordar problemas a tiempo, evitando sanciones o daños a la reputación."
+                                },
+                                {
+                                    "title": "Indicadores",
+                                    "content": "Estableceremos métricas claras y objetivas para monitorear el cumplimiento. Estos te facilitarán la toma de decisiones informadas y medir con precisión el avance de tus esfuerzos en materia de cumplimiento, lo que se traduce en mejoras continuas y eficiencia operativa."
+                                },
+                                {
+                                    "title": "Mentoring",
+                                    "content": "Te acompañaremos en sesiones periódicas de seguimiento, brindando asesoría experta en cada fase del proceso. Tener a expertos a tu lado asegura un aprendizaje continuo y una adaptación más rápida a las dinámicas de cumplimiento, maximizando la protección y eficacia de tu empresa en esta área."
+                                }
+                            ]
+                        },
+                        {
+                            "imgBackground": "hielo8.png",
+                            "image": "IICE_LandingCompliancePenal_Nivel1_6.svg",
+                            "title": "Mejora continua",
+                            "objective": "Objetivo: Fomentar la adaptabilidad y excelencia del sistema de Compliance a través de la identificación proactiva de áreas de mejora y la renovación constante de objetivos.",
+                            "list": [
+                                {
+                                    "title": "No conformidades",
+                                    "content": "Identificaremos y analizaremos los errores, convirtiéndolos en oportunidades de mejora. No solo minimizarás riesgos futuros, sino que fortalecerás la resiliencia y adaptabilidad de tu empresa, ganando confianza y credibilidad en el mercado."
+                                },
+                                {
+                                    "title": "Memoria anual",
+                                    "content": "Facilitaremos la revisión y recapitulación de tus esfuerzos en Compliance a lo largo del año. Esto te permitirá tener una perspectiva clara del progreso, reconociendo logros y áreas de mejora, lo que facilitará la toma de decisiones y el diseño de estrategias más eficientes."
+                                },
+                                {
+                                    "title": "Nuevos objetivos",
+                                    "content": "Os ayudaremos a definir y alcanzar metas más ambiciosas en vuestro programa de Compliance. Es la mejor forma de garantizar un crecimiento sostenido y una adaptación continua a los desafíos del cumplimiento, posicionando a tu empresa como líder y referente en el sector."
                                 }
                             ]
                         }
@@ -709,33 +729,174 @@
                     "image": "IICE_LandingCompliancePenal_icono3.png",
                     "imgBackground": "hielo2.png",
                     "cardButtonText": "Alcanza la excelencia en Compliance",
-                    "introTitle": "Modelo de alta exigencia",
+                    "introTitle": "Más que una norma, UNE 19601 es Valor, Confianza y Liderazgo",
                     "introClaim": [
-                        "Esta ruta está orientada a organizaciones que buscan madurez total del sistema, evidencias robustas y preparación real para auditoría y certificación.",
-                        "Especial foco en gobierno, mejora continua y defensa ante riesgos penales complejos."
+                        "La cumbre de la excelencia corporativa no se alcanza simplemente con palabras o intenciones, sino con acciones respaldadas por estándares globalmente reconocidos.",
+                        "En el ámbito del Compliance Penal, eso significa alinearse con la norma UNE 19601. ¿Por qué?",
+                        "Porque es más que una simple normativa a seguir. Es el estandarte que ondea en lo más alto, representando integridad, rigor y compromiso."
                     ],
+                    "midSection": {
+                        "title": "¿Por qué las empresas líderes eligen certificarse bajo la Norma UNE 19601?",
+                        "items": [
+                            {
+                                "title": "Visión a Largo Plazo",
+                                "content": "Las empresas líderes no buscan soluciones temporales. Al adoptar la norma UNE 19601, están haciendo una inversión estratégica que refuerza su integridad, potencia su reputación y solidifica su resiliencia ante riesgos legales y operativos."
+                            },
+                            {
+                                "title": "Globalmente Alineadas",
+                                "content": "En un mundo donde los negocios ya no conocen fronteras, las empresas líderes entienden la importancia de adherirse a estándares que sean coherentes con las prácticas internacionales de Compliance. La norma UNE 19601 ofrece exactamente eso."
+                            },
+                            {
+                                "title": "Compromiso Real",
+                                "content": "Más allá de las palabras, certificarse demuestra un compromiso real con la excelencia. Es una clara señal para clientes, inversores y otras partes interesadas de que la empresa no solo habla, sino que actúa."
+                            }
+                        ],
+                        "footerTop": "Si tu organización está comprometida con la excelencia, y busca ir más allá de lo ordinario, te invitamos a explorar el camino hacia la Excelencia Certificada con la norma UNE 19601.",
+                        "footerBottom": "Porque las empresas líderes no siguen las tendencias; las establecen."
+                    },
                     "etapas": [
                         {
                             "imgBackground": "hielo8.png",
-                            "image": ".svg",
-                            "title": "",
-                            "objective": "",
+                            "image": "IICE_LandingCompliancePenal_Nivel3_1.svg",
+                            "title": "Contexto, necesidades y alcance",
+                            "objective": "Objetivo: entender el entorno en el que opera tu empresa y las regulaciones a las que te enfrentas.",
                             "list": [
                                 {
-                                    "title": "",
-                                    "content": ""
+                                    "title": "Contexto de la Organización",
+                                    "content": "Vamos a mapear tu entorno empresarial para poder tener una visión clara del panorama que te permitirá anticiparte a desafíos y aprovechar oportunidades."
                                 },
                                 {
-                                    "title": "",
-                                    "content": ""
+                                    "title": "Necesidades y expectativas de partes interesadas",
+                                    "content": "Identificaremos a todos los stakeholders y entenderemos sus requerimientos; podrás construir relaciones más sólidas y generar confianza."
                                 },
                                 {
-                                    "title": "",
-                                    "content": ""
+                                    "title": "Sistema de gestión de Compliance penal",
+                                    "content": "Implantaremos un sistema adaptado a tu organización, determinando su alcance y asegurando una hoja de ruta clara que maximice la seguridad y minimice riesgos legales, evitando cualquier área gris."
+                                }
+                            ]
+                        },
+                        {
+                            "imgBackground": "hielo8.png",
+                            "image": "IICE_LandingCompliancePenal_Nivel3_2.svg",
+                            "title": "Liderazgo",
+                            "objective": "Objetivo: Reforzar el compromiso con el Compliance penal, asegurando que tu empresa tenga una dirección clara y fortaleciendo su reputación.",
+                            "list": [
+                                {
+                                    "title": "Compromiso",
+                                    "content": "Fomentaremos un compromiso firme con el Compliance penal. Un equipo comprometido reduce el riesgo de malas prácticas."
+                                },
+                                {
+                                    "title": "Política de Compilance penal",
+                                    "content": "Ayudaremos a establecer una política sólida, tendrás una guía clara para todos los miembros de la organización"
+                                },
+                                {
+                                    "title": "Roles, responsabilidades y autoridades",
+                                    "content": "Clarificaremos roles y responsabilidades, evitarás duplicidades y huecos de responsabilidad."
+                                }
+                            ]
+                        },
+                        {
+                            "imgBackground": "hielo8.png",
+                            "image": "IICE_LandingCompliancePenal_Nivel1_2.svg",
+                            "title": "Planificación",
+                            "objective": "Objetivo: Diseñar el camino a seguir, teniendo en cuenta los riesgos y estableciendo objetivos claros.",
+                            "list": [
+                                {
+                                    "title": "Acciones para abordar riesgos y oportunidades",
+                                    "content": "Trazaremos un mapa de acciones para enfrentar cualquier desafío y aprovechar oportunidades, aumentando la resiliencia de tu empresa en esta materia."
+                                },
+                                {
+                                    "title": "Evaluación y plan de riesgos penales específicos",
+                                    "content": "Te proporcionaremos herramientas para identificar riesgos específicos, minimizando posibles amenazas. Conseguirás tener una estrategia de mitigación."
+                                },
+                                {
+                                    "title": "Objetivos de Compliance",
+                                    "content": "Estableceremos objetivos que complementen tu estrategia general. Asegurarás la coherencia y efectividad de todas las acciones."
+                                }
+                            ]
+                        },
+                        {
+                            "imgBackground": "hielo8.png",
+                            "image": "IICE_LandingCompliancePenal_Nivel3_4.svg",
+                            "title": "Elementos de apoyo",
+                            "objective": "Objetivo: Proporcionar todas las herramientas y recursos necesarios para que tu sistema de Compliance funcione de verdad.",
+                            "list": [
+                                {
+                                    "title": "Cultura y ética",
+                                    "content": "Se promoverá una verdadera cultura de Compliance en tu organización y establecerás un código ético sólido. Os distinguiréis como una organización que valora la transparencia y la ética, incrementando la confianza de tus stakeholders."
+                                },
+                                {
+                                    "title": "Recursos y formación",
+                                    "content": "Aseguraremos que tengas todo lo necesario, desde el personal competente hasta programas de capacitación efectivos. Dispondrás de una plantilla formada y preparada para afrontar cualquier situación en materia de cumplimiento."
+                                },
+                                {
+                                    "title": "Comunicación",
+                                    "content": "Te ayudaremos a establecer canales efectivos de comunicación sobre Compliance, incluyendo cómo manejar consultas y mantener la información documentada al día, garantizando así un flujo de comunicación transparente y actualizado."
+                                }
+                            ]
+                        },
+                        {
+                            "imgBackground": "hielo8.png",
+                            "image": "IICE_LandingCompliancePenal_Nivel3_5.svg",
+                            "title": "Control operacional",
+                            "objective": "Objetivo: Garantizar que todas las operaciones diarias estén en línea con tus objetivos de Compliance.",
+                            "list": [
+                                {
+                                    "title": "Planificación y control operacional",
+                                    "content": "Guiaremos tus operaciones diarias alineadas con el Compliance penal con lo que maximizarás la eficiencia operacional reduciendo el riesgo penal."
+                                },
+                                {
+                                    "title": "Diligencia debida",
+                                    "content": "Aseguraremos que todas las acciones y decisiones de la empresa sean tomadas con responsabilidad y precaución. Estarás protegido de incurrir en negligencias, resguardando la integridad de tu organización."
+                                },
+                                {
+                                    "title": "Integración y Control de Compliance",
+                                    "content": "Implementaremos controles financieros y no financieros robustos, extendiendo la uniformidad de cumplimiento a filiales y socios de negocio. Además, reforzaremos tus contratos con cláusulas de cumplimiento. Asegurarás transparencia, minimizarás riesgos y fortalecerás las relaciones contractuales y corporativas, garantizando una gestión integral alineada con el Compliance penal."
+                                },
+                                 {
+                                    "title": "Sistema Interno de Información (Canal de Denuncias)",
+                                    "content": "Instauraremos un canal efectivo para reportar y gestionar incidentes o preocupaciones. Mantendrás la transparencia y fomentarás una cultura de reporte, asegurando una respuesta rápida a posibles desviaciones."
+                                }
+                            ]
+                        },
+                        {
+                            "imgBackground": "hielo8.png",
+                            "image": "IICE_LandingCompliancePenal_Nivel3_6.svg",
+                            "title": "Evaluación del desempeño",
+                            "objective": "Objetivo: Medir y evaluar cómo está funcionando tu sistema, y hacer los ajustes necesarios.",
+                            "list": [
+                                {
+                                    "title": "Seguimiento y análisis",
+                                    "content": "Te ofreceremos las mejores herramientas y métodos para monitorizar y evaluar tu sistema de Compliance."
+                                },
+                                {
+                                    "title": "Revisión por la Dirección",
+                                    "content": "Tomarás decisiones estratégicas basadas en una visión completa del desempeño del Compliance."
+                                },
+                                {
+                                    "title": "Auditorías",
+                                    "content": "Te asistiremos tanto en las internas como las externas de certificación para garantizar que todo esté en orden."
+                                }
+                            ]
+                        },
+                        {
+                            "imgBackground": "hielo8.png",
+                            "image": "IICE_LandingCompliancePenal_Nivel3_7.svg",
+                            "title": "Mejora continua",
+                            "objective": "Objetivo: Garantizar que tu sistema de Compliance esté siempre evolucionando y adaptándose a las nuevas necesidade",
+                            "list": [
+                                {
+                                    "title": "No conformidades y acciones correctivas",
+                                    "content": "Abordaremos cualquier desviación del sistema proponiendo soluciones. Transformarás los desafíos en oportunidades de mejora y aprendizaje."
+                                },
+                                {
+                                    "title": "Mejora continua",
+                                    "content": "Te ayudaremos a establecer un ciclo de mejora continua, asegurando que tu sistema de Compliance evolucione adaptándose a los cambios y asegurando que siempre esté al más alto nivel."
                                 }
                             ]
                         }
-                    ]
+                    ],
+                    "finalText": "La certificación bajo la norma UNE 19601 no es solo un distintivo, es una demostración clara de tu compromiso con el cumplimiento penal. Si tu empresa está lista para adoptar este nivel de responsabilidad y excelencia, no esperes más."
                 }
             ]
         }
@@ -745,330 +906,6 @@
         "tipo": "SimpleClientPerceptionSection",
         "data": {
             "id_testimonio": 6
-        }
-    },
-    {
-        "id": 20,
-        "tipo": "AportacionesSection2",
-        "data": {
-            "title": "Todavía tenemos más aportaciones de valor pensadas para ti",
-            "claim": "En Instituto de Innovación, Ciencia y Empresa no paramos de pensar cómo mejorar nuestra oferta de valor cada día y, en este caso, para que puedas aprovechar al máximo esta experiencia, tenemos dos aportaciones adicionales incluidas el paquete de servicios:",
-            "buttonText": "Reserva un demo personal",
-            "aportaciones": [
-                {
-                    "image": "IICE_LandingCompliance_Bitacora.svg",
-                    "imageBackground": "hielo2.png",
-                    "title": "Bitácora de NormaPro",
-                    "claim": "La guía que necesitas para aplicar nuestra metodología. Implenta con éxito el Modelo más avanzado de cumplimiento.",
-                    "pragma": "Tendrás a tu disposición contenidos muy valiosos en forma de guías y artículos técnicos para que comprendas cada nuevo paso, así como plantillas de documentos y vídeos tutoriales con las mismas temáticas que trataréis en directo con nuestros consultores. Podrás volver a verlas cuantas veces quieras en el momento que te apetezca."
-                },
-                {
-                    "image": "IICE_LandingCompliance_Expertos.png",
-                    "imageBackground": "hielo5.png",
-                    "title": "El Cuadro de Expertos",
-                    "claim": "Muy valorado y utilizado por todos nuestros clientes",
-                    "items": [
-                        "Tendréiss acceso ilimitado desde el primer día.",
-                        "Ellos estarán ahí los 365 días del año para ayudarte.",
-                        "Resuelve tus dudas.",
-                        "Pídeles opinión."
-                    ]
-                },
-                {
-                    "image": "IICE_Academia_FormaPro.png",
-                    "imageBackground": "hielo2.png",
-                    "title": "Academia FormaPro",
-                    "claim": "Una selección de cursos y conferencias pensados para facilitar las cosas",
-                    "items": [
-                        "Para conocer un detalle la normativa sin perder tiempo",
-                        "Para transmitirse los consejos más prácticos",
-                        "Para sacarle el máximo partido a tu canal de denuncias.",
-                        "Para conocer todo lo que puede hacer por ti la Plataforma Digital NormaPro "
-                    ],
-                    "buttonText": "Descubre los cursos gratuitos"
-                }
-            ]
-        }
-    },
-    {
-        "id": 21,
-        "tipo": "CertificacionesSection",
-        "data": {
-            "title": "Calidad y seguridad certificada",
-            "subtitle": "Nuestros productos y servicios cuentan con certificación de AENOR:",
-            "images": [
-                "27001.png",
-                "9001.png",
-                "45001.png",
-                "iqnet.png",
-                "iqnet.png",
-                "qaec.png"
-            ]
-        }
-    },
-    {
-        "id": 22,
-        "tipo": "NecesidadesSection",
-        "data": {
-            "imgBackground": "hielo4.png",
-            "image": "IICE_NormaPro1.png",
-            "title": "Ahora piensa:",
-            "subtitle": "¿Cuánto tiempo vas a dedicarle a implantar un sistema de gestión del cumplimiento?",
-            "titlelist": "Para ello necesitas:",
-            "claim": "Descubrir por ti mismo cómo funciona el ordenamiento jurídico en este ámbito. Y no se trata solo de diseñar un modelo, sino de todos los pasos que necesitas dar para que finalmente consigas implantarlo, ponerlo en marcha y que se mantenga funcionando en el tiempo gracias a que tu equipo ha integrado los hábitos necesarios para que os aporte la tranquilidad que necesitas."
-        }
-    },
-    {
-        "id": 23,
-        "tipo": "ClavesSection",
-        "data": {
-            "title": "4 claves indispensables para organizar y automatizar tareas de cumplimiento",
-            "claves": [
-                {
-                    "image": "IICE_LandingCompliance_automatizar_tareas1.svg",
-                    "claim": "Conocer a fondo toda la información relativa a cada actividad, área o departamento."
-                },
-                {
-                  "image": "IICE_LandingCompliance_automatizar_tareas2.svg",
-                    "claim": "Saber qué norma es aplicable a cada caso concreto y cual no, tenerla toda inventariada y accesible."
-                },
-                {
-                    "image": "IICE_LandingCompliance_automatizar_tareas3.svg",
-                    "claim": "Discernir qué evidencias hemos de tener disponibles."
-                },
-                {
-                    "image": "IICE_LandingCompliance_automatizar_tareas4.svg",
-                    "claim": "Estar preparado en todo momento para dar la respuesta adecuada ante una auditoría, inspección o accidente."
-                }
-            ]
-        }
-    },
-    {
-        "id": 24,
-        "tipo": "TextSection",
-        "data": {
-        "background": "white",
-        "level2": [
-            "",
-            "¿Te haces una idea de cuánto tiempo necesitas invertir en todo esto?\n\n¿Cuántas horas piensas que serán tiempo perdido porque en realidad aún no tenéis identificadas las fuentes normativas, ni el método concreto que vais a seguir para coordinar toda la actividad que el cumplimiento conlleva, ni los recursos que vais a necesitar para mantenerlo todo actualizado?\n\n¿Cuándo vas a encontrar el momento adecuado para poner un plan de control del cumplimiento normativo en marcha en medio de vuestras labores propias de producción?\n\n¿Cómo sabrás quién de tu organización está realizando las tareas asignadas de cumplimiento y quién está comprometiendo la reputación de la compañía por una actitud impropia?\n\n¿Cómo mantener toda esta información tan valiosa a salvo de bajas o sustituciones?"
-        ]
-        }
-    },
-    {
-        "id": 25,
-        "tipo": "TextSection",
-        "data": {
-            "background": "white",
-            "level5": [
-                "La mayor parte de las empresas no encuentran todo ese tiempo."
-            ],
-            "level8": [
-                "Tiempo que, realmente, lo necesitas para no desviarte de tus objetivos de producción ya que sabes que nunca vas a poder recuperarlo y que vale mucho más que el precio que cuesta el paquete de servicios que te ofrecemos para establecer entre los miembros de tu plantilla los hábitos de cumplimiento necesarios que estarán alineados con vuestros procesos y ayuden a mejorar vuestros resultados."
-            ],
-            "buttonText": "Quiero una demostración"
-        }
-    },
-    {
-        "id": 26,
-        "tipo": "ClientPerceptionSection",
-        "data": {
-            "id_testimonio": 9,
-            "items": [
-                "",
-                "No lo pensaría dos veces y contrataría sin dudarlo",
-                "",
-                "Nuestro método te contará de golpe todo lo que necesitas saber para conseguir implementar un sistema ágil y eficaz de cumplimiento normativo combinado con una plataforma digital que coordine toda la actividad, la integre en vuestros procesos y eliminarás tiempos y costes adicionales."
-            ],
-            "secondtitle": "Evita dar palos de ciego.\nTu tiempo y tu tranquilidad es lo primero.",
-            "pragma": "Piensa que la metodología y el software va a correr a cargo de un reconocido equipo consultor con años de experiencia y que ha trabajado con empresas de las más importantes.",
-            "secondsupertitle": "¿Cuándo empezamos?"
-        }
-    },
-    {
-        "id": 27,
-        "tipo": "PorcentajesSection",
-        "data": {
-            "title": "¿Por qué deberías acceder a este programa?",
-            "subtitle": "Porque cientos de empresas son sancionadas por diversos motivos cada día y porque creemos firmemente que implementando el Modelo Avanzado de gestión del cumplimiento NormaPro tendrás sensación de tranquilidad y seguridad.",
-            "claim": "El problema es que la mayoría de las empresas no disponen de una metodología que sea capaz de integrar hábitos de cumplimiento en su plantilla ya que, o no dedican los recursos necesarios o los que disponen se pierden en un consumo excesivo de tiempo y tareas improductivas que no consiguen evitar consecuencias desagradables cuando se encuentran con una inspección o se produce un incidente.",
-            "pragma": "Nosotros no queremos que esto te ocurra a ti y de hecho las empresas que ya tienen el Modelo Avanzado NormaPro ahora mismo tienen a su personal sensibilizado y sus Sistemas de gestión funcionando en piloto automático.",
-            "datos": [
-                {
-                  "porcentaje": "20%",
-                    "claim": [
-                        "En materia de",
-                        "prevención de riesgos en el trabajo",
-                        "el Gobierno español aumentará un 20% la presión a las empresas que irán desde 49.141 euros hasta 982.914 euros."
-                    ]
-                },
-                {
-                    "porcentaje": "57%",
-                    "claim": [
-                        "",
-                        "La vulneración de las normativas europeas en materia de medio ambiente",
-                        "ha ascendido un 57% en tan solo cinco años y, en su mayor parte, estas infracciones están relacionadas con la festión de residuos y vertidos, lo que ha hecho que las autoridades competentes de la Unión Europea aumenten sus acciones de control, detección y denuncia."
-                    ]
-                }
-            ]
-        }
-    },
-    {
-        "id": 28,
-        "tipo": "SideTextSection",
-        "data": {
-            "title": "El propósito de Instituto de Innovación, Ciencia y Empresa es el de democratizar el Cumplimiento normativo alineado con la Transformación digital de las organizaciones y así contribuir de forma significativa a su éxito empresarial.",
-            "claim": "El disponer de una metodología bien estructurada, unos recursos tecnológicos muy evolucionados y hacer las sesiones online nos permiten poder ofertar todo este paquete de servicios por una cuota mensual más que razonable que dependerá del tamaño de tu empresa y los alcances normativos que más te preocupen controlar en este momento.",
-            "pragma": "Si quieres conocer la cantidad de esta cuota te invito a que cumplimentes un sencillo y escueto cuestionario de apenas 5 preguntas. En uno o dos días tendrás en tu correo el coste muy aproximado.",
-            "buttonText": "Cumplimentar cuestionario"
-        }
-    },
-    {
-        "id": 29,
-        "tipo": "ResumenSection",
-        "data": {
-            "imgCabecera": "IICE_LandingCompliance_medalla.svg",
-            "imgBackground": "hielo2.png",
-            "title": "Nuestros servicios están garantizados",
-            "claim": "",
-            "titlelist": "",
-            "list": [
-                {
-                    "icon": "",
-                    "title": "",
-                    "pragma": "No hay compromiso de permanencia, es decir, si una vez arrancado el programa veis que no os convence o que por cualquier circunstancia sentís que no avanzáis no pasa nada, puedes interrumpir el servicio tan solo con comunicárnoslo y listo; así que riesgo cero.\n\nDe cualquier manera, intuimos que esto no va a ocurrir. Hace 9 años que diseñamos la primera versión de este programa y, a día de hoy, ningún cliente nos ha solicitado la baja. Increible ¿no?"
-                }
-            ],
-            "cta": {
-                "title": "",
-                "buttonText": "",
-                "pragma": ""
-            }
-        }
-    },
-    {
-        "id": 30,
-        "tipo": "ResumenSection",
-        "data": {
-            "imgCabecera": "IICE_FormaPro_NormaPro.png",
-            "imgBackground": "hielo1.png",
-            "title": "Confianza para inversores",
-            "claim": "",
-            "titlelist": "",
-            "list": [
-                {
-                    "icon": "",
-                    "title": "",
-                    "pragma": "Hay clientes que nos manifiestan que están muy pendientes de la cotización de sus acciones y que buscan con la plataforma digital NormaPro la clave que necesitan para conseguir una organización más transparente, visible, ordenada y eficiente desde todos los puntos de vista y donde los parámetros de valoración de su compañía se disparan."
-                }
-            ],
-            "cta": {
-                "title": "",
-                "buttonText": "",
-            "pragma": ""
-            }
-        }
-    },
-    {
-        "id": 31,
-        "tipo": "TextSection" ,
-        "data": {
-            "background": "gray", 
-            "level4": [
-                "Ahora te toca a ti elegir. Es el momento de tomar decisiones, de dar el paso hacia la tranquilidad. Puedes recoger toda la información que te vamos a regalar en la reunión demo y empezar a caminar tú solo.\n\nContrata nuestro programa NormaPro y ábrenos la puerta para que te acompañemos en este camino que debería llevarte a disponer del Modelo más avanzado de gestión del cumplimiento normativo y conseguir tenerlo todo bajo control."
-            ],
-            "buttonText": "Reserva una sesión estratégica"
-        }
-    },
-    {
-        "id": 32,
-        "tipo": "FaqSection",
-        "data": {
-            "faqs": [
-                {
-                    "question": "¿Qué es exactamente el Compliance Penal y por qué mi pequeña empresa lo necesita?",
-                    "answer": [
-                        "El Compliance Penal se refiere al conjunto de políticas y procedimientos que tu empresa implementa para actuar siempre en conformidad con las normativas penales vigentes. Incluso las pequeñas empresas se benefician al evitar sanciones legales, proteger su reputación y crear un ambiente de trabajo ético y seguro."
-                    ]
-                },
-                {
-                    "question": "¿Es obligatorio tener un programa de Compliance Penal? ",
-                    "answer": [
-                        "Aunque el Compliance penal puede no ser estrictamente obligatorio para todas las empresas, implementarlo proactivamente significa asegurarte de que tu negocio opera de manera ética y legal, minimizando cualquier riesgo de incurrir en responsabilidades penales y las sanciones correspondientes."
-                    ]
-                },
-                {
-                    "question": "¿Cómo saber si mi empresa está en riesgo de incumplir normativas penales? ",
-                    "answer": [
-                        "Identificar riesgos penales involucra evaluar todos los aspectos de tu operación empresarial, desde relaciones laborales hasta transacciones financieras. Nuestro programa de Compliance ayuda a destacar áreas de riesgo y a implementar medidas preventivas."
-                    ]
-                },
-                {
-                    "question": "¿Cómo el programa de Compliance afectará la operatividad diaria de mi negocio?",
-                    "answer": [
-                        "El programa está diseñado para integrarse paso a paso a paso en las operaciones diarias y, después de un período inicial de formación y ajuste, debería operar como una parte esencial pero discreta de tu negocio, promoviendo una operativa más segura y eficiente."
-                    ]
-                },
-                {
-                    "question": "¿Es el programa de Compliance Penal asequible para pequeños negocios? ",
-                    "answer": [
-                        "Sí, adaptamos nuestro programa a la escala y necesidades de tu empresa, asegurando que obtienes los beneficios del Compliance penal de una manera coste-efectiva y provechosa. Puedes volver en esta página a los tres niveles que tenemos establecidos, pero ¡Ojo! los aplicaremos siempre bajo un principio de proporcionalidad, no hay que volverse loco."
-                    ]
-                },
-                {
-                    "question": "¿Cómo me aseguro de que todo mi equipo comprenda y siga las pautas de Compliance?",
-                    "answer": [
-                        "A través de nuestro módulo de Formación, Comunicación y Sensibilización, aseguramos que tu equipo no solo entienda, sino que también interiorice la importancia y práctica del Compliance, creando una cultura corporativa de cumplimiento y ética."
-                    ]
-                },
-                {
-                    "question": "¿Cómo se identifican y gestionan los riesgos en el programa de Compliance? ",
-                    "answer": [
-                        "Mediante una evaluación de riesgos exhaustiva, identificamos áreas vulnerables, creamos un mapa de riesgos y establecemos controles y procedimientos específicos para mitigarlos, asegurando que tu negocio esté protegido."
-                    ]
-                },
-                {
-                    "question": "¿Qué sucede si mi empresa tiene una infracción durante o después de la implementación del programa?",
-                    "answer": [
-                        "La implementación de un programa de Compliance penal refuerza la posición de tu empresa ante posibles infracciones, demostrando una proactividad y compromiso con el cumplimiento normativo. Aun así, en caso de infracciones, trabajamos contigo para analizar lo ocurrido, corregirlo y fortalecer el programa para futuras prevenciones."
-                    ]
-                },
-                {
-                    "question": "¿Cuánto tiempo se tarda en implementar el programa de Compliance Penal? ",
-                    "answer": [
-                        "El tiempo de implementación puede variar según el tamaño y complejidad de tu empresa. Nos esforzamos por hacer el proceso lo más eficiente y menos intrusivo posible, asegurando que tu negocio puede seguir operando sin interrupciones significativas. Te aconsejamos que agendes una reunión con nosotros y podremos estudiar tu caso concreto sin compromiso alguno."
-                    ]
-                },
-                {
-                    "question": "¿Cómo ayuda el Planning Anual en la gestión del Compliance a lo largo del tiempo? ",
-                    "answer": [
-                        "El Planning Anual te proporciona una hoja de ruta clara de las actividades y revisiones de Compliance, asegurando que todos los elementos del programa estén actualizados y adaptándose a cualquier cambio en tu negocio y teniendo en cuenta la legislación aplicable."
-                    ]
-                },
-                {
-                    "question": "¿Qué tipo de apoyo y seguimiento se proporciona después de la implementación del programa?",
-                    "answer": [
-                        "Proporcionamos un seguimiento continuo y actualizaciones periódicas para asegurarnos de que tu programa de Compliance penal sigue siendo robusto y relevante, ayudándote a navegar a través de cualquier cambio en la legislación o en las condiciones de tu negocio."
-                    ]
-                },
-                {
-                    "question": "¿En qué se diferencia este programa para pequeñas empresas de los programas para empresas más grandes? ",
-                    "answer": [
-                        "Nuestro programa para pequeñas empresas está diseñado para ser accesible, fácil de implementar y específicamente ajustado a las necesidades y recursos de los negocios más pequeños, sin sacrificar la efectividad en la gestión del Compliance penal."
-                    ]
-                },
-                {
-                    "question": "¿Cómo puede ayudarme su programa de Compliance Penal a obtener la certificación UNE 19601 y cuál es su importancia?",
-                    "answer": [
-                        "La certificación UNE 19601 establece los requisitos para implementar y operar un sistema de gestión de Compliance penal eficaz, ayudando a las empresas a prevenir y detectar delitos. Nuestro programa de Compliance Penal está diseñado siguiendo las directrices y requerimientos de la norma UNE 19601, lo que facilita que tu empresa no solo esté alineada con las mejores prácticas en materia de prevención de riesgos penales, sino que también esté preparada para obtener esta certificación si decides hacerlo. La obtención de la certificación UNE 19601 es un reconocimiento de la robustez y eficacia de tu sistema de gestión de Compliance penal y refuerza la imagen de tu empresa como una entidad comprometida con la ética y el cumplimiento legal."
-                    ]
-                },
-                {
-                    "question": "¿Cómo se involucra mi equipo en el proceso de Compliance Penal? ",
-                    "answer": [
-                        "Tu equipo será una parte integral del proceso, participando en la formación, implementando nuevas políticas y procedimientos, y potencialmente asumiendo roles de Compliance. La colaboración y el compromiso de tu equipo son clave para el éxito del programa."
-                    ]
-                }
-            ]
         }
     }
 ]
