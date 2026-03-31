@@ -35,5 +35,9 @@ export { default as DesgraneSection } from "./DesgraneSection"
 export { default as SimpleClientPerceptionSection } from "./SimpleClientPerceptionSection";
 export { default as NecesidadesSection } from "./NecesidadesSection";
 export { default as AportacionesSection2 } from "./AportacionesSection2";
-
 export { default as MultipleEtapasSection } from "./MultipleEtapasSection";
+export { default as ListHistoriaSection } from "./ListHistoriaSection";
+export { default as ListColumnsSection } from "./ListColumnsSection";
+export { default as HistoriaTextSection } from "./HistoriaTextSection";
+export { default as HistoriaClienteSection } from "./HistoriaClienteSection";
+export { default as DescargaInformeSection } from "./DescargaInformeSection";

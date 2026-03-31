@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "tipo": "ListColumnSection",
+        "tipo": "ListColumnsSection",
         "data": {
             "list": [
                 {
