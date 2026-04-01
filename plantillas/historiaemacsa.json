@@ -38,6 +38,7 @@
         "id": 4,
         "tipo": "ListHistoriaSection",
         "data": {
+            "title": "¿Por qué es un éxito?",
             "titlelist": "El proyecto con EMACSA es considerado un éxito notable por:",
             "list": [
                 {
