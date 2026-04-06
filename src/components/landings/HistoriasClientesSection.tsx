@@ -7,6 +7,11 @@ import { HistoriaCliente } from '@/types/historiaCliente';
 
 const FALLBACK_IMAGE = '/main/sistema.png';
 
+const resolveHistoriaImage = (image: string | null): string => {
+  if (!image) return FALLBACK_IMAGE;
+  return image.startsWith('/') ? image : `/${image}`;
+};
+
 const HistoriasClientesSection = () => {
   const [historias, setHistorias] = useState<HistoriaCliente[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -64,7 +69,7 @@ const HistoriasClientesSection = () => {
               <div
                 className="relative h-[190px] bg-cover bg-center"
                 style={{
-                  backgroundImage: `linear-gradient(rgba(16, 34, 83, 0.32), rgba(16, 34, 83, 0.32)), url(${historia.imagen || FALLBACK_IMAGE})`,
+                  backgroundImage: `linear-gradient(rgba(16, 34, 83, 0.32), rgba(16, 34, 83, 0.32)), url(${resolveHistoriaImage(historia.imagen)})`,
                 }}
               >
                 <h3 className="absolute bottom-6 left-6 right-6 text-white text-[30px] leading-none md:text-[40px] font-black">
