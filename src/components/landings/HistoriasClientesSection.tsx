@@ -9,7 +9,19 @@ const FALLBACK_IMAGE = '/main/sistema.png';
 
 const resolveHistoriaImage = (image: string | null): string => {
   if (!image) return FALLBACK_IMAGE;
-  return image.startsWith('/') ? image : `/${image}`;
+
+  // Permite URLs externas tal cual.
+  if (image.startsWith('http://') || image.startsWith('https://')) {
+    return image;
+  }
+
+  // Si ya viene como ruta absoluta del public, la usamos directamente.
+  if (image.startsWith('/')) {
+    return image;
+  }
+
+  // Si en BD se guarda solo el nombre del archivo, asumimos carpeta public/historiasclientes.
+  return `/historiasclientes/${image}`;
 };
 
 const HistoriasClientesSection = () => {
@@ -43,7 +55,7 @@ const HistoriasClientesSection = () => {
   }, []);
 
   return (
-    <section className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <section className="max-w-[1600px] mx-auto py-12 px-4 sm:px-6 lg:px-10">
       <div className="text-center mb-10">
         <h2 className="text-[34px] leading-tight md:text-[48px] font-black text-[#010d3d]">
           Exitos que inspiran
@@ -60,25 +72,25 @@ const HistoriasClientesSection = () => {
       ) : historias.length === 0 ? (
         <p className="text-center text-gray-500">Aun no hay historias disponibles.</p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 w-full">
           {historias.map((historia) => (
             <article
               key={historia.id}
               className="bg-[#e7e8ef] rounded-2xl overflow-hidden flex flex-col"
             >
               <div
-                className="relative h-[190px] bg-cover bg-center"
+                className="relative h-[250px] bg-cover bg-center"
                 style={{
                   backgroundImage: `linear-gradient(rgba(16, 34, 83, 0.32), rgba(16, 34, 83, 0.32)), url(${resolveHistoriaImage(historia.imagen)})`,
                 }}
               >
-                <h3 className="absolute bottom-6 left-6 right-6 text-white text-[30px] leading-none md:text-[40px] font-black">
+                <h3 className="absolute bottom-6 left-6 right-6 text-white text-[30px] leading-none md:text-[35px] font-black">
                   {historia.nombre}
                 </h3>
               </div>
 
               <div className="px-5 py-5 flex flex-col flex-1">
-                <p className="text-[#071a4c] text-[19px] leading-snug">
+                <p className="text-[#071a4c] text-[20px] leading-snug mb-5 font-bold">
                   {historia.descripcion || 'Proximamente mas detalles de esta historia.'}
                 </p>
 
@@ -86,7 +98,7 @@ const HistoriasClientesSection = () => {
 
                 <Link
                   href={`/historias/${historia.id}`}
-                  className="text-left text-[#071a4c] font-black text-[28px] underline underline-offset-4"
+                  className="text-left text-[#071a4c] font-extrabold text-[20px] underline underline-offset-4 mt-3"
                 >
                   Saber mas
                 </Link>
