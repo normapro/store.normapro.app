@@ -1,5 +1,6 @@
-import archivo from "../../../../plantillas/historiasdemo.json";
+import archivo from "../../../../plantillas/historiaemacsa.json";
 import LandingBuilder from '@/components/LandingBuilder';
+import PresentacionHistoria from "@/components/landings/PresentacionHistoria";
 import API_ENDPOINTS from '@/config/api';
 
 type HistoriaPageProps = {
@@ -11,6 +12,7 @@ type HistoriaPageProps = {
 type HistoriaPayload = {
 	id: number;
 	nombre: string;
+	descripcion: string;
 	componentes: unknown;
 };
 
@@ -44,6 +46,7 @@ const getHistoriaById = async (historiaId: string): Promise<HistoriaPayload | nu
 	return {
 		id: Number(historiaId) || 1,
 		nombre: 'Historia demo',
+		descripcion: 'Descripcion demo',
 		componentes: archivo,
 	};
 };
@@ -71,5 +74,16 @@ export default async function HistoriaPage({ params }: HistoriaPageProps) {
 		);
 	}
 
-	return <LandingBuilder bloques={bloques} />;
+	return (
+		<>
+			{/* Añadimos el componente de presentación aquí */}
+			{PresentacionHistoria(
+				data.id,
+				data.nombre,
+				data.descripcion
+			)}
+
+			<LandingBuilder bloques={bloques} />
+		</>
+	);
 }
