@@ -3,8 +3,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { useState } from "react";
+import Formulario from "@/components/Formulario"
 
 const Footer = () => {
+	const [openModal, setOpenModal] = useState(false);
+
 	return (
 		<footer className="mt-20 font-[Mulish]">
 			{/* Bloque azul */}
@@ -64,7 +68,9 @@ const Footer = () => {
 								<Link href="/partners">Programa de Partners</Link><br />
 								<Link href="/trabaja">Trabaja en NormaPro</Link><br />
 								<Link href="/politicas">Políticas</Link><br />
-								<Link href="/contacto">Contacto</Link><br />
+								<a onClick={() => setOpenModal(true)}>
+									Contacto
+								</a><br />
 							</div>
 						</div>
 
@@ -141,6 +147,11 @@ const Footer = () => {
 					</div>
 				</div>
 			</div>
+
+			{/* Formulario de contacto */}
+			{openModal && (
+				<Formulario onClose={() => setOpenModal(false)} />
+			)}
 		</footer>
 	);
 };
