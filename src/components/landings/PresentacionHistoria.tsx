@@ -1,8 +1,14 @@
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
-const PresentacionHistoria = (idCliente: number, nombre: string, descripcion: string) => {
+type PresentacionHistoriaProps = {
+    logo: string;
+    clienteNombre: string;
+    nombre: string;
+    descripcion: string;
+};
+
+const PresentacionHistoria = ({ logo, clienteNombre, nombre, descripcion }: PresentacionHistoriaProps) => {
     return (
         <section className="bg-[#f2f2f5] min-h-[600px] flex flex-col items-center justify-between py-10 px-8">
             
@@ -10,8 +16,8 @@ const PresentacionHistoria = (idCliente: number, nombre: string, descripcion: st
             <div className="w-full max-w-7xl flex justify-start">
                 <div className="bg-white p-4 shadow-sm">
                     <img 
-                        src={`/logos/${cliente.logo}`} 
-                        alt="Logo Bosch" 
+                        src={`/logos/${logo}`} 
+                        alt={`Logo de ${clienteNombre}`} 
                         className="h-10 md:h-12 w-auto object-contain"
                     />
                 </div>

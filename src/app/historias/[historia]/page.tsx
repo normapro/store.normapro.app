@@ -1,4 +1,3 @@
-import archivo from "../../../../plantillas/historiaemacsa.json";
 import LandingBuilder from '@/components/LandingBuilder';
 import PresentacionHistoria from "@/components/landings/PresentacionHistoria";
 import API_ENDPOINTS from '@/config/api';
@@ -11,10 +10,23 @@ type HistoriaPageProps = {
 
 type HistoriaPayload = {
 	id: number;
-	nombre: string;
-	descripcion: string;
+	id_cliente?: number | null;
+	nombre?: string | null;
+	descripcion?: string | null;
 	componentes: unknown;
 };
+
+type ClientePayload = {
+	id_cliente: number;
+	logo?: string | null;
+	description?: string | null;
+	descripcion?: string | null;
+};
+
+const FALLBACK_HISTORIA_NOMBRE = 'Historia demo';
+const FALLBACK_HISTORIA_DESCRIPCION = 'Descripcion demo';
+const FALLBACK_CLIENTE_NOMBRE = 'Cliente demo';
+const FALLBACK_CLIENTE_LOGO = 'NormaPro_Horizontal_Color@2x.png';
 
 const parseBloques = (componentes: unknown): any[] => {
 	if (Array.isArray(componentes)) return componentes;
@@ -30,7 +42,6 @@ const parseBloques = (componentes: unknown): any[] => {
 };
 
 const getHistoriaById = async (historiaId: string): Promise<HistoriaPayload | null> => {
-	/*
 	const response = await fetch(`${API_ENDPOINTS.HISTORIAS}/${historiaId}`, {
 		next: { revalidate: 0 },
 	});
@@ -41,14 +52,21 @@ const getHistoriaById = async (historiaId: string): Promise<HistoriaPayload | nu
 	}
 
 	return response.json();
-	*/
+};
 
-	return {
-		id: Number(historiaId) || 1,
-		nombre: 'Historia demo',
-		descripcion: 'Descripcion demo',
-		componentes: archivo,
-	};
+const getClienteById = async (clienteId?: number | null): Promise<ClientePayload | null> => {
+	if (!clienteId) return null;
+
+	const response = await fetch(`${API_ENDPOINTS.CLIENTES}/${clienteId}`, {
+		next: { revalidate: 0 },
+	});
+
+	if (response.status === 404) return null;
+	if (!response.ok) {
+		throw new Error('Error al cargar cliente');
+	}
+
+	return response.json();
 };
 
 export default async function HistoriaPage({ params }: HistoriaPageProps) {
@@ -64,11 +82,16 @@ export default async function HistoriaPage({ params }: HistoriaPageProps) {
 	}
 
 	const bloques = parseBloques(data.componentes);
+	const cliente = await getClienteById(data.id_cliente);
+	const nombreHistoria = data.nombre?.trim() || FALLBACK_HISTORIA_NOMBRE;
+	const descripcionHistoria = data.descripcion?.trim() || FALLBACK_HISTORIA_DESCRIPCION;
+	const nombreCliente = cliente?.description?.trim() || cliente?.descripcion?.trim() || FALLBACK_CLIENTE_NOMBRE;
+	const logoCliente = cliente?.logo?.trim() || FALLBACK_CLIENTE_LOGO;
 
 	if (bloques.length === 0) {
 		return (
 			<main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-				<h1 className="text-3xl font-bold text-[#010d3d]">{data.nombre}</h1>
+				<h1 className="text-3xl font-bold text-[#010d3d]">{nombreHistoria}</h1>
 				<p className="mt-4 text-gray-600">Esta historia aun no tiene componentes configurados , mete el json en la bd.</p>
 			</main>
 		);
@@ -76,12 +99,12 @@ export default async function HistoriaPage({ params }: HistoriaPageProps) {
 
 	return (
 		<>
-			{/* Añadimos el componente de presentación aquí */}
-			{PresentacionHistoria(
-				data.id,
-				data.nombre,
-				data.descripcion
-			)}
+			<PresentacionHistoria
+				logo={logoCliente}
+				clienteNombre={nombreCliente}
+				nombre={nombreHistoria}
+				descripcion={descripcionHistoria}
+			/>
 
 			<LandingBuilder bloques={bloques} />
 		</>
