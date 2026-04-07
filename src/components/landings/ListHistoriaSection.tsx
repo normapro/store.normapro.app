@@ -13,7 +13,7 @@ type Props = {
     title?: string;
     claim?: string[];
     titlelist?: string;
-    list: Elemento[],
+    list?: Elemento[],
     image?: string;
     pragma?: string[];
 }
@@ -54,19 +54,21 @@ const ListHistoriaSection: FC<Props> = ({
             )}
 
             {/* Lista */}
-            <ul className="space-y-6 mb-16 w-full">
-                {list.map((item, index) => (
-                    <li key={index} className="flex items-start gap-4">
-                        <div className="text-[#011640] text-xl mt-1 shrink-0">
-                            <FontAwesomeIcon icon={faCheckCircle} />
-                        </div>
-                        <p className="text-base md:text-lg text-[#011640] font-medium leading-tight">
-                            <span className="font-bold">{item.title}</span> 
-                            {item.claim && <span> {item.claim}</span>}
-                        </p>
-                    </li>
-                ))}
-            </ul>
+            {list && list.length > 0 && (
+                <ul className="space-y-6 mb-16 w-full">
+                    {list.map((item, index) => (
+                        <li key={index} className="flex items-start gap-4">
+                            <div className="text-[#011640] text-xl mt-1 shrink-0">
+                                <FontAwesomeIcon icon={faCheckCircle} />
+                            </div>
+                            <p className="text-base md:text-lg text-[#011640] font-medium leading-tight">
+                                <span className="font-bold">{item.title}</span>
+                                {item.claim && <span> {item.claim}</span>}
+                            </p>
+                        </li>
+                    ))}
+                </ul>
+            )}
 
             {/* Imagen */}
             {image && (

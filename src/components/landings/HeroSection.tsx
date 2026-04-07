@@ -4,12 +4,12 @@ import Formulario from "@/components/Formulario";
 import Lottie from "lottie-react";
 
 type HeroSectionProps = {
-  title: string;
-  claim: string[];
-  pragma: string[];
-  cta: string;
-  imgType: "lottie" | "img";
-  imgUrl: string;
+  title?: string;
+  claim?: string[];
+  pragma?: string[];
+  cta?: string;
+  imgType?: "lottie" | "img";
+  imgUrl?: string;
   backgroundImg?: string;
   backgroundRepeat?: string;
   backgroundSize?: string;
@@ -18,11 +18,11 @@ type HeroSectionProps = {
 
 const HeroSection: React.FC<HeroSectionProps> = ({
   title,
-  claim,
-  pragma,
+  claim = [],
+  pragma = [],
   cta,
-  imgType,
-  imgUrl,
+  imgType = "img",
+  imgUrl = "",
   backgroundImg,
   backgroundRepeat = "no-repeat",
   backgroundSize = "cover",
@@ -52,27 +52,33 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   return (
     <section className="max-w-7xl mx-auto w-full px-6 py-12 flex flex-col-reverse lg:flex-row items-center justify-between gap-8">
       <div className="flex-1">
-        <h4 className="text-[30px] font-[900] text-gray-500 mb-2">{title}</h4>
-        <h1 className="text-[43px] font-[900] leading-snug mb-4">
-          {claim.map((text, i) => (
-            <span key={i} style={{ color: colors[i % colors.length] }}>
-              {text + " "}
-            </span>
-          ))}
-        </h1>
-        <p className="text-lg text-[#010d3d] mb-6">
-          {pragma.map((text, i) => (
-            <span key={i} style={{ fontWeight: weights[i % weights.length] }}>
-              {text + " "}
-            </span>
-          ))}
-        </p>
-        <button
-          onClick={() => setOpenModal(true)}
-          className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition"
-        >
-          {cta}
-        </button>
+        {title && <h4 className="text-[30px] font-[900] text-gray-500 mb-2">{title}</h4>}
+        {claim.length > 0 && (
+          <h1 className="text-[43px] font-[900] leading-snug mb-4">
+            {claim.map((text, i) => (
+              <span key={i} style={{ color: colors[i % colors.length] }}>
+                {text + " "}
+              </span>
+            ))}
+          </h1>
+        )}
+        {pragma.length > 0 && (
+          <p className="text-lg text-[#010d3d] mb-6">
+            {pragma.map((text, i) => (
+              <span key={i} style={{ fontWeight: weights[i % weights.length] }}>
+                {text + " "}
+              </span>
+            ))}
+          </p>
+        )}
+        {cta && (
+          <button
+            onClick={() => setOpenModal(true)}
+            className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition"
+          >
+            {cta}
+          </button>
+        )}
       </div>
 
       <div className="flex-1 flex justify-center " >
@@ -82,8 +88,22 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           >
             <Lottie animationData={animationData} loop={true}  />
           </div>
-        ) : imgType === "img" ? (
-          <img src={finalUrl} alt="hero visual" className="max-w-md w-full h-auto" />
+        ) : imgType === "img" && finalUrl ? (
+          <div
+            className="max-w-md w-full h-auto"
+            style={
+              backgroundImg
+                ? {
+                    backgroundImage: `url(/${backgroundImg})`,
+                    backgroundSize,
+                    backgroundPositionX,
+                    backgroundRepeat,
+                  }
+                : undefined
+            }
+          >
+            <img src={finalUrl} alt="hero visual" className="max-w-md w-full h-auto" />
+          </div>
         ) : null}
       </div>
 
