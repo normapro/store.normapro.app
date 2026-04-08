@@ -20,7 +20,7 @@ const iconMap: Record<string, any> = {
 };
 
 type Bloque = {
-  icon: string;
+  icon?: string;
   title: string;
   pragma: string;
 };
@@ -83,8 +83,10 @@ const ResumenSection: FC<Props> = ({
         <div className="flex flex-col gap-8">
           {list.map((item, i) => (
             <div key={i} className="flex items-start gap-4">
-              <div className="text-[#010d3d] text-2xl mt-1">
-                <FontAwesomeIcon icon={iconMap[item.icon]} className="fa-duotone" />
+              <div className="text-[#010d3d] text-2xl mt-1 min-w-6">
+                {item.icon && iconMap[item.icon] && (
+                  <FontAwesomeIcon icon={iconMap[item.icon]} className="fa-duotone" />
+                )}
               </div>
               <div>
                 {item.title.length > 0 && (<h4 className="text-xl font-black text-[#010d3d] mb-2">

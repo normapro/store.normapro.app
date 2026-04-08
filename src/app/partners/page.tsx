@@ -1,7 +1,3 @@
-import MainTestimoniosSection from "@/components/MainTestimoniosSection";
-import CertificacionesSection from "@/components/landings/CertificacionesSection";
-import TextSection from "@/components/landings/TextSection";
-import HeroSection from "@/components/landings/HeroSection";
 import ListHistoriaSection from "@/components/landings/ListHistoriaSection";
 import HistoriaTextSection from "@/components/landings/HistoriaTextSection";
 import HistoriaTextSection2 from "@/components/historiaTextSection2";

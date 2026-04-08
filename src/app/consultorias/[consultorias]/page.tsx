@@ -10,7 +10,7 @@ async function getConsultoria(slug: string) {
 }
 
 // ✅ Tipos compatibles con Next.js 15+
-type Params = { consultoria: string };
+type Params = { consultorias: string };
 type SearchParams = { [key: string]: string | string[] | undefined };
 
 export default async function Page({
@@ -20,8 +20,8 @@ export default async function Page({
   params: Params;
   searchParams: SearchParams;
 }) {
-  const { consultoria } = await params; // 👈 Esto evita el warning oficial
-  const data = await getConsultoria(consultoria);
+  const { consultorias } = await params; // 👈 Esto evita el warning oficial
+  const data = await getConsultoria(consultorias);
 
   return (
     <> 
