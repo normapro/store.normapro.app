@@ -121,15 +121,16 @@ const ObstaculosYSolucionesSection: FC<Props> = ({ imgBackground, image, title, 
       {/* Tabla horizontal sin separación entre columnas */}
       <div
         className="grid grid-cols-1 md:[grid-template-columns:repeat(var(--cols),minmax(0,1fr))] w-full border-2 border-gray-300 rounded-2xl overflow-hidden mb-12 divide-y md:divide-y-0 md:divide-x divide-2 divide-gray-300"
-        style={{ "--cols": table.length, backgroundColor: bgTableColor }}
+        style={{ ['--cols' as string]: table.length, backgroundColor: bgTableColor }}
       >
         {table.map((celda, index) => {
           const isFirst = index === 0;
           const isLast = index === table.length - 1;
+          const cellKey = `${celda.idcelda ?? 'no-id'}-${celda.title}-${index}`;
 
           return (
             <div
-              key={celda.idcelda}
+              key={cellKey}
               className={`flex flex-col p-6 border-l border-gray-300 last:border-r 
                 ${isFirst ? 'rounded-l-2xl' : ''} 
                 ${isLast ? 'rounded-r-2xl' : ''} 

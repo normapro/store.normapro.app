@@ -102,6 +102,7 @@ const ServiciosSection: FC<Props> = ({
                 </div>
                 {service.claim.map((item, index) => (
                   <p 
+                    key={`${service.image}-${index}`}
                     className="text-sm text-[#010d3d]"
                     style={{ fontWeight: weights[index % weights.length] }}
                   >

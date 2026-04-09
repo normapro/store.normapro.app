@@ -5,8 +5,8 @@ import Lottie from "lottie-react";
 
 type HeroSectionProps = {
   title?: string;
-  claim?: string[];
-  pragma?: string[];
+  claim?: string[] | string;
+  pragma?: string[] | string;
   cta?: string;
   imgType?: "lottie" | "img";
   imgUrl?: string;
@@ -32,6 +32,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   const weights = ["semibold", "bold"];
   const [animationData, setAnimationData] = useState<any>(null);
 
+  const normalizeTextList = (value: string[] | string | undefined) => {
+    if (Array.isArray(value)) return value;
+    if (typeof value === "string" && value.trim().length > 0) return [value];
+    return [];
+  };
+
+  const claimList = normalizeTextList(claim);
+  const pragmaList = normalizeTextList(pragma);
+
   const isExternal = imgUrl.startsWith("http");
   const finalUrl =
     imgType === "lottie" && !isExternal
@@ -53,18 +62,18 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     <section className="max-w-7xl mx-auto w-full px-6 py-12 flex flex-col-reverse lg:flex-row items-center justify-between gap-8">
       <div className="flex-1">
         {title && <h4 className="text-[30px] font-[900] text-gray-500 mb-2">{title}</h4>}
-        {claim.length > 0 && (
+        {claimList.length > 0 && (
           <h1 className="text-[43px] font-[900] leading-snug mb-4">
-            {claim.map((text, i) => (
+            {claimList.map((text, i) => (
               <span key={i} style={{ color: colors[i % colors.length] }}>
                 {text + " "}
               </span>
             ))}
           </h1>
         )}
-        {pragma.length > 0 && (
+        {pragmaList.length > 0 && (
           <p className="text-lg text-[#010d3d] mb-6">
-            {pragma.map((text, i) => (
+            {pragmaList.map((text, i) => (
               <span key={i} style={{ fontWeight: weights[i % weights.length] }}>
                 {text + " "}
               </span>
