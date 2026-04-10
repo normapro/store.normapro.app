@@ -1,4 +1,7 @@
+'use client'
+
 import React from 'react';
+import Cookies from '@/components/Cookies'
 
 const PoliticaCookies = () => {
     return (
@@ -51,6 +54,10 @@ const PoliticaCookies = () => {
                 <p>
                     Las cookies de marketing/seguimiento son cookies, o cualquier otra forma de almacenamiento local, usadas para crear perfiles de usuario para mostrar publicidad o para hacer el seguimiento del usuario en esta web o en varias webs con fines de marketing similares.
                 </p>
+
+                {/* 6. Cookies usadas */}
+                <h2 className="text-2xl font-black text-gray-700">6. Cookies usadas</h2>
+                <Cookies />
 
                 {/* 7. Consentimiento */}
                 <h2 className="text-2xl font-black text-gray-700">7. Consentimiento</h2>
