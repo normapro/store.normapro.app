@@ -1,0 +1,85 @@
+[
+    {
+        "id": 1,
+        "tipo": "ListColumnsSection",
+        "data": {
+            "list": [
+                {
+                    "claim": "En un entorno cada vez más regulado, EMACSA enfrenta desafíos significativos relacionados con el cumplimiento normativo y la gestión eficiente de sus procesos. Para ello, es primordial identificar y evaluar requisitos legales y otros requisitos en su operación. La implementación de un sistema eficiente de prevención y gestión de cumplimiento todas sus instalaciones es un reto prioritario minimizar riesgos y optimizar recursos."
+                },
+                {
+                    "claim": "EMACSA gestiona los servicios públicos locales de la competencia del Ayuntamiento de Córdoba como son el abastecimiento de agua a la población para todos los usos y necesidades, su distribución y suministro a domicilio, la evacuación de las aguas residuales a través de la red de alcantarillado, su tratamiento y depuración, la conservación y mejora de las canalizaciones existentes y la realización de las nuevas que resulten necesarias."
+                }
+            ],
+            "image": "emacsa1.png"
+        }
+    },
+    {
+        "id": 2,
+        "tipo": "DescargaInformeSection",
+        "data": {
+            "title": "Descarga el informe completo del caso de éxito",
+            "claim": "Si buscas resultados similares y una transformación eficaz en tu empresa, descarga el informe de caso de éxito. Conoce de primera mano cómo nuestra solución innovadora puede ser la clave.",
+            "buttonText": "Descargar informe completo"
+        }
+    },
+    {
+        "id": 3,
+        "tipo": "HistoriaTextSection",
+        "data": {
+            "title": "Valor de la solución aportada",
+            "claim": [
+                "EMACSA ha experimentado una transformación significativa con la implementación de NormaPro, logrando un cumplimiento normativo eficiente, optimización de procesos a través de la automatización y estandarización, y mejora continua en la gestión de recursos. Este enfoque integral ha mejorado la eficiencia operativa, reducido riesgos, protegido la reputación corporativa y fortalecido la cultura de cumplimiento en la empresa, todo ello respaldado por las certificaciones ISO de calidad y seguridad."
+            ],
+            "image": "emacsa2.png"
+        }
+    },
+    {
+        "id": 4,
+        "tipo": "ListHistoriaSection",
+        "data": {
+            "title": "¿Por qué es un éxito?",
+            "titlelist": "El proyecto con EMACSA es considerado un éxito notable por:",
+            "list": [
+                {
+                    "title": "Superación de Objetivos",
+                    "claim": "Cumplimiento y superación de los objetivos planteados, destacando la eficacia de NormaPro."
+                },
+                {
+                    "title": "Impacto Positivo en las Operaciones:",
+                    "claim": "Mejoras significativas en cumplimiento normativo y eficiencia operativa, reflejando un impacto positivo en toda la empresa."
+                },
+                {
+                    "title": "Alta Adopción y Satisfacción Interna:",
+                    "claim": "Excelente acogida y satisfacción del personal hacia las nuevas herramientas y procesos de NormaPro, evidenciando una integración exitosa en la cultura corporativa."
+                },
+                {
+                    "title": "Resultados Cuantificables y a Largo Plazo:",
+                    "claim": "Beneficios medibles y sostenibles, incluyendo la reducción de costos y riesgos y una mayor eficiencia operativa."
+                }
+            ]
+        }
+    },
+    {
+        "id": 5,
+        "tipo": "HistoriaClienteSection",
+        "data": {
+            "claim": [
+                "Desde que iniciamos nuestra colaboración con Instituto de Innovación y comenzamos a utilizar NormaPro, hemos experimentado un cambio significativo en la manera de abordar el cumplimiento legal, estamos logrando nuestros objetivos de cumplimiento de manera mucho más eficiente y efectiva."
+            ],
+            "id_testimonio": 2
+        }
+    },
+    {
+        "id": 6,
+        "tipo": "HistoriaTextSection",
+        "data": {
+            "title": "¿Por qué EMACSA eligió trabajar con nosotros?",
+            "claim": [
+                "EMACSA buscaba un socio con amplia experiencia en cumplimiento normativo y digitalización, que pudiera ofrecer soluciones personalizadas y con credenciales de calidad. Su objetivo era aliarse con un líder en innovación y calidad para enfrentar sus desafíos específicos.",
+                "La elección de EMACSA por el Instituto de Innovación y NormaPro se debió a su reputación en cumplimiento normativo y la tecnología avanzada de NormaPro. Valoraron especialmente la facilidad de integración, el soporte continuo y la capacidad de ofrecer resultados medibles y mejora continua."
+            ],
+            "buttonText": "Contacta ahora y analizamos tu caso"
+        }
+    }
+]

@@ -10,5 +10,34 @@ export { default as MovilPortalSection } from "./MovilPortalSection";
 export { default as CertificacionesSection } from "./CertificacionesSection";
 export { default as ResumenSection } from "./ResumenSection";
 export { default as PresentacionSection } from "./PresentacionSection";
-export { default as ImgTextSection }from "./ImgTextSection"
-export { default as FaqSection }from "./FaqSection"
+export { default as ImgTextSection } from "./ImgTextSection";
+export { default as FaqSection } from "./FaqSection";
+export { default as HeroSection2 } from "./HeroSection2";
+export { default as ClientsMuralSection } from "./ClientsMuralSection";
+export { default as PresentacionSection2 } from "./PresentacionSection2";
+export { default as CarouselPerceptionsSection } from "./CarouselPerceptionsSection";
+export { default as RazonesSection } from "./RazonesSection";
+export { default as SideImgTextSection } from "./SideImgTextSection";
+export { default as SideLeftImgTextSection } from "./SideLeftImgTextSection";
+export { default as AportacionesSection } from "./AportacionesSection";
+export { default as RegaloSection } from "./RegaloSection";
+export { default as ServiciosSection } from "./ServiciosSection";
+export { default as VentajasSection } from "./VentajasSection";
+export { default as EtapasSection } from "./EtapasSection";
+export { default as QuestionsSection } from "./QuestionsSection";
+export { default as ClavesSection } from "./ClavesSection";
+export { default as PorcentajesSection } from "./PorcentajesSection";
+export { default as SideTextSection } from "./SideTextSection";
+export { default as OpcionesSeleccionesSection } from "./OpcionesSeleccionesSection";
+export { default as EstudioSection } from "./EstudioSection";
+export { default as PasosSection } from "./PasosSection";
+export { default as DesgraneSection } from "./DesgraneSection"
+export { default as SimpleClientPerceptionSection } from "./SimpleClientPerceptionSection";
+export { default as NecesidadesSection } from "./NecesidadesSection";
+export { default as AportacionesSection2 } from "./AportacionesSection2";
+export { default as MultipleEtapasSection } from "./MultipleEtapasSection";
+export { default as ListHistoriaSection } from "./ListHistoriaSection";
+export { default as ListColumnsSection } from "./ListColumnsSection";
+export { default as HistoriaTextSection } from "./HistoriaTextSection";
+export { default as HistoriaClienteSection } from "./HistoriaClienteSection";
+export { default as DescargaInformeSection } from "./DescargaInformeSection";

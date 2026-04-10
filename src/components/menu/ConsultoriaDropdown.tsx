@@ -3,7 +3,6 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { Consultoria } from "@/types/consultoria";
 import API_ENDPOINTS from "@/config/api";
 
@@ -28,9 +27,10 @@ const ConsultoriaDropdown = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {consultorias.map((consultoria) => (
-                        <div
+                        <a
                             key={consultoria.id_consultoria}
-                            className="bg-[#FFFFFF] p-6 rounded-xl text-[#010D3D]  relative grid grid-cols-3 gap-4"
+                            href={`/consultorias/${consultoria.slug}`}    
+                            className="bg-[#FFFFFF] p-6 rounded-xl text-[#010D3D] relative grid grid-cols-3 gap-4 block"
                         >
                             <Image
                                 src={consultoria.uriIcon ? `/main/${consultoria.uriIcon}` : "/main/default-icon.png"}
@@ -44,7 +44,7 @@ const ConsultoriaDropdown = () => {
                                 {/* <p className="text-sm mb-6">{consultoria.shortDescription}</p> */}
                                 
                             </div>
-                        </div>
+                        </a>
                     ))}
                 </div>
             </section>

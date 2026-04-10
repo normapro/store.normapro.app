@@ -7,10 +7,14 @@
       "claim": [
         "Logra un cumplimiento normativo sin complicaciones en tan solo semanas"
       ],
-      "pragma": "",
+      "pragma": [],
       "cta": "Reserva una sesión estratégica",
-      "imgType": "",
-      "imgUrl": ""
+      "imgType": "lottie",
+      "imgUrl": "gestor-documental",
+      "backgroundImg": "hielo1.png",
+      "backgroundSize": "90%",
+      "backgroundRepeat": "no-repeat",
+      "backgroundPositionX": "center"
     }
   },
   {
@@ -37,7 +41,7 @@
       "background": "gray",
       "level3": [
         "",
-        "Puedes intentar alcanzar el cumplimiento normativo usando métodos anticuados. Sin embargo, hay un alto riesgo de incumplimiento debido a la constante evolución de las regurlaciones."
+        "\n\nPuedes intentar alcanzar el cumplimiento normativo usando métodos anticuados. Sin embargo, hay un alto riesgo de incumplimiento debido a la constante evolución de las regurlaciones."
       ],
       "level4": [
         "Resuelve este desafio en menos tiempo con NormaPro, diseñado específicamente para lideres empresariales, evitando sanciones y optimizando recursos"
@@ -108,7 +112,7 @@
         },
         {
           "idcelda": "4",
-          "icono": "fa-face-sad-sweat",
+          "icono": "fa-face-frown-slight",
           "title": "Descoordinación de equipos",
           "pragma": "Sin una herramienta central, la comunicación se desmorona."
         }
@@ -120,7 +124,6 @@
     "tipo": "TextSection",
     "data": {
       "background": "gray",
-      "imgCabecera": "scaleUp.png",
       "level5": [
         "NormaPro: Tu escudo contra el incumplimiento"
       ],
@@ -151,7 +154,7 @@
         {
           "id_data": 1,
           "title": "Mapa de evidencias personalizado",
-          "icon": "fa-file-signature",
+          "icon": "fa-list-tree",
           "mainTitle": "Transforma la complejidad en claridad",
           "subtitle": "Mapa de evidencias personalizado",
           "description": "Sortea la confusión de perderte en una maraña de regulaciones sin saber cómo aplicarlas, ofrecemos un conjunto completo de cuestionarios que generan mapas normativos personalizados para guiarte con precisión. Siempre estarás al día con referencias, comentarios expertos y enlaces a normativas, garantizando trazabilidad y orden. ",
@@ -160,65 +163,65 @@
         {
           "id_data": 2,
           "title": "Gestor documental",
-          "icon": "fa-file-signature",
+          "icon": "fa-file-lines",
           "mainTitle": "Almacena, organiza y accede a archvios en tus procesos",
           "subtitle": "Gestor documental",
           "description": "La gestión de documentos dispersos y la dificultad para acceder a información relevante pueden ralentizar los procesos y dificultar la toma de decisiones. Nuestro gestor documental permite almacenar y organizar documentos de manera centralizada, vinculándolos a flujos de trabajo específicos. Puedes buscar, recuperar y colaborar en documentos de manera eficiente.",
-          "img": ""
+          "img": "fichasdocumentales.png"
         },
         {
           "id_data": 3,
           "title": "Gestión de competencias",
-          "icon": "fa-file-signature",
+          "icon": "fa-briefcase",
           "mainTitle": "Organiza y supervisa con precisión",
           "subtitle": "Gestión de competencias",
           "description": "Evita lo desorganización y falta de seguimiento de responsabilidades asignando roles y estructura con supervisores fácilmente.\n\nEvalúa riesgos y sanciones en tempo real. asegurando que cado miembro del equipo conozco su misión.",
-          "img": ""
+          "img": "gestioncompetencias.png"
         },
         {
           "id_data": 4,
           "title": "Biblioteca de normas",
-          "icon": "fa-file-signature",
+          "icon": "fa-book-law",
           "mainTitle": "Siempre informado y actualizado",
           "subtitle": "Biblioteca de normas",
           "description": "Previene quedar desactualizado con nuestro  Biblioteca de Normas que organiza y notifica sobre las últimas regulaciones más importantes.\n\nSiempre estarás al día adaptándote con las actualizaciones más recientes.",
-          "img": ""
+          "img": "bibliotecanormas.png"
         },
         {
           "id_data": 5,
           "title": "Archivo inteligente",
-          "icon": "fa-file-signature",
+          "icon": "fa-file-lock",
           "mainTitle": "Acceso y protección, siempre",
           "subtitle": "Archivo inteligente",
           "description": "Di adiós a la perdida de información con un sistema robusto que resguardo y estructura tus documentos de monera eficiente.\n\nGarantiza que la información esté disponible en cualquier momento, sin importar los cambios internos, a salvo de bajas o sustituciones.",
-          "img": ""
+          "img": "archivointeligente.png"
         },
         {
           "id_data": 6,
           "title": "Sistemas de comunicaciones y alertas",
-          "icon": "fa-file-signature",
+          "icon": "fa-bell",
           "mainTitle": "Mantén a todos los participantes informados en tiempo real",
           "subtitle": "Sistemas de comunicaciones y alertas",
           "description": "Nuestra herramienta incluye un sistema de comunicaciones y alertas que notifica automáticamente a los participantes sobre tareas pendientes, actualizaciones importantes y cambios en los flujos de trabajo.\n\nComunicación efectiva, cumplimiento de plazos, reducción de errores y flujo de trabajo colaborativo mejorado.",
-          "img": ""
+          "img": "alertas.png"
         },
         {
           "id_data": 7,
           "title": "Calendario de eventos",
-          "icon": "fa-file-signature",
+          "icon": "fa-calendar-days",
           "mainTitle": "Nunca pierdas de vista las fechas clave",
           "subtitle": "Calendario de eventos",
           "description": "Deja atrás preocuparte por los olvidos y asegura el cumplimiento puntual con una agenda que rastrea y te alerta de fechas cruciales.\n\nVisualiza responsabilidades a corto y largo plazo, asegurando que ningún deadline sea pasado por alto.",
-          "img": ""
+          "img": "calendario.png"
         },
         {
           "id_data": 8,
           "title": "Informes y cuadro de mandos",
-          "icon": "fa-file-signature",
+          "icon": "fa-chart-pie",
           "mainTitle": "Control total sobre los flujos de trabajo en ejecución",
           "subtitle": "Panel de seguimieneto y supervisión",
           "description": "La falta de visibilidad puede dificultar la supervisión efectiva de tus procesos empresariales.\n\nNormaPro permite el seguimiento en tiempo real del estado y el progreso de los documentos de trabajo en ejecución, junto con informes detallados y análisis.\n\nMayor control, capacidad de tomar decisiones informadas y mejora de la eficiencia operativa.",
-          "img": ""
+          "img": "panelcontrol.png"
         }
       ]
     }
@@ -230,10 +233,10 @@
       "title": "Y todo esto, hazlo también desde tu móvil",
       "subtitle": "Potencia la movilidad y la eficiencia fuera de la oficina.",
       "images": [
-        "portalmovil1.png",
-        "portalmovil2.png",
-        "portalmovil3.png",
-        "portalmovil4.png"
+        "portalmovil5.png",
+        "portalmovil6.png",
+        "portalmovil7.png",
+        "portalmovil8.png"
       ]
     }
   },
@@ -247,7 +250,7 @@
         "NormaPro no es solo una herramienta; es la evolución en gestión documental para cumplimiento normativo. Mientras otros. sistemas simplemente archivan, nosotros transformamos el caos normativo en un mapa estructurado y claro. Cada funcionalidad se diseña pensando en tu negocio, garantizando que cada detalle cuente y todas las piezas encajen, ya busques una visión general o un análisis detallado.",
         "La confianza de nuestros clientes es testimonio de la excelencia de NormaPro. "
       ],
-      "id_testimonio": 3
+      "id_testimonio": 5
     }
   },
   {
@@ -255,7 +258,7 @@
     "tipo": "CertificacionesSection",
     "data": {
       "title": "Calidad y seguridad certificada",
-      "subtitle": "Nuestros productos y servidios cuentan con certificación AENOR:",
+      "subtitle": "Nuestros productos y servicios cuentan con certificación AENOR:",
       "images": [
         "27001.png",
         "9001.png",
@@ -268,7 +271,8 @@
     "id": 15,
     "tipo": "ResumenSection",
     "data": {
-      "imgCabecera": "",
+      "imgCabecera": "IICE_LandingCompliance_Etapa1.png",
+      "imgBackground": "hielo3.png",
       "title": "Consultoria Personalizada de Expertos",
       "claim": "",
       "titlelist": "",
@@ -290,7 +294,8 @@
     "id": 16,
     "tipo": "ResumenSection",
     "data": {
-      "imgCabecera": "",
+      "imgCabecera": "IICE_Medioambiente.png",
+      "imgBackground": "hielo2.png",
       "title": "El valor de NormaPro",
       "claim": "",
       "titlelist": "",
@@ -323,7 +328,8 @@
     "id": 17,
     "tipo": "ResumenSection",
     "data": {
-      "imgCabecera": "",
+      "imgCabecera": "IICE_FormaPro_NormaPro.png",
+      "imgBackground": "hielo1.png",
       "title": "Descubre la Revolución Normativa",
       "claim": "",
       "titlelist": "",
@@ -339,6 +345,135 @@
         "buttonText": "Emprende el viaje. Contacta con nosotros",
         "pragma": ""
       }
+    }
+  },
+  {
+    "id": 18,
+    "tipo": "FaqSection",
+    "data": {
+      "faqs": [
+        {
+          "question": "¿Qué es exactamente el Gestor documental NormaPro?",
+          "answer": [
+            "NormaPro es más que un gestor documental; es una solución integral diseñada para simplificar y asegurar el cumplimiento normativo en tu empresa. Combina almacenamiento inteligente, actualizaciones automáticas de normativas y una plataforma intuitiva que facilita la gestión de documentos legales y reglamentarios. Está pensado para que empresarios y directivos, como tú, puedan enfocarse en la estrategia de negocio mientras NormaPro se encarga del orden y la actualidad normativa."
+          ],
+          "link": [
+            "",
+            "Solicita una reunión",
+            " para explorar cómo FormaPro puede transformar tu cumplimiento normativo."
+          ]
+        },
+        {
+          "question": "¿Necesito tener conocimientos técnicos para usar el gestor documental NormaPro?",
+          "answer": [
+            "Definitivamente no. NormaPro está diseñado para ser intuitivo y accesible, independientemente del nivel técnico del usuario. Nuestro enfoque 'low-code' significa que cualquier persona en tu organización, desde el CEO hasta el gerente de cumplimiento, puede utilizar la plataforma con facilidad. Nos hemos asegurado de que la gestión de documentos normativos sea una experiencia sencilla y sin complicaciones."
+          ],
+          "link": [
+            "Descubre la facilidad de uso de NormaPro con una ",
+            "demo personalizada."
+          ]
+        },
+        {
+          "question": "¿Qué hace especial al Gestor documental NormaPro frente a otras herramientas similares?",
+          "answer": [
+            "Lo que distingue a NormaPro de otras herramientas es su combinación única de tecnología avanzada y servicio personalizado. No solo ofrecemos una plataforma robusta para gestionar el cumplimiento normativo, sino que también brindamos acceso directo a consultores expertos que trabajan contigo para maximizar la eficiencia y eficacia. Además, NormaPro se adapta a las necesidades específicas de tu empresa, creciendo y evolucionando con tu negocio. La plataforma se actualiza continuamente para reflejar los cambios más recientes en la legislación, asegurando que siempre estés un paso adelante."
+          ],
+          "link": [
+            "Conoce lo que NormaPro puede hacer por tu empresa. ",
+            "Solicita más información."
+          ]
+        },
+        {
+          "question": "¿Puedo personalizar el Gestor documental NormaPro según las necesidades de mi empresa?",
+          "answer": [
+            "Absolutamente. La flexibilidad es una de las piedras angulares de NormaPro. Reconocemos que cada empresa tiene su propio conjunto de desafíos y requisitos en el cumplimiento normativo. Por eso, nuestra plataforma permite una personalización completa, permitiéndote adaptar el sistema a las políticas específicas, estructuras de gestión y flujos de trabajo de tu organización. Desde la creación de mapas de evidencias hasta la configuración de alertas de cumplimiento, NormaPro se moldea a tu medida para una integración perfecta."
+          ],
+          "link": [
+            "Ajusta NormaPro a las necesidades de tu empresa. ",
+            "Empieza con una consulta gratuita."
+          ]
+        },
+        {
+          "question": "¿Qué sucede si hay cambios en las regulaciones? ",
+          "answer": [
+            "En el dinámico panorama del cumplimiento normativo, los cambios son constantes y es vital estar actualizado. NormaPro aborda este desafío activamente con una biblioteca de normas que se actualiza automáticamente para reflejar las últimas regulaciones más relevantes. Recibirás notificaciones oportunas sobre las modificaciones pertinentes, ayudaremos a que tu empresa permanezca informada en cumplimiento y reduciendo el riesgo de sanciones. Nuestro compromiso es ayudarte para que no te sorprendan los cambios normativos más importantes."
+          ],
+          "link": [
+            "Mantente al día con las regulaciones. ",
+            "Agenda una demostración de NormaPro ahora."
+          ]
+        },
+        {
+          "question": "¿Cómo ayuda NormaPro a coordinar equipos?",
+          "answer": [
+            "NormaPro facilita la coordinación de equipos al proporcionar una plataforma centralizada donde todos los implicados en el cumplimiento normativo pueden colaborar eficientemente. Con funciones como el sistema de gestión de tareas, calendarios de eventos y alertas, cada miembro del equipo sabe exactamente qué hacer y cuándo hacerlo. Esto no solo aumenta la transparencia y la responsabilidad, sino que también asegura que todos estén alineados con los objetivos de cumplimiento de la empresa, trabajando juntos de manera sincronizada."
+          ],
+          "link": [
+            "Optimiza la coordinación de tu equipo con NormaPro. ",
+            "Contacta para una demostración."
+          ]
+        },
+        {
+          "question": "¿Cómo garantiza NormaPro la seguridad de mi información?",
+          "answer": [
+            "La seguridad de tu información es una prioridad absoluta en NormaPro. Implementamos las mejores prácticas de seguridad de datos y cumplimos con las regulaciones de protección de datos más estrictas gracias a nuestra certificación ISO 27001, la norma más estricta en seguridad de la información. Nuestra plataforma utiliza encriptación avanzada, autenticación de múltiples factores y controles de acceso granulares para garantizar que solo las personas autorizadas puedan acceder a la información sensible. Además, realizamos copias de seguridad regulares y mantenemos protocolos estrictos para la recuperación de datos, asegurando que tu información esté protegida, segura y disponible cuando la necesites."
+          ],
+          "link": [
+            "Asegura la protección de tus datos con NormaPro. ",
+            "Solicita una sesión informativa hoy."
+          ]
+        },
+        {
+          "question": "¿Puede NormaPro adaptarse a cambios futuros en mi empresa?",
+          "answer": [
+            "Definitivamente, NormaPro está diseñado para ser tan dinámico como el entorno empresarial de hoy. Entendemos que las empresas crecen y cambian, y nuestra plataforma está preparada para escalar y adaptarse a esos cambios. Ya sea que necesites añadir nuevos usuarios, ajustar a nuevas regulaciones, o expandirte a nuevas áreas de cumplimiento, NormaPro se ajusta a las demandas evolutivas de tu empresa, asegurando que siempre tengas el soporte adecuado para tus necesidades de cumplimiento actuales y futuras.“"
+          ],
+          "link": [
+            "Adapta NormaPro a la evolución de tu empresa. ",
+            "Inicia una conversación con nosotros."
+          ]
+        },
+        {
+          "question": "¿Qué tipo de soporte ofrecen después de la implementación?",
+          "answer": [
+            "Tras la implementación de NormaPro, recibirás un soporte continuo y personalizado para garantizar que obtengas el máximo rendimiento de la plataforma. Ofrecemos asistencia técnica, actualizaciones regulares del sistema y formaciones para usuarios, así como consultoría especializada para cualquier cuestión de cumplimiento normativo que pueda surgir. Nuestro objetivo es ser no solo proveedores, sino socios de confianza en tu viaje de cumplimiento normativo."
+          ],
+          "link": [
+            "Experimenta nuestro soporte dedicado. ",
+            "Programa una llamada para conocer nuestro plan de mentoría."
+          ]
+        },
+        {
+          "question": "¿Qué pasa si ya tengo sistemas preexistentes en mi empresa?",
+          "answer": [
+            "NormaPro se ha diseñado para integrarse sin problemas con tus sistemas existentes, maximizando la inversión que ya has realizado en infraestructura. Nuestra plataforma puede vincularse con una amplia variedad de bases de datos y aplicaciones empresariales, facilitando una transición suave y sin interrupciones. Nuestro equipo técnico colaborará estrechamente contigo para asegurar una integración personalizada que se alinee con tus procesos de negocio actuales y optimice tu gestión de cumplimiento normativo.“"
+          ],
+          "link": [
+            "Fortalece tus sistemas existentes con NormaPro. ",
+            "Contacta para una evaluación de integración."
+          ]
+        },
+        {
+          "question": "¿Cuánto tiempo lleva implementar NormaPro?",
+          "answer": [
+            "El tiempo de implementación de NormaPro puede variar dependiendo de la complejidad y el tamaño de tu organización. Nos esforzamos por hacer que el proceso sea lo más rápido y eficiente posible, generalmente completando la mayoría de las implementaciones en un plazo que va desde unas pocas semanas hasta unos pocos meses. Nuestro equipo dedicado de implementación trabaja mano a mano contigo para asegurar una transición suave y una puesta en marcha ágil, minimizando las interrupciones en tus operaciones diarias."
+          ],
+          "link": [
+            "Descubre lo rápido que puedes comenzar con NormaPro. ",
+            "Programa un plan de implementación personalizado."
+          ]
+        },
+        {
+          "question": "¿Es NormaPro adecuado para cualquier tipo de empresa?",
+          "answer": [
+            "Sí, NormaPro es una solución versátil diseñada para adaptarse a una amplia gama de industrias y tamaños de empresa. Ya sea que operes una pequeña empresa local o una gran corporación multinacional, nuestra plataforma puede ser configurada para satisfacer tus necesidades específicas de cumplimiento normativo. Con NormaPro, cada organización puede beneficiarse de una gestión de documentos eficiente y de un cumplimiento normativo simplificado, independientemente del sector en el que se especialice."
+          ],
+          "link": [
+            "Averigua cómo NormaPro puede trabajar para tu empresa. ",
+            "Solicita una consulta a medida."
+          ]
+        }
+      ]
     }
   }
 ]

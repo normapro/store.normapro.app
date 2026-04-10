@@ -26,7 +26,7 @@ const MovilPortalSection: FC<Props> = ({ title, subtitle, images }) => {
                 <div className="relative" key={src}>
                 <img
                 key={src}
-                src={`/apps/${src}`}
+                src={`/apps/portalmovil/${src}`}
                 alt={`Captura móvil ${i + 1}`}
                 className={`fade-in-up h-auto max-h-[550px] w-auto transition-opacity`}
                 style={{

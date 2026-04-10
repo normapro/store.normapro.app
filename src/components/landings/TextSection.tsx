@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useState } from "react";
 import Lottie from "lottie-react";
+import Formulario from "@/components/Formulario";
 
 type TextSectionProps = {
   background: string;
@@ -11,7 +12,12 @@ type TextSectionProps = {
   level5?: string[];
   level6?: string[];
   level7?: string[];
+  level8?: string[];
+  level9?: string[];
   buttonText?: string;
+  remarkableText?: string;
+  remarkableText2?: string;
+  remarkableText3?: string;
 };
 
 const TextSection: React.FC<TextSectionProps> = ({
@@ -23,8 +29,15 @@ const TextSection: React.FC<TextSectionProps> = ({
   level5,
   level6,
   level7,
-  buttonText
+  level8,
+  level9,
+  buttonText,
+  remarkableText,
+  remarkableText2,
+  remarkableText3
+
 }) => {
+  const [openModal, setOpenModal] = useState(false);
   const colors = ["#010d3d", "#797f98"];
   const bgcolors = ["#ffffff","#eaeaf2" ]
   let bgColor =  bgcolors[1];
@@ -67,7 +80,7 @@ const TextSection: React.FC<TextSectionProps> = ({
             </h4>
         )}
         {level4 && (
-            <h4 className="text-[25px] font-[900] text-gray-500 mb-10 whitespace-pre-line">
+            <h4 className="text-[26px] font-[900] text-gray-500 mb-10 whitespace-pre-line">
             {level4.map((text, i) => (
               <span key={i} style={{ color: colors[i % colors.length] }}>
                 {text + " "}
@@ -93,8 +106,36 @@ const TextSection: React.FC<TextSectionProps> = ({
             ))}
             </h4>
         )}
+        {level8 && (
+          <h4 className="text-[16px] text-gray-500 mb-10 whitespace-pre-line">
+            {level8.map((text, i) => (
+              <span key={i} style={{ color: colors[i % colors.length] }}>
+                {text + " "}
+              </span>
+            ))}
+            </h4>
+        )}
+        {remarkableText3 && (
+          <div className="flex items-center justify-center bg-[#f5f5f5] rounded-full w-25 h-25 mb-10 inline-flex">
+            <h4 className="text-[36px] font-[700] text-[#010d3d] leading-tight text-center">
+              {remarkableText3}
+            </h4>
+          </div>
+        )}
+        {level9 && (
+          <h4 className="text-[16px] text-gray-500 mb-10 whitespace-pre-line">
+            {level9.map((text, i) => (
+              <span key={i} style={{ color: colors[i % colors.length] }}>
+                {text + " "}
+              </span>
+            ))}
+            </h4>
+        )}
         {buttonText && (
-            <button className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl mb-4 shadow-md hover:bg-[#04176f] transition">
+            <button
+              onClick={() => setOpenModal(true)}
+              className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition"
+            >
               {buttonText}
             </button>
         )}
@@ -107,8 +148,26 @@ const TextSection: React.FC<TextSectionProps> = ({
             ))}
             </h4>
         )}
+        {remarkableText && (
+          <div className="bg-white rounded-2xl px-8 py-6 mb-10 shadow-sm inline-block max-w-full">
+            <h4 className="text-[36px] font-[800] text-[#010d3d] leading-tight">
+              {remarkableText}
+            </h4>
+          </div>
+        )}
+        {remarkableText2 && (
+          <div className="bg-white rounded-2xl px-8 py-6 mb-10 shadow-sm inline-block max-w-full">
+            <h4 className="text-[22px] font-[800] text-[#010d3d] leading-tight">
+              {remarkableText2}
+            </h4>
+          </div>
+        )}
       </div>
     </section>
+    {/* Formulario contacto */}
+      {openModal && (
+        <Formulario onClose={() => setOpenModal(false)} />
+      )}
     </div>
   );
 };

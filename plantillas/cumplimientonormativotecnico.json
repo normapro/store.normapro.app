@@ -1,0 +1,1019 @@
+[
+  {
+    "id": 1,
+    "tipo": "HeroSection",
+    "data": {
+      "title": "",
+      "claim": [
+        "Implementa el Modelo ",
+        "más completo y avanzado ",
+        "de gestión del Cumplimiento Normativo en menos de ",
+        "3 meses."
+      ],
+      "pragma": [
+        "Haz realidad la posibilidad de disfrutar de la tranquilidad de tener bajo control la normativa que aplica al área de la que eres responsable a la vez que contribuyes de forma significativa al éxito de tu empresa."
+      ],
+      "cta": "Reserva una sesión estratégica",
+      "imgType": "lottie",
+      "imgUrl": "compliance-tecnico",
+      "backgroundImg": "hielo1.png",
+      "backgroundSize": "90%",
+      "backgroundRepeat": "no-repeat",
+      "backgroundPositionX": "center"
+    }
+  },
+  {
+    "id": 2,
+    "tipo": "TextSection",
+    "data": {
+      "background": "gray",
+      "level2": [
+        "",
+        "Es el momento de decidir si quieres distribuir adecuadamente las tareas necesarias para mantener un nivel óptimo de cumplimiento y ",
+        "evitar contratiempos desagradables en forma de sanciones u otras consecuencias civiles o penales y pérdidas de reputación ",
+        "o bien, si quieres quedarte con el miedo y la incertidumbre de qué podría ocurrir si sucede un incidente inesperado o una inspección reglamentaria."
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "tipo": "VideoSection",
+    "data": {
+      "title": "Reserva una sesión demostrativa o mira el video si…",
+      "items": [
+        "… quieres descubrir como lograr esta transformación y obtener mejores resultados en tu empresa gracias al cumplimiento normativo",
+        "… quieres saber cómo puedes conseguir grandes beneficios para tu proyecto empresarial alineando objetivos de cumplimiento y el fomento de una cultura ética en el seno de tu organización, con una mejora continua en los procesos internos",
+        "… quieres conocer el método NormaPro, el mismo con el que un gran número de empresarios, directivos y técnicos ya han “conseguido implementar un modelo transversal de cumplimiento y convertirlo en una realidad."
+      ],
+      "url_video": "https://www.youtube.com/watch?v=aCcVlvEcE_A&t=1s",
+      "buttonText": "Quiero una sesión estratégica"
+    }
+  },
+  {
+    "id": 4,
+    "tipo": "ClientsMuralSection",
+    "data": {
+      "scope": "compliance-tecnico",
+      "claim": [
+        "Estas marcas ya trabajan con nosotros"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "tipo": "ClientPerceptionSection",
+    "data": {
+      "title": "La percepción de nuestros clientes es nuestra realidad",
+      "items": [
+        "Desde Instituto de Innovación, Ciencia y Empresa llevamos más de veinte años ayudando a muchos empresarios y directivos con los que trabajamos mano a mano y cuyos equipos gestionan y monitorizan con nuestra plataforma digital NormaPro miles de evidencias de cumplimiento en distintos alcances como son: Medio Ambiente, Instalaciones, equipos y máquinas, Seguridad industrial y PRL, Sanitaria o Seguridad alimentaria entre otros."
+      ],
+      "id_testimonio": 3
+    }
+  },
+  {
+    "id": 6,
+    "tipo": "VentajasSection",
+    "data": {
+      "title": "Cuando implementas un Sistema Avanzado de gestión de Compliance los parámetros de valoración de tu compañía se disparan.",
+      "highlightText": "Todos se fijan en ella.",
+      "claim": [
+        "La vorágine legislativa supone un problema cada vez mayor para las empresas, pero existen mecanismos para establecer líneas solidas de defensa que, ademásconviertan esta situación en un filón de oportunidades favorables de:"
+      ],
+      "items": [
+        {
+          "title": "Mejora de los procesos internos de negocio",
+          "icon": "fa-chart-line-up"
+        },
+        {
+          "title": "Aumento de la competitividad",
+          "icon": "fa-trophy-star"
+        },
+        {
+          "title": "Mejora del clima laboral",
+          "icon": "fa-handshake"
+        },
+        {
+          "title": "Engrandecimiento de la credibilidad de la marca",
+          "icon": "fa-award"
+        },
+        {
+          "title": "Y un largo etc",
+          "icon": "fa-pegasus"
+        }
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "tipo": "SideLeftImgTextSection",
+    "data": {
+      "title": "Tu tiempo y tu tranquilidad es lo primero",
+      "claim": [
+        "Actualmente toda la actividad empresarial se desarrolla en medio de una avalancha regulatoria hiper dinámica; tan solo en España se vienen publicando desde los años 70 una media de un millón de páginas de Boletines Oficiales, de las cuales la mitad aproximadamente están  dedicadas a la promulgación de normas nuevas o  modificación de las existentes."
+      ],
+      "image": "IICE_LandingCompliance_tiempo.png",
+      "imgBackground": "hielo3.png",
+      "backgroundSize": "100%",
+      "paragraphs": [
+        "¡¡Imagínate!! Cada vez que alguien decide iniciar una actividad empresarial ha de rebuscar entre más de veinte millones de estas páginas para saber qué le aplica y qué no.",
+        "Por otro lado, la Ley Orgánica 1/2015, de 30 de marzo cual amplía el ámbito de aplicación de la responsabilidad penal de las personas jurídicas tanto en la vertiente de los sujetos responsables (representantes legales, apoderados, directivos, consejeros, patronos etc) como en la de los delitos por los que pueden ser imputados y las penas asociadas a los mismos.",
+        "Por lo tanto, las responsabilidades penales en España se extienden a las personas jurídicas siempre y cuando no ejecuten unas tareas de prevención, supervisión, vigilancia y - control.",
+        "Ante esto, muchos empresarios, directivos y técnicos de empresas están pasando a la acción para conseguir aumentar la tranquilidad que viene de saber que el cumplimento normativo en su área de responsabilidad está bajo control.",
+        "Ahora la tendencia es lograr implementar un modelo eficaz de cumplimiento normativo que te lleve a contribuir de forma significativa al éxito de tu empresa y ser reconocido  como un empresario o un directivo brillante."
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "tipo": "QuestionsSection",
+    "data": {
+      "title": "¿Cuándo vas a encontrar el momento adecuado para poner en marcha un plan de control del cumplimiento normativo?",
+      "intro": [
+        "Son diarios los casos que se suceden en los juzgados derivados de incumplimientos con consecuencias legales graves; son situaciones muy desagradables que pueden dar al traste con tu futuro profesional y personal.",
+        "Puedes seguir dando palos de ciego con hojas de cálculo y correos electrónicos que generan un sinfín de trabajos manuales con errores, fallos, tiempo mal invertido y que acaban siendo descuidados y poniendo en riesgo a tu organización y ti mismo."
+      ],
+      "preQuestionsText": "Lo normal es que en estos momentos solo sabes:",
+      "questions": [
+        "Que no sabes por dónde empezar.",
+        "No tienes claro cuáles son las normas que aplican y cuales no a todos tus equipos de trabajo o a las instalaciones de tu empresa.",
+        "Tampoco tienes claro si es mejor realizar un inventario clasificado de los documentos o las evidencias que tenéis que tener a disposición y actualizados ante una inspección o un incidente.",
+        "Cuál es la mejor estrategia que debes integrar en tus procesos para que cuando llegue el momento tenerlo todo disponible y actualizado y así minimizar el riesgo y evitar multas o sanciones de cualquier tipo."
+      ],
+      "buttonText":"Reserva una sesión estratégica"
+    }
+  },
+  {
+    "id": 9,
+    "tipo": "EstudioSection",
+    "data": {
+      "title": "¿Cuánto dinero nos estamos dejando por el camino?",
+      "claim": [
+        "Un estudio realizado por Instituto de Innovación, Ciencia y Empresa en el que han participado los responsables de Instalaciones y equipos, Seguridad Industrial, Alimentaria, y Medio Ambiente de 50 empresas de España revela que",
+        " los costes actuales de operación y/o gestión en estas áreas pueden reducirse al menos en un 40%."
+      ],
+      "pragma": [
+        "¿Cuál puede ser el coste para tu empresa por un fallo de control de control normativo?"
+      ],
+      "datos": [
+        {
+          "icon": "fa-display-slash",
+          "porcentaje": "75%",
+          "claim": [
+            "de los encuestados no disponen de",
+            "ninguna herramienta digital",
+            "específica (Siglo pasado)"
+          ]
+        },
+        {
+          "icon": "fa-file-excel",
+          "porcentaje": "100%",
+          "claim": [
+            "Reconocen usar múltiples",
+            "hojas de cálculo.",
+            "(Edad Media)"
+          ]
+        },
+        {
+          "icon": "fa-file-pen",
+          "porcentaje": "100%",
+          "claim": [
+            "Reconocen utilizar aún formularios en papel en algún proceso (¡Paleolítico!)"
+          ]
+        },
+        {
+          "icon": "fa-calendar-clock",
+          "porcentaje": "40%",
+          "claim": [
+            "De liberación de tiempo necesario que puedes destinar a nuevas tareas productivas"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "tipo": "ClientPerceptionSection",
+    "data": {
+      "title": "Ellos decidieron dar un paso adelante y NormaPro les ayudó a hacer realidad se deseo y lo que lograron fue:",
+      "list": [
+        {
+          "title": "Transformar una preocupación en tranquilidad.",
+          "claim": ""
+        },
+        {
+          "title": "Reducir de media un 40% los costes de operación de muchos procesos internos de su empresa (e incluso casi eliminarlos en algunos)",
+          "claim": ""
+        }
+      ],
+      "id_testimonio": 5
+    }
+  },
+  {
+    "id": 11,
+    "tipo": "OpcionesSeleccionesSection",
+    "data": {
+    "title": "Llevamos más de veinte años aportando tranquilidad a empresarios y directivos y ahora queremos hacer lo mismo contigo",
+    "intro": "En grandes empresas como Robert Bosch, Calidad Pascual, Asisa, Grupo Fuertes, Acciona Agua, el grupo Coren o Macrosoft entre otras se están gestionando y monitorizando miles de evidencias de cumplimiento disponiendo de cuadros de mando que combinan información de todos sus departamentos y centros de forma selectiva.",
+    "leftTitle": "Todo esto les permite",
+    "leftItems": [
+      "Obtener una visión pormenorizada de la marcha y evolución de su negocio",
+      "Evaluar los riesgos de sanción económica y penales",
+      "Medir la evolución del grado de cumplimiento en tiempo real a nivel de compañía"
+    ],
+    "rightTitle": "Y todo ello seleccionado por",
+    "rightItems": [
+      "Alcances normativos",
+      "Centros de trabajo",
+      "Departamentos",
+      "Empleado"
+    ],
+    "paragraphs": [
+      "Gracias a esto han podido actuar a tiempo para anular o disminuir los riesgos y ganar en tranquilidad.",
+      "Además, tienen perfectamente inventariada y controlada desde un mismo lugar toda la información y documentación relativa a sus instalaciones y equipos de trabajo, los empleados, así como los contratos y los proveedores.",
+      "No hay semana en la que no nos contacte algún empresario o directivo para pedirnos consejo sobre cómo tener control sobre su Sistema de gestión de Compliance penal sin que suponga un coste extra para su empresa. Son personas conscientes del riesgo que están asumiendo y les preocupa o ya han puesto en marcha algún tipo de mecanismo de control pero no termina de funcionar o les genera un sobre esfuerzo inasumible.",
+      "Y tú seguramente has llegado leyendo hasta aquí porque buscas lo mismo.",
+      "Quedarse con los brazos cruzados no es una opción. Con una guía clara y certera, una plataforma digital y la ayuda de consultores expertos el camino se vislumbra seguro y sencillo."
+    ],
+    "buttonText": "Reserva una reunión con nosotros",
+    "imgBackground": "hielo7.png"
+    }
+  },
+    {
+    "id": 12,
+    "tipo": "ClientPerceptionSection",
+    "data": {
+      "id_testimonio": 1,
+      "items": [
+        "",
+        "La gran diferencia entre gestionar por tu cuenta y hacerlo con un método, un mentor y un software diseñado para ello, es que no vas a fallar.",
+        "",
+        "Realizar por ti mismo todas las tareas que implica cumplir con las normas y tener controlada toda la información en un cuadro de mando supone un esfuerzo titánico. Gastarás muchas horas solo buscando cómo es el mejor modo de hacerlo.",
+        "",
+        "Por eso precisamente hemos creado este programa, para ayudar a todos los empresarios, directivos y técnicos que como tú, necesitan soluciones para pasar del “no sé por donde empezar para lograr tener los riesgos de cumplimiento bajo control” al “tenemos implantado un sistema que me produce mucha tranquilidad y además contribuye a la buena marcha de mi negocio”."
+      ],
+      "downtext": "Ahora tienes la oportunidad de decidir si quieres disfrutar de la tranquilidad de tener bajo control la normativa que aplica al área de tu empresa de la que eres responsable, o si prefieres seguir ahí donde estás sintiendo frustración porque el día a día te impide avanzar con esto o bien no sabes por dónde empezar.",
+      "supertitle": "Modelo Avanzado NormaPro",
+      "image": "Grupo5015.png",
+      "subtitle": "La metodología para gestionar el cumplimiento normativo a través de la Plataforma Digital que utilizan las empresas de prestigio para controlar sus riesgos."
+    }
+  },
+  {
+    "id": 13,
+    "tipo": "ImgTextSection",
+    "data": {
+      "imgCabecera": "Grupo-4593@2x.png",
+      "title": "¿Quieres acabar con Excels y emails que generan un sinfín de trabajos manuales con errores, tiempo mal invertido y que acaban siendo abandonados si no estás pendiente de todo tu personal?",
+      "subtitle": "La Plataforma digital NormaPro pertenece a las llamadas Reg-Tech, es decir, a las nuevas tecnologías enfocadas gestionar y mitigar riesgos relativos al cumplimiento normativo o Compliance."
+    }
+  },
+  {
+    "id": 14,
+    "tipo": "TextSection",
+    "data": {
+      "background": "white",
+      "level1": [
+        "Dispone de 7 aplicaciones"
+      ],
+      "level3": [
+        "Con las que configurar soluciones innovadoras que te permitiran simplificar, estandarizar y automatizar todos los procesos eliminando los costes de adaptación a los requerimientos y aprovechando los sistemas y datos ya existentes:"
+      ]
+    }
+  },
+  {
+    "id": 15,
+    "tipo": "CaracteristicasIncorporadas",
+    "data": {
+      "data": [
+        {
+          "id_data": 1,
+          "title": "Interfaz de creación de flujos",
+          "icon": "fa-list-tree",
+          "mainTitle": "Editor de mapas de evidencias normativas",
+          "subtitle": "",
+          "description": "Gracias a una completa colección de prácticos cuestionarios podréis confeccionar estos mapas a medida de las circunstancias específicas de tu empresa y contarás con referencias normativas, comentarios de expertos, enlaces directos a las normas para su consulta, almacenamiento automático y ordenado del histórico de versiones y todo ello guardando trazabilidad de manipulación. También podrás asignar responsables, crear un árbol de supervisores o calcular del riesgo por sanción en tiempo real.",
+          "img": "fichasdocumentales.png"
+        },
+        {
+          "id_data": 2,
+          "title": "Biblioteca de normas",
+          "icon": "fa-book-law",
+          "mainTitle": "Biblioteca de normas",
+          "subtitle": "",
+          "description": "NormaPro conecta cada evidencia con su norma correspondiente, destacando las principales regulaciones aplicables y proporcionando enlaces directos para un acceso fácil y eficiente.",
+          "img": "bibliotecanormas.png"
+        },
+        {
+          "id_data": 3,
+          "title": "Gestor de tareas",
+          "icon": "fa-calendar-clock",
+          "mainTitle": "Gestor de tareas",
+          "subtitle": "",
+          "description": "Enriquecida con una agenda inteligente, un calendario compartido para que tu equipo y tu estéis coordinados y un panel para que configures las alertas de cumplimiento que creas más conveniente. ",
+          "img": "gestortareas.png"
+        },
+        {
+          "id_data": 4,
+          "title": "Editor de formularios",
+          "icon": "fa-clipboard-list-check",
+          "mainTitle": "Editor de formularios",
+          "subtitle": "",
+          "description": "Te permite crear y personalizar fácilmente cuestionarios y registros específicos. Facilita la recopilación y análisis de datos clave para un seguimiento automatizado, riguroso y documentado de las obligaciones establecidas por ti.",
+          "img": "editorformularios2.png"
+        },
+        {
+          "id_data": 5,
+          "title": "Informes",
+          "icon": "fa-file-chart-column",
+          "mainTitle": "Informes",
+          "subtitle": "",
+          "description": "Que se autocompletaran y actualizarán en tiempo real con posibilidad de incluir y configurar todos los indicadores que te permitirán medir objetivos y hacerles un seguimiento puntual, diseñando tu propio cuadro de mando con gráficos y alertas por desviaciones que os permitirá tomar las mejores decisiones justo a tiempo.",
+          "img": "panelcontrol2.png"
+        },
+        {
+          "id_data": 6,
+          "title": "Editor de procesos",
+          "icon": "fa-timeline-arrow",
+          "mainTitle": "Editor de procesos (BPM)",
+          "subtitle": "",
+          "description": "Esta herramienta es especialmente potente ya que, gracias a ella, cientos de centros de trabajo de las empresas que actualmente utilizan NormaPro han podido automatizar trámites y procesos internos de negocio, generar expedientes a medida y coordinar automáticamente a todas las personas que han de intervenir informando en cada momento del estado y la evolución al detalle.",
+          "img": "editorprocesos.png"
+        },
+        {
+          "id_data": 7,
+          "title": "Canal de denuncias",
+          "icon": "fa-siren-on",
+          "mainTitle": "Canal de denuncias",
+          "subtitle": "",
+          "description": "Fomenta un ambiente de trabajo ético y transparente, donde cada voz cuenta y es escuchada. Transparencia total, tolerancia cero. Un espacio seguro para hacer lo correcto. Ofrece un medio confidencial para canalizar denuncias. Sin transparencia, arriesgas el bienestar de tus empleados y la reputación de tu empresa.",
+          "img": "canaldenuncias.png"
+        },
+        {
+          "id_data": 8,
+          "title": "Gestion de Competencias",
+          "icon": "fa-briefcase",
+          "mainTitle": "Gestión de Competencias",
+          "subtitle": "",
+          "description": "Evita la desorganización y falta de seguimiento de responsabilidades asignando roles y estructura con supervisores fácilmente. Evalúa riesgos y sanciones en tiempo real, asegurando que cada miembro del equipo conozca su misión.",
+          "img": "gestioncompetencias.png"
+        }
+      ]
+    }
+  },
+  {
+    "id": 16,
+    "tipo": "TextSection",
+    "data": {
+      "level8": [
+        "Esto no es una aplicación informática en el que aparece un listado de normas que aplican a las empresas de un sector con 4 o 5 funcionalidades para generar unas alertas clasificadas por colores."
+      ],
+      "remarkableText3": "NO",
+      "level9": [
+        "Esto es un señor programa pensado para que dispongas todas las herramientas que necesitas para llevar a buen puerto la misión de obtener importantes mejoras en la gestión de los procesos internos de tu empresa o departamento gracias vincular estos con los objetivos de cumplimiento."
+      ],
+      "buttonText": "Reserva una demo personal"
+    }
+  },
+  {
+    "id": 17,
+    "tipo": "SimpleClientPerceptionSection",
+    "data": {
+      "title": "Más de 2.000 directivos y técnicos han trabajado mano a mano en el último año con nuestros consultores",
+      "id_testimonio": 8
+    }
+  },
+  {
+    "id": 18,
+    "tipo": "EtapasSection",
+    "data": {
+      "title": "El Modelo más completo y Avanzado de gestión del Cumplimiento Normativo",
+      "subtitle": "Una metodología exclusiva probada y que funciona.",
+      "claim": "Aquí tienes los contenidos del programa. Es la que utilizan empresarios y directivos de éxito y con la que implementarás, paso a paso y ayudados por nuestros consultores, un modelo con el que conseguirás que todas las personas de tu organización conozcan cuál es su papel y su responsabilidad e interioricen hábitos de cumplimiento en los procesos productivos.",
+      "buttonText": "Quiero saber más de vuestro sistema",
+      "etapas": [
+        {
+          "imgBackground": "hielo3.png",
+          "image": "IICE_LandingCompliance_Etapa1.png",
+          "title": "Primeros pasos",
+          "objective": "Objetivos: Veremos qué es y para qué sirve una política de cumplimiento.",
+          "list": [
+            "Acota bien los alcances y establece un procedimiento general de actuación para dejar constancia de qué documentar y cómo actuar.",
+            "El compromiso de la Dirección de la empresa es fundamental para garantizar el éxito del proyecto… aquí verás como se establece la función de cumplimiento.",
+            "Establecerás unas bases sólidas de alto nivel asentadas en principios de Compliance, Compromiso y liderazgo."
+          ]
+        },
+        {
+          "imgBackground": "hielo3.png",
+          "image": "IICE_LandingCompliance_Etapa2.svg",
+          "title": "Arquitectura de la organización",
+          "objective": "Objetivos: Configuraremos la Plataforma Digital NormaPro para tu empresa que se compondrá a su vez, de tantas plataformas como sociedades y sedes o centros de trabajo se dispongan en tu organización.",
+          "list": [
+            "Tendréis plena autonomía desde el principio.",
+            "Distribuye las tareas entre los miembros de tu equipo, el cumplimiento normativo es cosa de todos, no concentres toda la carga en ti, asigna roles y permisos."
+          ]
+        },
+        {
+          "imgBackground": "hielo6.png",
+          "image": "IICE_LandingCompliance_Etapa3.png",
+          "title": "Formación del equipo",
+          "objective": "Objetivos: Que todo tu equipo de colaboradores alcancen un nivel adecuado para usar la Plataforma Digital NormaPro para automatizar todas las tareas de cumplimiento y eliminar tiempos improductivos y trabajos repetitivos o manuales.",
+          "list": [
+            "Gracias a 3 sencillos módulos conocerán los fundamentos del método y los beneficios que reporta implementar un modelo de cumplimiento.",
+            "Cada miembro de tu equipo interiorizará y seran sensibles a los fines que persigue la empresa que no es otro sino el que florezca una cultura ética y de cumplimiento en el seno de la misma como seña de identidad."
+          ]
+        },
+        {
+          "imgBackground": "hielo8.png",
+          "image": "IICE_LandingCompliance_Etapa4.svg",
+          "title": "Mapa de evidencias",
+          "objective": "Objetivos: Fabricaréis mapas de evidencias que permitan demostrar ante terceros el cumplimiento de la normativa en cada uno de los alcances elegidos.",
+          "list": [
+            "Realizar esta labor podría llevar a cualquier organización meses de estudio de normas y trabajo de campo, pero para ello NormaPro dispone de un número cada vez mayor de cuestionarios que os ayudan a diseñar estos mapas de manera fácil y guiada en cuestión de unos minutos.",
+            "Tan solo por esta potente herramienta ya merece la pena la inversión en NormaPro y podrás dar de alta a los empleados, instalaciones y equipos de trabajo tanto de tu empresa como de las contratas y proveedores que colaboran con vosotros y, de esta forma, tener control de las evidencias que son obligatorias por norma."
+          ]
+        },
+        {
+          "imgBackground": "hielo3.png",
+          "image": "IICE_LandingCompliance_Etapa5.png",
+          "title": "Evaluación y monitorización",
+          "objective": "Objetivos: Hacer que todo funcione según lo planeado y en piloto automático.",
+          "list": [
+            "Todo tu equipo comenzará a integrar hábitos de cumplimiento en sus tareas productivas cotidianas auxiliados por un sistema de alertas que impedirá que ningún plazo se pueda pasar sin atender.",
+            "En un completo cuadro de mando gráfico, podrás hacer seguimiento de la evolución favorable del grado de cumplimiento de tu empresa, midiendo en continuo y detectando posibles desviaciones justo en el momento en que se produzcan.",
+            "Adopta medidas correctoras justo a tiempo de evitar riesgos que supongan un peligro para la organización."
+          ]
+        },
+        {
+          "imgBackground": "hielo6.png",
+          "image": "IICE_LandingCompliance_Etapa6.png",
+          "title": "Mejora continua del sistema",
+          "objective": "Objetivos: Veremos cómo evaluar en tiempo real tanto los riesgos específicos detectados del cumplimiento normativo, como los propios del sistema implantado.",
+          "list": [
+            "Con nuestro método será muy sencillo descubrir oportunidades de mejora y establecer eficaces planes de acción que contribuyan claramente al éxito de vuestro proyecto empresarial.",
+            "Veremos qué elementos conviene incluir en un informe anual para reportar toda la información que necesita la Dirección de la compañía de manera clara, concisa y eficaz que les será, seguro, de vital importancia para tomar decisiones de carácter estratégico.",
+            "Al finalizar esta etapa habrás establecido un proceso completo de evaluación y control de los riesgos derivados del cumplimiento normativo para que tengas la tranquilidad de que el Modelo funciona."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 19,
+    "tipo": "CarouselPerceptionsSection",
+    "data": {
+      "title": "NormaPro es un programa con resultados probados",
+      "pragma": "Son cientos los centros de trabajo que ya han conseguido su objetivo y están gestionando y monitorizando miles de evidencias de cumplimiento lo que permite obtener una visión pormenorizada de la marcha y evolución del negocio, evaluar los riesgos de sanción económica y medir su grado de cumplimiento en tiempo real.",
+      "subtitle": "Adelantate y actua a tiempo para anular o disminuir los riesgos y gana en tranquilidad.",
+      "listIds": [9,7,3,1]
+    }
+  },
+  {
+    "id": 20,
+    "tipo": "AportacionesSection2",
+    "data": {
+      "title": "Todavía tenemos más aportaciones de valor pensadas para ti",
+      "claim": "En Instituto de Innovación, Ciencia y Empresa no paramos de pensar cómo mejorar nuestra oferta de valor cada día y, en este caso, para que puedas aprovechar al máximo esta experiencia, tenemos dos aportaciones adicionales incluidas el paquete de servicios:",
+      "buttonText": "Reserva un demo personal",
+      "aportaciones": [
+        {
+          "image": "IICE_LandingCompliance_Bitacora.svg",
+          "imageBackground": "hielo2.png",
+          "title": "Bitácora de NormaPro",
+          "claim": "La guía que necesitas para aplicar nuestra metodología. Implenta con éxito el Modelo más avanzado de cumplimiento.",
+          "pragma": "Tendrás a tu disposición contenidos muy valiosos en forma de guías y artículos técnicos para que comprendas cada nuevo paso, así como plantillas de documentos y vídeos tutoriales con las mismas temáticas que trataréis en directo con nuestros consultores. Podrás volver a verlas cuantas veces quieras en el momento que te apetezca."
+        },
+        {
+          "image": "IICE_LandingCompliance_Expertos.png",
+          "imageBackground": "hielo5.png",
+          "title": "El Cuadro de Expertos",
+          "claim": "Muy valorado y utilizado por todos nuestros clientes",
+          "items": [
+            "Tendréiss acceso ilimitado desde el primer día.",
+            "Ellos estarán ahí los 365 días del año para ayudarte.",
+            "Resuelve tus dudas.",
+            "Pídeles opinión."
+          ]
+        },
+        {
+          "image": "IICE_Academia_FormaPro.png",
+          "imageBackground": "hielo2.png",
+          "title": "Academia FormaPro",
+          "claim": "Una selección de cursos y conferencias pensados para facilitar las cosas",
+          "items": [
+            "Para conocer un detalle la normativa sin perder tiempo",
+            "Para transmitirse los consejos más prácticos",
+            "Para sacarle el máximo partido a tu canal de denuncias.",
+            "Para conocer todo lo que puede hacer por ti la Plataforma Digital NormaPro "
+          ],
+          "buttonText": "Descubre los cursos gratuitos"
+        }
+      ]
+    }
+  },
+  {
+    "id": 21,
+    "tipo": "CertificacionesSection",
+    "data": {
+      "title": "Calidad y seguridad certificada",
+      "subtitle": "Nuestros productos y servicios cuentan con certificación de AENOR:",
+      "images": [
+        "27001.png",
+        "9001.png",
+        "45001.png",
+        "iqnet.png",
+        "ascom.png",
+        "qaec.png"
+      ]
+    }
+  },
+  {
+    "id": 22,
+    "tipo": "PasosSection",
+    "data": {
+      "title": "¿Cuál debería ser el valor de este paquete de servicios",
+      "subtitle": "Hagamos un ejercicio muy simple:",
+      "pasos": [
+        {
+          "claim": [
+            "Imagina que ya tienes la idea de cómo organizar toda la actividad relativa a la gestión del cumplimiento de tu empresa o de tu departamento y sabes aproximadamente los alcances normativos que te afectan pero, por falta de tiempo o conocimientos específicos, necesitas contratar a un consultor que te ayude a establecer un mapa de obligaciones legales específico a medida de vuestras circunstancias y te oriente sobre qué documentación es la mejor para evidenciar el cumplimiento ante terceros. ",
+            "Todo este proceso te puede costar un mínimo de 6.000€ dependiendo del tamaño de tu organización"
+          ]
+        },
+        {
+          "claim": [
+            "Pongámonos ahora en el caso de que todo eso puedes hacerlo por ti mismo porque conoces perfectamente tu empresa y el sector en el que operáis etc, perfecto, pero quizás tengas dudas sobre cómo establecer un sistema para mantenerlo todo actualizado y cuidando que no se pase ningún plazo y, sobre todo, disponer de algunas herramientas de software que te funcione a la hora de coordinaros y ahorrar tiempo.",
+            "Podrías entonces contratar a una consultora con un software para hacerlo, ¿verdad? un programa de consultoría más las licencias del software te puede costar un mínimo de otros 6.000 € al año."
+          ]
+        },
+        {
+          "claim": [
+            "Ahora seguramente estás pensando que en realidad todo eso te lo puedes ahorrar y lo puedes hacer tú mismo y podrías hacerlo, pero ¿cuánto tiempo vas a tardar en resolver todas las dudas que te van a ir saliendo por el camino por tu cuenta y riesgo? Piénsalo, ¿meses?, y algo muy importante y es que tu tiempo también vale dinero. Ponle un valor a tu tiempo y al de tu equipo, ¿cuánto vale una hora de vuestro trabajo? ¿40€?, ¿60€?, ¿80€? eso tú lo sabes mejor."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 23,
+    "tipo": "NecesidadesSection",
+    "data": {
+      "imgBackground": "hielo4.png",
+      "image": "IICE_NormaPro1.png",
+      "title": "Ahora piensa:",
+      "subtitle": "¿Cuánto tiempo vas a dedicarle a implantar un sistema de gestión del cumplimiento?",
+      "titlelist": "Para ello necesitas:",
+      "list": [
+        "Conocer las normas que afectan a tus instalaciones, a tus equipos de trabajo y a tus máquinas, o en materia ambiental desde gestión de residuos y vertidos hasta emisiones, formaciones obligatorias de tu personal o entrega de EPI’s, almacenamiento de productos químicos, legionela o normativa sanitaria, por nombrar algunas.",
+        "Descubrir por ti mismo cómo funciona el ordenamiento jurídico en este ámbito porque no te estoy hablando solo de diseñar un modelo me refiero a todos los pasos que necesitas dar para que finalmente consigas implantarlo, ponerlo en marcha y que se mantenga funcionando en el tiempo gracias a que tu equipo ha integrado los hábitos necesarios para que os aporte la tranquilidad que necesitas."
+      ]
+    }
+  },
+  {
+    "id": 24,
+    "tipo": "ClavesSection",
+    "data": {
+      "title": "4 claves indispensables para organizar y automatizar tareas de cumplimiento",
+      "claves": [
+        {
+          "image": "IICE_LandingCompliance_automatizar_tareas1.svg",
+          "claim": "Disponer de un inventario con toda la información precisa de cada equipo de trabajo."
+        },
+        {
+          "image": "IICE_LandingCompliance_automatizar_tareas2.svg",
+          "claim": "Saber qué norma es aplicable a cada caso concreto y cual no, tenerla toda inventariada y accesible."
+        },
+        {
+          "image": "IICE_LandingCompliance_automatizar_tareas3.svg",
+          "claim": "Discernir qué evidencias hemos de tener disponibles."
+        },
+        {
+          "image": "IICE_LandingCompliance_automatizar_tareas4.svg",
+          "claim": "Estar preparado en todo momento para dar la respuesta adecuada ante una auditoría, inspección o accidente."
+        }
+      ]
+    }
+  },
+  {
+    "id": 25,
+    "tipo": "TextSection",
+    "data": {
+      "background": "white",
+      "level2": [
+        "",
+        "¿Te haces una idea de cuánto tiempo necesitas invertir en todo esto?\n\n¿Cuántas horas piensas que serán tiempo perdido porque en realidad aún no tenéis identificadas las fuentes normativas, ni el método concreto que vais a seguir para coordinar toda la actividad que el cumplimiento conlleva, ni los recursos que vais a necesitar para mantenerlo todo actualizado?\n\n¿Cuándo vas a encontrar el momento adecuado para poner un plan de control del cumplimiento normativo en marcha en medio de vuestras labores propias de producción?\n\n¿Cómo sabrás quién de tu organización está realizando las tareas asignadas de cumplimiento y quién está comprometiendo la reputación de la compañía por una actitud impropia?\n\n¿Cómo mantener toda esta información tan valiosa a salvo de bajas o sustituciones?"
+      ]
+    }
+  },
+  {
+    "id": 26,
+    "tipo": "TextSection",
+    "data": {
+      "background": "white",
+      "level5": [
+        "La mayor parte de las empresas no encuentran todo ese tiempo."
+      ],
+      "level8": [
+        "Tiempo que, realmente, lo necesitas para no desviarte de tus objetivos de producción ya que sabes que nunca vas a poder recuperarlo y que vale mucho más que el precio que cuesta el paquete de servicios que te ofrecemos para establecer entre los miembros de tu plantilla los hábitos de cumplimiento necesarios que estarán alineados con vuestros procesos y ayuden a mejorar vuestros resultados."
+      ],
+      "buttonText": "Quiero una demostración"
+    }
+  },
+  {
+    "id": 27,
+    "tipo": "ClientPerceptionSection",
+    "data": {
+      "id_testimonio": 9,
+      "supertitle": "A través de nuestra Plataforma Digital y nuestro Método Avanzado NormaPro de gestión del Cumplimiento normativo os aportamos:",
+      "items": [
+        "",
+        "No lo pensaría dos veces y contrataría sin dudarlo",
+        "",
+        "Nuestro método te contará de golpe todo lo que necesitas saber para conseguir implementar un sistema ágil y eficaz de cumplimiento normativo combinado con una plataforma digital que coordine toda la actividad, la integre en vuestros procesos y eliminarás tiempos y costes adicionales."
+      ],
+      "secondtitle": "Evita dar palos de ciego.\nTu tiempo y tu tranquilidad es lo primero.",
+      "pragma": "Piensa que la metodología y el software va a correr a cargo de un reconocido equipo consultor con años de experiencia y que ha trabajado con empresas de las más importantes.",
+      "secondsupertitle": "¿Cuándo empezamos?",
+      "tabla": [
+        {
+          "icon": "fa-clipboard-list-check",
+          "claim": "Sencillos cuestionarios para que hagáis inventarios de normas y mapas documentales en cuestión de minutos."
+        },
+        {
+          "icon": "fa-glasses-round",
+          "claim": "Analizamos normas para vosotros"
+        },
+        {
+          "icon": "fa-fish",
+          "claim": "Os explicamos cómo funcionan las normas para que sepáis moveros por ellas como pez en el agua para que no andéis dando tumbos y evitéis sorpresos desagradables"
+        },
+        {
+          "icon": "fa-book-section",
+          "claim": "Os ayudamos a seleccionar bien los alcances normativos que aplican a tu empresa o departamento"
+        },
+        {
+          "icon": "fa-file-chart-column",
+          "claim": "Os asesoramos a la hora de redactar la información documentada de vuestro modelo de cumplimineto aportando plantillas y guías"
+        },
+        {
+          "icon": "fa-comment-question",
+          "claim": "Trabajamos para ayudaros a resolver cuantas dudas os puedan surgir a la hora de realizar un tramite"
+        }
+      ]
+    }
+  },
+  {
+    "id": 28,
+    "tipo": "PorcentajesSection",
+    "data": {
+      "title": "¿Por qué deberías acceder a este programa?",
+      "subtitle": "Porque cientos de empresas son sancionadas por diversos motivos cada día y porque creemos firmemente que implementando el Modelo Avanzado de gestión del cumplimiento NormaPro tendrás sensación de tranquilidad y seguridad.",
+      "claim": "El problema es que la mayoría de las empresas no disponen de una metodología que sea capaz de integrar hábitos de cumplimiento en su plantilla ya que, o no dedican los recursos necesarios o los que disponen se pierden en un consumo excesivo de tiempo y tareas improductivas que no consiguen evitar consecuencias desagradables cuando se encuentran con una inspección o se produce un incidente.",
+      "pragma": "Nosotros no queremos que esto te ocurra a ti y de hecho las empresas que ya tienen el Modelo Avanzado NormaPro ahora mismo tienen a su personal sensibilizado y sus Sistemas de gestión funcionando en piloto automático.",
+      "datos": [
+        {
+          "porcentaje": "20%",
+          "claim": [
+            "En materia de",
+            "prevención de riesgos en el trabajo",
+            "el Gobierno español aumentará un 20% la presión a las empresas que irán desde 49.141 euros hasta 982.914 euros."
+          ]
+        },
+        {
+          "porcentaje": "57%",
+          "claim": [
+            "",
+            "La vulneración de las normativas europeas en materia de medio ambiente",
+            "ha ascendido un 57% en tan solo cinco años y, en su mayor parte, estas infracciones están relacionadas con la festión de residuos y vertidos, lo que ha hecho que las autoridades competentes de la Unión Europea aumenten sus acciones de control, detección y denuncia."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 29,
+    "tipo": "TextSection",
+    "data": {
+      "background": "white",
+      "level2": [
+        "",
+        "¿Quieres disponer de un mapa de evidencias normativas que aplican a tu empresa o departamento bien pensado y bien organizado que sea capaz de pasar en un altísimo grado los filtros de las auditorías y las inspecciones?\n\n¿Quieres poder tener un completo inventario de tus equipos de trabajo con toda la información en estado permanente de revista y de paso mejorar su mantenimiento y así alargar su vida útil?\n\n¿Quieres ser capaz de preparar un plan que te permita asignar tareas de supervisión automatizadas de cumplimiento para que tus empleados o colaboradores actúen como una orquesta bien sincronizada?"
+      ]
+    }
+  },
+  {
+    "id": 30,
+    "tipo": "TextSection",
+    "data": {
+      "background": "gray",
+      "level2": [
+        "Si has respondido sí a alguna de estas preguntas no lo dudes:"
+      ],
+      "level3": [
+        "Debes ser una de las personas que comience a trabajar con nosotros y aplicar nuestro método y empezar ya a implementar un modelo avanzado de gestión del cumplimiento con el que puedes evitar sanciones, mantener a salvo la reputación de tu empresa y ganar en tranquilidad."
+      ],
+      "buttonText": "Reserva una sesión con nosotros"
+    }
+  },
+  {
+    "id": 31,
+    "tipo": "DesgraneSection",
+    "data": {
+      "title": "¿Aún no lo tienes claro?",
+      "claim": "Queremos ayudarte a recorrer todo el camino hasta que tu sistema de cumplimiento alcance la madurez aconsejándote en cada decisión que debas tomar, ayudándote a resolver cada duda que puedas tener y asesorándote en todo aquello que puedas necesitar y, sobre todo, animándote a llegar hasta el final hasta ver cómo tu empresa o departamento alcanza el máximo nivel posible de grado de cumplimiento gracias al método avanzado NormaPro.",
+      "pragma": "Todo este proceso te puede costar un mínimo de 6.000 € dependiendo del tamaño de tu organización.",
+      "listTitle": "Te desgranamos 1 a 1 el valor real de todo lo que te hemos contado:",
+      "list": [
+        {
+          "image": "IICE_NormaPro2.png",
+          "title": "La Plataforma digital NormaPro",
+          "claim": "Con todas las aplicaciones que necesitas para automatizar todos los procesos eliminando costes por tareas improductivas. Seguro que has pedido presupuestos para implementar una aplicación tipo ERP y sabrás que para una pequeña o mediana empresa el coste del desarrollo supera los 9.000 € más licencias de 50 a 100 € por usuario y mes para uso indefinido. Por supuesto, estas cifras se disparan para una empresa de mayor envergadura, además de que casi siempre aparecen costos ocultos o inesperados una vez que el proyecto ya está en marcha."
+        },
+        {
+          "image": "IICE_LandingCompliance_Bitacora.svg",
+          "title": "El programa de consultoría",
+          "claim": "El programa de consultoría de 6 etapas que incluyen 21 módulos con cuestionarios, asistido por la Plataforma Bitácora de NormaPro con plantillas y contenidos técnicos en continua renovación por lo que tiene un valor incalculable."
+        },
+        {
+          "image": "IICE_LandingCompliance_Expertos.png",
+          "title": "El cuadro de expertos",
+          "claim": "Un cuadro de expertos en cada materia según los alcances normativos seleccionados para hacerles llegar cuantas consultas creáis necesarias valorado en más de 3.000 € por año. Te recordamos que el acceso es ilimitado."
+        },
+        {
+          "image": "IICE_Academia_FormaPro.png",
+          "title": "Acceso a la Academia FormaPro",
+          "claim": "En la que vamos añadiendo cursos de los contenidos más interesantes de las normas vigentes, así como para aprender a manejar con soltura todas las herramientas de la Plataforma Digital NormaPro. Gracias a los cursos podrás formarte tanto tú como todo tu equipo y sacar el mayor partido para ayudar a la transformación digital de vuestros procesos. Piensa que cada curso tiene un coste medio por alumno de 150 € y disponemos de decenas de ellos para que podáis acceder de forma ilimitada a todos ellos."
+        }
+      ]
+    }
+  },
+  {
+    "id": 32,
+    "tipo": "SideTextSection",
+    "data": {
+      "title": "El propósito de Instituto de Innovación, Ciencia y Empresa es el de democratizar el Cumplimiento normativo alineado con la Transformación digital de las organizaciones y así contribuir de forma significativa a su éxito empresarial.",
+      "claim": "El disponer de una metodología bien estructurada, unos recursos tecnológicos muy evolucionados y hacer las sesiones online nos permiten poder ofertar todo este paquete de servicios por una cuota mensual más que razonable que dependerá del tamaño de tu empresa y los alcances normativos que más te preocupen controlar en este momento.",
+      "pragma": "Si quieres conocer la cantidad de esta cuota te invito a que cumplimentes un sencillo y escueto cuestionario de apenas 5 preguntas. En uno o dos días tendrás en tu correo el coste muy aproximado.",
+      "buttonText": "Cumplimentar cuestionario"
+    }
+  },
+  {
+    "id": 33,
+    "tipo": "RegaloSection",
+    "data": {
+      "image": "IICE_LandingCompliance_regalo.svg",
+      "imageBackground": "hielo4.png",
+      "title": "Para ello te proponemos una opción aún mejor:",
+      "subtitle": "Puedes concertar una sesión",
+      "claim": "En la que podremos explicarte con todo detalle todo el método y hacerte una demo de cómo funciona la plataforma.",
+      "titleSection": "Un regalo único que vas a apreciar enormemente.",
+      "claimSection": "Te recomendamos esta opción ya que el consultor que te atienda te va a ofrecer realizar, de forma totalmente gratuita, un mapa de evidencias legales por cada tipo de centro de trabajo de los que tu empresa disponga. ¿No te parece un magnífico regalo? Podrás comprobar que en el mismo día puedes conseguir un inventario de un altísimo porcentaje de la normativa que aplica a tu empresa y una propuesta muy elaborada de las principales evidencias de cumplimiento que legalmente estás obligado a tener actualizadas.\n\n¿Cuánto tardaría tu equipo en disponer de esta información? Muchas jornadas ¿verdad?, probablemente nunca encuentren el momento para hacerlo y el riesgo irá en aumento. Para ello, nosotros tenemos a todo un departamento pendiente de las novedades de estos alcances regulatorios y analizando cada norma para capturar esas evidencias de las que necesitas disponer para ayudarte y servirte de apoyo a la hora de conocer los riesgos legales. Y ahora estamos dispuestos a entregarte gratuitamente ese mapa que te va a ofrecer una visión del cumplimiento como antes nunca habías tenido.\n\nEsta opción está a tu entera disposición y te servirá para conocer el método por dentro y a nuestros consultores sin compromiso alguno. Incluso podrás, si así lo deseas, hablar con alguno de nuestros clientes para preguntarle dudas y que te orienten para saber si esto realmente es para ti.",
+      "pragma": "Ahora, si quieres aprovechar este regalo y conocer más de cerca este Modelo avanzado que te aportará tranquilidad y que te ayudará a poner a tu empresa en la vanguardia del cumplimiento normativo y la transformación digital haz clic en el botón y reserva una sesión con nosotros.",
+      "buttonText": "Reserva una reunión con nosotros"
+    }
+  },
+  {
+    "id": 34,
+    "tipo": "ResumenSection",
+    "data": {
+      "imgCabecera": "IICE_LandingCompliance_medalla.svg",
+      "imgBackground": "hielo2.png",
+      "title": "Nuestros servicios están garantizados",
+      "claim": "",
+      "titlelist": "",
+      "list": [
+        {
+          "icon": "",
+          "title": "",
+          "pragma": "No hay compromiso de permanencia, es decir, si una vez arrancado el programa veis que no os convence o que por cualquier circunstancia sentís que no avanzáis no pasa nada, puedes interrumpir el servicio tan solo con comunicárnoslo y listo; así que riesgo cero.\n\nDe cualquier manera, intuimos que esto no va a ocurrir. Hace 9 años que diseñamos la primera versión de este programa y, a día de hoy, ningún cliente nos ha solicitado la baja. Increible ¿no?"
+        }
+      ],
+      "cta": {
+        "title": "",
+        "buttonText": "",
+        "pragma": ""
+      }
+    }
+  },
+  {
+    "id": 35,
+    "tipo": "ResumenSection",
+    "data": {
+      "imgCabecera": "IICE_Medioambiente.png",
+      "imgBackground": "hielo2.png",
+      "title": "¿Cuándo recuperaré la inversión en el Modelo avanzado NormaPro?",
+      "claim": "",
+      "titlelist": "",
+      "list": [
+        {
+          "icon": "",
+          "title": "Cuando haces una inversión siempre buscas rentabilizarla y este programa nosotros lo vemos como eso, como una inversión no solo para tu empresa sino también como una inversión en ti y en los miembros de toda la organización. Así que vamos con los números:",
+          "pragma": "Comencemos por lo más simple e imaginemos que nos toca enfrentarnos a una auditoría interna o a una inspección reglamentaria. Lo habitual en las empresas es dedicar un par de meses de horas y horas de nuestro personal a prepararlas. Volvemos a los cálculos del coste de esas horas ¿las valoramos en tan solo 40 €? ¿Y si estas cantidades las multiplicamos por 2 personas dedicando tiempo a esta labor durante esos dos meses? Seguro que ese coste, al que nadie le echa cuentas supera los 16.000 €. El problema añadido es que durante ese tiempo aparecen incumplimientos que, en algunas ocasiones, ya no da tiempo a subsanar y, en el caso de una inspección reglamentaria ya es tarde para evitar la sanción.\n\nBien, ahora, ¿te imaginas que llegado el momento de esa auditoría o inspección no hay que invertir más allá de una mañana para revisar que todo está bien porque durante todo el año se ha realizado una labor de mantenimiento integrando acciones en los hábitos de trabajo productivo diario?\n\n¿Te imaginas la sensación que puede llevarse el auditor o el inspector al ver que su labor se ha reducido considerablemente en el tiempo comprobando que existe una organización sincronizada y siempre en estado de revista?"
+        },
+        {
+          "icon": "",
+          "title": "Te recordamos que en el 100% de los casos NormaPro aparece como punto fuerte en los informes de los auditores de AENOR y otras certificadoras.",
+          "pragma": "Todo esto sin entrar en las consecuencias que, a buen seguro, vas a poder evitar porque el objetivo de este programa no es solo que conozcas cuáles son las principales obligaciones legales que os aplican sino que, además, consigas disponer de un sistema cada vez más afinado pensando en que la cuantía de una sanción puede llegar a ser casi millonaria en caso extremo, amén de las repercusiones penales para los responsables o el daño reputacional que afecta directamente a todos los sectores de actividad siendo especialmente sensible en algunos como los relacionados con la salud o la alimentación por ejemplo."
+        }
+      ],
+      "cta": {
+        "title": "",
+        "buttonText": "",
+        "pragma": ""
+      }
+    }
+  },
+  {
+    "id": 36,
+    "tipo": "ResumenSection",
+    "data": {
+      "imgCabecera": "IICE_FormaPro_NormaPro.png",
+      "imgBackground": "hielo1.png",
+      "title": "Confianza para inversores",
+      "claim": "",
+      "titlelist": "",
+      "list": [
+        {
+          "icon": "",
+          "title": "",
+          "pragma": "Hay clientes que nos manifiestan que están muy pendientes de la cotización de sus acciones y que buscan con la plataforma digital NormaPro la clave que necesitan para conseguir una organización más transparente, visible, ordenada y eficiente desde todos los puntos de vista y donde los parámetros de valoración de su compañía se disparan."
+        }
+      ],
+      "cta": {
+        "title": "",
+        "buttonText": "",
+        "pragma": ""
+      }
+    }
+  },
+  {
+    "id": 37,
+    "tipo": "TextSection" ,
+    "data": {
+     "background": "gray", 
+      "level4": [
+        "Ahora te toca a ti elegir. Es el momento de tomar decisiones, de dar el paso hacia la tranquilidad. Puedes recoger toda la información que te vamos a regalar en la reunión demo y empezar a caminar tú solo.\n\nContrata nuestro programa NormaPro y ábrenos la puerta para que te acompañemos en este camino que debería llevarte a disponer del Modelo más avanzado de gestión del cumplimiento normativo y conseguir tenerlo todo bajo control."
+      ],
+      "buttonText": "Reserva una sesión estratégica"
+    }
+  },
+  {
+    "id": 38,
+    "tipo": "FaqSection",
+    "data": {
+      "faqs": [
+        {
+          "question": "¿NormaPro sirve para todo tipo de alcances normativos?",
+          "answer": [
+            "NormaPro está diseñada para ser una solución versátil en la gestión del cumplimiento normativo. Se enfoca en proporcionar un marco robusto que pueda adaptarse a diversos tipos de normativas y regulaciones. Su flexibilidad y capacidad de personalización permiten que pueda ser configurada para cumplir con una amplia gama de requisitos normativos y estándares de la industria, lo que la hace útil para empresas de diferentes sectores.\n\nAdemás, en el dinámico panorama del cumplimiento normativo, los cambios son constantes y es vital estar actualizado. NormaPro aborda este desafío activamente con una biblioteca de normas que se actualiza automáticamente para reflejar las últimas regulaciones más relevantes. Recibirás notificaciones oportunas sobre las modificaciones pertinentes, ayudaremos a que tu empresa permanezca informada en cumplimiento y reduciendo el riesgo de sanciones. Nuestro compromiso es ayudarte para que no te sorprendan los cambios normativos más importantes."
+          ],
+          "link": [
+            "Mantente al día con las regulaciones. ",
+            "Agenda una reunión con unos de nuestros consultores",
+            " y te podrá informar directamente."
+          ]
+        },
+        {
+          "question": "¿En qué se basa vuestra solución?",
+          "answer": [
+            "La solución que te proponemos se fundamenta en:\n\n1. Un ",
+            "Software innovador",
+            " de desarrollo propio que proporcionan las herramientas necesarias para obtener resultados de eficiencia desde el primer momento.\n\n2. Un ",
+            "Programa de Consultoría",
+            "muy completo y probado en empresas de primer nivel y está estructurado paso a paso en varias etapas dirigidas y tuteladas por consultores cualificados NormaPro® que apoyan y coordinan a los profesionales de la propia empresa responsables de cada uno de vuestros hasta alcanzar la autonomía de funcionamiento.\n\nGracias a estos dos elementos conseguirás implementar un Modelo Avanzado de Cumplimiento en el que todas las instrucciones de trabajo estarán bien distribuidas y que hará que tu equipo trabaje de forma coordinada."
+          ],
+          "link": [
+            "",
+            "Solicita una reunión",
+            " para explorar cómo NormaPro puede transformar la gestión de tu empresa o departamento."
+          ]
+        },
+        {
+          "question": "¿Qué recursos tendrás a tu disposición?",
+          "answer": [
+            "· La Plataforma Digital NormaPro ",
+            "Con todas las aplicaciones que necesitas para automatizar todos los procesos eliminando costes por tareas improductivas.\n\n",
+            "· Un programa de consultoría ",
+            "de 6 etapas que incluyen 21 módulos con cuestionarios que recorrerás de la mano de nuestros consultores a través de sesiones de mentoría y asistido por la Plataforma Bitácora de NormaPro con plantillas, guías y contenidos técnicos en continua renovación.\n\n",
+            "· Acceso ilimitado a un cuadro de expertos ",
+            "en cada materia según los alcances normativos seleccionados para hacerles llegar cuantas consultas creáis necesarias.\n\n",
+            "· La plataforma Academia FormaPro ",
+            "en la que vamos añadiendo cursos de los contenidos más interesantes de las normas vigentes, así como para aprender a manejar perfectamente todas las herramientas y aplicaciones de la Plataforma Digital NormaPro."
+          ],
+          "link": [
+            "Conoce todo lo que NormaPro puede hacer por tu empresa. ",
+            "Solicita más información."
+          ]
+        },
+        {
+          "question": "¿Se trata de que nos vais a hacer un software a medida?",
+          "answer": [
+            "NormaPro es una plataforma Low Code y está estructurada de forma modular, lo que te permitirá diseñar tus propios automatísmos adaptados a vuestros propios procedimientos internos y no al revés. Todo mediante configuración y no mediante programación, ¡será como ir ensamblando piezas!.\n\nNormaPro es una solución versátil diseñada para adaptarse a una amplia gama de industrias y tamaños de empresa. Ya sea que operes una pequeña empresa local o una gran corporación multinacional, nuestra plataforma puede ser configurada para satisfacer tus necesidades específicas de cumplimiento normativo. Con NormaPro, cada organización puede beneficiarse de una gestión de documentos eficiente y de un cumplimiento normativo simplificado, independientemente del sector en el que se especialice.\n\n¡Ah! y tú eliges, si quieres que te lo configuremos nosotros o aprender y ser independiente para ir montado nuevos procesos a tu ritmo. Da igual, lo podrás ir decidiendo sobre la marcha."
+          ],
+          "link": [
+            "Averigua cómo NormaPro puede trabajar para tu empresa.",
+            "Solicita una consulta a medida."
+          ]
+        },
+        {
+          "question": "Mis procesos no son muy complicados y con una Hoja de Cálculo puedo mantenerlos, ¿Qué me aporta vuestra plataforma?",
+          "answer": [
+            "NormaPro mejora la gestión de procesos al ofrecer automatización para reducir errores y ahorrar tiempo, integración centralizada de datos para una visión completa del cumplimiento normativo, actualizaciones legislativas instantáneas para mantener la alineación con normas actuales, y acceso remoto para facilitar la colaboración.\n\nAdemás, garantiza la seguridad de los datos, proporciona soporte experto, herramientas de análisis avanzadas para una mejor toma de decisiones y escalabilidad que acompaña el crecimiento de tu empresa sin cambiar de sistema."
+          ],
+          "link": [
+            "",
+            "Agenda una demostración con nosotros",
+            "y comprobarás como NormaPro no solo simplifica y mejora la gestión de tus procesos actuales, sino que también te prepara para los retos futuros, asegurando que tu empresa esté siempre a la vanguardia del cumplimiento normativo."
+          ]
+        },
+        {
+          "question": "Ya dispongo de mucha información en otras plataformas, ¿voy a tener que volver a cagarla en NormaPro?",
+          "answer": [
+            "NormaPro se ha diseñado para integrarse sin problemas con tus sistemas existentes, maximizando la inversión que ya has realizado en infraestructura. Nuestra plataforma puede vincularse con una amplia variedad de bases de datos y aplicaciones empresariales, facilitando una transición suave y sin interrupciones. Nuestro equipo técnico colaborará estrechamente contigo para asegurar una integración personalizada que se alinee con tus procesos de negocio actuales y optimice tu gestión de cumplimiento normativo."
+          ],
+          "link": [
+            "Fortalece tus sistemas existentes con NormaPro.",
+            "Contacta para una evaluación de integración."
+          ]
+        },
+        {
+          "question": "3 meses para la implementación de un modelo de gestión normativa, ¿no parece mucho tiempo?",
+          "answer": [
+            "El tiempo de implementación de NormaPro puede variar dependiendo de la complejidad y el tamaño de tu organización. Nos esforzamos por hacer que el proceso sea lo más rápido y eficiente posible, generalmente completando la mayoría de las implementaciones en un plazo que va desde unas pocas semanas hasta unos pocos meses. Nuestro equipo dedicado de implementación trabaja mano a mano contigo para asegurar una transición suave y una puesta en marcha ágil, minimizando las interrupciones en tus operaciones diarias."
+          ],
+          "link": [
+            "Descubre lo rápido que puedes comenzar con NormaPro.",
+            "Programa un plan de implementación personalizado."
+          ]
+        },
+        {
+          "question": "Esto parece complicado. ¿Necesito tener alguna habilidad o conocimiento para usarlo?",
+          "answer": [
+            "NormaPro está diseñado para ser intuitivo y accesible, independientemente del nivel técnico del usuario. Nuestro enfoque 'low-code' significa que cualquier persona en tu organización, desde el CEO hasta el gerente de cumplimiento, puede utilizar la plataforma con facilidad. Nos hemos asegurado de que la gestión de documentos normativos sea una experiencia sencilla y sin complicaciones."
+          ],
+          "link": [
+            "Descubre la facilidad de uso de NormaPro con una ",
+            "demo personalizada."
+          ]
+        },
+        {
+          "question": "¿Por qué contratar NormaPro? ¿Qué os hace diferentes?",
+          "answer": [
+            "Lo que distingue a NormaPro de otras herramientas es su combinación única de tecnología avanzada y servicio personalizado. No solo ofrecemos una plataforma robusta para gestionar el cumplimiento normativo, sino que también brindamos acceso directo a consultores expertos que trabajan contigo para maximizar la eficiencia y eficacia. Además, NormaPro se adapta a las necesidades específicas de tu empresa, creciendo y evolucionando con tu negocio. La plataforma se actualiza continuamente para reflejar los cambios más recientes en la legislación, asegurando que siempre estés un paso adelante."
+          ],
+          "link": [
+            "Conoce lo que NormaPro puede hacer por tu empresa. ",
+            "Solicita más información."
+          ]
+        },
+        {
+          "question": "¿Qué ocurre si mi empresa cambia o necesitamos ampliar los alcances?",
+          "answer": [
+            "Definitivamente, NormaPro está diseñado para ser tan dinámico como el entorno empresarial de hoy. Entendemos que las empresas crecen y cambian, y nuestra plataforma está preparada para escalar y adaptarse a esos cambios. Ya sea que necesites añadir nuevos usuarios, ajustar a nuevas regulaciones, o expandirte a nuevas áreas de cumplimiento, NormaPro se ajusta a las demandas evolutivas de tu empresa, asegurando que siempre tengas el soporte adecuado para tus necesidades de cumplimiento actuales y futuras.\""
+          ],
+          "link": [
+            "Adapta NormaPro a la evolución de tu empresa. ",
+            "Inicia una conversación con nosotros."
+          ]
+        },
+        {
+          "question": "¿Cómo le muestro esto a mi equipo?",
+          "answer": [
+            ""
+          ],
+          "link": [
+            "¡Sencillo! Podemos realizar una demo rápidamente para convencer a tu equipo.",
+            "Reserva una reunión",
+            "cuando quieras.\n\nNormaPro facilita la coordinación de equipos al proporcionar una plataforma centralizada donde todos los implicados en el cumplimiento normativo pueden colaborar eficientemente. Con funciones como el sistema de gestión de tareas, calendarios de eventos y alertas, cada miembro del equipo sabe exactamente qué hacer y cuándo hacerlo. Esto no solo aumenta la transparencia y la responsabilidad, sino que también asegura que todos estén alineados con los objetivos de cumplimiento de la empresa, trabajando juntos de manera sincronizada.\n\nOptimiza la coordinación de tu equipo con NormaPro.",
+            "Contacta para una demostración."
+          ]
+        },
+        {
+          "question": "Realmente ¿Qué resultados voy a obtener con esta solución?",
+          "answer": [
+            "1. Liberar tiempo ya que se reducirá el que dedicas a alimentar tu sistema.\n\n2. Ganar en tranquilidad ante sanciones de cualquier tipo.\n\n3. Dispondrás de tiempo para trabajos de Supervisión.\n\n4. Agilidad a la hora de tomar decisiones basadas en datos en tiempo real.\n\n5. Un Sistema automatizado y en piloto automático.\n\n6. Rebajarás los costes de tus procesos actuales al menos un 40%."
+          ],
+          "link": [
+            "¿Quieres comprobar cómo lo hacemos?",
+            "Reserva una reunión con nosotros ahora."
+          ]
+        },
+        {
+          "question": "¿Cómo contrato NormaPro?",
+          "answer": [
+            ""
+          ],
+          "link": [
+            "Es muy sencillo, sólo tendrás que",
+            "contactar con nosotros",
+            "para mantener una primera reunión para conocer bien tus necesidades. En una segunda reunión podremos realizarte una demo real y te plantearemos un plan de trabajo y un presupuesto. Sin compromiso. Ya el hecho de realizar estas reuniones estratégicas te aportaran información muy valiosa acerca de tus obligaciones de cumplimiento normativo."
+          ]
+        },
+        {
+          "question": "¿Quién está detrás del proyecto?",
+          "answer": [
+            "INSTITUTO DE INNOVACIÓN, CIENCIA Y EMPRESA es una compañía de base tecnológica y de consultoría estratégica para empresas.\n\nAyudamos a las organizaciones a ser más eficientes implementando sistemas avanzados de gestión, o bien Mediante el modelado y la automatización de procesos internos de negocio.\n\nNuestras soluciones están pensadas para empresarios y profesionales que tienen claro que necesitan mejorar los resultados de su organización, bien implementando completos sistemas avanzados de gestión, o bien ajustando y automatizando procesos internos concretos de su negocio.\n\nUnimos tecnología y consultoría para mejorar la eficiencia empresarial.\n\nCon nuestra Plataforma Digital NormaPro, líder en el sector empresarial 100% de desarrollo propio, y nuestros Programas de consultoría definidos paso a paso contrastados y que funcionan, optimizamos los procesos internos de negocio y conseguimos mejorar la eficiencia operativa de las empresas, que ven reducir significativamente sus costes de operación, un cumplimiento normativo sólido y un entorno de trabajo más seguro para el empresario.\n\nEl equipo de INSTITUTO DE INNOVACIÓN, CIENCIA Y EMPRESA cuenta con más de 25 años de experiencia en la prestación de servicios de ingeniería y su actividad esta certificada por AENOR bajo las normas ISO 9001 de gestión de la calidad, ISO 27001 de seguridad de la información e ISO 45001 de seguridad en el trabajo."
+          ]
+        }
+      ]
+    }
+  }
+]

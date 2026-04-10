@@ -1,0 +1,81 @@
+[
+    {
+        "id": 1,
+        "tipo": "ListColumnsSection",
+        "data": {
+            "list": [
+                {
+                    "claim": "Cuando CALIDAD PASCUAL se embarcó en su viaje con nuestro Modelo Avanzado NormaPro, enfrentaba retos significativos en el ámbito del cumplimiento normativo. En un entorno empresarial que evoluciona rápidamente, CALIDAD PASCUAL necesitaba una solución que no solo abordara sus necesidades actuales de cumplimiento, sino que también se adaptara a los cambios futuros."
+                },
+                {
+                    "claim": "Calidad Pascual S.A.U. es una empresa familiar española dedicada a la preparación y envasado de leche y derivados, además de otros productos alimenticios y exporta sus productos a 52 países de los cinco continentes. Es una de las mayores marcas de consumo de productos lácteos en España."
+                }
+            ],
+            "image": "calidadpascual1.png"
+        }
+    },
+    {
+        "id": 2,
+        "tipo": "DescargaInformeSection",
+        "data": {
+            "title": "Descarga el informe completo de caso de éxito",
+            "claim": "Si buscas resultados similares y una transformación eficaz en tu empresa, descarga el informe de caso de exito. Conoce de primera mano cómo nuestra solución innovadora puede ser la clave.",
+            "buttonText": "Descargar informe completo"
+        }
+    },
+    {
+        "id": 3,
+        "tipo": "ListColumnsSection",
+        "data": {
+            "title": "Valor de la solución aportada",
+            "list": [
+                {
+                    "title": "Reto del proyecto",
+                    "claim": "CALIDAD PASCUAL enfrentaba desafíos significativos en cumplimiento normativo en un entorno empresarial en rápida evolución. Los retos incluían adaptarse a normativas cambiantes, optimizando los procesos internos de control y verificación de cumplimiento y fortalecer su reputación."
+                },
+                {
+                    "title": "Objetivo del proyecto",
+                    "claim": "El objetivo era implementar un Modelo Avanzado de Prevención de Cumplimiento de NormaPro en CALIDAD PASCUAL, para optimizar la gestión del cumplimiento normativo, integrar tecnología avanzada para automatizar los procesos de control y lograr un alto nivel de cumplimiento y gestión eficiente."
+                },
+                {
+                    "title": "Valor de la solución aportada",
+                    "claim": "NormaPro aportó un valor sustancial a CALIDAD PASCUAL, mejorando el control del cumplimiento normativo, automatizando y estandarizando los procesos asociados, optimizando recursos, proporcionando soporte experto, gestionando riesgos, alineándose con certificaciones ISO y fortaleciendo la cultura de cumplimiento."
+                }
+            ],
+            "image": "calidadpascual2.png"
+        }
+    },
+    {
+        "id": 4,
+        "tipo": "HistoriaTextSection",
+        "data": {
+            "title": "¿Por qué es un éxito?",
+            "claim": [
+                "El éxito del proyecto de CALIDAD PASCUAL con NormaPro se atribuye a la superación de los objetivos iniciales, el impacto positivo en toda la empresa que ha fomentado su crecimiento y estabilidad, la alta adopción y satisfacción del personal con las herramientas y procesos implementados, y la obtención de resultados medibles y sostenibles que representan una inversión continua de valor para CALIDAD PASCUAL."
+            ]
+        }
+    },
+    {
+        "id": 5,
+        "tipo": "HistoriaClienteSection",
+        "data": {
+            "claim": [
+                "Con este proyecto, hemos logrado avances significativos en varios aspectos críticos de nuestra operación, incluyendo el inventario efectivo de nuestras máquinas, la asignación de responsabilidades legales claras y la jerarquización de estas responsabilidades.",
+                "La experiencia con su equipo hasta ahora ha sido en general muy positiva, destacando especialmente la cercanía y humanidad de sus profesionales, así como la evolución favorable de la Plataforma Digital NormaPro y su capacidad de ajustarse y expandirse de acuerdo a nuestras sugerencias y su notable capacidad de adaptación a nuestras necesidades específicas."
+            ],
+            "id_testimonio": 3
+        }
+    },
+    {
+        "id": 6,
+        "tipo": "HistoriaTextSection",
+        "data": {
+            "title": "¿Por qué CALIDAD PASCUAL eligió trabajar con nosotros?",
+            "claim": [
+                "CALIDAD PASCUAL buscaba un socio con experiencia en cumplimiento normativo y digitalización, capaz de ofrecer soluciones personalizadas y adaptativas. Necesitaban un colaborador comprometido con la calidad e innovación, y con credenciales de confianza.",
+                "La elección de CALIDAD PASCUAL por Instituto de Innovación y NormaPro se debió tanto a su especialización y experiencia como a la tecnología avanzada y flexible de NormaPro, destacando por su facilidad de integración, soporte continuo y capacidad para generar resultados tangibles y mejoras continuas."
+            ],
+            "buttonText": "Contacta ahora y analizamos tu caso"
+        }
+    }
+]

@@ -1,0 +1,440 @@
+[
+  {
+    "id": 1,
+    "data": {
+      "cta": "¡Da el salto al futuro de la gestión de recursos humanos!",
+      "claim": [
+        "Descubre cómo mejorar la productividad y satisfacción de tus empleados"
+      ],
+      "title": "Portal del Empleado",
+      "imgUrl": "portal-empleado",
+      "pragma": [
+        "El portal del empleado NormaPro es tu centro digital para todo lo relacionado con tus empleados. Gestiona documentos, comunica noticias, controla asistencia y más, todo en un solo lugar. Fácil, rápido y seguro"
+      ],
+      "imgType": "lottie",
+      "backgroundImg": "hielo1.png",
+      "backgroundSize": "89%",
+      "backgroundRepeat": "no-repeat",
+      "backgroundPositionX": "center"
+    },
+    "tipo": "HeroSection"
+  },
+  {
+    "id": 2,
+    "data": {
+      "claim": "Clientes que ya utilizan soluciones del ecosistema NormaPro",
+      "scope": "portal-del-empleado"
+    },
+    "tipo": "ClientCarouselWrapper"
+  },
+  {
+    "id": 3,
+    "data": {
+      "level2": [
+        "",
+        "Es el momento de decidir si quieres contar con",
+        "una herramienta que te ayudará a evitar problemas de comunicación, errores administrativos, falta de transparencia, pérdida de tiempo y falta de compromiso."
+      ],
+      "level3": [
+        "",
+        "Puedes mejorar la eficiencia y la productividad de la empresa, o bien continuar navegando en un mar de ineficiencias, desperdiciando recursos valiosos y perdiendo oportunidades de crecimiento y desarrollo tanto para tus empleados como para tu empresa."
+      ],
+      "background": "gray"
+    },
+    "tipo": "TextSection"
+  },
+  {
+    "id": 4,
+    "data": {
+      "items": [
+        "... Quieres ahorrar en Tiempo y Dinero reduciendo papeleo y trámites",
+        "... Necesitas Seguridad en datos diciendo adiós a correos y documentos físicos.",
+        "... Optas por Teletrabajo eficiente con acceso desde cualquier lugar.",
+        "... Buscas Autonomía para tus empleados y que gestionen sus propios datos.",
+        "... Tener Comunicación directa con todo tu equipo.",
+        "... Reforzar la Cultura empresarial: Eventos, noticias y más."
+      ],
+      "title": "Reserva una sesión demostrativa o mira el video si...",
+      "url_video": "https://www.youtube.com/embed/8eOcErLRY08"
+    },
+    "tipo": "VideoSection"
+  },
+  {
+    "id": 5,
+    "data": {
+      "list": [
+        {
+          "title": "Transformar una preocupación en tranquilidad.",
+          "claim": ""
+        },
+        {
+          "title": "Reducir de media un 40% los costes de operación de muchos procesos internos de su empresa (e incluso casi eliminarlos en algunos).",
+          "claim": ""
+        }
+      ],
+      "title": "La percepción de nuestros clientes es nuestra realidad",
+      "id_testimonio": 6
+    },
+    "tipo": "ClientPerceptionSection"
+  },
+  {
+    "id": 6,
+    "data": {
+      "claim": "En la actualidad, las empresas navegan por un mar de desafíos que incluyen desde problemas operativos hasta cuestiones de satisfacción del empleado:",
+      "table": [
+        {
+          "icono": "fa-hourglass",
+          "title": "Ineficiencia Administrativa",
+          "pragma": "La realización de tareas administrativas manuales y repetitivas resta tiempo y recursos, minimizando la eficiencia global.",
+          "idcelda": 1
+        },
+        {
+          "icono": "fa-comment-slash",
+          "title": "Comunicación Deficiente",
+          "pragma": "La falta de canales de comunicación efectivos y transparentes puede mermar la confianza y cohesión del equipo.",
+          "idcelda": 2
+        },
+        {
+          "icono": "fa-face-frown-slight",
+          "title": "Desmotivación del Equipo",
+          "pragma": "La ausencia de reconocimiento y oportunidades de desarrollo puede generar un clima de insatisfacción y bajos niveles de compromiso.",
+          "idcelda": 3
+        },
+        {
+          "icono": "fa-chart-line-down",
+          "title": "Baja Productividad",
+          "pragma": "La no adaptación a nuevas modalidades laborales, como el teletrabajo y la flexibilidad, puede afectar la productividad y retención del talento.",
+          "idcelda": 4
+        }
+      ],
+      "title": "Superando obstáculos en la Gestión Empresarial Moderna",
+      "pragma": [
+        "Abordar estos problemas requiere de una estrategia integral que, mediante el uso de herramientas como un portal del empleado, no solo optimizas tus procesos internos sino también fortaleces la cultura y el bienestar organizacional.",
+        "Enfrentar estos desafíos de forma proactiva es clave para impulsar un ambiente laboral positivo y una operación empresarial eficiente."
+      ]
+    },
+    "tipo": "ObstaculosYSolucionesSection"
+  },
+  {
+    "id": 7,
+    "data": {
+      "level1": [
+        "¿Estás listo para transformar tu empresa?"
+      ],
+      "level2": [
+        "",
+        "En un mundo donde la eficiencia y la comunicación efectiva son claves, el portal del empleado NormaPro emerge como tu aliado imprescindible para gestionar documentación, solicitudes, incidencias y mucho más, todo en un solo lugar"
+      ],
+      "background": "gray"
+    },
+    "tipo": "TextSection"
+  },
+  {
+    "id": 8,
+    "data": {
+      "level2": [
+        "Tu puente hacia un entorno laboral más eficiente y conectado."
+      ],
+      "level3": [
+        "Con NormaPro, ponemos el poder de la gestión eficiente directamente en tus manos y las de tu equipo. Descubre una plataforma que habilita el acceso y gestión de documentación personal y compartida, solicitud y firma de documentos, gestión de incidencias, y mucho más."
+      ],
+      "background": "white"
+    },
+    "tipo": "TextSection"
+  },
+  {
+    "id": 9,
+    "data": {
+      "data": [
+        {
+          "img": "fichasdocumentales.png",
+          "icon": "fa-file-lines",
+          "title": "Acceso a documentación de la empresa",
+          "id_data": 1,
+          "subtitle": "Acceso a documentación personal y compartida de la empresa",
+          "mainTitle": "Biblioteca de evidencias",
+          "description": "Centraliza y accede fácilmente a toda la documentación clave, optimizando tiempo y mejorando la organización. Dile adiós a la desorganización. Todo tu archivo en un solo lugar, al alcance de un clic. Evita la tediosa búsqueda y el acceso restringido a documentos clave"
+        },
+        {
+          "img": "noticias.png",
+          "icon": "fa-bullhorn",
+          "title": "Comunicaciones, Noticias y Publicaciones",
+          "id_data": 2,
+          "subtitle": "",
+          "mainTitle": "Comunicaciones, Noticias y Publicaciones",
+          "description": "Mantén informado a tu equipo al instante. Fortalece la cultura empresarial y la cohesión del grupo.\n\nConecta, informa, involucra. Haz de tu empresa un ecosistema vibrante de información.\n\nMejora la alineación entre equipos con comunicaciones personalizadas. La desinformación puede disminuir el compromiso y la eficiencia de tus empleados"
+        },
+        {
+          "img": "firma.png",
+          "icon": "fa-file-signature",
+          "title": "Entrega y Firma de Documentos/Formularios",
+          "id_data": 3,
+          "subtitle": "Acceso a documentación personal y compartida de la empresa",
+          "mainTitle": "Entrega y Firma de Documentos/Formularios",
+          "description": "Digitaliza y agiliza los procesos administrativos. Adiós al papeleo y a la espera.\n\nDigitalización en su máxima expresión. Cierra trámites en minutos, no en días.\n\nElimina los procesos manuales en la firma de documentos. Retrasos y falta de control pueden resultar en incumplimientos y pérdidas administrativas."
+        },
+        {
+          "img": "gestiontickets.png",
+          "icon": "fa-ticket-simple",
+          "title": "Gestión de solicitudes e incidencias",
+          "id_data": 4,
+          "subtitle": "",
+          "mainTitle": "Gestión de Solicitudes e Incidencias (tickets):",
+          "description": "Facilita la comunicación interna, gestionando y resolviendo inquietudes de forma eficiente.\n\nSoluciona retos al instante. Centraliza y acelera la respuesta a inquietudes y eventos con una gestión unificada.\n\nImplementa una gestión clara de solicitudes e incidencias. La falta de seguimiento adecuado desencadena insatisfacción y posibles desajustes en procesos."
+        },
+        {
+          "img": "canaldenuncias.png",
+          "icon": "fa-siren-on",
+          "title": "Canal de denuncias integrado",
+          "id_data": 5,
+          "subtitle": "",
+          "mainTitle": "Canal de Denuncias Integrado",
+          "description": "Fomenta un ambiente de trabajo ético y transparente, donde cada voz cuenta y es escuchada.\n\nTransparencia total, tolerancia cero. Un espacio seguro para hacer lo correcto.\n\nOfrece un medio confidencial para canalizar denuncias. Sin transparencia, arriesgas el bienestar de tus empleados y la reputación de tu empresa."
+        },
+        {
+          "img": "controlpresencia.png",
+          "icon": "fa-timer",
+          "title": "Control de asistencia y presencia",
+          "id_data": 6,
+          "subtitle": "",
+          "mainTitle": "Registro de Asistencias / Control de presencia",
+          "description": "Moderniza el seguimiento de la asistencia, garantizando precisión y simplificando el proceso.\n\nOptimiza la puntualidad. Monitorea y valida la asistencia con precisión, simplificando la gestión diaria.\n\nGarantiza un registro de asistencia exacto y automatizado. Errores en la asistencia pueden generar conflictos y desajustes salariales."
+        },
+        {
+          "img": "permisosvacaciones.png",
+          "icon": "fa-calendar-days",
+          "title": "Gestión de permisos y vacaciones",
+          "id_data": 7,
+          "subtitle": "",
+          "mainTitle": "Gestión de permisos y vacaciones",
+          "description": "Automatiza y agiliza las solicitudes, beneficiando tanto al empleado como al supervisor.\n\nSolicitudes en tiempo récord. El equilibrio trabajo-vida, más sencillo que nunca.\n\nFacilita la gestión de permisos y vacaciones. Una mala gestión puede desembocar en conflictos laborales y sobrecargas administrativas."
+        },
+        {
+          "img": "panelcontrol.png",
+          "icon": "fa-chart-pie",
+          "title": "Estadísticas de control",
+          "id_data": 8,
+          "subtitle": "",
+          "mainTitle": "Cuadro de mando / Estadísticas de Control",
+          "description": "Toma decisiones informadas con un vistazo. Visualiza métricas relevantes para guiar tu estrategia de recursos humanos.\n\nDecisiones inteligentes con data en tiempo real. Visualiza el pulso de tu empresa en un vistazo.\n\nVisualiza y controla métricas esenciales de rendimiento. Sin datos claros, pierdes oportunidades de mejora y toma de decisiones óptima."
+        }
+      ]
+    },
+    "tipo": "CaracteristicasIncorporadas"
+  },
+  {
+    "id": "10",
+    "data": {
+      "title": "Y todo esto, hazlo también desde tu móvil",
+      "images": [
+        "portalmovil4.png",
+        "portalmovil3.png",
+        "portalmovil2.png",
+        "portalmovil1.png"
+      ],
+      "subtitle": "Potencia la movilidad y la eficiencia fuera de la oficina."
+    },
+    "tipo": "MovilPortalSection"
+  },
+  {
+    "id": 11,
+    "data": {
+      "title": "Calidad y seguridad certificada",
+      "images": [
+        "27001.png",
+        "9001.png",
+        "45001.png",
+        "iqnet.png"
+      ],
+      "subtitle": "Nuestros productos y servicios cuentan con certificación de AENOR:"
+    },
+    "tipo": "CertificacionesSection"
+  },
+  {
+    "id": 12,
+    "data": {
+      "cta": {
+        "title": "Si estás listo para experimentar la diferencia NormaPro y deseas una solución que vaya más allá de lo básico, te invitamos a tener una conversación con uno de nuestros consultores.",
+        "pragma": "y descubre cómo el Portal del Empleado NormaPro puede transformar tu gestión de RR.HH.",
+        "buttonText": "Contacta con nosotros ahora"
+      },
+      "list": [
+        {
+          "icon": "fa-folder-gear",
+          "title": "Funcionalidad Integral",
+          "pragma": "Más allá de las características estándar que ofrecen la mayoría de los portales del empleado, NormaPro presenta funciones avanzadas como un canal de denuncias integrado, un cuadro de mando para estadísticas de control y una aplicación móvil que se adapta a las necesidades cambiantes de las empresas."
+        },
+        {
+          "icon": "fa-comments-question-check",
+          "title": "Consultoría Personalizada",
+          "pragma": "A diferencia de otras soluciones, cuando eliges NormaPro, no estás solo. Nuestro equipo de consultores dedicados está a tu lado, brindándote asesoramiento y apoyo para garantizar que saques el máximo provecho de nuestro portal. La experiencia de nuestros consultores en la gestión de recursos humanos se traduce en una guía esencial para optimizar tus operaciones."
+        },
+        {
+          "icon": "fa-shield-halved",
+          "title": "Enfoque en la Seguridad",
+          "pragma": "Tus datos y los de tus empleados son cruciales. Es por eso que hemos incorporado medidas de seguridad de vanguardia con la certificación ISO 27001 de Seguridad de la Información para garantizar protección y accesibilidad solo para quienes estén autorizados."
+        },
+        {
+          "icon": "fa-arrows-up-down-left-right",
+          "title": "Adaptabilidad y Escalabilidad",
+          "pragma": "No importa si eres una startup o una corporación consolidada; el Portal del Empleado NormaPro está diseñado para adaptarse y crecer contigo, asegurando que siempre tengas las herramientas que necesitas a medida que evoluciona tu negocio."
+        },
+        {
+          "icon": "fa-lightbulb-on",
+          "title": "Compromiso con la Innovación",
+          "pragma": "En NormaPro, estamos continuamente investigando y adaptando las últimas tendencias y tecnologías en gestión de RR.HH. para que nuestro portal esté siempre a la vanguardia."
+        }
+      ],
+      "claim": "Cuando se trata de gestionar a tu capital humano, cada detalle cuenta. En NormaPro entendemos esto profundamente y es por ello que hemos diseñado el Portal del Empleado NormaPro no solo como una herramienta, sino como tu socio estratégico.",
+      "title": "NormaPro: Más que un portal, tu aliado en la gestión de RR.HH.",
+      "titlelist": "Lo que nos distingue del resto:",
+      "imgCabecera": "IICE_FormaPro_NormaPro.png",
+      "imgBackground": "hielo1.png"
+    },
+    "tipo": "ResumenSection"
+  },
+  {
+    "id": 13,
+    "data": {
+      "cta": {
+        "title": "",
+        "pragma": "",
+        "buttonText": "Hablemos de costos"
+      },
+      "list": [
+        {
+          "icon": "",
+          "title": "¿Cúal es el costo del Portal del empleado NormaPro?",
+          "pragma": "El coste de nuestro portal no se mide solo en cifras, sino en el valor agregado que aporta: ahorro de tiempo, optimización de recursos y una mejor gestión del talento humano."
+        },
+        {
+          "icon": "",
+          "title": "¿Quieres saber cómo esta inversión se traduce en números para tu empresa?",
+          "pragma": "Cada organización es única y nuestras soluciones se adaptan a tus necesidades especificas. Descubre tu inversión personalizada. Conversemos y permítenos presentarte un plan adaptado a tus requerimientos."
+        }
+      ],
+      "claim": "",
+      "title": "Inversión en NormaPro: Una elección inteligente",
+      "titlelist": "",
+      "imgCabecera": "IICE_Medioambiente.png",
+      "imgBackground": "hielo2.png"
+    },
+    "tipo": "ResumenSection"
+  },
+  {
+    "id": 14,
+    "tipo": "FaqSection",
+    "data": {
+      "faqs": [
+        {
+          "question": "¿Cómo puede el Portal del Empleado NormaPro optimizar la gestión de RRHH, en mi empresa?",
+          "answer": [
+            ""
+          ],
+          "link": [
+            "NormaPro centraliza todas las tareas y comunicaciones relativas a tus empleados, eliminando procesos manuales, mejorando la transparencia y permitiendo un acceso rápido a documentos y datos importantes, todo lo cual lleva a una gestión más eficiente. ",
+            "Descubre más sobre las capacidades de optimización de NormaPro aquí"
+          ]
+        },
+        {
+          "question": "¿Cuánto tiempo se tarda en implementar el portal y formar a mi equipo para su uso eficiente?",
+          "answer": [
+            ""
+          ],
+          "link": [
+            "La implementación suele completarse en pocas semanas, dependiendo de las necesidades específicas de tu empresa. La formación para tu equipo es rápida y sencilla, gracias a la intuitiva interfaz de NormaPro. ",
+            "Programa una formación introductoria para tu equipo aquí."
+          ]
+        },
+        {
+          "question": "¿Cómo el portal asegura la confidencialidad y seguridad de los datos de los empleados?",
+          "answer": [
+            ""
+          ],
+          "link": [
+            "Contamos con protocolos de seguridad avanzados, cifrado de datos y cumplimos con todas las regulaciones de protección de datos para asegurar que la información de tus empleados esté segura y protegida en todo momento. En Instituto de Innovación, Ciencia y Empresa contamos con la certificación por AENOR en la norma ISO 27001, la más exigente en materia de seguridad de la información. ",
+            "Conoce más sobre nuestras medidas de seguridad aquí."
+          ]
+        },
+        {
+          "question": "¿Es el Portal del Empleado NormaPro adaptable a empresas de cualquier tamaño?",
+          "answer": [
+            ""
+          ],
+          "link": [
+            "Absolutamente. NormaPro es escalable y se adapta tanto a pequeñas empresas como a grandes corporaciones, cubriendo sus necesidades específicas. ",
+            "Descubre cómo NormaPro se adapta a tu empresa aquí."
+          ]
+        },
+        {
+          "question": "¿De qué manera el portal facilita la comunicación directa entre la empresa y los empleados? ",
+          "answer": [
+            ""
+          ],
+          "link": [
+            "A través de sus módulos de comunicaciones, noticias y publicaciones, NormaPro permite una comunicación personalizada y eficiente, garantizando que los empleados estén siempre informados y alineados con la visión de la empresa. ",
+            "Explora nuestras herramientas de comunicación aquí."
+          ]
+        },
+        {
+          "question": "Si ya tengo otros sistemas en uso, ¿es posible integrarlos con el Portal del Empleado NormaPro?",
+          "answer": [
+            ""
+          ],
+          "link": [
+            "Sí, NormaPro se ha diseñado para ser compatible e integrable con una amplia variedad de sistemas, facilitando así una transición sin problemas y evitando la duplicación de tareas. ",
+            "Solicita información sobre integraciones personalizadas aquí."
+          ]
+        },
+        {
+          "question": "¿Cómo puede este portal ayudar en la retención y satisfacción de los empleados?",
+          "answer": [
+            ""
+          ],
+          "link": [
+            "Al simplificar y centralizar procesos, y mejorar la comunicación, NormaPro potencia la satisfacción de los empleados, al tiempo que ofrece herramientas para el reconocimiento y desarrollo, factores clave en la retención del talento. ",
+            "Descubre las herramientas de retención y desarrollo de NormaPro aquí."
+          ]
+        },
+        {
+          "question": "¿Qué soporte ofrecen en caso de dudas o problemas técnicos con el portal?",
+          "answer": [
+            "Ofrecemos soporte técnico completo y un equipo de atención al cliente siempre disponible para resolver cualquier inquietud o problema que pueda surgir."
+          ]
+        },
+        {
+          "question": "¿Cómo se gestionan las solicitudes de permisos, vacaciones y denuncias de manera transparente?",
+          "answer": [
+            ""
+          ],
+          "link": [
+            "Con NormaPro, estas solicitudes se canalizan a través de módulos dedicados, permitiendo una gestión transparente, rápida y documentada, garantizando la satisfacción de los empleados y el cumplimiento de la Ley 2/2023 sobre lucha contra la corrupción y protección del denunciante. ",
+            "Conoce más sobre nuestra gestión transparente de solicitudes aquí."
+          ]
+        },
+        {
+          "question": "¿El Portal del Empleado NormaPro es accesible desde dispositivos móviles?",
+          "answer": [
+            "Sí, contamos con una App Móvil que permite a los empleados y a la dirección acceder a las funciones clave del portal desde cualquier lugar y en cualquier momento."
+          ]
+        },
+        {
+          "question": "¿De qué forma el cuadro de mando del portal me ayuda a tomar decisiones informadas sobre mis empleados?",
+          "answer": [
+            "El cuadro de mando ofrece estadísticas y métricas clave en tiempo real sobre el rendimiento y las actividades de tus empleados, proporcionando información muy valiosa para ayudar a tomar decisiones estratégicas."
+          ]
+        },
+        {
+          "question": "Estoy interesado en ver cómo funciona, ¿Cómo puedo agendar una demostración del portal?",
+          "answer": [
+            ""
+          ],
+          "link": [
+            "¡Nos encantaría mostrarte NormaPro en acción! Simplemente haz clic en “Solicitar demo” en nuestro sitio web o contáctanos directamente y nos pondremos en contacto contigo para organizar una demostración. ",
+            "¡Haz clic aquí para agendar tu demostración gratuita ahora!"
+          ]
+        }
+      ]
+    }
+  }
+]

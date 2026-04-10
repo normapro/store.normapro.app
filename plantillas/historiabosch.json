@@ -1,0 +1,103 @@
+[
+    {
+        "id": 1,
+        "tipo": "ListHistoriaSection",
+        "data": {
+            "claim": [
+                "ROBERT BOSCH España se embarcó en el desafío de implementar y certificar la norma UNE 19601 de gestión de Compliance penal. Este reto incluía:"
+            ],
+            "list": [
+                {
+                    "title": "Adaptarse a un marco normativo riguroso,",
+                    "claim": "lo que requería una alta precisión en las prácticas de Compliance penal"
+                },
+                {
+                    "title": "Transformar y digitalizar sus procesos internos",
+                    "claim": "para cumplir con los estándares de Compliance penal, representando un cambio significativo en sus operaciones diarias."
+                },
+                {
+                    "title": "Fomentar una cultura organizacional de Compliance penal",
+                    "claim": "a través de toda la empresa para asegurar el entendimiento y compromiso con los nuevos estándares y prácticas."
+                }
+            ],
+            "image": "bosch1.png",
+            "pragma": [
+                "El Grupo BOSCH es un proveedor líder mundial de tecnología innovadora y servicios relacionados englobadas que cuenta con más de 460 filiales y empresas regionales en más de 60 países.",
+                "Concretamente, las actividades industriales en España se centran sobre todo en el área de Mobility Solutions con unos 20 emplazamientos. En 2021, Bosch alcanzó unas ventas de aproximadamente 2.280 millones de euros en España. En la actualidad, Bosch España emplea a alrededor de 8.000 personas."
+            ]
+        }
+    },
+    {
+        "id": 2,
+        "tipo": "DescargaInformeSection",
+        "data": {
+            "title": "Descarga el informe completo del caso de éxito",
+            "claim": "Si buscas resultados similares y una transformación eficaz en tu empresa, descarga el informe de caso de éxito. Conoce de primera mano cómo nuestra solución innovadora puede ser la clave.",
+            "buttonText": "Descarga el informe completo"
+        }
+    },
+    {
+        "id": 3,
+        "tipo": "ListHistoriaSection",
+        "data": {
+            "title": "Valor de la solución aportada",
+            "claim": [
+                "La colaboración con ROBERT BOSCH España para implementar y certificar la norma UNE 19601 de gestión de Compliance penal ha aportado un valor considerable a través de la plataforma NormaPro.",
+                "Este valor se manifiesta en varios aspectos clave:"
+            ],
+            "list": [
+                {
+                    "title": "Un cumplimiento normativo eficaz y preciso"
+                },
+                {
+                    "title": "La automatización y estandarización de procesos clave para mejorar la eficiencia operativa."
+                },
+                {
+                    "title": "La adaptabilidad y mejora continua de las prácticas de Compliance. El soporte y asesoramiento especializado."
+                },
+                {
+                    "title": "El fortalecimiento de la cultura de Compliance y la reputación de la empresa."
+                },
+                {
+                    "title": "El uso de herramientas avanzadas para el monitoreo y control del cumplimiento."
+                },
+                {
+                    "title": "El reconocimiento externo a través de la certificación UNE 19601 por AENOR."
+                }
+            ],
+            "image": "bosch2.png"
+        }
+    },
+    {
+        "id": 4,
+        "tipo": "HistoriaTextSection",
+        "data": {
+            "title": "¿Por qué es un éxito?",
+            "claim": [
+                "El proyecto con ROBERT BOSCH España y NormaPro ha sido un éxito rotundo por la superación de objetivos, un impacto positivo en toda la empresa que ha impulsado su crecimiento y estabilidad, la alta adopción y satisfacción del personal con las nuevas herramientas y procesos, y la obtención de resultados tangibles y sostenibles. Estos logros subrayan la eficacia y el valor añadido de NormaPro como una inversión continua valiosa para ROBERT BOSCH España."
+            ]
+        }
+    },
+    {
+        "id": 5,
+        "tipo": "HistoriaClienteSection",
+        "data": {
+            "claim": [
+                "He de reconocer que no me han defraudado desde el primer momento, desde el área comercial hasta el área de sistemas de gestión y auditoría interna como en la parte legal. Me he dejado llevar por ellos y su experiencia, y aunque hemos finalizado la fase 1 del proyecto (año 1), mi sensación ha sido de total coordinación, se han adaptado a nuestros requerimientos y necesidades, transformando lo difícil en fácil con su actitud. Incluso me han aportado información interesante y válida para mejorar ciertos procesos en mi trabajo diario."
+            ],
+            "id_testimonio": 4
+        }
+    },
+    {
+        "id": 6,
+        "tipo": "HistoriaTextSection",
+        "data": {
+            "title": "¿Por qué Robert BOSCH España eligió trabajar con nosotros?",
+            "claim": [
+                "Para la implementación y certificación de la norma UNE 19601 ROBERT BOSCH ESPAÑA buscaba un acompañante de viaje con experiencia comprobada en Compliance penal y transformación digital, soluciones personalizadas, compromiso con la calidad e innovación y credenciales de confianza como las normas ISO. ",
+                "NormaPro fue elegida por su tecnología avanzada y adaptable, facilidad de uso e integración, soporte continuo y asesoramiento experto, asegurando que ROBERT BOSCH España se mantuviera a la vanguardia en la gestión del cumplimiento penal."
+            ],
+            "buttonText": "Contacta ahora y analizamos tu caso"
+        }
+    }
+]

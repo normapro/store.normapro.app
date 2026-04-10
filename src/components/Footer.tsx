@@ -3,8 +3,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { useState } from "react";
+import Formulario from "@/components/Formulario"
 
 const Footer = () => {
+	const [openModal, setOpenModal] = useState(false);
+
 	return (
 		<footer className="mt-20 font-[Mulish]">
 			{/* Bloque azul */}
@@ -64,7 +68,9 @@ const Footer = () => {
 								<Link href="/partners">Programa de Partners</Link><br />
 								<Link href="/trabaja">Trabaja en NormaPro</Link><br />
 								<Link href="/politicas">Políticas</Link><br />
-								<Link href="/contacto">Contacto</Link><br />
+								<a onClick={() => setOpenModal(true)}>
+									Contacto
+								</a><br />
 							</div>
 						</div>
 
@@ -134,13 +140,18 @@ const Footer = () => {
 							NormaPro® es una marca registrada por Instituto de Innovación, Ciencia y Empresa
 						</p>
 						<p className="grid grid-cols-3 gap-10">
-							<Link href="https://normapro.es/aviso-legal/" className="hover:underline">Aviso Legal</Link>
-							<Link href="https://normapro.es/politica-de-privacidad/" className="hover:underline">Política de privacidad</Link>
-							<Link href="https://normapro.es/politica-de-cookies-ue/" className="hover:underline">Política de cookies</Link>
+							<Link href="/aviso-legal/" className="hover:underline">Aviso Legal</Link>
+							<Link href="/politica-de-privacidad/" className="hover:underline">Política de privacidad</Link>
+							<Link href="/politica-de-cookies-ue/" className="hover:underline">Política de cookies</Link>
 						</p>
 					</div>
 				</div>
 			</div>
+
+			{/* Formulario de contacto */}
+			{openModal && (
+				<Formulario onClose={() => setOpenModal(false)} />
+			)}
 		</footer>
 	);
 };

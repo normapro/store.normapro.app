@@ -17,18 +17,37 @@ type ClientCarouselProps = {
   claim: string;
 };
 
+const getClientesFromPayload = (payload: unknown): Cliente[] => {
+  if (Array.isArray(payload)) return payload as Cliente[];
+  if (payload && typeof payload === "object") {
+    const data = (payload as { data?: unknown; items?: unknown }).data;
+    const items = (payload as { data?: unknown; items?: unknown }).items;
+    if (Array.isArray(data)) return data as Cliente[];
+    if (Array.isArray(items)) return items as Cliente[];
+  }
+  return [];
+};
+
 const ClientCarousel: React.FC<ClientCarouselProps> = ({ scope, claim }) => {
   const [clientes, setClientes] = useState<Cliente[]>([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3010/v1/store/clientes?maxItems=100&scope=${scope}`)
-      .then((res) => res.json())
-      .then(setClientes)
-      .catch(console.error);
+    const loadClientes = async () => {
+      try {
+        const res = await fetch(`http://localhost:3010/v1/store/clientes?maxItems=100&scope=${scope}`);
+        if (!res.ok) throw new Error(`Error HTTP ${res.status}`);
+        const payload = await res.json();
+        setClientes(getClientesFromPayload(payload));
+      } catch (error) {
+        console.error("Error al cargar clientes:", error);
+        setClientes([]);
+      }
+    };
+
+    loadClientes();
   }, [scope]);
 
-  // Duplicamos para efecto de loop continuo
-  const logos = [...clientes, ...clientes, ...clientes, ...clientes, ...clientes];
+  const logos = Array(5).fill(clientes).flat();
 
   return (
     <section className="mx-auto  py-12 text-center overflow-hidden">

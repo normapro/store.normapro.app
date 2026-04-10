@@ -7,10 +7,18 @@
       "claim": [
         "Formación empresarial sin complicaciones, a tu medida"
       ],
-      "pragma": "FormaPro es la solución integral para que las empresas personalicen y gestionen su propia plataforma de formación online, adaptada a sus necesidades y sin complicaciones técnicas.",
+      "pragma": [
+        "FormaPro es la solución integral para que las empresas personalicen y gestionen su propia ",
+        "plataforma de formación online,",
+        " adaptada a sus necesidades y sin complicaciones técnicas."
+      ],
       "cta": "Quiero una demostración",
-      "imgType": "",
-      "imgUrl": ""
+      "imgType": "lottie",
+      "imgUrl": "formapro",
+      "backgroundImg": "hielo2.png",
+      "backgroundSize": "90%",
+      "backgroundRepeat": "no-repeat",
+      "backgroundPositionX": "center"
     }
   },
   {
@@ -85,24 +93,11 @@
   },
   {
     "id": 6,
-    "tipo": "ResumenSection",
+    "tipo": "ImgTextSection",
     "data": {
       "imgCabecera": "Grupo-4593@2x.png",
       "title": "Capacita a tu equipo, maximiza resultados: todo en tu control con FormaPro.",
-      "claim": "",
-      "titlelist": "",
-      "list": [
-        {
-          "icon": "",
-          "title": "",
-          "pragma": "Es el momento de decidir si quieres contar con una herramienta que te ayudará:\n\nA evitar problemas de desorganización en la formación, inconsistencias en la capacitación y demoras en el desarrollo de habilidades de tu equipo.\n\nA mejorar la cohesión del equipo, potenciar el crecimiento profesional y asegurar una formación de calidad y homogénea para todos.\n\nO bien, puedes continuar navegando en un mar de ineficiencias, desperdiciando recursos valiosos y perdiendo oportunidades de crecimiento y desarrollo para tu equipo y empresa."
-        }
-      ],
-      "cta": {
-        "title": "",
-        "buttonText": "",
-        "pragma": ""
-      }
+      "pragma": "Es el momento de decidir si quieres contar con una herramienta que te ayudará:\n\nA evitar problemas de desorganización en la formación, inconsistencias en la capacitación y demoras en el desarrollo de habilidades de tu equipo.\n\nA mejorar la cohesión del equipo, potenciar el crecimiento profesional y asegurar una formación de calidad y homogénea para todos.\n\nO bien, puedes continuar navegando en un mar de ineficiencias, desperdiciando recursos valiosos y perdiendo oportunidades de crecimiento y desarrollo para tu equipo y empresa."
     }
   },
   {
@@ -122,10 +117,21 @@
     }
   },
   {
+    "id": 8,
+    "tipo":"ClientPerceptionSection",
+    "data": {
+      "title": "Voces reales, experiencias auténticas",
+      "items": [
+        "No solo confíes en nuestra palabra, escucha a quienes  han experimentado la transformación en su formación empresarial gracias a FormaPro.\n\nDescubre cómo empresas, al igual que la tuya, están  maximizando su potencial y generando un cambio  significativo en su capacitación interna."
+      ],
+      "id_testimonio": 9
+    }
+  },
+  {
     "id": 9,
     "tipo": "ObstaculosYSolucionesSection",
     "data": {
-      "title": "El alto coste de no avanzar",
+      "title": "El coste de no avanzar",
       "claim": "En un mundo donde la formación digital marca la diferencia, ¿puede tu empresa permitirse quedarse atrás con soluciones obsoletas o inexistentes?:",
       "pragma": [],
       "table": [
@@ -149,7 +155,7 @@
         },
         {
           "idcelda": "4",
-          "icono": "fa-face-sad-sweat",
+          "icono": "fa-face-frown-slight",
           "title": "Falta de personalización ",
           "pragma": "Las soluciones genéricas no consideran las necesidades particulares de tu empresa y el resultado son formaciones irrelevantes o poco efectivas."
         }
@@ -170,22 +176,115 @@
       ]
     }
   },
+{
+    "id": 11,
+    "tipo": "TextSection",
+    "data": {
+      "background": "white",
+      "level1": [
+        "Funcionalidades destacadas"
+      ],
+      "level3": [
+        "No afrontar los problemas en la formación puede retrasar el crecimiento de tu empresa. FormaPro aborda estos desafíos de raíz, proporcionando una plataforma personalizada, eficiente y actualizada. Convierte tus desafíos en oportunidades y capacita a tus empleados con la formación que necesita tu negocio.\n\nDescubre el Poder de FormaPro"
+      ]
+    }
+  },
   {
     "id": 12,
-    "tipo": "MovilPortalSection",
+    "tipo": "CaracteristicasIncorporadas",
     "data": {
-      "title": "Y todo esto, hazlo también desde tu móvil",
-      "subtitle": "Potencia la movilidad y la eficiencia fuera de la oficina.",
-      "images": [
-        "portalmovil1.png",
-        "portalmovil2.png",
-        "portalmovil3.png",
-        "portalmovil4.png"
+      "data": [
+        {
+          "id_data": 1,
+          "title": "Interfaz amigable y adaptable",
+          "icon": "fa-laptop-mobile",
+          "mainTitle": "Aprendizaje sin barreras tecnológicas",
+          "subtitle": "Interfaz amigable y adaptable",
+          "description": "¿Cansado de plataformas complicadas que requieren horas de formación FormaPro ofrece una interfaz intuitiva, diseñada para que todos, independientemente de su habilidad tecnológica, puedan navegar sin problemas.\n\nEstá probado, NormaPro no precisa tiempo de adaptación a la herramienta por lo que solo hay tiempo dedicado al aprendizaje efectivo.",
+          "img": "interfazformapro.png"
+        },
+        {
+          "id_data": 2,
+          "title": "Personalización del contenido",
+          "icon": "fa-pencil-paintbrush",
+          "mainTitle": "Aprendizaje ajustado a las necesidades de tu empresa",
+          "subtitle": "Personalización del contenido",
+          "description": "No todas las empresas tienen las mismas necesidades. FormaPro te permite agregar y estructurar tus propios módulos y cursos, asegurando relevancia y pertinencia.\n\nConsigue una Formación alineada con la visión y objetivos de la empresa, maximizando el ROI del aprendizaje.",
+          "img": "administradorformapro.png"
+        },
+        {
+          "id_data": 3,
+          "title": "Rastreo y análisis del progreso",
+          "icon": "fa-chart-bar",
+          "mainTitle": "Seguimiento del desempeño y avance de cada empleado.",
+          "subtitle": "Rastreo y análisis del progreso",
+          "description": "Sin una visión clara, es difícil medir el progreso. FormaPro brinda herramientas avanzadas de seguimiento y reportes detallados.\n\nToma decisiones informadas y detecta áreas de mejora, potenciando el desarrollo constante del equipo.",
+          "img": "rastreoformapro.png"
+        },
+        {
+          "id_data": 4,
+          "title": "Evaluaciones y exámenes",
+          "icon": "fa-list-check",
+          "mainTitle": "Mide y asegura la comprensión del conocimienot adquirido",
+          "subtitle": "Evaluaciones y exámenes",
+          "description": "¿Cómo saber si tu equipo realmente aprendió lo necesario? Con FormaPro, crea evaluaciones efectivas para validar la formación.\n\nGarantiza estándares de calidad en la formación y refuerza la rendición de cuentas entre los empleados.",
+          "img": "evaluaciones.png"
+        },
+        {
+          "id_data": 5,
+          "title": "Interactividad y gamificación",
+          "icon": "fa-trophy-star",
+          "mainTitle": "Hacer del aprendizaje una experiencia motivadora",
+          "subtitle": "Interactividad y gamificación",
+          "description": "El aprendizaje tradicional puede ser monótono. FormaPro incorpora elementos dinámicos que  captan y mantienen la atención.\n\nA la vez que se mejora la retención del conocimiento, aumenta el compromiso de los empleados con la formación.",
+          "img": "interactividadformapro.png"
+        },
+        {
+          "id_data": 6,
+          "title": "Foros o espacios de discusión",
+          "icon": "fa-messages-question",
+          "mainTitle": "Fomenta la colaboración y el intercambio de ideas",
+          "subtitle": "Foros o espacios de discusión",
+          "description": "La formación en circuitos cerrados limita el potencial. FormaPro integra foros para que los empleados compartan y aprendan juntos.\n\nRefuerza la cultura corporativa, promociona el trabajo en equipo y aprovecha la inteligencia colectiva.",
+          "img": "foros.png"
+        },
+        {
+          "id_data": 7,
+          "title": "Integración potenciada con NormaPro",
+          "iconImg": "icono-normapro.svg",
+          "mainTitle": "Maximiza la eficiencia de FormaPro",
+          "subtitle": "Integración potenciada con NormaPro",
+          "description": "Muchas empresas se enfrentan a dificultades al intentar que diferentes plataformas trabajen conjuntamente. Con FormaPro, no solo garantizas una integración perfecta con herramientas de terceros, sino que también aprovechas la sinergia natural con todas las soluciones del ecosistema NormaPro.",
+          "img": "panelcontrol.png"
+        },
+        {
+          "id_data": 8,
+          "title": "Seguridad avanzada",
+          "icon": "fa-lock",
+          "mainTitle": "Garantiza la privacidad de la información y de los usuarios",
+          "subtitle": "Seguridad avanzada",
+          "description": "En un mundo digital, la seguridad es primordial. FormaPro cuenta con protocolos avanzados para proteger tus datos.\n\nTranquilidad para la dirección y los empleados, sabiendo que su información está en manos seguras.",
+          "img": "iniciosesion.png"
+        }
       ]
     }
   },
   {
     "id": 13,
+    "tipo": "MovilPortalSection",
+    "data": {
+      "title": "Y todo esto, hazlo también desde tu móvil",
+      "subtitle": "Potencia la movilidad y la eficiencia fuera de la oficina.",
+      "images": [
+        "formapro1.png",
+        "formapro2.png",
+        "formapro3.png",
+        "formapro4.png"
+      ]
+    }
+  },
+  {
+    "id": 14,
     "tipo": "CertificacionesSection",
     "data": {
       "title": "Calidad y seguridad certificada",
@@ -195,6 +294,238 @@
         "9001.png",
         "45001.png",
         "iqnet.png"
+      ]
+    }
+  },
+  {
+    "id": 15,
+    "tipo": "ResumenSection",
+    "data": {
+      "imgCabecera": "IICE_LandingCompliance_Etapa1.png",
+      "imgBackground": "hielo3.png",
+      "title": "Donde la Innovación se encuentra con la Personalización",
+      "claim": "",
+      "titlelist": "",
+      "list": [
+        {
+          "icon": "",
+          "title": "",
+          "pragma": "En un mercado saturado de soluciones formativas, FormaPro se destaca no solo por sus herramientas punteras y su adaptabilidad, sino también por el compromiso humano detrás de cada línea de código.\n\nAquí te ofrecemos algo que va más allá de una simple plataforma:"
+        },
+        {
+          "icon": "",
+          "title": "Diseño personalizado",
+          "pragma": "FormaPro se amolda a las singularidades de cada empresa, permitiendo que cada espacio de aprendizaje refleje la identidad y valores de la marca."
+        },
+        {
+          "icon": "",
+          "title": "Funcionalidades avanzadas",
+          "pragma": "Desde paneles de seguimiento hasta herramientas de edición y certificaciones, cada función ha sido cuidadosamente diseñada para mejorar la experiencia de formación. "
+        },
+        {
+          "icon": "",
+          "title": "Consultoría NormaPro",
+          "pragma": "No solo ofrecemos una herramienta, sino también un equipo. Nuestros consultores NormaPro trabajan mano a mano con nuestros clientes, asegurando que obtengan el máximo provecho de FormaPro y adaptando la plataforma a sus necesidades específicas. Este apoyo continuo y personalizado es lo que realmente nos distingue en el mercado.\n\nSi buscas una solución que realmente entienda y atienda tus necesidades y que vaya acompañada del respaldo de un equipo especializado, no busques más.\n\nContacta con nosotros hoy mismo y descubre lo que FormaPro puede hacer por ti. Habla directamente con uno de nuestros consultores y experimenta la diferencia FormaPro."
+        }
+      ],
+      "cta": {
+        "title": "¿Listo para la Transformación?",
+        "buttonText": "Hablemos",
+        "pragma": ""
+      }
+    }
+  },
+  {
+    "id": 16,
+    "tipo": "ResumenSection",
+    "data": {
+      "imgCabecera": "IICE_Medioambiente.png",
+      "imgBackground": "hielo2.png",
+      "title": "¿El Coste de FormaPro?",
+      "claim": "",
+      "titlelist": "",
+      "list": [
+        {
+          "icon": "",
+          "title": "Invierte en valor, no sólo en precio",
+          "pragma": "El coste de una herramienta no se mide solo en euros, sino en el valor que aporta a tu empresa. La inversión en FormaPro no solo cubre la plataforma, sino todo un ecosistema de capacitación, soporte y consultoría.\n\nEn nuestro caso coste va a ser un obstáculo, sino un puente hacia tu éxito empresarial. ¿Tienes curiosidad? Hablemos. Nuestro equipo está listo para despejar tus dudas y mostrarte que, a veces, lo que parece un coste es, en realidad, la mejor inversión."
+        }
+      ],
+      "cta": {
+        "title": "",
+        "buttonText": "Habla con un consultor",
+        "pragma": ""
+      }
+    }
+  },
+  {
+    "id": 17,
+    "tipo": "ResumenSection",
+    "data": {
+      "imgCabecera": "IICE_FormaPro_NormaPro.png",
+      "imgBackground": "hielo1.png",
+      "title": "FormaPro: Capacitando líderes, forjando el futuro",
+      "claim": "",
+      "titlelist": "",
+      "list": [
+        {
+          "icon": "",
+          "title": "",
+          "pragma": "Has navegado por las posibilidades y ventajas que FormaPro puede aportar a tu empresa, pero hay mucho más detrás de lo que ves. Como líder empresarial, sabes que la formación es el corazón del crecimiento. Ahora imagina un instrumento que no solo eleva esa formación, sino que la personaliza, la adapta y la optimiza según tus objetivos y visiones.\n\nTe hemos mostrado una pincelada de lo que FormaPro puede hacer por tu empresa. Pero, como en todo gran relato, lo mejor siempre queda reservado para aquellos que deciden ir un paso más allá."
+        },
+        {
+          "icon": "",
+          "title": "¿Estás listo para descubrir el verdadero potencial de tu empresa?",
+          "pragma": ""
+        }
+      ],
+      "cta": {
+        "title": "",
+        "buttonText": "Da el siguiente paso. Descubre FormaPro",
+        "pragma": ""
+      }
+    }
+  },
+  {
+    "id": 18,
+    "tipo": "FaqSection",
+    "data": {
+      "faqs": [
+        {
+          "question": "¿Qué diferencia a FormaPro de otras plataformas de formación empresarial?",
+          "answer": [
+            "FormaPro se distingue por su combinación única de funcionalidades avanzadas, adaptabilidad y apoyo personalizado. Mientras que otras plataformas ofrecen soluciones estándar, FormaPro se adapta específicamente a las necesidades de tu empresa. Nuestra interfaz intuitiva asegura que los usuarios de cualquier nivel tecnológico puedan navegar sin dificultad, maximizando así el tiempo dedicado al aprendizaje.\n\nAdemás, lo que realmente nos coloca por encima del resto es nuestro equipo de consultores NormaPro. Este nivel de consultoría personalizada, que trabaja mano a mano con las empresas para garantizar el éxito de sus programas de formación, es altamente valorado por nuestros clientes."
+          ],
+          "link": [
+            "",
+            "Solicita una reunión para descubrir todas nuestras características distintivas."
+          ]
+        },
+        {
+          "question": "¿FormaPro requiere una instalación complicada o un equipo técnico para funcionar?",
+          "answer": [
+            "No, FormaPro ha sido diseñado con la sencillez en mente. No requiere ninguna instalación complicada ni necesitas un equipo técnico especializado para su funcionamiento. Es una plataforma en línea, lo que significa que puedes acceder a ella desde cualquier navegador web sin la necesidad de instalar software adicional.\n\nPor otro lado, nuestro equipo de soporte está siempre disponible para ayudarte en cualquier paso del proceso, asegurando una transición suave y una experiencia de usuario sin problemas.\n\nCon FormaPro, tu enfoque principal será la formación, no la tecnología."
+          ],
+          "link": [
+            "",
+            "Pide una demostración y observa lo fácil que es."
+          ]
+        },
+        {
+          "question": "¿Puedo personalizar los contenidos de formación según las necesidades de mi empresa?",
+          "answer": [
+            "¡Por supuesto! Con FormaPro, no solo tienes acceso a una amplia variedad de contenidos de formación, sino que también ofrecemos herramientas de personalización que te permiten adaptarlos según las especificidades y necesidades de tu empresa. Puedes agregar, editar o eliminar módulos para garantizar que el material de aprendizaje esté alineado con los objetivos y valores de tu compañía.\n\nAdemás, si tienes contenidos propios, puedes integrarlos fácilmente en nuestra plataforma. En FormaPro, nos esforzamos por ofrecer una solución que se adapte perfectamente a cada organización."
+          ],
+          "link": [
+            "",
+            "Hablemos de cómo FormaPro se adapta a tu visión empresarial."
+          ]
+        },
+        {
+          "question": "¿Es seguro almacenar nuestra información y datos en FormaPro?",
+          "answer": [
+            "¡Absolutamente! La seguridad de la información de nuestros clientes es una prioridad para nosotros. FormaPro utiliza tecnologías avanzadas de cifrado y medidas de protección para asegurar que tus datos estén resguardados en todo momento.\n\nAdemás, gracias a nuestra certificación ISO 27001 de seguridad de la información contamos con protocolos de seguridad estrictos y realizamos auditorías y actualizaciones regulares para garantizar que la plataforma se mantenga segura ante amenazas potenciales. Tu información y datos están en manos seguras con FormaPro."
+          ],
+          "link": [
+            "",
+            "Conoce más sobre nuestras medidas de seguridad en una consulta directa."
+          ]
+        },
+        {
+          "question": "¿Cómo ayuda FormaPro a reducir los costes de formación en mi empresa?",
+          "answer": [
+            "FormaPro está diseñado para optimizar la inversión en formación de tu empresa. Al ser una solución digital, elimina muchos costes asociados a la formación tradicional, como alquiler de espacios, materiales físicos o desplazamientos.\n\nTambién, al ofrecer una amplia variedad de contenidos y herramientas, permite personalizar la formación evitando gastos en cursos genéricos que no se adapten a tus necesidades. Su flexibilidad y accesibilidad 24/7 facilitan la planificación y el aprendizaje autónomo, reduciendo las horas no productivas.\n\nFormaPro proporciona una herramienta para formación de alta calidad a un coste significativamente reducido, maximizando el retorno de tu inversión."
+          ],
+          "link": [
+            "",
+            "Descubre el retorno de inversión con FormaPro. Solicita un análisis."
+          ]
+        },
+        {
+          "question": "¿FormaPro se integra con otras herramientas y sistemas que ya usamos?",
+          "answer": [
+            "¡Totalmente! FormaPro está diseñado para ser compatible e integrarse con una amplia variedad de herramientas y sistemas que las empresas utilizan habitualmente. Aunque lo que realmente le da una potencia especial es su capacidad de integrarse a la perfección con otras soluciones del ecosistema NormaPro, potenciando aún más las capacidades y beneficios.\n\nLa integración facilita la transferencia de datos, la sincronización y el trabajo conjunto de diferentes herramientas, permitiéndote tener una experiencia de formación coherente y sin fisuras en el entorno de tu empresa.\n\nSi tienes sistemas específicos con los que deseas integrar FormaPro, nuestro equipo técnico está listo para asistirte y garantizar una transición suave y eficiente."
+          ],
+          "link": [
+            "",
+            "Revisa nuestras integraciones y compatibilidades en una sesión informativa."
+          ]
+        },
+        {
+          "question": "¿Cómo se actualiza FormaPro con los cambios y tendencias en formación?",
+          "answer": [
+            "FormaPro está en constante evolución. Nuestro equipo de expertos mantiene un ojo atento a las últimas tendencias, investigaciones y avances en el campo de la formación empresarial.\n\nRegularmente, lanzamos actualizaciones y mejoras en la plataforma, asegurándonos de que esté a la vanguardia y ofrezca las metodologías y herramientas más actuales y efectivas.\n\nValoramos mucho el feedback y las sugerencias de nuestros clientes, ya que nos ayudan a adaptar y refinar FormaPro para satisfacer mejor sus necesidades. Con FormaPro, tu empresa siempre estará al día, aprovechando las mejores prácticas en formación."
+          ],
+          "link": [
+            "",
+            "Únete a una demostración y ve las últimas funcionalidades en acción."
+          ]
+        },
+        {
+          "question": "¿Puedo probar FormaPro antes de decidirme?",
+          "answer": [
+            "¡Por supuesto! Entendemos la importancia de asegurarte de que FormaPro es la solución adecuada para tu empresa. Por ello, ofrecemos una versión de prueba gratuita durante un período limitado. Esto te permitirá explorar las características y funcionalidades de FormaPro y experimentar de primera mano cómo puede beneficiar a tu equipo. Si durante o después de la prueba tienes alguna pregunta o inquietud, nuestro equipo de consultores estará encantado de ayudarte.\n\n¡Queremos que estés completamente seguro de que FormaPro es la elección correcta para tu negocio!"
+          ],
+          "link": [
+            "",
+            "Solicita tu prueba gratuita hoy mismo."
+          ]
+        },
+        {
+          "question": "¿Qué tipo de soporte ofrecen si encontramos algún problema?",
+          "answer": [
+            "En FormaPro, estamos comprometidos con la satisfacción de nuestros clientes y entendemos la importancia de un soporte efectivo y oportuno. Por ello, ofrecemos varios niveles de soporte para satisfacer tus necesidades:\n\n",
+            "1. Soporte en línea 24/7:",
+            " Nuestra plataforma cuenta con un chat en línea donde nuestro equipo técnico está disponible para ayudarte con cualquier inquietud o problema que puedas tener.\n\n",
+            "2. Centro de ayuda y recursos:",
+            " Ponemos a tu disposición una base de datos exhaustiva con artículos, tutoriales y respuestas a preguntas frecuentes para que puedas resolver dudas de manera autónoma.\n\n",
+            "3. Soporte técnico especializado:",
+            " Si encuentras un problema más complejo, contamos con un equipo técnico especializado que se encargará de investigar y resolver el asunto en el menor tiempo posible.\n\n",
+            "4. Consultoría personalizada:",
+            " Nuestros consultores NormaPro están a tu disposición para brindarte asesoramiento y orientación sobre la mejor manera de utilizar FormaPro en tu contexto empresarial específico.\n\nQueremos asegurarnos de que tu experiencia con FormaPro sea fluida y beneficiosa, y estamos aquí para ayudarte en cada paso del camino."
+          ],
+          "link": [
+            "",
+            "Descubre nuestro compromiso con la excelencia en servicio al cliente."
+          ]
+        },
+        {
+          "question": "¿FormaPro es adecuado para empresas de cualquier tamaño?",
+          "answer": [
+            "¡Por supuesto! FormaPro ha sido diseñado con la versatilidad en mente para adaptarse a las necesidades de empresas de todos los tamaños. Ya sea que tengas una pequeña empresa con un número reducido de empleados o una corporación multinacional con miles de trabajadores, FormaPro puede escalar y personalizarse según tus requerimientos.\n\nA continuación, te lo explicamos con más detalle en función del tamaño de tu empresa:\n\n",
+            "1. Para pequeñas empresas:",
+            " FormaPro es intuitivo y fácil de configurar, lo que permite a las empresas con recursos limitados implementar soluciones de formación de alta calidad sin la necesidad de un equipo técnico grande.\n\n",
+            "2. Para medianas empresas:",
+            " La capacidad de integración y personalización de FormaPro permite a estas empresas adaptar la plataforma a sus procesos internos y necesidades de formación específicas.\n\n",
+            "3. Para grandes corporaciones:",
+            " FormaPro ofrece robustas herramientas de gestión y análisis, permitiendo a las organizaciones grandes monitorear y optimizar múltiples programas de formación en diferentes departamentos o regiones.\n\nNo importa el tamaño de tu empresa, FormaPro está diseñado para crecer contigo y apoyar tus esfuerzos de formación en cada etapa de tu desarrollo empresarial."
+          ],
+          "link": [
+            "",
+            "Averigua cómo FormaPro puede adaptarse a tu estructura empresarial."
+          ]
+        },
+        {
+          "question": "¿Qué pasa si necesito características adicionales para mi negocio?",
+          "answer": [
+            "No hay problema. Entendemos que cada negocio tiene sus propias necesidades y retos únicos. Si requieres funcionalidades adicionales o personalizaciones específicas que no están presentes en la versión estándar de FormaPro, nuestro equipo de desarrollo y consultores de NormaPro están listos para trabajar contigo.\n\nTrabajaremos en estrecha colaboración contigo para entender tus necesidades específicas y analizar la posibilidad de desarrollar soluciones personalizadas que se alineen con los objetivos de tu empresa. Además, gracias a la arquitectura flexible de FormaPro, es posible integrar nuevas características sin interrumpir tu operativa actual.\n\nNuestro objetivo es asegurarnos de que FormaPro no solo cumpla, sino que supere tus expectativas y se adapte perfectamente al ecosistema de tu negocio. ¡Estamos aquí para apoyarte en cada paso del camino!"
+          ],
+          "link": [
+            "",
+            "Explora las posibilidades de personalización con un consultor NormaPro."
+          ]
+        },
+        {
+          "question": "¿Hay costes ocultos asociados con FormaPro?",
+          "answer": [
+            "No, en FormaPro valoramos la transparencia y la confianza con nuestros clientes. Todos los costes asociados con nuestro servicio están claramente detallados en nuestros paquetes y contratos. No encontrarás tarifas sorpresa ni cargos adicionales no acordados previamente.\n\nSin embargo, si decides en un futuro solicitar funcionalidades adicionales o personalizaciones específicas que no estén incluidas en tu paquete inicial, esas solicitudes podrían tener costes asociados. Pero siempre serás informado previamente y deberás dar tu aprobación antes de cualquier acción que genere un coste adicional.\n\nTe invitamos a ponerte en contacto con nuestro equipo de consultores para discutir cualquier inquietud o pregunta sobre los costes. Estamos comprometidos en ofrecer una solución que se ajuste a tus necesidades y presupuesto. ¡Tu satisfacción es nuestra prioridad!"
+          ],
+          "link": [
+            "¿Tienes más preguntas sobre nuestros costos? ¡Hablemos! ",
+            "Reserva tu cita",
+            " con uno de nuestros consultores y despeja todas tus dudas."
+          ]
+        }
       ]
     }
   }
