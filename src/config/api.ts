@@ -21,6 +21,7 @@ const API_ENDPOINTS = {
   CONSULTORIA: `${API_BASE_URL}/v1/store/consultoria`,
   PACKS: `${API_BASE_URL}/v1/store/packs`,
   APLICACION: `${API_BASE_URL}/v1/aplicaciones`,
+  EVENTOS: `${API_BASE_URL}/v1/store/eventos`,
 };
 
 export default API_ENDPOINTS;

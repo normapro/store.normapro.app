@@ -5,6 +5,7 @@ import MainFormacionSection from "@/components/MainFormacionSection";
 import MainHeroCarousel from "@/components/MainHeroCarousel";
 import MainSolucionesSection from "@/components/MainSolucionesSection";
 import MainTestimoniosSection from "@/components/MainTestimoniosSection";
+import MainEventosSection from "@/components/MainEventosSection";
 import ClientCarousel from "@/components/shared/ClientCarousel";
 import FadeInOnScroll from "@/utils/FadeInOnScroll";
 import { motion } from "framer-motion";
@@ -71,6 +72,10 @@ export default function Home() {
       </FadeInOnScroll>
       <FadeInOnScroll>
         <MainTestimoniosSection />
+      </FadeInOnScroll>
+
+      <FadeInOnScroll>
+        <MainEventosSection />
       </FadeInOnScroll>
     </section>
   );
