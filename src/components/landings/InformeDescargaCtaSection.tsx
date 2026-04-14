@@ -13,7 +13,7 @@ const InformeDescargaCtaSection = ({ textoDescarga }: Props) => {
 
     return (
         <>
-            <section className="w-full bg-[#eff0f4] py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+            <section className="w-full bg-[#eff0f4] py-16 md:py-20 px-4 sm:px-6 lg:px-8 mt-20 ">
                 <div className="max-w-4xl mx-auto text-center text-[#010d3d] mt-15 mb-15">
                     <h2 className="text-[34px] md:text-[46px] font-extrabold leading-tight mb-6">
                         Descarga el informe completo

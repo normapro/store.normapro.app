@@ -244,14 +244,12 @@ export default async function InformeDetallePage({ params }: InformeDetallePageP
 						</div>
 
 						<aside className="relative z-20 lg:translate-y-16">
-							<div className="relative w-full aspect-[3/4] overflow-hidden bg-[#0d1c55] shadow-xl">
+							<div >
 								{data.resolvedImgInforme ? (
-									<Image
+									<img
 										src={data.resolvedImgInforme}
 										alt={titulo}
-										fill
-										className="object-cover"
-										sizes="(max-width: 1024px) 100vw, 320px"
+										className="w-full w-[2000px]"
 									/>
 								) : (
 									<div className="h-full w-full grid place-items-center px-6 text-center text-white text-lg font-semibold">
@@ -278,7 +276,7 @@ export default async function InformeDetallePage({ params }: InformeDetallePageP
 								<h2 className="text-[42px] font-extrabold text-[#010d3d] mb-4">Prologo</h2>
 								{prologoHtml ? (
 									<div
-										className="text-[#283452] text-[22px] leading-relaxed [&_br]:block [&_br]:my-1"
+										className="text-[#283452] text-[22px] leading-relaxed [&_br]:block [&_br]:my-1 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:my-3 [&_ul]:space-y-2 [&_li]:leading-relaxed"
 										dangerouslySetInnerHTML={{ __html: prologoHtml }}
 									/>
 								) : prologoItems.length === 0 ? (
@@ -294,7 +292,7 @@ export default async function InformeDetallePage({ params }: InformeDetallePageP
 													{title ? <h3 className="text-[26px] font-bold text-[#010d3d] mb-2">{title}</h3> : null}
 													{content && /<\/?[a-z][\s\S]*>/i.test(content) ? (
 														<div
-															className="text-[#283452] text-[18px] leading-relaxed pr-40 [&_br]:block [&_br]:my-1"
+															className="text-[#283452] text-[18px] leading-relaxed pr-40 [&_br]:block [&_br]:my-1 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:my-3 [&_ul]:space-y-2 [&_li]:leading-relaxed"
 															dangerouslySetInnerHTML={{ __html: content }}
 														/>
 													) : (
