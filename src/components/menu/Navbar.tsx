@@ -10,6 +10,7 @@ import NormaProAccessButton from "@/components/NormaproAccessButton";
 import { faMagnifyingGlass } from "@fortawesome/pro-duotone-svg-icons";
 import AplicacionesDropdown from "./AplicationsDropDown";
 import ConsultoriaDropdown from "./ConsultoriaDropdown";
+import ModalDescubrir from "./ModalDescubrir";
 
 const Navbar = () => {
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
@@ -20,6 +21,7 @@ const Navbar = () => {
     setIsAplicacionesOpen(false);
     setIsConsultoriaOpen(false);
   };
+  const [isModalOpen, setIsModalOpen] = useState(false);
  
 
   return (
@@ -29,7 +31,12 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center py-2 text-sm text-gray-700">
             Encuentra productos específicos para tu empresa en 60 segundos.{" "}
-            <b>Descubrir →</b>
+            <a
+              onClick={() => setIsModalOpen(true)}
+              className="hover:underline"
+            >
+              <b>Descubrir →</b>
+            </a>
           </div>
         </div>
       </div>
@@ -134,6 +141,12 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Modal de Descubrir */}
+      <ModalDescubrir
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
       </nav>
       
     </>
