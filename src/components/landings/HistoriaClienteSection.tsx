@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { TestimonioConCliente } from '@/types/testimonio';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuoteLeft, faQuoteRight } from '@fortawesome/pro-solid-svg-icons';
+import API_ENDPOINTS from '@/config/api';
 
 type Props = {
     claim: string[];
@@ -20,7 +21,7 @@ const HistoriaClienteSection: FC<Props> = ({
     useEffect(() => {
         if (!id_testimonio) return;
 
-        fetch("http://localhost:3010/v1/store/testimonios?maxItems=100")
+        fetch(`${API_ENDPOINTS.TESTIMONIOS}?maxItems=100`)
             .then((res) => res.ok ? res.json() : [])
             .then((data) => {
                 const testimonios = Array.isArray(data) ? data : [];

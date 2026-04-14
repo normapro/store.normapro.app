@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { TestimonioConCliente } from '@/types/testimonio';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
+import API_ENDPOINTS from '@/config/api';
 
 type ClientPerceptionSectionProps = {
     title?: string;
@@ -15,7 +16,7 @@ const SimpleClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
     const [testimonio, setTestimonio] = useState<TestimonioConCliente | null>(null);
 
     useEffect(() => {
-        fetch("http://localhost:3010/v1/store/testimonios?maxItems=100")
+        fetch(`${API_ENDPOINTS.TESTIMONIOS}?maxItems=100`)
             .then(async (res) => {
                 if (!res.ok) {
                     throw new Error("No se pudieron cargar los testimonios");

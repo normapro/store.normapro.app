@@ -7,6 +7,7 @@ import { TestimonioConCliente } from '@/types/testimonio';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle, faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 import { faBookSection, faClipboardListCheck, faCommentQuestion, faFileChartColumn, faFish, faGlassesRound } from '@fortawesome/pro-duotone-svg-icons';
+import API_ENDPOINTS from '@/config/api';
 
 const iconMap = {
   'fa-clipboard-list-check': faClipboardListCheck,
@@ -63,7 +64,7 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
   useEffect(() => {
     if (!id_testimonio) return;
 
-    fetch("http://localhost:3010/v1/store/testimonios?maxItems=100")
+    fetch(`${API_ENDPOINTS.TESTIMONIOS}?maxItems=100`)
       .then(async (res) => {
         if (!res.ok) {
           throw new Error("No se pudieron cargar los testimonios");

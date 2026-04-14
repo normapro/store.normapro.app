@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import ImageLogoCliente from "@/components/shared/ImageLogoCliente";
 import { LogoType } from "@/libs/logovars";
+import API_ENDPOINTS from "@/config/api";
 
 type Cliente = {
   id_cliente: number;
@@ -34,7 +35,7 @@ const ClientCarousel: React.FC<ClientCarouselProps> = ({ scope, claim }) => {
   useEffect(() => {
     const loadClientes = async () => {
       try {
-        const res = await fetch(`http://localhost:3010/v1/store/clientes?maxItems=100&scope=${scope}`);
+        const res = await fetch(`${API_ENDPOINTS.CLIENTES}?maxItems=100&scope=${scope}`);
         if (!res.ok) throw new Error(`Error HTTP ${res.status}`);
         const payload = await res.json();
         setClientes(getClientesFromPayload(payload));

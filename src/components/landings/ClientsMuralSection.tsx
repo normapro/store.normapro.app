@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import ImageLogoCliente from "@/components/shared/ImageLogoCliente";
 import { LogoType } from "@/libs/logovars";
 import { Cliente } from "@/types/cliente";
+import API_ENDPOINTS from "@/config/api";
 
 type ClientsMuralProps = {
   scope: string;
@@ -14,7 +15,7 @@ const ClientsMuralSection: React.FC<ClientsMuralProps> = ({ scope, claim }) => {
   const [clientes, setClientes] = useState<Cliente[]>([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3010/v1/store/clientes?maxItems=100&scope=${scope}`)
+    fetch(`${API_ENDPOINTS.CLIENTES}?maxItems=100&scope=${scope}`)
       .then((res) => res.json())
       .then(setClientes)
       .catch(console.error);
