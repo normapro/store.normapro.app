@@ -10,7 +10,7 @@ export type AccordionItem = {
 };
 
 type Props = {
-  title: string;
+  title?: string;
   items: AccordionItem[];
   interpretHtmlStrings?: boolean;
   defaultOpenIndex?: number | null;
@@ -27,7 +27,9 @@ const AccordionSection = ({
   return (
     <section className="w-full bg-[#f1f1f7  ] px-6 py-16 md:px-10 md:py-20">
       <div className="mx-auto w-full max-w-5xl">
-        <h2 className="text-2xl font-black text-[#797F98] md:text-[30px]">{title}</h2>
+        {title && (
+          <h2 className="text-2xl font-black text-[#797F98] md:text-[30px]">{title}</h2>
+        )}
 
         <div className="mt-10 border-t border-[#797F98]">
           {items.map((item, index) => {
