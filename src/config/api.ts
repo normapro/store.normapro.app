@@ -23,6 +23,7 @@ const API_ENDPOINTS = {
   APLICACION: `${API_BASE_URL}/v1/aplicaciones`,
   COOKIES: `${API_BASE_URL}/v1/store/cookies`,
   EVENTOS: `${API_BASE_URL}/v1/store/eventos`,
+  ACTUALIDAD: `${API_BASE_URL}/v1/store/actualidad`,
 };
 
 export default API_ENDPOINTS;
