@@ -6,7 +6,11 @@ import API_ENDPOINTS from "@/config/api";
 import { TestimonioConCliente } from "@/types/testimonio";
 import TestimonioCard from "./TestimonioCard";
 
-const MainTestimoniosSection = () => {
+type MainTestimoniosSectionProps = {
+  soloOpiniones?: boolean;
+};
+
+const MainTestimoniosSection = ({ soloOpiniones = false }: MainTestimoniosSectionProps) => {
   const [testimonios, setTestimonios] = useState<TestimonioConCliente[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -30,6 +34,7 @@ const MainTestimoniosSection = () => {
   }, []);
 
   const hasTestimonios = Array.isArray(testimonios) && testimonios.length > 0;
+  const testimoniosMostrados = soloOpiniones ? testimonios.slice(0, 3) : testimonios;
 
   const breakpointColumnsObj = {
     default: 3,
@@ -39,7 +44,11 @@ const MainTestimoniosSection = () => {
 
   return (
     <section className="max-w-7xl mx-auto px-6 py-16">
-      <h2 className="text-3xl font-extrabold text-center text-[#010D3D] mb-12">
+      <h2
+        className={`text-[#010D3D] mb-12 font-extrabold ${
+          soloOpiniones ? "text-2xl text-left" : "text-3xl text-center"
+        }`}
+      >
         Opiniones de nuestros clientes
       </h2>
 
@@ -53,18 +62,20 @@ const MainTestimoniosSection = () => {
           className="flex w-auto -ml-6"
           columnClassName="pl-6 space-y-6"
         >
-          {testimonios.map((testimonio) => (
+          {testimoniosMostrados.map((testimonio) => (
             <TestimonioCard key={testimonio.id_testimonio} {...testimonio} />
           ))}
         </Masonry>
       ) : (
         <p className="text-center text-gray-400">Aún no hay testimonios disponibles.</p>
       )}
-      <div className="flex justify-center mt-8">
-        <a href="#contacto" className="text-white bg-[#010D3D] hover:bg-[#0B1F6D] font-bold py-2 px-4 rounded-xl">
-          Lee las historias de nuestros clientes
-        </a>
-      </div>
+      {!soloOpiniones && (
+        <div className="flex justify-center mt-8">
+          <a href="#contacto" className="text-white bg-[#010D3D] hover:bg-[#0B1F6D] font-bold py-2 px-4 rounded-xl">
+            Lee las historias de nuestros clientes
+          </a>
+        </div>
+      )}
     </section>
   );
 };
