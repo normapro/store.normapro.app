@@ -1,10 +1,11 @@
 'use client'
 
-import { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 
 type Props = {
     isOpen: boolean;
     onClose: () => void;
+    initialEmail?: string;
 }
 
 type FormValues = {
@@ -35,9 +36,19 @@ const initialValues: FormValues = {
     demo: false,
 };
 
-const DescargaInformeModal = ({ isOpen, onClose }: Props) => {
+const DescargaInformeModal = ({ isOpen, onClose, initialEmail = '' }: Props) => {
     const [values, setValues] = useState<FormValues>(initialValues);
     const [errors, setErrors] = useState<FormErrors>({});
+
+    useEffect(() => {
+        if (!isOpen) return;
+
+        setValues({
+            ...initialValues,
+            email: initialEmail.trim(),
+        });
+        setErrors({});
+    }, [isOpen, initialEmail]);
 
     const validate = (data: FormValues): FormErrors => {
         const nextErrors: FormErrors = {};

@@ -1,4 +1,5 @@
 'use client';
+import InformesGridSection from "@/components/informes/InformesGridSection";
 import MainAplicacionesSection from "@/components/MainAplicacionesSection";
 import MainConsultoriaSection from "@/components/MainConsultoriaSection";
 import MainFormacionSection from "@/components/MainFormacionSection";
@@ -11,6 +12,7 @@ import FadeInOnScroll from "@/utils/FadeInOnScroll";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import ActualidadGridSection from "@/components/ActualidadGridSection";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -91,6 +93,19 @@ export default function Home() {
       </FadeInOnScroll>
 
 
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <header className="pb-4 flex items-center justify-between gap-4">
+                <h1 className="text-3xl font-extrabold text-[#010d3d]">Informes</h1>
+                <Link
+                  href="/informes"
+                  className="text-l font-bold text-[#010d3d] underline underline-offset-4"
+                >
+                  Ver todos los informes
+                </Link>
+              </header>
+      
+              <InformesGridSection showOnlyLastThree />
+            </section>
     </section>
   );
 }
