@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faExternalLinkAlt, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import API_ENDPOINTS from '@/config/api';
 
 const Cookies = () => {
   const [datos, setDatos] = useState<any[]>([]);
@@ -8,7 +9,7 @@ const Cookies = () => {
   const [cargando, setCargando] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:3010/v1/store/cookies/')
+    fetch(API_ENDPOINTS.COOKIES)
       .then(res => res.json())
       .then(data => {
         setDatos(data);

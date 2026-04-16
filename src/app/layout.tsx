@@ -8,6 +8,7 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import Script from "next/script";
 import { Providers } from "./providers";
+import ChatManager from "@/components/ChatManager";
 
 const mulish = Mulish({
   variable: "--font-mulish",
@@ -24,8 +25,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es" className={mulish.variable}>
       <body className="font-sans">
-        <Navbar />
-        <Providers>{children}</Providers>
+        {/* ChatManager gestiona la Navbar y el botón del Chat */}
+        <ChatManager>
+          <Providers>{children}</Providers>
+        </ChatManager>
         <Footer />
 
         {/* FontAwesome Kit */}

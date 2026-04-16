@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
+import API_ENDPOINTS from '@/config/api';
 
 type Props = {
   title: string;
@@ -27,7 +28,7 @@ const CarouselPerceptionsSection: React.FC<Props> = ({
 
   useEffect(() => {
     const promesas = listIds.map(id => 
-      fetch(`http://localhost:3010/v1/store/testimonios/${id}`).then(res => res.json())
+      fetch(`${API_ENDPOINTS.TESTIMONIOS}/${id}`).then(res => res.json())
     );
 
     Promise.all(promesas)
