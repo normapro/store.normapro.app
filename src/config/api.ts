@@ -25,6 +25,7 @@ const API_ENDPOINTS = {
   COOKIES: `${API_BASE_URL}/v1/store/cookies`,
   EVENTOS: `${API_BASE_URL}/v1/store/eventos`,
   ACTUALIDAD: `${API_BASE_URL}/v1/store/actualidad`,
+  GLOBALSEARCH: `${API_BASE_URL}/v1/store/globalsearch`,
 };
 
 export default API_ENDPOINTS;

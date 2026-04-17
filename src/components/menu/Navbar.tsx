@@ -8,7 +8,7 @@ import API_ENDPOINTS from "@/config/api";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faBars } from "@fortawesome/free-solid-svg-icons";
 import NormaProAccessButton from "@/components/NormaproAccessButton";
-import { faMagnifyingGlass, faSpinner, faXmark } from "@fortawesome/pro-duotone-svg-icons";
+import { faMagnifyingGlass, faXmark } from "@fortawesome/pro-duotone-svg-icons";
 import { faMessageSmile } from "@fortawesome/pro-regular-svg-icons";
 import AplicacionesDropdown from "./AplicationsDropDown";
 import ConsultoriaDropdown from "./ConsultoriaDropdown";
@@ -16,6 +16,7 @@ import ModalDescubrir from "./ModalDescubrir";
 import { Ambito } from "@/types/ambito";
 import { Aplicacion } from "@/types/aplicacion";
 import { Consultoria } from "@/types/consultoria";
+import Formulario from "../Formulario";
 
 type NavbarProps = {
   isChatHidden?: boolean;
@@ -46,7 +47,7 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const [activeTab, setActiveTab] = useState("Resultados");
-
+  const [openModalContacto, setOpenModalContacto] = useState(false);
 
   const fetchResults = useCallback(async (query: string) => {
     if (query.length < 3) {
@@ -56,7 +57,7 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
 
     setIsLoading(true);
     try {
-      const response = await fetch(`/api/search?q=${encodeURIComponent(query)}`); // cambiar ENDPOINT
+      const response = await fetch(`${API_ENDPOINTS.GLOBALSEARCH}?q=${encodeURIComponent(query)}`);
       const data = await response.json();
       setResults(data);
     } catch (error) {
@@ -74,6 +75,15 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
 
     return () => clearTimeout(timer);
   }, [searchQuery, fetchResults]);
+
+  // Agrupación por categorias
+  const groupedResults = results.reduce((acc: any, item: any) => {
+    const cat = item.category;
+    if (!acc[cat]) acc[cat] = [];
+    acc[cat].push(item);
+    return acc;
+  }, {});
+  const tabOrder = ["Resultados", "Aplicaciones", "Soluciones"];
 
   useEffect(() => {
     if (searchQuery.length >= 3 && results.length > 0) {
@@ -433,50 +443,63 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
         </AnimatePresence>
         {/* Panel resultados de busqueda */}
         <AnimatePresence>
-          {showResults && isSearchOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-              className="absolute left-0 right-0 top-full bg-white border-t border-gray-100 shadow-2xl z-50 min-h-[400px]"
-            >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-                <div className="flex space-x-8 border-b border-gray-100 mb-8">
-                  {["Resultados 3", "Aplicaciones 3", "Soluciones 2", "Formación 7"].map((tab) => (
+        {showResults && isSearchOpen && (
+          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="absolute left-0 right-0 top-full bg-white shadow-2xl z-50 border-t border-gray-100 overflow-y-auto max-h-[85vh]">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+              
+              {/* Tabs Dinámicos con contadores reales */}
+              <div className="flex space-x-8 border-b border-gray-100 mb-8">
+                {tabOrder.map((tab) => {
+                  const count = groupedResults[tab]?.length || 0;
+                  return (
                     <button
                       key={tab}
                       onClick={() => setActiveTab(tab)}
-                      className={`pb-2 px-1 text-sm font-bold transition-colors relative ${activeTab === tab ? "text-blue-900" : "text-gray-400 hover:text-gray-600"
-                        }`}
+                      className={`pb-3 text-sm font-bold transition-all relative ${
+                        activeTab === tab ? "text-[#020a31]" : "text-gray-400 hover:text-gray-600"
+                      }`}
                     >
-                      {tab}
+                      {tab} {count}
                       {activeTab === tab && (
-                        <motion.div layoutId="tab-underline" className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-900" />
+                        <motion.div layoutId="underline" className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#020a31]" />
                       )}
                     </button>
-                  ))}
-                </div>
-                <div className="space-y-8 max-w-4xl">
-                  {[1, 2].map((i) => (
-                    <div key={i} className="group cursor-pointer">
-                      <h4 className="text-[17px] font-bold text-[#020a31] group-hover:text-blue-600 transition-colors mb-2">
-                        Lorem ipsum {i === 2 && "dolor sit amet"}
+                  );
+                })}
+              </div>
+
+              {/* Lista de Resultados */}
+              <div className="space-y-10 max-w-4xl min-h-[200px]">
+                {groupedResults[activeTab]?.length > 0 ? (
+                  groupedResults[activeTab].map((item: any, idx: number) => (
+                    <Link key={idx} href={`/${item.slug}`} className="group block" onClick={() => setIsSearchOpen(!isSearchOpen)}>
+                      <h4 className="text-[18px] font-bold text-[#020a31] group-hover:text-blue-600 transition-colors mb-1">
+                        {item.name}
                       </h4>
                       <p className="text-gray-600 leading-relaxed text-[15px]">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nunc nunc, vehicula quis purus eget, convallis egestas risus. Nunc mattis tempus eleifend.
+                        {item.description || "Haz clic para ver los detalles de este recurso."}
                       </p>
-                    </div>
-                  ))}
-                </div><div className="mt-16 text-center pb-8">
-                  <h3 className="text-xl font-bold text-[#020a31] mb-6">Descubre cómo podemos ayudar a tu empresa</h3>
-                  <button className="bg-gradient-to-r from-[#00B2E3] to-[#CCA1DD] text-white px-8 py-3 rounded-xl font-bold hover:opacity-90 transition-opacity">
-                    Reserva un diagnóstico gratuito
-                  </button>
-                </div>
+                    </Link>
+                  ))
+                ) : (
+                  <div className="text-gray-400 py-10">No hay resultados en esta categoría.</div>
+                )}
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+
+              {/* Banner Final */}
+              <div className="mt-20 text-center border-t border-gray-50 pt-12 pb-6">
+                <h3 className="text-xl font-bold text-[#020a31] mb-6">Descubre cómo podemos ayudar a tu empresa</h3>
+                <button 
+                  className="bg-gradient-to-r from-[#00B2E3] to-[#CCA1DD] text-white px-10 py-3.5 rounded-xl font-bold hover:scale-105 transition-transform shadow-lg"
+                  onClick={() => setOpenModalContacto(true)}
+                >
+                  Reserva un diagnóstico gratuito
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
         <AnimatePresence>
           {isSolutionsOpen && (
@@ -523,6 +546,10 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
         />
+        {/* Formulario contacto */}
+        {openModalContacto && (
+        <Formulario onClose={() => setOpenModalContacto(false)} />
+      )}
       </nav>
 
     </>
