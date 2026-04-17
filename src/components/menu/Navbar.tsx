@@ -13,6 +13,7 @@ import AplicacionesDropdown from "./AplicationsDropDown";
 import ConsultoriaDropdown from "./ConsultoriaDropdown";
 import ModalDescubrir from "./ModalDescubrir";
 import API_ENDPOINTS from "@/config/api";
+import Formulario from "../Formulario";
 
 type NavbarProps = {
   isChatHidden?: boolean;
@@ -35,7 +36,7 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const [activeTab, setActiveTab] = useState("Resultados");
-
+  const [openModalContacto, setOpenModalContacto] = useState(false);
 
   const fetchResults = useCallback(async (query: string) => {
     if (query.length < 3) {
@@ -275,7 +276,10 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
               {/* Banner Final */}
               <div className="mt-20 text-center border-t border-gray-50 pt-12 pb-6">
                 <h3 className="text-xl font-bold text-[#020a31] mb-6">Descubre cómo podemos ayudar a tu empresa</h3>
-                <button className="bg-gradient-to-r from-[#00B2E3] to-[#CCA1DD] text-white px-10 py-3.5 rounded-xl font-bold hover:scale-105 transition-transform shadow-lg">
+                <button 
+                  className="bg-gradient-to-r from-[#00B2E3] to-[#CCA1DD] text-white px-10 py-3.5 rounded-xl font-bold hover:scale-105 transition-transform shadow-lg"
+                  onClick={() => setOpenModalContacto(true)}
+                >
                   Reserva un diagnóstico gratuito
                 </button>
               </div>
@@ -329,6 +333,10 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
         />
+        {/* Formulario contacto */}
+        {openModalContacto && (
+        <Formulario onClose={() => setOpenModalContacto(false)} />
+      )}
       </nav>
 
     </>
