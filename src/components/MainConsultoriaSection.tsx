@@ -46,13 +46,13 @@ const MainConsultoriaSection = () => {
             />  
             <h3 className="text-[24px] font-extrabold mb-2 ">{consultoria.description}</h3>
             <p className="text-sm mb-6">{consultoria.shortDescription}</p>
-            <div className="flex justify-between items-center text-sm font-semibold absolute bottom-[20px] w-85">
+            <div className="absolute bottom-[20px] left-6 right-6 flex flex-col gap-3 text-sm font-semibold sm:flex-row sm:items-center sm:justify-between">
               <Link href={`/soluciones/${consultoria.slug}`} className="underline font-bold text-[#010D3D]">
                 Saber más
               </Link>
               <Link
                 href={`/contacto?consultoria=${consultoria.id_consultoria}`}
-                className="bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] text-white px-4 py-2 rounded-lg mb-4 float-right"
+                className="bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] text-white px-4 py-2 rounded-lg text-center"
               >
                 Contratar ahora
               </Link>

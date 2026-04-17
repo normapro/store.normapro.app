@@ -4,14 +4,18 @@ import Link from "next/link";
 import { useEffect, useState, FormEvent, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import SolutionsDropdown from "@/components/menu/SolutionsDropdown";
+import API_ENDPOINTS from "@/config/api";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faC, faCaretDown, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faBars } from "@fortawesome/free-solid-svg-icons";
 import NormaProAccessButton from "@/components/NormaproAccessButton";
 import { faMagnifyingGlass, faSpinner, faXmark } from "@fortawesome/pro-duotone-svg-icons";
 import { faMessageSmile } from "@fortawesome/pro-regular-svg-icons";
 import AplicacionesDropdown from "./AplicationsDropDown";
 import ConsultoriaDropdown from "./ConsultoriaDropdown";
 import ModalDescubrir from "./ModalDescubrir";
+import { Ambito } from "@/types/ambito";
+import { Aplicacion } from "@/types/aplicacion";
+import { Consultoria } from "@/types/consultoria";
 
 type NavbarProps = {
   isChatHidden?: boolean;
@@ -29,6 +33,14 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
   };
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false);
+  const [isMobileAppsOpen, setIsMobileAppsOpen] = useState(false);
+  const [isMobileConsultoriaOpen, setIsMobileConsultoriaOpen] = useState(false);
+  const [mobileAmbitos, setMobileAmbitos] = useState<Ambito[]>([]);
+  const [mobileApps, setMobileApps] = useState<Aplicacion[]>([]);
+  const [mobileConsultorias, setMobileConsultorias] = useState<Consultoria[]>([]);
+  const [isMobileMenuLoading, setIsMobileMenuLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [results, setResults] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -70,6 +82,40 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
       setShowResults(false);
     }
   }, [results, searchQuery]);
+
+  useEffect(() => {
+    const fetchMobileMenuData = async () => {
+      if (!isMobileMenuOpen || (mobileAmbitos.length > 0 && mobileApps.length > 0 && mobileConsultorias.length > 0)) {
+        return;
+      }
+
+      setIsMobileMenuLoading(true);
+      try {
+        const [ambitosRes, appsRes, consultoriasRes] = await Promise.all([
+          fetch(API_ENDPOINTS.AMBITOS),
+          fetch(API_ENDPOINTS.APLICACIONES),
+          fetch(API_ENDPOINTS.CONSULTORIA),
+        ]);
+
+        const ambitosData = ambitosRes.ok ? await ambitosRes.json() : [];
+        const appsData = appsRes.ok ? await appsRes.json() : [];
+        const consultoriasData = consultoriasRes.ok ? await consultoriasRes.json() : [];
+
+        setMobileAmbitos(Array.isArray(ambitosData) ? ambitosData : []);
+        setMobileApps(Array.isArray(appsData) ? appsData : []);
+        setMobileConsultorias(Array.isArray(consultoriasData) ? consultoriasData : []);
+      } catch (error) {
+        console.error("Error al cargar menu movil:", error);
+        setMobileAmbitos([]);
+        setMobileApps([]);
+        setMobileConsultorias([]);
+      } finally {
+        setIsMobileMenuLoading(false);
+      }
+    };
+
+    fetchMobileMenuData();
+  }, [isMobileMenuOpen, mobileAmbitos.length, mobileApps.length, mobileConsultorias.length]);
 
   const handleSearchSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -145,7 +191,7 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
             </div>
 
             {/* Botón de chat, de búsqueda e inicio de sesión */}
-            <div className="flex items-center space-x-4">
+            <div className="hidden md:flex items-center space-x-4">
               {isChatHidden && (
                 <button
                   onClick={onShowChat}
@@ -163,9 +209,177 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
               </button>
               <NormaProAccessButton></NormaProAccessButton>
             </div>
+
+            <div className="md:hidden flex items-center gap-2">
+              <button
+                onClick={() => {
+                  setIsSearchOpen((prev) => !prev);
+                  setIsMobileMenuOpen(false);
+                }}
+                className={`p-2 w-10 h-10 rounded-full flex items-center justify-center transition-colors ${isSearchOpen ? 'bg-[#eceef5]' : 'hover:bg-gray-100'}`}
+                aria-label="Abrir buscador"
+              >
+                <FontAwesomeIcon icon={faMagnifyingGlass} className="text-[#0B1D4D]" />
+              </button>
+              <button
+                onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+                className="p-2 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-100"
+                aria-label="Abrir menu movil"
+              >
+                <FontAwesomeIcon icon={isMobileMenuOpen ? faXmark : faBars} className="text-[#0B1D4D]" />
+              </button>
+            </div>
           </div>
         </div>
         <div className="break"></div>
+
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden overflow-hidden border-t border-gray-100 bg-white"
+            >
+              <div className="px-4 py-4 flex flex-col gap-1 text-[#0B1D4D]">
+                <button
+                  onClick={() => {
+                    setIsMobileSolutionsOpen((prev) => !prev);
+                    setIsMobileAppsOpen(false);
+                    setIsMobileConsultoriaOpen(false);
+                  }}
+                  className="w-full py-1 flex items-center justify-between"
+                >
+                  Soluciones
+                  <FontAwesomeIcon icon={faChevronDown} className={`transition-transform ${isMobileSolutionsOpen ? "rotate-180" : ""}`} />
+                </button>
+                <AnimatePresence>
+                  {isMobileSolutionsOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pl-3 pb-2 flex flex-col gap-2 text-sm">
+                        <Link href="/soluciones/all" onClick={() => setIsMobileMenuOpen(false)} className="py-1">
+                          Ver todas las soluciones
+                        </Link>
+                        {isMobileMenuLoading ? (
+                          <span className="py-1 text-gray-500">Cargando...</span>
+                        ) : (
+                          mobileAmbitos.map((ambito) => (
+                            <Link
+                              key={ambito.id_ambito}
+                              href={`/soluciones/${ambito.slug}`}
+                              onClick={() => setIsMobileMenuOpen(false)}
+                              className="py-1"
+                            >
+                              {ambito.description}
+                            </Link>
+                          ))
+                        )}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                <button
+                  onClick={() => {
+                    setIsMobileAppsOpen((prev) => !prev);
+                    setIsMobileSolutionsOpen(false);
+                    setIsMobileConsultoriaOpen(false);
+                  }}
+                  className="w-full py-1 flex items-center justify-between"
+                >
+                  Aplicaciones
+                  <FontAwesomeIcon icon={faChevronDown} className={`transition-transform ${isMobileAppsOpen ? "rotate-180" : ""}`} />
+                </button>
+                <AnimatePresence>
+                  {isMobileAppsOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pl-3 pb-2 flex flex-col gap-2 text-sm">
+                        {isMobileMenuLoading ? (
+                          <span className="py-1 text-gray-500">Cargando...</span>
+                        ) : (
+                          mobileApps.map((app) => (
+                            <Link
+                              key={app.id_app}
+                              href={`/aplicaciones/${app.slug}`}
+                              onClick={() => setIsMobileMenuOpen(false)}
+                              className="py-1"
+                            >
+                              {app.description}
+                            </Link>
+                          ))
+                        )}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                <button
+                  onClick={() => {
+                    setIsMobileConsultoriaOpen((prev) => !prev);
+                    setIsMobileSolutionsOpen(false);
+                    setIsMobileAppsOpen(false);
+                  }}
+                  className="w-full py-1 flex items-center justify-between"
+                >
+                  Consultoria
+                  <FontAwesomeIcon icon={faChevronDown} className={`transition-transform ${isMobileConsultoriaOpen ? "rotate-180" : ""}`} />
+                </button>
+                <AnimatePresence>
+                  {isMobileConsultoriaOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pl-3 pb-2 flex flex-col gap-2 text-sm">
+                        {isMobileMenuLoading ? (
+                          <span className="py-1 text-gray-500">Cargando...</span>
+                        ) : (
+                          mobileConsultorias.map((consultoria) => (
+                            <Link
+                              key={consultoria.id_consultoria}
+                              href={`/consultorias/${consultoria.slug}`}
+                              onClick={() => setIsMobileMenuOpen(false)}
+                              className="py-1"
+                            >
+                              {consultoria.description}
+                            </Link>
+                          ))
+                        )}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+                <Link href="/formacion" onClick={() => setIsMobileMenuOpen(false)} className="py-1">
+                  Formacion
+                </Link>
+                <Link href="/historias" onClick={() => setIsMobileMenuOpen(false)} className="py-1">
+                  Historias con Clientes
+                </Link>
+                <button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    setIsModalOpen(true);
+                  }}
+                  className="mt-2 rounded-lg px-4 py-2 text-white bg-gradient-to-r from-[#00B2E3] to-[#CCA1DD]"
+                >
+                  Descubrir
+                </button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Barra de busqueda */}
         <AnimatePresence>

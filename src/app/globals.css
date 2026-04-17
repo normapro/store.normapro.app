@@ -20,6 +20,14 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-mulish);
+  overflow-x: hidden;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 .backdrop-custom {

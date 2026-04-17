@@ -7,29 +7,36 @@ type FormularioProps = {
 
 const Formulario: React.FC<FormularioProps> = ({ onClose }) => {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
-      <div className="w-full max-w-4xl bg-[#f4f5f7] rounded-3xl shadow-2xl">
+    <div
+      className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/70 p-3 sm:items-center sm:p-4"
+      onClick={onClose}
+    >
+      <div
+        className="my-2 w-full max-w-4xl max-h-[95vh] overflow-hidden rounded-3xl bg-[#f4f5f7] shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Título */}
-        <div className="flex justify-between items-start p-8 pb-4">
+        <div className="sticky top-0 z-10 flex items-start justify-between bg-[#f4f5f7] p-5 pb-4 sm:p-8 sm:pb-4">
           <div>
-            <h2 className="text-2xl font-extrabold text-gray-800 mb-2 text-left">
+            <h2 className="mb-2 text-left text-xl font-extrabold text-gray-800 sm:text-2xl">
               Reserva una sesión estratégica con nosotros
             </h2>
-            <p className="text-gray-600 max-w-2xl text-left">
+            <p className="max-w-2xl text-left text-sm text-gray-600 sm:text-base">
               Rellena este formulario y nos pondremos en contacto contigo para
               hacerte una demostración gratuita y sin compromiso.
             </p>
           </div>
           <button
             onClick={onClose}
-            className="text-3xl text-black"
+            className="ml-3 rounded-full px-3 py-1 text-3xl leading-none text-black hover:bg-black/10"
+            aria-label="Cerrar formulario"
           >
             ✕
           </button>
         </div>
 
         {/* Formulario */}
-        <form className="bg-[#e9eaee] p-8 rounded-b-3xl text-left">
+        <form className="max-h-[75vh] overflow-y-auto rounded-b-3xl bg-[#e9eaee] p-5 text-left sm:p-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-semibold mb-2">
@@ -136,6 +143,16 @@ const Formulario: React.FC<FormularioProps> = ({ onClose }) => {
               className="bg-[#0b1b4d] text-white font-semibold px-10 py-3 rounded-xl hover:bg-[#132a6e] transition"
             >
               Enviar
+            </button>
+          </div>
+
+          <div className="mt-4 flex justify-center sm:hidden">
+            <button
+              type="button"
+              onClick={onClose}
+              className="rounded-xl border border-[#0b1b4d] px-8 py-2 font-semibold text-[#0b1b4d]"
+            >
+              Cerrar
             </button>
           </div>
         </form>
