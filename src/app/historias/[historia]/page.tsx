@@ -10,6 +10,7 @@ type HistoriaPageProps = {
 
 type HistoriaPayload = {
 	id: number;
+	slug?: string;
 	id_cliente?: number | null;
 	nombre?: string | null;
 	descripcion?: string | null;
@@ -41,10 +42,16 @@ const parseBloques = (componentes: unknown): any[] => {
 	return [];
 };
 
-const getHistoriaById = async (historiaId: string): Promise<HistoriaPayload | null> => {
-	const response = await fetch(`${API_ENDPOINTS.HISTORIAS}/${historiaId}`, {
+const getHistoriaBySlug = async (historiaSlug: string): Promise<HistoriaPayload | null> => {
+	let response = await fetch(`${API_ENDPOINTS.HISTORIAS}/slug/${encodeURIComponent(historiaSlug)}`, {
 		next: { revalidate: 0 },
 	});
+
+	if (!response.ok && /^\d+$/.test(historiaSlug.trim())) {
+		response = await fetch(`${API_ENDPOINTS.HISTORIAS}/${historiaSlug}`, {
+			next: { revalidate: 0 },
+		});
+	}
 
 	if (response.status === 404) return null;
 	if (!response.ok) {
@@ -71,7 +78,7 @@ const getClienteById = async (clienteId?: number | null): Promise<ClientePayload
 
 export default async function HistoriaPage({ params }: HistoriaPageProps) {
 	const { historia } = await params;
-	const data = await getHistoriaById(historia);
+	const data = await getHistoriaBySlug(historia);
 
 	if (!data) {
 		return (

@@ -156,11 +156,17 @@ async function resolveInformeImagePath(imagePath?: string): Promise<string | nul
 	return candidates[0];
 }
 
-async function getInformeById(id: string): Promise<InformeDetalle | null> {
+async function getInformeBySlug(slug: string): Promise<InformeDetalle | null> {
 	try {
-		const response = await fetch(`${API_ENDPOINTS.INFORMES}/${id}`, {
+		let response = await fetch(`${API_ENDPOINTS.INFORMES}/slug/${encodeURIComponent(slug)}`, {
 			cache: "no-store",
 		});
+
+		if (!response.ok && /^\d+$/.test(slug.trim())) {
+			response = await fetch(`${API_ENDPOINTS.INFORMES}/${slug}`, {
+				cache: "no-store",
+			});
+		}
 
 		if (!response.ok) {
 			return null;
@@ -195,7 +201,7 @@ async function getInformeById(id: string): Promise<InformeDetalle | null> {
 
 export default async function InformeDetallePage({ params }: InformeDetallePageProps) {
 	const { informe } = await params;
-	const data = await getInformeById(informe);
+	const data = await getInformeBySlug(informe);
 
 	if (!data) {
 		return (

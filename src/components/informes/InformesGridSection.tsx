@@ -70,6 +70,8 @@ export default function InformesGridSection({ showOnlyLastThree = false }: Infor
             const titulo = informe.titulo?.trim() || "Informe sin titulo";
             const imagePath = informe.resolvedImagePath;
             const informeId = typeof informe.id === "number" ? informe.id : null;
+            const informeSlug = informe.slug?.trim() || null;
+            const informePath = informeSlug || informeId;
             const key = informe.id ?? `informe-${index}`;
 
             return (
@@ -98,9 +100,9 @@ export default function InformesGridSection({ showOnlyLastThree = false }: Infor
                   {titulo}
                 </h2>
 
-                {informeId ? (
+                {informePath ? (
                   <Link
-                    href={`/informes/${informeId}`}
+                    href={`/informes/${informePath}`}
                     className="mt-8 w-fit rounded-xl bg-[#010d3d] px-4 py-2 text-white text-[16px] font-bold"
                   >
                     Mas informacion

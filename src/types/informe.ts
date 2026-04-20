@@ -24,6 +24,7 @@ export interface ResponsableInforme {
 
 export interface Informe {
   id?: number;
+  slug?: string;
   categoria?: string;
   titulo?: string;
   textoDescarga?: string | null;
