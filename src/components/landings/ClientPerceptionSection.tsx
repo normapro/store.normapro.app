@@ -60,6 +60,8 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
   const [testimonio, setTestimonio] = useState<TestimonioConCliente | null>(null);
   const [openModal, setOpenModal] = useState(false);
   const itemsList = Array.isArray(items) ? items : items ? [items] : [];
+  const listItems = Array.isArray(list) ? list : [];
+  const tablaItems = Array.isArray(tabla) ? tabla : [];
 
   useEffect(() => {
     if (!id_testimonio) return;
@@ -133,10 +135,10 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
           </h2>
         )}
 
-        {tabla && tabla.length > 0 && (
+        {tablaItems.length > 0 && (
   <div className="max-w-6xl mx-auto mt-12 mb-20 px-6">
     <div className="grid grid-cols-1 md:grid-cols-3">
-      {tabla.map((item, index) => {
+      {tablaItems.map((item, index) => {
         const IconComponent = iconMap[item.icon as keyof typeof iconMap];
 
         return (
@@ -194,7 +196,7 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
               ))}
             </ul>
             <ul className="space-y-4 text-lg text-[#1a1a1a] ">
-              {list.map((item, index) => (
+              {listItems.map((item, index) => (
                 <li key={index} className="flex items-start leading-tight gap-2">
                   <div className="text-[#010d3d] text-2xl mt-1">
                     <FontAwesomeIcon icon={faCheckCircle} className="fa-duotone" />
