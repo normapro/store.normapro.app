@@ -136,36 +136,36 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
         )}
 
         {tablaItems.length > 0 && (
-  <div className="max-w-6xl mx-auto mt-12 mb-20 px-6">
-    <div className="grid grid-cols-1 md:grid-cols-3">
-      {tablaItems.map((item, index) => {
-        const IconComponent = iconMap[item.icon as keyof typeof iconMap];
+          <div className="max-w-6xl mx-auto mt-12 mb-20 px-6">
+            <div className="grid grid-cols-1 md:grid-cols-3">
+              {tablaItems.map((item, index) => {
+                const IconComponent = iconMap[item.icon as keyof typeof iconMap];
 
-        return (
-          <div
-            key={index}
-            className={`flex flex-col items-center p-12 text-center min-h-[300px] justify-center
+                return (
+                  <div
+                    key={index}
+                    className={`flex flex-col items-center p-12 text-center min-h-[300px] justify-center
               ${index % 3 !== 2 ? 'md:border-r border-gray-300' : ''} 
               ${index >= 3 ? 'border-t border-gray-300' : 'max-md:border-t border-gray-300'}
             `}
-          >
-            
-            {IconComponent && (
-              <div className="text-[#010d3d] text-6xl mb-8">
-                <FontAwesomeIcon icon={IconComponent} className="fa-duotone" />
-              </div>
-            )}
+                  >
 
-            
-            <p className="text-[#010d3d] font-extrabold text-base leading-snug max-w-sm">
-              {item.claim}
-            </p>
+                    {IconComponent && (
+                      <div className="text-[#010d3d] text-6xl mb-8">
+                        <FontAwesomeIcon icon={IconComponent} className="fa-duotone" />
+                      </div>
+                    )}
+
+
+                    <p className="text-[#010d3d] font-extrabold text-base leading-snug max-w-sm">
+                      {item.claim}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
-        );
-      })}
-    </div>
-  </div>
-)}
+        )}
 
         {image && (
           <div className="text-center mb-8 mt-20">
@@ -178,7 +178,7 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
           </div>
         )}
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
           {/* Texto izquierdo */}
           <div>
             {title && (
@@ -271,14 +271,14 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
               {secondsupertitle}
             </h1>
           )}
-  
-  <button
-    onClick={() => setOpenModal(true)}
-    className="bg-[#010d3d] text-white font-bold px-8 py-4 text-lg rounded-xl shadow-md hover:bg-[#04176f] transition"
-  >
-    Quiero una demostración
-  </button>
-</div>
+
+          <button
+            onClick={() => setOpenModal(true)}
+            className="bg-[#010d3d] text-white font-bold px-8 py-4 text-lg rounded-xl shadow-md hover:bg-[#04176f] transition"
+          >
+            Quiero una demostración
+          </button>
+        </div>
 
         {/* Texto de debajo del boton*/}
         {downtext && (

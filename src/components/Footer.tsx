@@ -93,7 +93,7 @@ const Footer = () => {
 					{/* Certificaciones + miembros */}
 					<div className="flex flex-wrap justify-between items-center gap-6 mx-17">
 						{/* Certificaciones */}
-						<div className="flex flex-wrap items-center gap-15">
+						<div className="grid grid-cols-2 place-items-center gap-6 md:flex md:flex-wrap md:items-center md:gap-15">
 							{[
 								"Grupo 4494@2x.png",
 								"Grupo 4506@2x.png",
