@@ -13,7 +13,7 @@ const ChatFloatingButton = ({ isOpen, onClose, onClick }: Props) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed bottom-16 right-16 z-[100] flex items-center group">
+    <div className="hidden md:flex fixed bottom-16 right-16 z-[100] items-center group">
       {/* Burbuja de texto */}
       <div className="mr-3 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-4 group-hover:translate-x-0 pointer-events-none">
         <div className="bg-white text-[#010d3d] px-5 py-3 rounded-2xl shadow-xl border border-slate-100 relative">

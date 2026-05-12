@@ -59,6 +59,7 @@ const HistoriasClientesSection = ({ soloUnaHistoria = false }: HistoriasClientes
   }, []);
 
   const historiaPrincipal = historias[0];
+  const historiaPrincipalPath = `/historias/${historiaPrincipal?.slug || historiaPrincipal?.id}`;
 
   return (
     <section className={`mx-auto px-4 sm:px-6 lg:px-10 ${soloUnaHistoria ? 'max-w-[1280px] py-6' : 'max-w-[1600px] py-12'}`}>
@@ -100,7 +101,7 @@ const HistoriasClientesSection = ({ soloUnaHistoria = false }: HistoriasClientes
             <hr className="my-0 border-white border-1" />
 
             <Link
-              href={`/historias/${historiaPrincipal.id}`}
+              href={historiaPrincipalPath}
               className="text-left text-[#071a4c] font-extrabold text-[15px] underline underline-offset-4 mt-6"
             >
               Saber mas
@@ -133,7 +134,7 @@ const HistoriasClientesSection = ({ soloUnaHistoria = false }: HistoriasClientes
                 <hr className="my-5 border-white" />
 
                 <Link
-                  href={`/historias/${historia.id}`}
+                  href={`/historias/${historia.slug || historia.id}`}
                   className="text-left text-[#071a4c] font-extrabold text-[20px] underline underline-offset-4 mt-3"
                 >
                   Saber mas

@@ -84,7 +84,8 @@ const iconForSolution = (index: number) => {
 
 export default function NoticiaPage() {
 	const params = useParams();
-	const noticiaId = Number(params?.noticia);
+	const noticiaSlug = String(params?.noticia ?? '').trim();
+	const noticiaId = Number(noticiaSlug);
 
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState<string | null>(null);
@@ -94,14 +95,19 @@ export default function NoticiaPage() {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			if (!Number.isFinite(noticiaId)) {
-				setError('Id de noticia invalido.');
+			if (!noticiaSlug) {
+				setError('Slug de noticia invalido.');
 				setIsLoading(false);
 				return;
 			}
 
 			try {
-				const noticiaResponse = await fetch(`${API_ENDPOINTS.ACTUALIDAD}/${noticiaId}`);
+				let noticiaResponse = await fetch(`${API_ENDPOINTS.ACTUALIDAD}/slug/${encodeURIComponent(noticiaSlug)}`);
+
+				if (!noticiaResponse.ok && Number.isFinite(noticiaId)) {
+					noticiaResponse = await fetch(`${API_ENDPOINTS.ACTUALIDAD}/${noticiaId}`);
+				}
+
 				if (!noticiaResponse.ok) {
 					throw new Error('No se pudo cargar la noticia.');
 				}
@@ -171,7 +177,7 @@ export default function NoticiaPage() {
 		};
 
 		fetchData();
-	}, [noticiaId]);
+	}, [noticiaSlug, noticiaId]);
 
 	const paragraphs = useMemo(() => formatContentParagraphs(noticia?.content), [noticia?.content]);
 	const categorias = useMemo(() => parseCategorias(noticia?.categoria ?? null), [noticia?.categoria]);
@@ -184,11 +190,11 @@ export default function NoticiaPage() {
 				url: '/actualidad',
 				children: {
 					title: noticia?.title ?? 'Noticia',
-					url: `/actualidad/${noticiaId}`,
+					url: `/actualidad/${noticiaSlug}`,
 				},
 			},
 		}),
-		[noticia?.title, noticiaId],
+		[noticia?.title, noticiaSlug],
 	);
 
 	if (isLoading) {

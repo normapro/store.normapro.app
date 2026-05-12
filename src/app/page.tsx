@@ -76,13 +76,12 @@ export default function Home() {
       <FadeInOnScroll>
         <MainTestimoniosSection />
       </FadeInOnScroll>
-
       <FadeInOnScroll>
         <MainEventosSection />
       </FadeInOnScroll>
       <FadeInOnScroll >
         <div className="bg-[#F3F4F4] pt-2">
-          <section className="w-[80%] mx-auto px-6 mt-10">
+          <section className="w-[65%] mx-auto px-6 mt-10">
           <h1 className="text-3xl font-extrabold text-[#0B1D4D]">Actualidad</h1>
           <div className="mt-8">
             <ActualidadGridSection onlyLatest={true} hideDescriptionAndReadMore={true} />
@@ -90,10 +89,9 @@ export default function Home() {
         </section>
         </div>
     
-      </FadeInOnScroll>
-
-
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      </FadeInOnScroll>      
+        <FadeInOnScroll >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
               <header className="pb-4 flex items-center justify-between gap-4">
                 <h1 className="text-3xl font-extrabold text-[#010d3d]">Informes</h1>
                 <Link
@@ -105,7 +103,11 @@ export default function Home() {
               </header>
       
               <InformesGridSection showOnlyLastThree />
-            </section>
+            </div>
+      </FadeInOnScroll>
+
     </section>
+
+      
   );
 }

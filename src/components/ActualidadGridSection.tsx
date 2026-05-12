@@ -141,10 +141,11 @@ export default function ActualidadGridSection({
 			<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
 				{noticiasToShow.map((noticia) => {
 					const resumen = getResumenFromContent(noticia.content);
+					const noticiaPath = `/actualidad/${noticia.slug || noticia.id_noticia}`;
 
 					return (
 						<article key={noticia.id_noticia} className="flex flex-col mb-10">
-							<Link href={`/actualidad/${noticia.id_noticia}`} className="block">
+							<Link href={noticiaPath} className="block">
 								<img
 									src={buildImageSrc(noticia.imagen)}
 									alt={noticia.title}
@@ -156,7 +157,7 @@ export default function ActualidadGridSection({
 							<p className="mt-4 text-xs text-[#0B1D4D]">{noticia.fecha}</p>
 
 							<h3 className="mt-3 text-xl font-extrabold text-[#0B1D4D] leading-tight w-[85%]">
-								<Link href={`/actualidad/${noticia.id_noticia}`}>{noticia.title}</Link>
+								<Link href={noticiaPath}>{noticia.title}</Link>
 							</h3>
 
 							{!hideDescriptionAndReadMore ? (
@@ -164,7 +165,7 @@ export default function ActualidadGridSection({
 									<p className="mt-3 text-sm text-[#0B1D4D] line-clamp-4">{resumen}</p>
 
 									<Link
-										href={`/actualidad/${noticia.id_noticia}`}
+										href={noticiaPath}
 										className="mt-4 inline-block text-md font-extrabold text-[#0B1D4D] underline underline-offset-2"
 									>
 										Seguir leyendo
