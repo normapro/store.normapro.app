@@ -4,6 +4,7 @@ import ClientCarousel from "@/components/shared/ClientCarousel";
 import HistoriasClientesSection from "@/components/landings/HistoriasClientesSection";
 import Formulario from "@/components/Formulario";
 import { useState } from "react";
+import HeroUserCount from "@/components/HeroUserCount";
 
 
 export default function HistoriasPage() {
@@ -11,9 +12,10 @@ export default function HistoriasPage() {
 	return (
 		<main className="w-full py-12">
 			<HistoriasClientesSection />
+			<HeroUserCount></HeroUserCount>
 			<ClientCarousel
 				scope="historias"
-				claim="Únete a + 20.000 usuarios que ya confían en NormaPro"
+				claim=""
 			/>
 			<div className="flex justify-center">
 				<button

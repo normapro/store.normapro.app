@@ -67,7 +67,7 @@ const AvisoLegal = () => {
                     </li>
                     <li>
                         Derecho a presentar una reclamación ante la Autoridad de control  si no ha obtenido satisfacción en el ejercicio de sus derechos, en este caso, ante la Agencia Española de protección de datos{" "}
-                        <a href='http://www.agpd.es' className='text-blue-500 underline'>http://www.agpd.es</a>
+                        <a href='http://www.agpd.es' className='text-blue-500 underline' target="_blank" rel="noopener noreferrer">http://www.agpd.es</a>
                     </li>
                 </ul>
 
