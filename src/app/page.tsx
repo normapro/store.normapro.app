@@ -81,8 +81,14 @@ export default function Home() {
       </FadeInOnScroll>
       <FadeInOnScroll >
         <div className="bg-[#F3F4F4] pt-2">
-          <section className="w-[65%] mx-auto px-6 mt-10">
-          <h1 className="text-3xl font-extrabold text-[#0B1D4D]">Actualidad</h1>
+          <section className="max-w-7xl mx-auto px-6 mt-10">
+          <h1 className="text-3xl font-extrabold text-[#010d3d]">Actualidad</h1>
+          <Link
+                  href="/informes"
+                  className="text-l font-bold text-[#010d3d] underline underline-offset-4"
+                >
+                  Ver todos los informes
+                </Link>
           <div className="mt-8">
             <ActualidadGridSection onlyLatest={true} hideDescriptionAndReadMore={true} />
           </div>
