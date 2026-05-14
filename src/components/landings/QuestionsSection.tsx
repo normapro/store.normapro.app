@@ -44,7 +44,7 @@ const QuestionsSection: FC<Props> = ({
 		<section className={`w-full py-12 px-6 ${bgColor}`}>
 			<div className="max-w-4xl mx-auto">
 				{title && (
-					<h2 className="text-[34px] md:text-[52px] leading-[1.08] tracking-tight font-black text-[#010d3d] mb-8 text-left">
+					<h2 className="text-[34px] md:text-[40px] leading-[1.08] tracking-tight font-black text-[#010d3d] mb-8 text-left">
 						{title}
 					</h2>
 				)}

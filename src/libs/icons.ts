@@ -11,7 +11,7 @@ import {
     faShieldAlt,
     faCogs,
     faMicrochip,
-  } from "@fortawesome/free-solid-svg-icons";
+  } from "@fortawesome/pro-regular-svg-icons";
   import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
   
   export const iconMap: Record<string, IconDefinition> = {
