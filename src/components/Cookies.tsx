@@ -86,7 +86,7 @@ const Cookies = () => {
                                 <a
                                   href={cookie.link_nombre}
                                   target="_blank"
-                                  rel="noreferrer"
+                                  rel="noopener noreferrer"
                                   className="text-blue-500 underline inline-flex items-center gap-1"
                                 >
                                   {cookie.nombre}

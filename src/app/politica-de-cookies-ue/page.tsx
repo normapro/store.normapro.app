@@ -16,7 +16,7 @@ const PoliticaCookies = () => {
                 {/* 1. Introducción */}
                 <h2 className="text-2xl font-black text-gray-700">1. Introducción</h2>
                 <p>
-                    Nuestra web, <a href="https://normapro.es" className="text-blue-600 underline">https://normapro.es</a> (en adelante: «la web») utiliza cookies y otras tecnologías relacionadas (para mayor comodidad, todas las tecnologías se denominan «cookies»). Las cookies también son colocadas por terceros a los que hemos contratado. En el siguiente documento te informamos sobre el uso de cookies en nuestra web.
+                    Nuestra web, <a href="https://store.normapro.es/" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">https://normapro.es</a> (en adelante: «la web») utiliza cookies y otras tecnologías relacionadas (para mayor comodidad, todas las tecnologías se denominan «cookies»). Las cookies también son colocadas por terceros a los que hemos contratado. En el siguiente documento te informamos sobre el uso de cookies en nuestra web.
                 </p>
 
                 {/* 2. ¿Qué son las cookies? */}
@@ -92,7 +92,7 @@ const PoliticaCookies = () => {
                     NormaPro<br></br>
                     Carretera de Madrid, 13, km 332, 1º planta 23009 Jaén, España<br></br>
                     España<br></br>
-                    Web: <a href='https://normapro.es' className='text-blue-600 underline'>https://normapro.es</a><br></br>
+                    Web: <a href="https://store.normapro.es/" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">https://store.normapro.es/</a><br></br>
                     Correo electrónico: <a href="mailto:info@institutodeinnovacion.es" className="text-blue-500 underline">info@institutodeinnovacion.es</a><br></br>
                     Número de teléfono: 953190510<br></br>
                 </p>

@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import HeroUserCount from "./HeroUserCount";
+import { useState } from "react";
+import Formulario from "./Formulario";
 
 const heroImages = [
 	{
@@ -42,6 +44,8 @@ const heroImages = [
   ];
 
 const MainHeroCarousel = () => {
+	const [openModal, setOpenModal] = useState(false);
+
 	return (
 		<section className="relative w-full h-screen min-h-[800px] flex flex-col items-center justify-center text-center text-[#010D3D] overflow-hidden bg-[#FFFFFF]">
 
@@ -64,7 +68,9 @@ const MainHeroCarousel = () => {
 					Navegamos contigo hacia una evolución tecnológica accesible, segura y sin barreras.
 				</p>
 				<p className="mt-6 font-bold">Descubre cómo podemos ayudar a tu empresa</p>
-				<button className="mt-4 bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] shadow-md text-white text-lg px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
+				<button
+					onClick={() => setOpenModal(true)}
+					className="mt-4 bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] shadow-md text-white text-lg px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
 					Solicita un diagnóstico gratuito
 				</button>
 			</div>		
@@ -88,6 +94,10 @@ const MainHeroCarousel = () => {
 				</div>
 			</div>
 
+			{/* Formulario contacto */}
+      		{openModal && (
+        		<Formulario onClose={() => setOpenModal(false)} />
+      		)}
 		</section>
 	);
 };

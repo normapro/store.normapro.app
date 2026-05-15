@@ -154,19 +154,19 @@ export default function ActualidadGridSection({
 								/>
 							</Link>
 
-							<p className="mt-4 text-xs text-[#0B1D4D]">{noticia.fecha}</p>
+							<p className="mt-4 text-xs text-[#010D3D]">{noticia.fecha}</p>
 
-							<h3 className="mt-3 text-xl font-extrabold text-[#0B1D4D] leading-tight w-[85%]">
+							<h3 className="mt-3 text-xl font-extrabold text-[#010D3D] leading-tight w-[85%]">
 								<Link href={noticiaPath}>{noticia.title}</Link>
 							</h3>
 
 							{!hideDescriptionAndReadMore ? (
 								<>
-									<p className="mt-3 text-sm text-[#0B1D4D] line-clamp-4">{resumen}</p>
+									<p className="mt-3 text-sm text-[#010D3D] line-clamp-4">{resumen}</p>
 
 									<Link
 										href={noticiaPath}
-										className="mt-4 inline-block text-md font-extrabold text-[#0B1D4D] underline underline-offset-2"
+										className="mt-4 inline-block text-md font-extrabold text-[#010D3D] underline underline-offset-2"
 									>
 										Seguir leyendo
 									</Link>

@@ -32,10 +32,10 @@ export default function NosotrosPage() {
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
                 <article>
                     <h2 className="text-[40px] md:text-[50px] font-black text-[#010d3d] leading-tight mb-8">
-                        Mision
+                        Misión
                     </h2>
                     <p className="text-[16px] md:text-[22px] font-[500] text-[#001B5D] leading-tight">
-                        Nuestra mision es proporcionar soluciones tecnologicas avanzadas que
+                        Nuestra misión es proporcionar soluciones tecnológicas avanzadas que
                         permitan a las empresas mejorar su eficiencia operativa, asegurar el
                         cumplimiento normativo y maximizar su rentabilidad.
                     </p>
@@ -43,12 +43,12 @@ export default function NosotrosPage() {
 
                 <article>
                     <h2 className="text-[40px] md:text-[50px] font-black text-[#010d3d] leading-tight mb-8">
-                        Vision
+                        Visión
                     </h2>
                     <p className="text-[16px] md:text-[22px] font-[500] text-[#001B5D] leading-tight">
                         Ser reconocidos globalmente como una plataforma de referencia en
-                        soluciones integrales para la gestion empresarial, impulsando la
-                        innovacion y el exito sostenible de nuestros clientes.  
+                        soluciones integrales para la gestión empresarial, impulsando la
+                        innovación y el éxito sostenible de nuestros clientes.  
                     </p>
                 </article>
             </div>

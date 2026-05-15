@@ -168,7 +168,7 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
                 onMouseEnter={() => { setAllDropdownsToFalse(); setIsSolutionsOpen(true) }}
               //
               >
-                <button className="text-gray-900 text-[16px] hover:text-blue-600">
+                <button className="text-[#010d3d] text-[16px] hover:text-blue-600">
                   Soluciones <FontAwesomeIcon icon={faChevronDown} className="text-[14px]" />
                 </button>
               </div>
@@ -177,7 +177,7 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
                 onMouseEnter={() => { setAllDropdownsToFalse(); setIsAplicacionesOpen(true) }}
               //
               >
-                <button className="text-gray-900 text-[16px] hover:text-blue-600">
+                <button className="text-[#010d3d] text-[16px] hover:text-blue-600">
                   Aplicaciones <FontAwesomeIcon icon={faChevronDown} className="text-[14px]" />
                 </button>
               </div>
@@ -186,16 +186,16 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
                 onMouseEnter={() => { setAllDropdownsToFalse(); setIsConsultoriaOpen(true) }}
               //
               >
-                <button className="text-gray-900 text-[16px] hover:text-blue-600">
+                <button className="text-[#010d3d] text-[16px] hover:text-blue-600">
                   Consultoría <FontAwesomeIcon icon={faChevronDown} className="text-[14px]" />
                 </button>
               </div>
 
 
-              <Link href="/formacion" className="text-gray-900 hover:text-blue-600">
+              <Link href="/formacion" className="text-[#010d3d] hover:text-blue-600">
                 Formación
               </Link>
-              <Link href="/historias" className="text-gray-900 hover:text-blue-600">
+              <Link href="/historias" className="text-[#010d3d] hover:text-blue-600">
                 Historias con Clientes
               </Link>
             </div>
