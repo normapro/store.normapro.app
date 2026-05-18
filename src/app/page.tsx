@@ -73,47 +73,54 @@ export default function Home() {
       <FadeInOnScroll>
         <MainFormacionSection />
       </FadeInOnScroll>
+
       <FadeInOnScroll>
         <MainTestimoniosSection />
       </FadeInOnScroll>
+
       <FadeInOnScroll>
         <MainEventosSection />
       </FadeInOnScroll>
+
       <FadeInOnScroll >
         <div className="bg-[#F3F4F4] pt-2">
           <section className="max-w-7xl mx-auto px-6 mt-10">
-          <h1 className="text-3xl font-extrabold text-[#010d3d]">Actualidad</h1>
-          <Link
-                  href="/informes"
-                  className="text-l font-bold text-[#010d3d] underline underline-offset-4"
-                >
-                  Ver todos los informes
-                </Link>
-          <div className="mt-8">
-            <ActualidadGridSection onlyLatest={true} hideDescriptionAndReadMore={true} />
-          </div>
-        </section>
-        </div>
-    
-      </FadeInOnScroll>      
-        <FadeInOnScroll >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
-              <header className="pb-4 flex items-center justify-between gap-4">
-                <h1 className="text-3xl font-extrabold text-[#010d3d]">Informes</h1>
-                <Link
-                  href="/informes"
-                  className="text-l font-bold text-[#010d3d] underline underline-offset-4"
-                >
-                  Ver todos los informes
-                </Link>
-              </header>
-      
-              <InformesGridSection showOnlyLastThree />
+            <div className="flex items-center justify-between">
+              <h1 className="text-3xl font-extrabold text-[#010d3d]">
+                Actualidad
+              </h1>
+              <Link
+                href="/actualidad"
+                className="text-l font-bold text-[#010d3d] underline underline-offset-4"
+              >
+                Ver todas las noticias
+              </Link>
             </div>
+            <div className="mt-8">
+              <ActualidadGridSection
+                onlyLatest={true}
+                hideDescriptionAndReadMore={true}
+              />
+            </div>
+          </section>
+        </div>
       </FadeInOnScroll>
 
-    </section>
+      <FadeInOnScroll >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
+          <header className="pb-4 flex items-center justify-between gap-4">
+            <h1 className="text-3xl font-extrabold text-[#010d3d]">Informes</h1>
+            <Link
+              href="/informes"
+              className="text-l font-bold text-[#010d3d] underline underline-offset-4"
+            >
+              Ver todos los informes
+            </Link>
+          </header>
 
-      
+          <InformesGridSection showOnlyLastThree />
+        </div>
+      </FadeInOnScroll>
+    </section>
   );
 }
