@@ -282,11 +282,11 @@ export default async function InformeDetallePage({ params }: InformeDetallePageP
 								<h2 className="text-[42px] font-extrabold text-[#010d3d] mb-4">Prologo</h2>
 								{prologoHtml ? (
 									<div
-										className="text-[#283452] text-[22px] leading-relaxed [&_br]:block [&_br]:my-1 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:my-3 [&_ul]:space-y-2 [&_li]:leading-relaxed"
+										className="text-[#010d3d] text-[22px] leading-relaxed [&_br]:block [&_br]:my-1 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:my-3 [&_ul]:space-y-2 [&_li]:leading-relaxed"
 										dangerouslySetInnerHTML={{ __html: prologoHtml }}
 									/>
 								) : prologoItems.length === 0 ? (
-									<p className="text-[#283452] text-[22px] leading-relaxed">Contenido de prologo pendiente.</p>
+									<p className="text-[#010d3d] text-[22px] leading-relaxed">Contenido de prologo pendiente.</p>
 								) : (
 									<div className="space-y-6">
 										{prologoItems.map((item, index) => {
@@ -298,11 +298,11 @@ export default async function InformeDetallePage({ params }: InformeDetallePageP
 													{title ? <h3 className="text-[26px] font-bold text-[#010d3d] mb-2">{title}</h3> : null}
 													{content && /<\/?[a-z][\s\S]*>/i.test(content) ? (
 														<div
-															className="text-[#283452] text-[18px] leading-relaxed pr-40 [&_br]:block [&_br]:my-1 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:my-3 [&_ul]:space-y-2 [&_li]:leading-relaxed"
+															className="text-[#010d3d] text-[18px] leading-relaxed [&_br]:block [&_br]:my-1 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:my-3 [&_ul]:space-y-2 [&_li]:leading-relaxed"
 															dangerouslySetInnerHTML={{ __html: content }}
 														/>
 													) : (
-														<p className="text-[#283452] text-[22px] leading-relaxed">{content || "Texto pendiente."}</p>
+														<p className="text-[#010d3d] text-[22px] leading-relaxed">{content || "Texto pendiente."}</p>
 													)}
 												</article>
 											);
@@ -328,7 +328,7 @@ export default async function InformeDetallePage({ params }: InformeDetallePageP
 												) : null}
 											</div>
 
-											<div className="text-[#1a274e] leading-tight">
+											<div className="text-[#010d3d] leading-tight">
 												<p className="font-bold text-[18px]">{persona.nombre}</p>
 												{persona.empresa ? <p className="text-[16px]">{persona.empresa}</p> : null}
 												{persona.cargo ? <p className="text-[16px]">{persona.cargo}</p> : null}

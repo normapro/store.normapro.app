@@ -127,7 +127,7 @@ const ModalDescubrir = ({ isOpen, onClose }: ModalDescubrirProps) => {
 
                         {selectedSlug ? (
                             <Link
-                                href={`/soluciones/gestion-de-calidad/sector/${selectedSlug}`}
+                                href={`/soluciones/undefined/sector/${selectedSlug}`}
                                 onClick={onClose} // Cerramos el modal al navegar
                                 className="inline-block bg-[#010d3d] text-white font-bold py-3.5 px-10 rounded-xl hover:bg-[#011640] transition-colors mt-4 text-center"
                             >

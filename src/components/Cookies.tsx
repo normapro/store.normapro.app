@@ -39,8 +39,8 @@ const Cookies = () => {
             className="w-full flex items-center justify-between p-2 bg-[#f5f5f5] text-left"
           >
             <span className="text-gray-800 font-extrabold text-xl">{tec.nombre}</span>
-            <div className="flex items-center gap-4">
-              <span className="text-sm">{tec.etiquetas.join(', ')}</span>
+            <div className="flex items-center gap-2 shrink-0">
+              <span className="text-sm truncate max-w-[120px] sm:max-w-xs">{tec.etiquetas.join(', ')}</span>
               <FontAwesomeIcon
                 icon={faChevronDown}
                 className={`transition-transform ${abierto === tec.id ? 'rotate-180' : ''}`}
@@ -55,13 +55,13 @@ const Cookies = () => {
                 <div>
                   <h4 className="text-base font-black text-gray-800">Uso</h4>
                   {tec.uso && (<p className="text-gray-600">
-                    Usamos {tec.nombre} para {tec.uso}. {tec.link_uso && <a href={tec.link_uso} className="text-blue-500 underline">Read more about {tec.nombre} <FontAwesomeIcon icon={faExternalLinkAlt} className="text-[10px] text-gray-600" /></a>}
+                    Usamos {tec.nombre} para {tec.uso}. {tec.link_uso && <a href={tec.link_uso} className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">Read more about {tec.nombre} <FontAwesomeIcon icon={faExternalLinkAlt} className="text-[10px] text-gray-600" /></a>}
                   </p>)}
                 </div>
                 <div>
                   <h4 className="text-base font-black text-gray-800">Compartir datos</h4>
                   <p className="text-gray-600">
-                    {tec.compartir_datos} {tec.link_compartir_datos && <span>Para más información, por favor, lee la <a href={tec.link_compartir_datos} className="text-blue-500 underline">política de privacidad de {tec.nombre}</a></span>}
+                    {tec.compartir_datos} {tec.link_compartir_datos && <span>Para más información, por favor, lee la <a href={tec.link_compartir_datos} className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">política de privacidad de {tec.nombre}</a></span>}
                   </p>
                 </div>
               </div>
