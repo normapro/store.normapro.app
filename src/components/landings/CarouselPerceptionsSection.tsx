@@ -138,7 +138,7 @@ const CarouselPerceptionsSection: React.FC<Props> = ({
                   </div>
                   <div className="w-20 h-20 rounded-full overflow-hidden shadow-sm mb-4 -mt-12">
                     <Image
-                      src={`/testimonios/${testimonio.cliente.descripcion.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "")}.png`}
+                      src={`/testimonios/${imageSlug}.png`}
                       alt={testimonio.persona || 'Foto'}
                       width={64}
                       height={64}
@@ -148,7 +148,7 @@ const CarouselPerceptionsSection: React.FC<Props> = ({
                   <div className="text-sm text-[#010d3d] leading-snug">
                     <p>{testimonio.persona}</p>
                     <p className="font-bold">{testimonio.cargo}</p>
-                    <p className="font-bold">{testimonio.cliente.descripcion}</p>
+                    <p className="font-bold">{clientName}</p>
                   </div>
                 </div>
               )}
