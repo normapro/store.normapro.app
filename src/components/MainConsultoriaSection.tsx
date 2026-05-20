@@ -35,7 +35,7 @@ const MainConsultoriaSection = () => {
         {consultorias.map((consultoria) => (
           <div
             key={consultoria.id_consultoria}
-            className="bg-[#FFFFFF] p-6 rounded-xl text-[#010D3D]  h-[500px] relative"
+            className="bg-[#FFFFFF] p-6 rounded-xl text-[#010D3D] flex flex-col"
           >
             <Image
               src={consultoria.uriIcon ? `/main/${consultoria.uriIcon}` : "/main/default-icon.png"} 
@@ -45,8 +45,8 @@ const MainConsultoriaSection = () => {
               className="mx-auto object-contain mb-4 mt-4 h-[200px]"
             />  
             <h3 className="text-[24px] font-extrabold mb-2 ">{consultoria.description}</h3>
-            <p className="text-sm mb-6">{consultoria.shortDescription}</p>
-            <div className="absolute bottom-[20px] left-6 right-6 flex flex-col gap-3 text-sm font-semibold sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-sm flex-1">{consultoria.shortDescription}</p>
+            <div className="flex flex-col gap-3 text-sm font-semibold sm:flex-row sm:items-center sm:justify-between mt-6">
               <Link href={`/soluciones/${consultoria.slug}`} className="underline font-bold text-[#010D3D]">
                 Saber más
               </Link>

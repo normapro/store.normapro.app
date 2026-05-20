@@ -1,0 +1,25 @@
+[12:28:37.590] [INFO] storybook v10.4.0
+[12:28:38.031] [DEBUG] Getting package.json info for c:/Users/danie/Desktop/Trabajo/store.normapro.app/package.json...
+[12:28:39.295] [WARN] 🚨 Unable to index ./src/storybook/docs/landings/TextSection.mdx,./src/storybook/stories/landings/TextSection.stories.tsx:
+  Error: You created a component docs page for 'Landings/TextSection', but also tagged the CSF file with 'autodocs'. This is probably a mistake.
+    at _StoryIndexGenerator.chooseDuplicate (file:///C:/Users/danie/Desktop/Trabajo/store.normapro.app/node_modules/storybook/dist/core-server/index.js:16801:15)
+    at file:///C:/Users/danie/Desktop/Trabajo/store.normapro.app/node_modules/storybook/dist/core-server/index.js:16840:52
+    at Array.forEach (<anonymous>)
+    at _StoryIndexGenerator.getIndexAndStats (file:///C:/Users/danie/Desktop/Trabajo/store.normapro.app/node_modules/storybook/dist/core-server/index.js:16837:23)
+    at async _StoryIndexGenerator.getIndex (file:///C:/Users/danie/Desktop/Trabajo/store.normapro.app/node_modules/storybook/dist/core-server/index.js:16824:13)
+    at async Object.experimental_serverChannel (file:///C:/Users/danie/Desktop/Trabajo/store.normapro.app/node_modules/@storybook/addon-vitest/dist/preset.js:460:14)
+    at async buildDevStandalone (file:///C:/Users/danie/Desktop/Trabajo/store.normapro.app/node_modules/storybook/dist/core-server/index.js:19472:32)
+    at async withTelemetry (file:///C:/Users/danie/Desktop/Trabajo/store.normapro.app/node_modules/storybook/dist/_node-chunks/chunk-OQIYQ5CW.js:655:12)
+    at async dev (file:///C:/Users/danie/Desktop/Trabajo/store.normapro.app/node_modules/storybook/dist/bin/core.js:2736:3)
+    at async _Command.<anonymous> (file:///C:/Users/danie/Desktop/Trabajo/store.normapro.app/node_modules/storybook/dist/bin/core.js:2806:92)
+[12:28:39.299] [ERROR] Error: Unable to index ./src/storybook/docs/landings/TextSection.mdx,./src/storybook/stories/landings/TextSection.stories.tsx
+    at _StoryIndexGenerator.getIndexAndStats (file:///C:/Users/danie/Desktop/Trabajo/store.normapro.app/node_modules/storybook/dist/core-server/index.js:16845:15)
+    at async _StoryIndexGenerator.getIndex (file:///C:/Users/danie/Desktop/Trabajo/store.normapro.app/node_modules/storybook/dist/core-server/index.js:16824:13)
+    at async Object.experimental_serverChannel (file:///C:/Users/danie/Desktop/Trabajo/store.normapro.app/node_modules/@storybook/addon-vitest/dist/preset.js:460:14)
+    at async buildDevStandalone (file:///C:/Users/danie/Desktop/Trabajo/store.normapro.app/node_modules/storybook/dist/core-server/index.js:19472:32)
+    at async withTelemetry (file:///C:/Users/danie/Desktop/Trabajo/store.normapro.app/node_modules/storybook/dist/_node-chunks/chunk-OQIYQ5CW.js:655:12)
+    at async dev (file:///C:/Users/danie/Desktop/Trabajo/store.normapro.app/node_modules/storybook/dist/bin/core.js:2736:3)
+    at async _Command.<anonymous> (file:///C:/Users/danie/Desktop/Trabajo/store.normapro.app/node_modules/storybook/dist/bin/core.js:2806:92)
+[12:28:39.300] [WARN] Broken build, fix the error above.
+You may need to refresh the browser.
+[12:28:59.636] [PROMPT] Would you like to send anonymous crash reports to improve Storybook and fix bugs faster? {"choice":false}
