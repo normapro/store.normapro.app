@@ -133,7 +133,7 @@ const Formulario: React.FC<FormularioProps> = ({ onClose }) => {
             </label>
             <label className="flex gap-3 items-start">
               <input type="checkbox" className="mt-1" />
-              Acepto la<a className="text-blue-600">política de privacidad</a>de NormaPro.
+              Acepto la<a className="text-blue-600" href="https://store.normapro.es/politica-de-privacidad" target="_blank" rel="noopener noreferrer">política de privacidad</a>de NormaPro.
             </label>
           </div>
 
