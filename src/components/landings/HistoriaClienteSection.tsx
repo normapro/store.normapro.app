@@ -35,7 +35,7 @@ const HistoriaClienteSection: FC<Props> = ({
 
     if (!testimonio) return null;
 
-    const clientName = (testimonio.cliente as any).descripcion || testimonio.cliente.description;
+    const clientName = testimonio.cliente.description;
     const imageSlug = clientName
         ? clientName.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "")
         : "default";

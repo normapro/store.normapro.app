@@ -218,9 +218,9 @@ const ClientPerceptionSection: React.FC<ClientPerceptionSectionProps> = ({
           {/* Testimonio derecho */}
           {testimonio && (
             <div className="flex flex-col items-center text-center">
-              {/** Soporta ambas variantes del backend: description/descripcion */}
+              {/** Convencion actual del backend: description */}
               {(() => {
-                const clientName = (testimonio.cliente as any).descripcion || testimonio.cliente.description;
+                const clientName = testimonio.cliente.description;
                 const imageSlug = clientName
                   ? clientName.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "")
                   : "default";
