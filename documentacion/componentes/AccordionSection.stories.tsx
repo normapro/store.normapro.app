@@ -10,7 +10,7 @@ const meta: Meta<typeof AccordionSection> = {
     docs: {
       description: {
         component:
-          "Seccion de acordeon reutilizable para bloques de preguntas, politicas u ofertas. Soporta contenido en texto plano o HTML.",
+          "Seccion de acordeon reutilizable para bloques de preguntas, politicas u ofertas.",
       },
     },
   },
@@ -25,7 +25,7 @@ const meta: Meta<typeof AccordionSection> = {
     },
     interpretHtmlStrings: {
       control: "boolean",
-      description: "Si esta activo, renderiza content como HTML cuando sea string.",
+      description: "Si esta activo, interpreta el contenido de texto como HTML.",
     },
     defaultOpenIndex: {
       control: "number",
@@ -61,21 +61,21 @@ export const Basico: Story = {
   },
 };
 
-export const ConHtmlInterpretado: Story = {
+export const Completo: Story = {
   args: {
     title: "Politicas corporativas",
-    interpretHtmlStrings: true,
-    defaultOpenIndex: 1,
+    interpretHtmlStrings: false,
+    defaultOpenIndex: 0,
     items: [
       {
         title: "Politica de calidad",
         content:
-          "<p>Nuestro sistema de gestion promueve la mejora continua y el cumplimiento normativo.</p><ul><li>Enfoque preventivo</li><li>Trazabilidad completa</li><li>Revision periodica de objetivos</li></ul>",
+          "Nuestro sistema de gestion promueve la mejora continua y el cumplimiento normativo.",
       },
       {
         title: "Politica de seguridad",
         content:
-          "<p>Aplicamos controles tecnicos y organizativos para proteger la informacion.</p><p><strong>Compromiso:</strong> confidencialidad, integridad y disponibilidad.</p>",
+          "Aplicamos controles tecnicos y organizativos para proteger la informacion.",
       },
     ],
   },
