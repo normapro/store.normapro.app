@@ -70,7 +70,7 @@ const EtapasSection: FC<Props> = ({
 
               {/* Contenido*/}
               <div
-                className={`w-full pl-10 md:pl-0 md:w-1/2 flex flex-col justify-center md:items.start md:text-left text-[#010d3d]' ${
+                className={`w-full pl-10 md:pl-0 md:w-1/2 flex flex-col justify-center md:items.start md:text-left text-[#010d3d] ${
                   isLeft ? 'md:pr-16' : 'md:pl-16'
                 }`}
               >
