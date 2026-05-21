@@ -92,6 +92,7 @@ const Formulario: React.FC<FormularioProps> = ({ onClose }) => {
         acepta_contacto: false,
         acepta_politica: false,
       });
+      onClose();
     } catch (error) {
       const message =
         error instanceof Error
