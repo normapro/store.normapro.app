@@ -15,8 +15,9 @@ import SolutionsRefered from "@/components/solutionsRefered";
 import TestimonioCard from "@/components/TestimonioCard";
 import { TestimonioConCliente } from "@/types/testimonio";
 import SolucionSeo from "@/components/seo/SolucionSeo";
+import Formulario from "@/components/Formulario";
 
-import { Props as SolucionSeoProps } from "@/components/seo/SolucionSeo"; // Asegúrate de exportar el tipo
+import { SolucionSeoProps } from "@/components/seo/SolucionSeo";
 import { stringify } from "querystring";
 
 
@@ -27,6 +28,7 @@ const SolucionAmbitoPage = () => {
 	const { slugSolucion } = useParams();
 	const [solucion, setSolucion] = useState<Solucion | null>(null);
 	const [seoData, setSeoData] = useState<Partial<SolucionSeoProps> | null>(null);
+	const [openModal, setOpenModal] = useState(false);
 	const [breadcrumbData, setBreadcrumbData] = useState<BreadcrumbItem>({
 		title: "Home",
 		url: "/",
@@ -118,7 +120,7 @@ const SolucionAmbitoPage = () => {
 				</section>
 
 				<div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-8 mt-10">
-
+				
 					{/* Columna izquierda */}
 
 					<div className="lg:col-span-2">
@@ -234,11 +236,13 @@ const SolucionAmbitoPage = () => {
 							<div className="bg-[#f2f2f5] p-6 rounded-lg shadow">
 								<h3 className="text-[16px] font-bold">{solucion?.firstCtaPragma}</h3>
 								<p className="mt-2 text-[15px] text-[#010D3D]"></p>
-								<Link href="/contacto">
-									<button className="mt-4 w-full bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] shadow-md text-white text-[16px] px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
-										{solucion?.firstCtaTitle ? solucion?.firstCtaTitle : "Solicita un diagnóstico gratuito"}
-									</button>
-								</Link>
+								<button
+									type="button"
+									onClick={() => setOpenModal(true)}
+									className="mt-4 w-full bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] shadow-md text-white text-[16px] px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition"
+								>
+									{solucion?.firstCtaTitle ? solucion?.firstCtaTitle : "Solicita un diagnóstico gratuito"}
+								</button>
 							</div>
 
 							{isLoading ? (
@@ -293,17 +297,21 @@ const SolucionAmbitoPage = () => {
 				<section className="max-w-7xl mx-auto px-6 text-center min-h-[350px] flex justify-center items-center flex-col">
 					<h3 className="text-[16px] font-bold">{solucion?.secondCtaTitle}</h3>
 					<p className="mt-2 text-[15px] text-[#010D3D]">{solucion?.secondCtaPragma}</p>
-					<Link href="/contacto">
-						<button className="mt-4 bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] shadow-md text-white text-[16px] px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
-							{solucion?.firstCtaTitle ? solucion?.firstCtaTitle : "Solicita un diagnóstico gratuito"}
-						</button>
-					</Link>
+					<button
+						type="button"
+						onClick={() => setOpenModal(true)}
+						className="mt-4 bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] shadow-md text-white text-[16px] px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition"
+					>
+						{solucion?.firstCtaTitle ? solucion?.firstCtaTitle : "Solicita un diagnóstico gratuito"}
+					</button>
 				</section>
 
 
 				<section>
 					<SolutionsRefered ambitoSlug={solucion?.slug_ambito} />
 				</section>
+
+				{openModal && <Formulario onClose={() => setOpenModal(false)} />}
 
 			</main>
 		</>

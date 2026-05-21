@@ -5,12 +5,14 @@ import Link from "next/link";
 import Image from "next/image";
 import API_ENDPOINTS from "@/config/api";
 import { Cliente } from "@/types/cliente";
+import Formulario from "@/components/Formulario";
 
 
 const SolutionsHero = () => {
   const [clientes, setClientes] = useState<Cliente[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
     const fetchClientes = async () => {
@@ -76,14 +78,18 @@ const SolutionsHero = () => {
         {/* Caja CTA */}
         <div className="bg-gray-100 p-6 pt-[50px] pb-[50px] rounded-lg text-center max-w-2xl mx-auto">
             <h3 className="text-[15px] font-bold mb-2">Descubre cómo podemos ayudar a tu empresa</h3>
-            <Link href="/contacto">
-            <button className="bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] shadow-md relative text-white text-[16px] px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
+          <button
+            type="button"
+            onClick={() => setOpenModal(true)}
+            className="bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] shadow-md relative text-white text-[16px] px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition"
+          >
                 Solicita un diagnóstico gratuito
             </button>
-            </Link>
         </div>
         </div>
     </div>
+
+      {openModal && <Formulario onClose={() => setOpenModal(false)} />}
     </section>
    
     </>

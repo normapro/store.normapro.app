@@ -6,6 +6,7 @@ import Image from "next/image";
 import API_ENDPOINTS from "@/config/api";
 import { Cliente } from "@/types/cliente";
 import { Sector } from "@/types/sector";
+import Formulario from "@/components/Formulario";
 
 interface SolutionsHeroSectorProps {
   sectorSlug: string;
@@ -16,6 +17,7 @@ const SolutionsHeroSector = ({ sectorSlug }: SolutionsHeroSectorProps) => {
   const [clientes, setClientes] = useState<Cliente[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
     const fetchSectorData = async () => {
@@ -62,15 +64,19 @@ const SolutionsHeroSector = ({ sectorSlug }: SolutionsHeroSectorProps) => {
             <p className="mt-4 text-[16px] text-[#010D3D] font-bold">
               {sector?.descriptionweb || "Descripción del sector en detalle. Lorem ipsum dolor sit amet..."}
             </p>
-            <Link href="/contacto">
-              <button className="mt-6 bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] text-white text-[16px] px-6 py-2  rounded-lg font-semibold hover:opacity-50 transition">
+            <button
+              type="button"
+              onClick={() => setOpenModal(true)}
+              className="mt-6 bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] text-white text-[16px] px-6 py-2  rounded-lg font-semibold hover:opacity-50 transition"
+            >
                 Solicita un diagnóstico gratuito
-              </button>
-            </Link>
+            </button>
           </div>
           </div>
         </div>
       </section>
+
+      {openModal && <Formulario onClose={() => setOpenModal(false)} />}
 
       {/* Sección de clientes */}
       <div className="max-w-7xl mx-auto px-6 mt-10">

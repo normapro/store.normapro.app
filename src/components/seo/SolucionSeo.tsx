@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-interface SolucionSeoProps {
+export interface SolucionSeoProps {
   title?: string;
   description?: string;
   slug?: string;
