@@ -143,6 +143,12 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 		};
 	}, [ambitos]); // 🔥 Se ejecuta cada vez que cambian los ámbitos
 
+	// Prepara el enlace para las soluciones
+	let slugBase: string = `/soluciones/${ambitoSlug}`;
+	if (sectorSlug && sectorSlug !== "non-specified") {
+		slugBase += `/sector/${sectorSlug}`;
+	}
+
 	return (
 		<div className="w-full">
 			<div className="max-w-7xl mx-auto px-6">
@@ -224,7 +230,7 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 									const iconParts = sol.uriIcon.split(" ");
 									const icon: IconProp = iconParts.length === 2 ? (iconParts as [IconPrefix, IconName]) : ["fas", "fa-question"];
 									return (
-										<Link key={sol.id_solucion} href={`/soluciones/${ambitoSlug}/${sol.slug}`} rel="noopener noreferrer">
+										<Link key={sol.id_solucion} href={`${slugBase}/${sol.slug}`} rel="noopener noreferrer">
 											<div className="py-2 px-3 bg-white shadow rounded-lg flex items-center mb-2">
 												<FontAwesomeIcon icon={icon} className="w-6 h-6 text-[#010D3D] mr-4" />
 												<div>

@@ -16,7 +16,7 @@ import TestimonioCard from "@/components/TestimonioCard";
 import { TestimonioConCliente } from "@/types/testimonio";
 
 const SolucionAmbitoPage = () => {
-  const { slugsolucion } = useParams();
+  const { slugSolucion } = useParams();
   const [solucion, setSolucion] = useState<Solucion | null>(null);
   const [breadcrumbData, setBreadcrumbData] = useState<BreadcrumbItem>({
     title: "Home",
@@ -26,7 +26,7 @@ const SolucionAmbitoPage = () => {
   useEffect(() => {
     const fetchSolucion = async () => {
       try {
-        const response = await fetch(`${API_ENDPOINTS.SOLUCION}/${slugsolucion}`);
+        const response = await fetch(`${API_ENDPOINTS.SOLUCION}/${slugSolucion}`);
         if (!response.ok) throw new Error("Error al obtener la solución");
         const data = await response.json();
         setSolucion(data);
@@ -39,7 +39,7 @@ const SolucionAmbitoPage = () => {
             url: "/soluciones",
             children: {
               title: data.description,
-              url: `/soluciones/${slugsolucion}`,
+              url: `/soluciones/${slugSolucion}`,
             },
           },
         });
@@ -49,7 +49,7 @@ const SolucionAmbitoPage = () => {
     };
 
     fetchSolucion();
-  }, [slugsolucion]);
+  }, [slugSolucion]);
 
 
   const [testimonios, setTestimonios] = useState<TestimonioConCliente[]>([]);
