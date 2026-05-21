@@ -47,7 +47,7 @@ const MainConsultoriaSection = () => {
             <h3 className="text-[24px] font-extrabold mb-2 ">{consultoria.description}</h3>
             <p className="text-sm flex-1">{consultoria.shortDescription}</p>
             <div className="flex flex-col gap-3 text-sm font-semibold sm:flex-row sm:items-center sm:justify-between mt-6">
-              <Link href={`/soluciones/${consultoria.slug}`} className="underline font-bold text-[#010D3D]">
+              <Link href={`/consultorias/${consultoria.slug}`} className="underline font-bold text-[#010D3D]">
                 Saber más
               </Link>
               <Link
