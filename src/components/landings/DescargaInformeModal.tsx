@@ -1,11 +1,14 @@
 'use client'
 
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+import API_ENDPOINTS from '@/config/api';
 
 type Props = {
     isOpen: boolean;
     onClose: () => void;
     initialEmail?: string;
+    tituloInforme?: string;
+    imagenInforme?: string | null;
 }
 
 type FormValues = {
@@ -36,9 +39,17 @@ const initialValues: FormValues = {
     demo: false,
 };
 
-const DescargaInformeModal = ({ isOpen, onClose, initialEmail = '' }: Props) => {
+const DescargaInformeModal = ({
+    isOpen,
+    onClose,
+    initialEmail = '',
+    tituloInforme,
+    imagenInforme,
+}: Props) => {
     const [values, setValues] = useState<FormValues>(initialValues);
     const [errors, setErrors] = useState<FormErrors>({});
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitMessage, setSubmitMessage] = useState<string | null>(null);
 
     useEffect(() => {
         if (!isOpen) return;
@@ -48,6 +59,7 @@ const DescargaInformeModal = ({ isOpen, onClose, initialEmail = '' }: Props) => 
             email: initialEmail.trim(),
         });
         setErrors({});
+        setSubmitMessage(null);
     }, [isOpen, initialEmail]);
 
     const validate = (data: FormValues): FormErrors => {
@@ -88,16 +100,59 @@ const DescargaInformeModal = ({ isOpen, onClose, initialEmail = '' }: Props) => 
         });
     };
 
-    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        setSubmitMessage(null);
+
         const nextErrors = validate(values);
         setErrors(nextErrors);
 
         if (Object.keys(nextErrors).length > 0) return;
 
-        // Placeholder: cuando integremos la logica real, se hara el submit al backend.
-        onClose();
-        setValues(initialValues);
+        setIsSubmitting(true);
+        try {
+            const origen_ruta = `${window.location.pathname}${window.location.search}`;
+            const response = await fetch(API_ENDPOINTS.LEADS, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    nombre: values.nombre,
+                    apellidos: values.apellidos,
+                    empresa: values.empresa,
+                    cargo: values.cargo,
+                    pais: values.pais,
+                    n_empleados: values.empleados,
+                    telefono: values.telefono,
+                    email: values.email,
+                    acepta_marketing: false,
+                    acepta_contacto: values.demo,
+                    acepta_politica: values.politica,
+                    origen_ruta,
+                }),
+            });
+
+            if (!response.ok) {
+                const errorBody = await response.json().catch(() => null);
+                const apiMessage =
+                    typeof errorBody?.error === 'string'
+                        ? errorBody.error
+                        : 'No se pudo enviar el formulario';
+                throw new Error(apiMessage);
+            }
+
+            onClose();
+            setValues(initialValues);
+        } catch (error) {
+            const message =
+                error instanceof Error
+                    ? error.message
+                    : 'No se pudo enviar. Intentalo de nuevo en unos minutos.';
+            setSubmitMessage(message);
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     if (!isOpen) return null;
@@ -125,9 +180,17 @@ const DescargaInformeModal = ({ isOpen, onClose, initialEmail = '' }: Props) => 
                     <div className="hidden md:flex w-[280px] lg:w-[330px] shrink-0 items-center justify-center bg-[#dedfe5] p-8">
                         <div className="flex h-[420px] w-[240px] lg:w-[260px] flex-col justify-between rounded-sm bg-white p-6 shadow-[0_8px_30px_rgba(12,22,59,0.15)]">
                             <div>
-                                <div className="mb-6 h-24 w-full rounded-[24px] bg-gradient-to-r from-[#47d7c5] to-[#1f9ed8]" />
-                                <p className="mb-6 text-center text-base font-semibold text-[#141f49]">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                {imagenInforme ? (
+                                    <img
+                                        src={imagenInforme}
+                                        alt={tituloInforme || 'Informe'}
+                                        className="mb-6 h-56 w-full rounded-[14px] bg-[#f3f3f7] object-contain"
+                                    />
+                                ) : (
+                                    <div className="mb-6 h-24 w-full rounded-[24px] bg-gradient-to-r from-[#47d7c5] to-[#1f9ed8]" />
+                                )}
+                                <p className="mb-6 text-center text-base font-semibold text-[#141f49] line-clamp-4">
+                                    {tituloInforme || 'Informe completo'}
                                 </p>
                             </div>
                             <div className="text-right text-xs font-bold text-[#1f2f67]">NormaPro</div>
@@ -137,7 +200,7 @@ const DescargaInformeModal = ({ isOpen, onClose, initialEmail = '' }: Props) => 
                     <div className="flex-1 bg-white p-5 sm:p-6 md:p-8">
                         <div className="mb-5 h-16 w-full rounded-2xl bg-gradient-to-r from-[#47d7c5] to-[#1f9ed8] md:hidden" />
                         <h3 className="mb-2 text-2xl sm:text-3xl font-extrabold leading-tight text-[#1a274e] pr-8">
-                            Descarga el Informe Lorem ipsum dolor sit amet
+                            Descarga el informe {tituloInforme || 'completo'}
                         </h3>
                         <p className="mb-5 sm:mb-6 text-base sm:text-lg text-[#5e6786]">
                             Rellena este formulario y recibe en tu email este informe de manera gratuita.
@@ -247,6 +310,10 @@ const DescargaInformeModal = ({ isOpen, onClose, initialEmail = '' }: Props) => 
                                 </label>
                             </div>
 
+                            {submitMessage && (
+                                <p className="text-left text-sm text-[#b42318]">{submitMessage}</p>
+                            )}
+
                             <label className="flex items-start gap-2 text-left text-sm sm:text-base text-[#1b2a53]">
                                 <input
                                     type="checkbox"
@@ -273,9 +340,10 @@ const DescargaInformeModal = ({ isOpen, onClose, initialEmail = '' }: Props) => 
                             <div className="pt-2 text-center">
                                 <button
                                     type="submit"
+                                    disabled={isSubmitting}
                                     className="w-full sm:w-auto rounded-xl bg-[#010d3d] px-10 py-3 text-base sm:text-lg font-bold text-white transition-colors hover:bg-[#04176f]"
                                 >
-                                    Enviar
+                                    {isSubmitting ? 'Enviando...' : 'Enviar'}
                                 </button>
                             </div>
                         </form>

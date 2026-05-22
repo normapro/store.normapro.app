@@ -5,9 +5,11 @@ import DescargaInformeModal from './DescargaInformeModal';
 
 type Props = {
     textoDescarga: string;
+    tituloInforme?: string;
+    imagenInforme?: string | null;
 };
 
-const InformeDescargaCtaSection = ({ textoDescarga }: Props) => {
+const InformeDescargaCtaSection = ({ textoDescarga, tituloInforme, imagenInforme }: Props) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [email, setEmail] = useState('');
 
@@ -47,6 +49,8 @@ const InformeDescargaCtaSection = ({ textoDescarga }: Props) => {
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
                 initialEmail={email}
+                tituloInforme={tituloInforme}
+                imagenInforme={imagenInforme}
             />
         </>
     );
