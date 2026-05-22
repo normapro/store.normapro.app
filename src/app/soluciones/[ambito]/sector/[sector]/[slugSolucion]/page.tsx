@@ -17,7 +17,8 @@ import { TestimonioConCliente } from "@/types/testimonio";
 import Formulario from "@/components/Formulario";
 
 const SolucionAmbitoPage = () => {
-  const { slugSolucion } = useParams();
+  const { slugSolucion, sector } = useParams();
+  const sectorSlug = sector || 'non-specified';
   const [solucion, setSolucion] = useState<Solucion | null>(null);
   const [openModal, setOpenModal] = useState(false);
   const [breadcrumbData, setBreadcrumbData] = useState<BreadcrumbItem>({
@@ -28,7 +29,7 @@ const SolucionAmbitoPage = () => {
   useEffect(() => {
     const fetchSolucion = async () => {
       try {
-        const response = await fetch(`${API_ENDPOINTS.SOLUCION}/${slugSolucion}`);
+        const response = await fetch(`${API_ENDPOINTS.SOLUCION}/${slugSolucion}?sectorSlug=${sectorSlug}`);
         if (!response.ok) throw new Error("Error al obtener la solución");
         const data = await response.json();
         setSolucion(data);

@@ -89,7 +89,7 @@ const MainSolucionesSection = () => {
             <h3 className="text-[24px] font-extrabold mb-2 ">{pack.descriptionForHighLight}</h3>
             <p className="text-sm mb-6">{pack.shortDescription}</p>
             <div className="absolute bottom-[20px] left-6 right-6 flex flex-col gap-3 text-sm font-semibold sm:flex-row sm:items-center sm:justify-between">
-              <Link href={`/soluciones/${pack.slug}`} className="underline font-bold text-[#010D3D]">
+              <Link href={`/soluciones/${pack.slug_ambito}/packs/${pack.slug}`} className="underline font-bold text-[#010D3D]">
                 Saber más
               </Link>
               <button
