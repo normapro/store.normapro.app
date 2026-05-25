@@ -4,14 +4,26 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {Consultoria} from "@/types/consultoria";
 import API_ENDPOINTS from "@/config/api";
+import Formulario from "@/components/Formulario";
 
 
 
 
 const MainConsultoriaSection = () => {
   const [consultorias, setConsultorias] = useState<Consultoria[]>([]);
+  const [openModal, setOpenModal] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const consultoriaParam = searchParams.get("consultoria");
+
+  useEffect(() => {
+    setOpenModal(Boolean(consultoriaParam));
+  }, [consultoriaParam]);
 
   useEffect(() => {
     const fetchConsultorias = async () => {
@@ -22,6 +34,21 @@ const MainConsultoriaSection = () => {
 
     fetchConsultorias();
   }, []);
+
+  const handleOpenContact = (consultoriaId: number) => {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set("consultoria", String(consultoriaId));
+    router.push(`${pathname}?${params.toString()}`, { scroll: false });
+  };
+
+  const handleCloseContact = () => {
+    const params = new URLSearchParams(searchParams.toString());
+    params.delete("consultoria");
+    const nextQuery = params.toString();
+    const nextUrl = nextQuery ? `${pathname}?${nextQuery}` : pathname;
+    router.push(nextUrl, { scroll: false });
+    setOpenModal(false);
+  };
 
   return (
     <div className="bg-[#F2F2F5]">
@@ -47,19 +74,22 @@ const MainConsultoriaSection = () => {
             <h3 className="text-[24px] font-extrabold mb-2 ">{consultoria.description}</h3>
             <p className="text-sm flex-1">{consultoria.shortDescription}</p>
             <div className="flex flex-col gap-3 text-sm font-semibold sm:flex-row sm:items-center sm:justify-between mt-6">
-              <Link href={`/soluciones/${consultoria.slug}`} className="underline font-bold text-[#010D3D]">
+              <Link href={`/consultorias/${consultoria.slug}`} className="underline font-bold text-[#010D3D]">
                 Saber más
               </Link>
-              <Link
-                href={`/contacto?consultoria=${consultoria.id_consultoria}`}
+              <button
+                type="button"
+                onClick={() => handleOpenContact(consultoria.id_consultoria)}
                 className="bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] text-white px-4 py-2 rounded-lg text-center"
               >
                 Contratar ahora
-              </Link>
+              </button>
             </div>
           </div>
         ))}
       </div>
+
+      {openModal && <Formulario onClose={handleCloseContact} />}
     </section>
     </div>
   );

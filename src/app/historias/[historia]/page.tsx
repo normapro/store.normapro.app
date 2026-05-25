@@ -92,7 +92,7 @@ export default async function HistoriaPage({ params }: HistoriaPageProps) {
 	const cliente = await getClienteById(data.id_cliente);
 	const nombreHistoria = data.nombre?.trim() || FALLBACK_HISTORIA_NOMBRE;
 	const descripcionHistoria = data.descripcion?.trim() || FALLBACK_HISTORIA_DESCRIPCION;
-	const nombreCliente = cliente?.description?.trim() || cliente?.descripcion?.trim() || FALLBACK_CLIENTE_NOMBRE;
+	const nombreCliente = cliente?.description?.trim() || FALLBACK_CLIENTE_NOMBRE;
 	const logoCliente = cliente?.logo?.trim() || FALLBACK_CLIENTE_LOGO;
 
 	if (bloques.length === 0) {

@@ -26,6 +26,7 @@ const API_ENDPOINTS = {
   EVENTOS: `${API_BASE_URL}/v1/store/eventos`,
   ACTUALIDAD: `${API_BASE_URL}/v1/store/actualidad`,
   GLOBALSEARCH: `${API_BASE_URL}/v1/store/globalsearch`,
+  LEADS: `${API_BASE_URL}/v1/store/leads`,
 };
 
 export default API_ENDPOINTS;

@@ -365,7 +365,11 @@ export default async function InformeDetallePage({ params }: InformeDetallePageP
 				</div>
 			</section>
 
-			<InformeDescargaCtaSection textoDescarga={textoDescarga} />
+			<InformeDescargaCtaSection
+				textoDescarga={textoDescarga}
+				tituloInforme={titulo}
+				imagenInforme={data.resolvedImgInforme}
+			/>
 		</main>
 	);
 }

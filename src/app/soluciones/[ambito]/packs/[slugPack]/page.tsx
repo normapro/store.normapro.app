@@ -13,6 +13,7 @@ import TestimonioCard from "@/components/TestimonioCard";
 import { TestimonioConCliente } from "@/types/testimonio";
 import SolucionSeo from "@/components/seo/SolucionSeo";
 import SolutionsRefered from "@/components/solutionsRefered";
+import Formulario from "@/components/Formulario";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { iconMap } from "@/libs/icons";
@@ -24,6 +25,7 @@ const PackPage = () => {
   const [testimonios, setTestimonios] = useState<TestimonioConCliente[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [openModal, setOpenModal] = useState(false);
   const [breadcrumbData, setBreadcrumbData] = useState<BreadcrumbItem>({ title: "Home", url: "/" });
 
   useEffect(() => {
@@ -187,11 +189,13 @@ const PackPage = () => {
             <div className="sticky top-20 space-y-6">
               <div className="bg-[#f2f2f5] p-6 rounded-lg shadow">
                 <h3 className="text-[16px] font-bold">{pack?.firstCtaPragma}</h3>
-                <Link href="/contacto">
-                  <button className="mt-4 w-full bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
-                    {pack?.firstCtaTitle ?? "Solicita un diagnóstico gratuito"}
-                  </button>
-                </Link>
+                <button
+                  type="button"
+                  onClick={() => setOpenModal(true)}
+                  className="mt-4 w-full bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition"
+                >
+                  {pack?.firstCtaTitle ?? "Solicita un diagnóstico gratuito"}
+                </button>
               </div>
 
               {isLoading ? (
@@ -229,16 +233,20 @@ const PackPage = () => {
         <section className="max-w-7xl mx-auto px-6 text-center min-h-[350px] flex justify-center items-center flex-col">
           <h3 className="text-[16px] font-bold">{pack?.secondCtaTitle}</h3>
           <p className="mt-2 text-[15px] text-[#010D3D]">{pack?.secondCtaPragma}</p>
-          <Link href="/contacto">
-            <button className="mt-4 bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
-              {pack?.firstCtaTitle ?? "Solicita un diagnóstico gratuito"}
-            </button>
-          </Link>
+          <button
+            type="button"
+            onClick={() => setOpenModal(true)}
+            className="mt-4 bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition"
+          >
+            {pack?.firstCtaTitle ?? "Solicita un diagnóstico gratuito"}
+          </button>
         </section>
 
         <section>
           <SolutionsRefered ambitoSlug={ambito} />
         </section>
+
+        {openModal && <Formulario onClose={() => setOpenModal(false)} />}
       </main>
     </>
   );

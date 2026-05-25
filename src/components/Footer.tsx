@@ -4,10 +4,60 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
-import Formulario from "@/components/Formulario"
+import Formulario from "@/components/Formulario";
+import API_ENDPOINTS from "@/config/api";
 
 const Footer = () => {
 	const [openModal, setOpenModal] = useState(false);
+	const [newsletterEmail, setNewsletterEmail] = useState("");
+	const [isSubmittingNewsletter, setIsSubmittingNewsletter] = useState(false);
+	const [newsletterMessage, setNewsletterMessage] = useState<string | null>(null);
+
+	const handleNewsletterSubmit = async () => {
+		const email = newsletterEmail.trim();
+		setNewsletterMessage(null);
+
+		if (!email) {
+			setNewsletterMessage("Introduce un email válido.");
+			return;
+		}
+
+		setIsSubmittingNewsletter(true);
+		try {
+			const origen_ruta = `${window.location.pathname}${window.location.search}`;
+			const response = await fetch(API_ENDPOINTS.LEADS, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					email,
+					acepta_marketing: true,
+					origen_ruta,
+				}),
+			});
+
+			if (!response.ok) {
+				const errorBody = await response.json().catch(() => null);
+				const apiMessage =
+					typeof errorBody?.error === "string"
+						? errorBody.error
+						: "No se pudo completar la suscripción";
+				throw new Error(apiMessage);
+			}
+
+			setNewsletterMessage("Suscripción realizada correctamente.");
+			setNewsletterEmail("");
+		} catch (error) {
+			const message =
+				error instanceof Error
+					? error.message
+					: "No se pudo completar la suscripción. Inténtalo más tarde.";
+			setNewsletterMessage(message);
+		} finally {
+			setIsSubmittingNewsletter(false);
+		}
+	};
 
 	return (
 		<footer className="mt-20 font-[Mulish]">
@@ -23,12 +73,23 @@ const Footer = () => {
 								<input
 									type="email"
 									placeholder="Escribe tu email"
+									value={newsletterEmail}
+									onChange={(e) => setNewsletterEmail(e.target.value)}
+									disabled={isSubmittingNewsletter}
 									className="px-4 rounded-l-md w-full text-black placeholder:text-gray-500 text-[15px] bg-white h-[40px]"
 								/>
-								<button className="bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] px-4 py-2 rounded-r-md text-white text-15px font-extrabold h-[40px] w-[600px] ">
-									Suscribirme a la newsletter
+								<button
+									type="button"
+									onClick={handleNewsletterSubmit}
+									disabled={isSubmittingNewsletter}
+									className="bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] px-4 py-2 rounded-r-md text-white text-15px font-extrabold h-[40px] w-[600px] disabled:opacity-70"
+								>
+									{isSubmittingNewsletter ? "Enviando..." : "Suscribirme a la newsletter"}
 								</button>
 							</div>
+							{newsletterMessage && (
+								<p className="mt-2 text-sm text-white/90">{newsletterMessage}</p>
+							)}
 						</div>
 						<div className="flex items-center gap-8 text-base">
 							<span>Síguenos en</span>

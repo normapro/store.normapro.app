@@ -105,6 +105,17 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
     fetchMobileMenuData();
   }, [isMobileMenuOpen, mobileApps.length, mobileConsultorias.length]);
 
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
+
   const handleSearchSubmit = (e: FormEvent) => { e.preventDefault(); };
 
   return (
@@ -154,10 +165,10 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
 
             <div className="md:hidden flex items-center gap-2">
               <button onClick={() => { setIsSearchOpen((prev) => !prev); setIsMobileMenuOpen(false); }} className={`p-2 w-10 h-10 rounded-full flex items-center justify-center transition-colors ${isSearchOpen ? "bg-[#eceef5]" : "hover:bg-gray-100"}`} aria-label="Abrir buscador">
-                <FontAwesomeIcon icon={faMagnifyingGlass} className="text-[#0B1D4D]" />
+                <FontAwesomeIcon icon={faMagnifyingGlass} className="text-[#010d3d]" />
               </button>
               <button onClick={() => setIsMobileMenuOpen((prev) => !prev)} className="p-2 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-100" aria-label="Abrir menu movil">
-                <FontAwesomeIcon icon={isMobileMenuOpen ? faXmark : faBars} className="text-[#0B1D4D]" />
+                <FontAwesomeIcon icon={isMobileMenuOpen ? faXmark : faBars} className="text-[#010d3d]" />
               </button>
             </div>
           </div>
@@ -167,8 +178,8 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
         {/* Menú móvil */}
         <AnimatePresence>
           {isMobileMenuOpen && (
-            <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} className="md:hidden border-t border-gray-100 bg-white">
-              <div className="px-4 py-4 flex flex-col gap-1 text-[#0B1D4D]">
+            <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} className="md:hidden border-t border-gray-100 bg-white overflow-y-auto max-h-[calc(100vh-4rem)]">
+              <div className="px-4 py-4 flex flex-col gap-1 text-[#010d3d]">
 
                 {/* Soluciones */}
                 <button onClick={() => { setIsMobileSolutionsOpen((prev) => !prev); setIsMobileAppsOpen(false); setIsMobileConsultoriaOpen(false); }} className="w-full py-2 flex items-center justify-between font-semibold">

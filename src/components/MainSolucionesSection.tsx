@@ -4,15 +4,27 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {Pack} from "@/types/pack";
 import API_ENDPOINTS from "@/config/api";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLaptop, faPlusLarge, faUserTie } from "@fortawesome/pro-duotone-svg-icons";
+import Formulario from "@/components/Formulario";
 
 
 
 const MainSolucionesSection = () => {
   const [packs, setPacks] = useState<Pack[]>([]);
+  const [openModal, setOpenModal] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const packParam = searchParams.get("pack");
+
+  useEffect(() => {
+    setOpenModal(Boolean(packParam));
+  }, [packParam]);
 
   useEffect(() => {
     const fetchPacks = async () => {
@@ -23,6 +35,21 @@ const MainSolucionesSection = () => {
 
     fetchPacks();
   }, []);
+
+  const handleOpenContact = (packId: number) => {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set("pack", String(packId));
+    router.push(`${pathname}?${params.toString()}`, { scroll: false });
+  };
+
+  const handleCloseContact = () => {
+    const params = new URLSearchParams(searchParams.toString());
+    params.delete("pack");
+    const nextQuery = params.toString();
+    const nextUrl = nextQuery ? `${pathname}?${nextQuery}` : pathname;
+    router.push(nextUrl, { scroll: false });
+    setOpenModal(false);
+  };
 
   return (
     <section className="max-w-7xl mx-auto px-6 py-12">
@@ -62,19 +89,22 @@ const MainSolucionesSection = () => {
             <h3 className="text-[24px] font-extrabold mb-2 ">{pack.descriptionForHighLight}</h3>
             <p className="text-sm mb-6">{pack.shortDescription}</p>
             <div className="absolute bottom-[20px] left-6 right-6 flex flex-col gap-3 text-sm font-semibold sm:flex-row sm:items-center sm:justify-between">
-              <Link href={`/soluciones/${pack.slug}`} className="underline font-bold text-[#010D3D]">
+              <Link href={`/soluciones/${pack.slug_ambito}/packs/${pack.slug}`} className="underline font-bold text-[#010D3D]">
                 Saber más
               </Link>
-              <Link
-                href={`/contacto?pack=${pack.id_pack}`}
+              <button
+                type="button"
+                onClick={() => handleOpenContact(pack.id_pack)}
                 className="bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] text-white px-4 py-2 rounded-lg text-center"
               >
                 Contratar ahora
-              </Link>
+              </button>
             </div>
           </div>
         ))}
       </div>
+
+      {openModal && <Formulario onClose={handleCloseContact} />}
     </section>
   );
 };

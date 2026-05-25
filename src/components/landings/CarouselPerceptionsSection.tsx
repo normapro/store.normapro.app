@@ -24,7 +24,7 @@ const CarouselPerceptionsSection: React.FC<Props> = ({
   const [testimonios, setTestimonios] = useState<any[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const timerRef = useRef(null);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
     const promesas = listIds.map(id => 
@@ -98,6 +98,11 @@ const CarouselPerceptionsSection: React.FC<Props> = ({
         {indicesAMostrar.map((idx, pos) => {
           const testimonio = testimonios[idx];
           if (!testimonio) return null;
+
+          const clientName = testimonio.cliente?.description || 'Cliente';
+          const imageSlug = clientName
+            ? clientName.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "")
+            : 'default';
           
           const isCenter = pos === 1;
 
@@ -133,7 +138,7 @@ const CarouselPerceptionsSection: React.FC<Props> = ({
                   </div>
                   <div className="w-20 h-20 rounded-full overflow-hidden shadow-sm mb-4 -mt-12">
                     <Image
-                      src={`/testimonios/${testimonio.cliente.description.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "")}.png`}
+                      src={`/testimonios/${imageSlug}.png`}
                       alt={testimonio.persona || 'Foto'}
                       width={64}
                       height={64}
@@ -143,7 +148,7 @@ const CarouselPerceptionsSection: React.FC<Props> = ({
                   <div className="text-sm text-[#010d3d] leading-snug">
                     <p>{testimonio.persona}</p>
                     <p className="font-bold">{testimonio.cargo}</p>
-                    <p className="font-bold">{testimonio.cliente.description}</p>
+                    <p className="font-bold">{clientName}</p>
                   </div>
                 </div>
               )}

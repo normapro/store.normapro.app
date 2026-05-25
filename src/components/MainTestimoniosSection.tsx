@@ -71,7 +71,7 @@ const MainTestimoniosSection = ({ soloOpiniones = false }: MainTestimoniosSectio
       )}
       {!soloOpiniones && (
         <div className="flex justify-center mt-8">
-          <a href="#contacto" className="text-white bg-[#010D3D] hover:bg-[#0B1F6D] font-bold py-2 px-4 rounded-xl">
+          <a href="/historias" className="text-white bg-[#010D3D] hover:bg-[#0B1F6D] font-bold py-2 px-4 rounded-xl">
             Lee las historias de nuestros clientes
           </a>
         </div>
