@@ -10,7 +10,7 @@ const TodasLasSoluciones = () => {
     <main>
       <SolutionsHero />
       <section >
-        <AmbitosTabs sectorSlug={sectorSlug} ambitoIdSelected={null} />
+        <AmbitosTabs sectorSlug={sectorSlug} ambitoSlug={null} />
       </section>
     </main>
   );

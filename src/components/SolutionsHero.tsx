@@ -37,7 +37,7 @@ const SolutionsHero = () => {
    
     <section className="max-w-7xl mx-auto px-6 py-12 text-[#010D3D] ">
     <h1 className="font-black text-[#010D3D] mb-10 text-[40px]">Soluciones NormaPro</h1>
-    <div className="grid grid-cols-10 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-10 gap-8">
         <div className="col-span-5">
         {/* Título y Descripción */}
         
