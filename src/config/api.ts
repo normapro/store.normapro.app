@@ -18,6 +18,7 @@ const API_ENDPOINTS = {
   HISTORIAS: `${API_BASE_URL}/v1/store/historias`,
   INFORMES: `${API_BASE_URL}/v1/store/informes`,
   MAINPACKS: `${API_BASE_URL}/v1/store/mainpacks`,
+  PACKSCATEGORIA: `${API_BASE_URL}/v1/store/packscategoria`,
   APLICACIONES: `${API_BASE_URL}/v1/store/aplicaciones`,
   CONSULTORIA: `${API_BASE_URL}/v1/store/consultoria`,
   PACKS: `${API_BASE_URL}/v1/store/packs`,

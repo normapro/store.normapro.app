@@ -8,6 +8,7 @@ export interface ItemListPack{
     id_sector?: number;
     slug_ambito?: string;
     slug_sector?: string;
+    categoria?: string;
 }
 
 export interface Pack {
