@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Navbar from "../components/menu/Navbar";
+import Navbar from "../../components/menu/Navbar";
 import "@/libs/fontawesome.config"; // Carga de configuración de iconos
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
