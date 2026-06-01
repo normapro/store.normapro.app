@@ -4,7 +4,6 @@ import MainAplicacionesSection from "@/components/MainAplicacionesSection";
 import MainConsultoriaSection from "@/components/MainConsultoriaSection";
 import MainFormacionSection from "@/components/MainFormacionSection";
 import MainHeroCarousel from "@/components/MainHeroCarousel";
-import MainSolucionesSection from "@/components/MainSolucionesSection";
 import MainTestimoniosSection from "@/components/MainTestimoniosSection";
 import MainEventosSection from "@/components/MainEventosSection";
 import ClientCarousel from "@/components/shared/ClientCarousel";
@@ -13,6 +12,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import ActualidadGridSection from "@/components/ActualidadGridSection";
 import Link from "next/link";
+import MainPacksSection from "@/components/MainPacksSection";
 
 export default function Home() {
   return (
@@ -59,7 +59,7 @@ export default function Home() {
       </section>
 
       <FadeInOnScroll>
-        <MainSolucionesSection />
+        <MainPacksSection />
       </FadeInOnScroll>
 
       <FadeInOnScroll>
