@@ -16,6 +16,8 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+
+  allowedDevOrigins: ["normapro.local", "instituto.local"],
 };
 
 export default nextConfig;
