@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/pro-duotone-svg-icons";
 import FormacionCard from "./formacionCard";
 
-const MainFormacionSection = () => {
+const MainFormacionSection = ({ isInstituto = false}: { isInstituto: boolean }) => {
   const [formaciones, setFormacion] = useState<ItemListFormacion[]>([]);
 
   useEffect(() => {
@@ -21,10 +21,15 @@ const MainFormacionSection = () => {
     fetchPacks();
   }, []);
 
+  const theme = {
+    general: isInstituto ? "bg-[#010D3D]" : "bg-[#f7c5d5]",
+    card: isInstituto ? "bg-gradient-to-r from-[#f7c4d5] to-[#e6cfec]" : "bg-[#f9d7e3]"
+  }
+
   return (
-    <div className="bg-[#f7c5d5]">
+    <div className={theme.general}>
       <section className="max-w-7xl mx-auto px-6 py-12">
-        <div className="bg-[#f9d7e3] rounded-xl w-full h-[460px] mt-10 mb-10 relative overflow-hidden">
+        <div className={theme.card + " rounded-xl w-full h-[460px] mt-10 mb-10 relative overflow-hidden"}>
           <h2 className="text-center text-[32px] font-black text-[#010D3D] mb-4 mt-4">Formación</h2>
           <p className="text-center text-[#010D3D] max-w-3xl mx-auto mb-6">
             Navegamos contigo hacia una evolución tecnológica accesible, segura y sin barreras.

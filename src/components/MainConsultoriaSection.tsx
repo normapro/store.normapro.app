@@ -12,7 +12,7 @@ import Formulario from "@/components/Formulario";
 
 
 
-const MainConsultoriaSection = () => {
+const MainConsultoriaSection = ({ isInstituto = false }: { isInstituto?: boolean }) => {
   const [consultorias, setConsultorias] = useState<Consultoria[]>([]);
   const [openModal, setOpenModal] = useState(false);
   const router = useRouter();
@@ -50,19 +50,26 @@ const MainConsultoriaSection = () => {
     setOpenModal(false);
   };
 
+  const theme = {
+    general: isInstituto ? "bg-[#010D3D] text-[#FFFFFF]" : "bg-[#F2F2F5] text-[#010D3D]",
+    cards: isInstituto ? "bg-[#343d64]" : "bg-[#FFFFFF]",
+    title: isInstituto ? "Programas de consutoría" : "Consultoría estratégica",
+    description: isInstituto ? "Completos programas de consultoría dirigidos por un equipo de prefesionales con más de 20 años de experiencia y especializados en Ingeniería y Compliance." : "Programas de Consultoría Estratégica basados en la Plataforma Digital NormaPro dirigidos por un equipo de profesionales con más de 20 años de experiencia y especializados en Ingeniería y Compliance."
+  }
+
   return (
-    <div className="bg-[#F2F2F5]">
+    <div className={theme.general}>
     <section className="max-w-7xl mx-auto px-6 py-12">
-      <h2 className="text-center text-[32px] font-black text-[#010D3D] mb-4">Consultoría estratégica</h2>
-      <p className="text-center text-[#010D3D] max-w-3xl mx-auto mb-6">
-      Programas de Consultoría Estratégica basados en la Plataforma Digital NormaPro dirigidos por un equipo de profesionales con más de 20 años de experiencia y especializados en Ingeniería y Compliance.
+      <h2 className="text-center text-[32px] font-black mb-4">{theme.title}</h2>
+      <p className="text-center max-w-3xl mx-auto mb-6">
+        {theme.description}
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {consultorias.map((consultoria) => (
           <div
             key={consultoria.id_consultoria}
-            className="bg-[#FFFFFF] p-6 rounded-xl text-[#010D3D] flex flex-col"
+            className={theme.cards + " p-6 rounded-xl flex flex-col"}
           >
             <Image
               src={consultoria.uriIcon ? `/main/${consultoria.uriIcon}` : "/main/default-icon.png"} 
@@ -74,7 +81,7 @@ const MainConsultoriaSection = () => {
             <h3 className="text-[24px] font-extrabold mb-2 ">{consultoria.description}</h3>
             <p className="text-sm flex-1">{consultoria.shortDescription}</p>
             <div className="flex flex-col gap-3 text-sm font-semibold sm:flex-row sm:items-center sm:justify-between mt-6">
-              <Link href={`/consultorias/${consultoria.slug}`} className="underline font-bold text-[#010D3D]">
+              <Link href={`/consultorias/${consultoria.slug}`} className="underline font-bold">
                 Saber más
               </Link>
               <button

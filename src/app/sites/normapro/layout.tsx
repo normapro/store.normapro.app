@@ -4,10 +4,10 @@ import "@/libs/fontawesome.config"; // Carga de configuración de iconos
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
 import { Mulish } from "next/font/google";
-import "./globals.css";
+import "../../globals.css";
 import Footer from "@/components/Footer";
 import Script from "next/script";
-import { Providers } from "./providers";
+import { Providers } from "../../providers";
 import ChatManager from "@/components/ChatManager";
 
 const mulish = Mulish({
