@@ -26,7 +26,7 @@ export function middleware(req: NextRequest) {
     const response = NextResponse.rewrite(url);
     const ref = req.nextUrl.searchParams.get("ref");
     if (ref) {
-      response.headers.set("instituto", ref);
+      response.headers.set("x-site-ref", ref);
     }
     return response;
   }

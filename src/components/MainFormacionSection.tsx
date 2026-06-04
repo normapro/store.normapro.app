@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/pro-duotone-svg-icons";
 import FormacionCard from "./formacionCard";
 
-const MainFormacionSection = ({ isInstituto = false}: { isInstituto: boolean }) => {
+const MainFormacionSection = ({ isInstituto = false}: { isInstituto?: boolean }) => {
   const [formaciones, setFormacion] = useState<ItemListFormacion[]>([]);
 
   useEffect(() => {
