@@ -43,8 +43,8 @@ const MainEventosSection = ({ isInstituto = false }: { isInstituto?: boolean }) 
         
     }
     return (
-    
-        <section className={theme.general + " w-full max-w-7xl mx-auto py-16 px-6"}>
+        <div className={theme.general + " w-full"}>
+        <section className= "w-full max-w-7xl mx-auto py-16 px-6">
             <h2 className="text-3xl font-black mb-12">
                 Próximos webinars y eventos
             </h2>
@@ -92,6 +92,7 @@ const MainEventosSection = ({ isInstituto = false }: { isInstituto?: boolean }) 
                 </div>
             )}
         </section>
+    </div>
     );
 };
 

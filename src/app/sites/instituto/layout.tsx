@@ -4,6 +4,8 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
  
 import { Mulish } from "next/font/google";
 import "../../globals.css";
+import FooterInstituto from "@/components/FooterInstituto";
+
 import Script from "next/script";
 import { Providers } from "../../providers";
  
@@ -23,7 +25,7 @@ export default function InstitutoLayout({ children }: { children: React.ReactNod
     <html lang="es" className={mulish.variable}>
       <body className="font-sans">
         <Providers>{children}</Providers>
- 
+        <FooterInstituto />
         <Script
           src="https://kit.fontawesome.com/0fe2009133.js"
           crossOrigin="anonymous"

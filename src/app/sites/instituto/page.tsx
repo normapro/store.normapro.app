@@ -11,7 +11,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <section className= "bg-[#010D3D]">
+    <section>
       <ClientCarousel scope="all" claim={""} />
 
       <FadeInOnScroll>
