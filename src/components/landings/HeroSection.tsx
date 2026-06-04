@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import Formulario from "@/components/Formulario";
 import Lottie from "lottie-react";
+import { useSiteRef } from "@/context/SiteContext";
+
 
 type HeroSectionProps = {
   title?: string;
@@ -27,7 +29,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   backgroundRepeat = "no-repeat",
   backgroundSize = "cover",
   backgroundPositionX = "center",
+  
 }) => {
+  const ref = useSiteRef();
+  const isInstituto = ref === "instituto";
   const colors = ["#010d3d", "#797f98"];
   const weights = ["semibold", "bold"];
   const [animationData, setAnimationData] = useState<any>(null);
@@ -58,9 +63,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
   const [openModal, setOpenModal] = useState(false);
 
+  const theme = {
+    general: isInstituto ? "bg-[#010D3D] text-[#FFFFFF]" : "bg-[#F2F2F5] text-[#010D3D]",
+    button: isInstituto ? "bg-gradient-to-r from-[#f7c4d5] to-[#e6cfec]" : "bg-[#010D3D] hover:bg-[#04176f]",
+  }
+
   return (
     <section className="max-w-7xl mx-auto w-full px-6 py-12 flex flex-col-reverse lg:flex-row items-center justify-between gap-8">
-      <div className="flex-1">
+      <div className= {theme.general}>
         {title && <h4 className="text-[30px] font-[900] text-gray-500 mb-2">{title}</h4>}
         {claimList.length > 0 && (
           <h1 className="text-[43px] font-[900] leading-snug mb-4">

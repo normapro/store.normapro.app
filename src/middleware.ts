@@ -17,14 +17,18 @@ export function middleware(req: NextRequest) {
   // Aplicar los rewrites apuntando a la carpeta sites
   if (host === "instituto.local") {
     const url = new URL(`/sites/instituto${pathname}`, req.url);
-    console.log(`[MIDDLEWARE] Rewrite a: ${url.pathname}`);
     return NextResponse.rewrite(url);
   }
 
   if (host === "normapro.local") {
+    
     const url = new URL(`/sites/normapro${pathname}`, req.url);
-    console.log(`[MIDDLEWARE] Rewrite a: ${url.pathname}`);
-    return NextResponse.rewrite(url);
+    const response = NextResponse.rewrite(url);
+    const ref = req.nextUrl.searchParams.get("ref");
+    if (ref) {
+      response.headers.set("instituto", ref);
+    }
+    return response;
   }
 
   // Fallback para localhost
