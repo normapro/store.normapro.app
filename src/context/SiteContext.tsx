@@ -15,14 +15,14 @@ export function useSiteRef() {
 }
 
 export function SiteProvider({
-  ref,
+  siteRef,
   children,
 }: {
-  ref: SiteRef;
+  siteRef: SiteRef;
   children: React.ReactNode;
 }) {
   return (
-    <SiteContext.Provider value={{ ref }}>
+    <SiteContext.Provider value={{ ref: siteRef }}>
       {children}
     </SiteContext.Provider>
   );

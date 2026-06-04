@@ -26,12 +26,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
 
   const headerList = await headers();
-  const ref : SiteRef = headerList.get("instituto") === "true" ? "instituto" : null;
+  const siteRef : SiteRef = headerList.get("x-site-ref") === "instituto" ? "instituto" : null;
 
   return (
     <html lang="es" className={mulish.variable}>
       <body className="font-sans">
-        <SiteProvider ref={ref}>
+        <SiteProvider siteRef={siteRef}>
           <ChatManager>
             <Providers>{children}</Providers>
           </ChatManager>
