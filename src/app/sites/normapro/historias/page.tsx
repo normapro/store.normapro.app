@@ -12,7 +12,7 @@ export default function HistoriasPage() {
 	return (
 		<main className="w-full py-12">
 			<HistoriasClientesSection />
-			<HeroUserCount></HeroUserCount>
+			<HeroUserCount />
 			<ClientCarousel
 				scope="historias"
 				claim=""

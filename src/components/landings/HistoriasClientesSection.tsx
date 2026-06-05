@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import API_ENDPOINTS from '@/config/api';
 import { HistoriaCliente } from '@/types/historiaCliente';
+import { useSiteRef } from '@/context/SiteContext';
 
 const FALLBACK_IMAGE = '/main/sistema.png';
 
@@ -61,17 +62,29 @@ const HistoriasClientesSection = ({ soloUnaHistoria = false }: HistoriasClientes
   const historiaPrincipal = historias[0];
   const historiaPrincipalPath = `/historias/${historiaPrincipal?.slug || historiaPrincipal?.id}`;
 
+  const ref = useSiteRef();
+  const isInstituto = ref === "instituto";
+
+  const theme = {
+    general: isInstituto ? "bg-[#010D3D] text-[#FFFFFF] flex flex-row justify-between items-center mb-10" : "bg-[#FFFFFF] text-[#010D3D] text-center mb-10",
+    texto: isInstituto ? "text-[#FFFFFF] text-[16px] md:text-[22px]" : "text-[#707a95] text-[24px] md:text-[42px]",
+  };
+
   return (
+    <div className={isInstituto ? "relative" : ""}
+    style={isInstituto ? {
+      background: "linear-gradient(to bottom, #010D3D 50%, transparent 50%)"
+    } : {}}>
     <section className={`mx-auto px-4 sm:px-6 lg:px-10 ${soloUnaHistoria ? 'max-w-[1280px] py-6' : 'max-w-[1600px] py-12'}`}>
       {!soloUnaHistoria && (
-        <div className="text-center mb-10">
-          <h2 className="text-[34px] leading-tight md:text-[48px] font-black text-[#010d3d]">
+        <div className={`${theme.general} gap-2`}>
+          <h2 className="text-[34px] md:text-[48px] leading-tight font-black">
             Exitos que inspiran
           </h2>
-          <p className="mt-4 text-[24px] leading-tight md:text-[42px] font-black text-[#707a95]">
-            Descubre como NormaPro contribuye
-            <br />
-            al exito de organizaciones.
+          <p className={`${theme.texto} leading-tight font-black ${isInstituto ? "max-w-[420px]" : "mt-4"}`}>
+            Descubre como {isInstituto ? "Instituto de Innovación, Ciencia y Empresa" : "NormaPro"} contribuye
+            {!isInstituto && <br />}
+            {" "}al exito de organizaciones.
           </p>
         </div>
       )}
@@ -145,6 +158,7 @@ const HistoriasClientesSection = ({ soloUnaHistoria = false }: HistoriasClientes
         </div>
       )}
     </section>
+    </div>
   );
 };
 
