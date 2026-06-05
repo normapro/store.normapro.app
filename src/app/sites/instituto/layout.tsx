@@ -4,6 +4,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
  
 import { Mulish } from "next/font/google";
 import "../../globals.css";
+import NavbarInstituto from "@/components/menu/NavbarInstituto";
 import FooterInstituto from "@/components/FooterInstituto";
 
 import Script from "next/script";
@@ -24,6 +25,7 @@ export default function InstitutoLayout({ children }: { children: React.ReactNod
   return (
     <html lang="es" className={mulish.variable}>
       <body className="font-sans">
+        <NavbarInstituto />
         <Providers>{children}</Providers>
         <FooterInstituto />
         <Script
