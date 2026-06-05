@@ -137,7 +137,7 @@ const Footer = () => {
                                 <div className="flex flex-col gap-2">
                                     <span className="font-normal text-white/60">Sobre Instituto de Innovación Ciencia y Empresa</span>
                                     <Link href="/nosotros" className="font-bold">Sobre nosotros</Link>
-                                    <Link href="/mision" className="font-bold">Misión, Visión y valores</Link>
+                                    <Link href="/mision-vision-valores" className="font-bold">Misión, Visión y valores</Link>
                                     <Link href="/equipo" className="font-bold">El equipo</Link>
                                     <Link href="/politicas" className="font-bold">Política</Link>
                                 </div>
