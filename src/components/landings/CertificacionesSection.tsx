@@ -4,18 +4,20 @@ import { FC } from 'react';
 
 type Props = {
   title: string;
-  subtitle: string;
+  subtitle?: string;
+  pragma?: string;
   images: string[];
 };
 
-const CertificacionesSection: FC<Props> = ({ title, subtitle, images }) => {
+const CertificacionesSection: FC<Props> = ({ title, subtitle, pragma, images }) => {
   return (
     <section className="max-w-5xl mx-auto w-full flex flex-col items-center justify-center py-20 px-6 md:px-12">
       <div className="text-center mb-16">
         <h2 className="text-[50px] font-black text-[#010d3d] mb-10">
           {title}
         </h2>
-        <p className="text-[22px] font-extrabold text-[#7F859D]">{subtitle}</p>
+        {subtitle && <p className="text-[22px] font-extrabold text-[#7F859D]">{subtitle}</p>}
+        {pragma && <p className="text-[18px] text-[#010d3d]">{pragma}</p>}
       </div>
 
       <div className="flex flex-wrap justify-center items-center gap-20">
