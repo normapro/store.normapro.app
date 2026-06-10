@@ -12,7 +12,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <section>
-      <ClientCarousel scope="all" claim={""} />
+      <ClientCarousel scope="all" claim={"Estas empresas trabajan con nosotros"} theme="dark" />
 
       <FadeInOnScroll>
         <MainConsultoriaSection isInstituto={true} />
@@ -43,7 +43,7 @@ export default function Home() {
             <div className="mt-8">
               <ActualidadGridSection
                 onlyLatest={true}
-                hideDescriptionAndReadMore={true}
+                temasDisponibles={["Salud", "Medioambiente", "Digitalización", "Industria", "Formación", "Seguridad alimentaria"]}
               />
             </div>
           </section>
