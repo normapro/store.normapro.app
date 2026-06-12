@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
-import Navbar from "../components/menu/Navbar";
 import "@/libs/fontawesome.config"; // Carga de configuración de iconos
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
 import { Mulish } from "next/font/google";
-import "./globals.css";
+import "../../globals.css";
 import Footer from "@/components/Footer";
 import Script from "next/script";
-import { Providers } from "./providers";
+import { Providers } from "../../providers";
 import ChatManager from "@/components/ChatManager";
+import { SiteProvider, type SiteRef } from "@/context/SiteContext";
+import { headers } from "next/headers";
 
 const mulish = Mulish({
   variable: "--font-mulish",
@@ -21,17 +22,22 @@ export const metadata: Metadata = {
   description: "Encuentra productos específicos para tu empresa en 60 segundos.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+
+
+  const headerList = await headers();
+  const siteRef : SiteRef = headerList.get("x-site-ref") === "instituto" ? "instituto" : null;
+
   return (
     <html lang="es" className={mulish.variable}>
       <body className="font-sans">
-        {/* ChatManager gestiona la Navbar y el botón del Chat */}
-        <ChatManager>
-          <Providers>{children}</Providers>
-        </ChatManager>
-        <Footer />
+        <SiteProvider siteRef={siteRef}>
+          <ChatManager>
+            <Providers>{children}</Providers>
+          </ChatManager>
+          <Footer />
+        </SiteProvider>
 
-        {/* FontAwesome Kit */}
         <Script
           src="https://kit.fontawesome.com/0fe2009133.js"
           crossOrigin="anonymous"

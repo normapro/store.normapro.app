@@ -1,5 +1,6 @@
 'use client'
 
+import { useSiteRef } from '@/context/SiteContext';
 import { FC } from 'react';
 
 type Props = {
@@ -17,7 +18,15 @@ const SideImgTextSection: FC<Props> = ({
   claim,
   plagma,
 }) => {
+  const ref = useSiteRef();
+  const isInstituto = ref === "instituto";
+
+  const theme = {
+    general: isInstituto ? "bg-[#010D3D] text-[#FFFFFF]" : "text-[#010D3D]"
+  }
+
   return (
+    <div className={theme.general + " w-full"}>
     <section className="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center justify-between gap-1  py-10 px-6 md:px-12">
       {/* Imagen de cabecera */}
       <div className="relative w-[220px] md:w-[360px] overflow-visible ">
@@ -37,21 +46,22 @@ const SideImgTextSection: FC<Props> = ({
       {/* Título y claim */}
       <div className="max-w-xl">
         {title && 
-        ( <h2 className="text-3xl md:text-[44px] font-black text-[#010d3d] mb-8">
+        ( <h2 className="text-3xl md:text-[44px] font-black mb-8">
             {title}
           </h2>
         )}
         {plagma && (
-          <p className="text-sm md:text-lg text-[#010D3D] mb-4">
+          <p className="text-sm md:text-lg mb-4">
             {plagma}
           </p>
         )}
-        <p className="text-sm md:text-lg font-bold text-[#010d3d]">
+        <p className="text-sm md:text-lg font-bold">
           {claim}
         </p>
       </div>
 
     </section>
+    </div>
   );
 };
 

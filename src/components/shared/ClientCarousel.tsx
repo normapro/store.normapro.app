@@ -16,6 +16,7 @@ type Cliente = {
 type ClientCarouselProps = {
   scope: string;
   claim: string;
+  theme?: string;
 };
 
 const getClientesFromPayload = (payload: unknown): Cliente[] => {
@@ -29,7 +30,7 @@ const getClientesFromPayload = (payload: unknown): Cliente[] => {
   return [];
 };
 
-const ClientCarousel: React.FC<ClientCarouselProps> = ({ scope, claim }) => {
+const ClientCarousel: React.FC<ClientCarouselProps> = ({ scope, claim, theme="light" }) => {
   const [clientes, setClientes] = useState<Cliente[]>([]);
 
   useEffect(() => {
@@ -50,8 +51,10 @@ const ClientCarousel: React.FC<ClientCarouselProps> = ({ scope, claim }) => {
 
   const logos = Array(5).fill(clientes).flat();
 
+  const isDark = theme === "dark";
+
   return (
-    <section className="mx-auto  py-12 text-center overflow-hidden">
+    <section className={`mx-auto py-12 text-center overflow-hidden ${isDark ? "bg-[#010D3D]" : "bg-white"}`}>
       <h3 className="text-gray-500 mb-6 font-semibold text-lg">{claim}</h3>
 
       <div className="relative w-full overflow-hidden">
@@ -68,6 +71,7 @@ const ClientCarousel: React.FC<ClientCarouselProps> = ({ scope, claim }) => {
                 logoName={cliente.logo}
                 logoType={cliente.logoType}
                 clienteName={cliente.description}
+                theme = {theme}
               />
             </a>
           ))}

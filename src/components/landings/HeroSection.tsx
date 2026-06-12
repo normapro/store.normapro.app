@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import Formulario from "@/components/Formulario";
 import Lottie from "lottie-react";
+import { useSiteRef } from "@/context/SiteContext";
+
 
 type HeroSectionProps = {
   title?: string;
@@ -27,8 +29,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   backgroundRepeat = "no-repeat",
   backgroundSize = "cover",
   backgroundPositionX = "center",
+  
 }) => {
-  const colors = ["#010d3d", "#797f98"];
+  const ref = useSiteRef();
+  const isInstituto = ref === "instituto";
+  const colors: string[] = isInstituto ? ["#ffffff", "#ffffff"] : ["#010d3d", "#797f98"];
   const weights = ["semibold", "bold"];
   const [animationData, setAnimationData] = useState<any>(null);
 
@@ -58,9 +63,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
   const [openModal, setOpenModal] = useState(false);
 
+  const theme = {
+    general: isInstituto ? "bg-[#010D3D]" : "bg-[#FFFFFF]",
+    button: isInstituto ? "bg-gradient-to-r from-[#00b2e3] to-[#cca1dd]" : "bg-[#010D3D] hover:bg-[#04176f]",
+  }
+
   return (
+    <div className={theme.general + " w-full"}>
     <section className="max-w-7xl mx-auto w-full px-6 py-12 flex flex-col-reverse lg:flex-row items-center justify-between gap-8">
-      <div className="flex-1">
+      <div className= "flex-1">
         {title && <h4 className="text-[30px] font-[900] text-gray-500 mb-2">{title}</h4>}
         {claimList.length > 0 && (
           <h1 className="text-[43px] font-[900] leading-snug mb-4">
@@ -72,7 +83,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           </h1>
         )}
         {pragmaList.length > 0 && (
-          <p className="text-lg text-[#010d3d] mb-6">
+          <p className={`text-lg text-[${colors[0]}] mb-6`}>
             {pragmaList.map((text, i) => (
               <span key={i} style={{ fontWeight: weights[i % weights.length] }}>
                 {text + " "}
@@ -83,7 +94,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         {cta && (
           <button
             onClick={() => setOpenModal(true)}
-            className="bg-[#010d3d] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#04176f] transition"
+            className={theme.button + " text-white font-bold px-6 py-3 rounded-xl shadow-md transition"}
           >
             {cta}
           </button>
@@ -121,6 +132,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         <Formulario onClose={() => setOpenModal(false)} />
       )}
     </section>
+    </div>
   );
 };
 
