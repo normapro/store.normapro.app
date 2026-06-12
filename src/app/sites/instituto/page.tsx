@@ -13,28 +13,7 @@ import MainHeroInstituto from "@/components/MainHeroInstituto";
 export default function Home() {
   return (
     <section>
-
-<MainHeroInstituto
-  items={[
-    {
-      tipo: "Actualidad",
-      imagen: "/actualidad/compliance-penal.jpg",
-      fecha: "21 marzo 2023",
-      titulo: "Compliance penal y canal interno de denuncias en empresas de cuidados de personas",
-      verTodosText: "Ver toda la actualidad",
-      verTodosHref: "/actualidad",
-    },
-    {
-      tipo: "Informe",
-      imagen: "/informes/agua-2023.jpg",
-      titulo: "Resumen Informe anual del Portal AGUA 2023",
-      verTodosText: "Ver todos los informes",
-      verTodosHref: "/informes",
-      isPdf: true,
-    },
-  ]}
-/>
-
+      <MainHeroInstituto />
 
       <ClientCarousel scope="all" claim={"Estas empresas trabajan con nosotros"} theme="dark" />
 
@@ -43,7 +22,7 @@ export default function Home() {
       </FadeInOnScroll>
 
       <MainTecnologiaInstituto />
-      
+
       <FadeInOnScroll>
         <MainFormacionSection isInstituto={true} />
       </FadeInOnScroll>
