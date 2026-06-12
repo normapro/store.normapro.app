@@ -8,11 +8,10 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {Consultoria} from "@/types/consultoria";
 import API_ENDPOINTS from "@/config/api";
 import Formulario from "@/components/Formulario";
+import { Suspense } from "react";
 
 
-
-
-const MainConsultoriaSection = ({ isInstituto = false }: { isInstituto?: boolean }) => {
+const MainConsultoriaSectionContent = ({ isInstituto = false }: { isInstituto?: boolean }) => {
   const [consultorias, setConsultorias] = useState<Consultoria[]>([]);
   const [openModal, setOpenModal] = useState(false);
   const router = useRouter();
@@ -101,5 +100,11 @@ const MainConsultoriaSection = ({ isInstituto = false }: { isInstituto?: boolean
     </div>
   );
 };
+
+const MainConsultoriaSection = ({ isInstituto = false }: { isInstituto?: boolean}) => (
+  <Suspense fallback={null}>
+    <MainConsultoriaSectionContent isInstituto={isInstituto} />
+  </Suspense>
+);
 
 export default MainConsultoriaSection;
