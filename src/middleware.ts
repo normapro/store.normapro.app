@@ -15,12 +15,12 @@ export function middleware(req: NextRequest) {
   const host = (req.headers.get("host") || "").split(":")[0];
 
   // Aplicar los rewrites apuntando a la carpeta sites
-  if (host === "instituto.local") {
+  if (host === "instituto.local" || host === "inicie.normapro.es" || host === "www.inicie.normapro.es") {
     const url = new URL(`/sites/instituto${pathname}`, req.url);
     return NextResponse.rewrite(url);
   }
 
-  if (host === "normapro.local") {
+  if (host === "normapro.local" || host === "store.normapro.es" || host === "www.store.normapro.es") {
     
     const url = new URL(`/sites/normapro${pathname}`, req.url);
     const response = NextResponse.rewrite(url);
