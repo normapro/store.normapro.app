@@ -9,6 +9,8 @@ import ActualidadGridSection from "@/components/ActualidadGridSection";
 import Link from "next/link";
 import MainTecnologiaInstituto from "@/components/MainTecnologiaInstituto";
 import MainHeroInstituto from "@/components/MainHeroInstituto";
+import MainTestimoniosSection from "@/components/MainTestimoniosSection";
+import MainHistoriasSection from "@/components/MainHistoriasSection";
 
 export default function Home() {
   return (
@@ -56,7 +58,7 @@ export default function Home() {
       </FadeInOnScroll>
 
       <FadeInOnScroll >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <header className="pb-4 flex items-center justify-between gap-4">
             <h1 className="text-3xl font-extrabold text-[#010d3d]">Informes</h1>
             <Link
@@ -69,6 +71,10 @@ export default function Home() {
 
           <InformesGridSection showOnlyLastThree />
         </div>
+      </FadeInOnScroll>
+
+      <FadeInOnScroll>
+        <MainHistoriasSection />
       </FadeInOnScroll>
     </section>
   );

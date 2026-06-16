@@ -39,6 +39,7 @@ const MainEventosSection = ({ isInstituto = false }: { isInstituto?: boolean }) 
 
     const theme = {
         general: isInstituto ? "bg-[#010D3D] text-[#FFFFFF]" : "bg-[#FFFFFF] text-[#010D3D]",
+        text: isInstituto ? "text-[#FFFFFF]" : "text-[#010D3D]",
         card: isInstituto ? "bg-[#192450]" : "bg-[#1a2344]",
         
     }
@@ -50,7 +51,7 @@ const MainEventosSection = ({ isInstituto = false }: { isInstituto?: boolean }) 
             </h2>
 
             {isLoading ? (
-                <p className="text-[#010d3d]">Cargando eventos...</p>
+                <p className={theme.text}>Cargando eventos...</p>
             ) : eventos.length === 0 ? (
                 <p className="text-[#010d3d] text-lg font-semibold">
                     No hay eventos programados en este momento.
