@@ -4,7 +4,7 @@ import { Evento } from "@/types/evento";
 import { useEffect, useState } from "react";
 import API_ENDPOINTS from "@/config/api";
 
-const MainEventosSection = () => {
+const MainEventosSection = ({ isInstituto = false }: { isInstituto?: boolean }) => {
     const [eventos, setEventos] = useState<Evento[]>([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -37,14 +37,21 @@ const MainEventosSection = () => {
 
     if (isLoading) return null;
 
+    const theme = {
+        general: isInstituto ? "bg-[#010D3D] text-[#FFFFFF]" : "bg-[#FFFFFF] text-[#010D3D]",
+        text: isInstituto ? "text-[#FFFFFF]" : "text-[#010D3D]",
+        card: isInstituto ? "bg-[#192450]" : "bg-[#1a2344]",
+        
+    }
     return (
-        <section className="w-full max-w-7xl mx-auto py-16 px-6">
-            <h2 className="text-3xl font-black text-[#010d3d] mb-12">
+        <div className={theme.general + " w-full"}>
+        <section className= "w-full max-w-7xl mx-auto py-16 px-6">
+            <h2 className="text-3xl font-black mb-12">
                 Próximos webinars y eventos
             </h2>
 
             {isLoading ? (
-                <p className="text-[#010d3d]">Cargando eventos...</p>
+                <p className={theme.text}>Cargando eventos...</p>
             ) : eventos.length === 0 ? (
                 <p className="text-[#010d3d] text-lg font-semibold">
                     No hay eventos programados en este momento.
@@ -58,7 +65,7 @@ const MainEventosSection = () => {
                             <div key={evento.id_evento} className="flex flex-col md:flex-row gap-6 items-start">
 
                                 {/* Tarjeta de Fecha */}
-                                <div className="bg-[#1a2344] text-white w-full md:w-64 aspect-square rounded-2xl flex flex-col items-center justify-center shadow-lg shrink-0">
+                                <div className={theme.card + " text-white w-full md:w-64 aspect-square rounded-2xl flex flex-col items-center justify-center shadow-lg shrink-0"}>
                                     <span className="text-7xl font-black leading-none">{day}</span>
                                     <span className="text-3xl font-bold text-gray-400 mt-1 uppercase">{month}</span>
                                     <div className="w-20 h-[2px] bg-gray-500 my-4 opacity-50"></div>
@@ -67,10 +74,10 @@ const MainEventosSection = () => {
 
                                 {/* Contenido del Evento */}
                                 <div className="flex flex-col h-full py-2">
-                                    <h3 className="text-lg font-black text-[#010d3d] mb-4 leading-tight">
+                                    <h3 className="text-lg font-black mb-4 leading-tight">
                                         {evento.title}
                                     </h3>
-                                    <p className="text-[#010d3d] text-base font-medium leading-relaxed mb-6 line-clamp-4">
+                                    <p className=" text-base font-medium leading-relaxed mb-6 line-clamp-4">
                                         {evento.description}
                                     </p>
 
@@ -86,6 +93,7 @@ const MainEventosSection = () => {
                 </div>
             )}
         </section>
+    </div>
     );
 };
 

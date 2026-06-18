@@ -10,10 +10,11 @@ import API_ENDPOINTS from "@/config/api";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLaptop, faPlusLarge, faUserTie } from "@fortawesome/pro-duotone-svg-icons";
 import Formulario from "@/components/Formulario";
+import { Suspense } from "react";
 
 
 
-const MainSolucionesSection = () => {
+const MainSolucionesSectionContent = () => {
   const [packs, setPacks] = useState<Pack[]>([]);
   const [openModal, setOpenModal] = useState(false);
   const router = useRouter();
@@ -108,5 +109,11 @@ const MainSolucionesSection = () => {
     </section>
   );
 };
+
+const MainSolucionesSection = () => (
+  <Suspense fallback={null}>
+    <MainSolucionesSectionContent />
+  </Suspense>
+);
 
 export default MainSolucionesSection;

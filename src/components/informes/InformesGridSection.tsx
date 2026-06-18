@@ -12,6 +12,7 @@ type InformeWithResolvedImage = Informe & {
 
 type InformesGridSectionProps = {
   showOnlyLastThree?: boolean;
+  isInstituto?: boolean;
 };
 
 function resolveInformeImagePath(imagePath?: string): string | null {
@@ -30,7 +31,7 @@ function resolveInformeImagePath(imagePath?: string): string | null {
   return `/informes/${cleanPath}`;
 }
 
-export default function InformesGridSection({ showOnlyLastThree = false }: InformesGridSectionProps) {
+export default function InformesGridSection({ showOnlyLastThree = false, isInstituto = false }: InformesGridSectionProps) {
   const [informes, setInformes] = useState<InformeWithResolvedImage[]>([]);
 
   useEffect(() => {
@@ -101,12 +102,21 @@ export default function InformesGridSection({ showOnlyLastThree = false }: Infor
                 </h2>
 
                 {informePath ? (
-                  <Link
-                    href={`/informes/${informePath}`}
-                    className="mt-8 w-fit rounded-xl bg-[#010d3d] px-4 py-2 text-white text-[16px] font-bold"
-                  >
-                    Mas informacion
-                  </Link>
+                  isInstituto ? (
+                    <Link
+                      href={`https://store.normapro.es/informes/${informePath}?ref=instittuo`}
+                      className="mt-8 w-fit rounded-xl bg-[#010d3d] px-4 py-2 text-white text-[16px] font-bold"
+                    >
+                      Mas informacion
+                    </Link>
+                  ) : (
+                    <Link
+                      href={`/informes/${informePath}`}
+                      className="mt-8 w-fit rounded-xl bg-[#010d3d] px-4 py-2 text-white text-[16px] font-bold"
+                    >
+                      Mas informacion
+                    </Link>
+                  )
                 ) : (
                   <button
                     type="button"
