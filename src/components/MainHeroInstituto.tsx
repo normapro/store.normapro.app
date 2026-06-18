@@ -92,7 +92,10 @@ const MainHeroInstituto = () => {
                         {/* Card Actualidad */}
                         {actualidad && (
                             <div className="flex flex-col gap-3">
-                                <Link href={`/actualidad/${actualidad.slug || actualidad.id_noticia}`}>
+                                <Link
+                                    href={`https://store.normapro.es/actualidad/${actualidad.slug || actualidad.id_noticia}?ref=instituto`}
+                                    target='_blank' rel='noopener noreferrer'
+                                >
                                     <div className="flex rounded-2xl overflow-hidden" style={{ background: "rgba(255,255,255,0.08)" }}>
                                         <div className="w-[220px] flex-shrink-0 relative min-h-[160px]">
                                             <Image
@@ -114,7 +117,10 @@ const MainHeroInstituto = () => {
                                     </div>
                                 </Link>
                                 <div className="text-right">
-                                    <Link href="/actualidad" className="text-white font-bold text-sm underline underline-offset-4 hover:opacity-70 transition">
+                                    <Link
+                                        href="https://store.normapro.es/actualidad?ref=instituto" className="text-white font-bold text-sm underline underline-offset-4 hover:opacity-70 transition"
+                                        target='_blank' rel='noopener noreferrer'
+                                    >
                                         Ver toda la actualidad
                                     </Link>
                                 </div>
@@ -124,7 +130,10 @@ const MainHeroInstituto = () => {
                         {/* Card Informe */}
                         {informe && (
                             <div className="flex flex-col gap-3">
-                                <Link href={informe.slug ? `/informes/${informe.slug}` : '/informes'}>
+                                <Link
+                                    href={informe.slug ? `https://store.normapro.es/informes/${informe.slug}?ref=instituto` : 'https://store.normapro.es/informes?ref=instituto'}
+                                    target='_blank' rel='noopener noreferrer'
+                                >
                                     <div className="flex rounded-2xl overflow-hidden" style={{ background: "rgba(255,255,255,0.08)" }}>
                                         <div className="w-[220px] flex-shrink-0 relative min-h-[160px]">
                                             {informe.resolvedImagePath ? (
@@ -152,7 +161,10 @@ const MainHeroInstituto = () => {
                                     </div>
                                 </Link>
                                 <div className="text-right">
-                                    <Link href="/informes" className="text-white font-bold text-sm underline underline-offset-4 hover:opacity-70 transition">
+                                    <Link 
+                                        href="https://store.normapro.es/informes?ref=instituto" className="text-white font-bold text-sm underline underline-offset-4 hover:opacity-70 transition"
+                                        target='_blank' rel='noopener noreferrer'
+                                    >
                                         Ver todos los informes
                                     </Link>
                                 </div>

@@ -37,7 +37,8 @@ const MainHistoriasSection = () => {
                         Historias con clientes
                     </h2>
                     <Link
-                        href="/historias"
+                        href="https://store.normapro.es/historias?ref=instituto"
+                        target="_blank" rel="noopener noreferrer"
                         className="text-base font-bold text-[#010d3d] underline underline-offset-4 hover:opacity-70 transition"
                     >
                         Ver todas las historiass
@@ -109,6 +110,7 @@ const MainHistoriasSection = () => {
                 <div className="flex justify-center mt-10">
                     <a
                         href="https://store.normapro.es/historias/emacsa?ref=instituto"
+                        target="_blank" rel="noopener noreferrer"
                         className="border-2 border-[#010D3D] text-[#010D3D] font-semibold px-8 py-3 rounded-xl hover:bg-[#010D3D] hover:text-white transition"
                     >
                         Ver caso completo

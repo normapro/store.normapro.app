@@ -9,7 +9,6 @@ import ActualidadGridSection from "@/components/ActualidadGridSection";
 import Link from "next/link";
 import MainTecnologiaInstituto from "@/components/MainTecnologiaInstituto";
 import MainHeroInstituto from "@/components/MainHeroInstituto";
-import MainTestimoniosSection from "@/components/MainTestimoniosSection";
 import MainHistoriasSection from "@/components/MainHistoriasSection";
 
 export default function Home() {
@@ -41,7 +40,8 @@ export default function Home() {
                 Actualidad
               </h1>
               <Link
-                href="/actualidad"
+                href="https://store.normapro.es/actualidad?ref=instituto"
+                target="_blank" rel="noopener noreferrer"
                 className="text-l font-bold text-[#010d3d] underline underline-offset-4"
               >
                 Ver todas las noticias
@@ -51,6 +51,7 @@ export default function Home() {
               <ActualidadGridSection
                 onlyLatest={true}
                 temasDisponibles={["Salud", "Medioambiente", "Digitalización", "Industria", "Formación", "Seguridad alimentaria"]}
+                isInstituto={true}
               />
             </div>
           </section>
@@ -62,14 +63,15 @@ export default function Home() {
           <header className="pb-4 flex items-center justify-between gap-4">
             <h1 className="text-3xl font-extrabold text-[#010d3d]">Informes</h1>
             <Link
-              href="/informes"
+              href="https://store.normapro.es/informes?ref=instituto"
+              target="_blank" rel="noopener noreferrer"
               className="text-l font-bold text-[#010d3d] underline underline-offset-4"
             >
               Ver todos los informes
             </Link>
           </header>
 
-          <InformesGridSection showOnlyLastThree />
+          <InformesGridSection showOnlyLastThree isInstituto/>
         </div>
       </FadeInOnScroll>
 
