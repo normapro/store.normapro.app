@@ -22,7 +22,8 @@ const ConsultoriaDropdownInstituto = () => {
                 {consultorias.map((consultoria) => (
                     <a
                         key={consultoria.id_consultoria}
-                        href={`/consultorias/${consultoria.slug}`}
+                        href={`https://store.normapro.es/consultorias/${consultoria.slug}?ref=instituto`}
+                        target="_blank" rel="noopener noreferrer"
                         className="flex items-start gap-3 group"
                     >
                         <FontAwesomeIcon icon={faArrowRight} className="text-[#010D3D] mt-1 text-[14px]" />

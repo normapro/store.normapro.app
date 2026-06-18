@@ -9,32 +9,12 @@ import ActualidadGridSection from "@/components/ActualidadGridSection";
 import Link from "next/link";
 import MainTecnologiaInstituto from "@/components/MainTecnologiaInstituto";
 import MainHeroInstituto from "@/components/MainHeroInstituto";
+import MainHistoriasSection from "@/components/MainHistoriasSection";
 
 export default function Home() {
   return (
     <section>
-
-<MainHeroInstituto
-  items={[
-    {
-      tipo: "Actualidad",
-      imagen: "/actualidad/compliance-penal.jpg",
-      fecha: "21 marzo 2023",
-      titulo: "Compliance penal y canal interno de denuncias en empresas de cuidados de personas",
-      verTodosText: "Ver toda la actualidad",
-      verTodosHref: "/actualidad",
-    },
-    {
-      tipo: "Informe",
-      imagen: "/informes/agua-2023.jpg",
-      titulo: "Resumen Informe anual del Portal AGUA 2023",
-      verTodosText: "Ver todos los informes",
-      verTodosHref: "/informes",
-      isPdf: true,
-    },
-  ]}
-/>
-
+      <MainHeroInstituto />
 
       <ClientCarousel scope="all" claim={"Estas empresas trabajan con nosotros"} theme="dark" />
 
@@ -43,7 +23,7 @@ export default function Home() {
       </FadeInOnScroll>
 
       <MainTecnologiaInstituto />
-      
+
       <FadeInOnScroll>
         <MainFormacionSection isInstituto={true} />
       </FadeInOnScroll>
@@ -60,7 +40,8 @@ export default function Home() {
                 Actualidad
               </h1>
               <Link
-                href="/actualidad"
+                href="https://store.normapro.es/actualidad?ref=instituto"
+                target="_blank" rel="noopener noreferrer"
                 className="text-l font-bold text-[#010d3d] underline underline-offset-4"
               >
                 Ver todas las noticias
@@ -70,6 +51,7 @@ export default function Home() {
               <ActualidadGridSection
                 onlyLatest={true}
                 temasDisponibles={["Salud", "Medioambiente", "Digitalización", "Industria", "Formación", "Seguridad alimentaria"]}
+                isInstituto={true}
               />
             </div>
           </section>
@@ -77,19 +59,24 @@ export default function Home() {
       </FadeInOnScroll>
 
       <FadeInOnScroll >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <header className="pb-4 flex items-center justify-between gap-4">
             <h1 className="text-3xl font-extrabold text-[#010d3d]">Informes</h1>
             <Link
-              href="/informes"
+              href="https://store.normapro.es/informes?ref=instituto"
+              target="_blank" rel="noopener noreferrer"
               className="text-l font-bold text-[#010d3d] underline underline-offset-4"
             >
               Ver todos los informes
             </Link>
           </header>
 
-          <InformesGridSection showOnlyLastThree />
+          <InformesGridSection showOnlyLastThree isInstituto/>
         </div>
+      </FadeInOnScroll>
+
+      <FadeInOnScroll>
+        <MainHistoriasSection />
       </FadeInOnScroll>
     </section>
   );

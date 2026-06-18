@@ -28,6 +28,7 @@ const API_ENDPOINTS = {
   ACTUALIDAD: `${API_BASE_URL}/v1/store/actualidad`,
   GLOBALSEARCH: `${API_BASE_URL}/v1/store/globalsearch`,
   LEADS: `${API_BASE_URL}/v1/store/leads`,
+  PRENSA: `${API_BASE_URL}/v1/store/prensa`
 };
 
 export default API_ENDPOINTS;

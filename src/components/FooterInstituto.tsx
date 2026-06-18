@@ -129,17 +129,41 @@ const Footer = () => {
                             <div className="flex flex-col gap-8">
                                 <div className="flex flex-col gap-2">
                                     <span className="font-normal text-white/60">Consultoría</span>
-                                    <Link href="/cumplimiento-normativo" className="font-bold">Cumplimiento normativo técnico</Link>
-                                    <Link href="/compliance-penal" className="font-bold">Compliance penal</Link>
-                                    <Link href="/automatizacion" className="font-bold">Automatización de procesos</Link>
+                                    <Link
+                                        href="https://store.normapro.es/consultorias/cumplimiento-normativo?ref=instituto"
+                                        target="_blank" rel="noopener noreferrer"
+                                        className="font-bold"
+                                    >
+                                        Cumplimiento normativo técnico
+                                    </Link>
+                                    <Link
+                                        href="https://store.normapro.es/consultorias/cumpliance-penal?ref=instituto"
+                                        target="_blank" rel="noopener noreferrer"
+                                        className="font-bold"
+                                    >
+                                        Compliance penal
+                                    </Link>
+                                    <Link
+                                        href="https://store.normapro.es/consultorias/automatizacion-procesos?ref=instituto"
+                                        target="_blank" rel="noopener noreferrer"
+                                        className="font-bold"
+                                    >
+                                        Automatización de procesos
+                                    </Link>
                                     <Link href="/ingenieria" className="font-bold">Ingeniería y Medioambiente</Link>
                                 </div>
                                 <div className="flex flex-col gap-2">
                                     <span className="font-normal text-white/60">Sobre Instituto de Innovación Ciencia y Empresa</span>
-                                    <Link href="/nosotros" className="font-bold">Sobre nosotros</Link>
+                                    <Link href="/que-hacemos" className="font-bold">Sobre nosotros</Link>
                                     <Link href="/mision-vision-valores" className="font-bold">Misión, Visión y valores</Link>
                                     <Link href="/equipo" className="font-bold">El equipo</Link>
-                                    <Link href="/politicas" className="font-bold">Política</Link>
+                                    <Link
+                                        href="https://store.normapro.es/politicas?ref=instituto"
+                                        target="_blank" rel="noopener noreferrer"
+                                        className="font-bold"
+                                    >
+                                        Política
+                                    </Link>
                                 </div>
                             </div>
 
@@ -154,7 +178,7 @@ const Footer = () => {
                                 </div>
                                 <div className="flex flex-col gap-2">
                                     <span className="font-normal text-white/60">Sala de prensa</span>
-                                    <Link href="/apariciones" className="font-bold">Apariciones en prensa</Link>
+                                    <Link href="/apariciones-prensa" className="font-bold">Apariciones en prensa</Link>
                                     <Link href="/material-prensa" className="font-bold">Material para prensa</Link>
                                 </div>
                             </div>
@@ -170,8 +194,20 @@ const Footer = () => {
                                 <div className="flex flex-col gap-2">
                                     <span className="font-normal text-white/60">Contacto</span>
                                     <Link href="/contacto" className="font-bold">Contacta con nosotros</Link>
-                                    <Link href="/partners" className="font-bold">Hazte Partner NormaPro</Link>
-                                    <Link href="/trabaja" className="font-bold">Ofertas de trabajo</Link>
+                                    <Link
+                                        href="https://store.normapro.es/partners?ref=instituto"
+                                        target="_blank" rel="noopener noferrer"
+                                        className="font-bold"
+                                    >
+                                        Hazte Partner NormaPro
+                                    </Link>
+                                    <Link
+                                        href="https://store.normapro.es/trabaja?ref=instituto"
+                                        target="_blank" rel="noopener noreferrer"
+                                        className="font-bold"
+                                    >
+                                        Ofertas de trabajo
+                                    </Link>
                                 </div>
                             </div>
                     </div>
@@ -234,9 +270,24 @@ const Footer = () => {
                     © Instituto de Innovación y Empresa
                 </p>
                 <p className="grid grid-cols-3 gap-10">
-                    <Link href="/aviso-legal/" className="hover:underline">Aviso Legal</Link>
-                    <Link href="/politica-de-privacidad/" className="hover:underline">Política de privacidad</Link>
-                    <Link href="/politica-de-cookies-ue/" className="hover:underline">Política de cookies</Link>
+                    <Link
+                        href="https://store.normapro.es/aviso-legal?ref=instituto"
+                        className="hover:underline"
+                    >
+                        Aviso Legal
+                    </Link>
+                    <Link
+                        href="https://store.normapro.es/politica-de.privacidad?ref=instituto"
+                        className="hover:underline"
+                    >
+                        Política de privacidad
+                    </Link>
+                    <Link
+                        href="https://store.normapro.es/politica-de-cookies-ue?ref=instituto"
+                        className="hover:underline"
+                    >
+                        Política de cookies
+                    </Link>
                 </p>
             </div>
         </div>

@@ -12,6 +12,7 @@ interface ActualidadGridSectionProps {
 	temas?: string[];
 	hideDescriptionAndReadMore?: boolean;
 	temasDisponibles?: string[];
+	isInstituto?: boolean;
 }
 
 const getResumenFromContent = (content: unknown): string => {
@@ -81,6 +82,7 @@ export default function ActualidadGridSection({
 	temas,
 	hideDescriptionAndReadMore = false,
 	temasDisponibles,
+	isInstituto = false
 }: ActualidadGridSectionProps) {
 	const [noticias, setNoticias] = useState<Actualidad[]>([]);
 	const [isLoading, setIsLoading] = useState(true);
@@ -176,22 +178,69 @@ export default function ActualidadGridSection({
 				<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
 					{noticiasToShow.map((noticia) => {
 						const resumen = getResumenFromContent(noticia.content);
-						const noticiaPath = `/actualidad/${noticia.slug || noticia.id_noticia}`;
+						const noticiaPath = isInstituto
+							? `https://store.normapro.es/actualidad/${noticia.slug || noticia.id_noticia}?ref=instituto`
+							: `/actualidad/${noticia.slug || noticia.id_noticia}`;
 						return (
 							<article key={noticia.id_noticia} className="flex flex-col mb-10">
-								<Link href={noticiaPath} className="block">
-									<img src={buildImageSrc(noticia.imagen)} alt={noticia.title} className="w-full h-auto object-cover" loading="lazy" />
-								</Link>
+								{isInstituto ? (
+									<a
+										href={noticiaPath}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="block"
+									>
+										<img
+											src={buildImageSrc(noticia.imagen)}
+											alt={noticia.title}
+											className="w-full h-auto object-cover"
+											loading="lazy"
+										/>
+									</a>
+								) : (
+									<Link href={noticiaPath} className="block">
+										<img
+											src={buildImageSrc(noticia.imagen)}
+											alt={noticia.title}
+											className="w-full h-auto object-cover"
+											loading="lazy"
+										/>
+									</Link>
+								)}
 								<p className="mt-4 text-xs text-[#010D3D]">{noticia.fecha}</p>
 								<h3 className="mt-3 text-xl font-extrabold text-[#010D3D] leading-tight w-[85%]">
-									<Link href={noticiaPath}>{noticia.title}</Link>
+									{isInstituto ? (
+										<a
+											href={noticiaPath}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											{noticia.title}
+										</a>
+									) : (
+										<Link href={noticiaPath}>{noticia.title}</Link>
+									)}
 								</h3>
 								{!hideDescriptionAndReadMore && (
 									<>
 										<p className="mt-3 text-sm text-[#010D3D] line-clamp-4">{resumen}</p>
-										<Link href={noticiaPath} className="mt-4 inline-block text-md font-extrabold text-[#010D3D] underline underline-offset-2">
-											Seguir leyendo
-										</Link>
+										{isInstituto ? (
+											<a
+												href={noticiaPath}
+												target="_blank"
+												rel="noopener noreferrer"
+												className="mt-4 inline-block text-md font-extrabold text-[#010D3D] underline underline-offset-2"
+											>
+												Seguir leyendo
+											</a>
+										) : (
+											<Link
+												href={noticiaPath}
+												className="mt-4 inline-block text-md font-extrabold text-[#010D3D] underline underline-offset-2"
+											>
+												Seguir leyendo
+											</Link>
+										)}
 									</>
 								)}
 							</article>

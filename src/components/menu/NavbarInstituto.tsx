@@ -54,7 +54,7 @@ const NavbarInstituto = ({ isChatHidden, onShowChat }: NavbarInstitutoProps) => 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-24 items-center">
                         <div className="flex items-center">
-                            <Link href="/instituto">
+                            <Link href="/">
                                 <Image src="/iconoInstituto.svg" alt="Instituto de Innovación Ciencia y Empresa" width={120} height={30} className="object-contain" />
                             </Link>
                         </div>
@@ -67,9 +67,17 @@ const NavbarInstituto = ({ isChatHidden, onShowChat }: NavbarInstitutoProps) => 
                                     </div>
                                 )}
                             </div>
+                            
                             <Link href="/instituto/tecnologia" className="text-white text-[16px] hover:text-[#00b2e3]">Tecnología</Link>
                             <Link href="/instituto/formacion" className="text-white text-[16px] hover:text-[#00b2e3]">Formación</Link>
-                            <Link href="/instituto/historias" className="text-white text-[16px] hover:text-[#00b2e3]">Historias con clientes</Link>
+                            <Link
+                                href="https://store.normapro.es/historias?ref=instituto"
+                                target="_blank" rel="noopener noreferrer"
+                                className="text-white text-[16px] hover:text-[#00b2e3]"
+                            >
+                                Historias con clientes
+                            </Link>
+
                             <div className="relative" onMouseEnter={() => { setAllDropdownsToFalse(); setIsSobreNosotrosOpen(true); }}>
                                 <button className="text-white text-[16px] hover:text-[#00b2e3]">Sobre nosotros <FontAwesomeIcon icon={faChevronDown} className="text-[14px]" /></button>
                                 {isSobreNosotrosOpen && (
@@ -78,14 +86,19 @@ const NavbarInstituto = ({ isChatHidden, onShowChat }: NavbarInstitutoProps) => 
                                     </div>
                                 )}
                             </div>
-                            <Link href="/instituto/partners" className="text-white text-[16px] hover:text-[#00b2e3]">Hazte Partner</Link>
+
+                            <Link
+                                href="https://store.normapro.es/partners?ref=instituto"
+                                target="_blank" rel="noopener noreferrer"
+                                className="text-white text-[16px] hover:text-[#00b2e3]"
+                            >
+                                Hazte Partner
+                            </Link>
                         </div>
 
-                        <div className="hidden md:flex items-center space-x-4">
-                            <button onClick={() => setOpenModalContacto(true)} className="bg-white text-[#010D3D] font-bold rounded-xl px-6 py-2 hover:bg-white/90 transition-colors">
-                                Contacta
-                            </button>
-                        </div>
+                        <Link href="/contacto" className="bg-white text-[#010D3D] font-bold rounded-xl px-6 py-2 hover:bg-white/90 transition-colors">
+                            Contacta
+                        </Link>
 
                         <div className="md:hidden flex items-center gap-2">
 
