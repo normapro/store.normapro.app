@@ -9,7 +9,6 @@ import MainEventosSection from "@/components/MainEventosSection";
 import ClientCarousel from "@/components/shared/ClientCarousel";
 import FadeInOnScroll from "@/utils/FadeInOnScroll";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import ActualidadGridSection from "@/components/ActualidadGridSection";
 import Link from "next/link";
 import MainPacksSection from "@/components/MainPacksSection";
@@ -22,11 +21,7 @@ export default function Home() {
 
       {/* Parallax visual con fondo fijo */}
       <section
-        className="relative h-[100vh] bg-fixed bg-center bg-cover "
-        style={{
-          backgroundImage:
-            'url("/main/parallax-bg.png")',
-        }}
+        className="relative h-[100vh] bg-fixed bg-center bg-cover bg-gradient-to-b from-[#63d7cc] to-[#02b2e2]"
       >
         <div className="h-100 bg-[#11111100]">
 
@@ -41,19 +36,9 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            <Image
-              src={"/main/parallax_person_computer.svg"}
-              alt={"Descubre el poder de NormaPro"}
-              width={1000}
-              height={1000}
-              className="mx-auto object-contain mb-[-100px] h-[300px]"
-            />
-            <h2 className="text-4xl font-bold drop-shadow-md">
-              Descubre el poder de NormaPro
+            <h2 className="max-w-3xl text-4xl text-[#010d3d] font-bold">
+              Descubre en este <strong>video</strong> como <strong>NormaPro</strong> puede ayudar a tu empresa
             </h2>
-            <p className="mt-4 text-lg drop-shadow-sm">
-              Y cómo puede ayudar a tu empresa
-            </p>
           </motion.div>
         </div>
       </section>
@@ -64,10 +49,6 @@ export default function Home() {
 
       <FadeInOnScroll>
         <MainAplicacionesSection />
-      </FadeInOnScroll>
-
-      <FadeInOnScroll>
-        <MainConsultoriaSection />
       </FadeInOnScroll>
 
       <FadeInOnScroll>

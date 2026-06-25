@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import HeroUserCount from "./HeroUserCount";
 import { useState } from "react";
 import Formulario from "./Formulario";

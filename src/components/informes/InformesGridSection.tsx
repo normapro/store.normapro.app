@@ -93,38 +93,30 @@ export default function InformesGridSection({ showOnlyLastThree = false, isInsti
                   )}
                 </div>
 
-                <p className="mt-5 text-[16px] font-bold uppercase text-[#77809d] leading-tight">
+                <p className="mt-5 text-base font-bold uppercase text-[#77809d] leading-tight">
                   {categoria}
                 </p>
-
-                <h2 className="mt-3 text-[21px] font-bold text-[#010d3d] leading-tight min-h-[7.25rem]">
-                  {titulo}
-                </h2>
 
                 {informePath ? (
                   isInstituto ? (
                     <Link
                       href={`https://store.normapro.es/informes/${informePath}?ref=instittuo`}
-                      className="mt-8 w-fit rounded-xl bg-[#010d3d] px-4 py-2 text-white text-[16px] font-bold"
+                      className="mt-3 text-base font-bold text-[#010d3d] leading-tight min-h-[7.25rem] hover:underline underline-offset-4"
                     >
-                      Mas informacion
+                      {titulo}
                     </Link>
                   ) : (
                     <Link
                       href={`/informes/${informePath}`}
-                      className="mt-8 w-fit rounded-xl bg-[#010d3d] px-4 py-2 text-white text-[16px] font-bold"
+                      className="mt-3 text-base font-bold text-[#010d3d] leading-tight min-h-[7.25rem] hover:underline underline-offset-4"
                     >
-                      Mas informacion
+                      {titulo}
                     </Link>
                   )
                 ) : (
-                  <button
-                    type="button"
-                    disabled
-                    className="mt-8 w-fit rounded-xl bg-[#8c94ac] px-4 py-2 text-white text-[16px] font-bold cursor-not-allowed"
-                  >
-                    Mas informacion
-                  </button>
+                  <h2 className="mt-3 text-base font-bold text-[#010d3d] leading-tight min-h-[7.25rem]">
+                    {titulo}
+                  </h2>
                 )}
               </article>
             );

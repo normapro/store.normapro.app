@@ -52,7 +52,7 @@ const MainPacksSection = () => {
             </div>
 
             {/* Tabs de categorías */}
-            <div className="flex flex-wrap gap-2 mb-8 border-b border-gray-200 pb-4">
+            <div className="flex flex-wrap gap-2 mb-8 border-t border-gray-200 pt-6">
                 {categorias.map((cat) => (
                     <button
                         key={cat}

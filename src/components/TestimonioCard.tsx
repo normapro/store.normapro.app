@@ -29,7 +29,7 @@ const TestimonioCard = ({
       </p>
 
       {/* Datos de la persona */}
-      <div className="text-sm text-[#010D3D] font-mulish mb-[40px] text-[15px]">
+      <div className="text-sm text-[#010D3D] font-mulish mb-[40px] px-[30px] text-[15px]">
         <p className="font-semibold">{persona}</p>
         <p>{cargo}</p>
         <p className="uppercase font-bold mb-[50px]">{cliente.description}</p>
