@@ -238,7 +238,7 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 											<div className="py-2 px-3 bg-white shadow rounded-lg flex items-center mb-2">
 												<FontAwesomeIcon icon={icon} className="w-6 h-6 text-[#010D3D] mr-4" />
 												<div>
-													<h3 className="font-bold">{sol.description}</h3>
+													<h3 className="font-bold text-[#010D3D]">{sol.description}</h3>
 													<small>{sol.subtitle}</small>
 												</div>
 											</div>
@@ -254,7 +254,7 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 											<div className="py-2 px-3 bg-[#e4f6fc] shadow rounded-lg mb-2 cursor-pointer h-[200px] px-7 ">
 												<div className="grid grid-cols-12">
 													<div className="col-span-8 mt-7">
-														<h3 className="font-bold text-[16px] overflow-hidden text-ellipsis">{pack.description}</h3>
+														<h3 className="font-bold text-[16px] text-[#010D3D] overflow-hidden text-ellipsis">{pack.description}</h3>
 														<p className="text-[#7F859D] text-[15px] mt-7 overflow-hidden text-ellipsis">{pack.shortDescription}</p>
 													</div>
 													<div className="col-span-4 flex justify-end">

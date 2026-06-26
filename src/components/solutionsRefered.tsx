@@ -87,11 +87,11 @@ const SolutionsRefered = ({ sectorSlug, ambitoSlug }: Props) => {
 									const iconParts = sol.uriIcon.split(" ") as [IconPrefix, IconName];
 									const icon: IconProp | [IconPrefix, IconName] = iconParts.length === 2 ? (iconParts as [IconPrefix, IconName]) : ["fas", "fa-question"];
 									return (
-										<Link key={sol.id_solucion} href={`/solucion/${sol.slug}`} rel="noopener noreferrer">
+										<Link key={sol.id_solucion} href={`/soluciones/${sol.slug_ambito}/${sol.slug}`} rel="noopener noreferrer">
 											<div className="py-2 px-3 bg-white shadow rounded-lg flex items-center mb-2">
 												<FontAwesomeIcon icon={icon} className="w-6 h-6 text-[#010D3D] mr-4" />
 												<div>
-													<h3 className="font-bold">{sol.description}</h3>
+													<h3 className="font-bold text-[#010D3D]">{sol.description}</h3>
 												</div>
 											</div>
 										</Link>
@@ -102,11 +102,11 @@ const SolutionsRefered = ({ sectorSlug, ambitoSlug }: Props) => {
 								<h3 className="mb-4 text-[#7F859D] font-semibold">Packs</h3>
 								{packs.map((pack) => {
 									return (
-										<Link key={pack.id_pack} href={`/pack/${pack.slug}`} rel="noopener noreferrer">
+										<Link key={pack.id_pack} href={`/soluciones/${pack.slug_ambito}/packs/${pack.slug}`} rel="noopener noreferrer">
 											<div className="py-2 px-3 bg-[#e4f6fc] shadow rounded-lg mb-2 cursor-pointer h-[200px] px-7 ">
 												<div className="grid grid-cols-12">
 													<div className="col-span-8 mt-7">
-														<h3 className="font-bold text-[16px] overflow-hidden text-ellipsis">{pack.description}</h3>
+														<h3 className="text-[#010D3D] font-bold text-[16px] overflow-hidden text-ellipsis">{pack.description}</h3>
 														<p className="text-[#7F859D] text-[15px] mt-7 overflow-hidden text-ellipsis">{pack.shortDescription}</p>
 													</div>
 													<div className="col-span-4 flex justify-end">
