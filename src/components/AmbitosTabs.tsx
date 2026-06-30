@@ -227,7 +227,7 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 							exit={{ opacity: 0, y: -10 }}
 							>
 						<div className="grid grid-cols-2 md:grid-cols-21 gap-10">
-							<div className="col-span-11 mt-8">
+							<div className="col-span-10 mt-8">
 								<h3 className="mb-4 text-[#7F859D] font-semibold">Soluciones</h3>
 
 								{soluciones.map((sol) => {

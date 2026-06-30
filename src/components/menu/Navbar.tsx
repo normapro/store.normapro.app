@@ -131,7 +131,7 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
       </div>
 
       {/* Navbar */}
-      <nav className="relative bg-white sticky top-0 left-0 right-0 z-50">
+      <nav className={`bg-white left-0 right-0 z-50 ${isMobileMenuOpen ? 'fixed top-0' : 'sticky top-0'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
             <div className="flex items-center">
@@ -192,9 +192,14 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
 
         {/* Menú móvil */}
         <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} className="md:hidden border-t border-gray-100 bg-white overflow-y-auto max-h-[calc(100vh-4rem)]">
-              <div className="px-4 py-4 flex flex-col gap-1 text-[#010d3d]">
+  {isMobileMenuOpen && (
+    <motion.div 
+      initial={{ opacity: 0, height: 0 }} 
+      animate={{ opacity: 1, height: "calc(100vh - 4rem)" }} 
+      exit={{ opacity: 0, height: 0 }} 
+      className="md:hidden fixed top-16 left-0 right-0 border-t border-gray-100 bg-white overflow-y-auto z-50"
+    >
+      <div className="px-4 py-4 flex flex-col gap-1 text-[#010d3d]">
 
                 {/* Soluciones */}
                 <button onClick={() => { setIsMobileSolutionsOpen((prev) => !prev); setIsMobileAppsOpen(false); setIsMobileConsultoriaOpen(false); }} className="w-full py-2 flex items-center justify-between font-semibold">
