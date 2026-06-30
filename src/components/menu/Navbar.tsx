@@ -137,18 +137,33 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
             <div className="flex items-center">
               <Link href="/"><img src="/logos/NormaPro_Horizontal_Color@2x.png" alt="NormaPro" className="h-10 w-auto" /></Link>
             </div>
-            <div className="hidden md:flex space-x-6 items-center">
-              <div className="relative" onMouseEnter={() => { setAllDropdownsToFalse(); setIsSolutionsOpen(true); }}>
-                <button className="text-[#010d3d] text-[16px] hover:text-blue-600">Soluciones <FontAwesomeIcon icon={faChevronDown} className="text-[14px]" /></button>
+            <div className="hidden md:flex space-x-6 items-center font-bold">
+              <div
+                className={`relative h-16 flex items-center px-4 transition-colors rounded-t-3xl ${isSolutionsOpen ? "bg-[#f8f8fa]" : "hover:bg-[#f8f8fa]"}`}
+                onMouseEnter={() => { setAllDropdownsToFalse(); setIsSolutionsOpen(true); }}
+              >
+                <button className="text-[#010d3d] text-[14px] hover:text-blue-600">
+                  Soluciones <FontAwesomeIcon icon={faChevronDown} className="text-[10px]" />
+                </button>
               </div>
-              <div className="relative" onMouseEnter={() => { setAllDropdownsToFalse(); setIsAplicacionesOpen(true); }}>
-                <button className="text-[#010d3d] text-[16px] hover:text-blue-600">Aplicaciones <FontAwesomeIcon icon={faChevronDown} className="text-[14px]" /></button>
+              <div
+                className={`relative h-16 flex items-center px-4 transition-colors rounded-t-3xl ${isAplicacionesOpen ? "bg-[#f8f8fa]" : "hover:bg-[#f8f8fa]"}`}
+                onMouseEnter={() => { setAllDropdownsToFalse(); setIsAplicacionesOpen(true); }}
+              >
+                <button className="text-[#010d3d] text-[14px] hover:text-blue-600">
+                  Aplicaciones <FontAwesomeIcon icon={faChevronDown} className="text-[10px]" />
+                </button>
               </div>
-              <div className="relative" onMouseEnter={() => { setAllDropdownsToFalse(); setIsConsultoriaOpen(true); }}>
-                <button className="text-[#010d3d] text-[16px] hover:text-blue-600">Consultoría <FontAwesomeIcon icon={faChevronDown} className="text-[14px]" /></button>
+              <div
+                className={`relative h-16 flex items-center px-4 transition-colors rounded-t-3xl ${isConsultoriaOpen ? "bg-[#f8f8fa]" : "hover:bg-[#f8f8fa]"}`}
+                onMouseEnter={() => { setAllDropdownsToFalse(); setIsConsultoriaOpen(true); }}
+              >
+                <button className="text-[#010d3d] text-[14px] hover:text-blue-600">
+                  Consultoría <FontAwesomeIcon icon={faChevronDown} className="text-[10px]" />
+                </button>
               </div>
-              <Link href="/formacion" className="text-[#010d3d] hover:text-blue-600">Formación</Link>
-              <Link href="/historias" className="text-[#010d3d] hover:text-blue-600">Historias con Clientes</Link>
+              <Link href="/formacion" className="text-[14px] text-[#010d3d] hover:text-blue-600">Formación</Link>
+              <Link href="/historias" className="text-[14px] text-[#010d3d] hover:text-blue-600">Historias con Clientes</Link>
             </div>
 
             <div className="hidden md:flex items-center space-x-4">
