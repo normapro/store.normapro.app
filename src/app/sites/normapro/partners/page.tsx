@@ -4,24 +4,38 @@ import HistoriaTextSection2 from "@/components/historiaTextSection2";
 import ContactoFormSection from "@/components/ContactoFormSection";
 import PartnersProgramsSection from "@/components/PartnersProgramsSection";
 import PartnersTestimonialsSection from "@/components/PartnersTestimonialsSection";
+import HeaderSection from "@/components/HeaderSection";
 
 export default function NosotrosPage() {
     return <>
-        <HistoriaTextSection2
-            title="Alianzas estratégicas para el éxito mutuo"
-            claim={[
-                "Juntos impulsamos la Innovación y la Eficiencia empresarial"
-            ]}
-            image="partners.png"
-        />
+        <HeaderSection text="Programa de Partners" variant="light" />
 
-        <HistoriaTextSection
-            title="Nuestra Red de Partners"
-            claim={[
-                "En NormaPro, creemos en la fuerza de la colaboración. Nuestra red de partners incluye líderes en tecnología, consultoría y servicios empresariales que comparten nuestra misión de transformar y optimizar las operaciones empresariales."
-            ]}
-        />
+        <section className="w-full py-6 px-6 flex flex-col items-center text-center max-w-4xl mx-auto">
+            <div className="flex flex-col items-center mb-12 w-full">
+                <h2 className="text-[#010D3D] text-2xl md:text-[35px] font-black leading-tight mb-8">
+                    Alianzas estratégicas para el éxito mutuo
+                </h2>
+                <p className="text-[#7F859D] text-xl md:text-2xl font-black leading-relaxed">
+                    Juntos impulsamos la Innovación y la Eficiencia empresarial
+                </p>
+            </div>
+            <div className="w-full">
+                <img
+                    src="/historiasclientes/partners.png"
+                    alt="Equipo Normapro"
+                    className="w-full h-auto object-cover max-h-[600px]"
+                />
+            </div>
+        </section>
 
+        <section className="w-full max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
+            <h2 className="text-[#010D3D] text-[40px] font-black mb-8">
+                Nuestra Red de Partners
+            </h2>
+            <p className="text-[#010D3D] text-base mb-8">
+                En NormaPro, creemos en la fuerza de la colaboración. Nuestra red de partners incluye líderes en tecnología, consultoría y servicios empresariales que comparten nuestra misión de transformar y optimizar las operaciones empresariales.
+            </p>
+        </section>
 
 
         <ListHistoriaSection

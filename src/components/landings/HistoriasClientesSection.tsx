@@ -79,12 +79,12 @@ const HistoriasClientesSection = ({ soloUnaHistoria = false }: HistoriasClientes
       {!soloUnaHistoria && (
         <div className={`${theme.general} gap-2`}>
           <h2 className="text-[34px] md:text-[48px] leading-tight font-black">
-            Exitos que inspiran
+            Éxitos que inspiran
           </h2>
           <p className={`${theme.texto} leading-tight font-black ${isInstituto ? "max-w-[420px]" : "mt-4"}`}>
-            Descubre como {isInstituto ? "Instituto de Innovación, Ciencia y Empresa" : "NormaPro"} contribuye
+            Descubre cómo {isInstituto ? "Instituto de Innovación, Ciencia y Empresa" : "NormaPro"} contribuye
             {!isInstituto && <br />}
-            {" "}al exito de organizaciones.
+            {" "}al éxito de organizaciones.
           </p>
         </div>
       )}
@@ -117,7 +117,7 @@ const HistoriasClientesSection = ({ soloUnaHistoria = false }: HistoriasClientes
               href={historiaPrincipalPath}
               className="text-left text-[#071a4c] font-extrabold text-[15px] underline underline-offset-4 mt-6"
             >
-              Saber mas
+              Saber más
             </Link>
           </div>
         </article>

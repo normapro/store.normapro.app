@@ -20,7 +20,7 @@ const AccordionSection = ({
   title,
   items,
   interpretHtmlStrings = false,
-  defaultOpenIndex = 0,
+  defaultOpenIndex = -1,
 }: Props) => {
   const [openIndex, setOpenIndex] = useState<number | null>(defaultOpenIndex);
 

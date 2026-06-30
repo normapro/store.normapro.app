@@ -1,10 +1,10 @@
 import Image from "next/image";
-import HeaderInstitutoSection from "@/components/HeaderInstitutoSection";
+import HeaderSection from "@/components/HeaderSection";
 
 export default function EquipoPage() {
     return (
         <>
-            <HeaderInstitutoSection text="El equipo" variant="dark" />
+            <HeaderSection text="El equipo" variant="dark" />
 
             <section className="w-full" style={{ background: "linear-gradient(to bottom, #010D3D 60%, white 50%)" }}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col md:flex-row gap-50 items-center">

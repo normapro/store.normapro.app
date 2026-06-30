@@ -1,5 +1,5 @@
 import ContactoFormSection from "@/components/ContactoFormSection";
-import HeaderInstitutoSection from "@/components/HeaderInstitutoSection";
+import HeaderSection from "@/components/HeaderSection";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone } from "@fortawesome/pro-regular-svg-icons";
 
@@ -27,7 +27,7 @@ const oficinas = [
 export default function ContactoPage() {
     return (
         <>
-            <HeaderInstitutoSection text="Contacto" variant="dark" />
+            <HeaderSection text="Contacto" variant="dark" />
 
             <section className="w-full" style={{ background: "linear-gradient(to bottom, #010D3D 45%, white 45%)" }}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

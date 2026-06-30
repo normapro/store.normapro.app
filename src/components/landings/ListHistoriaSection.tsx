@@ -68,7 +68,7 @@ const ListHistoriaSection: FC<Props> = ({
             {claim && claim.length > 0 && (
                 <div className={`space-y-4 w-full ${compact ? 'mb-8' : 'mb-10'}`}>
                     {claim.map((text, index) => (
-                        <p key={index} className="text-lg md:text-xl text-[#011640] font-medium leading-relaxed">
+                        <p key={index} className="text-sm md:text-base text-[#011640] font-medium leading-relaxed">
                             {text}
                         </p>
                     ))}

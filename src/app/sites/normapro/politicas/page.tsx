@@ -1,7 +1,9 @@
 import AccordionSection from "@/components/AccordionSection";
+import HeaderSection from "@/components/HeaderSection";
 
 export default function Politicas() {
     return <>
+        <HeaderSection text="Políticas" variant="light"/>
         <AccordionSection
             items={[
                 {
