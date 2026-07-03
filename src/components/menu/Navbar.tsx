@@ -142,7 +142,7 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
                 className={`relative h-16 flex items-center px-4 transition-colors rounded-t-3xl ${isSolutionsOpen ? "bg-[#f8f8fa]" : "hover:bg-[#f8f8fa]"}`}
                 onMouseEnter={() => { setAllDropdownsToFalse(); setIsSolutionsOpen(true); }}
               >
-                <button className="text-[#010d3d] text-[14px] hover:text-blue-600">
+                <button className="text-[#010d3d] text-[14px]">
                   Soluciones <FontAwesomeIcon icon={faChevronDown} className="text-[10px]" />
                 </button>
               </div>
@@ -150,7 +150,7 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
                 className={`relative h-16 flex items-center px-4 transition-colors rounded-t-3xl ${isAplicacionesOpen ? "bg-[#f8f8fa]" : "hover:bg-[#f8f8fa]"}`}
                 onMouseEnter={() => { setAllDropdownsToFalse(); setIsAplicacionesOpen(true); }}
               >
-                <button className="text-[#010d3d] text-[14px] hover:text-blue-600">
+                <button className="text-[#010d3d] text-[14px]">
                   Aplicaciones <FontAwesomeIcon icon={faChevronDown} className="text-[10px]" />
                 </button>
               </div>
@@ -158,12 +158,12 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
                 className={`relative h-16 flex items-center px-4 transition-colors rounded-t-3xl ${isConsultoriaOpen ? "bg-[#f8f8fa]" : "hover:bg-[#f8f8fa]"}`}
                 onMouseEnter={() => { setAllDropdownsToFalse(); setIsConsultoriaOpen(true); }}
               >
-                <button className="text-[#010d3d] text-[14px] hover:text-blue-600">
+                <button className="text-[#010d3d] text-[14px]">
                   Consultoría <FontAwesomeIcon icon={faChevronDown} className="text-[10px]" />
                 </button>
               </div>
-              <Link href="/formacion" className="text-[14px] text-[#010d3d] hover:text-blue-600">Formación</Link>
-              <Link href="/historias" className="text-[14px] text-[#010d3d] hover:text-blue-600">Historias con Clientes</Link>
+              <Link href="/formacion" className="text-[14px] text-[#010d3d]">Formación</Link>
+              <Link href="/historias" className="text-[14px] text-[#010d3d]">Historias con Clientes</Link>
             </div>
 
             <div className="hidden md:flex items-center space-x-4">
@@ -192,14 +192,14 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
 
         {/* Menú móvil */}
         <AnimatePresence>
-  {isMobileMenuOpen && (
-    <motion.div 
-      initial={{ opacity: 0, height: 0 }} 
-      animate={{ opacity: 1, height: "calc(100vh - 4rem)" }} 
-      exit={{ opacity: 0, height: 0 }} 
-      className="md:hidden fixed top-16 left-0 right-0 border-t border-gray-100 bg-white overflow-y-auto z-50"
-    >
-      <div className="px-4 py-4 flex flex-col gap-1 text-[#010d3d]">
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "calc(100vh - 4rem)" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden fixed top-16 left-0 right-0 border-t border-gray-100 bg-white overflow-y-auto z-50"
+            >
+              <div className="px-4 py-4 flex flex-col gap-1 text-[#010d3d]">
 
                 {/* Soluciones */}
                 <button onClick={() => { setIsMobileSolutionsOpen((prev) => !prev); setIsMobileAppsOpen(false); setIsMobileConsultoriaOpen(false); }} className="w-full py-2 flex items-center justify-between font-semibold">
