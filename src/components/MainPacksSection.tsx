@@ -58,8 +58,8 @@ const MainPacksSection = () => {
                         key={cat}
                         onClick={() => setSelectedCategoria(cat)}
                         className={`px-4 py-2 rounded-full text-sm font-semibold transition ${selectedCategoria === cat
-                                ? "bg-[#010D3D] text-white"
-                                : "text-[#010D3D] hover:bg-[#f3f3f7]"
+                            ? "bg-[#010D3D] text-white"
+                            : "text-[#010D3D] hover:bg-[#f3f3f7]"
                             }`}
                     >
                         {cat}
@@ -70,19 +70,17 @@ const MainPacksSection = () => {
             {/* Grid de packs filtrados */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {packsFiltrados.map((pack) => (
-                    <div
+                    <Link
                         key={pack.id_pack}
-                        className="bg-[#EAF8FE] p-6 rounded-xl text-[#010D3D] shadow-sm flex items-center justify-between gap-4"
+                        href={`/soluciones/${pack.slug_ambito}/packs/${pack.slug}`}
+                        className="group bg-[#EAF8FE] p-6 rounded-xl text-[#010D3D] shadow-sm flex items-center justify-between gap-4 transition"
                     >
                         {/* Texto izquierda */}
                         <div className="flex flex-col gap-3">
                             <p className="text-[16px] font-bold text-[#010D3D]">{pack.description}</p>
-                            <Link
-                                href={`/soluciones/${pack.slug_ambito}/packs/${pack.slug}`}
-                                className="underline font-bold text-[#00aae0] text-sm"
-                            >
+                            <span className="underline font-bold text-[#00aae0] text-sm group-hover:text-blue-600 transition">
                                 Saber más
-                            </Link>
+                            </span>
                         </div>
 
                         {/* Imagen derecha */}
@@ -95,7 +93,7 @@ const MainPacksSection = () => {
                                 className="object-contain"
                             />
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </section>
