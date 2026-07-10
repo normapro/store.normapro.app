@@ -34,7 +34,7 @@ const SolutionsHeroSector = ({ sectorSlug }: SolutionsHeroSectorProps) => {
 
     const fetchClientes = async () => {
       try {
-        const response = await fetch(`${API_ENDPOINTS.CLIENTES}?scope=${sectorSlug}&limit=5`);
+        const response = await fetch(`${API_ENDPOINTS.CLIENTES}?sector=${sectorSlug}&maxItems=5`);
         if (!response.ok) throw new Error("Error al obtener los clientes");
         const data = await response.json();
         setClientes(data);
