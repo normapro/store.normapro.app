@@ -19,7 +19,7 @@ const PartnersTestimonialsSection = ({ title, testimonials }: Props) => {
         <section className="w-full py-16 md:py-20">
             <div className="mx-auto w-full bg-[#F2F2F5] px-6 py-14 md:px-12 md:py-20">
                 <div className="mx-auto max-w-5xl text-center">
-                    <h2 className="text-2xl font-black text-[#010d3d] md:text-5xl">{title}</h2>
+                    <h2 className="text-2xl font-black text-[#010d3d] md:text-[40px]">{title}</h2>
                 </div>
 
                 <div className="mx-auto mt-16 grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2 md:gap-10">

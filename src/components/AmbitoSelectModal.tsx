@@ -25,10 +25,10 @@ const AmbitoSelectModal = ({ isOpen, onClose, ambitos, onSelectAmbito }: AmbitoS
             {/* 🔹 Fondo translúcido con desenfoque */}
             <div className="fixed inset-0 bg-gray-900 bg-opacity-30 backdrop-blur-sm backdrop-custom" />
 
-            <div className="fixed inset-0 flex items-center justify-center p-4">
+            <div className="fixed inset-0 flex items-center justify-center p-4 text-[#010D3D]">
             <Dialog.Panel className="bg-white p-6 rounded-lg max-w-md w-full shadow-lg">
                 <Dialog.Title className="text-lg font-bold text-center">Ver soluciones NormaPro</Dialog.Title>
-                <p className="text-gray-600 text-center mb-4">¿En qué ámbito estás interesado?</p>
+                <p className="text-center mb-4">¿En qué ámbito estás interesado?</p>
 
                 <select
                 value={selectedAmbito}
@@ -45,7 +45,7 @@ const AmbitoSelectModal = ({ isOpen, onClose, ambitos, onSelectAmbito }: AmbitoS
 
                 <button
                 onClick={handleBuscar}
-                className="mt-4 w-full bg-blue-700 text-white p-2 rounded-lg hover:bg-blue-800 transition"
+                className="mt-4 w-full bg-[#010D3D] text-white p-2 rounded-lg hover:bg-blue-800 transition"
                 >
                 Buscar
                 </button>

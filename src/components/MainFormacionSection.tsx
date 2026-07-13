@@ -30,7 +30,7 @@ const MainFormacionSection = ({ isInstituto = false}: { isInstituto?: boolean })
     <div className={theme.general}>
       <section className="max-w-7xl mx-auto px-6 py-12">
         <div className={theme.card + " rounded-xl w-full h-[460px] mt-10 mb-10 relative overflow-hidden"}>
-          <h2 className="text-center text-[32px] font-black text-[#010D3D] mb-4 mt-4">Formación</h2>
+          <h2 className="text-center text-[32px] font-black text-[#010D3D] mb-4 mt-6">Formación</h2>
           <p className="text-center text-[#010D3D] max-w-3xl mx-auto mb-6">
             Navegamos contigo hacia una evolución tecnológica accesible, segura y sin barreras.
           </p>

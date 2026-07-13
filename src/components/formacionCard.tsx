@@ -11,7 +11,7 @@ type Props = {
 
 const FormacionCard = ({ formacion }: Props) => {
   return (
-    <div className="relative w-[303px] h-[180px]  overflow-hidden transition-transform duration-300 hover:scale-105">
+    <div className="relative w-[303px] h-[180px]  overflow-hidden transition-transform duration-300">
       {/* Imagen de fondo */}
       <Image
         src={formacion.public_url || "/main/default-icon.png"}

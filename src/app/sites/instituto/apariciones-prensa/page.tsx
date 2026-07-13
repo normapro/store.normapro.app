@@ -1,6 +1,6 @@
 'use client';
 
-import HeaderInstitutoSection from "@/components/HeaderInstitutoSection";
+import HeaderSection from "@/components/HeaderSection";
 import API_ENDPOINTS from "@/config/api";
 import { faArrowUpRight } from "@fortawesome/pro-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -38,7 +38,7 @@ export default function AparicionesPrensaPage() {
 
     return (
         <>
-            <HeaderInstitutoSection text="Apariciones en prensa" variant="light" />
+            <HeaderSection text="Apariciones en prensa" variant="light" />
 
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div className="grid grid-cols-1 md:grid-cols-3">

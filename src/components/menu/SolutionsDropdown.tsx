@@ -158,12 +158,12 @@ const SolutionsDropdown = ({ mobile = false, onNavigate }: Props) => {
             {/* Columna 1: Ámbitos */}
             <div className="col-span-9">
               <h3 className="mb-4 text-[14px] text-[#010D3D] opacity-50 font-mulish leading-[20px]">Elige tu ámbito</h3>
-              <ul className="space-y-2 ml-[10px]">
+              <ul className="space-y-[6px] ml-[10px]">
                 {ambitos.map((ambito) => (
-                  <li key={ambito.id_ambito} className="text-[14px] text-[#010D3D] font-bold leading-[20px] mt-[-7.5px]">
+                  <li key={ambito.id_ambito}>
                     <Link
                       href={`/soluciones/${ambito.slug}`}
-                      className="hover:underline font-mulish text-[14px] text-[#010D3D] font-bold leading-[26px]"
+                      className="hover:underline font-mulish text-[14px] text-[#010D3D] font-bold leading-[18px]"
                     >
                       {ambito.description}
                     </Link>
@@ -175,15 +175,12 @@ const SolutionsDropdown = ({ mobile = false, onNavigate }: Props) => {
             {/* Columna 2: Sectores */}
             <div className="col-span-8">
               <h3 className="mb-4 text-[14px] text-[#010D3D] opacity-50 font-mulish leading-[20px]">Elige tu sector</h3>
-              <ul className="space-y-2 ml-[10px]">
+              <ul className="space-y-[6px] ml-[10px]">
                 {sectores.map((sector) => (
-                  <li key={sector.id_sector} className="text-[14px] text-[#010D3D] font-bold leading-[20px] mt-[-7.5px]">
+                  <li key={sector.id_sector}>
                     <span
-                      onClick={() => {
-                        setSelectedSector(sector.slug);
-                        setModalOpen(true);
-                      }}
-                      className="hover:underline font-mulish text-[14px] text-[#010D3D] font-bold leading-[26px] cursor-pointer"
+                      onClick={() => { setSelectedSector(sector.slug); setModalOpen(true); }}
+                      className="hover:underline font-mulish text-[14px] text-[#010D3D] font-bold leading-[18px] cursor-pointer"
                     >
                       {sector.description}
                     </span>

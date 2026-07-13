@@ -1,4 +1,4 @@
-import HeaderInstitutoSection from '@/components/HeaderInstitutoSection';
+import HeaderSection from '@/components/HeaderSection';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -19,7 +19,7 @@ export default function MisionVisionValores() {
     ]
     return (
         <>
-            <HeaderInstitutoSection text="Misión, Visión y Valores" variant="dark" />
+            <HeaderSection text="Misión, Visión y Valores" variant="dark" />
 
             <section className="w-full" style={{ background: "linear-gradient(to bottom, #010D3D 60%, white 50%)" }}>
                 {/* Texto: título izquierda + contenido derecha */}

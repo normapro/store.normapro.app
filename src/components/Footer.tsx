@@ -67,22 +67,23 @@ const Footer = () => {
 					{/* Newsletter + RRSS */}
 					<div className="flex flex-col md:flex-row justify-between items-center border-b border-white/20 pb-8 gap-6">
 						<div className="w-full md:w-2/3">
-
-							<div className="flex">
-								<label className="text-base block mb-1 w-[400px] justify-center item-center py-2">Mantente informado</label>
+							<div className="flex flex-col md:flex-row">
+								<label className="text-base block mb-1 w-full md:w-[400px] justify-center item-center py-2">
+									Mantente informado
+								</label>
 								<input
 									type="email"
 									placeholder="Escribe tu email"
 									value={newsletterEmail}
 									onChange={(e) => setNewsletterEmail(e.target.value)}
 									disabled={isSubmittingNewsletter}
-									className="px-4 rounded-l-md w-full text-black placeholder:text-gray-500 text-[15px] bg-white h-[40px]"
+									className="px-4 rounded-md md:rounded-l-md md:rounded-r-none w-full text-black placeholder:text-gray-500 text-[15px] bg-white h-[40px] mb-3 md:mb-0"
 								/>
 								<button
 									type="button"
 									onClick={handleNewsletterSubmit}
 									disabled={isSubmittingNewsletter}
-									className="bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] px-4 py-2 rounded-r-md text-white text-15px font-extrabold h-[40px] w-[600px] disabled:opacity-70"
+									className="bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] px-4 py-2 rounded-md md:rounded-l-none md:rounded-r-md text-white text-15px font-extrabold h-[40px] w-full md:w-[600px] disabled:opacity-70"
 								>
 									{isSubmittingNewsletter ? "Enviando..." : "Suscribirme a la newsletter"}
 								</button>
@@ -104,8 +105,8 @@ const Footer = () => {
 
 					{/* Navegación y logos */}
 					<div className="grid grid-cols-12 gap-6 py-10">
-						{/* Logo Pingüino */}
-						<div className="col-span-12 md:col-span-2 flex justify-start items-end">
+						{/* Logo Pingüino - oculto en móvil, visible en desktop */}
+						<div className="hidden md:flex col-span-12 md:col-span-2 justify-start items-end">
 							<Image
 								src="/iconopinguino@2x.png"
 								alt="Logo NormaPro"
@@ -116,27 +117,34 @@ const Footer = () => {
 						</div>
 
 						{/* Menú navegación */}
-						<div className="col-span-12 md:col-span-6 grid grid-cols-2 gap-50 text-base font-extrabold">
+						<div className="col-span-12 md:col-span-6 flex flex-col md:grid md:grid-cols-2 md:gap-50 gap-3 text-base font-extrabold text-center md:text-left order-2 md:order-none">
 							<div className="space-y-5">
-								<Link href="/soluciones">Soluciones</Link><br />
-								<Link href="/formacion">Formación</Link><br />
-								<Link href="/historias">Historias con clientes</Link><br />
-								<Link href="/actualidad">Actualidad</Link><br />
-								<Link href="/informes">Informes</Link><br />
+								<Link href="/soluciones" className="block">Soluciones</Link>
+								<Link href="/formacion" className="block">Formación</Link>
+								<Link href="/historias" className="block">Historias con clientes</Link>
+								<Link href="/actualidad" className="block">Actualidad</Link>
+								<Link href="/informes" className="block">Informes</Link>
 							</div>
 							<div className="space-y-5">
-								<Link href="/nosotros">Quiénes somos</Link><br />
-								<Link href="/partners">Programa de Partners</Link><br />
-								<Link href="/trabaja">Trabaja en NormaPro</Link><br />
-								<Link href="/politicas">Políticas</Link><br />
-								<a onClick={() => setOpenModal(true)}>
+								<Link href="/nosotros" className="block">Quiénes somos</Link>
+								<Link href="/partners" className="block">Programa de Partners</Link>
+								<Link href="/trabaja" className="block">Trabaja en NormaPro</Link>
+								<Link href="/politicas" className="block">Políticas</Link>
+								<a onClick={() => setOpenModal(true)} className="block cursor-pointer">
 									Contacto
-								</a><br />
+								</a>
 							</div>
 						</div>
 
-						{/* Logo Instituto */}
-						<div className="col-span-12 md:col-span-4 flex justify-end items-end">
+						{/* Fila inferior móvil: pingüino + logo Instituto en la misma línea */}
+						<div className="col-span-12 md:col-span-4 flex justify-between md:justify-end items-end order-3 md:order-none">
+							<Image
+								src="/iconopinguino@2x.png"
+								alt="Logo NormaPro"
+								width={64}
+								height={64}
+								className="rounded-xl md:hidden"
+							/>
 							<Image
 								src="/footer/iconoInstituto.svg"
 								alt="Instituto de Innovación Ciencia y Empresa"
@@ -152,9 +160,9 @@ const Footer = () => {
 			<div className="bg-white text-[#171717] text-sm">
 				<div className="max-w-7xl mx-auto px-6 py-8">
 					{/* Certificaciones + miembros */}
-					<div className="flex flex-wrap justify-between items-center gap-6 mx-17">
+					<div className="flex flex-wrap justify-between items-center gap-6 md:mx-17">
 						{/* Certificaciones */}
-						<div className="grid grid-cols-2 place-items-center gap-6 md:flex md:flex-wrap md:items-center md:gap-15">
+						<div className="place-items-center gap-6 flex md:flex-wrap md:items-center md:gap-15">
 							{[
 								"Grupo 4494@2x.png",
 								"Grupo 4506@2x.png",
@@ -167,6 +175,7 @@ const Footer = () => {
 									alt={`Certificación ${i}`}
 									width={104}
 									height={87}
+									className="w-16 h-auto md:w-[104px]"
 								/>
 							))}
 						</div>
@@ -176,34 +185,35 @@ const Footer = () => {
 
 						{/* Miembros de */}
 						<div className="flex flex-col items-start">
-							<span className="font-extralight text-[11px] text-gray-600 ">Somos miembros de</span><br />
-							<div className="flex items-center gap-10">
-
+							<span className="font-extralight text-[11px] text-gray-600">Somos miembros de</span>
+							<div className="flex items-center gap-10 mt-2">
 								<Image
 									src="/footer/Grupo 4492@2x.png"
 									alt="ASCOM"
 									width={128}
 									height={47}
+									className="w-20 h-auto md:w-[128px]"
 								/>
 								<Image
 									src="/footer/Grupo 4490@2x.png"
 									alt="AEC"
 									width={128}
 									height={47}
+									className="w-20 h-auto md:w-[128px]"
 								/>
 							</div>
 						</div>
 					</div>
 
 					{/* Texto legal */}
-					<div className="mt-6 flex flex-row text-center justify-between text-xs text-gray-500">
-						<p>
-							NormaPro® es una marca registrada por Instituto de Innovación, Ciencia y Empresa
-						</p>
-						<p className="grid grid-cols-3 gap-10">
+					<div className="mt-6 pt-6 md:pt-0 flex flex-col md:flex-row text-center md:text-left justify-between items-center md:items-start gap-4 text-xs text-gray-500">
+						<p className="flex flex-row gap-6 md:gap-10 order-1">
 							<Link href="/aviso-legal/" className="hover:underline">Aviso Legal</Link>
 							<Link href="/politica-de-privacidad/" className="hover:underline">Política de privacidad</Link>
 							<Link href="/politica-de-cookies-ue/" className="hover:underline">Política de cookies</Link>
+						</p>
+						<p className="order-2 md:order-none">
+							NormaPro® es una marca registrada por Instituto de Innovación, Ciencia y Empresa
 						</p>
 					</div>
 				</div>

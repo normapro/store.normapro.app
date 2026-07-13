@@ -15,6 +15,8 @@ import SolutionsRefered from "@/components/solutionsRefered";
 import TestimonioCard from "@/components/TestimonioCard";
 import { TestimonioConCliente } from "@/types/testimonio";
 import Formulario from "@/components/Formulario";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 const SolucionAmbitoPage = () => {
   const { slugSolucion, sector } = useParams();
@@ -85,17 +87,17 @@ const SolucionAmbitoPage = () => {
         <Breadcrumb breadcrumb={breadcrumbData} />
       </section>
 
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-8 mt-10">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-16 mt-10">
   
   {/* Columna izquierda */}
 
   <div className="lg:col-span-2">
   <div className="col-span-8">
-    <h1 className="text-[32px] font-black">{solucion?.title}</h1>
+    <h1 className="text-[32px] text-[#010D3D] font-black">{solucion?.title}</h1>
     <h2 className="text-[18px] text-[#7F859D] mt-2">{solucion?.subtitle}</h2>
 
     <div className="mt-8">
-      <h3 className="text-[16px] font-bold">{solucion?.problemaTitle}</h3>
+      <h3 className="text-[16px] text-[#010D3D] font-bold">{solucion?.problemaTitle}</h3>
       <p className="mt-2 text-[15px] text-[#010D3D]">{solucion?.problemaPragma}</p>
     </div>
 
@@ -200,7 +202,7 @@ const SolucionAmbitoPage = () => {
   <div className="lg:col-span-1">
   <div className="sticky top-20">
     <div className="bg-[#f2f2f5] p-6 rounded-lg shadow">
-      <h3 className="text-[16px] font-bold">{solucion?.firstCtaPragma}</h3>
+      <h3 className="text-[16px] text-[#010D3D] font-bold">{solucion?.firstCtaPragma}</h3>
       <p className="mt-2 text-[15px] text-[#010D3D]"></p>
       <button
         type="button"
@@ -247,9 +249,7 @@ const SolucionAmbitoPage = () => {
           >
             <summary className="flex justify-between items-center cursor-pointer text-[16px] font-bold text-[#010D3D] list-none">
               {faq.question}
-              <span className="ml-4 transform group-open:rotate-180 transition">
-                &#x25BE;
-              </span>
+              <FontAwesomeIcon icon={faChevronDown} className="ml-4 transform group-open:rotate-180 transition" />
             </summary>
             <p className="mt-2 text-[#4B5563] text-[15px]">
               {faq.answer}
@@ -261,7 +261,7 @@ const SolucionAmbitoPage = () => {
   </section>
 )}
     <section className="max-w-7xl mx-auto px-6 text-center min-h-[350px] flex justify-center items-center flex-col">
-    <h3 className="text-[16px] font-bold">{solucion?.secondCtaTitle}</h3>
+    <h3 className="text-[16px] text-[#010D3D] font-bold">{solucion?.secondCtaTitle}</h3>
     <p className="mt-2 text-[15px] text-[#010D3D]">{solucion?.secondCtaPragma}</p>
     <button
       type="button"

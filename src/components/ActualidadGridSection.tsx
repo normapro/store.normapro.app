@@ -208,7 +208,7 @@ export default function ActualidadGridSection({
 									</Link>
 								)}
 								<p className="mt-4 text-xs text-[#010D3D]">{noticia.fecha}</p>
-								<h3 className="mt-3 text-xl font-extrabold text-[#010D3D] leading-tight w-[85%]">
+								<h3 className="mt-3 text-base font-bold text-[#010D3D] leading-tight w-[85%]">
 									{isInstituto ? (
 										<a
 											href={noticiaPath}

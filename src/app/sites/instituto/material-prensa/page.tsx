@@ -1,4 +1,4 @@
-import HeaderInstitutoSection from "@/components/HeaderInstitutoSection";
+import HeaderSection from "@/components/HeaderSection";
 import { faArrowDownToLine } from "@fortawesome/pro-duotone-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -11,7 +11,7 @@ const recursos = [
 export default function MaterialPrensaPage() {
     return (
         <>
-            <HeaderInstitutoSection text="Material para prensa" variant="light" />
+            <HeaderSection text="Material para prensa" variant="light" />
 
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 <div className="flex flex-col divide-y divide-gray-200">

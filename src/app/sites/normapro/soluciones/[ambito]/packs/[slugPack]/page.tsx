@@ -17,6 +17,7 @@ import Formulario from "@/components/Formulario";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { iconMap } from "@/libs/icons";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 const PackPage = () => {
   const { ambito, slugPack } = useParams() as { ambito: string; slugPack: string };
@@ -99,15 +100,15 @@ const PackPage = () => {
           <Breadcrumb breadcrumb={breadcrumbData} />
         </section>
 
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-8 mt-10">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-16 mt-10">
           <div className="lg:col-span-2">
-            <h1 className="text-[32px] font-black">{pack?.description}</h1>
-            <h2 className="text-[24px] font-bold">{pack?.title}</h2>
+            <h1 className="text-[32px] text-[#010D3D] font-black">{pack?.description}</h1>
+            <h2 className="text-[24px] text-[#010D3D] font-bold">{pack?.title}</h2>
             <h3 className="text-[18px] text-[#7F859D] mt-2">{pack?.subtitle}</h3>
 
             {pack?.problemaTitle && (
               <div className="mt-8">
-                <h3 className="text-[16px] font-bold">{pack.problemaTitle}</h3>
+                <h3 className="text-[16px] text-[#010D3D] font-bold">{pack.problemaTitle}</h3>
                 <p className="mt-2 text-[15px] text-[#010D3D]">{pack.problemaPragma}</p>
               </div>
             )}
@@ -188,7 +189,7 @@ const PackPage = () => {
           <div className="lg:col-span-1">
             <div className="sticky top-20 space-y-6">
               <div className="bg-[#f2f2f5] p-6 rounded-lg shadow">
-                <h3 className="text-[16px] font-bold">{pack?.firstCtaPragma}</h3>
+                <h3 className="text-[16px] text-[#010D3D] font-bold">{pack?.firstCtaPragma}</h3>
                 <button
                   type="button"
                   onClick={() => setOpenModal(true)}
@@ -220,7 +221,7 @@ const PackPage = () => {
                   <details key={faq.id_faq} className="py-4 group">
                     <summary className="flex justify-between items-center cursor-pointer text-[16px] font-bold text-[#010D3D] list-none">
                       {faq.question}
-                      <span className="ml-4 transform group-open:rotate-180 transition">▼</span>
+                      <FontAwesomeIcon icon={faChevronDown} className="ml-4 transform group-open:rotate-180 transition" />
                     </summary>
                     <p className="mt-2 text-[#4B5563] text-[15px]">{faq.answer}</p>
                   </details>
@@ -231,7 +232,7 @@ const PackPage = () => {
         )}
 
         <section className="max-w-7xl mx-auto px-6 text-center min-h-[350px] flex justify-center items-center flex-col">
-          <h3 className="text-[16px] font-bold">{pack?.secondCtaTitle}</h3>
+          <h3 className="text-[16px] text-[#010D3D] font-bold">{pack?.secondCtaTitle}</h3>
           <p className="mt-2 text-[15px] text-[#010D3D]">{pack?.secondCtaPragma}</p>
           <button
             type="button"
