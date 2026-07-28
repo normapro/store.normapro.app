@@ -17,7 +17,7 @@ import Formulario from "@/components/Formulario";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { iconMap } from "@/libs/icons";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faCogs } from "@fortawesome/free-solid-svg-icons";
 
 const PackPage = () => {
   const { ambito, slugPack } = useParams() as { ambito: string; slugPack: string };
@@ -164,7 +164,7 @@ const PackPage = () => {
                                     className="w-5 h-5 text-[#00b2e3]"
                                 />
                                 )}
-                                <Link href={`/soluciones/${sol.slug}`} className="text-[#010D3D] font-medium">
+                                <Link href={`/soluciones/${pack?.slug_ambito}/${sol.slug}`} className="text-[#010D3D] font-medium">
                                 {sol.descripcion}
                                 </Link>
                             </div>
