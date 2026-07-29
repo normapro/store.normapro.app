@@ -6,6 +6,7 @@ import { faXmark, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { Sector } from "@/types/sector";
 import API_ENDPOINTS from "@/config/api";
 import Link from "next/link";
+import { Ambito } from "@/types/ambito";
 
 interface ModalDescubrirProps {
     isOpen: boolean;
@@ -15,8 +16,12 @@ interface ModalDescubrirProps {
 const ModalDescubrir = ({ isOpen, onClose }: ModalDescubrirProps) => {
     const [step, setStep] = useState(1);
     const [sectores, setSectores] = useState<Sector[]>([]);
-    const [isLoadingSectores, setIsLoadingSectores] = useState(false);
-    const [selectedSlug, setSelectedSlug] = useState("");
+    const [ambitos, setAmbitos] = useState<Ambito[]>([]);
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState<string | null>(null);
+
+    const [selectedSector, setSelectedSector] = useState("");
+    const [selectedAmbito, setSelectedAmbito] = useState("");
 
     // Resetear al paso 1 cada vez que el modal se cierra o se abre de nuevo
     useEffect(() => {
@@ -29,20 +34,23 @@ const ModalDescubrir = ({ isOpen, onClose }: ModalDescubrirProps) => {
     // Cargar sectores en paso 2
     useEffect(() => {
         if (step === 2) {
-            const fetchSectores = async () => {
-                setIsLoadingSectores(true);
+            const fetchData = async () => {
+                setIsLoading(true);
                 try {
-                    const response = await fetch(API_ENDPOINTS.SECTORES);
-                    if (!response.ok) throw new Error("Error al obtener sectores");
-                    const data = await response.json();
-                    setSectores(data);
+                    const [sectoresRes, ambitosRes] = await Promise.all([
+                        fetch(API_ENDPOINTS.SECTORES).then((res) => res.json()),
+                        fetch(API_ENDPOINTS.AMBITOS).then((res) => res.json())
+                    ]);
+                    setSectores(sectoresRes);
+                    setAmbitos(ambitosRes);
                 } catch (err) {
-                    console.error("Error cargando sectores:", err);
+                    console.error("Error cargando los datos:", err);
+                    setError("No se puedieron cargar los datos. Intentalo de nuevo.")
                 } finally {
-                    setIsLoadingSectores(false);
+                    setIsLoading(false);
                 }
             };
-            fetchSectores();
+            fetchData();
         }
     }, [step]);
 
@@ -95,14 +103,18 @@ const ModalDescubrir = ({ isOpen, onClose }: ModalDescubrirProps) => {
                     <div className="space-y-6 text-left">
                         <div>
                             <label className="block text-[#010d3d] text-[17px] font-bold mb-3">
-                                ¿Qué tamaño tiene tu empresa?
+                                ¿Cuál es tu ámbito?
                             </label>
                             <div className="relative">
-                                <select className="w-full appearance-none bg-white border border-slate-200 rounded-xl py-3.5 px-4 text-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/10 cursor-pointer">
-                                    <option>Selecciona un número de empleados</option>
-                                    <option>1-10 empleados</option>
-                                    <option>11-50 empleados</option>
-                                    <option>+50 empleados</option>
+                                <select
+                                    value={selectedAmbito}
+                                    onChange={(e) => setSelectedAmbito(e.target.value)}
+                                    className="w-full appearance-none bg-white border border-slate-200 rounded-xl py-3.5 px-4"
+                                >
+                                    <option value="">Selecciona un ámbito</option>
+                                    {ambitos.map((a) => (
+                                        <option key={a.id_ambito} value={a.slug}>{a.description}</option>
+                                    ))}
                                 </select>
                                 <FontAwesomeIcon icon={faChevronDown} className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none text-sm" />
                             </div>
@@ -112,8 +124,8 @@ const ModalDescubrir = ({ isOpen, onClose }: ModalDescubrirProps) => {
                             <label className="block text-[#010d3d] font-bold mb-3">¿A qué sector se dedica?</label>
                             <div className="relative">
                                 <select
-                                    value={selectedSlug}
-                                    onChange={(e) => setSelectedSlug(e.target.value)}
+                                    value={selectedSector}
+                                    onChange={(e) => setSelectedSector(e.target.value)}
                                     className="w-full appearance-none bg-white border border-slate-200 rounded-xl py-3.5 px-4"
                                 >
                                     <option value="">Selecciona un sector</option>
@@ -125,9 +137,13 @@ const ModalDescubrir = ({ isOpen, onClose }: ModalDescubrirProps) => {
                             </div>
                         </div>
 
-                        {selectedSlug ? (
+                        {selectedAmbito ? (
                             <Link
-                                href={`/soluciones/undefined/sector/${selectedSlug}`}
+                                href={
+                                    selectedSector
+                                        ? `/soluciones/${selectedAmbito}/sector/${selectedSector}`
+                                        : `/soluciones/${selectedAmbito}`
+                                }
                                 onClick={onClose} // Cerramos el modal al navegar
                                 className="inline-block bg-[#010d3d] text-white font-bold py-3.5 px-10 rounded-xl hover:bg-[#011640] transition-colors mt-4 text-center"
                             >
