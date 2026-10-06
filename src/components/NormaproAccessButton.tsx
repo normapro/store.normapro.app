@@ -28,7 +28,7 @@ const NormaProAccessButton = () => {
         }}
         onAnimationComplete={() => {
           if (clicked) {
-            window.location.href = "https://www.normapro.app";
+            window.location.href = "https://danubio.normapro.es";
           }
         }}
         className="mr-2"
