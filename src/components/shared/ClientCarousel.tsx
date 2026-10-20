@@ -37,11 +37,15 @@ const ClientCarousel: React.FC<ClientCarouselProps> = ({ scope, claim, theme="li
     const loadClientes = async () => {
       try {
         const res = await fetch(`${API_ENDPOINTS.CLIENTES}?maxItems=100&scope=${scope}`);
-        if (!res.ok) throw new Error(`Error HTTP ${res.status}`);
+        if (!res.ok) {
+          console.warn(`Aviso al cargar clientes: HTTP ${res.status}`);
+          setClientes([]);
+          return;
+        }
         const payload = await res.json();
         setClientes(getClientesFromPayload(payload));
       } catch (error) {
-        console.error("Error al cargar clientes:", error);
+        console.warn("Aviso al cargar clientes:", error);
         setClientes([]);
       }
     };
