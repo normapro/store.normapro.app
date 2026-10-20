@@ -4,6 +4,7 @@ import API_ENDPOINTS from "@/config/api";
 
 type FormularioProps = {
   onClose: () => void;
+  zIndexClass?: string;
 };
 
 type FormState = {
@@ -20,7 +21,7 @@ type FormState = {
   acepta_politica: boolean;
 };
 
-const Formulario: React.FC<FormularioProps> = ({ onClose }) => {
+const Formulario: React.FC<FormularioProps> = ({ onClose, zIndexClass }) => {
   const [form, setForm] = React.useState<FormState>({
     nombre: "",
     apellidos: "",
@@ -106,7 +107,7 @@ const Formulario: React.FC<FormularioProps> = ({ onClose }) => {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/70 p-3 sm:items-center sm:p-4"
+      className={`fixed inset-0 ${zIndexClass || "z-50"} flex items-start justify-center overflow-y-auto bg-black/70 p-3 sm:items-center sm:p-4`}
       onClick={onClose}
     >
       <div
