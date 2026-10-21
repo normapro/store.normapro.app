@@ -6,40 +6,15 @@ import API_ENDPOINTS from '@/config/api';
 import { Actualidad } from '@/types/actualidad';
 import { ItemListPack } from '@/types/pack';
 import { ItemListSolucion } from '@/types/solucion';
-import Breadcrumb from '@/components/breadcrump';
-import { BreadcrumbItem } from '@/types/breadcrumb';
 import { faBookOpen, faCircleDot, faFolderOpen, faGear, faMicrochip, faUserTie, faXmarkCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import ActualidadGridSection from '@/components/ActualidadGridSection';
+import { formatContentParagraphs } from '@/components/actualidad/actualidadUtils';
 
 type SolucionRelacionada = ItemListSolucion & {
 	href: string | null;
-};
-
-const formatContentParagraphs = (content: unknown): string[] => {
-	if (!content) {
-		return [];
-	}
-
-	if (typeof content === 'string') {
-		return content
-			.split('\n')
-			.map((line) => line.trim())
-			.filter((line) => line.length > 0);
-	}
-
-	if (Array.isArray(content)) {
-		return content.map((item) => String(item)).filter((line) => line.trim().length > 0);
-	}
-
-	if (typeof content === 'object') {
-		return [JSON.stringify(content)];
-	}
-
-	return [String(content)];
 };
 
 const parseCategorias = (categoria: string | null): string[] => {
@@ -82,38 +57,19 @@ const iconForSolution = (index: number) => {
 	return iconSet[index % iconSet.length];
 };
 
-export default function NoticiaPage() {
-	const params = useParams();
-	const noticiaSlug = String(params?.noticia ?? '').trim();
-	const noticiaId = Number(noticiaSlug);
+type Props = {
+	noticia: Actualidad;
+};
 
-	const [isLoading, setIsLoading] = useState(true);
-	const [error, setError] = useState<string | null>(null);
-	const [noticia, setNoticia] = useState<Actualidad | null>(null);
+// Detalle de una noticia. La noticia llega desde el servidor; pack y soluciones relacionadas se cargan en cliente.
+export default function NoticiaDetalle({ noticia }: Props) {
 	const [packRelacionado, setPackRelacionado] = useState<ItemListPack | null>(null);
 	const [solucionesRelacionadas, setSolucionesRelacionadas] = useState<SolucionRelacionada[]>([]);
 
 	useEffect(() => {
 		const fetchData = async () => {
-			if (!noticiaSlug) {
-				setError('Slug de noticia invalido.');
-				setIsLoading(false);
-				return;
-			}
-
 			try {
-				let noticiaResponse = await fetch(`${API_ENDPOINTS.ACTUALIDAD}/slug/${encodeURIComponent(noticiaSlug)}`);
-
-				if (!noticiaResponse.ok && Number.isFinite(noticiaId)) {
-					noticiaResponse = await fetch(`${API_ENDPOINTS.ACTUALIDAD}/${noticiaId}`);
-				}
-
-				if (!noticiaResponse.ok) {
-					throw new Error('No se pudo cargar la noticia.');
-				}
-
-				const noticiaData: Actualidad = await noticiaResponse.json();
-				setNoticia(noticiaData);
+				const noticiaData = noticia;
 
 				const packsResponse = await fetch(`${API_ENDPOINTS.LISTPACKS}?ambito=all&sector=non-specified&maxItems=500`);
 
@@ -169,54 +125,16 @@ export default function NoticiaPage() {
 
 				setSolucionesRelacionadas(solucionesFiltradas);
 			} catch (err) {
+				// Si fallan los relacionados, la noticia se sigue mostrando sin ellos.
 				console.error(err);
-				setError('No se pudo cargar el detalle de la noticia.');
-			} finally {
-				setIsLoading(false);
 			}
 		};
 
 		fetchData();
-	}, [noticiaSlug, noticiaId]);
+	}, [noticia]);
 
 	const paragraphs = useMemo(() => formatContentParagraphs(noticia?.content), [noticia?.content]);
 	const categorias = useMemo(() => parseCategorias(noticia?.categoria ?? null), [noticia?.categoria]);
-	const breadcrumbData = useMemo<BreadcrumbItem>(
-		() => ({
-			title: 'Home',
-			url: '/',
-			children: {
-				title: 'Actualidad',
-				url: '/actualidad',
-				children: {
-					title: noticia?.title ?? 'Noticia',
-					url: `/actualidad/${noticiaSlug}`,
-				},
-			},
-		}),
-		[noticia?.title, noticiaSlug],
-	);
-
-	if (isLoading) {
-		return (
-			<main className="w-full py-12">
-				<section className="max-w-7xl mx-auto px-6">
-					<p className="text-[#010D3D]">Cargando noticia...</p>
-				</section>
-			</main>
-		);
-	}
-
-	if (error || !noticia) {
-		return (
-			<main className="w-full py-12">
-				<section className="max-w-7xl mx-auto px-6">
-					<p className="text-red-600">{error ?? 'No se encontro la noticia.'}</p>
-				</section>
-			</main>
-		);
-	}
-
 	return (
 		<>
 			<section className="bg-white border-y border-[#d6dae4]">
@@ -336,7 +254,7 @@ export default function NoticiaPage() {
 
 				</section>
 				<section className="w-[80%] mx-auto px-6 mt-40">
-					<h1 className="text-xl font-extrabold text-[#0B1D4D]">Otras noticias relacionadas</h1>
+					<h2 className="text-xl font-extrabold text-[#0B1D4D]">Otras noticias relacionadas</h2>
 
 					<div className="mt-8">
 						<ActualidadGridSection onlyLatest={false} />

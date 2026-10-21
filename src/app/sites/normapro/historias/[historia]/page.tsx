@@ -1,6 +1,10 @@
+import type { Metadata } from 'next';
+import { cache } from 'react';
 import LandingBuilder from '@/components/LandingBuilder';
 import PresentacionHistoria from "@/components/landings/PresentacionHistoria";
 import API_ENDPOINTS from '@/config/api';
+import JsonLd from '@/components/seo/JsonLd';
+import { breadcrumbJsonLd, pageMetadata, resolvePublicImage } from '@/libs/seo';
 
 type HistoriaPageProps = {
 	params: Promise<{
@@ -14,6 +18,7 @@ type HistoriaPayload = {
 	id_cliente?: number | null;
 	nombre?: string | null;
 	descripcion?: string | null;
+	imagen?: string | null;
 	componentes: unknown;
 };
 
@@ -42,7 +47,7 @@ const parseBloques = (componentes: unknown): any[] => {
 	return [];
 };
 
-const getHistoriaBySlug = async (historiaSlug: string): Promise<HistoriaPayload | null> => {
+const getHistoriaBySlug = cache(async (historiaSlug: string): Promise<HistoriaPayload | null> => {
 	let response = await fetch(`${API_ENDPOINTS.HISTORIAS}/slug/${encodeURIComponent(historiaSlug)}`, {
 		next: { revalidate: 0 },
 	});
@@ -59,7 +64,7 @@ const getHistoriaBySlug = async (historiaSlug: string): Promise<HistoriaPayload 
 	}
 
 	return response.json();
-};
+});
 
 const getClienteById = async (clienteId?: number | null): Promise<ClientePayload | null> => {
 	if (!clienteId) return null;
@@ -75,6 +80,23 @@ const getClienteById = async (clienteId?: number | null): Promise<ClientePayload
 
 	return response.json();
 };
+
+// Las URLs por id numérico declaran como canónica la URL con slug.
+const canonicalPath = (data: HistoriaPayload, historia: string) => `/historias/${data.slug || historia}`;
+
+export async function generateMetadata({ params }: HistoriaPageProps): Promise<Metadata> {
+	const { historia } = await params;
+	const data = await getHistoriaBySlug(historia);
+	if (!data) return { robots: { index: false, follow: true } };
+
+	return pageMetadata({
+		title: data.nombre,
+		description: data.descripcion,
+		path: canonicalPath(data, historia),
+		// Misma resolución de imagen que HistoriasClientesSection (public/historiasclientes).
+		image: resolvePublicImage(data.imagen, 'historiasclientes'),
+	});
+}
 
 export default async function HistoriaPage({ params }: HistoriaPageProps) {
 	const { historia } = await params;
@@ -104,8 +126,15 @@ export default async function HistoriaPage({ params }: HistoriaPageProps) {
 		);
 	}
 
+	const steps = [
+		{ name: 'Home', path: '/' },
+		{ name: 'Historias', path: '/historias' },
+		{ name: nombreHistoria, path: canonicalPath(data, historia) },
+	];
+
 	return (
 		<>
+			<JsonLd data={breadcrumbJsonLd(steps)} />
 			<PresentacionHistoria
 				logo={logoCliente}
 				clienteNombre={nombreCliente}

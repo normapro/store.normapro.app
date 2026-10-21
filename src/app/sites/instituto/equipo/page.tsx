@@ -1,5 +1,9 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/libs/seo";
 import Image from "next/image";
 import HeaderSection from "@/components/HeaderSection";
+
+export const metadata: Metadata = pageMetadata({ title: "El equipo", path: "/equipo", site: "instituto" });
 
 export default function EquipoPage() {
     return (

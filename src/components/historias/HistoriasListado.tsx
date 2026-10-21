@@ -7,7 +7,7 @@ import { useState } from "react";
 import HeroUserCount from "@/components/HeroUserCount";
 
 
-export default function HistoriasPage() {
+export default function HistoriasListado() {
 	const [openModal, setOpenModal] = useState(false);
 	return (
 		<main className="w-full py-12">

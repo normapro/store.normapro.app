@@ -1,7 +1,11 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/libs/seo";
 import ContactoFormSection from "@/components/ContactoFormSection";
 import HeaderSection from "@/components/HeaderSection";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone } from "@fortawesome/pro-regular-svg-icons";
+
+export const metadata: Metadata = pageMetadata({ title: "Contacto", path: "/contacto", site: "instituto" });
 
 const oficinas = [
   {

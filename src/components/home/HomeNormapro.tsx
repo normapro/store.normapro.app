@@ -13,7 +13,7 @@ import ActualidadGridSection from "@/components/ActualidadGridSection";
 import Link from "next/link";
 import MainPacksSection from "@/components/MainPacksSection";
 
-export default function Home() {
+export default function HomeNormapro() {
   return (
     <section>
       <MainHeroCarousel />
@@ -79,9 +79,9 @@ export default function Home() {
         <div className="bg-[#F3F4F4] pt-2">
           <section className="max-w-7xl mx-auto px-6 mt-10">
             <div className="flex items-center justify-between">
-              <h1 className="text-3xl font-extrabold text-[#010d3d]">
+              <h2 className="text-3xl font-extrabold text-[#010d3d]">
                 Actualidad
-              </h1>
+              </h2>
               <Link
                 href="/actualidad"
                 className="text-l font-bold text-[#010d3d] underline underline-offset-4"
@@ -102,7 +102,7 @@ export default function Home() {
       <FadeInOnScroll >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
           <header className="pb-4 flex items-center justify-between gap-4">
-            <h1 className="text-3xl font-extrabold text-[#010d3d]">Informes</h1>
+            <h2 className="text-3xl font-extrabold text-[#010d3d]">Informes</h2>
             <Link
               href="/informes"
               className="text-l font-bold text-[#010d3d] underline underline-offset-4"

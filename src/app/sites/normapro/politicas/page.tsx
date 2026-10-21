@@ -1,5 +1,9 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/libs/seo";
 import AccordionSection from "@/components/AccordionSection";
 import HeaderSection from "@/components/HeaderSection";
+
+export const metadata: Metadata = pageMetadata({ title: "Políticas", path: "/politicas" });
 
 export default function Politicas() {
     return <>

@@ -17,7 +17,7 @@ const temasDisponibles = [
 	{ label: 'Destacadas', filters: ['Destacadas', 'Destacado'] },
 ];
 
-export default function InformesPage() {
+export default function ActualidadListado() {
 	const [activeTab, setActiveTab] = useState(tabs[0]);
 	const [selectedTema, setSelectedTema] = useState<string | null>(null);
 	const [isTemasMenuOpen, setIsTemasMenuOpen] = useState(false);

@@ -76,9 +76,9 @@ const MainHeroInstituto = () => {
             />
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-                <h2 className="text-white text-4xl md:text-6xl font-black text-center mb-24">
+                <h1 className="text-white text-4xl md:text-6xl font-black text-center mb-24">
                     La excelencia es un hábito
-                </h2>
+                </h1>
 
                 {isLoading ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

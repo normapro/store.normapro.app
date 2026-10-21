@@ -1,14 +1,14 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/libs/seo";
 import MainTestimoniosSection from "@/components/MainTestimoniosSection";
 import CertificacionesSection from "@/components/landings/CertificacionesSection";
-import TextSection from "@/components/landings/TextSection";
-import HeroSection from "@/components/landings/HeroSection";
 import ListHistoriaSection from "@/components/landings/ListHistoriaSection";
-import HistoriaTextSection from "@/components/landings/HistoriaTextSection";
-import HistoriaTextSection2 from "@/components/historiaTextSection2";
 import ContactoFormSection from "@/components/ContactoFormSection";
 import HeaderSection from "@/components/HeaderSection";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = pageMetadata({ title: "Quiénes somos", path: "/nosotros" });
 
 export default function NosotrosPage() {
     return <>

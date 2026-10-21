@@ -54,9 +54,9 @@ const MainTecnologiaInstituto = () => {
                     />
 
                     {/* Título */}
-                    <h1 className="text-4xl md:text-5xl font-black text-[#010D3D]">
+                    <h2 className="text-4xl md:text-5xl font-black text-[#010D3D]">
                         Tecnología NormaPro
-                    </h1>
+                    </h2>
 
                     {/* Subtítulo */}
                     <p className="text-base md:text-lg mt-4 text-[#010D3D]">

@@ -1,12 +1,14 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/libs/seo";
 import ListHistoriaSection from "@/components/landings/ListHistoriaSection";
-import HistoriaTextSection from "@/components/landings/HistoriaTextSection";
-import HistoriaTextSection2 from "@/components/historiaTextSection2";
 import ContactoFormSection from "@/components/ContactoFormSection";
 import PartnersProgramsSection from "@/components/PartnersProgramsSection";
 import PartnersTestimonialsSection from "@/components/PartnersTestimonialsSection";
 import HeaderSection from "@/components/HeaderSection";
 
-export default function NosotrosPage() {
+export const metadata: Metadata = pageMetadata({ title: "Programa de Partners", path: "/partners" });
+
+export default function PartnersPage() {
     return <>
         <HeaderSection text="Programa de Partners" variant="light" />
 

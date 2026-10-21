@@ -1,6 +1,10 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/libs/seo";
 import HeaderSection from '@/components/HeaderSection';
 import Image from 'next/image';
 import Link from 'next/link';
+
+export const metadata: Metadata = pageMetadata({ title: "Misión, Visión y Valores", path: "/mision-vision-valores", site: "instituto" });
 
 export default function MisionVisionValores() {
     const valores = [
