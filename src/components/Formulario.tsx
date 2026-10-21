@@ -1,6 +1,7 @@
 'use client';
 import React from "react";
 import API_ENDPOINTS from "@/config/api";
+import HoneypotField from "@/components/shared/HoneypotField";
 
 type FormularioProps = {
   onClose: () => void;
@@ -35,6 +36,7 @@ const Formulario: React.FC<FormularioProps> = ({ onClose, zIndexClass }) => {
     acepta_contacto: false,
     acepta_politica: false,
   });
+  const [website, setWebsite] = React.useState("");
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [submitMessage, setSubmitMessage] = React.useState<string | null>(null);
 
@@ -67,7 +69,7 @@ const Formulario: React.FC<FormularioProps> = ({ onClose, zIndexClass }) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ ...form, origen_ruta }),
+        body: JSON.stringify({ ...form, origen_ruta, website }),
       });
 
       if (!response.ok) {
@@ -139,6 +141,7 @@ const Formulario: React.FC<FormularioProps> = ({ onClose, zIndexClass }) => {
           onSubmit={handleSubmit}
           className="max-h-[75vh] overflow-y-auto rounded-b-3xl bg-[#e9eaee] p-5 text-left sm:p-8"
         >
+          <HoneypotField value={website} onChange={setWebsite} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-semibold mb-2">
