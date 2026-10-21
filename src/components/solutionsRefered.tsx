@@ -85,7 +85,7 @@ const SolutionsRefered = ({ sectorSlug, ambitoSlug }: Props) => {
 
 								{soluciones.map((sol) => {
 									const iconParts = sol.uriIcon.split(" ") as [IconPrefix, IconName];
-									const icon: IconProp | [IconPrefix, IconName] = iconParts.length === 2 ? (iconParts as [IconPrefix, IconName]) : ["fas", "fa-question"];
+									const icon: IconProp | [IconPrefix, IconName] = iconParts.length === 2 ? (iconParts as [IconPrefix, IconName]) : (["fas", "fa-question"] as unknown as [IconPrefix, IconName]);
 									return (
 										<Link key={sol.id_solucion} href={`/soluciones/${sol.slug_ambito}/${sol.slug}`} rel="noopener noreferrer">
 											<div className="py-2 px-3 bg-white shadow rounded-lg flex items-center mb-2">

@@ -35,3 +35,20 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 # store.normapro.app
+
+## Configuración
+
+Variables de entorno que usa el proyecto:
+
+| Variable | Uso | Valor por defecto |
+|---|---|---|
+| `FONTAWESOME_NPM_TOKEN` | Token del registro privado de Font Awesome Pro, leído desde `.npmrc` en `npm install`. No se versiona. | (obligatoria) |
+| `NEXT_PUBLIC_API_BASE_URL` | URL de la API de la tienda. | `http://localhost:3010` en desarrollo, `https://api-store.normapro.app` en producción |
+| `NEXT_PUBLIC_SITE_URL` | Dominio canónico de la tienda (canonical, Open Graph, sitemap). | `https://www.normapro.es` |
+| `NEXT_PUBLIC_INSTITUTO_SITE_URL` | Dominio canónico del sitio del instituto. | `https://inicie.normapro.es` |
+
+## SEO
+
+- Cada página genera sus metadatos en servidor (`generateMetadata` o `metadata`) con los datos de la API; las utilidades comunes están en `src/libs/seo.ts` y las consultas en servidor en `src/services/storeService.ts`.
+- `/sitemap.xml` y `/robots.txt` se generan por host en `src/app/sitemap.xml/route.ts` y `src/app/robots.txt/route.ts`.
+- Solo se indexan los hosts de producción listados en `src/libs/seo.ts`; el resto (previews, `.local`, IPs) recibe `noindex`.
