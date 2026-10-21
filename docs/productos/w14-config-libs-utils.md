@@ -1,0 +1,151 @@
+# W14 · Config, libs, utils y tipos
+
+Repo: `store.normapro.app`. Rutas de fichero relativas a `src/`. Revisada contra el código el 21/10/2026. Sin URLs ni valores: solo nombres de clave y la ruta de la API que representa cada una (sin dirección base).
+
+## 1. Qué hace
+
+Reúne lo transversal: la tabla de endpoints de la API (`config/api.ts`), la carga de iconos (`libs/fontawesome*.ts`, `libs/icons.ts`), las dimensiones de logos (`libs/logovars.ts`), la animación de entrada por scroll (`utils/FadeInOnScroll.tsx`) y los tipos TypeScript (`types/*.ts`, 15 ficheros).
+
+`libs/seo.config.ts` se documenta en [W10](w10-seo.md).
+
+## 2. Dónde está
+
+| Pieza | Fichero | Líneas |
+|---|---|---|
+| Base de la API y tabla `API_ENDPOINTS` | `config/api.ts` | 1-35 |
+| Desactivar CSS automático de FontAwesome | `libs/fontawesome.config.ts` | 1-3 |
+| Biblioteca global de iconos (sin uso) | `libs/fontawesome.ts` | 1-6 |
+| Mapa de iconos de pack | `libs/icons.ts` | 17-31 |
+| Dimensiones de logos | `libs/logovars.ts` | 1-20 |
+| Animación por scroll | `utils/FadeInOnScroll.tsx` | 8-37 |
+| Tipos | `types/*.ts` | 15 ficheros, 301 líneas |
+
+## 3. Flujo
+
+### 3.1 `config/api.ts`
+
+- Base: variable `NEXT_PUBLIC_API_BASE_URL`; si falta, una dirección local en desarrollo o una fija de producción (`:1-5`).
+- Cada clave es la base más una ruta (`:7-33`). Se importa como `API_ENDPOINTS` por defecto.
+- Los componentes la usan con `fetch` en el navegador y los `page.tsx` de servidor de aplicaciones, consultorías, historias e informes (`aplicaciones/[aplicacion]/page.tsx:4`, `consultorias/[consultorias]/page.tsx:4`, `historias/[historia]/page.tsx:46-67`, `informes/[informe]/page.tsx:161-166`). No hay capa de servicio salvo `services/chatbotService.ts`.
+
+### 3.2 Iconos
+
+- `libs/fontawesome.config.ts` pone `config.autoAddCss = false` (`:3`). Lo importan los dos layouts (`normapro/layout.tsx:2`, `instituto/layout.tsx:2`). Los estilos se importan a mano (`layout.tsx:3`).
+- `libs/fontawesome.ts` registra `fas`, `far`, `fab` con `library.add` (`:7`). Nadie lo importa (búsqueda `libs/fontawesome` en `src/`: solo aparece `fontawesome.config`).
+- `libs/icons.ts` exporta `iconMap` (12 iconos regulares de pago, clave tipo `"fas fa-map"`). Lo usa solo `soluciones/[ambito]/packs/[slugPack]/page.tsx:19,163`. Hay otros ocho `iconMap` locales dentro de componentes de `components/landings/` (ficha [W4](w4-motor-de-landings.md)).
+
+### 3.3 `libs/logovars.ts`
+
+`enum LogoType` con `square`, `wide`, `ultrawide` (`:1-5`) y `logoDimensions` con ancho y alto máximos por tipo (`:7-20`). Lo usan `ImageLogoCliente.tsx:4`, `ClientCarousel.tsx:5`, `ClientCarouselWrapper.tsx:5`, `ClientsMuralSection.tsx:5` y `types/cliente.ts:1`.
+
+### 3.4 `utils/FadeInOnScroll.tsx`
+
+Componente cliente: `framer-motion` + `react-intersection-observer`. Aparece una vez al 10 % de visibilidad, con desplazamiento de 100 px y 0,7 s (`:10,18-25`). Lo usan `app/sites/normapro/page.tsx` y `app/sites/instituto/page.tsx`.
+
+## 4. Endpoints que consume
+
+Esta ficha define la tabla, no llama. Claves de `API_ENDPOINTS` (nombre, ruta de la API sin base, uso real en `src/`):
+
+| Clave | Ruta de la API | Usada en |
+|---|---|---|
+| `AMBITOS` | `/v1/store/ambitos` | `SolutionsDropdown.tsx:33`, `ModalDescubrir.tsx:42` |
+| `AMBITOS_SOLUCIONES` | `/v1/store/ambitosWithSolCounter` | `AmbitosTabs.tsx:40` |
+| `LISTSOLUCIONES` | `/v1/store/listsoluciones` | `AmbitosTabs.tsx:82`, `solutionsRefered.tsx:36`, `actualidad/[noticia]/page.tsx:137` |
+| `SECTORES` | `/v1/store/sectores` | `SolutionsDropdown.tsx:34`, `ModalDescubrir.tsx:41` |
+| `HIGLIGHTEDPACKS` | `/v1/store/highlighted/packs` | `SolutionsDropdown.tsx:35` |
+| `CLIENTES` | `/v1/store/clientes` | `ClientCarousel.tsx:39`, `ClientsMuralSection.tsx:18`, `SolutionsHero.tsx:20`, `SolutionsHeroSector.tsx:37`, `historias/[historia]/page.tsx:67` |
+| `LISTPACKS` | `/v1/store/listpacks` | `AmbitosTabs.tsx:101`, `solutionsRefered.tsx:55`, `actualidad/[noticia]/page.tsx:118` |
+| `SECTOR_INFO` | `/v1/store/sector` | `SolutionsHeroSector.tsx:25` |
+| `SOLUCION` | `/v1/store/solucion` | `[ambito]/[slugSolucion]/page.tsx:42` |
+| `TESTIMONIOS` | `/v1/store/testimonios` | `MainTestimoniosSection.tsx:21` y 8 sitios más |
+| `HISTORIAS` | `/v1/store/historias` | `historias/[historia]/page.tsx:46,51`, `HistoriasClientesSection.tsx:39` |
+| `INFORMES` | `/v1/store/informes` | `InformesGridSection.tsx:40`, `informes/[informe]/page.tsx:161`, `MainHeroInstituto.tsx:34` |
+| `MAINPACKS` | `/v1/store/mainpacks` | **Solo** `MainSolucionesSection.tsx:32` (sin import: código sin uso) |
+| `PACKSCATEGORIA` | `/v1/store/packscategoria` | `MainPacksSection.tsx:17` |
+| `APLICACIONES` | `/v1/store/aplicaciones` | `Navbar.tsx:88`, `AplicationsDropDown.tsx:16`, `MainAplicacionesSection.tsx:16` |
+| `CONSULTORIA` | `/v1/store/consultoria` | `Navbar.tsx:89`, `ConsultoriaDropdown.tsx:14`, `MainConsultoriaSection.tsx:29`, `consultorias/[consultorias]/page.tsx:4` |
+| `PACKS` | `/v1/store/packs` | `packs/[slugPack]/page.tsx:35`, `actualidad/[noticia]/page.tsx:127` |
+| `APLICACION` | `/v1/aplicaciones` (router distinto del resto) | `aplicaciones/[aplicacion]/page.tsx:4` |
+| `COOKIES` | `/v1/store/cookies` | `Cookies.tsx:12` |
+| `EVENTOS` | `/v1/store/eventos` | `MainEventosSection.tsx:14` |
+| `ACTUALIDAD` | `/v1/store/actualidad` | `ActualidadGridSection.tsx:96`, `actualidad/[noticia]/page.tsx:105`, `MainHeroInstituto.tsx:35` |
+| `GLOBALSEARCH` | `/v1/store/globalsearch` | `Navbar.tsx:54` |
+| `LEADS` | `/v1/store/leads` | `Footer.tsx:28`, `FooterInstituto.tsx:28`, `Formulario.tsx:65`, `landings/DescargaInformeModal.tsx:115` |
+| `PRENSA` | `/v1/store/prensa` | `instituto/apariciones-prensa/page.tsx:23` |
+| `CHATBOT` | `/v1/store/chat` | `services/chatbotService.ts:73` |
+
+Resumen: 25 claves. 24 tienen uso en código vivo. `MAINPACKS` solo se usa en código sin import. Ninguna clave está sin referencias.
+
+Rutas de `api-store…/app/routes/v1/store.ts` que la store no tiene como clave: `ambitos/:id`, `sectores/:id`, `eventos/:id`, `packs/:slug/soluciones`, las rutas `*-editor` y las de beneficios, problemas, casos de uso, características y FAQ. Las de detalle `clientes/:id`, `testimonios/:id`, `historias/:id` e `informes/:id` se componen con la clave de la lista.
+
+### Llamadas fuera de `API_ENDPOINTS`
+
+| Fichero:línea | Qué llama |
+|---|---|
+| `components/HeroUserCount.tsx:9` | API externa distinta (contador de usuarios) |
+| `components/MainFormacionSection.tsx:15` | API externa distinta (formación) |
+| `components/MainClientesCarrousel.tsx:6,17-18` | Base propia escrita en el fichero y `/v1/store/usersCount`, que no existe (ST-WEB-05). Sin import |
+| `components/landings/HeroSection.tsx:57` | Un JSON de animación Lottie de `public/lotties/` o una dirección externa |
+
+## 5. Datos
+
+### Tipos de `types/` y su copia en la API y en el editor
+
+| Tipo (store) | Importado desde | Estado frente a API/editor ([CONTRATOS.md](../../../docs/CONTRATOS.md) §1.1) |
+|---|---|---|
+| `ambito.ts` (5 líneas) | 5 ficheros | DIVERGE: el editor añade `textoweb` y `prefijo`; la API no los devuelve |
+| `sector.ts` | 3 | DIVERGE: el editor añade `textoweb`; la store no lo tiene |
+| `solucion.ts` (76) | 8 | DIVERGE. `CasosDeUso.id_casosdeuso` (`:74`) está mal: la columna es `id_casodeuso`. `Solucion` carece de `fraseCierre`, `consultoriaTitle`, `consultoriaDescription` |
+| `pack.ts` (69) | 8 | DIVERGE. Aquí `casosdeuso` usa `id_casodeuso` (`:66-67`), distinto de `solucion.ts` |
+| `cliente.ts` | 3 | DIVERGE: el editor añade `permisoweb`. `LogoType` viene de `libs/logovars.ts` |
+| `testimonio.ts` | 9 | DIVERGE: la store añade `miniImg?` (`:9`), que la consulta no devuelve; el editor lo tipa plano |
+| `historiaCliente.ts` | 1 | DIVERGE menor (`slug?` opcional) |
+| `informe.ts` | 3 | DIVERGE: acepta dos nombres para cada imagen (`imgPortada`/`img_portada`, `:31-34`) |
+| `actualidad.ts` | 3 | DIVERGE: `id_soluciones`, `content` y `categoria` con tipos distintos al editor |
+| `evento.ts` | 1 | DIVERGE menor: el editor añade `hora?` |
+| `consultoria.ts` | 5 | DIVERGE: `contenidos` no declarado aquí |
+| `aplicacion.ts` | 3 | DIVERGE: `contenidos` no declarado aquí, aunque `GET /v1/aplicaciones/:slug` lo devuelve |
+| `chatbot.ts` | 2 | Coincide con la API |
+| `breadcrumb.ts` | 5 | Solo store |
+| `formacion.ts` | 2 | Solo store; describe una API externa |
+
+«Importado desde» es el número de ficheros de `src/` con `import … types/<nombre>` (búsqueda por texto).
+
+### Copia de `config/api.ts` entre repos
+
+El editor tiene su propia `src/config/api.ts` (ficha E9). Las claves comunes con la store (`AMBITOS`, `AMBITOS_SOLUCIONES`, `LISTSOLUCIONES`, `SECTORES`, `HIGLIGHTEDPACKS`, `CLIENTES`, `LISTPACKS`, `SECTOR_INFO`, `SOLUCION`, `TESTIMONIOS`, `HISTORIAS`, `INFORMES`, `APLICACIONES`, `CONSULTORIA`, `PACKS`, `COOKIES`, `EVENTOS`, `ACTUALIDAD`) tienen la misma ruta en los dos ficheros (comparadas). **Solo en la store:** `MAINPACKS`, `PACKSCATEGORIA`, `APLICACION`, `GLOBALSEARCH`, `LEADS`, `PRENSA`, `CHATBOT`. **Solo en el editor:** las claves `*_EDITOR`, `*_EDITOR_READ`, `BENEFICIOS`, `PROBLEMAS`, `CASOS_DE_USO`, `CARACTERISTICAS`, `FAQ` y `EDITOR_LOGIN`. La base de la API se resuelve distinto: la store con `NEXT_PUBLIC_API_BASE_URL`; el editor con una constante según `import.meta.env.DEV`. Un endpoint nuevo hay que declararlo en cada copia que lo necesite.
+
+## 6. Reglas de negocio y permisos
+
+1. Toda llamada a la API de la store pasa por `API_ENDPOINTS`, salvo las cuatro del apartado 4.
+2. Una ruta nueva de la API se añade como clave nueva; no se compone la dirección a mano.
+3. Las rutas del catálogo público no llevan autenticación.
+4. Los tipos se escriben a mano; ninguno se genera desde la API.
+5. `LogoType` solo admite tres valores; otro valor de la base no tiene dimensiones (`logoDimensions[logo.logoType]` sería `undefined`).
+
+## 7. Zonas de riesgo
+
+- Regla de diseño que hoy no se cumple; detalle en el informe restringido.
+- Copias de contrato divergentes (apartado 5): un cambio en un campo toca API, editor y store a mano. Ver ST-API-11 para los nombres que no coinciden con la columna (`id_casosdeuso`).
+- Cambiar una clave de `API_ENDPOINTS` rompe todos los usos de la tabla del apartado 4. Buscar por nombre de clave antes de renombrar.
+- Dos llamadas a APIs externas escritas en el componente (`HeroUserCount.tsx:9`, `MainFormacionSection.tsx:15`): si cambian de dirección hay que editar el componente.
+- `libs/icons.ts` solo traduce 12 nombres; un icono no listado en una solución cae en `faCogs` (`packs/[slugPack]/page.tsx:163`).
+- `FadeInOnScroll` envuelve secciones enteras con `y: 100` (`FadeInOnScroll.tsx:19`); pensado para la home.
+- ST-WEB-04 y ST-WEB-05 afectan a claves de esta tabla: ST-WEB-04 (parámetros que la API no lee, usados con `CLIENTES` y `PACKS`) y ST-WEB-05 (`usersCount`, fuera de la tabla).
+
+## 8. Cómo probarlo
+
+1. Con la API en marcha, abrir `/` y comprobar en la pestaña de red que cada petición va a la base de `NEXT_PUBLIC_API_BASE_URL`.
+2. Cambiar la variable (en entorno local, no en el repo) y reiniciar: las peticiones cambian de base.
+3. Para una clave concreta: buscar su nombre en `src/` (tabla del apartado 4) y abrir la página que la usa.
+4. Tipos: `npx tsc --noEmit` en el repo. El build no falla por tipos (ST-WEB-06), por eso hay que ejecutarlo a mano.
+5. `FadeInOnScroll`: bajar por la home; cada bloque debe aparecer una vez.
+
+## 9. Dudas / no localizado
+
+- `libs/fontawesome.ts` sin import: código sin uso (`libs/fontawesome.config.ts` sí se carga).
+- `components/MainSolucionesSection.tsx` es el único uso de `MAINPACKS` y no tiene import (ficha [W2](w2-home-normapro.md)).
+- Tipos `Solucion`/`Pack` con campos que la API no declara (`price`, `imagenOg`, `descripcion` se leen de `data` sin tipo; ver W10).
+- No localizado: tests de los tipos o de `API_ENDPOINTS`.
+- No localizado: quién decide qué iconos entran en `iconMap` ni por qué no se usa `libs/icons.ts` en los componentes de landings (cada uno tiene el suyo).
+- No localizado: la versión de Node requerida por la store (`package.json` sin `engines`).
