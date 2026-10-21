@@ -1,10 +1,14 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { cache } from "react";
 import { access } from "node:fs/promises";
 import path from "node:path";
 import API_ENDPOINTS from "@/config/api";
 import InformeDescargaCtaSection from "@/components/landings/InformeDescargaCtaSection";
 import { IndiceInformeChild, IndiceInformeItem, Informe, PrologoInformeItem, ResponsableInforme } from "@/types/informe";
+import JsonLd from "@/components/seo/JsonLd";
+import { breadcrumbJsonLd, pageMetadata } from "@/libs/seo";
 
 type InformeDetallePageProps = {
 	params: Promise<{ informe: string }>;
@@ -156,7 +160,7 @@ async function resolveInformeImagePath(imagePath?: string): Promise<string | nul
 	return candidates[0];
 }
 
-async function getInformeBySlug(slug: string): Promise<InformeDetalle | null> {
+const getInformeBySlug = cache(async (slug: string): Promise<InformeDetalle | null> => {
 	try {
 		let response = await fetch(`${API_ENDPOINTS.INFORMES}/slug/${encodeURIComponent(slug)}`, {
 			cache: "no-store",
@@ -197,6 +201,22 @@ async function getInformeBySlug(slug: string): Promise<InformeDetalle | null> {
 	} catch {
 		return null;
 	}
+});
+
+// Las URLs por id numérico declaran como canónica la URL con slug.
+const canonicalPath = (data: InformeDetalle, informe: string) => `/informes/${data.slug || informe}`;
+
+export async function generateMetadata({ params }: InformeDetallePageProps): Promise<Metadata> {
+	const { informe } = await params;
+	const data = await getInformeBySlug(informe);
+	if (!data) return { robots: { index: false, follow: true } };
+
+	return pageMetadata({
+		title: data.titulo,
+		description: data.textoDescarga,
+		path: canonicalPath(data, informe),
+		image: data.resolvedImgInforme,
+	});
 }
 
 export default async function InformeDetallePage({ params }: InformeDetallePageProps) {
@@ -218,8 +238,15 @@ export default async function InformeDetallePage({ params }: InformeDetallePageP
 	const responsables = data.responsablesSafe;
 	const textoDescarga = data.textoDescarga?.trim() || "";
 
+	const steps = [
+		{ name: "Home", path: "/" },
+		{ name: "Informes", path: "/informes" },
+		{ name: titulo, path: canonicalPath(data, informe) },
+	];
+
 	return (
 		<main className="w-full">
+			<JsonLd data={breadcrumbJsonLd(steps)} />
 			{/* Migas de pan */}
 			<section className="bg-white border-y border-[#d6dae4]">
 				<nav

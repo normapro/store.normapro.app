@@ -1,19 +1,17 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/libs/seo";
 import ListHistoriaSection from "@/components/landings/ListHistoriaSection";
-import HistoriaTextSection from "@/components/landings/HistoriaTextSection";
 import HistoriaTextSection2 from "@/components/historiaTextSection2";
-import ContactoFormSection from "@/components/ContactoFormSection";
-import PartnersProgramsSection from "@/components/PartnersProgramsSection";
-import PartnersTestimonialsSection from "@/components/PartnersTestimonialsSection";
-import TextSection from "@/components/landings/TextSection";
-import FaqSection from "@/components/landings/FaqSection";
 import AccordionSection from "@/components/AccordionSection";
 import CandidaturaFormSection from "@/components/CandidaturaFormSection";
 
-export default function NosotrosPage() {
+export const metadata: Metadata = pageMetadata({ title: "Únete a nuestro equipo y forma parte de la revolución empresarial", description: "En NormaPro, buscamos a los mejores talentos para impulsar la innovación y la eficiencia en el mundo empresarial.", path: "/trabaja" });
+
+export default function TrabajaPage() {
     return <>
         <div className="mt-20">
             <HistoriaTextSection2
-                title="Únete a nuestro equipo y forma parte de la revolución empresarials"
+                title="Únete a nuestro equipo y forma parte de la revolución empresarial"
                 claim={[
                     "En NormaPro, buscamos a los mejores talentos para impulsar la innovación y la eficiencia en el mundo empresarial."
                 ]}

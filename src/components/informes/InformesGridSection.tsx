@@ -100,7 +100,7 @@ export default function InformesGridSection({ showOnlyLastThree = false, isInsti
                 {informePath ? (
                   isInstituto ? (
                     <Link
-                      href={`https://store.normapro.es/informes/${informePath}?ref=instittuo`}
+                      href={`https://store.normapro.es/informes/${informePath}?ref=instituto`}
                       className="mt-3 text-base font-bold text-[#010d3d] leading-tight min-h-[7.25rem] hover:underline underline-offset-4"
                     >
                       {titulo}

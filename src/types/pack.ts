@@ -27,12 +27,23 @@ export interface Pack {
     // Campos para página de detalle
     title: string;
     subtitle?: string;
+    titleweb?: string | null;
+    fraseCierre?: string | null;
   
     problemaTitle?: string;
     problemaPragma?: string;
   
     multimediaUri?: string;
     multimediaTypeId?: number;
+
+    solucionTitle?: string;
+    solucionPragma?: string;
+    caracteristicasTitle?: string;
+    caracteristicasPragma?: string;
+    casosdeusoTitle?: string;
+    casosdeusoPragma?: string;
+    beneficiosTitle?: string;
+    beneficiosPragma?: string;
   
     firstCtaTitle?: string;
     firstCtaPragma?: string;
@@ -45,6 +56,7 @@ export interface Pack {
     soluciones?: {
       slug: string;
       descripcion: string;
+      icon?: string | null;
     }[];
   
     faqs?: {

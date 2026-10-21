@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { BreadcrumbItem } from "@/types/breadcrumb";
-import { JSX } from "react";
+import { Fragment, JSX } from "react";
 
 interface Props {
   breadcrumb: BreadcrumbItem;
@@ -13,9 +13,10 @@ const Breadcrumb = ({ breadcrumb }: Props) => {
     if (!item) return null;
 
     return (
-      <>
+      <Fragment key={item.url}>
         <Link
           href={item.url}
+          aria-current={item.children ? undefined : "page"}
           className={`text-[14px] ${
             isFirst ? "font-extrabold" : "font-bold"
           } text-[#010D3D]`}
@@ -24,15 +25,15 @@ const Breadcrumb = ({ breadcrumb }: Props) => {
         </Link>
         {item.children && (
           <>
-            <span className="mx-2 text-[#010D3D]">{" > "}</span>
+            <span className="mx-2 text-[#010D3D]" aria-hidden="true">{" > "}</span>
             {renderBreadcrumb(item.children, false)}
           </>
         )}
-      </>
+      </Fragment>
     );
   };
 
-  return <nav className="flex">{renderBreadcrumb(breadcrumb)}</nav>;
+  return <nav aria-label="Migas de pan" className="flex">{renderBreadcrumb(breadcrumb)}</nav>;
 };
 
 export default Breadcrumb;

@@ -1,6 +1,8 @@
-'use client'
-
+import type { Metadata } from "next";
+import { pageMetadata } from "@/libs/seo";
 import Cookies from '@/components/Cookies'
+
+export const metadata: Metadata = pageMetadata({ title: "Política de cookies (UE)", path: "/politica-de-cookies-ue" });
 
 const PoliticaCookies = () => {
     return (

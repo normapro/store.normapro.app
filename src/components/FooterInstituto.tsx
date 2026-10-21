@@ -6,10 +6,12 @@ import { faLinkedin, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
 import Formulario from "@/components/Formulario";
 import API_ENDPOINTS from "@/config/api";
+import HoneypotField from "@/components/shared/HoneypotField";
 
 const Footer = () => {
     const [openModal, setOpenModal] = useState(false);
     const [newsletterEmail, setNewsletterEmail] = useState("");
+    const [website, setWebsite] = useState("");
     const [isSubmittingNewsletter, setIsSubmittingNewsletter] = useState(false);
     const [newsletterMessage, setNewsletterMessage] = useState<string | null>(null);
 
@@ -33,6 +35,7 @@ const Footer = () => {
                 body: JSON.stringify({
                     email,
                     acepta_marketing: true,
+                    website,
                     origen_ruta,
                 }),
             });
@@ -74,6 +77,7 @@ const Footer = () => {
                                     novedades de Instituto de Innovación, Ciencia y Empresa.
                                 </p>
                                 <div className="flex flex-1">
+                                    <HoneypotField value={website} onChange={setWebsite} />
                                     <input
                                         type="email"
                                         placeholder="Escribe tu email"
@@ -277,7 +281,7 @@ const Footer = () => {
                         Aviso Legal
                     </Link>
                     <Link
-                        href="https://store.normapro.es/politica-de.privacidad?ref=instituto"
+                        href="https://store.normapro.es/politica-de-privacidad?ref=instituto"
                         className="hover:underline"
                     >
                         Política de privacidad

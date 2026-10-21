@@ -9,7 +9,6 @@ const HeroUserCount = () => {
     fetch("https://api.danubio.normapro.es/apps/store/users.php")
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         if (data.users) {
           // Formateamos el número con puntos
           const formatted = Number(data.users).toLocaleString("es-ES");

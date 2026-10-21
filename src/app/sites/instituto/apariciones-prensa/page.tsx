@@ -1,11 +1,11 @@
-'use client';
-
+import type { Metadata } from "next";
 import HeaderSection from "@/components/HeaderSection";
 import API_ENDPOINTS from "@/config/api";
 import { faArrowUpRight } from "@fortawesome/pro-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { pageMetadata } from "@/libs/seo";
+import { STORE_REVALIDATE_SECONDS } from "@/services/storeService";
 
 type Noticia = {
     title: string;
@@ -13,28 +13,24 @@ type Noticia = {
     link: string;
 }
 
-export default function AparicionesPrensaPage() {
-    const [noticias, setNoticias] = useState<Noticia[]>([]);
-    const [isLoading, setIsLoading] = useState(true);
+export const metadata: Metadata = pageMetadata({ title: "Apariciones en prensa", path: "/apariciones-prensa", site: "instituto" });
 
-    useEffect(() => {
-        const fetchNoticias = async () => {
-            try {
-                const response = await fetch(API_ENDPOINTS.PRENSA);
-                if (!response.ok) throw new Error('Error al obtener apariciones en prensa');
-                const data = await response.json();
-                setNoticias(Array.isArray(data) ? data : []);
-            } catch (err) {
-                console.error('Error al cargar apariciones en prensa:', err);
-                setNoticias([]);
-            } finally {
-                setIsLoading(false);
-            }
-        };
-        fetchNoticias();
-    }, []);
+async function getNoticias(): Promise<Noticia[]> {
+    try {
+        const response = await fetch(API_ENDPOINTS.PRENSA, { next: { revalidate: STORE_REVALIDATE_SECONDS } });
+        if (!response.ok) throw new Error('Error al obtener apariciones en prensa');
+        const data = await response.json();
+        return Array.isArray(data) ? data : [];
+    } catch (err) {
+        console.error('Error al cargar apariciones en prensa:', err);
+        return [];
+    }
+}
 
-    if (isLoading || noticias.length === 0) return null;
+export default async function AparicionesPrensaPage() {
+    const noticias = await getNoticias();
+
+    if (noticias.length === 0) return null;
 
     return (
         <>

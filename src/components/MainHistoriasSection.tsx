@@ -64,7 +64,6 @@ const MainHistoriasSection = () => {
                                         ? clientName.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "")
                                         : "default";
                                     const imageSrc = testimonio.miniImg ?? `/testimonios/${imageSlug}.png`;
-                                    console.log(imageSrc);
                                     return (
                                         <div className="w-20 h-20 relative rounded-full overflow-hidden flex-shrink-0">
                                             <Image

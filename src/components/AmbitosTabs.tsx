@@ -232,7 +232,7 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 
 								{soluciones.map((sol) => {
 									const iconParts = sol.uriIcon.split(" ");
-									const icon: IconProp = iconParts.length === 2 ? (iconParts as [IconPrefix, IconName]) : ["fas", "fa-question"];
+									const icon: IconProp = iconParts.length === 2 ? (iconParts as [IconPrefix, IconName]) : (["fas", "fa-question"] as unknown as [IconPrefix, IconName]);
 									return (
 										<Link key={sol.id_solucion} href={`${slugBase}/${sol.slug}`} rel="noopener noreferrer">
 											<div className="py-2 px-3 bg-white shadow rounded-lg flex items-center mb-2">

@@ -1,5 +1,9 @@
 
+import type { Metadata } from "next";
 import InformesGridSection from "@/components/informes/InformesGridSection";
+import { pageMetadata } from "@/libs/seo";
+
+export const metadata: Metadata = pageMetadata({ title: "Informes", path: "/informes" });
 
 export default async function InformesPage() {
 	return (

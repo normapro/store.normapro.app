@@ -1,4 +1,8 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/libs/seo";
 import React from 'react';
+
+export const metadata: Metadata = pageMetadata({ title: "Aviso Legal", path: "/aviso-legal" });
 
 const AvisoLegal = () => {
     return (

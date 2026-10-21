@@ -1,44 +1,64 @@
-"use client";
-
-import { useState } from "react";
-import { useParams } from "next/navigation";
+import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 import SolutionsHero from "@/components/SolutionsHero";
 import AmbitosTabs from "@/components/AmbitosTabs";
 import MainTestimoniosSection from "@/components/MainTestimoniosSection";
 import HistoriasClientesSection from "@/components/landings/HistoriasClientesSection";
-import Formulario from "@/components/Formulario";
+import CtaDiagnosticoSection from "@/components/soluciones/CtaDiagnosticoSection";
+import JsonLd from "@/components/seo/JsonLd";
+import { breadcrumbJsonLd, pageMetadata } from "@/libs/seo";
+import { getAmbitos } from "@/services/storeService";
 
-const ListaDeSoluciones = () => {
-  const { ambito } = useParams();
-  const [openModal, setOpenModal] = useState(false);
+type Props = {
+  params: Promise<{ ambito: string }>;
+};
+
+// "all" muestra el mismo listado que /soluciones.
+async function getAmbitoData(slug: string) {
+  if (slug === "all") return { esTodos: true, ambito: null, existe: true };
+  const ambitos = await getAmbitos();
+  const ambito = ambitos.find((item) => item.slug === slug) ?? null;
+  // Si la API no responde (lista vacía) no se considera inexistente.
+  return { esTodos: false, ambito, existe: Boolean(ambito) || ambitos.length === 0 };
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { ambito: slug } = await params;
+  const { esTodos, ambito } = await getAmbitoData(slug);
+
+  if (esTodos) return pageMetadata({ title: "Soluciones", path: "/soluciones" });
+
+  return pageMetadata({
+    title: ambito?.description,
+    description: ambito?.textoweb,
+    path: `/soluciones/${slug}`,
+  });
+}
+
+const ListaDeSoluciones = async ({ params }: Props) => {
+  const { ambito: slug } = await params;
+  const { esTodos, ambito, existe } = await getAmbitoData(slug);
+
+  // Igual que las rutas desconocidas del sitio, un ámbito inexistente vuelve a la home.
+  if (!existe) redirect("/");
+
+  const steps = [
+    { name: "Home", path: "/" },
+    { name: "Soluciones", path: "/soluciones" },
+    ...(!esTodos && ambito ? [{ name: ambito.description.trim(), path: `/soluciones/${slug}` }] : []),
+  ];
 
   return (
     <main>
+      <JsonLd data={breadcrumbJsonLd(steps)} />
       <SolutionsHero />
       <section>
-        <AmbitosTabs sectorSlug={null} ambitoSlug={ambito ? String(ambito) : "all"} />
+        <AmbitosTabs sectorSlug={null} ambitoSlug={slug || "all"} />
       </section>
       <MainTestimoniosSection soloOpiniones={true} />
       <HistoriasClientesSection soloUnaHistoria={true} />
 
-      <section className="py-14 px-6 mt-10">
-        <div className="max-w-7xl mx-auto text-center">
-          <h3 className="text-[#0a1b55] font-extrabold text-[25px] leading-tight mb-7">
-            Descubre cómo podemos ayudar a tu empresa
-          </h3>
-
-          <button
-            type="button"
-            onClick={() => setOpenModal(true)}
-            className="bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] shadow-md text-white text-[17px] leading-none px-12 py-5 rounded-2xl font-bold hover:opacity-90 transition"
-          >
-            Reserva un diagnóstico gratuito
-          </button>
-        </div>
-      </section>
-
-      {openModal && <Formulario onClose={() => setOpenModal(false)} />}
-
+      <CtaDiagnosticoSection />
     </main>
   );
 };

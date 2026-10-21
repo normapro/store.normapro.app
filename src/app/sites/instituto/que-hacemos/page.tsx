@@ -1,6 +1,10 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/libs/seo";
 import HeaderSection from "@/components/HeaderSection";
 import Image from "next/image";
 import { CertificacionesSection } from "@/components/landings";
+
+export const metadata: Metadata = pageMetadata({ title: "¿Qué hacemos?", path: "/que-hacemos", site: "instituto" });
 
 const soluciones = [
     {

@@ -1,43 +1,68 @@
-"use client";
-
-import { useState } from "react";
-import { useParams } from "next/navigation";
+import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 import SolutionsHeroSector from "@/components/SolutionsHeroSector";
 import AmbitosTabs from "@/components/AmbitosTabs";
 import MainTestimoniosSection from "@/components/MainTestimoniosSection";
 import HistoriasClientesSection from "@/components/landings/HistoriasClientesSection";
-import Formulario from "@/components/Formulario";
+import CtaDiagnosticoSection from "@/components/soluciones/CtaDiagnosticoSection";
+import JsonLd from "@/components/seo/JsonLd";
+import { BreadcrumbStep, breadcrumbJsonLd, pageMetadata, resolvePublicImage } from "@/libs/seo";
+import { getAmbitoBySlug, getSectorBySlug } from "@/services/storeService";
 
-const ListaSolucionesSector = () => {
-  const { ambito, sector } = useParams(); // Obtiene los parámetros de la URL
-  const [openModal, setOpenModal] = useState(false);
+type Props = {
+  params: Promise<{ ambito: string; sector: string }>;
+};
+
+async function getDatos(ambitoSlug: string, sectorSlug: string) {
+  const [sector, ambito] = await Promise.all([
+    getSectorBySlug(sectorSlug),
+    ambitoSlug === "all" ? Promise.resolve(null) : getAmbitoBySlug(ambitoSlug),
+  ]);
+  return { sector, ambito };
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { ambito: ambitoSlug, sector: sectorSlug } = await params;
+  const { sector, ambito } = await getDatos(ambitoSlug, sectorSlug);
+  if (!sector) return {};
+
+  // Título del sector (titleweb) precedido del ámbito cuando la página está filtrada por uno.
+  const sectorTitle = sector.titleweb?.trim() || sector.description;
+  const ambitoName = ambito?.description?.trim();
+
+  return pageMetadata({
+    title: ambitoName ? `${ambitoName} | ${sectorTitle}` : sectorTitle,
+    description: sector.descriptionweb,
+    path: `/soluciones/${ambitoSlug}/sector/${sector.slug || sectorSlug}`,
+    image: resolvePublicImage(sector.backgroundImage),
+  });
+}
+
+const ListaSolucionesSector = async ({ params }: Props) => {
+  const { ambito: ambitoSlug, sector: sectorSlug } = await params;
+  const { sector, ambito } = await getDatos(ambitoSlug, sectorSlug);
+
+  // Igual que las rutas desconocidas del sitio, un sector inexistente vuelve a la home.
+  if (!sector) redirect("/");
+
+  const steps: BreadcrumbStep[] = [
+    { name: "Home", path: "/" },
+    { name: "Soluciones", path: "/soluciones" },
+    ...(ambito ? [{ name: ambito.description.trim(), path: `/soluciones/${ambitoSlug}` }] : []),
+    { name: sector.description, path: `/soluciones/${ambitoSlug}/sector/${sectorSlug}` },
+  ];
 
   return (
     <main>
-      <SolutionsHeroSector sectorSlug={sector ? String(sector) : "non-specified"} />
+      <JsonLd data={breadcrumbJsonLd(steps)} />
+      <SolutionsHeroSector sectorSlug={sectorSlug || "non-specified"} />
       <section>
-        <AmbitosTabs sectorSlug={sector ? String(sector) : "non-specified"} ambitoSlug={ambito ? String(ambito) : "all"} />
+        <AmbitosTabs sectorSlug={sectorSlug || "non-specified"} ambitoSlug={ambitoSlug || "all"} />
       </section>
       <MainTestimoniosSection soloOpiniones={true} />
       <HistoriasClientesSection soloUnaHistoria={true} />
 
-      <section className="py-14 px-6 mt-10">
-        <div className="max-w-7xl mx-auto text-center">
-          <h3 className="text-[#0a1b55] font-extrabold text-[25px] leading-tight mb-7">
-            Descubre cómo podemos ayudar a tu empresa
-          </h3>
-
-          <button
-            type="button"
-            onClick={() => setOpenModal(true)}
-            className="bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] shadow-md text-white text-[17px] leading-none px-12 py-5 rounded-2xl font-bold hover:opacity-90 transition"
-          >
-            Reserva un diagnóstico gratuito
-          </button>
-        </div>
-      </section>
-
-      {openModal && <Formulario onClose={() => setOpenModal(false)} />}
+      <CtaDiagnosticoSection />
     </main>
   );
 };

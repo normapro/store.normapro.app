@@ -1,6 +1,10 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/libs/seo";
 import HeaderSection from "@/components/HeaderSection";
 import { faArrowDownToLine } from "@fortawesome/pro-duotone-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+export const metadata: Metadata = pageMetadata({ title: "Material para prensa", path: "/material-prensa", site: "instituto" });
 
 const recursos = [
     { nombre: "Manual de identidad corporativo", linkText: "Descargar pdf", href: "" },

@@ -2,6 +2,7 @@
 
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import API_ENDPOINTS from '@/config/api';
+import HoneypotField from '@/components/shared/HoneypotField';
 
 type Props = {
     isOpen: boolean;
@@ -48,6 +49,7 @@ const DescargaInformeModal = ({
 }: Props) => {
     const [values, setValues] = useState<FormValues>(initialValues);
     const [errors, setErrors] = useState<FormErrors>({});
+    const [website, setWebsite] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitMessage, setSubmitMessage] = useState<string | null>(null);
 
@@ -130,6 +132,7 @@ const DescargaInformeModal = ({
                     acepta_contacto: values.demo,
                     acepta_politica: values.politica,
                     origen_ruta,
+                    website,
                 }),
             });
 
@@ -207,6 +210,7 @@ const DescargaInformeModal = ({
                         </p>
 
                         <form className="space-y-4" onSubmit={handleSubmit}>
+                            <HoneypotField value={website} onChange={setWebsite} />
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                                 <label className="text-left text-sm sm:text-base font-semibold text-[#1b2a53]">
                                     Nombre

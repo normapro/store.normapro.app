@@ -1,0 +1,190 @@
+"use client";
+
+import { useState } from "react";
+import { Pack } from "@/types/pack";
+import Breadcrumb from "@/components/breadcrump";
+import { BreadcrumbItem } from "@/types/breadcrumb";
+import Link from "next/link";
+import MultimediaPlayer from "@/components/MultimediaPlayer";
+import TestimonioCard from "@/components/TestimonioCard";
+import { TestimonioConCliente } from "@/types/testimonio";
+import SolutionsRefered from "@/components/solutionsRefered";
+import Formulario from "@/components/Formulario";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { iconMap } from "@/libs/icons";
+import { faChevronDown, faCogs } from "@fortawesome/free-solid-svg-icons";
+
+interface Props {
+  pack: Pack;
+  ambito: string;
+  breadcrumbData: BreadcrumbItem;
+  testimonios: TestimonioConCliente[];
+  error: string | null;
+}
+
+// Detalle de un pack. Los datos llegan desde el servidor.
+const PackDetalle = ({ pack, ambito, breadcrumbData, testimonios, error }: Props) => {
+  const [openModal, setOpenModal] = useState(false);
+
+  const hasTestimonios = Array.isArray(testimonios) && testimonios.length > 0;
+
+  return (
+    <>
+      <main>
+        <section className="max-w-7xl mx-auto px-6 mt-[20px]">
+          <Breadcrumb breadcrumb={breadcrumbData} />
+        </section>
+
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-16 mt-10">
+          <div className="lg:col-span-2">
+            <h1 className="text-[32px] text-[#010D3D] font-black">{pack.description}</h1>
+            <h2 className="text-[24px] text-[#010D3D] font-bold">{pack.title}</h2>
+            <h3 className="text-[18px] text-[#7F859D] mt-2">{pack.subtitle}</h3>
+
+            {pack.problemaTitle && (
+              <div className="mt-8">
+                <h3 className="text-[16px] text-[#010D3D] font-bold">{pack.problemaTitle}</h3>
+                <p className="mt-2 text-[15px] text-[#010D3D]">{pack.problemaPragma}</p>
+              </div>
+            )}
+
+            {pack.multimediaUri && (
+              <div className="mt-8">
+                <MultimediaPlayer uri={pack.multimediaUri} typeId={pack.multimediaTypeId} />
+              </div>
+            )}
+
+            <div className="mt-12 space-y-10">
+              {pack.solucionTitle && <h2 className="font-bold text-[18px] text-[#010D3D]">{pack.solucionTitle}</h2>}
+              {pack.solucionPragma && <p className="text-[15px] text-[#010D3D]">{pack.solucionPragma}</p>}
+
+              {pack.caracteristicasTitle && <h2 className="font-bold text-[18px] text-[#010D3D] mt-8">{pack.caracteristicasTitle}</h2>}
+              {pack.caracteristicasPragma && <p className="text-[15px] text-[#010D3D]">{pack.caracteristicasPragma}</p>}
+              {(pack.caracteristicas?.length ?? 0) > 0 && (
+                <ul className="list-disc ml-5 text-[15px] text-[#010D3D]">
+                  {pack.caracteristicas!.map(c => <li key={c.id_caracteristica}>{c.description}</li>)}
+                </ul>
+              )}              
+              {pack.casosdeusoTitle && <h2 className="font-bold text-[18px] text-[#010D3D] mt-8">{pack.casosdeusoTitle}</h2>}
+              {pack.casosdeusoPragma && <p className="text-[15px] text-[#010D3D]">{pack.casosdeusoPragma}</p>}
+              {(pack.casosdeuso?.length ?? 0) > 0 && (
+                <ul className="list-disc ml-5 text-[15px] text-[#010D3D]">
+                  {pack.casosdeuso!.map(c => <li className="mt-4" key={c.id_casodeuso}>{c.description}</li>)}
+                </ul>
+              )}
+
+              {(pack.beneficios?.length ?? 0) > 0 && (
+                <div className="mt-10">
+                  {pack.beneficiosTitle && <h3 className="text-[18px] font-bold text-[#010D3D] mb-2">{pack.beneficiosTitle}</h3>}
+                  {pack.beneficiosPragma && <p className="text-[15px] text-[#010D3D] mb-4">{pack.beneficiosPragma}</p>}
+                  <ul className="list-disc ml-5 text-[15px] text-[#010D3D]">
+                    {pack.beneficios!.map(b => <li key={b.id_beneficio}>{b.description}</li>)}
+                  </ul>
+                </div>
+              )}
+                {(pack.soluciones?.length ?? 0) > 0 && (
+                    <div className="mt-12">
+                        <h3 className="text-[18px] font-bold text-[#010D3D] mb-4">Soluciones que incluye</h3>
+                        <ul className="space-y-2">
+                        {pack.soluciones!.map(sol => (
+                            <li
+                            key={sol.slug}
+                            className="flex items-center justify-between border border-[#cde6f7] rounded-md px-4 py-3 bg-white shadow-sm"
+                            >
+                            <div className="flex items-center gap-3">
+                                {/* Aquí se renderiza el icono si existe */}
+                                {sol.icon && (
+                                <FontAwesomeIcon
+                                    icon={iconMap[sol.icon] ?? faCogs}
+                                    className="w-5 h-5 text-[#00b2e3]"
+                                />
+                                )}
+                                <Link href={`/soluciones/${pack.slug_ambito}/${sol.slug}`} className="text-[#010D3D] font-medium">
+                                {sol.descripcion}
+                                </Link>
+                            </div>
+                            <span className="text-blue-500 font-bold">✓</span>
+                            </li>
+                        ))}
+                        </ul>
+                    </div>
+                    )}
+
+
+              {pack.consultoriaTitle && (
+                <div className="mt-12 p-6 border-l-4 border-blue-400 bg-[#f4faff] rounded-md relative">
+                  <div className="absolute right-6 top-6 text-2xl">👔</div>
+                  <h4 className="font-bold text-[#010D3D] text-[16px]">{pack.consultoriaTitle}</h4>
+                  <p className="text-[15px] text-[#010D3D] mt-2">{pack.consultoriaDescription}</p>
+                </div>
+              )}
+            </div>
+          </div>
+
+          <div className="lg:col-span-1">
+            <div className="sticky top-20 space-y-6">
+              <div className="bg-[#f2f2f5] p-6 rounded-lg shadow">
+                <h3 className="text-[16px] text-[#010D3D] font-bold">{pack.firstCtaPragma}</h3>
+                <button
+                  type="button"
+                  onClick={() => setOpenModal(true)}
+                  className="mt-4 w-full bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition"
+                >
+                  {pack.firstCtaTitle ?? "Solicita un diagnóstico gratuito"}
+                </button>
+              </div>
+
+              {error ? (
+                <p className="text-center text-red-500">{error}</p>
+              ) : hasTestimonios ? (
+                <TestimonioCard {...testimonios[0]} />
+              ) : (
+                <p className="text-center text-gray-400">Aún no hay testimonios disponibles.</p>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {(pack.faqs?.length ?? 0) > 0 && (
+          <section className="bg-[#f8f8fa] py-12 mt-12">
+            <div className="max-w-5xl mx-auto px-6">
+              <h2 className="text-2xl font-extrabold text-[#010D3D] mb-8">No te quedes con dudas</h2>
+              <div className="divide-y divide-gray-300">
+                {pack.faqs!.map(faq => (
+                  <details key={faq.id_faq} className="py-4 group">
+                    <summary className="flex justify-between items-center cursor-pointer text-[16px] font-bold text-[#010D3D] list-none">
+                      {faq.question}
+                      <FontAwesomeIcon icon={faChevronDown} className="ml-4 transform group-open:rotate-180 transition" />
+                    </summary>
+                    <p className="mt-2 text-[#4B5563] text-[15px]">{faq.answer}</p>
+                  </details>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        <section className="max-w-7xl mx-auto px-6 text-center min-h-[350px] flex justify-center items-center flex-col">
+          <h3 className="text-[16px] text-[#010D3D] font-bold">{pack.secondCtaTitle}</h3>
+          <p className="mt-2 text-[15px] text-[#010D3D]">{pack.secondCtaPragma}</p>
+          <button
+            type="button"
+            onClick={() => setOpenModal(true)}
+            className="mt-4 bg-gradient-to-r from-[#00b2e3] to-[#cca1dd] text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition"
+          >
+            {pack.firstCtaTitle ?? "Solicita un diagnóstico gratuito"}
+          </button>
+        </section>
+
+        <section>
+          <SolutionsRefered ambitoSlug={ambito} />
+        </section>
+
+        {openModal && <Formulario onClose={() => setOpenModal(false)} />}
+      </main>
+    </>
+  );
+};
+
+export default PackDetalle;

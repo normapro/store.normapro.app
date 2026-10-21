@@ -6,10 +6,12 @@ import { faLinkedin, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
 import Formulario from "@/components/Formulario";
 import API_ENDPOINTS from "@/config/api";
+import HoneypotField from "@/components/shared/HoneypotField";
 
 const Footer = () => {
 	const [openModal, setOpenModal] = useState(false);
 	const [newsletterEmail, setNewsletterEmail] = useState("");
+	const [website, setWebsite] = useState("");
 	const [isSubmittingNewsletter, setIsSubmittingNewsletter] = useState(false);
 	const [newsletterMessage, setNewsletterMessage] = useState<string | null>(null);
 
@@ -33,6 +35,7 @@ const Footer = () => {
 				body: JSON.stringify({
 					email,
 					acepta_marketing: true,
+					website,
 					origen_ruta,
 				}),
 			});
@@ -71,6 +74,7 @@ const Footer = () => {
 								<label className="text-base block mb-1 w-full md:w-[400px] justify-center item-center py-2">
 									Mantente informado
 								</label>
+								<HoneypotField value={website} onChange={setWebsite} />
 								<input
 									type="email"
 									placeholder="Escribe tu email"
@@ -208,9 +212,9 @@ const Footer = () => {
 					{/* Texto legal */}
 					<div className="mt-6 pt-6 md:pt-0 flex flex-col md:flex-row text-center md:text-left justify-between items-center md:items-start gap-4 text-xs text-gray-500">
 						<p className="flex flex-row gap-6 md:gap-10 order-1">
-							<Link href="/aviso-legal/" className="hover:underline">Aviso Legal</Link>
-							<Link href="/politica-de-privacidad/" className="hover:underline">Política de privacidad</Link>
-							<Link href="/politica-de-cookies-ue/" className="hover:underline">Política de cookies</Link>
+							<Link href="/aviso-legal" className="hover:underline">Aviso Legal</Link>
+							<Link href="/politica-de-privacidad" className="hover:underline">Política de privacidad</Link>
+							<Link href="/politica-de-cookies-ue" className="hover:underline">Política de cookies</Link>
 						</p>
 						<p className="order-2 md:order-none">
 							NormaPro® es una marca registrada por Instituto de Innovación, Ciencia y Empresa

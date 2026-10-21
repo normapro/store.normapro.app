@@ -1,4 +1,8 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/libs/seo";
 import React from 'react';
+
+export const metadata: Metadata = pageMetadata({ title: "Política de privacidad", path: "/politica-de-privacidad" });
 
 const AvisoLegal = () => {
     return (
