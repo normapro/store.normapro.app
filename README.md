@@ -45,7 +45,7 @@ Variables de entorno que usa el proyecto:
 | `FONTAWESOME_NPM_TOKEN` | Token del registro privado de Font Awesome Pro, leído desde `.npmrc` en `npm install`. No se versiona. | (obligatoria) |
 | `NEXT_PUBLIC_API_BASE_URL` | URL de la API de la tienda. | `http://localhost:3010` en desarrollo, `https://api-store.normapro.app` en producción |
 | `NEXT_PUBLIC_SITE_URL` | Dominio canónico de la tienda (canonical, Open Graph, sitemap). | `https://www.normapro.es` |
-| `NEXT_PUBLIC_INSTITUTO_SITE_URL` | Dominio canónico del sitio del instituto. | `https://inicie.normapro.es` |
+| `NEXT_PUBLIC_INSTITUTO_SITE_URL` | Dominio canónico del sitio del instituto. | `https://www.institutodeinnovacion.es` |
 
 ## SEO
 

@@ -3,7 +3,7 @@ import { BreadcrumbItem } from "@/types/breadcrumb";
 
 // Dominios canónicos de cada sitio. Se pueden sobreescribir por entorno.
 export const NORMAPRO_SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.normapro.es").replace(/\/+$/, "");
-export const INSTITUTO_SITE_URL = (process.env.NEXT_PUBLIC_INSTITUTO_SITE_URL || "https://inicie.normapro.es").replace(/\/+$/, "");
+export const INSTITUTO_SITE_URL = (process.env.NEXT_PUBLIC_INSTITUTO_SITE_URL || "https://www.institutodeinnovacion.es").replace(/\/+$/, "");
 
 export const NORMAPRO_SITE_NAME = "NormaPro";
 export const INSTITUTO_SITE_NAME = "Instituto de Innovación, Ciencia y Empresa";
@@ -13,7 +13,13 @@ export const DEFAULT_OG_IMAGE = "/logos/NormaPro_Horizontal_Color@2x.png";
 export const INSTITUTO_LOGO = "/iconoInstituto.svg";
 
 // Hosts que sirve cada sitio (los usa también el middleware).
-export const INSTITUTO_HOSTS = ["instituto.local", "inicie.normapro.es", "www.inicie.normapro.es"];
+export const INSTITUTO_HOSTS = [
+	"instituto.local",
+	"institutodeinnovacion.es",
+	"www.institutodeinnovacion.es",
+	"inicie.normapro.es",
+	"www.inicie.normapro.es",
+];
 export const NORMAPRO_HOSTS = ["normapro.local", "normapro.es", "www.normapro.es", "store.normapro.es", "www.store.normapro.es"];
 
 // Hosts de producción que se pueden indexar. El resto (previews, .local, IPs) recibe noindex.
