@@ -195,3 +195,27 @@ Comprobado en la API: `GET S/prensa` ejecuta `SELECT title, subtitle, link FROM 
 - Título de página «Instituto» y descripción vacía (`I layout.tsx:19-22`): no localizado si es definitivo.
 - Los 3 mapas de `/contacto` pertenecen a la ficha W8.
 - Los enlaces del pie «Sobre nosotros» llevan a `/que-hacemos`; el texto del desplegable dice «Qué hacemos» (`SobreNosotrosDropdownInstituto.tsx:9`). No localizado si hay otra página prevista.
+
+## Correcciones de la revisión contra el código (21/10/2026)
+
+### Afirmaciones incorrectas
+- Ninguna afirmación incorrecta.
+
+### Cifras o líneas a unificar
+- Enlaces rotos de Instituto: 4 en la barra (`NavbarInstituto.tsx:71,72,128-130,142`) y 8 en el pie (`FooterInstituto.tsx:153,174-177,190-192`). Más el mal escrito de :280 y el slug `cumpliance-penal` de :140.
+- En `app/sites/instituto/` solo existen 7 carpetas y el comodín.
+- `Formulario` en el pie: render en `FooterInstituto.tsx:298-300`.
+- Falta en la ficha: `actualidad.imagen` vacío genera `/null` (:102) y `/apariciones-prensa` también devuelve `null` mientras carga.
+- «Contacta» va a `/contacto` en escritorio (:99) y abre el modal en móvil (:155).
+
+### Errores funcionales de esta ficha
+- ST-WEB-02: `x-site-ref` no llega al layout; los `?ref=instituto` son decorativos ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-16: enlaces de Instituto a páginas que no existen ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-18: enlaces de Instituto mal escritos (`politica-de.privacidad`, `cumpliance-penal`) ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-39: «Contacta» va a sitios distintos en escritorio y móvil ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-40: `/material-prensa` no descarga nada ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+
+### Afirmaciones no verificables
+- Endpoints de los componentes de otras fichas (según `docs/MAPA.md`) y la sección `## 8`. El menú móvil no se abrió línea a línea.
+
+- Hay reglas de diseño que hoy no se cumplen; detalle en el informe restringido.

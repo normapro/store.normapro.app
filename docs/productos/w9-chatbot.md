@@ -114,3 +114,23 @@ Markdown admitido (`MarkdownContent.tsx`): listas con `- ` o `* ` (`:37`), títu
 - No localizado: registro (log) de conversaciones en la store.
 - `chatbotService.ts:99-117`: el parseo defensivo asume que a veces `response` llega serializado. Sin documentación de cuándo ocurre.
 - Spec del chatbot de la API: `api-store.normapro.app/docs/chatbot/specs/chatbot_integration_spec.md` (ficha A12). No leída para esta ficha.
+
+## Correcciones de la revisión contra el código (21/10/2026)
+
+### Afirmaciones incorrectas
+- Ninguna afirmación incorrecta.
+
+### Cifras o líneas a unificar
+- En `MarkdownContent.tsx`, `target="_blank"` está en :103 y `rel` en :104.
+- Cálculo del bloqueo: tras `n-1` turnos hay `2(n-1)` mensajes; con el nuevo son `2n-1`. Con n=11 son 21 y el límite de la API es 20.
+- `clearSessionId` (`chatbotService.ts:38-45`) no se usa. Los temporizadores de `ChatWindow.tsx:136-178` no se cancelan al desmontar (ejecución pendiente).
+- `Navbar.tsx:169` envuelve el botón de chat en `hidden md:flex`: en móvil no hay entrada para reabrir.
+
+### Errores funcionales de esta ficha
+- ST-WEB-10: el chat se bloquea al 11.º mensaje ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-API-32: `session_id` que no es texto da 500 en el chat ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-API-33: un 4xx del proveedor del chat sale como 504 ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-API-34: el `Map` del limitador del chat crece sin límite ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+
+### Afirmaciones no verificables
+- Quién devuelve `OPEN_CONTACT_MODAL` y `REDIRECT` (servicio externo), cuándo llega la respuesta serializada, la spec del chatbot de la API (A12) y la sección `## 8`.

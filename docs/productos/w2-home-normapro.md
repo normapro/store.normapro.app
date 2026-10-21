@@ -165,3 +165,29 @@ Rutas de la API: `api-store…/routes/v1/store.ts` (`/packscategoria` :48, `/tes
 - `MainClientesCarrousel`, `MainParallaxSection` y `MainSolucionesSection`: no localizado quién decidió dejarlos sin uso ni si hay que recuperarlos.
 - `page.tsx:4` importa `MainConsultoriaSection` sin renderizarla: no localizado si la consultoría debe volver a la home de NormaPRO.
 - Imágenes de la home (`public/main/*`, `public/logos/*`): no se ha comprobado que existan todos los ficheros que citan los datos.
+
+## Correcciones de la revisión contra el código (21/10/2026)
+
+### Afirmaciones incorrectas
+- Dice: «Todas las URLs salen de `config/api.ts`» → Correcto: dos no; `HeroUserCount.tsx:9` y `MainFormacionSection.tsx:15` llevan la URL escrita en el código.
+- Dice: «Cambiar el nombre de una categoría en el editor cambia las pestañas de la home» → Correcto: el editor no gestiona `storeCategoriasPacks`; las pestañas salen de `storeCategoriasPacks.description` y solo se cambian en BD (`storeModel.ts:788,792`).
+- Dice: «Un pack sin `id_categoria` no sale en ninguna pestaña» → Correcto: sale en «Todos» (`MainPacksSection.tsx:29-30`); no sale en ninguna otra.
+
+### Cifras o líneas a unificar
+- Función `Home` en `page.tsx:16-118` (la ficha dice 16-119). `types/evento.ts` 1-6. `MainEventosSection.tsx` 7-98, con `export default` en :100.
+- `RAND()` de clientes en `storeModel.ts:281`. Joins de packs en 790-792; la consulta acaba en :803. `WHERE` de eventos en :1396.
+- El componente sin uso se llama `MainClienteCarrousel` (sin «s»); tipo local en :9.
+- `MainConsultoriaSection` está importada en `page.tsx:4` y no se renderiza ahí; sí se renderiza en `instituto/page.tsx:22`.
+- `HeroUserCount`: el `catch` solo cubre fallo de red o JSON roto. Una respuesta HTTP de error con JSON válido sin `users` deja «...».
+
+### Errores funcionales de esta ficha
+- ST-WEB-20: texto invisible sin eventos en Instituto ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-14: una respuesta de error de la API tumba listados; aquí en `MainPacksSection`, `MainConsultoriaSection` y `MainFormacionSection` ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-API-13: el editor guarda `categoria` como texto y la store filtra por `id_categoria` ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-42: «Reserva tu plaza» no tiene acción (`MainEventosSection.tsx:85-87`) ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-API-03: `e.status | 500` y `{error: e}` vacío en los controladores ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+
+### Afirmaciones no verificables
+- `docs/CONTRATOS.md` y `docs/GLOSARIO.md`, zona horaria de `fecha`, API externa del contador y de formación, imágenes de `public/` y pasos 2-7 de `## 8`.
+
+- Hay reglas de diseño que hoy no se cumplen; detalle en el informe restringido.

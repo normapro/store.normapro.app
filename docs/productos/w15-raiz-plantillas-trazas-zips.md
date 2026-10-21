@@ -118,3 +118,24 @@ Ninguno. Ningún fichero de esta ficha llama a la API.
 - Si `.npmrc` debe estar versionado: no localizado. No se ha abierto.
 - Si `package-lock.json` debe estar versionado a pesar de `.gitignore:42`: no localizado.
 - Número de versión de Next que instala hoy el lock: no comprobado (no se abrió `package-lock.json`). `docs/MAPA.md` §3 dice 16.2.4.
+
+## Correcciones de la revisión contra el código (21/10/2026)
+
+### Afirmaciones incorrectas
+- Dice: tipos de `storybook-static`: 230 png, 53 svg, 29 js, 10 json, 8 woff2, 4 webp, 3 jpg, 3 html → Correcto: esa lista suma 340. Faltan 1 css, 1 jpeg, 1 mp4 y 1 txt, hasta los 344 ficheros versionados.
+
+### Cifras o líneas a unificar
+- Unificar el recuento de `storybook-static` a 344 ficheros: 54 en la raíz de la carpeta y 290 en subcarpetas. En disco, 87.698 KB (85,6 MiB; la ficha dice 85 MB).
+- Las 13 plantillas usan solo tipos que existen en el mapa de `LandingBuilder` (comprobado por las claves `"tipo"`). No se comprobaron sus props.
+- `package-lock.json` está en `.gitignore:42` y versionado. Fechas: `trace.txt` 02/05/2025, `src.zip` 10/04/2025, `plantillas/` 08/04/2026, `storybook-static/` 15/05/2026.
+- Con Next 16.2.4 instalado no hay subcomando `lint` en `node_modules/next/dist/cli/` (R8).
+
+### Errores funcionales de esta ficha
+- ST-WEB-06: el build ignora errores de tipos y de lint ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-15: `npm run lint` usa `next lint` ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-01: configuración de Next obsoleta ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+
+### Afirmaciones no verificables
+- Versión de Next que fija el lock, contenido de `dataparallax-1.json`, `samplecontenidoapplicacion.json`, `trace.*`, `src.zip` y el log (no se abren), y las referencias a `FICHAS-DEFINITIVAS.md`, `CONTRATOS.md` y `MAPA.md`.
+
+- Hay reglas de diseño que hoy no se cumplen; detalle en el informe restringido.

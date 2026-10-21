@@ -255,3 +255,33 @@ Cada tipo tiene copia en API, editor y store, y las tres divergen (`docs/CONTRAT
 - Los 4 ficheros sin import (`AmbitosTabsResutls`, `SolucionCard`, `CaracteristicaCard`, `paqueteAmbitoSector`): no localizado quién decide si se borran.
 - `thread_id` (`types/solucion.ts:40`): ningún componente de esta ficha lo lee. No localizado su uso.
 - Imágenes de `public/` citadas por las tablas (`/{uriIcon}`, `/logos/…`, fondos de sector): no se ha comprobado que existan.
+
+## Correcciones de la revisión contra el código (21/10/2026)
+
+### Afirmaciones incorrectas
+- Dice: fondo de sector «`/{backgroundImage}` o `/default-sector.png`» → Correcto: el valor por defecto da `//default-sector.png`, una URL con protocolo implícito; con cadena vacía `??` no entra y queda `url('/')` (`SolutionsHeroSector.tsx:55`).
+- Dice: la API devuelve `fraseCierre` en `storeModel.ts:1215` → Correcto: la columna se selecciona en `storeModel.ts:1205`; `:1215` es `pack.soluciones = …`. La página no la pinta.
+
+### Cifras o líneas a unificar
+- Unificar la línea de `fraseCierre` (ficha, línea 134) a `storeModel.ts:1205`.
+- Tramo «`M:1210-1216`» → `1212-1216`. `ambitosWithSolCounter` 186-210; `sector/:slug` 240-244; `listsoluciones` 611-672; `packs/:slug` con auxiliares hasta :1284.
+- «14 textos anulables» de `Solucion`: también son anulables `titleweb` (:24) y `beneficiosTitle/Pragma` (:45-46).
+- En `AmbitosTabs` no existe botón «all»; solo los ámbitos de la API (:178-201). En :253 no hay `?? "all"`.
+
+### Errores funcionales de esta ficha
+- ST-API-14: `listsoluciones` con ámbito `all` y un sector falla (alias `as`) ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-API-15: ficha de solución sin fila de ámbito devuelve `id_solucion` nulo ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-API-16: slug o id inexistente responde 500 con cuerpo vacío ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-21: enlaces de pack con `undefined` o `null` en `/soluciones` ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-22: fondo de sector por defecto roto ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-23: última miga de solución apunta a una ruta equivocada ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-24: icono de reserva inválido y fallo si falta `uriIcon` ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-25: enlaces transitorios `undefined` en «Otras soluciones» ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-26: máximo 6 packs en los listados de ámbito ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-27: `AmbitosTabs` y la ficha con sector no reaccionan a cambios de parámetros ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-11: el SEO por página no funciona ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+
+### Afirmaciones no verificables
+- `SolucionSeo` va en W10, `Navbar` y menús en W11, las tres copias divergentes de tipos (`docs/CONTRATOS.md`), `uriIcon` del editor y las imágenes de `public/`.
+
+- Hay reglas de diseño que hoy no se cumplen; detalle en el informe restringido.

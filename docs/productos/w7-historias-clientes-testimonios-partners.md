@@ -192,3 +192,28 @@ Copias de cada entidad en API, editor y store (`docs/CONTRATOS.md` §1 y §1.1):
 - `scope` de `ClientCarousel`: se envía (`:39`) y la API no lo lee. No localizado el criterio para mostrar logos distintos por página.
 - Existencia de los ficheros de `public/logos/`, `public/logos/white/`, `public/testimonios/` y `public/historiasclientes/`: no comprobada.
 - Texto de usuario con instrucción interna en `historias/[historia]/page.tsx:102`: no localizado el texto definitivo.
+
+## Correcciones de la revisión contra el código (21/10/2026)
+
+### Afirmaciones incorrectas
+- Dice: «El slug no es una columna de la tabla» (`storeModel.ts:373`) → Correcto: `storeHistoriasClientes` tiene columna `slug`; el editor la inserta (`editorStoreModel.ts:1162`) y usa `payload.slug` antes que `toSlug` (:352). La API no la selecciona (`storeModel.ts:364,384,410`) y recalcula.
+
+### Cifras o líneas a unificar
+- Métodos de la API: `/historias` `storeModel.ts:362-375`; `/historias/:id` 382-401; `getHistoriaBySlug` 408-429; `clientes/:id` 305-309; `/testimonios/:id` 560-597.
+- `/testimonios/:id` sin id existente lanza `TypeError`.
+- Con dos nombres iguales gana la primera fila del orden `id DESC` (`storeModel.ts:408-429`).
+- La errata «historiass» (`MainHistoriasSection.tsx:44`) y el `console.log(imageSrc)` (:67) siguen en el código.
+
+### Errores funcionales de esta ficha
+- ST-WEB-32: mensaje interno visible al público (`historias/[historia]/page.tsx:102`) ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-33: un testimonio sin cliente tumba la página ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-34: erratas visibles ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-07: testimonio de Historias con id fijo ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-04: `scope` se envía y la API no lo lee ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-API-17: el slug guardado por el editor se ignora al leer ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-API-16: slug o id inexistente responde 500 con cuerpo vacío (`testimonios/:id`) ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+
+### Afirmaciones no verificables
+- Existencia de los ficheros de `public/` citados.
+
+- Hay reglas de diseño que hoy no se cumplen; detalle en el informe restringido.

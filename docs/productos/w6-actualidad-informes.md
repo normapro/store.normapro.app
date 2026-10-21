@@ -202,3 +202,32 @@ Copias de cada tipo en API (`app/types/`), editor (`src/types/`) y store (`src/t
 - No localizado dónde se gestionan los alias de tema (`actualidad/page.tsx:9-18`) frente a los valores del selector de categoría del editor.
 - `generateMetadata`, `sitemap` y `robots`: no existen para estas rutas (`docs/FICHAS-DEFINITIVAS.md` §6, W10). No localizado SEO propio para noticias e informes.
 - Imágenes de `public/informes/*` y de las noticias: no se ha comprobado que existan.
+
+## Correcciones de la revisión contra el código (21/10/2026)
+
+### Afirmaciones incorrectas
+- Dice: «La rama de prólogo en HTML funciona de extremo a extremo» → Correcto: la API devuelve `[]` si `prologo` no es JSON (`storeModel.ts:83-98`); esa rama (`informes/[informe]/page.tsx:52-68,283-287`) no se ejecuta con datos reales.
+- Dice: «El `slug` de noticias e informes no está en la tabla» → Correcto: las dos tablas tienen columna `slug`; el editor la escribe (`editorStoreModel.ts:811`, `:929,957`). La API no la lee y recalcula con `toSlug` (`storeModel.ts:75`, `:455,498,536`).
+- Dice: «Dos títulos iguales: gana el primero en orden de lectura» → Correcto: el orden es `id DESC`; gana el más reciente.
+
+### Cifras o líneas a unificar
+- El valor de `?ref=` de informes es `instittuo` (`InformesGridSection.tsx:103`); el de noticias es `instituto` (`ActualidadGridSection.tsx:182`). Unificar a `instituto`.
+- Métodos de la API: `/actualidad/:id` `storeModel.ts:1458-1473`; `/informes` 435-465; `/informes/:id` 472-508; `/informes/slug/:slug` 515-553; `mapActualidadRow` 69-81.
+- Las columnas de informes son `img_portada AS imgPortada` e `img_informe AS imgInforme`.
+- `Number.isFinite(noticiaId)` también entra con slugs como `1e3` (`[noticia]/page.tsx:107-109`).
+- La llamada `GET packs/{slug}` para el ámbito (:125-132) es redundante: `listpacks` ya devuelve `slug_ambito` (`storeModel.ts:695`).
+- El resumen de noticia no quita HTML: si `content` es HTML se pinta con etiquetas.
+- «Otras noticias» incluye la propia noticia (`[noticia]/page.tsx:342`).
+
+### Errores funcionales de esta ficha
+- ST-WEB-29: soluciones relacionadas de una noticia salen sin enlace ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-30: imagen de noticia con URL absoluta se rompe en el detalle ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-18: enlaces de Instituto mal escritos (`?ref=instittuo` en informes) ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-31: pestaña «Servicios» sin efecto ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-API-40: prólogo de informe en HTML plano se pierde en la API ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-API-17: el slug guardado por el editor se ignora al leer ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+
+### Afirmaciones no verificables
+- Divergencias de tipos (`docs/CONTRATOS.md`), formato de `fecha`, imágenes de `public/` y procedimiento de prueba.
+
+- Hay reglas de diseño que hoy no se cumplen; detalle en el informe restringido.

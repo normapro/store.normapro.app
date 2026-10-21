@@ -132,3 +132,26 @@ Variables de entorno: la store solo usa `NEXT_PUBLIC_API_BASE_URL` (`src/config/
 - No localizado: `src/app/layout.tsx` (raíz), `loading.tsx`, `error.tsx`, `not-found.tsx` de nivel app.
 - No localizado: dónde se define el puerto de producción de la store (`package.json` no lo fija).
 - No localizado: por qué `tsconfig.json:36` incluye `.next/dev/types`; es salida de Next.
+
+## Correcciones de la revisión contra el código (21/10/2026)
+
+### Afirmaciones incorrectas
+- Ninguna afirmación incorrecta.
+
+### Cifras o líneas a unificar
+- `globals.css` termina en la línea 80 (la ficha cita 1-79). `postcss.config.mjs` tiene 5 líneas.
+- `startsWith("/api")` en `middleware.ts:6-12` también deja pasar rutas como `/apixxx`. Sin efecto hoy.
+- `--font-family` en `globals.css` no es clave de tema de Tailwind 4 y no tiene efecto. La fuente funciona por `body{font-family}` (`globals.css:22`).
+- `tailwind.config.ts` no está enlazado (sin `@config`); `animate-fadeInUp` no se usa en `src/`.
+- Falta en la ficha: `sites/<sitio>/[...not-found]/page.tsx:1-5` existe en ambos sitios y hace `redirect("/")`.
+- Los avisos de ST-WEB-01 están en `node_modules/next/dist/server/config.js:167` y `node_modules/next/dist/build/index.js:651`.
+
+### Errores funcionales de esta ficha
+- ST-WEB-01: configuración de Next obsoleta ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-02: `x-site-ref` no llega al layout; el modo Instituto no se activa ([detalle](../../../docs/ERRORES-DETECTADOS.md)). Ejecución pendiente.
+- ST-WEB-06: el build ignora errores de tipos y de lint ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-17: toda URL desconocida redirige a la home, sin 404 ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-19: rutas con punto en el slug no se reescriben ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+
+### Afirmaciones no verificables
+- Por qué `tsconfig.json:36` incluye `.next/dev/types`, y los pasos de `## 8` (requieren ejecución).

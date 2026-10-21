@@ -117,3 +117,23 @@ Contrato: el tipo `Solucion` de la store no declara `price`, `imagenOg` ni `desc
 - Por verificar en ejecución: si `next/head` emite algo en App Router con Next 16 (apartado 7).
 - `Providers` pinta `DefaultSeo` en Instituto con datos de NormaPRO: decisión de producto pendiente.
 - Para Lighthouse hay un documento de futuro: [FUTURO-LIGHTHOUSE-100.md](../../../docs/FUTURO-LIGHTHOUSE-100.md). No leído para esta ficha.
+
+## Correcciones de la revisión contra el código (21/10/2026)
+
+### Afirmaciones incorrectas
+- Ninguna afirmación incorrecta.
+
+### Cifras o líneas a unificar
+- La guarda de `SolucionSeo` es `[slugSolucion]/page.tsx:114-117` (`title && description && slug && ambito`). Una `description` vacía (:50 pone `''`) bloquea todo el SEO.
+- `SolucionSeo` deja un `console.warn` cuando devuelve `null`.
+- `next-seo` 6.8.0 y `next/head` no emiten nada en App Router: leído en el código, ejecución pendiente (`node_modules/next-seo/lib/next-seo.js:2`, `node_modules/next/dist/client/app-index.js:266`).
+- Ni `public/og-image.jpg` ni `public/images/` existen. Tampoco hay `favicon` en `public/`.
+- `/sitemap.xml` y `/robots.txt` darían 404 por `middleware.ts:6-12` (ejecución pendiente).
+
+### Errores funcionales de esta ficha
+- ST-WEB-11: el SEO por página no funciona ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-12: JSON-LD con precio `0.00` inventado ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-04: la API ignora `ambito` en `packs/:slug` ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+
+### Afirmaciones no verificables
+- Si el host externo sirve las imágenes OG, qué URL de icono emite Next para `/favicon.ico`, `FUTURO-LIGHTHOUSE-100.md` y la sección `## 8`.

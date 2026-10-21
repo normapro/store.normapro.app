@@ -181,3 +181,24 @@ Comprobado en la API: `GET S/clientes` no lee `scope` (pasa `"all"` fijo, `api-s
 - `ClientPerceptionSection.tsx:92-112` contiene un bloque de código en comentario con datos de ejemplo. No localizado si debe borrarse.
 - Si las plantillas de `plantillas/` usan solo los 42 tipos del mapa: no comprobado (solo se abrió una lista de claves de un fichero).
 - `docs/CONTRATOS.md` §2.4 cita el mapa en `LandingBuilder.tsx:49-91`. En el código las 42 entradas ocupan `:48-89`.
+
+## Correcciones de la revisión contra el código (21/10/2026)
+
+### Afirmaciones incorrectas
+- Dice: «Otras páginas importan componentes de L sin pasar por el motor: ListHistoriaSection y CertificacionesSection en /nosotros; ListHistoriaSection en /trabaja» → Correcto: incompleto. También `ListHistoriaSection` en `partners/page.tsx:41` (import :1). `HistoriaTextSection` se importa en `partners/page.tsx:2` y `trabaja/page.tsx:2`. `nosotros/page.tsx:3,4,6` y `trabaja/page.tsx:7,8` importan `TextSection`, `HeroSection`, `HistoriaTextSection`, `FaqSection` sin renderizarlos.
+
+### Cifras o líneas a unificar
+- Las 42 entradas del mapa ocupan `LandingBuilder.tsx:48-89` (el bloque `sectionMap` va de :47 a :90).
+- `CaracteristicasStorytellingSection.tsx` usa `captures/` también en :228. `HeroSection.tsx:50-57`: si `imgUrl` empieza por `http` se usa tal cual.
+- Las 13 plantillas usan solo tipos del mapa (comprobado por las claves `"tipo"`). No se comprobaron sus props.
+- El flujo de historia omite el reintento a `historias/{slug}` si falla el primero (`historias/[historia]/page.tsx:51`).
+
+### Errores funcionales de esta ficha
+- ST-WEB-41: el modal de informe promete un email que no se envía (`DescargaInformeModal.tsx:206`) ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-04: parámetros que la API no lee (`scope` en `/clientes`); confirmado en parte ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-02: `x-site-ref` no llega al layout; los temas de Instituto no se activan ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+
+### Afirmaciones no verificables
+- `docs/CONTRATOS.md` §2.4 (el rango real `:48-89` es correcto) y `docs/MAPA.md` §3.2.
+
+- Hay reglas de diseño que hoy no se cumplen; detalle en el informe restringido.

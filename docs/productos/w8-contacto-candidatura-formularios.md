@@ -169,3 +169,25 @@ Tipos: `Formulario.tsx` declara `FormState` (`:10-22`) y `FormularioProps` (`:5-
 - Qué puesto de «DevOps» y «Desarrollador Junior» (`CandidaturaFormSection.tsx:143-144`) corresponde a una oferta publicada: el acordeón (`P trabaja/page.tsx:23-93`) solo tiene dos ofertas.
 - Si `P trabaja/page.tsx` debe renderizar los componentes que importa y no usa (`:2,4-8`): no localizado.
 - Enlace de política de privacidad dentro de `Formulario.tsx:285`: URL absoluta de producción. No localizado si debe depender del entorno.
+
+## Correcciones de la revisión contra el código (21/10/2026)
+
+### Afirmaciones incorrectas
+- Ninguna afirmación incorrecta.
+
+### Cifras o líneas a unificar
+- `accept` del CV en `CandidaturaFormSection.tsx:213` (la ficha cita 208-215). El CV se guarda en estado en :215-218.
+- Puestos del selector: `:141-144` (cuatro opciones). Ofertas del acordeón de `/trabaja` en :27 y :52.
+- `verify` de `leadRateLimit.ts` empieza en la línea 82.
+- `MainSolucionesSection` no se importa en ningún fichero; `FooterInstituto.tsx:299` renderiza `Formulario` pero nadie pone `openModal` a `true`.
+
+### Errores funcionales de esta ficha
+- ST-WEB-03: contacto y candidatura dicen «enviado» y no envían ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-35: candidatura, el CV oculto con `required` bloquea el envío sin aviso ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-36: envío sin mensaje con campos en blanco ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-38: «Contratar ahora» no identifica la consultoría; `Formulario` no lee `?consultoria=` ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+
+### Afirmaciones no verificables
+- Quién lee la tabla `leads` y el destino previsto de contacto y candidaturas, `docs/MAPA.md` §3.4 y los pasos 2-8 de `## 8`.
+
+- Hay reglas de diseño que hoy no se cumplen; detalle en el informe restringido.

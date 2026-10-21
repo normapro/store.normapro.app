@@ -167,3 +167,25 @@ Un cambio hecho en el editor aparece en el detalle hasta 60 s después, y en los
 - `searchParams` sin uso en las dos páginas (`:14,19`): no localizado el motivo.
 - Enlaces absolutos de producción en `MainConsultoriaSection.tsx:84` y `menu/ConsultoriaDropdownInstituto.tsx:25`: no localizado si deben cambiar según el entorno.
 - Imágenes (`public/main/*`, `public/iconoInstituto.svg`, `public/iconopinguino@2x.png`): no se ha comprobado que existan.
+
+## Correcciones de la revisión contra el código (21/10/2026)
+
+### Afirmaciones incorrectas
+- Ninguna afirmación incorrecta.
+
+### Cifras o líneas a unificar
+- `storeFacade.ts:272-285` (la ficha dice 272-284). Método de consultoría en `storeModel.ts:1093-1105`. El texto del error 404 está en `aplicacionesController.ts:32`.
+- Los textos de Instituto tienen faltas: «consutoría» y «prefesionales» (`MainConsultoriaSection.tsx:55-56`).
+- «Explora nuestros cursos» cae en `[...not-found]/page.tsx:4`, que hace `redirect("/")`.
+- No existe ningún `error.tsx`, `global-error.tsx` ni `not-found.tsx` en `src/app`.
+- `searchParams` sin uso en `aplicaciones/[aplicacion]/page.tsx:14,19` (verificado).
+
+### Errores funcionales de esta ficha
+- ST-WEB-08: `/formacion` no existe; «Explora nuestros cursos» vuelve a la home ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-38: «Contratar ahora» no identifica la consultoría ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-28: slug inexistente en aplicación o consultoría muestra el error de Next ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-14: una respuesta de error de la API tumba listados (`MainConsultoriaSection`, `MainFormacionSection`) ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-34: erratas visibles ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+
+### Afirmaciones no verificables
+- Tipos del editor (`types/aplicacion.ts`), qué hace `LandingBuilder` con `contenidos` nulo (W4), API externa de formación e imágenes de `public/`.

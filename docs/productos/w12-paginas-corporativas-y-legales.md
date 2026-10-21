@@ -174,3 +174,27 @@ Tipo exportado: `AccordionItem` (`AccordionSection.tsx:7-10`).
 - En `politica-de-cookies-ue/page.tsx:18` el enlace lleva a un sitio de producción y el texto del enlace nombra otro dominio. No localizado cuál es el correcto.
 - Si el comodín debe devolver 404 en lugar de redirigir: no localizado (decisión de producto).
 - `AccordionSection.tsx:28`: clase `bg-[#f1f1f7  ]` con espacios. No verificado en el navegador si el fondo se aplica.
+
+## Correcciones de la revisión contra el código (21/10/2026)
+
+### Afirmaciones incorrectas
+- Ninguna afirmación incorrecta.
+
+### Cifras o líneas a unificar
+- Políticas vacías confirmadas: `politicas/page.tsx:53-59` y `:60-66` son `content: (<></>)`.
+- El enlace de cookies (:18) apunta a un sitio y el texto nombra otro.
+- Pie de Instituto: la ruta de privacidad de `FooterInstituto.tsx:280` está mal escrita (`politica-de.privacidad`).
+- `Cookies.tsx` no comprueba `res.ok` (:13-17); `datos.map` (:33) falla con un objeto de error.
+- `/formacion` (`Footer.tsx:123`) no existe y cae en el comodín.
+
+### Errores funcionales de esta ficha
+- ST-WEB-18: enlaces de Instituto mal escritos ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-37: la política de cookies describe una ventana de consentimiento que no existe ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-14: una respuesta de error de la API tumba la página de cookies ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-43: dos políticas se publican vacías ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-08: `/formacion` no existe: el enlace del pie vuelve a la home ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+
+### Afirmaciones no verificables
+- `docs/OBSERVABILIDAD.md` §3.1 y §3.4, `docs/MAPA.md` §3.3, el título de lista de `ListHistoriaSection.tsx:79-83` (no abierto) y la sección `## 8`.
+
+- Hay reglas de diseño que hoy no se cumplen; detalle en el informe restringido.

@@ -132,3 +132,25 @@ El formulario de contacto abierto desde el navbar y el pie es `Formulario.tsx` (
 - No localizado: por qué `NormaproAccessButton` espera a la animación antes de navegar (`:29-33`).
 - `HeaderSection` lo usan seis páginas de Instituto (`apariciones-prensa`, `contacto`, `equipo`, `material-prensa`, `mision-vision-valores`, `que-hacemos`) y tres de NormaPRO (`nosotros`, `partners`, `politicas`). `Breadcrumb` lo usan `actualidad/[noticia]`, la solución con y sin sector, y el pack (búsqueda por nombre de componente).
 - Sin documentación de cuándo se decidió que el sitio Instituto tuviera navbar y pie propios (W13).
+
+## Correcciones de la revisión contra el código (21/10/2026)
+
+### Afirmaciones incorrectas
+- Dice: «`Navbar.tsx` ocupa 342 líneas» → Correcto: 343 líneas.
+
+### Cifras o líneas a unificar
+- `onMouseEnter` de los desplegables en `Navbar.tsx:143,151,159`; `onMouseLeave` en :316,323,330.
+- `packHighlightedButton.tsx` ocupa 6-36. `HeaderSection.tsx` termina en :22. `types/breadcrumb.ts` tiene 5 líneas.
+- `ConsultoriaDropdown.tsx:32` usa `<a>` en lugar de `Link`: recarga completa. La ficha no lo indica.
+- `SolutionsDropdown` tiene `try/catch` (:31-43); un cuerpo de error válido llega a `ambitos.map` (:72,162) fuera del `try`.
+- Rangos de `ModalDescubrir` (:140-151, :153-158) con desfase de 1-2 líneas.
+
+### Errores funcionales de esta ficha
+- ST-WEB-08: `/formacion` no existe; «Formación» vuelve a la home ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-09: resultados de consultoría del buscador van a una ruta inexistente (`consultoria/<slug>` frente a `/consultorias/<slug>`) ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-13: la newsletter envía `acepta_marketing: true` sin casilla ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-14: una respuesta de error de la API tumba cabecera y desplegables ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-API-18: `globalsearch` omite packs sin ámbito y repite resultados ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+
+### Afirmaciones no verificables
+- Imágenes de `uriIcon` en `public/`, el recuento de usos de `HeaderSection` y `Breadcrumb`, por qué `NormaproAccessButton` espera a la animación y la sección `## 8`.

@@ -149,3 +149,23 @@ El editor tiene su propia `src/config/api.ts` (ficha E9). Las claves comunes con
 - No localizado: tests de los tipos o de `API_ENDPOINTS`.
 - No localizado: quién decide qué iconos entran en `iconMap` ni por qué no se usa `libs/icons.ts` en los componentes de landings (cada uno tiene el suyo).
 - No localizado: la versión de Node requerida por la store (`package.json` sin `engines`).
+
+## Correcciones de la revisión contra el código (21/10/2026)
+
+### Afirmaciones incorrectas
+- Ninguna afirmación incorrecta.
+
+### Cifras o líneas a unificar
+- Usos incompletos: `LISTSOLUCIONES` también en `AmbitosTabsResutls.tsx:36`; `LISTPACKS` también en :55; `CONSULTORIA` también en `components/menu/ConsultoriaDropdownInstituto.tsx:12`; `SOLUCION` también en `sector/[sector]/[slugSolucion]/page.tsx:34`.
+- `TESTIMONIOS`: `MainTestimoniosSection.tsx:21` y 8 sitios más.
+- `libs/fontawesome.ts` tiene 7 líneas (la ficha dice 6). `types/pack.ts` usa `id_casodeuso` en :67. `types/solucion.ts:74` usa `id_casosdeuso`.
+- Las 25 claves de `API_ENDPOINTS` están en `config/api.ts:8-32`; 24 tienen uso en código vivo.
+- Las cuatro llamadas fuera de `API_ENDPOINTS`: `HeroUserCount.tsx:9`, `MainFormacionSection.tsx:15`, `MainClientesCarrousel.tsx:6,17-18`, `landings/HeroSection.tsx:57`.
+
+### Errores funcionales de esta ficha
+- ST-WEB-05: `MainClientesCarrousel` llama a `usersCount`, que no existe ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-WEB-04: parámetros que la API no lee; no contrastado en esta ficha ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+- ST-API-11: nombres de tipo distintos de la columna o la consulta (`id_casosdeuso` frente a `id_casodeuso`) ([detalle](../../../docs/ERRORES-DETECTADOS.md)).
+
+### Afirmaciones no verificables
+- Divergencias de tipos con el editor, si `consultoria.ts` y `aplicacion.ts` deben declarar `contenidos`, ST-WEB-04 y la sección `## 8`.
