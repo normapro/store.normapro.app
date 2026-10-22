@@ -198,3 +198,47 @@ Tipo exportado: `AccordionItem` (`AccordionSection.tsx:7-10`).
 - `docs/OBSERVABILIDAD.md` §3.1 y §3.4, `docs/MAPA.md` §3.3, el título de lista de `ListHistoriaSection.tsx:79-83` (no abierto) y la sección `## 8`.
 
 - Hay reglas de diseño que hoy no se cumplen; detalle en el informe restringido.
+
+## Actualización tras el PR del 21/10/2026
+
+Código comparado: `main` `8dc6ec9` frente a `origin/main` `0817fe9` (PR #19). Estado de los ids en [ACT-store.md](../../../docs/revision/ACT-store.md). No probado en ejecución. `P = app/sites/normapro/`.
+
+### Citas rotas
+Ninguna.
+
+### Citas desplazadas
+| Antes | Ahora |
+|---|---|
+| `P politica-de-cookies-ue/page.tsx:1` (`'use client'`) | ya no existe la directiva (la página es de servidor) |
+| `…/politica-de-cookies-ue/page.tsx:18`, `:46`, `:59` (`Cookies`), `:64` (apartado 7), `:75`, `:78` | `:20`, `:48`, `:61`, `:66`, `:77`, `:80` |
+| `P politicas/page.tsx:7-67` (acordeón), `:53-66` (dos vacías) | `:11-71`, `:57-70` |
+| `P aviso-legal/page.tsx:31-94`, `:34-44`, `:62` | `:35-98`, `:38-48`, `:66` |
+| `P politica-de-privacidad/page.tsx:18-106`, `:19-22`, `:78-85` | `:22-110`, `:23-26`, `:82-89` |
+| `P trabaja/page.tsx:23-94` (acordeón de ofertas) | `:21-92` |
+| `P nosotros/page.tsx` | sin desplazamiento de las líneas citadas (`:15`, `:88`, `:138`, `:152`, `:159`) |
+| `components/Cookies.tsx:7`, `:12`, `:13-17`, `:33`, `:34`, `:58`, `:69`, `:82`, `:117` | `:9`, `:14`, `:15-19`, `:35`, `:36`, `:60`, `:71`, `:84`, `:119` |
+| `Footer.tsx:211-213` (legales), `:129,132` | `:215-217`, `:133,136` |
+| `FooterInstituto.tsx:161`, `:274`, `:280`, `:286` | `:165`, `:278`, `:284`, `:290` |
+
+### Afirmaciones obsoletas
+- «`/politica-de-cookies-ue`: Cliente (`:1`)» (§2): ahora es de servidor.
+- «`Cookies.tsx`: sin `'use client'`… funciona porque su única página es cliente» (§2): `Cookies.tsx:1` ya declara `'use client'`.
+- «`P nosotros/page.tsx` importa y no renderiza `TextSection`, `HeroSection`, `HistoriaTextSection`, `HistoriaTextSection2`» (§2): esos imports se quitaron (`nosotros/page.tsx:1-9`). Quedan `MainTestimoniosSection`, `CertificacionesSection`, `ListHistoriaSection`, `ContactoFormSection`, `HeaderSection`, `Image` y `Link`, todos usados.
+- «El pie enlaza `/aviso-legal/`, `/politica-de-privacidad/` y `/politica-de-cookies-ue/`» (§2): sin barra final desde el PR (`Footer.tsx:215-217`).
+- «El pie de Instituto enlaza privacidad con `politica-de.privacidad`» (§9, correcciones): corregido a `politica-de-privacidad` (`FooterInstituto.tsx:284`). Persiste `cumpliance-penal` en `:144` (ST-WEB-18 CAMBIADO).
+- «`Cookies.tsx` toma lo que devuelva la API sin comprobar el estado (`:13-17`)» (§7): sigue en `:15-19` (ST-WEB-14 VIGENTE).
+- «La página de cookies muestra “Read more about”» (§9): sigue en `Cookies.tsx:60` (ST-WEB-34).
+- «Texto de consentimiento que describe una ventana que no existe» (ST-WEB-37): sigue en `politica-de-cookies-ue/page.tsx:66`.
+- «Dos políticas vacías» (ST-WEB-43): siguen en `politicas/page.tsx:57-70`; la lista de derechos del apartado 9 de cookies sigue vacía (`:80-85`).
+- «`AccordionSection` con `interpretHtmlStrings` ve contenido JSX fijo» (§7): sin cambios (`AccordionSection.tsx:61`; SEG-WEB-09 VIGENTE).
+- «Ninguna de estas páginas tiene metadatos propios»: todas exportan `metadata` con `pageMetadata` (`nosotros/page.tsx:11`, `aviso-legal`, `politica-de-privacidad`, `politicas`, `politica-de-cookies-ue/page.tsx:5`, `trabaja/page.tsx:8`). Títulos: «Quiénes somos», «Política de cookies (UE)», etc.
+
+### Nuevo
+- `metadata` en las seis páginas de la ficha. Las legales y `/nosotros` entran en el sitemap (`sitemap.xml/route.ts:21-34`).
+- Errata corregida en `/trabaja`: «revolución empresarials» (`trabaja/page.tsx:14`).
+
+### Errores de esta ficha
+VIGENTES: ST-WEB-14 (`Cookies.tsx:15-19`), ST-WEB-34 (`aviso-legal/page.tsx:66`, `nosotros/page.tsx:90`, `Cookies.tsx:60`, `AccordionSection.tsx:28`), ST-WEB-37, ST-WEB-43, ST-WEB-17. ST-WEB-18 CAMBIADO.
+
+### Seguridad
+`AccordionSection` mantiene `dangerouslySetInnerHTML` bajo `interpretHtmlStrings` (SEG-WEB-09 VIGENTE, latente). La tabla de cookies pinta enlaces de la API sin validar esquema (SEG-WEB-08 VIGENTE, `Cookies.tsx:60,66`). Detalle en [ACT-store.md](../../../docs/revision/ACT-store.md) §7.

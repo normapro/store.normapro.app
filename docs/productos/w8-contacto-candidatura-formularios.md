@@ -191,3 +191,49 @@ Tipos: `Formulario.tsx` declara `FormState` (`:10-22`) y `FormularioProps` (`:5-
 - Quién lee la tabla `leads` y el destino previsto de contacto y candidaturas, `docs/MAPA.md` §3.4 y los pasos 2-8 de `## 8`.
 
 - Hay reglas de diseño que hoy no se cumplen; detalle en el informe restringido.
+
+## Actualización tras el PR del 21/10/2026
+
+Código comparado: `main` `8dc6ec9` frente a `origin/main` `0817fe9` (PR #19). Estado de los ids en [ACT-store.md](../../../docs/revision/ACT-store.md). No probado en ejecución. `P = app/sites/normapro/`, `I = app/sites/instituto/`.
+
+### Citas rotas
+- `components/MainSolucionesSection.tsx` (§9, correcciones: «no se importa en ningún fichero»): borrado.
+
+### Citas desplazadas
+| Antes | Ahora |
+|---|---|
+| `Formulario.tsx:5-8`, `:10-22`, `:25-37` | `:6-9`, `:11-23`, `:26-38` |
+| `Formulario.tsx:53-106` (`handleSubmit`) | `:55-108` |
+| `Formulario.tsx:57-60`, `:64`, `:65-71`, `:73-79`, `:82-96`, `:98-102` | `:59-62`, `:66`, `:67-73`, `:75-81`, `:84-98`, `:100-104` |
+| `Formulario.tsx:110-111`, `:128-135`, `:150`, `:159`, `:164`, `:221-224` | `:112-113`, `:130-137`, `:153`, `:162`, `:167`, `:224-227` |
+| `Formulario.tsx:285` (enlace de privacidad), `:289-291`, `:299`, `:303-311`, `:318` | `:288`, `:292-294`, `:302`, `:306-314`, `:321` |
+| `Footer.tsx:28` (newsletter), `:131` (enlace `/trabaja`), `:133-135` (botón contacto), `:224` (render de `Formulario`) | `:30`, `:135`, `:137-139`, `:228` |
+| `FooterInstituto.tsx:28`, `:205`, `:11,299` (`openModal`, render), `:308` | `:30`, `:209`, `:12,303`, `:312` |
+| `landings/DescargaInformeModal.tsx:115` | `:117` |
+| `P trabaja/page.tsx:2`, `:4-8` (imports), `:12` (función), `:15`, `:23-94`, `:96-161`, `:163` | imports de `:3-6`; función `TrabajaPage` `:10`; `:13`; `:21-92`; `:94-159`; `:161` |
+| `P partners/page.tsx:106` (`ContactoFormSection`) | `:108` |
+| `I contacto/page.tsx:6-25`, `:30`, `:36`, `:44-53`, `:62-81` | `:10-29`, `:34`, `:40`, `:48-57`, `:66-85` |
+| `ContactoFormSection.tsx`, `CandidaturaFormSection.tsx` | sin cambios (mismas líneas) |
+
+### Afirmaciones obsoletas
+- «`trabaja/page.tsx` importa `HistoriaTextSection` (`:2`), `ContactoFormSection` (`:4`), `PartnersProgramsSection` (`:5`), `PartnersTestimonialsSection` (`:6`), `TextSection` (`:7`) y `FaqSection` (`:8`) y no los renderiza. La función se llama `NosotrosPage`» (§2, §9): esos imports ya no existen; la función es `TrabajaPage` (`:10`). La página importa solo `ListHistoriaSection`, `HistoriaTextSection2`, `AccordionSection` y `CandidaturaFormSection`.
+- «`Formulario` envía `{...form, origen_ruta}`» (§3.1, §4): ahora `{ ...form, origen_ruta, website }` (`Formulario.tsx:72`). `website` es el campo trampa de `HoneypotField` (`:144`). La API lo descarta sin guardar si llega con texto (`api … storeController.ts:72-74`, árbol actual de la API).
+- «La newsletter envía solo el correo» (corrección de la cabecera): envía también `website` (`Footer.tsx:38`, `FooterInstituto.tsx:38`) y sigue con `acepta_marketing: true` (`Footer.tsx:37`, ST-WEB-13).
+- «El modal de descarga de informe envía…» (W4): añade `website` (`DescargaInformeModal.tsx:135`). `acepta_marketing` sigue `false`.
+- «Solo `Formulario` llama a la API» (cabecera): también las tres emisiones de la nota de §4 (pie, pie de Instituto, descarga). Sin cambio de fondo.
+- «`ContactoFormSection` y `CandidaturaFormSection` no envían» (cabecera): sigue (ST-WEB-03 VIGENTE).
+- Otros formularios: `/trabaja` y `/contacto` de Instituto no reciben honeypot porque no envían nada.
+- «Las dos páginas son estáticas por contenido» (§3.4, `I contacto/page.tsx`): la de Instituto añade `metadata` (`contacto/page.tsx:8`); la de `/trabaja` también (`trabaja/page.tsx:8`).
+
+### Nuevo
+| Pieza | Fichero |
+|---|---|
+| Campo trampa `website` | `components/shared/HoneypotField.tsx:10-24`; montado en `Formulario.tsx:144`, `Footer.tsx:77`, `FooterInstituto.tsx:80`, `DescargaInformeModal.tsx:213` |
+| Metadatos de `/trabaja` | `P trabaja/page.tsx:8` (título y descripción del hero) |
+| Metadatos de `/contacto` de Instituto | `I contacto/page.tsx:8` |
+
+### Errores de esta ficha
+VIGENTES: ST-WEB-03 (`ContactoFormSection.tsx:28-39`; `CandidaturaFormSection.tsx:33-56`), ST-WEB-35 (`CandidaturaFormSection.tsx:208-215`), ST-WEB-36 (`ContactoFormSection.tsx:36`; `CandidaturaFormSection.tsx:47`; `Formulario.tsx:162,167`), ST-WEB-38 (`Formulario.tsx:66`), ST-WEB-13 (`Footer.tsx:37`). La etiqueta «Introduce tus apellidos» con marcador «Nombre» sigue (`Formulario.tsx:162,167`). Corregida una errata de `/trabaja`: «revolución empresarials» (`trabaja/page.tsx:14`).
+
+### Seguridad
+El PR añade un control anti-bot en los formularios que envían (campo trampa) sin cambiar el consentimiento ni la validación de formato en la store. Estado de SEG-WEB-06 (VIGENTE) y SEG-WEB-16 (CAMBIADO) en [ACT-store.md](../../../docs/revision/ACT-store.md) §7. El honeypot no ve su efecto en la store: depende de la API desplegada.

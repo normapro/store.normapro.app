@@ -189,3 +189,42 @@ Un cambio hecho en el editor aparece en el detalle hasta 60 s después, y en los
 
 ### Afirmaciones no verificables
 - Tipos del editor (`types/aplicacion.ts`), qué hace `LandingBuilder` con `contenidos` nulo (W4), API externa de formación e imágenes de `public/`.
+
+## Actualización tras el PR del 21/10/2026
+
+Código comparado: `main` `8dc6ec9` frente a `origin/main` `0817fe9` (PR #19). Estado de los ids en [ACT-store.md](../../../docs/revision/ACT-store.md). No probado en ejecución. `P = app/sites/normapro/`.
+
+### Citas rotas
+Ninguna. Los componentes de esta ficha existen.
+
+### Citas desplazadas
+| Antes | Ahora |
+|---|---|
+| `P aplicaciones/[aplicacion]/page.tsx:3-10` (`getAplicacion`), `:4` (fetch), `:5-6` (`revalidate`) | `:13-20`, `:14`, `:15` |
+| `…/aplicaciones/[aplicacion]/page.tsx:7` (`throw`) | `:17-18` (404 → `null`; otro error → `throw`) |
+| `…/aplicaciones/[aplicacion]/page.tsx:14,19,23,29,33` (`searchParams`, `params`, uso de `contenidos`, función) | `:22-24` (solo `params`), `:39`, `:53`, `:38` |
+| `P consultorias/[consultorias]/page.tsx:3-10`, `:4`, `:7`, `:29`, `:33` | `:13-20`, `:14`, `:17-18`, `:53`, `:38` |
+| `P page.tsx:3` y render `:63` (`MainAplicacionesSection`) | `components/home/HomeNormapro.tsx:3`, `:63` |
+| `P page.tsx:4` (`MainConsultoriaSection`, sin render) | `HomeNormapro.tsx:4` (sigue sin render) |
+| `P page.tsx:5` y render `:67` (`MainFormacionSection`) | `HomeNormapro.tsx:5`, `:67` |
+| `app/sites/instituto/page.tsx:3` y render `:22` (`MainConsultoriaSection`); `:4` y `:28` (`MainFormacionSection`) | `components/home/HomeInstituto.tsx:3`, `:22`; `:4`, `:28` |
+| `Formulario.tsx` (varias) | +2 a +3 líneas (ver W8) |
+
+### Afirmaciones obsoletas
+- «Si la respuesta no es OK: `throw new Error("Error al cargar aplicación")`» (§3.1, §3.2): ahora un 404 devuelve `null` y la página hace `redirect("/")` (`aplicaciones/…/page.tsx:17,43`; `consultorias/…/page.tsx:17,43`). Otros errores siguen lanzando (`:18`), con textos «Error al cargar la aplicación» y «…la consultoría». El texto equivocado de la consultoría está corregido. ST-WEB-28 RESUELTO con matiz: un 5xx sigue mostrando la pantalla de error de Next.
+- «`searchParams` se declara y no se usa» (§3.1, §9, correcciones): ya no se declara (`Props` solo tiene `params`, `:22-24`).
+- «Cada página: función `async`, `revalidate: 60`» sigue; se añaden `generateMetadata` (`aplicaciones/…:26-36`, `consultorias/…:26-36`) con título, descripción y canónico, y `BreadcrumbList` en JSON-LD (`:45-52`). Los dos fetch comparten caché con `React.cache` entre metadatos y página.
+- «ISR, `revalidate: 60`» (§6): sigue. La URL llega ahora con `encodeURIComponent(slug)` (`aplicaciones/…:14`, `consultorias/…:14`).
+- «`/formacion` no existe» (§9): sigue (ST-WEB-08 VIGENTE: `MainFormacionSection.tsx:40`, `Navbar.tsx:165,251`, `Footer.tsx:127`).
+- «Contratar ahora no identifica la consultoría» (ST-WEB-38): sigue (`MainConsultoriaSection.tsx:37-41,101`; `Formulario.tsx:66`).
+- Errata «consutoría» y «prefesionales» (`MainConsultoriaSection.tsx:55-56`): sigue (ST-WEB-34).
+
+### Nuevo
+- Sitemap: aplicaciones y consultorías entran en `app/sitemap.xml/route.ts:131-137` con `/aplicaciones/{slug}` y `/consultorias/{slug}`. Las cargan `getAplicaciones` y `getConsultorias` (`services/storeService.ts:90,92`).
+- Las dos páginas importan `JsonLd` y `pageMetadata` (`:6,8`).
+
+### Errores de esta ficha
+ST-WEB-08, ST-WEB-14 (`MainConsultoriaSection.tsx:29`, `menu/ConsultoriaDropdownInstituto.tsx:12`, `MainFormacionSection.tsx:15`), ST-WEB-34 y ST-WEB-38 VIGENTES. ST-WEB-28 RESUELTO. ST-API-16: depende de la API; la de este árbol responde 404 para aplicación y consultoría.
+
+### Seguridad
+La petición de servidor codifica el slug (SEG-WEB-11 CAMBIADO). Sin otros cambios de seguridad en la ficha. Detalle en [ACT-store.md](../../../docs/revision/ACT-store.md) §7.

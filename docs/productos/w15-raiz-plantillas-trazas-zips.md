@@ -139,3 +139,46 @@ Ninguno. Ningún fichero de esta ficha llama a la API.
 - Versión de Next que fija el lock, contenido de `dataparallax-1.json`, `samplecontenidoapplicacion.json`, `trace.*`, `src.zip` y el log (no se abren), y las referencias a `FICHAS-DEFINITIVAS.md`, `CONTRATOS.md` y `MAPA.md`.
 
 - Hay reglas de diseño que hoy no se cumplen; detalle en el informe restringido.
+
+## Actualización tras el PR del 21/10/2026
+
+Código comparado: `main` `8dc6ec9` frente a `origin/main` `0817fe9` (PR #19). Estado de los ids en [ACT-store.md](../../../docs/revision/ACT-store.md). Comprobado con `git ls-files` y `ls` en la raíz; no se han abierto `.npmrc` ni `package-lock.json`.
+
+### Citas rotas (ficheros que ya no existen)
+`src.zip`, `trace.txt`, `trace.ts`, `trace.js`, `debug-storybook.log` y `storybook-static/` (344 ficheros) ya no están en el árbol ni en `git ls-files`. Afecta a: §1, §2 (tabla 2.1 y 2.3), §6, §7, §8 (pasos 1 y 2) y §9, y a todas las correcciones sobre `storybook-static`. El historial de git los conserva.
+
+Siguen en el árbol: `package.json`, `package-lock.json`, `.npmrc`, `README.md`, `dataparallax-1.json` (5.063 bytes), `samplecontenidoapplicacion.json` (7.845 bytes) y las 13 plantillas de `plantillas/` (mismos tamaños).
+
+### Citas desplazadas
+| Antes | Ahora |
+|---|---|
+| `package.json:6-9` (scripts) | sin cambios; `lint` sigue siendo `next lint` (`:9`) |
+| `package.json:25` (`next ^16.2.0`) | `:25` |
+| `package.json:26` (`next-seo ^6.6.0`) | retirado; `react ^19.2.4` pasa de `:27` a `:26` |
+| `package.json:23`, `:24` (`framer-motion`, `lottie-react`) | sin cambios |
+| `package.json:40`, `:41` (`tailwindcss`, `typescript`) | `:39`, `:40` |
+| `package.json:12`, `:14-16`, `:17-20` (kit, `free-*`, `pro-*`) | sin cambios |
+| `.gitignore:42` (`package-lock.json`) | la línea se quitó |
+| `next.config.ts:13-18` (§8 paso 4) | `next.config.ts:3-14` (ya no ignora errores) |
+| `src/app/sites/normapro/layout.tsx:5,14-18` (fuente Mulish) | `:5`, `:15-19` |
+| `src/app/sites/instituto/contacto/page.tsx:4` (import `pro-*`) | `:6` |
+
+### Afirmaciones obsoletas
+- «`package-lock.json` está en `.gitignore` (`:42`) y a la vez versionado» (§2.1, §6, §9): ya no está en `.gitignore`.
+- «`README.md`: plantilla de `create-next-app`… La última línea es el nombre del repo (`:37`)» (§3): el fichero tiene ahora 54 líneas (2.663 bytes). Las líneas 1-36 siguen siendo la plantilla; desde `:37` hay un encabezado con el nombre del repo y dos apartados nuevos, «Configuración» (variables de entorno por nombre) y «SEO» (dónde viven metadatos, sitemap y robots).
+- «`next-seo ^6.6.0`» (§3, versiones): retirado de `package.json`.
+- «`npm run build` debe terminar sin fallar por errores de tipos ni de lint, porque `next.config.ts:13-18` los ignora (ST-WEB-06)» (§8 paso 4): ya no los ignora. `npx tsc --noEmit --incremental false` termina sin errores (comprobado en esta revisión). El build puede fallar si aparece un error de tipos.
+- «`.npmrc` (instalación; no abierto)»: el PR lo modifica. El commit `56591c6` y `README.md:45` dicen que el token del registro de iconos se lee de la variable `FONTAWESOME_NPM_TOKEN`. No se ha abierto el fichero; ver SEG-WEB-03 en ACT-store.md §7.
+- «`trace.js` pesa 0 bytes, `trace.ts` 77 bytes, `trace.txt` 455.421 bytes» (§2, §9): ya no existen.
+- Dudas de §9 sobre `src.zip`, `trace.*`, `storybook-static/` y `debug-storybook.log`: resueltas por borrado; la duda sobre `.npmrc` y `package-lock.json` versionados sigue (ambos versionados).
+- «24 elementos: 11 de la raíz y 13 de `plantillas/`» (§2): la tabla 2.1 pierde 5 filas (`trace.js`, `trace.ts`, `trace.txt`, `debug-storybook.log`, `src.zip`) y quedan 6 de la raíz más 13 plantillas, 19 en total. `storybook-static/` ya no cuenta.
+
+### Nuevo
+- `README.md:37-54`: variables de entorno y apartado de SEO.
+- `.gitignore`: una línea menos.
+
+### Errores de esta ficha
+ST-WEB-15 VIGENTE (`package.json:9`). ST-WEB-06 RESUELTO.
+
+### Seguridad
+El PR retira del árbol los artefactos de depuración y el zip de `src/` (SEG-WEB-04 CAMBIADO: siguen dos JSON de ejemplo) y mueve el token del registro de iconos a una variable de entorno (SEG-WEB-03 CAMBIADO, sin poder verificar el fichero). El valor anterior sigue en el historial de git. Quita `package-lock.json` de `.gitignore` (SEG-WEB-19). Detalle en [ACT-store.md](../../../docs/revision/ACT-store.md) §7.

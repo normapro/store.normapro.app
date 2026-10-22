@@ -134,3 +134,33 @@ Markdown admitido (`MarkdownContent.tsx`): listas con `- ` o `* ` (`:37`), títu
 
 ### Afirmaciones no verificables
 - Quién devuelve `OPEN_CONTACT_MODAL` y `REDIRECT` (servicio externo), cuándo llega la respuesta serializada, la spec del chatbot de la API (A12) y la sección `## 8`.
+
+## Actualización tras el PR del 21/10/2026
+
+Código comparado: `main` `8dc6ec9` frente a `origin/main` `0817fe9` (PR #19). Estado de los ids en [ACT-store.md](../../../docs/revision/ACT-store.md). No probado en ejecución.
+
+### Qué no cambia
+`components/ChatManager.tsx`, `ChatWindow.tsx`, `ChatFloatingButton.tsx`, `chat/MarkdownContent.tsx`, `services/chatbotService.ts` y `types/chatbot.ts` no se tocan en el PR. Todas sus citas internas siguen vigentes, incluido ST-WEB-10 (`ChatWindow.tsx:94-100`, `chatbotService.ts:60-63`: el chat se bloquea al 11.º mensaje).
+
+### Citas rotas
+Ninguna.
+
+### Citas desplazadas
+| Antes | Ahora |
+|---|---|
+| `app/sites/normapro/layout.tsx:35-37` (montaje de `ChatManager`) | `:56-58` |
+| `app/sites/instituto/layout.tsx:24-39` (layout sin `ChatManager`) | `:44-60` |
+| `ChatManager.tsx:70-75` monta `Formulario` | sin cambio de línea; `Formulario.tsx` se desplaza 2 a 3 líneas (ver W8) |
+
+### Afirmaciones obsoletas
+- «`Formulario` abierto desde el chat» (§2): `Formulario` envía ahora el campo trampa `website` además del cuerpo anterior (`Formulario.tsx:72`). No afecta al flujo del chat.
+- El layout de NormaPRO ya no tiene `Providers`: `ChatManager` envuelve directamente a `children` (`normapro/layout.tsx:56-58`).
+
+### Nuevo
+Nada propio del chatbot.
+
+### Errores de esta ficha
+ST-WEB-10 VIGENTE. El navbar sigue dentro de `ChatManager`.
+
+### Seguridad
+Sin cambios de seguridad en esta ficha.

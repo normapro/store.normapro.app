@@ -231,3 +231,62 @@ Copias de cada tipo en API (`app/types/`), editor (`src/types/`) y store (`src/t
 - Divergencias de tipos (`docs/CONTRATOS.md`), formato de `fecha`, imágenes de `public/` y procedimiento de prueba.
 
 - Hay reglas de diseño que hoy no se cumplen; detalle en el informe restringido.
+
+## Actualización tras el PR del 21/10/2026
+
+Código comparado: `main` `8dc6ec9` frente a `origin/main` `0817fe9` (PR #19). Estado de los ids en [ACT-store.md](../../../docs/revision/ACT-store.md). No probado en ejecución. `P = app/sites/normapro/`.
+
+### Citas rotas
+Ninguna. Pero `P actualidad/page.tsx` (126 líneas) y `P actualidad/[noticia]/page.tsx` (347 líneas) tienen ahora 9 y 106 líneas: su contenido se movió a componentes nuevos.
+
+### Citas desplazadas
+| Antes | Ahora |
+|---|---|
+| `P actualidad/page.tsx:2` (`'use client'`), `:7` (pestañas), `:9-18` (temas), `:21-23`, `:25-36`, `:121` | `components/actualidad/ActualidadListado.tsx:2`, `:7`, `:9-18`, `:21-23`, `:25-36`, `:121`. `page.tsx` actual: `metadata` `:5`, componente `:8` |
+| `P actualidad/[noticia]/page.tsx:3` (`'use client'`) | la página es de servidor; el cliente es `components/actualidad/NoticiaDetalle.tsx:3` |
+| `…/[noticia]/page.tsx:105`, `:107-109` (slug, id) | `…/[noticia]/page.tsx:21`, `:25-29` |
+| `…/[noticia]/page.tsx:118-123` (listpacks), `:125-132` (pack), `:134-141` (listsoluciones), `:146-168` (arma `href`) | `NoticiaDetalle.tsx:74-79`, `:81-88`, `:90-100`, `:102-125` |
+| `…/[noticia]/page.tsx:122`, `:146-148` (`id_pack`, `id_soluciones`) | `NoticiaDetalle.tsx:78`, `:102-104` |
+| `…/[noticia]/page.tsx:171-173` (mensaje de error) | `NoticiaDetalle.tsx:127-130` (solo `console.error`) y `…/[noticia]/page.tsx:69-77` («No se encontro la noticia.») |
+| `…/[noticia]/page.tsx:45-70`, `:183` (`parseCategorias`) | `NoticiaDetalle.tsx:20-45`, `:137` |
+| `…/[noticia]/page.tsx:22-43`, `:182` (párrafos) | `components/actualidad/actualidadUtils.ts:3-24`; `NoticiaDetalle.tsx:136`, `:184-190` |
+| `…/[noticia]/page.tsx:72-83` (`iconForSolution`) | `NoticiaDetalle.tsx:47-58` |
+| `…/[noticia]/page.tsx:222-237` (migas en el JSX) | `NoticiaDetalle.tsx:140-155` |
+| `…/[noticia]/page.tsx:257-261` (imagen) | `NoticiaDetalle.tsx:175-179` |
+| `…/[noticia]/page.tsx:264` (fecha) | `NoticiaDetalle.tsx:182` |
+| `…/[noticia]/page.tsx:275-333` (productos relacionados) | `NoticiaDetalle.tsx:193-251` |
+| `…/[noticia]/page.tsx:338-344`, `:342` (otras noticias) | `NoticiaDetalle.tsx:256-262`, `:260` |
+| `P informes/page.tsx:4`, `:9-12` | `:8`, `:13-16` |
+| `P informes/[informe]/page.tsx:13-31` (tipos) | `:17-35` |
+| `…/[informe]/page.tsx:33-71`, `:52-68` (normaliza prólogo) | `:37-75`, `:56-72` |
+| `…/[informe]/page.tsx:156` (imagen candidata) | `:160` |
+| `…/[informe]/page.tsx:159-200`, `:161-169` (`getInformeBySlug`) | `:163-204`, `:165-173` |
+| `…/[informe]/page.tsx:283-287` (prólogo HTML) | `:310-314` |
+| `…/[informe]/page.tsx:368` (`InformeDescargaCtaSection`) | `:395` |
+| `components/informes/InformesGridSection.tsx:103` (`?ref=instittuo`) | misma línea, ahora `?ref=instituto` |
+| `components/ActualidadGridSection.tsx` (sin cambios) | `:93-128`, `:181-183` siguen |
+
+### Afirmaciones obsoletas
+- «`/actualidad` y `/actualidad/[noticia]`: Cliente. Sin caché de Next» (§3.1): la noticia se pide ahora en servidor con `revalidate` de 300 s (`…/[noticia]/page.tsx:21-23`) y se pinta con `NoticiaDetalle`. El listado sigue siendo cliente (`ActualidadListado.tsx:2`); su `page.tsx` es de servidor. El pack y las soluciones relacionadas se siguen pidiendo en el navegador (`NoticiaDetalle.tsx:69-134`).
+- «Detalle de noticia: slug de `useParams`» (§3.3): `params` de servidor (`…/[noticia]/page.tsx:12,49,66`). El acceso por id sigue (`:25-29`), ahora con `/^\d+$/` (antes `Number.isFinite`; ya no entra `1e3`).
+- «Código sin uso: `breadcrumbData`, `Breadcrumb`, `BreadcrumbItem`» (§3.3): ya no existe; el componente nuevo no los tiene.
+- «Cualquier fallo: “No se pudo cargar el detalle de la noticia.”»: ahora noticia inexistente o error de la API = «No se encontro la noticia.» con estado 200 (`…/[noticia]/page.tsx:69-77`) y `noindex,follow` (`:51`). Los fallos de los relacionados no se muestran.
+- «`generateMetadata`, `sitemap` y `robots` no existen para estas rutas» (§9): existen. Noticia: `generateMetadata` con título, descripción (primer párrafo, 160 caracteres), imagen, tipo `article` y fecha (`:48-63`); JSON-LD `BreadcrumbList` y `NewsArticle` (`:89-102`). Informe: `generateMetadata` (`:209-220`) y migas (`:241-249`). Listados: `metadata` en `actualidad/page.tsx:5` e `informes/page.tsx`.
+- «Informes de Instituto: `?ref=instittuo`» (correcciones, §9): corregido en `InformesGridSection.tsx:103`.
+- «La rama de prólogo en HTML» (`:52-68,283-287`): sin cambios de fondo; `dangerouslySetInnerHTML` sigue en `:313` y `:329` sin sanear (SEG-WEB-01 VIGENTE).
+- «`cache: "no-store"` en los dos `fetch`» (§3.1): sigue (`:165-172`).
+- «Los temas del filtro están en el código (`actualidad/page.tsx:9-18`)»: ahora `ActualidadListado.tsx:9-18`.
+- ST-WEB-31 (pestaña «Servicios» sin filtro, «Otras noticias» incluye la actual): VIGENTE (`ActualidadListado.tsx:7,25-36`; `NoticiaDetalle.tsx:260`).
+- ST-WEB-29 (soluciones relacionadas sin enlace): VIGENTE (`NoticiaDetalle.tsx:90-97,116-122,235-248`). ST-WEB-30 (imagen absoluta): VIGENTE en el detalle (`NoticiaDetalle.tsx:176`); los metadatos usan `resolvePublicImage` (`…/[noticia]/page.tsx:59`).
+
+### Nuevo
+| Pieza | Fichero |
+|---|---|
+| Listado de noticias (cliente, único `h1` `:64`) | `components/actualidad/ActualidadListado.tsx` |
+| Detalle de noticia (cliente, `h1` `:162`) | `components/actualidad/NoticiaDetalle.tsx` |
+| Formato de párrafos | `components/actualidad/actualidadUtils.ts` |
+| Sitemap de noticias (con `lastmod`) e informes | `app/sitemap.xml/route.ts:121-129` |
+| Canónico por slug | `…/[noticia]/page.tsx:46`, `…/[informe]/page.tsx:207` |
+
+### Seguridad
+El detalle de informe sigue pintando HTML del prólogo sin sanear y comprobando rutas de `public/` con datos de la base (SEG-WEB-01 y SEG-WEB-13 VIGENTES). El JSON-LD de noticia usa `JsonLd.tsx` con escape de `<` (SEG-WEB-10). Los enlaces e imágenes de la API siguen sin comprobar esquema (SEG-WEB-08). Detalle en [ACT-store.md](../../../docs/revision/ACT-store.md) §7.

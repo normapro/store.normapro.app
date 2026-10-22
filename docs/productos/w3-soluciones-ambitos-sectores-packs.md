@@ -285,3 +285,81 @@ Cada tipo tiene copia en API, editor y store, y las tres divergen (`docs/CONTRAT
 - `SolucionSeo` va en W10, `Navbar` y menús en W11, las tres copias divergentes de tipos (`docs/CONTRATOS.md`), `uriIcon` del editor y las imágenes de `public/`.
 
 - Hay reglas de diseño que hoy no se cumplen; detalle en el informe restringido.
+
+## Actualización tras el PR del 21/10/2026
+
+Código comparado: `main` `8dc6ec9` frente a `origin/main` `0817fe9` (PR #19). Estado de los ids en [ACT-store.md](../../../docs/revision/ACT-store.md). No probado en ejecución. Prefijo `P = app/sites/normapro/`.
+
+### Citas rotas
+- `components/AmbitosTabsResutls.tsx` y `components/SolucionCard.tsx`: borrados (§2, §9).
+- `P …/sector/[sector]/[slugSolucion]/paqueteAmbitoSector.tsx`: borrado (§2, §9).
+- Sigue sin import `components/CaracteristicaCard.tsx` (vacío). De los 4 ficheros sin import quedan 1.
+- `ambitoIdSelected` (§3.2, §9): ya no existe. `P soluciones/page.tsx:13` pasa `sectorSlug={null} ambitoSlug={null}`.
+
+### Qué es cada ruta ahora
+Todas las rutas de esta ficha son componentes de servidor (ya no `'use client'`, ya no `useParams`). Piden los datos con `src/services/storeService.ts` (`React.cache`, `revalidate` de 300 s).
+
+| Ruta | Fichero actual | Líneas clave |
+|---|---|---|
+| `/soluciones` | `P soluciones/page.tsx` | `metadata` `:6`, `AmbitosTabs` `:13` |
+| `/todas-las-soluciones` | `P todas-las-soluciones/page.tsx` | `metadata` con canónico `/soluciones` `:7`, `AmbitosTabs` `:14` |
+| `/soluciones/[ambito]` | `P soluciones/[ambito]/page.tsx` | datos `:17-23`, `generateMetadata` `:25-36`, página `:38-63`, `redirect("/")` si no existe `:43`, `AmbitosTabs` `:56`, CTA `:61` |
+| `/soluciones/[ambito]/sector/[sector]` | `P …/sector/[sector]/page.tsx` | datos `:16-22`, `generateMetadata` `:24-39`, página `:41-68`, `redirect("/")` `:46`, `AmbitosTabs` `:60`, CTA `:65` |
+| `/soluciones/[ambito]/[slugSolucion]` | `P …/[slugSolucion]/page.tsx` (14 líneas) → `components/soluciones/SolucionPage.tsx` | metadatos `:43-54`, página `:56-84` |
+| `…/sector/[sector]/[slugSolucion]` | `P …/sector/…/[slugSolucion]/page.tsx` → `SolucionPage.tsx` con `sector` | igual |
+| `/soluciones/[ambito]/packs/[slugPack]` | `P …/packs/[slugPack]/page.tsx` (67 líneas) → `components/soluciones/PackDetalle.tsx` | `generateMetadata` `:16-28`, página `:30-67`, `redirect("/")` `:35` |
+
+### Citas desplazadas (fichas de solución y pack, §3.5 a §3.7)
+| Antes | Ahora |
+|---|---|
+| `GET /solucion/{slug}` (`[slugSolucion]/page.tsx:42`) y `?sectorSlug=` (`sector/…:34`) | `storeService.ts:63-66` (`getSolucion`), llamado en `SolucionPage.tsx:44,57` |
+| Migas (`:66-77`; sector `:39-50`) | `SolucionPage.tsx:24-41`. El último paso usa la ruta canónica (ST-WEB-23 RESUELTO) |
+| `testimonios?maxItems=1` (`:94`; `:67`; pack `:67`) | `storeService.ts:79-82`; `SolucionPage.tsx:62-69`; `…/packs/[slugPack]/page.tsx:37-44` |
+| Bloques `:130-222` | `SolucionDetalle.tsx:36-143` |
+| CTA 1 y testimonio `:239-262` | `SolucionDetalle.tsx:148-172` |
+| FAQ `:270-296` | `SolucionDetalle.tsx:180-206` |
+| CTA 2 `:297-307` | `SolucionDetalle.tsx:207-217` |
+| `SolutionsRefered` `:311`; `Formulario` `:314` | `SolucionDetalle.tsx:221`; `:224` |
+| Pack: bloques `:105-149` | `PackDetalle.tsx:36-111` |
+| Pack: «Soluciones que incluye» `:150-176` | `PackDetalle.tsx:99-103` (icono `iconMap[sol.icon] ?? faCogs`; enlace `/soluciones/${pack.slug_ambito}/${sol.slug}` en `:103`) |
+| Pack: consultoría `:179-185` | `PackDetalle.tsx:115-119` |
+| Pack: CTA 1 y testimonio `:191-210` | `PackDetalle.tsx:128-141` |
+| Pack: FAQ `:215-232` | `PackDetalle.tsx:149-166` |
+| Pack: CTA 2 `:234-244` | `PackDetalle.tsx:169-176` |
+| Pack: `SolutionsRefered` `:247`; `Formulario` `:250` | `PackDetalle.tsx:181`; `:184` |
+| `types/ambito.ts:1-5` | `:1-7` (añade `textoweb?`) |
+| `types/pack.ts:45-48` (`soluciones`) | `:56-60` (añade `icon?`) |
+| `AmbitosTabs.tsx`, `solutionsRefered.tsx` | sin desplazamiento; solo cambia el tipado del icono de reserva (`AmbitosTabs.tsx:235`; `solutionsRefered.tsx:88`) |
+
+### Afirmaciones obsoletas
+- «Todas las rutas son `'use client'`. No hay `revalidate`, `cache` ni `generateMetadata`. No hay HTML de la ficha en el primer render» (§3.1): falso para las rutas de la tabla de arriba. Salen con HTML de servidor, `generateMetadata` y JSON-LD (`BreadcrumbList` y `FAQPage`: `SolucionPage.tsx:75`, `packs/[slugPack]/page.tsx:57`). Siguen en cliente: `AmbitosTabs`, `SolutionsRefered`, `SolutionsHero`, `SolutionsHeroSector`, los CTA y el modal.
+- «Lee solo `slugSolucion` de `useParams`; el segmento `[ambito]` no se usa» (§3.5): el ámbito de la URL se usa para el canónico y la miga (`SolucionPage.tsx:18,25`).
+- «Construye datos de SEO y los pasa a `SolucionSeo`… `price="0.00"`» (§3.5, §3.7): `SolucionSeo` ya no existe. No hay precio (ST-WEB-12 RESUELTO).
+- «No monta `SolucionSeo`» (ficha con sector): las dos fichas generan metadatos igual.
+- «El `useEffect` depende solo de `slugSolucion` (`:57`)» (ST-WEB-27): ya no hay `useEffect` en la ficha; se pide en servidor en cada navegación. `AmbitosTabs.tsx:64` mantiene `[]` (ST-WEB-27 CAMBIADO).
+- «Imports que no se usan en el fichero» de las dos fichas (§3.5, §3.6): los ficheros nuevos no los tienen.
+- «Migas: Home > Soluciones > `{ambito}` (el slug, no el nombre)» (§3.7): la miga del ámbito usa el nombre (`getAmbitoBySlug`, `packs/[slugPack]/page.tsx:47-51`) con el slug de reserva.
+- «Con un slug que no existe, `/packs/:slug` falla al leer la fila y la página queda vacía» (§6): en el árbol actual de la API la solución y el pack devuelven 404 (`api … storeController.ts:730,1312,1353`) y la store hace `redirect("/")` (`SolucionPage.tsx:60`, `packs/[slugPack]/page.tsx:35`). Con un 5xx, `storeService.ts:26-27` lanza y sale la pantalla de error. Ver ST-API-16 en ACT-store.md §4.
+- «Primer render: `ambitoSlug` aún no existe en las fichas» (§3.8): en la ficha de solución llega desde el servidor (`SolucionDetalle.tsx:221`). En el pack se pasa el parámetro de URL (`PackDetalle.tsx:181`).
+- «`Pack` no declara `titleweb`, `fraseCierre` ni los pares título/párrafo» (§5): ya están declarados (`types/pack.ts:30-31,39-46`). `fraseCierre` sigue sin pintarse (búsqueda en `PackDetalle.tsx`).
+- La CTA final de ámbito y sector (§3.4) es ahora el componente `CtaDiagnosticoSection`.
+- Lo que no cambia: `[...not-found]` sigue redirigiendo a `/`.
+
+### Nuevo
+| Pieza | Fichero |
+|---|---|
+| Orquestación de la ficha de solución (con y sin sector) | `components/soluciones/SolucionPage.tsx` |
+| Maquetación de solución (cliente, un `h1`) | `components/soluciones/SolucionDetalle.tsx` |
+| Maquetación de pack (cliente, un `h1`) | `components/soluciones/PackDetalle.tsx` |
+| CTA final de ámbito y sector | `components/soluciones/CtaDiagnosticoSection.tsx` |
+| Consultas de servidor | `services/storeService.ts` (`getAmbitos`, `getAmbitoBySlug`, `getSectorBySlug`, `getSolucion`, `getListSoluciones`, `getPack`, `getTestimonios`) |
+| Rutas de esta ficha en el sitemap | `app/sitemap.xml/route.ts:80-114` |
+
+### Endpoints
+Nuevos llamantes en servidor: `GET /solucion/{slug}` (`storeService.ts:65`), `GET /packs/{slug}?ambito=` (`:74`; la API sigue sin leer `ambito`, ST-WEB-04), `GET /listsoluciones` (`:70`), `GET /ambitos` (`:46`), `GET /sector/{slug}` (`:56`), `GET /ambitosWithSolCounter?sector=` (`:60`), `GET /testimonios?maxItems=` (`:80`). Los llamantes de cliente (`AmbitosTabs`, `solutionsRefered`, `SolutionsHero*`) no cambian.
+
+### Errores de esta ficha
+VIGENTES: ST-WEB-21 (`AmbitosTabs.tsx:253`; `/soluciones` y `/todas-las-soluciones` pasan `null`), ST-WEB-22 (`SolutionsHeroSector.tsx:55`), ST-WEB-24, ST-WEB-26, ST-WEB-04, ST-WEB-33 (`TestimonioCard.tsx:19-21`). CAMBIADOS: ST-WEB-25, ST-WEB-27. RESUELTO: ST-WEB-23. ST-API-14: la API actual ya no usa el alias `as` en la rama `all` con sector; no probado.
+
+### Seguridad
+Cambia el origen de los datos de la ficha (servidor) y se añade JSON-LD con datos de la API, con escape de `<`. `MultimediaPlayer` sigue igual. Detalle en [ACT-store.md](../../../docs/revision/ACT-store.md) §7 (SEG-WEB-07 vigente, SEG-WEB-10 resuelto, SEG-WEB-11 cambiado).

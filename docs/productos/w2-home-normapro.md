@@ -191,3 +191,42 @@ Rutas de la API: `api-store…/routes/v1/store.ts` (`/packscategoria` :48, `/tes
 - `docs/CONTRATOS.md` y `docs/GLOSARIO.md`, zona horaria de `fecha`, API externa del contador y de formación, imágenes de `public/` y pasos 2-7 de `## 8`.
 
 - Hay reglas de diseño que hoy no se cumplen; detalle en el informe restringido.
+
+## Actualización tras el PR del 21/10/2026
+
+Código comparado: `main` `8dc6ec9` frente a `origin/main` `0817fe9` (PR #19). Estado de todos los ids en [ACT-store.md](../../../docs/revision/ACT-store.md). No probado en ejecución.
+
+### Citas rotas
+- `components/MainSolucionesSection.tsx` ya no existe (§2, §3.5, §4, §9, correcciones). La clave `MAINPACKS` de `config/api.ts:20` queda sin ningún uso.
+
+### Citas desplazadas
+| Antes | Ahora |
+|---|---|
+| `app/sites/normapro/page.tsx:16-119` (la página) | `components/home/HomeNormapro.tsx:16-118`. Misma numeración que antes desde la línea 16 |
+| `page.tsx:1` (`'use client'`) | `HomeNormapro.tsx:1`. El `page.tsx` actual es de servidor y ocupa `:13-15` |
+| `page.tsx:19`, `:20`, `:23-56`, `:44-52`, `:59`, `:63`, `:67`, `:71`, `:75`, `:93-96`, `:114` | las mismas líneas en `HomeNormapro.tsx` |
+| `page.tsx:39-41`, `:82-84`, `:105` (textos) | las mismas líneas en `HomeNormapro.tsx` |
+| `page.tsx:4` (import de `MainConsultoriaSection` sin render) | `HomeNormapro.tsx:4` |
+| `HeroUserCount.tsx:5-29`, `:15`, `:19` | `:5-28`, `:14`, `:18` (se quitó un `console.log`). `:9` no cambia |
+| `app/sites/normapro/historias/page.tsx:15` (usa `HeroUserCount`) | `components/historias/HistoriasListado.tsx:15` |
+| `app/sites/normapro/nosotros/page.tsx:1` (usa `MainTestimoniosSection`) | `:3` |
+| `app/sites/instituto/page.tsx` (usa `MainEventosSection isInstituto`, `MainConsultoriaSection` en `:22`) | `components/home/HomeInstituto.tsx` (mismas líneas: `:22`, `:32`) |
+
+### Afirmaciones obsoletas
+- «`page.tsx:1` es `'use client'`; toda la home se renderiza en el cliente» (§3.1): la ruta `/` es ahora un `page.tsx` de servidor (`normapro/page.tsx:13-15`) que monta `HomeNormapro` (cliente). Los metadatos van en servidor (`page.tsx:7-11`: título «Digitalización sin límites \| NormaPro» y descripción del hero). Las secciones siguen pidiendo sus datos desde el navegador.
+- «Código muerto: tres ficheros» (§3.5): quedan dos sin import, `MainClientesCarrousel.tsx` (con `usersCount`, `:17-18`) y `MainParallaxSection.tsx`. `MainSolucionesSection.tsx` se borró.
+- «`MainConsultoriaSection` importada y sin renderizar» sigue cierto en `HomeNormapro.tsx:4`.
+- «Todas las URLs salen de `config/api.ts`» (corrección previa): siguen las dos excepciones (`HeroUserCount.tsx:9`, `MainFormacionSection.tsx:15`).
+- El título principal de la home está en `MainHeroCarousel.tsx:50` como `h1`.
+
+### Nuevo
+| Pieza | Fichero:línea |
+|---|---|
+| Home de NormaPRO (cliente) | `components/home/HomeNormapro.tsx` |
+| Metadatos de la home | `app/sites/normapro/page.tsx:7-11` |
+
+### Errores de esta ficha
+ST-WEB-20 VIGENTE (`MainEventosSection.tsx:55-57`). ST-WEB-42 VIGENTE (`:85-87`). ST-WEB-14 VIGENTE (`MainPacksSection.tsx:17`, `MainFormacionSection.tsx:15`, `MainConsultoriaSection.tsx:29`). ST-WEB-05 VIGENTE (`MainClientesCarrousel.tsx:17-18`). ST-API-13: `MainPacksSection.tsx:29-30` sin cambios.
+
+### Seguridad
+Sin cambios de seguridad en esta ficha. El iframe de vídeo (`HomeNormapro.tsx:44`) y las llamadas externas de `HeroUserCount.tsx:9` y `MainFormacionSection.tsx:15` siguen: SEG-WEB-15 VIGENTE (ver [ACT-store.md](../../../docs/revision/ACT-store.md) §7).

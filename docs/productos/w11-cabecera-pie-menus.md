@@ -154,3 +154,49 @@ El formulario de contacto abierto desde el navbar y el pie es `Formulario.tsx` (
 
 ### Afirmaciones no verificables
 - Imágenes de `uriIcon` en `public/`, el recuento de usos de `HeaderSection` y `Breadcrumb`, por qué `NormaproAccessButton` espera a la animación y la sección `## 8`.
+
+## Actualización tras el PR del 21/10/2026
+
+Código comparado: `main` `8dc6ec9` frente a `origin/main` `0817fe9` (PR #19). Estado de los ids en [ACT-store.md](../../../docs/revision/ACT-store.md). No probado en ejecución.
+
+### Qué no cambia
+`components/menu/*` (`Navbar.tsx`, `NavbarInstituto.tsx`, `SolutionsDropdown.tsx`, `ConsultoriaDropdown*.tsx`, `ModalDescubrir.tsx`, `AplicationsDropDown.tsx`, `packHighlightedButton.tsx`), `HeaderSection.tsx`, `ChatManager.tsx` y `NormaproAccessButton.tsx` no se tocan. Sus citas siguen vigentes (ST-WEB-08, -09, -14, -16, -39).
+
+### Citas rotas
+Ninguna.
+
+### Citas desplazadas
+| Antes | Ahora |
+|---|---|
+| `Footer.tsx:10-228` (componente) | `:11-232` |
+| `Footer.tsx:16-60` (newsletter) | `:18-63` |
+| `Footer.tsx:20-23` (validación del correo), `:28` (fetch), `:28-38`, `:33-37`, `:35` | `:22-25`, `:30`, `:30-40`, `:35-40`, `:37` |
+| `Footer.tsx:40-47`, `:49` (mensajes) | `:43-50`, `:52` |
+| `Footer.tsx:72,88,96,122-135,216` (textos editables del pie) | `:75,92,100,126-139,220` |
+| `Footer.tsx:97-102` (redes) | `:101-106` |
+| `Footer.tsx:123` (`/formacion`) | `:127` |
+| `Footer.tsx:129`, `:131`, `:133-135` (`/nosotros`, `/trabaja`, contacto) | `:133`, `:135`, `:137-139` |
+| `Footer.tsx:211-213` (legales) | `:215-217` |
+| `breadcrump.tsx:11-36`, `:12-35` | `:11-37`, `:12-36` |
+| `normapro/layout.tsx:38` (montaje del pie) | `:59` |
+| `soluciones/[ambito]/page.tsx:19` (valor `all` por defecto) | `:18` (`esTodos`) y `:56` (`ambitoSlug={slug \|\| "all"}`) |
+
+### Afirmaciones obsoletas
+- «Legales (`:211-213`): `/aviso-legal/`, `/politica-de-privacidad/`, `/politica-de-cookies-ue/`» (§3.x): ahora sin barra final (`Footer.tsx:215-217`).
+- «Newsletter: `POST` a `LEADS` con `email`, `acepta_marketing: true` y `origen_ruta`» (§3.x, §4, §5): además envía `website` (campo trampa, `Footer.tsx:38`). `acepta_marketing: true` sigue (`:37`, ST-WEB-13 VIGENTE). El formulario monta `HoneypotField` (`:77`).
+- «Lead del pie: `{email, acepta_marketing, origen_ruta}` sin tipo» (§5): ahora con `website`.
+- «Migas de pan: `<nav className="flex">`» (§3.x): ahora `<nav aria-label="Migas de pan">`, con `aria-current="page"` en el último nivel y `Fragment` con clave (`breadcrump.tsx:15-35`). La estructura anidada no cambia.
+- «Error funcional nuevo (sin id): `/formacion` no existe» (§7, §9): ahora es ST-WEB-08 (VIGENTE): `Navbar.tsx:165,251`, `Footer.tsx:127`, `MainFormacionSection.tsx:40`.
+- «Resultados de consultoría del buscador van a `/consultoria/...`»: ST-WEB-09 VIGENTE (`Navbar.tsx:296`).
+- «`/soluciones/all` entra en la ruta `[ambito]` con `all` como valor por defecto» (§7): sigue; el ámbito `all` muestra el mismo listado que `/soluciones` y su canónico es `/soluciones` (`[ambito]/page.tsx:29`).
+- «El navbar vive dentro de `ChatManager`»: sigue.
+
+### Nuevo
+- `Footer.tsx:77` y `FooterInstituto.tsx:80` montan `HoneypotField`.
+- Cuatro enlaces de pie de Instituto cambian de forma: ver W13.
+
+### Errores de esta ficha
+VIGENTES: ST-WEB-08, -09, -13, -14. Sin cambio en el buscador (`Navbar.tsx:50-67,283-296`) ni en `ModalDescubrir`.
+
+### Seguridad
+La newsletter añade un campo trampa; sigue sin casilla de consentimiento (SEG-WEB-06 VIGENTE). Enlaces a redes con `target="_blank"` sin `rel` en `Footer.tsx:101,104` (SEG-WEB-18 VIGENTE). Detalle en [ACT-store.md](../../../docs/revision/ACT-store.md) §7.

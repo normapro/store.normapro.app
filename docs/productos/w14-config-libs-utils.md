@@ -169,3 +169,55 @@ El editor tiene su propia `src/config/api.ts` (ficha E9). Las claves comunes con
 
 ### Afirmaciones no verificables
 - Divergencias de tipos con el editor, si `consultoria.ts` y `aplicacion.ts` deben declarar `contenidos`, ST-WEB-04 y la sección `## 8`.
+
+## Actualización tras el PR del 21/10/2026
+
+Código comparado: `main` `8dc6ec9` frente a `origin/main` `0817fe9` (PR #19). Estado de los ids en [ACT-store.md](../../../docs/revision/ACT-store.md). No probado en ejecución. `config/api.ts`, `context/SiteContext.tsx`, `libs/fontawesome*.ts`, `libs/icons.ts`, `libs/logovars.ts` y los tipos (salvo dos) no cambian.
+
+### Citas rotas
+- `libs/seo.config.ts` (§1, línea 9: «se documenta en W10»): borrado. Lo sustituye `libs/seo.ts` (W10, sección de actualización).
+- `components/MainSolucionesSection.tsx:32` (clave `MAINPACKS`, §4, §9) y `components/AmbitosTabsResutls.tsx:36,55` (usos de `LISTSOLUCIONES` y `LISTPACKS`, §9): borrados.
+
+### Citas desplazadas
+| Antes | Ahora |
+|---|---|
+| `aplicaciones/[aplicacion]/page.tsx:4` (`APLICACION`) | `:14` |
+| `consultorias/[consultorias]/page.tsx:4` (`CONSULTORIA`) | `:14` |
+| `historias/[historia]/page.tsx:46-67`, `:46,51`, `:67` (`HISTORIAS`, `CLIENTES`) | `:51-72`, `:51,56`, `:72` |
+| `informes/[informe]/page.tsx:161-166` (`INFORMES`) | `:165-170` |
+| `soluciones/[ambito]/packs/[slugPack]/page.tsx:35` (`PACKS`, con `?ambito=`) | `services/storeService.ts:74` |
+| `soluciones/[ambito]/[slugSolucion]/page.tsx:42` y `sector/…/[slugSolucion]/page.tsx:34` (`SOLUCION`) | `services/storeService.ts:65` |
+| `soluciones/[ambito]/packs/[slugPack]/page.tsx:19,163` (`iconMap`, reserva `faCogs`) | `components/soluciones/PackDetalle.tsx:15,99` |
+| `actualidad/[noticia]/page.tsx:105,108,118,127,134-141` (`ACTUALIDAD`, `LISTPACKS`, `PACKS`, `LISTSOLUCIONES`) | `…/[noticia]/page.tsx:21,26`; `components/actualidad/NoticiaDetalle.tsx:74,83,93-96` |
+| `instituto/apariciones-prensa/page.tsx:23` (`PRENSA`) | `:20` |
+| `Cookies.tsx:12` (`COOKIES`) | `:14` |
+| `Footer.tsx:28`, `FooterInstituto.tsx:28` (`LEADS`) | `:30`, `:30` |
+| `Formulario.tsx:65`, `DescargaInformeModal.tsx:115` (`LEADS`) | `:67`, `:117` |
+| `types/ambito.ts` (5 líneas), `types/pack.ts` (69 líneas) | 7 y 81 líneas (campos nuevos, ver abajo) |
+| `utils/FadeInOnScroll.tsx:8-37` | sin desplazamiento; solo cambia `ease: "easeOut" as const` (`:22`) |
+
+### Afirmaciones obsoletas
+- «Los componentes la usan con `fetch` en el navegador y los `page.tsx` de servidor de aplicaciones, consultorías, historias e informes» (§3.1): ahora también piden en servidor las rutas de ámbito, sector, solución, pack, noticia y prensa. La mayoría de esas consultas pasan por `services/storeService.ts` (`getJson`/`getList`/`React.cache`, `revalidate` de 300 s) y codifican los parámetros con `encodeURIComponent`. La regla «toda llamada pasa por `API_ENDPOINTS`» se mantiene (`storeService.ts:2`).
+- «`services/` solo tiene `chatbotService.ts`» (implícito en el CLAUDE.md y en §1): hay también `services/storeService.ts` (92 líneas): `getAmbitos`, `getAmbitoBySlug`, `getSectores`, `getSectorBySlug`, `getAmbitosConSoluciones`, `getSolucion`, `getListSoluciones`, `getPack`, `getPacksCategoria`, `getTestimonios`, `getHistorias`, `getInformes`, `getActualidad`, `getAplicaciones`, `getConsultorias`. Contrato: devuelve `null` en 404 o cuerpo vacío, lanza en otro error de estado; los listados de apoyo devuelven `[]` si fallan.
+- «`MAINPACKS`: solo `MainSolucionesSection.tsx:32` (sin import)» (§4) y «25 claves. 24 tienen uso. `MAINPACKS` solo se usa en código sin import» (§4): ahora `MAINPACKS` (`config/api.ts:20`) no tiene ningún uso. 24 claves con uso vivo.
+- «`LISTSOLUCIONES` también en `AmbitosTabsResutls.tsx:36`; `LISTPACKS` también en :55» (§9): ese fichero ya no existe.
+- «`libs/icons.ts` lo usa solo `…/packs/[slugPack]/page.tsx:19,163`» (§3.2): ahora solo `PackDetalle.tsx:15,99`.
+- Nuevo uso de `SECTOR_INFO` y `AMBITOS_SOLUCIONES` en servidor (`storeService.ts:56,60`).
+- «`libs/seo.config.ts`»: la configuración de SEO es ahora `libs/seo.ts`; no depende de `next-seo`.
+- «Variables de entorno»: ver W1 (también `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_INSTITUTO_SITE_URL`; `libs/seo.ts:5-6`).
+- Tipos (§5): `Ambito.textoweb?` (`types/ambito.ts:5`); en `Pack`: `titleweb`, `fraseCierre`, `solucionTitle/Pragma`, `caracteristicasTitle/Pragma`, `casosdeusoTitle/Pragma`, `beneficiosTitle/Pragma` y `soluciones[].icon` (`types/pack.ts:30-31,39-46,59`). Siguen sin declarar: `Solucion.price`/`imagenOg` (ya no se leen en ninguna parte) y `id_casosdeuso` sigue mal (`types/solucion.ts:74`).
+- Errores de contrato `ST-WEB-04` (parámetros que la API no lee): VIGENTE (`SolutionsHero.tsx:20`, `ClientsMuralSection.tsx:18`, `ClientCarousel.tsx:39`, `storeService.ts:74`).
+
+### Nuevo
+| Pieza | Fichero |
+|---|---|
+| Base de SEO, hosts y utilidades de URL | `libs/seo.ts` |
+| Capa de consulta en servidor | `services/storeService.ts` |
+| Serialización segura de JSON-LD | `components/seo/JsonLd.tsx` |
+| Campo trampa de formularios | `components/shared/HoneypotField.tsx` |
+
+### Errores de esta ficha
+VIGENTES: ST-WEB-04, ST-WEB-05 (`MainClientesCarrousel.tsx:17-18`; sin import), ST-WEB-14 en los clientes. Sin cambios en `libs/fontawesome.ts` (sin import).
+
+### Seguridad
+Las llamadas de servidor codifican los segmentos de ruta (SEG-WEB-11 CAMBIADO). Se mantiene la URL de producción de la API como valor por defecto (`config/api.ts:1-5`, SEG-WEB-20 VIGENTE) y ahora los dominios canónicos también tienen valor por defecto escrito (`seo.ts:5-6`). Detalle en [ACT-store.md](../../../docs/revision/ACT-store.md) §7.

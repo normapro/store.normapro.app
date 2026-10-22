@@ -217,3 +217,51 @@ Copias de cada entidad en API, editor y store (`docs/CONTRATOS.md` §1 y §1.1):
 - Existencia de los ficheros de `public/` citados.
 
 - Hay reglas de diseño que hoy no se cumplen; detalle en el informe restringido.
+
+## Actualización tras el PR del 21/10/2026
+
+Código comparado: `main` `8dc6ec9` frente a `origin/main` `0817fe9` (PR #19). Estado de los ids en [ACT-store.md](../../../docs/revision/ACT-store.md). No probado en ejecución. `P = app/sites/normapro/`.
+
+### Citas rotas
+Ninguna. `P historias/page.tsx` (34 líneas) pasó a 12 líneas: su contenido está en `components/historias/HistoriasListado.tsx`.
+
+### Citas desplazadas
+| Antes | Ahora |
+|---|---|
+| `P historias/page.tsx:1` (`'use client'`), `:14`, `:15`, `:16-19`, `:20-31`, `:29` | `components/historias/HistoriasListado.tsx:1`, `:14`, `:15`, `:16-19`, `:20-31`, `:30` |
+| `P historias/[historia]/page.tsx:11-25` (tipos) | `:15-30` |
+| `…/[historia]/page.tsx:27-30`, `:93-96` (textos de reserva) | `:32-35`, `:115-118` |
+| `…/[historia]/page.tsx:32-43`, `:91` (`parseBloques`) | `:37-48`, `:113` |
+| `…/[historia]/page.tsx:46-48`, `:50-54`, `:56-59` (fetch por slug y por id) | `:51-53`, `:55-59`, `:61-64` |
+| `…/[historia]/page.tsx:64-77`, `:92` (cliente) | `:69-82`, `:114` |
+| `…/[historia]/page.tsx:79` (función) | `:101` |
+| `…/[historia]/page.tsx:83-89` («Historia no encontrada») | `:105-111` |
+| `…/[historia]/page.tsx:98-105`, `:102` (sin bloques, mensaje interno) | `:120-127`, `:124` |
+| `…/[historia]/page.tsx:109-116` (`PresentacionHistoria`, `LandingBuilder`) | `:138-145` |
+| `P partners/page.tsx:9` (función `NosotrosPage`) | `:11` (función `PartnersPage`; metadatos `:9`) |
+| `P partners/page.tsx:41`, `:66`, `:88`, `:106` | `:43`, `:68`, `:90`, `:108` |
+| `components/MainHistoriasSection.tsx:16`, `:112`, 123 líneas | `:16`, `:111`, 122 líneas (se quitó un `console.log`) |
+| Montajes de `ClientCarousel`: `P page.tsx:20`; `P historias/page.tsx:16`; `instituto/page.tsx:19` | `components/home/HomeNormapro.tsx:20`; `HistoriasListado.tsx:16`; `components/home/HomeInstituto.tsx:19` |
+| Usos de `TestimonioCard`: `[slugSolucion]/page.tsx:257`; `sector/…:223`; `packs/…:207` | `components/soluciones/SolucionDetalle.tsx:167`; `PackDetalle.tsx:141` (una sola maquetación para las dos fichas de solución) |
+| `app/sites/instituto/page.tsx:12,79` (`MainHistoriasSection`) | `HomeInstituto.tsx:12,79` |
+
+### Afirmaciones obsoletas
+- «`P historias/page.tsx` (cliente, `:1`)» (§3.1): la página es de servidor, con `metadata` (título «Éxitos que inspiran», `historias/page.tsx:6-10`) y monta `HistoriasListado` (cliente).
+- «Código sin uso: `components/Testimonios.tsx`: lo importan las fichas de solución y ninguna lo renderiza» (§2): ahora no lo importa ningún fichero. Sigue sin render.
+- «`historiaTextSection2.tsx` se importa en `P nosotros/page.tsx:7` y `P partners/page.tsx:3`»: esos imports ya no existen. Solo se importa y usa en `P trabaja/page.tsx:4,13`.
+- «`partners/page.tsx`: nombre de función `NosotrosPage` y dos imports sin uso (`HistoriaTextSection`, `HistoriaTextSection2`)» (§9): corregido (función `PartnersPage`, imports eliminados).
+- «`P trabaja/page.tsx` importa los dos [Partners…] y no los renderiza» (§3.3): ya no los importa (`trabaja/page.tsx:3-6`).
+- «`/historias/[historia]` … Sin datos: título “Historia no encontrada”» (§3.2): sigue, ahora con `noindex,follow` (`:90`). Se añaden `generateMetadata` (`:87-99`, imagen de `public/historiasclientes`), canónico por slug (`:85`) y JSON-LD de migas (`:129-137`).
+- «Caché: `revalidate: 0` en los tres `fetch`» (§3.2): sigue (`:52`, `:57`, `:73`). La URL del slug va con `encodeURIComponent` (`:51`).
+- «Partners: contenido en el código» (§6): sin cambios; añade `metadata` (`partners/page.tsx:9`).
+- ST-WEB-32 (mensaje interno visible): VIGENTE (`:124`). ST-WEB-07 (id y slug fijos en `MainHistoriasSection`): VIGENTE (`:16`, `:111`). ST-WEB-33 (testimonio sin cliente): VIGENTE (`TestimonioCard.tsx:19-21,35`, sin cambios).
+
+### Nuevo
+| Pieza | Fichero |
+|---|---|
+| Listado de historias (cliente) | `components/historias/HistoriasListado.tsx` |
+| Metadatos de la lista y del detalle | `P historias/page.tsx:6-10`; `P historias/[historia]/page.tsx:87-99` |
+| Rutas en el sitemap | `app/sitemap.xml/route.ts:116-119` (`/historias/{slug \| id}`) |
+
+### Seguridad
+Sin cambios de seguridad propios. Los enlaces de logos de cliente (`cliente.url`, `ClientCarousel.tsx:67`) siguen sin validar esquema (SEG-WEB-08 VIGENTE) y la API sigue devolviendo una URL local cuando falta (ST-API-05). Detalle en [ACT-store.md](../../../docs/revision/ACT-store.md) §7.

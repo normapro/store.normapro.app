@@ -219,3 +219,60 @@ Comprobado en la API: `GET S/prensa` ejecuta `SELECT title, subtitle, link FROM 
 - Endpoints de los componentes de otras fichas (según `docs/MAPA.md`) y la sección `## 8`. El menú móvil no se abrió línea a línea.
 
 - Hay reglas de diseño que hoy no se cumplen; detalle en el informe restringido.
+
+## Actualización tras el PR del 21/10/2026
+
+Código comparado: `main` `8dc6ec9` frente a `origin/main` `0817fe9` (PR #19). Estado de los ids en [ACT-store.md](../../../docs/revision/ACT-store.md). No probado en ejecución. `I = app/sites/instituto/`.
+
+### Citas rotas
+- `I layout.tsx` ya no monta `Providers` (§3.x): `Providers` se borró.
+- `I page.tsx` (79 líneas) ya no contiene la portada: ahora tiene 15 líneas y monta `components/home/HomeInstituto.tsx`.
+
+### Citas desplazadas
+| Antes | Ahora |
+|---|---|
+| `I page.tsx:17-79`, `:12`, `:19`, `:22`, `:28`, `:51`, `:74`, `:79` | `components/home/HomeInstituto.tsx`, las mismas líneas (`:17-76` el contenido; `:12`, `:19`, `:22`, `:28`, `:51`, `:74`, `:79`). `I page.tsx` actual: `metadata` `:7-11`, componente `:13-15` |
+| `I page.tsx:43`, `:66` (enlaces «Ver todas…», «Ver todos…») | `HomeInstituto.tsx:43`, `:66` |
+| `I layout.tsx:24-39`, `:24-38` | `:44-60` |
+| `I layout.tsx:28,30` (`NavbarInstituto`, `FooterInstituto`) | `:49`, `:51` |
+| `I layout.tsx:19-22` (título, descripción) | `:21-42` (`generateMetadata`) |
+| `middleware.ts:18-21` (rama Instituto), `:9` (ruta con punto), `:27-30` (`ref`) | `:35-38`, `:26`, `:11-14` |
+| `next.config.ts:20` (`allowedDevOrigins`) | `:13` |
+| `I apariciones-prensa/page.tsx:16-76`, `:23`, `:37`, `:75` | `:16-72`; la petición está en `:20`; `return null` si no hay datos en `:33`; 72 líneas. Tipo `Noticia` `:10-14` sin cambio |
+| `I que-hacemos/page.tsx:3`, `:13`, `:87` | `:5`, `:17`, `:91` |
+| `I material-prensa/page.tsx:5-9`, `:21-24` | `:9-13`, `:25-28` |
+| `I equipo/page.tsx`, `I mision-vision-valores/page.tsx` | +2 a +4 líneas (import y `metadata`) |
+| `I contacto/page.tsx:6-25`, `:36`, `:44-53`, `:62-81` | `:10-29`, `:40`, `:48-57`, `:66-85` |
+| `FooterInstituto.tsx:11`, `:28`, `:40-47`, `:140`, `:153`, `:161` | `:12`, `:30`, `:43-50`, `:144`, `:157`, `:165` |
+| `FooterInstituto.tsx:174-177`, `:190-192`, `:199`, `:205`, `:268-292`, `:274`, `:280`, `:286` | `:178-181`, `:194-196`, `:203`, `:209`, `:272-296`, `:278`, `:284`, `:290` |
+| `FooterInstituto.tsx:298-300`, `:299`, `:308` | `:302-304`, `:303`, `:312` |
+| `MainHeroInstituto.tsx` (`:34`, `:96`, `:102`, `:134`) | sin desplazamiento |
+| `MainHistoriasSection.tsx:112` | `:111` |
+| `NavbarInstituto.tsx` | sin cambios |
+
+### Afirmaciones obsoletas
+- «Instituto se sirve en el host del instituto y en `inicie…`; los hosts están en `middleware.ts:18`» (§3.x): los hosts están en `libs/seo.ts:16-23` (`instituto.local`, `institutodeinnovacion.es`, `www.institutodeinnovacion.es`, `inicie.normapro.es`, `www.inicie.normapro.es`). El canónico del sitio es `https://www.institutodeinnovacion.es` (`seo.ts:6`).
+- «Título de la pestaña “Instituto”, descripción vacía» (§3.x): título con plantilla `%s | Instituto de Innovación, Ciencia y Empresa`; portada «La excelencia es un hábito \| Instituto…» (`I page.tsx:7-11`); robots por host (`I layout.tsx:21-42`). Sin descripción por defecto.
+- «`/apariciones-prensa`: Cliente (`:1`)… `GET PRENSA` (`:23`)» (§2, §3, §4): ahora es página de servidor `async` que pide con `revalidate` de 300 s (`:20`) y devuelve `[]` ante cualquier fallo (`:21-27`). Si la lista está vacía devuelve `null` y no se ve ni la cabecera (`:33`). Hay `metadata` (`:16`).
+- Cambio de encabezados (si la ficha cita el nivel): el título de la portada es ahora `h1` (`MainHeroInstituto.tsx:79`) y el de `MainTecnologiaInstituto.tsx:56` pasa a `h2`.
+- «La privacidad se escribe `politica-de.privacidad` en `:280`» (§3.7, §9): corregido (`FooterInstituto.tsx:284`: `politica-de-privacidad`). Queda `cumpliance-penal` (`:144`). El enlace de informes con `?ref=instittuo` también está corregido (`informes/InformesGridSection.tsx:103`). ST-WEB-18 CAMBIADO.
+- «Ningún código pone `openModal` en verdadero» (§3.7): sigue.
+- «Newsletter: `{email, acepta_marketing, origen_ruta}`» (§3.7, §4): añade `website` (`FooterInstituto.tsx:38`) y monta `HoneypotField` (`:80`). Sigue `acepta_marketing: true` (`:37`).
+- «El modo Instituto lo activa `x-site-ref`, que el middleware escribe en la respuesta» (§9): ahora va en la petición (`middleware.ts:16`) y el layout de NormaPRO lo lee (`normapro/layout.tsx:49`). `?ref=instituto` deja de ser decorativo por código; sin probar. ST-WEB-02 RESUELTO.
+- «Los enlaces rotos: 4 en la barra y 8 en el pie» (§9): siguen los 12 (ST-WEB-16 VIGENTE: `NavbarInstituto.tsx:71,72,128-130,142`; `FooterInstituto.tsx:157,178-181,194-196`).
+- «`/material-prensa`: los tres `href` vacíos» (ST-WEB-40): siguen (`material-prensa/page.tsx:10-12,26-27`).
+- «`actualidad.imagen` vacío genera `/null`» (§9): sigue (`MainHeroInstituto.tsx:102`, ST-WEB-30).
+- Erratas: «ESMPRESA» sigue (`que-hacemos/page.tsx:91`); `noferrer` sigue (`FooterInstituto.tsx:203`).
+- ST-WEB-20 (texto invisible sin eventos), ST-WEB-39 (Contacta distinto en escritorio y móvil: `NavbarInstituto.tsx:99,155`), ST-WEB-42 y ST-WEB-07 (`MainHistoriasSection.tsx:16,111`): VIGENTES.
+
+### Nuevo
+| Pieza | Fichero |
+|---|---|
+| Portada (cliente) | `components/home/HomeInstituto.tsx` |
+| Sitemap de Instituto (7 rutas fijas) | `app/sitemap.xml/route.ts:36-44,160` |
+| `robots.txt` por host | `app/robots.txt/route.ts` |
+| `Organization` JSON-LD | `I layout.tsx:48` |
+| `metadata` en las siete páginas | una línea por `page.tsx` con `site: "instituto"` |
+
+### Seguridad
+El `noindex` por host y el campo trampa de la newsletter son nuevos. Los iframes de mapas de `/contacto` y los enlaces de prensa (`apariciones-prensa/page.tsx:57`) siguen igual (SEG-WEB-08). Estado de SEG-WEB-06, -12, -14, -18 en [ACT-store.md](../../../docs/revision/ACT-store.md) §7.

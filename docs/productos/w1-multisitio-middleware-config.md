@@ -155,3 +155,59 @@ Variables de entorno: la store solo usa `NEXT_PUBLIC_API_BASE_URL` (`src/config/
 
 ### Afirmaciones no verificables
 - Por qué `tsconfig.json:36` incluye `.next/dev/types`, y los pasos de `## 8` (requieren ejecución).
+
+## Actualización tras el PR del 21/10/2026
+
+Código comparado: `main` `8dc6ec9` frente a `origin/main` `0817fe9` (PR #19). Resumen completo y estado de los ids en [ACT-store.md](../../../docs/revision/ACT-store.md). Solo lectura; no probado en ejecución.
+
+### Citas rotas
+- `src/app/providers.tsx` ya no existe (§2, §3.3, §7). `Providers` y `DefaultSeo` ya no existen: los layouts no los montan.
+- `src/app/layout.tsx` sigue sin existir.
+
+### Citas desplazadas
+| Antes | Ahora |
+|---|---|
+| `middleware.ts:3-36` | `:19-46` (función `middleware`) |
+| `middleware.ts:6-12` (pasa sin tocar) | `:22-29` |
+| `middleware.ts:15` (host sin puerto) | `:32` |
+| `middleware.ts:18-21` (rama Instituto) | `:35-38` |
+| `middleware.ts:23-32` (rama NormaPRO) | `:40-42`, función `rewriteToNormapro` en `:5-17` |
+| `middleware.ts:27-30` (`ref` a cabecera) | `:11-14` |
+| `middleware.ts:35` (fallback) | `:44-45` |
+| `middleware.ts:38-40` (matcher) | `:48-50` |
+| `normapro/layout.tsx:25-49` | `:45-70` |
+| `normapro/layout.tsx:28-29` (`headers()`) | `:48-49` |
+| `normapro/layout.tsx:35-37` (ChatManager) | `:56-58` |
+| `normapro/layout.tsx:38` (Footer) | `:59` |
+| `normapro/layout.tsx:41-45` (script de iconos) | `:62-66` |
+| `normapro/layout.tsx:14-18` (fuente) | `:15-19` |
+| `instituto/layout.tsx:24-39` | `:44-60` |
+| `instituto/layout.tsx:19-22` (`metadata`) | `:21-42` (`generateMetadata`) |
+| `next.config.ts:3-21` | `:3-16` |
+| `next.config.ts:20` (`allowedDevOrigins`) | `:13` |
+
+### Afirmaciones obsoletas
+- «El middleware escribe `x-site-ref` en la respuesta» (§3.2, §9): ahora la copia a la cabecera de la petición con `NextResponse.rewrite(url, { request: { headers } })` (`middleware.ts:16`) y borra la que venga del cliente (`:9`). El layout la lee en `normapro/layout.tsx:49`. ST-WEB-02 queda RESUELTO por código. No probado en el navegador.
+- «Los nombres de host están en `middleware.ts:18` y `:23`» (§3.1, §7): ahora están en `src/libs/seo.ts:16-23` (`INSTITUTO_HOSTS`, `NORMAPRO_HOSTS`). Instituto también sirve `inicie.normapro.es` y `www.inicie…` y el dominio propio del instituto. NormaPRO sirve además `store.normapro.es` y `www.store…`.
+- «Título y descripción estáticos por sitio» (§3.3): los dos layouts exportan `generateMetadata` async con plantilla de título, `metadataBase`, `robots` según host, Open Graph y Twitter (`normapro/layout.tsx:21-43`, `instituto/layout.tsx:21-42`).
+- «`Providers` pinta `DefaultSeo`» (§3.3): borrado.
+- Tabla de `next.config.ts`: ya no existen `eslint.ignoreDuringBuilds` ni `typescript.ignoreBuildErrors` (ST-WEB-06 RESUELTO, ST-WEB-01 CAMBIADO: queda la convención `middleware`). Opciones actuales: `images.remotePatterns` (`:4-12`) y `allowedDevOrigins` (`:13`).
+- «Rutas con punto no se reescriben» (§6.3): sigue (`middleware.ts:25-26`). Ahora el código lo aprovecha: `sitemap.xml` y `robots.txt` se sirven desde `src/app` por esa excepción (`:22`).
+- «`package.json`: `next-seo ^6.6.0`» (§5): retirado.
+- «El layout de NormaPRO usa `headers()`» (§3.4, §7): ahora lo usan los dos layouts (Instituto, en `generateMetadata`, `:22`).
+- Variables de entorno (§5): además de `NEXT_PUBLIC_API_BASE_URL` existen `NEXT_PUBLIC_SITE_URL` y `NEXT_PUBLIC_INSTITUTO_SITE_URL` (`libs/seo.ts:5-6`, documentadas en `README.md`) y una variable de instalación para el registro de iconos (`README.md:45`).
+- Los dos layouts montan ahora un `Organization` en JSON-LD: Instituto (`instituto/layout.tsx:48`), NormaPRO (`normapro/layout.tsx:54`).
+
+### Nuevo
+| Pieza | Fichero:línea |
+|---|---|
+| Sitemap por host | `src/app/sitemap.xml/route.ts:158-165` |
+| Robots por host | `src/app/robots.txt/route.ts:4-15` |
+| Base de SEO, hosts y canónicos | `src/libs/seo.ts` |
+| Reenvío de `?ref` en `rewriteToNormapro` | `src/middleware.ts:5-17` |
+
+### Errores de esta ficha
+ST-WEB-01 CAMBIADO. ST-WEB-02 RESUELTO. ST-WEB-06 RESUELTO (`tsc --noEmit` sin errores). ST-WEB-17 y ST-WEB-19 VIGENTES (`[...not-found]/page.tsx:1-5`; `middleware.ts:25-26`).
+
+### Seguridad
+Cambian el origen de la lista de hosts, el `noindex` por host y el reenvío de `ref`. Detalle y estado de SEG-WEB-05, -12, -14, -17 y -20 en [ACT-store.md](../../../docs/revision/ACT-store.md) §7 (pendiente de copiar a `docs/seguridad/04_actualizacion-store.md`).

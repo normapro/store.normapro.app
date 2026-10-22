@@ -202,3 +202,49 @@ Comprobado en la API: `GET S/clientes` no lee `scope` (pasa `"all"` fijo, `api-s
 - `docs/CONTRATOS.md` §2.4 (el rango real `:48-89` es correcto) y `docs/MAPA.md` §3.2.
 
 - Hay reglas de diseño que hoy no se cumplen; detalle en el informe restringido.
+
+## Actualización tras el PR del 21/10/2026
+
+Código comparado: `main` `8dc6ec9` frente a `origin/main` `0817fe9` (PR #19). Estado de los ids en [ACT-store.md](../../../docs/revision/ACT-store.md). No probado en ejecución. `P = app/sites/normapro/`.
+
+### Qué no cambia
+`components/LandingBuilder.tsx` (`sectionMap` `:47-90`, render `:92-102`), `components/landings/index.ts` y los 42 tipos de bloque no se tocan, salvo `landings/DescargaInformeModal.tsx` (ver abajo). No hay bloques nuevos ni borrados.
+
+### Citas rotas
+Ninguna. Ningún fichero de esta ficha se borró.
+
+### Citas desplazadas
+| Antes | Ahora |
+|---|---|
+| `P aplicaciones/[aplicacion]/page.tsx:1,29` (`LandingBuilder`) | `:4` (import), `:53` (uso) |
+| `P consultorias/[consultorias]/page.tsx:1,29` | `:4`, `:53` |
+| `P historias/[historia]/page.tsx:1,116` (`LandingBuilder`) | `:3`, `:145` |
+| `P historias/[historia]/page.tsx:2,109` (`PresentacionHistoria`) | `:4`, `:138` |
+| `P historias/[historia]/page.tsx:91,116` (flujo con `parseBloques`) | `:113`, `:145` (`parseBloques` definido en `:37`) |
+| `P historias/[historia]/page.tsx:51` (sin reintento a `historias/{slug}`) | `:56` (el reintento por id numérico está en `:55-59`) |
+| `P informes/[informe]/page.tsx:6,368` (`InformeDescargaCtaSection`) | `:8`, `:395` |
+| `app/sites/instituto/que-hacemos/page.tsx:3` (`CertificacionesSection`) | `:5` |
+| `P nosotros/page.tsx:2,5,88,138` | `:4,5,88,138` (`ListHistoriaSection` `:5`, `CertificacionesSection` `:4`) |
+| `P trabaja/page.tsx:1,96-136` (`ListHistoriaSection`) | `:3`, `:94-134` |
+| `P partners/page.tsx:41` (`ListHistoriaSection`, import `:1`) | `:43` (import `:3`) |
+| `components/Formulario.tsx:65` | `:67` |
+| `landings/DescargaInformeModal.tsx:65-79`, `:115`, `:206` | `:67-81`, `:117`, `:209` |
+
+### Afirmaciones obsoletas
+- «También `ListHistoriaSection` en `partners/page.tsx:41`; `HistoriaTextSection` se importa en `partners/page.tsx:2` y `trabaja…`» (correcciones): los imports sin uso ya no existen. `partners/page.tsx` importa ahora `ListHistoriaSection`, `ContactoFormSection`, `PartnersProgramsSection`, `PartnersTestimonialsSection` y `HeaderSection` (`:3-7`) y los usa. `nosotros/page.tsx` ya no importa `TextSection`, `HeroSection`, `HistoriaTextSection` ni `HistoriaTextSection2`. `trabaja/page.tsx` importa solo `ListHistoriaSection`, `HistoriaTextSection2`, `AccordionSection` y `CandidaturaFormSection` (`:3-6`).
+- «La búsqueda de `<HistoriaTextSection2` … solo encuentra `P trabaja/page.tsx:15`»: ahora `:13`.
+- «`P aplicaciones/…/page.tsx` y `consultorias` pasan `data.contenidos`» sigue cierto, pero las dos páginas ya devuelven `null` en 404 y hacen `redirect("/")` (`aplicaciones/…/page.tsx:17,43`; `consultorias/…/page.tsx:17,43`) y publican metadatos y `BreadcrumbList`.
+- Flujo de historia: la página añade `generateMetadata` (`historias/[historia]/page.tsx:87-99`), `noindex` si no existe la historia (`:90`) y JSON-LD de migas (`:137`). El mensaje interno de `:124` (antes `:102`) sigue (ST-WEB-32).
+- El formulario del modal de informe envía ahora también el campo trampa `website` (`DescargaInformeModal.tsx:5,213`; cuerpo `:130-143`). `acepta_marketing` sigue en `false` (`:131`).
+- «19 tipos abren el mismo `Formulario`» sigue; `Formulario` también envía `website` (`Formulario.tsx:72,144`).
+
+### Nuevo
+- `components/shared/HoneypotField.tsx` (campo `website` oculto) montado en `Formulario.tsx:144` y `DescargaInformeModal.tsx:213`.
+- Los bloques que renderiza el motor siguen siendo de cliente; las páginas que lo usan ahora son de servidor con `generateMetadata`.
+- `ClientPerceptionSection.tsx` tiene tres `h1` (`:127,210,270`): si una landing lo usa varias veces o junto a otro `h1`, la página tendría varios. Sin comprobar qué landings lo combinan (el PR dice «un solo h1 por página»).
+
+### Errores de esta ficha
+ST-WEB-41 VIGENTE (`DescargaInformeModal.tsx:209`). ST-WEB-34 y ST-WEB-32 VIGENTES en las páginas citadas.
+
+### Seguridad
+`HeroSection` sigue cargando el JSON de animación desde una URL de los datos si empieza por `http` (`landings/HeroSection.tsx:49-62,105-111`) y `LandingBuilder` no valida: SEG-WEB-02 VIGENTE. Nuevo en la ficha: campo trampa en el formulario de descarga. Detalle en [ACT-store.md](../../../docs/revision/ACT-store.md) §7 (SEG-WEB-02, -16).
