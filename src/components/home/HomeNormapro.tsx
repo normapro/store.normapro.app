@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 import ActualidadGridSection from "@/components/ActualidadGridSection";
 import Link from "next/link";
 import MainPacksSection from "@/components/MainPacksSection";
+import ConsentEmbed from "@/components/cookies/ConsentEmbed";
 
 export default function HomeNormapro() {
   return (
@@ -41,6 +42,7 @@ export default function HomeNormapro() {
             </h2>
             <div className="w-full max-w-6xl mx-auto mt-20 md:mt-14 aspect-video rounded-xl overflow-hidden shadow-xl mb-20">
               
+              <ConsentEmbed provider="YouTube" className="w-full h-full">
               <iframe
                 className="w-full h-full"
                 src="https://www.youtube.com/embed/FfNU5vjTA8E?si=1ufDrZCyUSYRPSvX"
@@ -50,6 +52,7 @@ export default function HomeNormapro() {
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
               />
+              </ConsentEmbed>
             </div>
           </motion.div>
         </div>

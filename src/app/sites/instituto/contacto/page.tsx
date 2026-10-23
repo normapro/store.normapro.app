@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/libs/seo";
 import ContactoFormSection from "@/components/ContactoFormSection";
 import HeaderSection from "@/components/HeaderSection";
+import ConsentEmbed from "@/components/cookies/ConsentEmbed";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone } from "@fortawesome/pro-regular-svg-icons";
 
@@ -67,6 +68,7 @@ export default function ContactoPage() {
                         <div key={oficina.ciudad} className="flex flex-col gap-3">
                             <h3 className="text-[#010D3D] text-2xl font-black">{oficina.ciudad}</h3>
                             <div className="w-full h-52 rounded-xl overflow-hidden">
+                                <ConsentEmbed provider="Google Maps" className="w-full h-full">
                                 <iframe
                                     src={oficina.mapSrc}
                                     width="100%"
@@ -76,6 +78,7 @@ export default function ContactoPage() {
                                     loading="lazy"
                                     referrerPolicy="no-referrer-when-downgrade"
                                 />
+                                </ConsentEmbed>
                             </div>
                             <div className="text-center">
                                 <p className="text-[#010D3D] text-sm">{oficina.direccion}</p>

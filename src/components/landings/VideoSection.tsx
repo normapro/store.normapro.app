@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Formulario from "@/components/Formulario";
 import { useSiteRef } from "@/context/SiteContext";
+import ConsentEmbed from "@/components/cookies/ConsentEmbed";
 
 type VideoSectionProps = {
   title: string;
@@ -81,6 +82,7 @@ const VideoSection: React.FC<VideoSectionProps> = ({
       
       {url_video && (
         <div className="w-full max-w-6xl mx-auto mt-20 md:mt-14 aspect-video rounded-xl overflow-hidden shadow-xl mb-20">
+          <ConsentEmbed provider="YouTube" className="w-full h-full">
           <iframe
             className="w-full h-full"
             src={getEmbedUrl(url_video)}
@@ -88,6 +90,7 @@ const VideoSection: React.FC<VideoSectionProps> = ({
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
+          </ConsentEmbed>
         </div>
       )
       }
