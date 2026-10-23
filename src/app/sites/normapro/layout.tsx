@@ -10,6 +10,8 @@ import ChatManager from "@/components/ChatManager";
 import { SiteProvider, type SiteRef } from "@/context/SiteContext";
 import { headers } from "next/headers";
 import JsonLd from "@/components/seo/JsonLd";
+import CookieBanner from "@/components/cookies/CookieBanner";
+import GoogleAnalytics from "@/components/cookies/GoogleAnalytics";
 import { NORMAPRO_SITE_NAME, NORMAPRO_SITE_URL, DEFAULT_OG_IMAGE, isIndexableHost, organizationJsonLd } from "@/libs/seo";
 
 const mulish = Mulish({
@@ -59,6 +61,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <Footer />
         </SiteProvider>
 
+        <CookieBanner policyHref={"/politica-de-cookies-ue"} />
+        <GoogleAnalytics />
         <Script
           src="https://kit.fontawesome.com/0fe2009133.js"
           crossOrigin="anonymous"

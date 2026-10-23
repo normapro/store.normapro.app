@@ -1,3 +1,5 @@
+import ConsentEmbed from "@/components/cookies/ConsentEmbed";
+
 interface Props {
     uri?: string | null | undefined; 
     typeId?: number | null | undefined;
@@ -15,6 +17,7 @@ interface Props {
       <div className="w-full mt-6">
         {typeId === 1 ? (
           <div className="relative w-full h-0 pb-[56.25%]">
+            <ConsentEmbed provider="YouTube" className="absolute top-0 left-0 w-full h-full rounded-lg">
             <iframe
               className="absolute top-0 left-0 w-full h-full rounded-lg"
               src={getYoutubeEmbedUrl(uri)}
@@ -23,6 +26,7 @@ interface Props {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
+            </ConsentEmbed>
           </div>
         ) : (
           <img

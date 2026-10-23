@@ -7,6 +7,7 @@ import { useState } from "react";
 import Formulario from "@/components/Formulario";
 import API_ENDPOINTS from "@/config/api";
 import HoneypotField from "@/components/shared/HoneypotField";
+import CookieSettingsLink from "@/components/cookies/CookieSettingsLink";
 
 const Footer = () => {
 	const [openModal, setOpenModal] = useState(false);
@@ -215,6 +216,7 @@ const Footer = () => {
 							<Link href="/aviso-legal" className="hover:underline">Aviso Legal</Link>
 							<Link href="/politica-de-privacidad" className="hover:underline">Política de privacidad</Link>
 							<Link href="/politica-de-cookies-ue" className="hover:underline">Política de cookies</Link>
+							<CookieSettingsLink className="hover:underline" />
 						</p>
 						<p className="order-2 md:order-none">
 							NormaPro® es una marca registrada por Instituto de Innovación, Ciencia y Empresa

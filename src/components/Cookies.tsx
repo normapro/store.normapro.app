@@ -1,48 +1,28 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faExternalLinkAlt, faSpinner } from '@fortawesome/free-solid-svg-icons';
-import API_ENDPOINTS from '@/config/api';
+import { faChevronDown, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { INVENTARIO_COOKIES } from '@/libs/cookiesInventario';
 
+// Tabla de cookies por tecnología. Los datos salen del inventario de src/libs/cookiesInventario.ts.
 const Cookies = () => {
-  const [datos, setDatos] = useState<any[]>([]);
-  const [abierto, setAbierto] = useState<number | null>(null);
-  const [cargando, setCargando] = useState(true);
-
-  useEffect(() => {
-    fetch(API_ENDPOINTS.COOKIES)
-      .then(res => res.json())
-      .then(data => {
-        setDatos(data);
-        setCargando(false);
-      })
-      .catch(err => {
-        console.error(err);
-        setCargando(false);
-      });
-  }, []);
-
-  if (cargando) return (
-    <div className="flex justify-center p-10 text-[#010d3d]">
-      <FontAwesomeIcon icon={faSpinner} spin className="text-2xl mr-2" />
-      <span>Cargando...</span>
-    </div>
-  );
+  const [abierto, setAbierto] = useState<string | null>(null);
 
   return (
     <div className="max-w-6xl mx-auto my-10 space-y-1">
-      {datos.map((tec) => (
+      {INVENTARIO_COOKIES.map((tec) => (
         <div key={tec.id}>
 
           {/* Botón Acordeón */}
           <button
             onClick={() => setAbierto(abierto === tec.id ? null : tec.id)}
+            aria-expanded={abierto === tec.id}
             className="w-full flex items-center justify-between p-2 bg-[#f5f5f5] text-left"
           >
             <span className="text-gray-800 font-extrabold text-xl">{tec.nombre}</span>
             <div className="flex items-center gap-2 shrink-0">
-              <span className="text-sm truncate max-w-[120px] sm:max-w-xs">{tec.etiquetas.join(', ')}</span>
+              <span className="text-sm truncate max-w-[120px] sm:max-w-xs">{tec.categoria}</span>
               <FontAwesomeIcon
                 icon={faChevronDown}
                 className={`transition-transform ${abierto === tec.id ? 'rotate-180' : ''}`}
@@ -56,59 +36,50 @@ const Cookies = () => {
               <div className="grid md:grid-cols-2 gap-10 text-sm">
                 <div>
                   <h4 className="text-base font-black text-gray-800">Uso</h4>
-                  {tec.uso && (<p className="text-gray-600">
-                    Usamos {tec.nombre} para {tec.uso}. {tec.link_uso && <a href={tec.link_uso} className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">Read more about {tec.nombre} <FontAwesomeIcon icon={faExternalLinkAlt} className="text-[10px] text-gray-600" /></a>}
-                  </p>)}
+                  <p className="text-gray-600">Usamos {tec.nombre} para {tec.uso}.</p>
                 </div>
                 <div>
-                  <h4 className="text-base font-black text-gray-800">Compartir datos</h4>
+                  <h4 className="text-base font-black text-gray-800">Titular y datos compartidos</h4>
                   <p className="text-gray-600">
-                    {tec.compartir_datos} {tec.link_compartir_datos && <span>Para más información, por favor, lee la <a href={tec.link_compartir_datos} className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">política de privacidad de {tec.nombre}</a></span>}
+                    {tec.titular}{' '}
+                    {tec.linkPrivacidad && (
+                      <span>
+                        Más información en la{' '}
+                        <a href={tec.linkPrivacidad} className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">
+                          política de privacidad de {tec.nombre}{' '}
+                          <FontAwesomeIcon icon={faExternalLinkAlt} className="text-[10px] text-gray-600" />
+                        </a>
+                        .
+                      </span>
+                    )}
                   </p>
                 </div>
               </div>
 
-              {tec.tablas.map((tabla: any, idx: number) => (
-                <div key={idx} className="bg-white border border-gray-300">
-                  <h5 className="p-3 font-black text-gray-800 border-b border-gray-300 pb-1">{tabla.titulo_categoria}</h5>
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-left text-sm border-collapse">
-                      <thead>
-                        <tr className="border-b border-gray-300 bg-[#fbfbfb]">
-                          <th className="p-3 border-r border-gray-300 font-black text-gray-800">Nombre</th>
-                          <th className="p-3 border-r border-gray-300 font-black text-gray-800">Caducidad</th>
-                          <th className="p-3 font-black text-gray-800">Función</th>
+              <div className="bg-white border border-gray-300">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left text-sm border-collapse">
+                    <thead>
+                      <tr className="border-b border-gray-300 bg-[#fbfbfb]">
+                        <th className="p-3 border-r border-gray-300 font-black text-gray-800">Nombre</th>
+                        <th className="p-3 border-r border-gray-300 font-black text-gray-800">Tipo</th>
+                        <th className="p-3 border-r border-gray-300 font-black text-gray-800">Caducidad</th>
+                        <th className="p-3 font-black text-gray-800">Función</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {tec.cookies.map((cookie) => (
+                        <tr key={cookie.nombre} className="border-b border-gray-300 last:border-0">
+                          <td className="p-3 border-r border-gray-300 font-medium text-gray-600">{cookie.nombre}</td>
+                          <td className="p-3 text-gray-600 border-r border-gray-300">{cookie.tipo}</td>
+                          <td className="p-3 text-gray-600 border-r border-gray-300">{cookie.caducidad}</td>
+                          <td className="p-3 text-gray-600">{cookie.funcion}</td>
                         </tr>
-                      </thead>
-                      <tbody>
-                        {tabla.cookies.map((cookie: any, cIdx: number) => (
-                          <tr key={cIdx} className="border-b border-gray-300 last:border-0">
-                            <td className="p-3 border-r border-gray-300 font-medium">
-                              {cookie.link_nombre ? (
-                                <a
-                                  href={cookie.link_nombre}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="text-blue-500 underline inline-flex items-center gap-1"
-                                >
-                                  {cookie.nombre}
-                                  <FontAwesomeIcon icon={faExternalLinkAlt} className="text-[10px] text-gray-600" />
-                                </a>
-                              ) : (
-                                <span className="text-gray-600">
-                                  {cookie.nombre}
-                                </span>
-                              )}
-                            </td>
-                            <td className="p-3 text-gray-600 border-r border-gray-300">{cookie.caducidad}</td>
-                            <td className="p-3 text-gray-600">{cookie.funcion}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
-              ))}
+              </div>
             </div>
           )}
         </div>

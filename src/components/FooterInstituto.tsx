@@ -7,6 +7,7 @@ import { useState } from "react";
 import Formulario from "@/components/Formulario";
 import API_ENDPOINTS from "@/config/api";
 import HoneypotField from "@/components/shared/HoneypotField";
+import CookieSettingsLink from "@/components/cookies/CookieSettingsLink";
 
 const Footer = () => {
     const [openModal, setOpenModal] = useState(false);
@@ -292,6 +293,7 @@ const Footer = () => {
                     >
                         Política de cookies
                     </Link>
+                    <CookieSettingsLink className="hover:underline" />
                 </p>
             </div>
         </div>

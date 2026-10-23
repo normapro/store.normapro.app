@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/libs/seo";
 import React from 'react';
+import { EMPRESA, DIRECCION_COMPLETA } from "@/libs/empresa";
 
 export const metadata: Metadata = pageMetadata({ title: "Política de privacidad", path: "/politica-de-privacidad" });
 
-const AvisoLegal = () => {
+const PoliticaPrivacidad = () => {
     return (
         <section className="max-w-7xl mx-auto bg-white min-h-screen py-16 px-6 md:px-12 lg:px-24 text-[#010d3d]">
             {/* Título principal */}
@@ -20,9 +21,9 @@ const AvisoLegal = () => {
             <div className="space-y-6 text-sm md:text-base">
                 {/* Introducción */}
                 <p>
-                    Instituto de innovación, ciencia y empresa, S.L., ubicado en Carretera de Madrid, 13, km 332, 1º planta 23009 Jaén, España, con C.I.F B23726953, con teléfono de contacto 953190510 y correo electrónico{" "}
-                    <a href="mailto:info@institutodeinnovacion.es" className="text-blue-500 underline">
-                        info@institutodeinnovacion.es
+                    {EMPRESA.razonSocial}, con domicilio en {DIRECCION_COMPLETA}, con C.I.F. {EMPRESA.cif}, con teléfono de contacto {EMPRESA.telefono} y correo electrónico{" "}
+                    <a href={`mailto:${EMPRESA.email}`} className="text-blue-500 underline">
+                        {EMPRESA.email}
                     </a>
                     ,  es el responsable del tratamiento de los datos personales que el usuario facilita y le informa que estos datos serán tratados de conformidad con lo dispuesto en las normativas vigentes en protección de datos personales, el Reglamento (UE) 2016/679 de 27 de abril de 2016 (GDPR), por lo que se le facilita la siguiente información del tratamiento:
                 </p>
@@ -47,7 +48,7 @@ const AvisoLegal = () => {
                         <span className="font-bold">Legitimación:</span> consentimiento expreso por parte del usuario marcando la casilla correspondiente, a través de los distintos formularios de recogida de datos. En su caso, los datos del usuario serán tratados conforme a las finalidades expuestas hasta se oponga o revoque su consentimiento.
                     </li>
                     <li>
-                        <span className="font-bold">Destinatarios:</span> no se van a destinar sus datos a ningún tercero para su tratamiento salvo obligaciones legales.
+                        <span className="font-bold">Destinatarios:</span> no se van a destinar sus datos a ningún tercero para su tratamiento salvo obligaciones legales. Si acepta las cookies de estadísticas o el contenido de terceros, Google Ireland Limited (Google Analytics, YouTube y Google Maps) tratará los datos de navegación en los términos descritos en la <a href="/politica-de-cookies-ue" className="text-blue-500 underline">política de cookies</a>.
                     </li>
                 </ul>
 
@@ -61,7 +62,7 @@ const AvisoLegal = () => {
                         <span className="font-bold">Derecho de acceso:</span> El interesado tendrá derecho a solicitar y obtener gratuitamente la información de sus datos de carácter personal sometidos a tratamiento, el origen de dichos datos, así como, las comunicaciones realizadas o que se prevén hacer de los mismos. Cuando el interesado presente la solicitud por medios electrónicos, y a menos que este solicite que se facilite de otro modo, la información se facilitará en un formato electrónico de uso común. El derecho a obtener copia no afectará negativamente a los derechos y libertades de otros.
                     </li>
                     <li>
-                        <span className="font-bold">Derecho de rectificación y supresión:</span> el responsable del tratamiento tendrá la obligación de hacer efectivo el derecho de rectificación o supresión del interesado en el plazo de diez días. Serán rectificados o suprimidos en su caso, los datos de carácter personal cuyo tratamiento no se ajuste a lo dispuesto en la ley y en particular, cuando tales datos resulten inexactos e incompletos, tendrá derecho a obtener sin dilación indebida, la rectificación de los datos personales inexactos que le conciernan. El interesado tendrá derecho a que se completen los datos personales que sean incompletos, inclusive mediante una declaración adicional.
+                        <span className="font-bold">Derecho de rectificación y supresión:</span> el responsable del tratamiento tendrá la obligación de hacer efectivo el derecho de rectificación o supresión del interesado en el plazo de un mes desde la recepción de la solicitud, conforme al artículo 12.3 del Reglamento (UE) 2016/679. Serán rectificados o suprimidos en su caso, los datos de carácter personal cuyo tratamiento no se ajuste a lo dispuesto en la ley y en particular, cuando tales datos resulten inexactos e incompletos, tendrá derecho a obtener sin dilación indebida, la rectificación de los datos personales inexactos que le conciernan. El interesado tendrá derecho a que se completen los datos personales que sean incompletos, inclusive mediante una declaración adicional.
                     </li>
                     <li>
                         <span className="font-bold">Derecho a la limitación del tratamiento:</span> el interesado tendrá derecho a obtener del responsable del tratamiento la limitación del tratamiento de los datos. Cuando el tratamiento de datos personales se haya limitado, solo podrán ser objeto de tratamiento para su conservación, con el consentimiento del interesado, para la formulación, el ejercicio o la defensa de reclamaciones, con miras a la protección de los derechos de otra persona física o jurídica o por razones de interés público. Todo interesado que haya obtenido la limitación del tratamiento será informado por el responsable antes del levantamiento de dicha limitación.
@@ -71,7 +72,7 @@ const AvisoLegal = () => {
                     </li>
                     <li>
                         Derecho a presentar una reclamación ante la Autoridad de control  si no ha obtenido satisfacción en el ejercicio de sus derechos, en este caso, ante la Agencia Española de protección de datos{" "}
-                        <a href='http://www.agpd.es' className='text-blue-500 underline' target="_blank" rel="noopener noreferrer">http://www.agpd.es</a>
+                        <a href='https://www.aepd.es' className='text-blue-500 underline' target="_blank" rel="noopener noreferrer">https://www.aepd.es</a>
                     </li>
                 </ul>
 
@@ -79,12 +80,12 @@ const AvisoLegal = () => {
                 <p className="font-bold">Datos de contacto para ejercer sus derechos:</p>
                 <ul className="list-disc ml-6 space-y-2">
                     <li>
-                        Dirección postal: carretera de Madrid, 13, km 332, 1º planta 23009 Jaén.
+                        Dirección postal: {DIRECCION_COMPLETA}.
                     </li>
                     <li>
                         Dirección electrónica:{" "}
-                        <a href="mailto:info@institutodeinnovacion.es" className="text-blue-500 underline">
-                            info@institutodeinnovacion.es
+                        <a href={`mailto:${EMPRESA.email}`} className="text-blue-500 underline">
+                        {EMPRESA.email}
                         </a>
                     </li>
                 </ul>
@@ -113,4 +114,4 @@ const AvisoLegal = () => {
     );
 };
 
-export default AvisoLegal;
+export default PoliticaPrivacidad;

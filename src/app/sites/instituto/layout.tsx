@@ -10,7 +10,9 @@ import FooterInstituto from "@/components/FooterInstituto";
 import Script from "next/script";
 import { headers } from "next/headers";
 import JsonLd from "@/components/seo/JsonLd";
-import { INSTITUTO_SITE_NAME, INSTITUTO_SITE_URL, INSTITUTO_LOGO, isIndexableHost, organizationJsonLd } from "@/libs/seo";
+import CookieBanner from "@/components/cookies/CookieBanner";
+import GoogleAnalytics from "@/components/cookies/GoogleAnalytics";
+import { absoluteUrl, INSTITUTO_SITE_NAME, INSTITUTO_SITE_URL, INSTITUTO_LOGO, isIndexableHost, organizationJsonLd } from "@/libs/seo";
  
 const mulish = Mulish({
   variable: "--font-mulish",
@@ -49,6 +51,8 @@ export default function InstitutoLayout({ children }: { children: React.ReactNod
         <NavbarInstituto />
         {children}
         <FooterInstituto />
+        <CookieBanner policyHref={absoluteUrl("/politica-de-cookies-ue", "normapro")} />
+        <GoogleAnalytics />
         <Script
           src="https://kit.fontawesome.com/0fe2009133.js"
           crossOrigin="anonymous"
