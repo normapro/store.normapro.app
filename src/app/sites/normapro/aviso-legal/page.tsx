@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/libs/seo";
 import React from 'react';
+import { EMPRESA, DIRECCION_COMPLETA } from "@/libs/empresa";
 
 export const metadata: Metadata = pageMetadata({ title: "Aviso Legal", path: "/aviso-legal" });
 
@@ -22,28 +23,28 @@ const AvisoLegal = () => {
 
                 {/* Introducción */}
                 <p>
-                    <span className="font-bold">Instituto de innovación, ciencia y empresa, S.L.</span> responsable del sitio web, en adelante RESPONSABLE, pone a disposición de los usuarios el presente documento, con el que pretende dar cumplimiento a las obligaciones dispuestas en la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSICE), así como informar a todos los usuarios del sitio web respecto a cuáles son las condiciones de uso.
+                    <span className="font-bold">{EMPRESA.razonSocial}</span> responsable del sitio web, en adelante RESPONSABLE, pone a disposición de los usuarios el presente documento, con el que pretende dar cumplimiento a las obligaciones dispuestas en la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSICE), así como informar a todos los usuarios del sitio web respecto a cuáles son las condiciones de uso.
                 </p>
                 <p>
                     Toda persona que acceda a este sitio web asume el papel de usuario, comprometiéndose a la observancia y cumplimiento riguroso de las disposiciones aquí dispuestas, así como a cualquier otra disposición legal que fuera de aplicación.
                 </p>
                 <p>
-                    Instituto de innovación, ciencia y empresa, S.L. se reserva el derecho de modificar cualquier tipo de información que pudiera aparecer en el sitio web, sin que exista obligación de preavisar o poner en conocimiento de los usuarios dichas obligaciones, entendiéndose como suficiente con la publicación en el sitio web de Instituto de innovación, ciencia y empresa, S.L.
+                    {EMPRESA.razonSocial} se reserva el derecho de modificar cualquier tipo de información que pudiera aparecer en el sitio web, sin que exista obligación de preavisar o poner en conocimiento de los usuarios dichas obligaciones, entendiéndose como suficiente con la publicación en el sitio web de {EMPRESA.razonSocial}
                 </p>
 
                 {/* Datos identificativos */}
                 <h2 className="font-bold">
                     1. DATOS IDENTIFICATIVOS
                 </h2>
-                <p>Razón Social: Instituto de innovación, ciencia y empresa, S.L.</p>
-                <p>Domicilio Social: Centro Tecnológico Nuevo Jaén, Carretera de Madrid, nº13, km 332, 1º planta 23009 Jaén.</p>
-                <p>CIF: B23726953</p>
-                <p>Registro Mercantil: de Jaén, tomo 538, libro 0, Folio 164, hoja J-20478, Inscripción 1.</p>
-                <p>Teléfono: 953190510</p>
+                <p>Razón Social: {EMPRESA.razonSocial}</p>
+                <p>Domicilio Social: {DIRECCION_COMPLETA}.</p>
+                <p>CIF: {EMPRESA.cif}</p>
+                <p>Datos registrales: {EMPRESA.registroMercantil}</p>
+                <p>Teléfono: <a href={EMPRESA.telefonoHref} className="underline">{EMPRESA.telefono}</a></p>
                 <p>
                     E-mail:{" "}
-                    <a href="mailto:info@institutodeinnovacion.es" className="underline">
-                        info@institutodeinnovacion.es
+                    <a href={`mailto:${EMPRESA.email}`} className="underline">
+                        {EMPRESA.email}
                     </a>
                 </p>
 
@@ -52,7 +53,7 @@ const AvisoLegal = () => {
                     OBJETO
                 </h2>
                 <p>
-                    Instituto de innovación, ciencia y empresa, S.L. (en adelante el prestador), responsable del sitio web, pone a disposición de los usuarios el presente documento con el que pretende dar cumplimiento a las obligaciones dispuestas en la Ley 34/2002, de Servicios de la Sociedad de la Información y del Comercio Electrónico (LSSI-CE), así como informar a todos los usuarios del sitio web respecto a cuáles son las condiciones de uso del mismo.
+                    {EMPRESA.razonSocial} (en adelante el prestador), responsable del sitio web, pone a disposición de los usuarios el presente documento con el que pretende dar cumplimiento a las obligaciones dispuestas en la Ley 34/2002, de Servicios de la Sociedad de la Información y del Comercio Electrónico (LSSI-CE), así como informar a todos los usuarios del sitio web respecto a cuáles son las condiciones de uso del mismo.
                 </p>
                 <p>
                     Toda persona que acceda a este sitio web asume el papel de usuario, comprometiéndose a la observancia y cumplimiento riguroso de las disposiciones aquí incluidas, así como a cualquier otra disposición legal que fuera de aplicación.
@@ -61,9 +62,9 @@ const AvisoLegal = () => {
                     El prestador se reserva el derecho a modificar cualquier tipo de información que pudiera aparecer en el sitio web, sin que exista obligación de pre avisar o poner en conocimiento de los usuarios dichas obligaciones, entendiéndose como suficiente con la publicación en el sitio web del prestador.
                 </p>
 
-                {/* Responsavilidad */}
+                {/* Responsabilidad */}
                 <h2 className="font-bold">
-                    RESPONSAVILIDAD
+                    RESPONSABILIDAD
                 </h2>
                 <p>
                     El prestador se exime de cualquier tipo de responsabilidad derivada de la información publicada en su sitio web, siempre que esta información haya sido manipulada o introducida por un tercero ajeno al mismo.
@@ -94,7 +95,7 @@ const AvisoLegal = () => {
                     LEY APLICABLE Y JURISDICCIÓN
                 </h2>
                 <p>
-                    Esta página web se encuentra sometida a la legislación Española y en caso de litigio o controversia surgida del uso de esta página web ambas partes se someten a la jurisdicción de los tribunales de la ciudad de Jaén (España). Esta cláusula de sumisión expresa a los tribunales de la ciudad de Jaén no será aplicable para los supuestos de litigio con los usuarios de la web que, según la legislación vigente, ostenten la condición de consumidores, en cuyo caso ambas partes estarán sometidos a la jurisdicción de los Juzgados y Tribunales de residencia del consumidor. Así mismo en estos casos ,  el prestador y el usuario podrán someter sus conflictos a los arbitrajes previstos en la legislación de arbitraje y de defensa de los consumidores y usuarios, y a los procedimientos de resolución extrajudicial de conflictos que se instauren por medio de códigos de conducta u otros instrumentos de autorregulación.
+                    Esta página web se encuentra sometida a la legislación Española y en caso de litigio o controversia surgida del uso de esta página web ambas partes se someten a la jurisdicción de los tribunales de la ciudad de Málaga (España). Esta cláusula de sumisión expresa a los tribunales de la ciudad de Málaga no será aplicable para los supuestos de litigio con los usuarios de la web que, según la legislación vigente, ostenten la condición de consumidores, en cuyo caso ambas partes estarán sometidos a la jurisdicción de los Juzgados y Tribunales de residencia del consumidor. Así mismo en estos casos ,  el prestador y el usuario podrán someter sus conflictos a los arbitrajes previstos en la legislación de arbitraje y de defensa de los consumidores y usuarios, y a los procedimientos de resolución extrajudicial de conflictos que se instauren por medio de códigos de conducta u otros instrumentos de autorregulación.
                 </p>
             </div>
         </section>
