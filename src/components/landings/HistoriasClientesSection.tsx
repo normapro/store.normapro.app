@@ -92,7 +92,7 @@ const HistoriasClientesSection = ({ soloUnaHistoria = false }: HistoriasClientes
       {isLoading ? (
         <p className="text-center text-gray-500">Cargando historias...</p>
       ) : historias.length === 0 ? (
-        <p className="text-center text-gray-500">Aun no hay historias disponibles.</p>
+        <p className="text-center text-gray-500">Aún no hay historias disponibles.</p>
       ) : soloUnaHistoria ? (
         <article className="bg-[#e7e8ef] rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-5 w-full">
           <div
@@ -108,7 +108,7 @@ const HistoriasClientesSection = ({ soloUnaHistoria = false }: HistoriasClientes
             </p>
 
             <h3 className="text-[#071a4c] text-[25px] leading-[1.1] font-black mt-8 mb-4">
-              {historiaPrincipal.descripcion || 'Proximamente mas detalles de esta historia.'}
+              {historiaPrincipal.descripcion || 'Próximamente más detalles de esta historia.'}
             </h3>
 
             <hr className="my-0 border-white border-1" />
@@ -141,7 +141,7 @@ const HistoriasClientesSection = ({ soloUnaHistoria = false }: HistoriasClientes
 
               <div className="px-5 py-5 flex flex-col flex-1">
                 <p className="text-[#071a4c] text-[20px] leading-snug mb-5 font-bold">
-                  {historia.descripcion || 'Proximamente mas detalles de esta historia.'}
+                  {historia.descripcion || 'Próximamente más detalles de esta historia.'}
                 </p>
 
                 <hr className="my-5 border-white" />
@@ -150,7 +150,7 @@ const HistoriasClientesSection = ({ soloUnaHistoria = false }: HistoriasClientes
                   href={`/historias/${historia.slug || historia.id}`}
                   className="text-left text-[#071a4c] font-extrabold text-[20px] underline underline-offset-4 mt-3"
                 >
-                  Saber mas
+                  Saber más
                 </Link>
               </div>
             </article>
