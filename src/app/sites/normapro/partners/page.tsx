@@ -30,7 +30,7 @@ export default function PartnersPage() {
             </div>
         </section>
 
-        <section className="w-full max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
+        <section className="w-full max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-left">
             <h2 className="text-[#010D3D] text-[40px] font-black mb-8">
                 Nuestra Red de Partners
             </h2>
@@ -73,12 +73,12 @@ export default function PartnersPage() {
                     name: "Diego Pardo",
                     details: [
                         "Consultor acreditado NormaPro",
-                        "en gestion del cumplimiento",
+                        "en gestión del cumplimiento",
                     ],
                 },
                 {
-                    quote: "Como consultor de compliance penal con NormaPro, disfruto de un entorno de trabajo colaborativo y un apoyo constante que me permite ofrecer soluciones eficientes a los clientes. La plataforma transforma la gestion de riesgos y ayudan el cumplimiento normativo de manera impecable.",
-                    name: "Fernando Martinez",
+                    quote: "Como consultor de compliance penal con NormaPro, disfruto de un entorno de trabajo colaborativo y un apoyo constante que me permite ofrecer soluciones eficientes a los clientes. La plataforma transforma la gestión de riesgos y ayuda al cumplimiento normativo de manera impecable.",
+                    name: "Fernando Martínez",
                     details: [
                         "Consultor acreditado NormaPro",
                         "en Compliance Penal",
@@ -89,18 +89,18 @@ export default function PartnersPage() {
 
         <PartnersProgramsSection
             title="Programas de Partner"
-            description="Ofrecemos diferentes niveles de colaboracion para adaptarnos a las necesidades y capacidades de nuestros partners. Descubre cual es el mejor programa para tu empresa:"
+            description="Ofrecemos diferentes niveles de colaboración para adaptarnos a las necesidades y capacidades de nuestros partners. Descubre cuál es el mejor programa para tu empresa:"
             programs={[
                 {
-                    title: "Partner Tecnologico",
-                    description: "Colabora en el desarrollo de nuevas tecnologias y soluciones innovadoras.",
+                    title: "Partner Tecnológico",
+                    description: "Colabora en el desarrollo de nuevas tecnologías y soluciones innovadoras.",
                 },
                 {
-                    title: "Partner de Implementacion",
+                    title: "Partner de Implementación",
                     description: "Ayuda a nuestros clientes a implementar y optimizar las soluciones NormaPro.",
                 },
                 {
-                    title: "Partner de Distribucion",
+                    title: "Partner de Distribución",
                     description: "Promociona y vende nuestras soluciones en nuevos mercados.",
                 },
             ]}
