@@ -127,7 +127,7 @@ export default async function HistoriaPage({ params }: HistoriaPageProps) {
 	}
 
 	const steps = [
-		{ name: 'Home', path: '/' },
+		{ name: 'Inicio', path: '/' },
 		{ name: 'Historias', path: '/historias' },
 		{ name: nombreHistoria, path: canonicalPath(data, historia) },
 	];

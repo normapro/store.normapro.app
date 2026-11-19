@@ -46,7 +46,7 @@ const ListaSolucionesSector = async ({ params }: Props) => {
   if (!sector) redirect("/");
 
   const steps: BreadcrumbStep[] = [
-    { name: "Home", path: "/" },
+    { name: "Inicio", path: "/" },
     { name: "Soluciones", path: "/soluciones" },
     ...(ambito ? [{ name: ambito.description.trim(), path: `/soluciones/${ambitoSlug}` }] : []),
     { name: sector.description, path: `/soluciones/${ambitoSlug}/sector/${sectorSlug}` },

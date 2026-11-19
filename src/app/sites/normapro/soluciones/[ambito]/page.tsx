@@ -43,7 +43,7 @@ const ListaDeSoluciones = async ({ params }: Props) => {
   if (!existe) redirect("/");
 
   const steps = [
-    { name: "Home", path: "/" },
+    { name: "Inicio", path: "/" },
     { name: "Soluciones", path: "/soluciones" },
     ...(!esTodos && ambito ? [{ name: ambito.description.trim(), path: `/soluciones/${slug}` }] : []),
   ];
