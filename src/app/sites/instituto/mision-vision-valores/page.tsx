@@ -41,7 +41,7 @@ export default function MisionVisionValores() {
                             Contribuir al éxito de las empresas de nuestros clientes
                         </p>
                         <p className="text-white/90 text-base">
-                            Nuestra misión pasa por descubrir y aplicar metodologías que ayuden a alinear objetivos de cumplimiento con los de mejora continua, óptimización de recursos y automatización de procesos internos de negocio.
+                            Nuestra misión pasa por descubrir y aplicar metodologías que ayuden a alinear objetivos de cumplimiento con los de mejora continua, optimización de recursos y automatización de procesos internos de negocio.
                         </p>
                         <Link href="/" className="text-white font-bold underline underline-offset-4 hover:text-white/70 transition w-fit">
                             Leer más

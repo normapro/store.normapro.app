@@ -34,7 +34,7 @@ const pilares = [
         prefix: "In",
         suffix: "novación",
         paragraphs: [
-            "La plataforma NormaPro es un conjunto de soluciones Cloud desarrollado 100% por Instituto de Innovación, Ciencia y Empresa están perfectamente integradas entre sí y te ayudarán a mejorar la operativa de tu compañía independientemente del lugar donde tus empleados trabajen.",
+            "La plataforma NormaPro es un conjunto de soluciones Cloud desarrollado 100% por Instituto de Innovación, Ciencia y Empresa que están perfectamente integradas entre sí y te ayudarán a mejorar la operativa de tu compañía independientemente del lugar donde tus empleados trabajen.",
             "Se ha diseñado con la idea de que sea un instrumento de uso cotidiano para todas las personas implicadas en los procesos. Sus herramientas permiten simplificar, estandarizar y automatizar todos los procesos minimizando los costes de adaptación y aprovechando los sistemas y datos ya existentes."
         ]
     },
@@ -43,7 +43,7 @@ const pilares = [
         suffix: "vestigación",
         paragraphs: [
             "Queremos ayudar a las empresas a que cuenten con los sistemas más fiables que aporten valor y seguridad a la propia organización a la vez que sus procesos internos entran en una espiral de mejora continua que contribuyan de manera significativa a conseguir los mejores resultados.",
-            "Tenemos un continuo afán de descubrimiento exclusivas metodologías que funcionen, dirigidas a empresarios y directivos de éxito y con la que implementar, paso a paso, modelos con los que puedan conseguir que todas las personas de su organización conozcan cuál es su papel, su responsabilidad e interioricen hábitos de eficacia y eficiencia en los procesos productivos."
+            "Tenemos un continuo afán de descubrimiento de exclusivas metodologías que funcionen, dirigidas a empresarios y directivos de éxito y con la que implementar, paso a paso, modelos con los que puedan conseguir que todas las personas de su organización conozcan cuál es su papel, su responsabilidad e interioricen hábitos de eficacia y eficiencia en los procesos productivos."
         ]
     },
     {
@@ -91,7 +91,7 @@ export default function QueHacemosPage() {
                     La misión de Instituto de INNOVACIÓN, CIENCIA y ESMPRESA es acompañar a las organizaciones que quieren <strong>mejorar sus resultados,</strong> ya sea implementando completos sistemas de gestión basados en normas internacionales ISO, o bien ajustando y automatizando procesos concretos de su negocio con tecnología propia.
                 </p>
                 <p>
-                    Con nuestra innovadora metodología, ayudamos a nuestros clientes a optimizar sus procesos, reducir costes, aumentar la calidad de sus productos o servicios, satisfacer a sus clientes y cumplir con las normas vigentes. Nuestro equipo cuenta con <strong>más de 30 años de experiencia</strong> en la presentación de servicios de consultoría.
+                    Con nuestra innovadora metodología, ayudamos a nuestros clientes a optimizar sus procesos, reducir costes, aumentar la calidad de sus productos o servicios, satisfacer a sus clientes y cumplir con las normas vigentes. Nuestro equipo cuenta con <strong>más de 30 años de experiencia</strong> en la prestación de servicios de consultoría.
                 </p>
             </section>
 
