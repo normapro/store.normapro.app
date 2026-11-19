@@ -46,6 +46,7 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
   const [showResults, setShowResults] = useState(false);
   const [activeTab, setActiveTab] = useState("Resultados");
   const [openModalContacto, setOpenModalContacto] = useState(false);
+  const tabOrder = ["Resultados", "Aplicaciones", "Soluciones"];
 
   const fetchResults = useCallback(async (query: string) => {
     if (query.length < 3) { setResults([]); return; }
@@ -54,6 +55,9 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
       const response = await fetch(`${API_ENDPOINTS.GLOBALSEARCH}?q=${encodeURIComponent(query)}`);
       const data = await response.json();
       setResults(data);
+      // Se abre la primera pestaña que tiene resultados
+      const primeraConResultados = Array.isArray(data) ? tabOrder.find((tab) => data.some((item: { category: string }) => item.category === tab)) : undefined;
+      if (primeraConResultados) setActiveTab(primeraConResultados);
     } catch (error) {
       console.error("Error en la búsqueda:", error);
     } finally {
@@ -72,7 +76,6 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
     acc[cat].push(item);
     return acc;
   }, {});
-  const tabOrder = ["Resultados", "Aplicaciones", "Soluciones"];
 
   useEffect(() => {
     if (searchQuery.length >= 3 && results.length > 0) setShowResults(true);
