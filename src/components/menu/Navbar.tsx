@@ -265,15 +265,20 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
         <AnimatePresence>
           {isSearchOpen && (
             <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden pb-4">
-              <form onSubmit={handleSearchSubmit} className="max-w-7xl mx-auto relative flex items-center bg-[#eceef5] rounded-xl px-4 h-12">
-                <input autoFocus type="text" placeholder="Busca en NormaPro" className="bg-transparent w-full outline-none text-gray-700 font-medium" value={searchQuery} onChange={(e) => { setSearchQuery(e.target.value); if (e.target.value === "") setShowResults(false); }} />
-                {searchQuery && (
-                  <div className="flex items-center gap-4">
-                    {!isLoading && <span className="text-xs text-gray-400 whitespace-nowrap">{results.length} resultados</span>}
-                    <button type="button" onClick={() => { setSearchQuery(""); setResults([]); setShowResults(false); }} className="text-gray-500 hover:text-gray-700"><FontAwesomeIcon icon={faXmark} /></button>
-                  </div>
-                )}
-              </form>
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <form onSubmit={handleSearchSubmit} className="relative flex items-center bg-[#eceef5] rounded-xl px-4 h-12">
+                  <FontAwesomeIcon icon={faMagnifyingGlass} className="text-gray-400 mr-3" />
+                  <input autoFocus type="text" placeholder="Busca en NormaPro" className="bg-transparent w-full outline-none text-gray-700 font-medium" value={searchQuery} onChange={(e) => { setSearchQuery(e.target.value); if (e.target.value === "") setShowResults(false); }} />
+                  {searchQuery && (
+                    <div className="flex items-center gap-4">
+                      {!isLoading && searchQuery.length >= 3 && <span className="text-xs text-gray-400 whitespace-nowrap">{results.length} resultados</span>}
+                      <button type="button" onClick={() => { setSearchQuery(""); setResults([]); setShowResults(false); }} className="text-gray-500 hover:text-gray-700" aria-label="Borrar búsqueda"><FontAwesomeIcon icon={faXmark} /></button>
+                    </div>
+                  )}
+                  <button type="button" onClick={() => setIsSearchOpen(false)} className="ml-4 text-sm font-bold text-[#020a31] hover:underline whitespace-nowrap">Cerrar</button>
+                </form>
+                {searchQuery.length > 0 && searchQuery.length < 3 && <p className="mt-2 text-xs text-gray-500">Escribe al menos 3 letras</p>}
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
@@ -281,7 +286,7 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
         {/* Panel resultados */}
         <AnimatePresence>
           {showResults && isSearchOpen && (
-            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="absolute left-0 right-0 top-full bg-white shadow-2xl z-50 border-t border-gray-100 overflow-y-auto max-h-[85vh]">
+            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="absolute left-0 right-0 top-full bg-white shadow-2xl z-50 border-t border-gray-100 overflow-y-auto h-[85vh]">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 <div className="flex space-x-8 border-b border-gray-100 mb-8">
                   {tabOrder.map((tab) => {
