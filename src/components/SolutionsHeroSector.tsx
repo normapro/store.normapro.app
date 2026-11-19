@@ -60,10 +60,12 @@ const SolutionsHeroSector = ({ sectorSlug }: SolutionsHeroSectorProps) => {
         <div className="w-full">
           <div className="container max-w-7xl mx-auto px-6">
           <div className="relative max-w-2xl p-8 bg-[#ffffff50] backdrop-blur-md shadow-lg rounded-lg text-[#010D3D]">
-            <h1 className="text-[32px] font-extrabold">{sector?.titleweb || "Sector"}</h1>
-            <p className="mt-4 text-[16px] text-[#010D3D] font-bold">
-              {sector?.descriptionweb || "Descripción del sector en detalle. Lorem ipsum dolor sit amet..."}
-            </p>
+            <h1 className="text-[32px] font-extrabold">{sector?.titleweb}</h1>
+            {sector?.descriptionweb && (
+              <p className="mt-4 text-[16px] text-[#010D3D] font-bold">
+                {sector.descriptionweb}
+              </p>
+            )}
             <button
               type="button"
               onClick={() => setOpenModal(true)}
@@ -88,8 +90,8 @@ const SolutionsHeroSector = ({ sectorSlug }: SolutionsHeroSectorProps) => {
         ) : clientes.length > 0 ? (
           <>
           
-          <div className="grid grid-cols-7 gap-2">
-          <h3 className="text-[#7F859D] font-bold mb-4 justify-left col-span-2">Ya confían en nosotros</h3>
+          <div className="grid grid-cols-3 md:grid-cols-7 gap-2">
+          <h3 className="text-[#7F859D] font-bold mb-4 justify-left col-span-3 md:col-span-2">Ya confían en nosotros</h3>
             {clientes.map((cliente) => (
               <Link key={cliente.id_cliente} href={cliente.url} target="_blank" rel="noopener noreferrer">
                 <Image
