@@ -122,7 +122,7 @@ const Footer = () => {
 						</div>
 
 						{/* Menú navegación */}
-						<div className="col-span-12 md:col-span-6 flex flex-col md:grid md:grid-cols-2 md:gap-50 gap-3 text-base font-extrabold text-center md:text-left order-2 md:order-none">
+						<div className="col-span-12 md:col-span-6 flex flex-col md:grid md:grid-cols-2 md:gap-50 gap-5 text-base font-extrabold text-center md:text-left order-2 md:order-none">
 							<div className="space-y-5">
 								<Link href="/soluciones" className="block">Soluciones</Link>
 								<Link href="/formacion" className="block">Formación</Link>
@@ -135,9 +135,9 @@ const Footer = () => {
 								<Link href="/partners" className="block">Programa de Partners</Link>
 								<Link href="/trabaja" className="block">Trabaja en NormaPro</Link>
 								<Link href="/politicas" className="block">Políticas</Link>
-								<a onClick={() => setOpenModal(true)} className="block cursor-pointer">
+								<button type="button" onClick={() => setOpenModal(true)} className="block w-full text-center md:text-left cursor-pointer">
 									Contacto
-								</a>
+								</button>
 							</div>
 						</div>
 
@@ -169,15 +169,15 @@ const Footer = () => {
 						{/* Certificaciones */}
 						<div className="place-items-center gap-6 flex md:flex-wrap md:items-center md:gap-15">
 							{[
-								"Grupo 4494@2x.png",
-								"Grupo 4506@2x.png",
-								"Grupo 4502@2x.png",
-								"Grupo 4498@2x.png"
-							].map((img, i) => (
+								{ img: "Grupo 4494@2x.png", alt: "AENOR Gestión de la calidad ISO 9001" },
+								{ img: "Grupo 4502@2x.png", alt: "AENOR Seguridad de la información ISO/IEC 27001" },
+								{ img: "Grupo 4506@2x.png", alt: "AENOR Seguridad y salud en el trabajo ISO 45001" },
+								{ img: "Grupo 4498@2x.png", alt: "IQNet Certified Management System" }
+							].map((sello) => (
 								<Image
-									key={i}
-									src={`/footer/${img}`}
-									alt={`Certificación ${i}`}
+									key={sello.img}
+									src={`/footer/${sello.img}`}
+									alt={sello.alt}
 									width={104}
 									height={87}
 									className="w-16 h-auto md:w-[104px]"
@@ -189,7 +189,7 @@ const Footer = () => {
 						<div className="hidden md:block w-[2px] h-[95px] bg-gray-300" />
 
 						{/* Miembros de */}
-						<div className="flex flex-col items-start">
+						<div className="flex flex-col items-center">
 							<span className="font-extralight text-[11px] text-gray-600">Somos miembros de</span>
 							<div className="flex items-center gap-10 mt-2">
 								<Image
@@ -212,11 +212,11 @@ const Footer = () => {
 
 					{/* Texto legal */}
 					<div className="mt-6 pt-6 md:pt-0 flex flex-col md:flex-row text-center md:text-left justify-between items-center md:items-start gap-4 text-xs text-gray-500">
-						<p className="flex flex-row gap-6 md:gap-10 order-1">
-							<Link href="/aviso-legal" className="hover:underline">Aviso Legal</Link>
-							<Link href="/politica-de-privacidad" className="hover:underline">Política de privacidad</Link>
-							<Link href="/politica-de-cookies-ue" className="hover:underline">Política de cookies</Link>
-							<CookieSettingsLink className="hover:underline" />
+						<p className="flex flex-row flex-wrap justify-center gap-x-6 gap-y-2 md:gap-10 order-1">
+							<Link href="/aviso-legal" className="underline whitespace-nowrap">Aviso Legal</Link>
+							<Link href="/politica-de-privacidad" className="underline whitespace-nowrap">Política de privacidad</Link>
+							<Link href="/politica-de-cookies-ue" className="underline whitespace-nowrap">Política de cookies</Link>
+							<CookieSettingsLink className="underline whitespace-nowrap" />
 						</p>
 						<p className="order-2 md:order-none">
 							NormaPro® es una marca registrada por Instituto de Innovación, Ciencia y Empresa
