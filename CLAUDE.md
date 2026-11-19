@@ -28,6 +28,7 @@
 | [W13](docs/productos/w13-sitio-instituto.md) | Sitio Instituto |
 | [W14](docs/productos/w14-config-libs-utils.md) | `config/api.ts`, libs, utils, tipos |
 | [W15](docs/productos/w15-raiz-plantillas-trazas-zips.md) | Raíz: plantillas, README, `next.config.ts` |
+| [SEO](docs/seo/README.md) | Estudio y plan SEO + GEO (30/10/2026): investigación de palabras clave, auditoría de producción, títulos listos, plan técnico, IA, presencia externa, KPI. Nada ejecutado |
 
 Fichas de 9 apartados fijos. Glosario `../docs/GLOSARIO.md`, mapa `../docs/MAPA.md`, errores en ejecución `../docs/OBSERVABILIDAD.md`, estado de errores `../docs/ESTADO-ERRORES-TRAS-PR.md`.
 
