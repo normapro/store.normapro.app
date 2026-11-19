@@ -15,13 +15,13 @@ type FaqProps = {
 }
 
 const FaqSection: FC<FaqProps> = ({ faqs }) => {
-  const [openIndex, setOpenIndex] = useState<number|null>(null);
+  const [openIndex, setOpenIndex] = useState<number|null>(0);
   const [openModal, setOpenModal] = useState(false);
   const weights = ["semibold","bold"];
   
   return (
     <section className="w-full py-24 bg-[#F8F9FB]">
-      <div className="mx-auto px-20">
+      <div className="mx-auto px-4 md:px-20">
         <h2 className="text-2xl md:text-3xl font-black text-[#010d3d] mb-12">
           No te quedes con dudas
         </h2>
