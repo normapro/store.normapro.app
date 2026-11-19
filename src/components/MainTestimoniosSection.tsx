@@ -8,9 +8,10 @@ import TestimonioCard from "./TestimonioCard";
 
 type MainTestimoniosSectionProps = {
   soloOpiniones?: boolean;
+  titulo?: string; // Título del bloque; por defecto el de la home
 };
 
-const MainTestimoniosSection = ({ soloOpiniones = false }: MainTestimoniosSectionProps) => {
+const MainTestimoniosSection = ({ soloOpiniones = false, titulo = "Opiniones de nuestros clientes" }: MainTestimoniosSectionProps) => {
   const [testimonios, setTestimonios] = useState<TestimonioConCliente[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -49,7 +50,7 @@ const MainTestimoniosSection = ({ soloOpiniones = false }: MainTestimoniosSectio
           soloOpiniones ? "text-2xl text-left" : "text-3xl text-center"
         }`}
       >
-        Opiniones de nuestros clientes
+        {titulo}
       </h2>
 
       {isLoading ? (

@@ -87,7 +87,6 @@ export default function NosotrosPage() {
 
         <ListHistoriaSection
             title="Nuestros valores"
-            titlelist="Ejemplo con un solo elemento"
             list={[
                 {
                     title: "Innovación",
@@ -134,7 +133,7 @@ export default function NosotrosPage() {
         </section>
 
 
-        <MainTestimoniosSection />
+        <MainTestimoniosSection titulo="Lo que dicen de nosotros" />
         <CertificacionesSection
             title="Calidad y seguridad certificada"
             subtitle="Nuestros productos y servicios cuentan con certificaciones reconocidas."
