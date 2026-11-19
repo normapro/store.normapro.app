@@ -15,6 +15,7 @@ const Footer = () => {
 	const [website, setWebsite] = useState("");
 	const [isSubmittingNewsletter, setIsSubmittingNewsletter] = useState(false);
 	const [newsletterMessage, setNewsletterMessage] = useState<string | null>(null);
+	const [aceptaNewsletter, setAceptaNewsletter] = useState(false);
 
 	const handleNewsletterSubmit = async () => {
 		const email = newsletterEmail.trim();
@@ -22,6 +23,11 @@ const Footer = () => {
 
 		if (!email) {
 			setNewsletterMessage("Introduce un email válido.");
+			return;
+		}
+
+		if (!aceptaNewsletter) {
+			setNewsletterMessage("Para suscribirte tienes que aceptar las comunicaciones comerciales y la política de privacidad.");
 			return;
 		}
 
@@ -35,7 +41,7 @@ const Footer = () => {
 				},
 				body: JSON.stringify({
 					email,
-					acepta_marketing: true,
+					acepta_marketing: aceptaNewsletter,
 					website,
 					origen_ruta,
 				}),
@@ -93,6 +99,15 @@ const Footer = () => {
 									{isSubmittingNewsletter ? "Enviando..." : "Suscribirme a la newsletter"}
 								</button>
 							</div>
+							<label className="mt-3 flex gap-3 items-start text-sm text-white/90">
+								<input
+									type="checkbox"
+									checked={aceptaNewsletter}
+									onChange={(e) => setAceptaNewsletter(e.target.checked)}
+									className="mt-1"
+								/>
+								<span>Acepto recibir comunicaciones comerciales de NormaPro y la <Link href="/politica-de-privacidad" className="underline">política de privacidad</Link>.</span>
+							</label>
 							{newsletterMessage && (
 								<p className="mt-2 text-sm text-white/90">{newsletterMessage}</p>
 							)}
