@@ -21,7 +21,7 @@ const MainHeroCarousel = () => {
 	const [openModal, setOpenModal] = useState(false);
 
 	return (
-		<section className="relative w-full md:h-screen md:min-h-[800px] flex flex-col items-center text-center text-[#010D3D] overflow-hidden bg-[#FFFFFF] pt-12 pb-8 md:pt-0 md:pb-0 md:justify-center">
+		<section className="relative w-full md:h-[780px] flex flex-col items-center text-center text-[#010D3D] overflow-hidden bg-[#FFFFFF] pt-12 pb-8 md:pt-8 md:pb-0">
 
 			{/* Fondo decorativo izquierdo — Desktop */}
 			<div
@@ -46,7 +46,7 @@ const MainHeroCarousel = () => {
 			/>
 
 			{/* Texto y CTA */}
-			<div className="relative z-10 px-4 max-w-4xl md:mt-[-300px]">
+			<div className="relative z-10 px-4 max-w-4xl">
 				<h1 className="text-3xl md:text-5xl font-black">Digitalización sin límites</h1>
 				<p className="text-base md:text-lg mt-2">
 					Navegamos contigo hacia una evolución tecnológica accesible, segura y sin barreras.
