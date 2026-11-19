@@ -332,10 +332,10 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
             </motion.div>
           )}
         </AnimatePresence>
-
-        <ModalDescubrir isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-        {openModalContacto && <Formulario onClose={() => setOpenModalContacto(false)} />}
       </nav>
+
+      <ModalDescubrir isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      {openModalContacto && <Formulario onClose={() => setOpenModalContacto(false)} />}
     </>
   );
 };
