@@ -38,14 +38,14 @@ const ModalDescubrir = ({ isOpen, onClose }: ModalDescubrirProps) => {
                 setIsLoading(true);
                 try {
                     const [sectoresRes, ambitosRes] = await Promise.all([
-                        fetch(API_ENDPOINTS.SECTORES).then((res) => res.json()),
-                        fetch(API_ENDPOINTS.AMBITOS).then((res) => res.json())
+                        fetch(API_ENDPOINTS.SECTORES).then((res) => { if (!res.ok) throw new Error("Error al obtener los sectores"); return res.json(); }),
+                        fetch(API_ENDPOINTS.AMBITOS).then((res) => { if (!res.ok) throw new Error("Error al obtener los ámbitos"); return res.json(); })
                     ]);
                     setSectores(sectoresRes);
                     setAmbitos(ambitosRes);
                 } catch (err) {
                     console.error("Error cargando los datos:", err);
-                    setError("No se puedieron cargar los datos. Intentalo de nuevo.")
+                    setError("No se han podido cargar los datos. Inténtalo de nuevo.")
                 } finally {
                     setIsLoading(false);
                 }
@@ -100,6 +100,7 @@ const ModalDescubrir = ({ isOpen, onClose }: ModalDescubrirProps) => {
                         Productos para tu empresa
                     </h2>
 
+                    {error && <p className="text-center text-red-500 mb-4">{error}</p>}
                     <div className="space-y-6 text-left">
                         <div>
                             <label className="block text-[#010d3d] text-[17px] font-bold mb-3">
@@ -121,7 +122,7 @@ const ModalDescubrir = ({ isOpen, onClose }: ModalDescubrirProps) => {
                         </div>
 
                         <div>
-                            <label className="block text-[#010d3d] font-bold mb-3">¿A qué sector se dedica?</label>
+                            <label className="block text-[#010d3d] text-[17px] font-bold mb-3">¿A qué sector se dedica?</label>
                             <div className="relative">
                                 <select
                                     value={selectedSector}
