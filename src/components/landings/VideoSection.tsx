@@ -70,7 +70,7 @@ const VideoSection: React.FC<VideoSectionProps> = ({
             {title}
           </h2>
 
-          <ul className="space-y-4 text-[17px] md:text-lg font-semibold mt-8">
+          <ul className="space-y-4 md:space-y-0 md:grid md:grid-cols-2 md:gap-8 text-[17px] md:text-lg font-semibold mt-8">
             {items.map((item, index) => (
               <li key={index} className="leading-tight text-center">
                 {item}
