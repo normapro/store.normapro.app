@@ -7,6 +7,7 @@ import SolutionsDropdown from "@/components/menu/SolutionsDropdown";
 import API_ENDPOINTS from "@/config/api";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faBars } from "@fortawesome/free-solid-svg-icons";
+import { faLinkedin, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import NormaProAccessButton from "@/components/NormaproAccessButton";
 import { faMagnifyingGlass, faXmark } from "@fortawesome/pro-duotone-svg-icons";
 import { faMessageSmile } from "@fortawesome/pro-regular-svg-icons";
@@ -121,11 +122,11 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
   return (
     <>
       {/* Barra superior */}
-      <div className="bg-gradient-to-r from-[#b2e8f7] via-[#ede3f5] to-[#d0f3f0] relative">
+      <div className="hidden md:block bg-gradient-to-r from-[#b2e8f7] via-[#ede3f5] to-[#d0f3f0] relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center py-2 text-sm text-gray-700">
             Encuentra productos específicos para tu empresa en 60 segundos.{" "}
-            <a onClick={() => setIsModalOpen(true)} className="hover:underline"><b>Descubrir →</b></a>
+            <button type="button" onClick={() => setIsModalOpen(true)} className="hover:underline"><b>Descubrir →</b></button>
           </div>
         </div>
       </div>
@@ -163,7 +164,7 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
                 </button>
               </div>
               <Link href="/formacion" className="text-[14px] text-[#010d3d]">Formación</Link>
-              <Link href="/historias" className="text-[14px] text-[#010d3d]">Historias con Clientes</Link>
+              <Link href="/historias" className="text-[14px] text-[#010d3d]">Historias con clientes</Link>
             </div>
 
             <div className="hidden md:flex items-center space-x-4">
@@ -202,7 +203,7 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
               <div className="px-4 py-4 flex flex-col gap-1 text-[#010d3d]">
 
                 {/* Soluciones */}
-                <button onClick={() => { setIsMobileSolutionsOpen((prev) => !prev); setIsMobileAppsOpen(false); setIsMobileConsultoriaOpen(false); }} className="w-full py-2 flex items-center justify-between font-semibold">
+                <button onClick={() => { setIsMobileSolutionsOpen((prev) => !prev); setIsMobileAppsOpen(false); setIsMobileConsultoriaOpen(false); }} className="w-full py-4 flex items-center justify-between font-medium border-b border-gray-200">
                   Soluciones
                   <FontAwesomeIcon icon={faChevronDown} className={`transition-transform ${isMobileSolutionsOpen ? "rotate-180" : ""}`} />
                 </button>
@@ -215,7 +216,7 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
                 </AnimatePresence>
 
                 {/* Aplicaciones */}
-                <button onClick={() => { setIsMobileAppsOpen((prev) => !prev); setIsMobileSolutionsOpen(false); setIsMobileConsultoriaOpen(false); }} className="w-full py-2 flex items-center justify-between font-semibold">
+                <button onClick={() => { setIsMobileAppsOpen((prev) => !prev); setIsMobileSolutionsOpen(false); setIsMobileConsultoriaOpen(false); }} className="w-full py-4 flex items-center justify-between font-medium border-b border-gray-200">
                   Aplicaciones
                   <FontAwesomeIcon icon={faChevronDown} className={`transition-transform ${isMobileAppsOpen ? "rotate-180" : ""}`} />
                 </button>
@@ -232,7 +233,7 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
                 </AnimatePresence>
 
                 {/* Consultoría */}
-                <button onClick={() => { setIsMobileConsultoriaOpen((prev) => !prev); setIsMobileSolutionsOpen(false); setIsMobileAppsOpen(false); }} className="w-full py-2 flex items-center justify-between font-semibold">
+                <button onClick={() => { setIsMobileConsultoriaOpen((prev) => !prev); setIsMobileSolutionsOpen(false); setIsMobileAppsOpen(false); }} className="w-full py-4 flex items-center justify-between font-medium border-b border-gray-200">
                   Consultoría
                   <FontAwesomeIcon icon={faChevronDown} className={`transition-transform ${isMobileConsultoriaOpen ? "rotate-180" : ""}`} />
                 </button>
@@ -248,11 +249,23 @@ const Navbar = ({ isChatHidden, onShowChat }: NavbarProps) => {
                   )}
                 </AnimatePresence>
 
-                <Link href="/formacion" onClick={() => setIsMobileMenuOpen(false)} className="py-2 font-semibold">Formación</Link>
-                <Link href="/historias" onClick={() => setIsMobileMenuOpen(false)} className="py-2 font-semibold">Historias con Clientes</Link>
-                <button onClick={() => { setIsMobileMenuOpen(false); setIsModalOpen(true); }} className="mt-2 rounded-lg px-4 py-2 text-white bg-gradient-to-r from-[#00B2E3] to-[#CCA1DD]">
-                  Descubrir
-                </button>
+                <Link href="/formacion" onClick={() => setIsMobileMenuOpen(false)} className="py-4 font-medium border-b border-gray-200">Formación</Link>
+                <Link href="/historias" onClick={() => setIsMobileMenuOpen(false)} className="py-4 font-medium border-b border-gray-200">Historias con clientes</Link>
+                <div className="mt-4 rounded-lg bg-gradient-to-r from-[#b2e8f7] via-[#ede3f5] to-[#d0f3f0] p-4 text-center text-sm text-gray-700">
+                  Encuentra productos específicos para tu empresa en 60 segundos.
+                  <button type="button" onClick={() => { setIsMobileMenuOpen(false); setIsModalOpen(true); }} className="mt-3 w-full rounded-lg px-4 py-2 text-white font-bold bg-gradient-to-r from-[#00B2E3] to-[#CCA1DD]">
+                    Descubrir →
+                  </button>
+                </div>
+                <div className="mt-6 flex items-center justify-center gap-8 text-base">
+                  <span>Síguenos en</span>
+                  <Link href="https://www.linkedin.com/company/normapro" target="_blank" aria-label="LinkedIn">
+                    <FontAwesomeIcon icon={faLinkedin} className="text-[30px]" />
+                  </Link>
+                  <Link href="https://www.youtube.com/@normapro" target="_blank" aria-label="YouTube">
+                    <FontAwesomeIcon icon={faYoutube} className="text-[30px]" />
+                  </Link>
+                </div>
               </div>
             </motion.div>
           )}
