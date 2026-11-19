@@ -22,7 +22,7 @@ const Cookies = () => {
           >
             <span className="text-gray-800 font-extrabold text-xl">{tec.nombre}</span>
             <div className="flex items-center gap-2 shrink-0">
-              <span className="text-sm truncate max-w-[120px] sm:max-w-xs">{tec.categoria}</span>
+              <span className="text-sm text-right sm:truncate sm:max-w-xs">{tec.categoria}</span>
               <FontAwesomeIcon
                 icon={faChevronDown}
                 className={`transition-transform ${abierto === tec.id ? 'rotate-180' : ''}`}
