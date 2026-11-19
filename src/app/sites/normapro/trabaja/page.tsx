@@ -33,7 +33,7 @@ export default function TrabajaPage() {
                             </p>
 
                             <p className="mt-8 font-bold">Requisitos:</p>
-                            <ul className="mt-4 list-disc space-y-2 pl-6">
+                            <ul className="mt-4 list-['·_'] space-y-2 pl-6">
                                 <li><strong>Experiencia Laboral:</strong> Valorable en funcion de la experiencia demostrable en desarrollo web frontend y backend.</li>
                                 <li><strong>Liderazgo Tecnico:</strong> Valorable experiencia en participacion como referente tecnico dentro de un equipo.</li>
                                 <li><strong>Estandares Web:</strong> Valorable conocimiento sobre los estandares W3C, HTML5, CSS3, JavaScript, Web Components.</li>
@@ -68,7 +68,7 @@ export default function TrabajaPage() {
                             </p>
 
                             <p className="mt-8 font-bold">Requisitos:</p>
-                            <ul className="mt-4 list-disc space-y-2 pl-6">
+                            <ul className="mt-4 list-['·_'] space-y-2 pl-6">
                                 <li>Titulacion universitaria en Ingenieria, Administracion de Empresas, Derecho o similar.</li>
                                 <li>Experiencia minima de 3 anos en consultoria de procesos, sistemas de gestion (ISO 9001, ISO 27001, ISO 45001), automatizacion de procesos o cumplimiento normativo.</li>
                                 <li>Conocimientos avanzados en plataformas digitales de gestion empresarial.</li>
@@ -80,7 +80,7 @@ export default function TrabajaPage() {
                             </ul>
 
                             <p className="mt-8 font-bold">Se valorara:</p>
-                            <ul className="mt-4 list-disc space-y-2 pl-6">
+                            <ul className="mt-4 list-['·_'] space-y-2 pl-6">
                                 <li>Certificaciones en sistemas de gestion (ISO, compliance, entre otros).</li>
                                 <li>Experiencia en el sector tecnologico o en la consultoria estrategica.</li>
                                 <li>Conocimientos en automatización y modelado de procesos empresariales (BPM, ERP, etc.).</li>
