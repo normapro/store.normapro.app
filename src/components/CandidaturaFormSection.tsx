@@ -28,6 +28,7 @@ const CandidaturaFormSection = () => {
   const [formData, setFormData] = useState<CandidaturaFormData>(initialFormData);
   const [cvFile, setCvFile] = useState<File | null>(null);
   const [isSent, setIsSent] = useState(false);
+  const [faltaCv, setFaltaCv] = useState(false);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -44,7 +45,10 @@ const CandidaturaFormSection = () => {
       message.trim().length > 0 &&
       !!cvFile;
 
-    if (!isValid) return;
+    if (!isValid) {
+      setFaltaCv(!cvFile);
+      return;
+    }
 
     // Simula envio local sin backend.
     setFormData(initialFormData);
@@ -84,7 +88,7 @@ const CandidaturaFormSection = () => {
 
               <div>
                 <label htmlFor="cand-address" className="mb-2 block text-[15px] font-medium text-[#001B5D]">
-                  Direccion
+                  Dirección
                 </label>
                 <input
                   id="cand-address"
@@ -96,7 +100,7 @@ const CandidaturaFormSection = () => {
                     setFormData((prev) => ({ ...prev, address: event.target.value }));
                     setIsSent(false);
                   }}
-                  placeholder="Direccion"
+                  placeholder="Dirección"
                   className="w-full rounded-xl border border-[#C5CBD8] bg-white px-4 py-4 text-[15px] text-[#001B5D] outline-none placeholder:text-[#8A93AA] focus:ring-2 focus:ring-[#00B2E3]"
                 />
               </div>
@@ -147,7 +151,7 @@ const CandidaturaFormSection = () => {
 
               <div>
                 <label htmlFor="cand-phone" className="mb-2 block text-[15px] font-medium text-[#001B5D]">
-                  Telefono
+                  Teléfono
                 </label>
                 <input
                   id="cand-phone"
@@ -159,14 +163,14 @@ const CandidaturaFormSection = () => {
                     setFormData((prev) => ({ ...prev, phone: event.target.value }));
                     setIsSent(false);
                   }}
-                  placeholder="Telefono"
+                  placeholder="Teléfono"
                   className="w-full rounded-xl border border-[#C5CBD8] bg-white px-4 py-4 text-[15px] text-[#001B5D] outline-none placeholder:text-[#8A93AA] focus:ring-2 focus:ring-[#00B2E3]"
                 />
               </div>
 
               <div>
                 <label htmlFor="cand-experienceYears" className="mb-2 block text-[15px] font-medium text-[#001B5D]">
-                  Experiencia laboral (en anos)
+                  Experiencia laboral (en años)
                 </label>
                 <input
                   id="cand-experienceYears"
@@ -179,7 +183,7 @@ const CandidaturaFormSection = () => {
                     setFormData((prev) => ({ ...prev, experienceYears: event.target.value }));
                     setIsSent(false);
                   }}
-                  placeholder="Anos de experiencia"
+                  placeholder="Años de experiencia"
                   className="w-full rounded-xl border border-[#C5CBD8] bg-white px-4 py-4 text-[15px] text-[#001B5D] outline-none placeholder:text-[#8A93AA] focus:ring-2 focus:ring-[#00B2E3]"
                 />
               </div>
@@ -187,7 +191,7 @@ const CandidaturaFormSection = () => {
 
             <div>
               <label htmlFor="cand-message" className="mb-2 block text-[15px] font-medium text-[#001B5D]">
-                Mensaje
+                Presentación
               </label>
               <textarea
                 id="cand-message"
@@ -198,7 +202,7 @@ const CandidaturaFormSection = () => {
                   setFormData((prev) => ({ ...prev, message: event.target.value }));
                   setIsSent(false);
                 }}
-                placeholder="Explica brevemente por que eres la persona idonea para este puesto. Puedes hablar de tu experiencia, conocimientos, habilidades, titulaciones o proyectos en los que hayas trabajado."
+                placeholder="Explica brevemente por qué eres la persona idónea para este puesto. Puedes hablar de tu experiencia, conocimientos, habilidades, titulaciones o proyectos en los que hayas trabajado."
                 className="h-full min-h-[260px] w-full rounded-xl border border-[#C5CBD8] bg-white px-4 py-4 text-[15px] text-[#001B5D] outline-none placeholder:text-[#8A93AA] focus:ring-2 focus:ring-[#00B2E3]"
               />
             </div>
@@ -211,11 +215,11 @@ const CandidaturaFormSection = () => {
               name="cv"
               type="file"
               accept=".pdf,.doc,.docx"
-              required
               className="hidden"
               onChange={(event) => {
                 const selectedFile = event.target.files?.[0] || null;
                 setCvFile(selectedFile);
+                setFaltaCv(false);
                 setIsSent(false);
               }}
             />
@@ -230,6 +234,7 @@ const CandidaturaFormSection = () => {
             </button>
 
             {cvFile && <p className="text-[15px] text-[#001B5D]">Archivo: {cvFile.name}</p>}
+            {faltaCv && !cvFile && <p className="text-[15px] text-red-500">Adjunta tu CV para enviar la candidatura.</p>}
 
             <button
               type="submit"
