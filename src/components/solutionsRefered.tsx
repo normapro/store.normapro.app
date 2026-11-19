@@ -79,8 +79,8 @@ const SolutionsRefered = ({ sectorSlug, ambitoSlug }: Props) => {
 					{isLoading ? (						
 						<p className="text-center text-gray-500">Cargando soluciones...</p>
 					) : soluciones.length > 0 ? (
-						<div className="grid grid-cols-21 gap-10">
-							<div className="col-span-10 mt-8">
+						<div className="grid grid-cols-1 md:grid-cols-21 gap-10">
+							<div className="md:col-span-10 mt-8">
 								<h3 className="mb-4 text-[#7F859D] font-semibold">Otras soluciones que podrían interesarte</h3>
 
 								{soluciones.map((sol) => {
@@ -98,7 +98,7 @@ const SolutionsRefered = ({ sectorSlug, ambitoSlug }: Props) => {
 									);
 								})}
 							</div>
-							<div className="col-span-10 mt-8">
+							<div className="md:col-span-10 mt-8">
 								<h3 className="mb-4 text-[#7F859D] font-semibold">Packs</h3>
 								{packs.map((pack) => {
 									return (
