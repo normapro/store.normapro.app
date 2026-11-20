@@ -207,12 +207,13 @@ const SolutionsDropdown = ({ mobile = false, onNavigate }: Props) => {
                   <PackHighlightedButton key={index} solucion={solucion} />
                 ))}
               </div>
-              <Link
-                href="/soluciones/all"
-                className="block text-[#010D3D] text-[14px] font-mulish font-bold mt-4 text-right underline"
+              <button
+                type="button"
+                onClick={() => { setSelectedSector(null); setModalOpen(true); }}
+                className="block ml-auto text-[#010D3D] text-[14px] font-mulish font-bold mt-4 text-right underline"
               >
                 Ver todas nuestras soluciones
-              </Link>
+              </button>
             </div>
 
           </div>
@@ -224,7 +225,7 @@ const SolutionsDropdown = ({ mobile = false, onNavigate }: Props) => {
         onClose={() => setModalOpen(false)}
         ambitos={ambitos}
         onSelectAmbito={(ambitoSlug) => {
-          window.location.href = `/soluciones/${ambitoSlug}/sector/${selectedSector}`;
+          window.location.href = selectedSector ? `/soluciones/${ambitoSlug}/sector/${selectedSector}` : `/soluciones/${ambitoSlug}`;
         }}
       />
     </>
