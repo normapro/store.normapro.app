@@ -151,8 +151,8 @@ const PackDetalle = ({ pack, ambito, breadcrumbData, testimonios, error }: Props
             <div className="max-w-5xl mx-auto px-6">
               <h2 className="text-2xl font-extrabold text-[#010D3D] mb-8">No te quedes con dudas</h2>
               <div className="divide-y divide-gray-300">
-                {pack.faqs!.map(faq => (
-                  <details key={faq.id_faq} className="py-4 group">
+                {pack.faqs!.map((faq, index) => (
+                  <details key={faq.id_faq} open={index === 0} className="py-4 group">
                     <summary className="flex justify-between items-center cursor-pointer text-[16px] font-bold text-[#010D3D] list-none">
                       {faq.question}
                       <FontAwesomeIcon icon={faChevronDown} className="ml-4 transform group-open:rotate-180 transition" />

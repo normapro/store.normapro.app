@@ -49,7 +49,7 @@ export default async function PackPage({ params }: Props) {
     { name: "Home", path: "/" },
     { name: "Soluciones", path: "/soluciones" },
     { name: ambitoData?.description?.trim() || ambitoSlug, path: `/soluciones/${ambitoSlug}` },
-    { name: pack.title, path: canonicalPath(pack, ambito, slugPack) },
+    { name: pack.description || pack.title, path: canonicalPath(pack, ambito, slugPack) },
   ];
 
   return (
