@@ -39,6 +39,7 @@ const Formulario: React.FC<FormularioProps> = ({ onClose, zIndexClass }) => {
   const [website, setWebsite] = React.useState("");
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [submitMessage, setSubmitMessage] = React.useState<string | null>(null);
+  const [isSent, setIsSent] = React.useState(false);
 
   const onTextChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -81,7 +82,8 @@ const Formulario: React.FC<FormularioProps> = ({ onClose, zIndexClass }) => {
         throw new Error(apiMessage);
       }
 
-      setSubmitMessage("Formulario enviado correctamente.");
+      setSubmitMessage(`¡Gracias, ${form.nombre.trim()}! Hemos recibido tu consulta.`);
+      setIsSent(true);
       setForm({
         nombre: "",
         apellidos: "",
@@ -95,7 +97,6 @@ const Formulario: React.FC<FormularioProps> = ({ onClose, zIndexClass }) => {
         acepta_contacto: false,
         acepta_politica: false,
       });
-      onClose();
     } catch (error) {
       const message =
         error instanceof Error
@@ -290,17 +291,27 @@ const Formulario: React.FC<FormularioProps> = ({ onClose, zIndexClass }) => {
           </div>
 
           {submitMessage && (
-            <p className="mt-4 text-center text-sm text-[#0b1b4d]">{submitMessage}</p>
+            <p className={`mt-4 text-center text-sm font-semibold ${isSent ? "text-[#119F3B]" : "text-red-500"}`}>{submitMessage}</p>
           )}
 
           <div className="flex justify-center mt-8">
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="bg-[#0b1b4d] text-white font-semibold px-10 py-3 rounded-xl hover:bg-[#132a6e] transition"
-            >
-              {isSubmitting ? "Enviando..." : "Enviar"}
-            </button>
+            {isSent ? (
+              <button
+                type="button"
+                onClick={onClose}
+                className="bg-[#0b1b4d] text-white font-semibold px-10 py-3 rounded-xl hover:bg-[#132a6e] transition"
+              >
+                Cerrar
+              </button>
+            ) : (
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="bg-[#0b1b4d] text-white font-semibold px-10 py-3 rounded-xl hover:bg-[#132a6e] transition"
+              >
+                {isSubmitting ? "Enviando..." : "Enviar"}
+              </button>
+            )}
           </div>
 
           <div className="mt-4 flex justify-center sm:hidden">
