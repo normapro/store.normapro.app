@@ -63,12 +63,12 @@ export default function InformesGridSection({ showOnlyLastThree = false, isInsti
   return (
     <div className="pt-10">
       {informes.length === 0 ? (
-        <p className="text-lg text-[#6e7692]">Aun no hay informes disponibles.</p>
+        <p className="text-lg text-[#6e7692]">Aún no hay informes disponibles.</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12">
           {informes.map((informe, index) => {
             const categoria = informe.categoria?.trim() || "SIN CATEGORIA";
-            const titulo = informe.titulo?.trim() || "Informe sin titulo";
+            const titulo = informe.titulo?.trim() || "Informe sin título";
             const imagePath = informe.resolvedImagePath;
             const informeId = typeof informe.id === "number" ? informe.id : null;
             const informeSlug = informe.slug?.trim() || null;
@@ -118,6 +118,15 @@ export default function InformesGridSection({ showOnlyLastThree = false, isInsti
                     {titulo}
                   </h2>
                 )}
+
+                {informePath && !showOnlyLastThree ? (
+                  <Link
+                    href={`/informes/${informePath}`}
+                    className="text-left text-[#071a4c] font-extrabold text-[20px] underline underline-offset-4 mt-3"
+                  >
+                    Más información
+                  </Link>
+                ) : null}
               </article>
             );
           })}
