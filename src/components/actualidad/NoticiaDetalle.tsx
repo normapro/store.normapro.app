@@ -90,10 +90,10 @@ export default function NoticiaDetalle({ noticia }: Props) {
 				const [solucionesAmbitoResponse, solucionesAllResponse] = await Promise.all([
 					fetch(
 						ambitoSoluciones === 'all'
-							? `${API_ENDPOINTS.LISTSOLUCIONES}?ambito=all&sector=all`
+							? `${API_ENDPOINTS.LISTSOLUCIONES}?ambito=all&sector=non-specified`
 							: `${API_ENDPOINTS.LISTSOLUCIONES}?ambito=${ambitoSoluciones}&sector=non-specified`,
 					),
-					fetch(`${API_ENDPOINTS.LISTSOLUCIONES}?ambito=all&sector=all`),
+					fetch(`${API_ENDPOINTS.LISTSOLUCIONES}?ambito=all&sector=non-specified`),
 				]);
 
 				const solucionesAmbitoData: any[] = solucionesAmbitoResponse.ok ? await solucionesAmbitoResponse.json() : [];
@@ -157,17 +157,17 @@ export default function NoticiaDetalle({ noticia }: Props) {
 			<main className="relative w-full py-10 md:py-12">
 				<div className="absolute inset-x-0 top-0 h-[360px] bg-[#e9eaee]" />
 
-				<section className="relative max-w-[80%] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8">
+				<section className="relative md:max-w-[80%] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8">
 					<article className="lg:col-span-7">
-						<h1 className="text-[35px] leading-[1.05] font-black text-[#0B1D4D] w-[85%]">
+						<h1 className="text-[35px] leading-[1.05] font-black text-[#0B1D4D] md:w-[85%]">
 							{noticia.title}
 						</h1>
 
 						<div className="mt-5 flex flex-wrap items-center gap-5 text-sm font-bold text-[#0B1D4D]">
-							{categorias.map((categoria) => (
-								<span key={categoria} className="underline underline-offset-2">
+							{categorias.filter((categoria) => categoria !== 'Destacado').map((categoria) => (
+								<Link key={categoria} href={`/actualidad?tema=${encodeURIComponent(categoria)}`} className="underline underline-offset-2">
 									{categoria}
-								</span>
+								</Link>
 							))}
 						</div>
 
@@ -175,13 +175,13 @@ export default function NoticiaDetalle({ noticia }: Props) {
 							<img
 								src={noticia.imagen?.startsWith('/') ? noticia.imagen : `/${noticia.imagen}`}
 								alt={noticia.title}
-								className="w-[85%]  max-h-[620px] object-cover"
+								className="w-full md:w-[85%]  max-h-[620px] object-cover"
 							/>
 						</div>
 
 						<p className="mt-8 text-[15px] text-[#0B1D4D] ">{noticia.fecha}</p>
 
-						<div className="mt-4 space-y-6 text-[15px] leading-[1.4] text-[#0B1D4D] w-[85%]">
+						<div className="mt-4 space-y-6 text-[15px] leading-[1.4] text-[#0B1D4D] md:w-[85%]">
 							{paragraphs.length > 0 ? (
 								paragraphs.map((paragraph, index) => <p key={`${noticia.id_noticia}-${index}`}>{paragraph}</p>)
 							) : (
@@ -253,11 +253,11 @@ export default function NoticiaDetalle({ noticia }: Props) {
 
 
 				</section>
-				<section className="w-[80%] mx-auto px-6 mt-40">
+				<section className="md:w-[80%] mx-auto px-6 mt-40">
 					<h2 className="text-xl font-extrabold text-[#0B1D4D]">Otras noticias relacionadas</h2>
 
 					<div className="mt-8">
-						<ActualidadGridSection onlyLatest={false} />
+						<ActualidadGridSection onlyLatest={false} excluirId={noticia.id_noticia} />
 					</div>
 				</section>
 			</main>

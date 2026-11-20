@@ -13,6 +13,7 @@ interface ActualidadGridSectionProps {
 	hideDescriptionAndReadMore?: boolean;
 	temasDisponibles?: string[];
 	isInstituto?: boolean;
+	excluirId?: number;
 }
 
 const getResumenFromContent = (content: unknown): string => {
@@ -77,12 +78,14 @@ const parseCategorias = (categoria: string | null): string[] => {
 		.filter((item) => item.length > 0);
 };
 
+/** Rejilla de noticias de Actualidad; excluirId deja fuera una noticia (la que se está leyendo) */
 export default function ActualidadGridSection({
 	onlyLatest,
 	temas,
 	hideDescriptionAndReadMore = false,
 	temasDisponibles,
-	isInstituto = false
+	isInstituto = false,
+	excluirId
 }: ActualidadGridSectionProps) {
 	const [noticias, setNoticias] = useState<Actualidad[]>([]);
 	const [isLoading, setIsLoading] = useState(true);
@@ -117,15 +120,16 @@ export default function ActualidadGridSection({
 			? (temas ?? []).map((t) => t.trim().toLowerCase()).filter(Boolean)
 			: [temaActivo.toLowerCase()];
 
+		const noticiasVisibles = noticias.filter((noticia) => noticia.id_noticia !== excluirId);
 		const noticiasFiltradas = temasActivos.length === 0
-			? noticias
-			: noticias.filter((noticia) => {
+			? noticiasVisibles
+			: noticiasVisibles.filter((noticia) => {
 				const categoriasNoticia = parseCategorias(noticia.categoria ?? null);
 				return categoriasNoticia.some((cat) => temasActivos.includes(cat));
 			});
 
 		return onlyLatest ? noticiasFiltradas.slice(0, 3) : noticiasFiltradas;
-	}, [noticias, onlyLatest, temas, temaActivo]);
+	}, [noticias, onlyLatest, temas, temaActivo, excluirId]);
 
 	const scroll = (dir: 'left' | 'right') => {
 		scrollRef.current?.scrollBy({ left: dir === 'left' ? -200 : 200, behavior: 'smooth' });
