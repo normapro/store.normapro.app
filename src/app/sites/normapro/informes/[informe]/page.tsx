@@ -293,27 +293,27 @@ export default async function InformeDetallePage({ params }: InformeDetallePageP
 						</aside>
 					</div>
 
-					<div className="absolute left-1/2 bottom-2 -translate-x-1/2 z-30 h-10 w-10 rounded-full bg-[#c4c8d4] text-white flex items-center justify-center text-2xl leading-none">
+					<a href="#contenido" aria-label="Ir al contenido del informe" className="mx-auto mt-6 lg:mt-0 lg:absolute lg:left-1/2 lg:bottom-2 lg:-translate-x-1/2 z-30 h-10 w-10 rounded-full bg-[#c4c8d4] text-white flex items-center justify-center text-2xl leading-none">
 						<span aria-hidden="true" className="-mt-1">⌄</span>
-					</div>
+					</a>
 				</div>
 			</section>
 
 			{/* Contenido principal  */}
-			<section className="bg-white">
+			<section id="contenido" className="bg-white">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 lg:pt-28 pb-14">
 					<div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-10 lg:gap-12 items-start">
 						<div>
 							{/*  prologo */}
 							<section>
-								<h2 className="text-[42px] font-extrabold text-[#010d3d] mb-4">Prologo</h2>
+								<h2 className="text-[42px] font-extrabold text-[#010d3d] mb-4">Prólogo</h2>
 								{prologoHtml ? (
 									<div
-										className="text-[#010d3d] text-[22px] leading-relaxed [&_br]:block [&_br]:my-1 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:my-3 [&_ul]:space-y-2 [&_li]:leading-relaxed"
+										className="text-[#010d3d] text-[22px] leading-relaxed [&_p]:mb-4 [&_p:empty]:hidden [&_br]:block [&_br]:my-1 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:my-3 [&_ul]:space-y-2 [&_li]:leading-relaxed"
 										dangerouslySetInnerHTML={{ __html: prologoHtml }}
 									/>
 								) : prologoItems.length === 0 ? (
-									<p className="text-[#010d3d] text-[22px] leading-relaxed">Contenido de prologo pendiente.</p>
+									<p className="text-[#010d3d] text-[22px] leading-relaxed">Contenido de prólogo pendiente.</p>
 								) : (
 									<div className="space-y-6">
 										{prologoItems.map((item, index) => {
@@ -325,7 +325,7 @@ export default async function InformeDetallePage({ params }: InformeDetallePageP
 													{title ? <h3 className="text-[26px] font-bold text-[#010d3d] mb-2">{title}</h3> : null}
 													{content && /<\/?[a-z][\s\S]*>/i.test(content) ? (
 														<div
-															className="text-[#010d3d] text-[18px] leading-relaxed [&_br]:block [&_br]:my-1 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:my-3 [&_ul]:space-y-2 [&_li]:leading-relaxed"
+															className="text-[#010d3d] text-[18px] leading-relaxed [&_p]:mb-4 [&_p:empty]:hidden [&_br]:block [&_br]:my-1 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:my-3 [&_ul]:space-y-2 [&_li]:leading-relaxed"
 															dangerouslySetInnerHTML={{ __html: content }}
 														/>
 													) : (
@@ -377,7 +377,7 @@ export default async function InformeDetallePage({ params }: InformeDetallePageP
 										<section key={`indice-${index}`}>
 											{grupo.title ? <h3 className="text-[20px] font-bold text-[#010D3D] mb-2">{grupo.title}</h3> : null}
 											{grupo.ul.length > 0 ? (
-												<ul className="list-disc pl-6 space-y-1 text-[#283452] text-[21px] leading-snug">
+												<ul className="list-disc pl-6 space-y-1 text-[#283452] text-[17px] leading-snug">
 													{grupo.ul.map((entry, childIndex) => (
 														<li key={`claim-${index}-${childIndex}`}>{entry}</li>
 													))}
