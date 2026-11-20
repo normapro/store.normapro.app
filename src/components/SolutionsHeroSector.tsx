@@ -60,12 +60,10 @@ const SolutionsHeroSector = ({ sectorSlug }: SolutionsHeroSectorProps) => {
         <div className="w-full">
           <div className="container max-w-7xl mx-auto px-6">
           <div className="relative max-w-2xl p-8 bg-[#ffffff50] backdrop-blur-md shadow-lg rounded-lg text-[#010D3D]">
-            <h1 className="text-[32px] font-extrabold">{sector?.titleweb || sector?.description}</h1>
-            {sector?.descriptionweb && (
-              <p className="mt-4 text-[16px] text-[#010D3D] font-bold">
-                {sector.descriptionweb}
-              </p>
-            )}
+            <h1 className="text-[32px] font-extrabold">{sector?.titleweb || sector?.description || "Soluciones para tu sector"}</h1>
+            <p className="mt-4 text-[16px] text-[#010D3D] font-bold">
+              {sector?.descriptionweb || "Soluciones de cumplimiento normativo adaptadas a la actividad de tu sector, para tenerlo todo bajo control."}
+            </p>
             <button
               type="button"
               onClick={() => setOpenModal(true)}

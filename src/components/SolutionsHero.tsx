@@ -42,9 +42,9 @@ const SolutionsHero = () => {
         {/* Título y Descripción */}
         
         <p className="text-[16px] max-w-2xl text-[#010D3D]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tempor, 
-            dui sit amet pellentesque lacinia, purus leo ultrices mi, nec vestibulum risus 
-            leo nec metus. Etiam nec eros interdum, finibus ante in, maximus urna.
+            Digitaliza el cumplimiento normativo de tu empresa en un solo lugar. Calidad ISO 9001,
+            medio ambiente ISO 14001, seguridad y salud ISO 45001, seguridad de la información ISO 27001,
+            compliance penal, PRL y ESG. Elige tu ámbito y encuentra la solución que necesitas.
         </p>
 
         {/* Sección de Clientes */}
