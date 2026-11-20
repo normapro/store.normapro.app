@@ -3,7 +3,7 @@
 
 import ActualidadGridSection from '@/components/ActualidadGridSection';
 import { useRouter } from 'next/navigation';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 const tabs = ['Todas las publicaciones', 'Destacadas', 'Temas', 'Servicios'];
 
@@ -18,14 +18,20 @@ const temasDisponibles = [
 ];
 
 /** Listado de Actualidad con pestañas y filtro por tema; el tema elegido queda en ?tema= */
-export default function ActualidadListado({ tema }: { tema?: string }) {
-	const temaInicial = temasDisponibles.find((item) =>
-		item.filters.some((filtro) => filtro.toLowerCase() === tema?.trim().toLowerCase())
-	)?.label ?? null;
+export default function ActualidadListado() {
 	const router = useRouter();
-	const [activeTab, setActiveTab] = useState(temaInicial ? 'Temas' : tabs[0]);
-	const [selectedTema, setSelectedTema] = useState<string | null>(temaInicial);
+	const [activeTab, setActiveTab] = useState(tabs[0]);
+	const [selectedTema, setSelectedTema] = useState<string | null>(null);
 	const [isTemasMenuOpen, setIsTemasMenuOpen] = useState(false);
+
+	useEffect(() => {
+		const tema = new URLSearchParams(window.location.search).get('tema')?.trim().toLowerCase();
+		const temaUrl = temasDisponibles.find((item) => item.filters.some((filtro) => filtro.toLowerCase() === tema));
+		if (temaUrl) {
+			setSelectedTema(temaUrl.label);
+			setActiveTab('Temas');
+		}
+	}, []);
 
 	const filtrosTemas = useMemo(() => {
 		if (activeTab === 'Destacadas') {
