@@ -98,8 +98,8 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 		setIsLoading(true);
 		try {
 			const url = sectorSlug
-				? `${API_ENDPOINTS.LISTPACKS}?ambito=${ambitoSlug}&sector=${sectorSlug}`
-				: `${API_ENDPOINTS.LISTPACKS}?ambito=${ambitoSlug}`;
+				? `${API_ENDPOINTS.LISTPACKS}?ambito=${ambitoSlug}&sector=${sectorSlug}&maxItems=500`
+				: `${API_ENDPOINTS.LISTPACKS}?ambito=${ambitoSlug}&maxItems=500`;
 
 			const response = await fetch(url);
 			if (!response.ok) throw new Error("Error al obtener soluciones");
@@ -147,10 +147,10 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 		};
 	}, [ambitos]); // 🔥 Se ejecuta cada vez que cambian los ámbitos
 
-	// Prepara el enlace para las soluciones
-	let slugBase: string = `/soluciones/${ambitoSlug ?? "all"}`;
+	// Prepara el enlace para las soluciones: cada una con su propio ámbito
+	let slugSector: string = "";
 	if (sectorSlug && sectorSlug !== "non-specified") {
-		slugBase += `/sector/${sectorSlug}`;
+		slugSector = `/sector/${sectorSlug}`;
 	}
 
 	return (
@@ -234,7 +234,7 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 									const iconParts = sol.uriIcon.split(" ");
 									const icon: IconProp = iconParts.length === 2 ? (iconParts as [IconPrefix, IconName]) : (["fas", "fa-question"] as unknown as [IconPrefix, IconName]);
 									return (
-										<Link key={sol.id_solucion} href={`${slugBase}/${sol.slug}`} rel="noopener noreferrer">
+										<Link key={sol.id_solucion} href={`/soluciones/${sol.slug_ambito ?? ambitoSlug ?? "all"}${slugSector}/${sol.slug}`} rel="noopener noreferrer">
 											<div className="py-2 px-3 bg-white shadow rounded-lg flex items-center mb-2">
 												<FontAwesomeIcon icon={icon} className="w-6 h-6 text-[#010D3D] mr-4" />
 												<div>
@@ -251,7 +251,7 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 								{packs.map((pack) => {
 									return (
 										<Link key={pack.id_pack} href={`/soluciones/${ambitoSlug}/packs/${pack.slug}`} rel="noopener noreferrer">
-											<div className="py-2 px-3 bg-[#e4f6fc] shadow rounded-lg mb-2 cursor-pointer h-[200px] px-7 ">
+											<div className="py-2 px-3 bg-[#e4f6fc] shadow rounded-lg mb-2 cursor-pointer min-h-[200px] px-7 ">
 												<div className="grid grid-cols-12">
 													<div className="col-span-8 mt-7">
 														<h3 className="font-bold text-[16px] text-[#010D3D] overflow-hidden text-ellipsis">{pack.description}</h3>
