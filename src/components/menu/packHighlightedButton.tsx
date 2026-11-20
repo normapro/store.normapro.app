@@ -3,11 +3,20 @@
 import Link from "next/link";
 import { Solucion } from "../../types/solucion";
 
-const PackHighlightedButton = ({ solucion }: { solucion: Solucion }) => {
+type Props = {
+  solucion: Solucion;
+  onNavigate?: () => void; // Callback para cerrar el menú móvil al navegar
+};
+
+/**
+ * Tarjeta de una solución destacada del desplegable de Soluciones
+ */
+const PackHighlightedButton = ({ solucion, onNavigate }: Props) => {
   return (
     <Link
       key={solucion.id_solucion}
       href={`/soluciones/${solucion.slug_ambito}/packs/${solucion.slug}`}
+      onClick={onNavigate}
       className="block bg-[#E4F6FC] p-1 pl-3 rounded-lg shadow hover:shadow-lg transition"
     >
       <div className="flex items-center space-x-4 relative">

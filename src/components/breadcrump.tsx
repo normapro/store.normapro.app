@@ -33,7 +33,7 @@ const Breadcrumb = ({ breadcrumb }: Props) => {
     );
   };
 
-  return <nav aria-label="Migas de pan" className="flex">{renderBreadcrumb(breadcrumb)}</nav>;
+  return <nav aria-label="Migas de pan" className="flex flex-wrap">{renderBreadcrumb(breadcrumb)}</nav>;
 };
 
 export default Breadcrumb;

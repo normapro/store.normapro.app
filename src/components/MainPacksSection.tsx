@@ -38,7 +38,7 @@ const MainPacksSection = () => {
             </p>
 
             <div className="flex justify-center mb-10">
-                <div className="flex gap-6 bg-[#f3f3f7] px-6 py-3 rounded-xl text-[#010D3D] font-bold items-center">
+                <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 bg-[#f3f3f7] px-6 py-3 rounded-xl text-[#010D3D] font-bold items-center">
                     <span className="flex items-center gap-2 text-[20px]">
                         <FontAwesomeIcon icon={faLaptop} className="text-[26px]" />
                         Tecnología NormaPro

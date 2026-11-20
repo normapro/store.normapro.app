@@ -121,6 +121,7 @@ const SolutionsDropdown = ({ mobile = false, onNavigate }: Props) => {
                 <PackHighlightedButton
                   key={index}
                   solucion={solucion}
+                  onNavigate={onNavigate}
                 />
               ))}
             </div>

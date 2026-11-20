@@ -58,7 +58,7 @@ const ClientCarousel: React.FC<ClientCarouselProps> = ({ scope, claim, theme="li
   const isDark = theme === "dark";
 
   return (
-    <section className={`mx-auto py-12 text-center overflow-hidden ${isDark ? "bg-[#010D3D]" : "bg-white"}`}>
+    <section className={`w-full mx-auto py-12 text-center overflow-hidden ${isDark ? "bg-[#010D3D]" : "bg-white"}`}>
       <h3 className="text-gray-500 mb-6 font-semibold text-lg">{claim}</h3>
 
       <div className="relative w-full overflow-hidden">
