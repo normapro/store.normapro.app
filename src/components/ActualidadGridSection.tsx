@@ -173,7 +173,7 @@ export default function ActualidadGridSection({
 
 			{/* Grid de noticias */}
 			{noticiasToShow.length === 0 ? (
-				<p className="text-[#010D3D]">No hay noticias publicadas.</p>
+				<p className="text-[#010D3D]">{temas?.length || temaActivo !== 'todos' ? 'No hay noticias de este tema.' : 'No hay noticias publicadas.'}</p>
 			) : (
 				<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
 					{noticiasToShow.map((noticia) => {

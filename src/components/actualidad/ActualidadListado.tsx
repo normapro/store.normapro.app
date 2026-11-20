@@ -2,6 +2,7 @@
 'use client';
 
 import ActualidadGridSection from '@/components/ActualidadGridSection';
+import { useRouter } from 'next/navigation';
 import { useMemo, useState } from 'react';
 
 const tabs = ['Todas las publicaciones', 'Destacadas', 'Temas', 'Servicios'];
@@ -14,12 +15,16 @@ const temasDisponibles = [
 	{ label: 'Formación', filters: ['Formación', 'Formacion'] },
 	{ label: 'Industria', filters: ['Industria'] },
 	{ label: 'Seguridad alimentaria', filters: ['Seguridad alimentaria'] },
-	{ label: 'Destacadas', filters: ['Destacadas', 'Destacado'] },
 ];
 
-export default function ActualidadListado() {
-	const [activeTab, setActiveTab] = useState(tabs[0]);
-	const [selectedTema, setSelectedTema] = useState<string | null>(null);
+/** Listado de Actualidad con pestañas y filtro por tema; el tema elegido queda en ?tema= */
+export default function ActualidadListado({ tema }: { tema?: string }) {
+	const temaInicial = temasDisponibles.find((item) =>
+		item.filters.some((filtro) => filtro.toLowerCase() === tema?.trim().toLowerCase())
+	)?.label ?? null;
+	const router = useRouter();
+	const [activeTab, setActiveTab] = useState(temaInicial ? 'Temas' : tabs[0]);
+	const [selectedTema, setSelectedTema] = useState<string | null>(temaInicial);
 	const [isTemasMenuOpen, setIsTemasMenuOpen] = useState(false);
 
 	const filtrosTemas = useMemo(() => {
@@ -47,6 +52,7 @@ export default function ActualidadListado() {
 
 		if (tab !== 'Temas') {
 			setSelectedTema(null);
+			router.replace('/actualidad', { scroll: false });
 		}
 	};
 
@@ -54,11 +60,12 @@ export default function ActualidadListado() {
 		setSelectedTema(temaLabel);
 		setActiveTab('Temas');
 		setIsTemasMenuOpen(false);
+		router.replace(`/actualidad?tema=${encodeURIComponent(temaLabel)}`, { scroll: false });
 	};
 
 	return (
 		<main className="w-full py-10 md:py-12">
-			<section className="max-w-7xl mx-auto px-6">
+			<section className="relative max-w-7xl mx-auto px-6">
 				<div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pb-4 border-b border-gray-300">
 					<div className="flex flex-wrap items-center gap-2 text-2xl font-extrabold">
 						<h1 className="text-[#0B1D4D]">Actualidad</h1>
@@ -70,7 +77,7 @@ export default function ActualidadListado() {
 						) : null}
 					</div>
 
-					<div className="flex flex-wrap items-center gap-2 md:gap-3">
+					<div className="flex items-center gap-2 md:gap-3 overflow-x-auto whitespace-nowrap">
 						{tabs.map((tab) => {
 							const isActive = activeTab === tab;
 
@@ -93,7 +100,7 @@ export default function ActualidadListado() {
 				</div>
 
 				<div
-					className={`bg-[#e8e9ee] px-6 overflow-hidden transition-all duration-300 ease-in-out ${
+					className={`absolute left-6 right-6 z-10 bg-[#e8e9ee] px-6 overflow-hidden transition-all duration-300 ease-in-out ${
 						isTemasMenuOpen ? 'max-h-[420px] opacity-100 py-12' : 'max-h-0 opacity-0 py-0'
 					}`}
 				>
