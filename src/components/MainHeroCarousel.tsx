@@ -46,7 +46,7 @@ const MainHeroCarousel = () => {
 			/>
 
 			{/* Texto y CTA */}
-			<div className="relative z-10 px-4 max-w-4xl">
+			<div className="relative z-30 px-4 max-w-4xl">
 				<h1 className="text-3xl md:text-5xl font-black">Digitalización sin límites</h1>
 				<p className="text-base md:text-lg mt-2">
 					Navegamos contigo hacia una evolución tecnológica accesible, segura y sin barreras.
