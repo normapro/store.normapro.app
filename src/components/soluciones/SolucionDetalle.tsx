@@ -221,7 +221,7 @@ const SolucionDetalle = ({ solucion, breadcrumbData, testimonios, error }: Props
 					<SolutionsRefered ambitoSlug={solucion?.slug_ambito} />
 				</section>
 
-				{openModal && <Formulario onClose={() => setOpenModal(false)} />}
+				{openModal && <Formulario onClose={() => setOpenModal(false)} interes={solucion ? { tipo: "solucion", texto: solucion.description } : undefined} />}
 
 			</main>
 		</>

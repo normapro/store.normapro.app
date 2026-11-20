@@ -181,7 +181,7 @@ const PackDetalle = ({ pack, ambito, breadcrumbData, testimonios, error }: Props
           <SolutionsRefered ambitoSlug={ambito} />
         </section>
 
-        {openModal && <Formulario onClose={() => setOpenModal(false)} />}
+        {openModal && <Formulario onClose={() => setOpenModal(false)} interes={{ tipo: "pack", texto: pack.description }} />}
       </main>
     </>
   );
