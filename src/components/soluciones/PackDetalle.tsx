@@ -12,8 +12,8 @@ import SolutionsRefered from "@/components/solutionsRefered";
 import Formulario from "@/components/Formulario";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { iconMap } from "@/libs/icons";
-import { faChevronDown, faCogs } from "@fortawesome/free-solid-svg-icons";
+import { IconPrefix, IconName } from "@fortawesome/fontawesome-svg-core";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 interface Props {
   pack: Pack;
@@ -96,7 +96,7 @@ const PackDetalle = ({ pack, ambito, breadcrumbData, testimonios, error }: Props
                                 {/* Aquí se renderiza el icono si existe */}
                                 {sol.icon && (
                                 <FontAwesomeIcon
-                                    icon={iconMap[sol.icon] ?? faCogs}
+                                    icon={sol.icon.split(" ").length === 2 ? (sol.icon.split(" ") as [IconPrefix, IconName]) : (["fas", "fa-question"] as unknown as [IconPrefix, IconName])}
                                     className="w-5 h-5 text-[#00b2e3]"
                                 />
                                 )}
