@@ -4,11 +4,6 @@ import { pageMetadata } from "@/libs/seo";
 
 export const metadata: Metadata = pageMetadata({ title: "Actualidad", path: "/actualidad" });
 
-type Props = {
-	searchParams: Promise<{ tema?: string }>;
-};
-
-export default async function ActualidadPage({ searchParams }: Props) {
-	const { tema } = await searchParams;
-	return <ActualidadListado tema={tema} />;
+export default function ActualidadPage() {
+	return <ActualidadListado />;
 }
