@@ -41,6 +41,15 @@ const Formulario: React.FC<FormularioProps> = ({ onClose, zIndexClass }) => {
   const [submitMessage, setSubmitMessage] = React.useState<string | null>(null);
   const [isSent, setIsSent] = React.useState(false);
 
+  // Escape cierra la ventana
+  React.useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [onClose]);
+
   const onTextChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -114,13 +123,16 @@ const Formulario: React.FC<FormularioProps> = ({ onClose, zIndexClass }) => {
       onClick={onClose}
     >
       <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="formulario-titulo"
         className="my-2 w-full max-w-4xl max-h-[95vh] overflow-hidden rounded-3xl bg-[#f4f5f7] shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Título */}
         <div className="sticky top-0 z-10 flex items-start justify-between bg-[#f4f5f7] p-5 pb-4 sm:p-8 sm:pb-4">
           <div>
-            <h2 className="mb-2 text-left text-xl font-extrabold text-gray-800 sm:text-2xl">
+            <h2 id="formulario-titulo" className="mb-2 text-left text-xl font-extrabold text-gray-800 sm:text-2xl">
               Reserva una sesión estratégica con nosotros
             </h2>
             <p className="max-w-2xl text-left text-sm text-gray-600 sm:text-base">
@@ -145,10 +157,11 @@ const Formulario: React.FC<FormularioProps> = ({ onClose, zIndexClass }) => {
           <HoneypotField value={website} onChange={setWebsite} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label className="block text-sm font-semibold mb-2">
+              <label htmlFor="formulario-nombre" className="block text-sm font-semibold mb-2">
                 Nombre *
               </label>
               <input
+                id="formulario-nombre"
                 name="nombre"
                 type="text"
                 maxLength={80}
@@ -161,10 +174,11 @@ const Formulario: React.FC<FormularioProps> = ({ onClose, zIndexClass }) => {
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold mb-2">
+              <label htmlFor="formulario-apellidos" className="block text-sm font-semibold mb-2">
                 Apellidos *
               </label>
               <input
+                id="formulario-apellidos"
                 name="apellidos"
                 type="text"
                 maxLength={120}
@@ -177,10 +191,11 @@ const Formulario: React.FC<FormularioProps> = ({ onClose, zIndexClass }) => {
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold mb-2">
+              <label htmlFor="formulario-empresa" className="block text-sm font-semibold mb-2">
                 Empresa
               </label>
               <input
+                id="formulario-empresa"
                 name="empresa"
                 type="text"
                 maxLength={150}
@@ -192,10 +207,11 @@ const Formulario: React.FC<FormularioProps> = ({ onClose, zIndexClass }) => {
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold mb-2">
+              <label htmlFor="formulario-cargo" className="block text-sm font-semibold mb-2">
                 Cargo en la empresa
               </label>
               <input
+                id="formulario-cargo"
                 name="cargo"
                 type="text"
                 autoComplete="organization-title"
@@ -206,10 +222,11 @@ const Formulario: React.FC<FormularioProps> = ({ onClose, zIndexClass }) => {
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold mb-2">
+              <label htmlFor="formulario-pais" className="block text-sm font-semibold mb-2">
                 País
               </label>
               <input
+                id="formulario-pais"
                 name="pais"
                 type="text"
                 placeholder="Introduce tu país"
@@ -219,10 +236,11 @@ const Formulario: React.FC<FormularioProps> = ({ onClose, zIndexClass }) => {
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold mb-2">
+              <label htmlFor="formulario-n_empleados" className="block text-sm font-semibold mb-2">
                 Número de empleados
               </label>
               <select
+                id="formulario-n_empleados"
                 name="n_empleados"
                 value={form.n_empleados}
                 onChange={onTextChange}
@@ -236,10 +254,11 @@ const Formulario: React.FC<FormularioProps> = ({ onClose, zIndexClass }) => {
               </select>
             </div>
             <div>
-              <label className="block text-sm font-semibold mb-2">
+              <label htmlFor="formulario-telefono" className="block text-sm font-semibold mb-2">
                 Teléfono
               </label>
               <input
+                id="formulario-telefono"
                 name="telefono"
                 type="tel"
                 maxLength={20}
@@ -251,10 +270,11 @@ const Formulario: React.FC<FormularioProps> = ({ onClose, zIndexClass }) => {
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold mb-2">
+              <label htmlFor="formulario-email" className="block text-sm font-semibold mb-2">
                 Email *
               </label>
               <input
+                id="formulario-email"
                 name="email"
                 type="email"
                 maxLength={254}
