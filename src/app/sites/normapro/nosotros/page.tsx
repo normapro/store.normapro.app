@@ -87,6 +87,7 @@ export default function NosotrosPage() {
 
         <ListHistoriaSection
             title="Nuestros valores"
+            titlelist="Lo que guía nuestro trabajo"
             list={[
                 {
                     title: "Innovación",
