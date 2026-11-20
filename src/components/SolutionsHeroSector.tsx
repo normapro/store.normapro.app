@@ -76,7 +76,7 @@ const SolutionsHeroSector = ({ sectorSlug }: SolutionsHeroSectorProps) => {
         </div>
       </section>
 
-      {openModal && <Formulario onClose={() => setOpenModal(false)} interes={sector?.titleweb ? { tipo: "sector", texto: sector.titleweb } : undefined} />}
+      {openModal && <Formulario onClose={() => setOpenModal(false)} interes={sector?.description ? { tipo: "sector", texto: sector.description, sector: sector.description } : undefined} />}
 
       {/* Sección de clientes */}
       <div className="max-w-7xl mx-auto px-6 mt-10">
