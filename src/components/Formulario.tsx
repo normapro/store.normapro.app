@@ -146,11 +146,13 @@ const Formulario: React.FC<FormularioProps> = ({ onClose, zIndexClass }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-semibold mb-2">
-                Nombre
+                Nombre *
               </label>
               <input
                 name="nombre"
                 type="text"
+                maxLength={80}
+                autoComplete="given-name"
                 placeholder="Introduce tu nombre"
                 value={form.nombre}
                 onChange={onTextChange}
@@ -160,12 +162,14 @@ const Formulario: React.FC<FormularioProps> = ({ onClose, zIndexClass }) => {
             </div>
             <div>
               <label className="block text-sm font-semibold mb-2">
-                Introduce tus apellidos
+                Apellidos *
               </label>
               <input
                 name="apellidos"
                 type="text"
-                placeholder="Nombre"
+                maxLength={120}
+                autoComplete="family-name"
+                placeholder="Introduce tus apellidos"
                 value={form.apellidos}
                 onChange={onTextChange}
                 required
@@ -179,6 +183,8 @@ const Formulario: React.FC<FormularioProps> = ({ onClose, zIndexClass }) => {
               <input
                 name="empresa"
                 type="text"
+                maxLength={150}
+                autoComplete="organization"
                 placeholder="Nombre de tu empresa"
                 value={form.empresa}
                 onChange={onTextChange}
@@ -192,6 +198,7 @@ const Formulario: React.FC<FormularioProps> = ({ onClose, zIndexClass }) => {
               <input
                 name="cargo"
                 type="text"
+                autoComplete="organization-title"
                 placeholder="Introduce tu cargo"
                 value={form.cargo}
                 onChange={onTextChange}
@@ -234,7 +241,9 @@ const Formulario: React.FC<FormularioProps> = ({ onClose, zIndexClass }) => {
               </label>
               <input
                 name="telefono"
-                type="text"
+                type="tel"
+                maxLength={20}
+                autoComplete="tel"
                 placeholder="Introduce tu teléfono"
                 value={form.telefono}
                 onChange={onTextChange}
@@ -243,11 +252,13 @@ const Formulario: React.FC<FormularioProps> = ({ onClose, zIndexClass }) => {
             </div>
             <div>
               <label className="block text-sm font-semibold mb-2">
-                Email
+                Email *
               </label>
               <input
                 name="email"
                 type="email"
+                maxLength={254}
+                autoComplete="email"
                 placeholder="Introduce tu email"
                 value={form.email}
                 onChange={onTextChange}
@@ -261,12 +272,12 @@ const Formulario: React.FC<FormularioProps> = ({ onClose, zIndexClass }) => {
             <label className="flex gap-3 items-start">
               <input
                 type="checkbox"
-                name="acepta_marketing"
-                checked={form.acepta_marketing}
+                name="acepta_politica"
+                checked={form.acepta_politica}
                 onChange={onCheckboxChange}
                 className="mt-1"
               />
-              Acepta recibir mensajes promocionales de NormaPro sobre sus productos y servicios. Puedes darte de baja en cualquier momento haciendo clic en el enlace que aparece en la parte inferior de nuestros correos electrónicos.
+              <span>He leído y acepto la <a className="text-blue-600" href="https://store.normapro.es/politica-de-privacidad" target="_blank" rel="noopener noreferrer">política de privacidad</a> de NormaPro. *</span>
             </label>
             <label className="flex gap-3 items-start">
               <input
@@ -276,17 +287,17 @@ const Formulario: React.FC<FormularioProps> = ({ onClose, zIndexClass }) => {
                 onChange={onCheckboxChange}
                 className="mt-1"
               />
-              Acepta que algún miembro del equipo de NormaPro se ponga en contacto conmigo para acordar una reunión demostrativa.
+              Acepto que algún miembro del equipo de NormaPro se ponga en contacto conmigo para acordar una reunión demostrativa.
             </label>
             <label className="flex gap-3 items-start">
               <input
                 type="checkbox"
-                name="acepta_politica"
-                checked={form.acepta_politica}
+                name="acepta_marketing"
+                checked={form.acepta_marketing}
                 onChange={onCheckboxChange}
                 className="mt-1"
               />
-              Acepto la<a className="text-blue-600" href="https://store.normapro.es/politica-de-privacidad" target="_blank" rel="noopener noreferrer">política de privacidad</a>de NormaPro.
+              Quiero recibir mensajes promocionales de NormaPro sobre sus productos y servicios. Puedo darme de baja en cualquier momento desde el enlace que aparece al final de los correos.
             </label>
           </div>
 
