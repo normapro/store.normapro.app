@@ -28,20 +28,20 @@ export default function TrabajaPage() {
                             <p>
                                 Buscamos para trabajar en nuestro ecosistema NormaPro un Desarrollador Fullstack con
                                 experiencia en el desarrollo de aplicaciones web tanto en el frontend como en el
-                                backend. El candidato ideal sera un referente tecnico dentro del equipo y debera tener
-                                un solido conocimiento de los estandares web y las tecnologias modernas.
+                                backend. El candidato ideal será un referente técnico dentro del equipo y deberá tener
+                                un sólido conocimiento de los estándares web y las tecnologías modernas.
                             </p>
 
                             <p className="mt-8 font-bold">Requisitos:</p>
                             <ul className="mt-4 list-['·_'] space-y-2 pl-6">
-                                <li><strong>Experiencia Laboral:</strong> Valorable en funcion de la experiencia demostrable en desarrollo web frontend y backend.</li>
-                                <li><strong>Liderazgo Tecnico:</strong> Valorable experiencia en participacion como referente tecnico dentro de un equipo.</li>
-                                <li><strong>Estandares Web:</strong> Valorable conocimiento sobre los estandares W3C, HTML5, CSS3, JavaScript, Web Components.</li>
+                                <li><strong>Experiencia Laboral:</strong> Valorable en función de la experiencia demostrable en desarrollo web frontend y backend.</li>
+                                <li><strong>Liderazgo Técnico:</strong> Valorable experiencia en participación como referente técnico dentro de un equipo.</li>
+                                <li><strong>Estándares Web:</strong> Valorable conocimiento sobre los estándares W3C, HTML5, CSS3, JavaScript, Web Components.</li>
                                 <li><strong>Angular:</strong> Valorable experiencia con Angular.</li>
                                 <li><strong>Node-js y Express:</strong> Valorable conocimientos en Node.js y Express, preferiblemente con experiencia en Typescript y NESTjs.</li>
                                 <li><strong>Base de Datos:</strong> Valorable conocimiento de ANSI SQL y experiencia con MySQL.</li>
-                                <li><strong>Control de Codigo:</strong> Valorable experiencia usando sistemas de control de codigo Git.</li>
-                                <li><strong>Diseno de Interfaces:</strong> Comprension general de los principios de diseno de interfaces y experiencia de usuario.</li>
+                                <li><strong>Control de Código:</strong> Valorable experiencia usando sistemas de control de código Git.</li>
+                                <li><strong>Diseño de Interfaces:</strong> Comprensión general de los principios de diseño de interfaces y experiencia de usuario.</li>
                             </ul>
                         </>
                     ),
@@ -51,38 +51,38 @@ export default function TrabajaPage() {
                     content: (
                         <>
                             <p>
-                                En NormaPro, buscamos un/a Consultor/a con experiencia en la implementacion de
-                                sistemas de gestion avanzados y automatizacion de procesos de negocio. Como parte de
-                                nuestro equipo, seras responsable de ayudar a nuestros clientes a optimizar sus
-                                operaciones mediante la implantacion de nuestras soluciones tecnologicas y servicios de
-                                consultoria estrategica. Trabajaras directamente con empresarios y directivos para
-                                identificar areas de mejora, desarrollar propuestas personalizadas y guiar la
-                                implementacion de sistemas que promuevan el cumplimiento normativo y la eficiencia
+                                En NormaPro, buscamos un/a Consultor/a con experiencia en la implementación de
+                                sistemas de gestión avanzados y automatización de procesos de negocio. Como parte de
+                                nuestro equipo, serás responsable de ayudar a nuestros clientes a optimizar sus
+                                operaciones mediante la implantación de nuestras soluciones tecnológicas y servicios de
+                                consultoría estratégica. Trabajarás directamente con empresarios y directivos para
+                                identificar áreas de mejora, desarrollar propuestas personalizadas y guiar la
+                                implementación de sistemas que promuevan el cumplimiento normativo y la eficiencia
                                 operativa.
                             </p>
                             <p className="mt-4">
-                                Tus responsabilidades incluiran la asesoria en procesos de cumplimiento normativo,
-                                automatizacion de flujos de trabajo, gestion documental y formacion de equipos de
-                                trabajo. Seras una pieza clave en el exito de nuestros clientes, ayudandoles a
+                                Tus responsabilidades incluirán la asesoría en procesos de cumplimiento normativo,
+                                automatización de flujos de trabajo, gestión documental y formación de equipos de
+                                trabajo. Serás una pieza clave en el éxito de nuestros clientes, ayudándoles a
                                 implementar sistemas avanzados que generen resultados medibles y sostenibles.
                             </p>
 
                             <p className="mt-8 font-bold">Requisitos:</p>
                             <ul className="mt-4 list-['·_'] space-y-2 pl-6">
-                                <li>Titulacion universitaria en Ingenieria, Administracion de Empresas, Derecho o similar.</li>
-                                <li>Experiencia minima de 3 anos en consultoria de procesos, sistemas de gestion (ISO 9001, ISO 27001, ISO 45001), automatizacion de procesos o cumplimiento normativo.</li>
-                                <li>Conocimientos avanzados en plataformas digitales de gestion empresarial.</li>
-                                <li>Capacidad para trabajar en entornos dinamicos y colaborar con equipos multidisciplinares.</li>
-                                <li>Excelentes habilidades de comunicacion oral y escrita, con enfoque en la atencion al cliente y desarrollo de relaciones a largo plazo.</li>
-                                <li>Capacidad para analizar y diagnosticar procesos internos de negocio y proponer soluciones tecnologicas innovadoras.</li>
-                                <li>Experiencia demostrable en la gestion de proyectos y cumplimiento de objetivos.</li>
-                                <li>Dominio del espanol y nivel intermedio/alto de ingles.</li>
+                                <li>Titulación universitaria en Ingeniería, Administración de Empresas, Derecho o similar.</li>
+                                <li>Experiencia mínima de 3 años en consultoría de procesos, sistemas de gestión (ISO 9001, ISO 27001, ISO 45001), automatización de procesos o cumplimiento normativo.</li>
+                                <li>Conocimientos avanzados en plataformas digitales de gestión empresarial.</li>
+                                <li>Capacidad para trabajar en entornos dinámicos y colaborar con equipos multidisciplinares.</li>
+                                <li>Excelentes habilidades de comunicación oral y escrita, con enfoque en la atención al cliente y desarrollo de relaciones a largo plazo.</li>
+                                <li>Capacidad para analizar y diagnosticar procesos internos de negocio y proponer soluciones tecnológicas innovadoras.</li>
+                                <li>Experiencia demostrable en la gestión de proyectos y cumplimiento de objetivos.</li>
+                                <li>Dominio del español y nivel intermedio/alto de inglés.</li>
                             </ul>
 
-                            <p className="mt-8 font-bold">Se valorara:</p>
+                            <p className="mt-8 font-bold">Se valorará:</p>
                             <ul className="mt-4 list-['·_'] space-y-2 pl-6">
-                                <li>Certificaciones en sistemas de gestion (ISO, compliance, entre otros).</li>
-                                <li>Experiencia en el sector tecnologico o en la consultoria estrategica.</li>
+                                <li>Certificaciones en sistemas de gestión (ISO, compliance, entre otros).</li>
+                                <li>Experiencia en el sector tecnológico o en la consultoría estratégica.</li>
                                 <li>Conocimientos en automatización y modelado de procesos empresariales (BPM, ERP, etc.).</li>
                             </ul>
                         </>
