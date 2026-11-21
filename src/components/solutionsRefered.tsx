@@ -24,7 +24,7 @@ const SolutionsRefered = ({ sectorSlug, ambitoSlug }: Props) => {
 	const [soluciones, setSoluciones] = useState<Solucion[]>([]);
 	const [packs, setPacks] = useState<ItemListPack[]>([]);
 	const [selectedSlug, setSelectedSlug] = useState<string>("all");
-	const [isLoading, setIsLoading] = useState(false);
+	const [isLoading, setIsLoading] = useState(true);
 	const containerRef = useRef<HTMLDivElement>(null);
 
     

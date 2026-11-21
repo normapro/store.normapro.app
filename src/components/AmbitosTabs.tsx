@@ -25,7 +25,7 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 	const [soluciones, setSoluciones] = useState<Solucion[]>([]);
 	const [packs, setPacks] = useState<ItemListPack[]>([]);
 	const [selectedSlug, setSelectedSlug] = useState<string>("all");
-	const [isLoading, setIsLoading] = useState(false);
+	const [isLoading, setIsLoading] = useState(true);
 	const containerRef = useRef<HTMLDivElement>(null);
 	const [canScrollLeft, setCanScrollLeft] = useState(false);
 	const [canScrollRight, setCanScrollRight] = useState(false);
@@ -57,6 +57,7 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 				setTimeout(checkScroll, 300);
 			} catch (error) {
 				console.error(error);
+				setIsLoading(false);
 			}
 		};
 
