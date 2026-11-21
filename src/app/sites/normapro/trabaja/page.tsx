@@ -43,6 +43,7 @@ export default function TrabajaPage() {
                                 <li><strong>Control de Código:</strong> Valorable experiencia usando sistemas de control de código Git.</li>
                                 <li><strong>Diseño de Interfaces:</strong> Comprensión general de los principios de diseño de interfaces y experiencia de usuario.</li>
                             </ul>
+                            <a href="#candidatura" className="mt-8 inline-block font-bold underline underline-offset-4">Rellena el formulario para postular a este puesto</a>
                         </>
                     ),
                 },
@@ -85,6 +86,7 @@ export default function TrabajaPage() {
                                 <li>Experiencia en el sector tecnológico o en la consultoría estratégica.</li>
                                 <li>Conocimientos en automatización y modelado de procesos empresariales (BPM, ERP, etc.).</li>
                             </ul>
+                            <a href="#candidatura" className="mt-8 inline-block font-bold underline underline-offset-4">Rellena el formulario para postular a este puesto</a>
                         </>
                     ),
                 },
@@ -158,7 +160,9 @@ export default function TrabajaPage() {
             ]}
         />
 
-        <CandidaturaFormSection />
+        <div id="candidatura" className="scroll-mt-24">
+            <CandidaturaFormSection />
+        </div>
 
 
 
