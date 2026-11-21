@@ -29,20 +29,21 @@ const CandidaturaFormSection = () => {
   const [cvFile, setCvFile] = useState<File | null>(null);
   const [isSent, setIsSent] = useState(false);
   const [faltaCv, setFaltaCv] = useState(false);
+  const [aceptaPolitica, setAceptaPolitica] = useState(false);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const { fullName, address, email, position, phone, experienceYears, message } = formData;
+    const { fullName, email, position, phone, experienceYears, message } = formData;
     const isValid =
       fullName.trim().length > 0 &&
-      address.trim().length > 0 &&
       email.trim().length > 0 &&
       position.trim().length > 0 &&
       phone.trim().length > 0 &&
       experienceYears.trim().length > 0 &&
       message.trim().length > 0 &&
+      aceptaPolitica &&
       !!cvFile;
 
     if (!isValid) {
@@ -53,6 +54,7 @@ const CandidaturaFormSection = () => {
     // Simula envio local sin backend.
     setFormData(initialFormData);
     setCvFile(null);
+    setAceptaPolitica(false);
     if (fileInputRef.current) {
       fileInputRef.current.value = '';
     }
@@ -88,13 +90,12 @@ const CandidaturaFormSection = () => {
 
               <div>
                 <label htmlFor="cand-address" className="mb-2 block text-[15px] font-medium text-[#001B5D]">
-                  Dirección
+                  Dirección (opcional)
                 </label>
                 <input
                   id="cand-address"
                   name="address"
                   type="text"
-                  required
                   value={formData.address}
                   onChange={(event) => {
                     setFormData((prev) => ({ ...prev, address: event.target.value }));
@@ -235,6 +236,21 @@ const CandidaturaFormSection = () => {
 
             {cvFile && <p className="text-[15px] text-[#001B5D]">Archivo: {cvFile.name}</p>}
             {faltaCv && !cvFile && <p className="text-[15px] text-red-500">Adjunta tu CV para enviar la candidatura.</p>}
+
+            <label className="flex max-w-xl items-start gap-3 text-[15px] text-[#001B5D]">
+              <input
+                type="checkbox"
+                name="acepta_politica"
+                required
+                checked={aceptaPolitica}
+                onChange={(event) => {
+                  setAceptaPolitica(event.target.checked);
+                  setIsSent(false);
+                }}
+                className="mt-1"
+              />
+              <span>He leído y acepto la <a className="text-blue-600" href="/politica-de-privacidad" target="_blank" rel="noopener noreferrer">política de privacidad</a> de NormaPro.</span>
+            </label>
 
             <button
               type="submit"
