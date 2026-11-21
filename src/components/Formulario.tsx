@@ -67,6 +67,11 @@ const Formulario: React.FC<FormularioProps> = ({ onClose, zIndexClass, interes }
     e.preventDefault();
     setSubmitMessage(null);
 
+    if (!form.nombre.trim() || !form.apellidos.trim()) {
+      setSubmitMessage("Escribe tu nombre y tus apellidos.");
+      return;
+    }
+
     if (form.consulta.trim().length < 10) {
       setSubmitMessage("Cuéntanos tu consulta (mínimo 10 caracteres).");
       return;
