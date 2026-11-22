@@ -212,7 +212,7 @@ const SolutionsDropdown = ({ mobile = false, onNavigate }: Props) => {
                 onClick={() => { setSelectedSector(null); setModalOpen(true); }}
                 className="block ml-auto text-[#010D3D] text-[14px] font-mulish font-bold mt-4 text-right underline"
               >
-                Ver todas nuestras soluciones
+                Ver todos nuestros packs
               </button>
             </div>
 
