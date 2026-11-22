@@ -148,10 +148,10 @@ const SolutionsRefered = ({ sectorSlug, ambitoSlug }: Props) => {
 									{carpetas.map((carpeta, index) => (
 										<details key={carpeta.titulo} open={index === 0} className="mb-2 group">
 											<summary className="flex justify-between items-center cursor-pointer list-none py-2 px-3 font-bold text-[#010D3D]">
-												<span><FontAwesomeIcon icon={carpeta.icono} className="mr-3 text-[#00aae0]" />{carpeta.titulo} <span className="ml-2 text-[12px] text-[#7F859D]">{carpeta.soluciones.length}</span></span>
+												<span>{carpeta.titulo} <span className="ml-2 text-[12px] text-[#7F859D]">{carpeta.soluciones.length}</span></span>
 												<FontAwesomeIcon icon={faChevronDown} className="ml-4 transform group-open:rotate-180 transition" />
 											</summary>
-											<div className="ml-[22px] pl-3 border-l-2 border-[#bfe8f6]">{carpeta.soluciones.map(filaSolucion)}</div>
+											<div className="pl-3">{carpeta.soluciones.map(filaSolucion)}</div>
 										</details>
 									))}
 									{sueltas.map(filaSolucion)}

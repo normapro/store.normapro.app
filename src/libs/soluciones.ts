@@ -1,12 +1,9 @@
 // Agrupa las soluciones de un listado en carpetas por norma y por tema. El editor no guarda orden ni grupo,
 // así que el orden lo pone esta regla: carpetas de norma, resto de carpetas de más a menos soluciones y sueltas al final.
-import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-import { faBullseye, faCertificate, faFolderOpen, faScaleBalanced, faTriangleExclamation, faUsers } from "@fortawesome/free-solid-svg-icons";
 import { Solucion } from "@/types/solucion";
 
 export type CarpetaSoluciones = {
   titulo: string;
-  icono: IconDefinition;
   soluciones: Solucion[];
 };
 
@@ -14,12 +11,12 @@ export type CarpetaSoluciones = {
 const NORMA = /\b(ISO(?:\/IEC)?\s?\d{4,5}|UNE\s?\d{4,5})/i;
 
 // Carpetas por tema según palabras del nombre. La primera que encaja se queda la solución.
-const TEMAS: [RegExp, string, IconDefinition][] = [
-  [/proveedor|perfiles|roles|formación|capacitación|organigrama/i, "Personas, formación y proveedores", faUsers],
-  [/gestión del cumplimiento de|autorización ambiental/i, "Cumplimiento legal por vector ambiental", faScaleBalanced],
-  [/incidencia|reclamaci|no conformidad|satisfacción/i, "Incidencias, reclamaciones y clientes", faTriangleExclamation],
-  [/riesgo|plan de acción|objetivo|indicador|informe anual|desempeño/i, "Planificación, objetivos y seguimiento", faBullseye],
-  [/documental|requisitos normativos|biblioteca/i, "Documentación y requisitos", faFolderOpen],
+const TEMAS: [RegExp, string][] = [
+  [/proveedor|perfiles|roles|formación|capacitación|organigrama/i, "Personas, formación y proveedores"],
+  [/gestión del cumplimiento de|autorización ambiental/i, "Cumplimiento legal por vector ambiental"],
+  [/incidencia|reclamaci|no conformidad|satisfacción/i, "Incidencias, reclamaciones y clientes"],
+  [/riesgo|plan de acción|objetivo|indicador|informe anual|desempeño/i, "Planificación, objetivos y seguimiento"],
+  [/documental|requisitos normativos|biblioteca/i, "Documentación y requisitos"],
 ];
 
 const porNombre = (a: Solucion, b: Solucion) => a.description.localeCompare(b.description, "es");
@@ -31,7 +28,7 @@ const porNombre = (a: Solucion, b: Solucion) => a.description.localeCompare(b.de
  * @returns Las carpetas (primero las de norma) y las soluciones sueltas, cada grupo en orden alfabético.
  */
 export const agruparSoluciones = (soluciones: Solucion[]) => {
-  const grupos = new Map<string, { titulo: string; icono: IconDefinition; norma: boolean; soluciones: Solucion[] }>();
+  const grupos = new Map<string, { titulo: string; norma: boolean; soluciones: Solucion[] }>();
   const sueltas: Solucion[] = [];
 
   soluciones.forEach((sol) => {
@@ -42,7 +39,7 @@ export const agruparSoluciones = (soluciones: Solucion[]) => {
       sueltas.push(sol);
       return;
     }
-    const grupo = grupos.get(titulo) ?? { titulo, icono: norma ? faCertificate : tema?.[2] ?? faFolderOpen, norma: !!norma, soluciones: [] };
+    const grupo = grupos.get(titulo) ?? { titulo, norma: !!norma, soluciones: [] };
     grupo.soluciones.push(sol);
     grupos.set(titulo, grupo);
   });
@@ -52,7 +49,7 @@ export const agruparSoluciones = (soluciones: Solucion[]) => {
     .sort((a, b) => Number(b.norma) - Number(a.norma) || b.soluciones.length - a.soluciones.length)
     .forEach((grupo) => {
       if (grupo.soluciones.length < 2) sueltas.push(...grupo.soluciones);
-      else carpetas.push({ titulo: grupo.titulo, icono: grupo.icono, soluciones: [...grupo.soluciones].sort(porNombre) });
+      else carpetas.push({ titulo: grupo.titulo, soluciones: [...grupo.soluciones].sort(porNombre) });
     });
 
   return { carpetas, sueltas: sueltas.sort(porNombre) };
