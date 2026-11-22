@@ -144,7 +144,7 @@ const SolutionsRefered = ({ sectorSlug, ambitoSlug }: Props) => {
 							</div>
 							<div className="mt-8">
 								<h3 className="mb-4 text-[#7F859D] font-semibold">Otras soluciones que podrían interesarte <span className="font-normal">({soluciones.length})</span></h3>
-								<div className="md:max-h-[520px] md:overflow-y-auto md:pr-2">
+								<div className="md:max-h-[616px] md:overflow-y-auto md:pr-2">
 									{carpetas.map((carpeta, index) => (
 										<details key={carpeta.titulo} open={index === 0} className="mb-2 group bg-white shadow rounded-lg">
 											<summary className="flex justify-between items-center cursor-pointer list-none py-3 px-3 font-bold text-[#010D3D]">
