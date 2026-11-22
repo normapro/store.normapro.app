@@ -218,7 +218,7 @@ const SolutionsDropdown = ({ mobile = false, onNavigate }: Props) => {
                 href="/soluciones/all"
                 className="block text-[#010D3D] text-[14px] font-mulish font-bold mt-4 text-right underline"
               >
-                Ver todos nuestros packs
+                Ver todas nuestras soluciones
               </Link>
             </div>
 
