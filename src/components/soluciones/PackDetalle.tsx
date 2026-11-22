@@ -36,11 +36,14 @@ const PackDetalle = ({ pack, ambito, breadcrumbData, testimonios, error }: Props
           <Breadcrumb breadcrumb={breadcrumbData} />
         </section>
 
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-16 mt-10">
-          <div className="lg:col-span-2">
+        {/* Cabecera, contenido y caja de contacto: en móvil la caja va justo bajo la cabecera */}
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-x-16 gap-y-10 lg:gap-y-0 mt-10">
+          <div className="lg:col-span-2 lg:row-start-1">
             <h1 className="text-[32px] text-[#010D3D] font-black">{pack.description}</h1>
-            <h2 className="text-[24px] text-[#010D3D] font-bold">{pack.title}</h2>
-            <h3 className="text-[18px] text-[#7F859D] mt-2">{pack.subtitle}</h3>
+            <h2 className="text-[18px] text-[#7F859D] mt-2">{pack.subtitle}</h2>
+          </div>
+
+          <div className="order-2 lg:order-none lg:col-span-2 lg:row-start-2">
 
             {pack.problemaTitle && (
               <div className="mt-8">
@@ -122,7 +125,7 @@ const PackDetalle = ({ pack, ambito, breadcrumbData, testimonios, error }: Props
             </div>
           </div>
 
-          <div className="lg:col-span-1">
+          <div className="order-1 lg:order-none lg:col-start-3 lg:row-start-1 lg:row-span-2">
             <div className="sticky top-20 space-y-6">
               <div className="bg-[#f2f2f5] p-6 rounded-lg shadow">
                 <h3 className="text-[16px] text-[#010D3D] font-bold">{pack.firstCtaPragma}</h3>
