@@ -44,9 +44,9 @@ export default function CookieBanner({ policyHref }: Props) {
       role="dialog"
       aria-modal="false"
       aria-labelledby="cookie-banner-title"
-      className="fixed inset-x-0 bottom-0 z-[1000] p-4 sm:p-6"
+      className="fixed inset-x-0 bottom-0 sm:left-auto z-[1000] p-4 sm:p-6"
     >
-      <div className="max-w-4xl mx-auto bg-white text-[#010d3d] rounded-2xl shadow-[0_10px_40px_rgba(1,13,61,0.25)] border border-gray-200 p-5 sm:p-6">
+      <div className="sm:w-[400px] bg-white text-[#010d3d] rounded-2xl shadow-[0_10px_40px_rgba(1,13,61,0.25)] border border-gray-200 p-5 sm:p-6">
         <h2 id="cookie-banner-title" className="text-lg font-extrabold">
           {showSettings ? "Configurar cookies" : "Usamos cookies"}
         </h2>
@@ -106,7 +106,7 @@ export default function CookieBanner({ policyHref }: Props) {
           </div>
         )}
 
-        <div className="mt-4 flex flex-col sm:flex-row sm:justify-end gap-3">
+        <div className="mt-4 flex flex-col gap-2">
           {showSettings ? (
             <button
               type="button"
