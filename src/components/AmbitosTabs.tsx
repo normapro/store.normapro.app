@@ -285,7 +285,7 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 												<span><FontAwesomeIcon icon={carpeta.icono} className="mr-3 text-[#00aae0]" />{carpeta.titulo} <span className="ml-2 text-[12px] text-[#7F859D]">{carpeta.soluciones.length}</span></span>
 												<FontAwesomeIcon icon={faChevronDown} className="ml-4 transform group-open:rotate-180 transition" />
 											</summary>
-											<div className="pl-6">{carpeta.soluciones.map(filaSolucion)}</div>
+											<div className="ml-[22px] pl-3 border-l-2 border-[#bfe8f6]">{carpeta.soluciones.map(filaSolucion)}</div>
 										</details>
 									))}
 									{sueltas.map(filaSolucion)}
