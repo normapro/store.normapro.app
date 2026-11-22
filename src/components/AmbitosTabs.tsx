@@ -7,8 +7,9 @@ import { Solucion } from "@/types/solucion";
 import { ItemListPack } from "@/types/pack";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library, IconPrefix, IconName, IconProp } from "@fortawesome/fontawesome-svg-core";
-import { fas, faChevronLeft, faChevronRight, faUserTie } from "@fortawesome/free-solid-svg-icons";
+import { fas, faChevronLeft, faChevronRight, faChevronDown, faUserTie } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import { agruparSoluciones } from "@/libs/soluciones";
 import { AnimatePresence, motion } from "framer-motion";
 
 // Agregamos los iconos a la librería
@@ -26,9 +27,9 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 	const [packs, setPacks] = useState<ItemListPack[]>([]);
 	const [selectedSlug, setSelectedSlug] = useState<string>("all");
 	const [isLoading, setIsLoading] = useState(true);
-	const containerRef = useRef<HTMLDivElement>(null);
-	const [canScrollLeft, setCanScrollLeft] = useState(false);
-	const [canScrollRight, setCanScrollRight] = useState(false);
+	// Menú «Más ámbitos»: "lg" en pantallas grandes, "sm" en móvil y tableta
+	const [menuMas, setMenuMas] = useState<"lg" | "sm" | null>(null);
+	const menuMasRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		const fetchAmbitos = async () => {
@@ -53,8 +54,6 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 					fetchSoluciones(data[0]?.slug, sectorSlug);
 				}
 				*/
-				// 🔥 Forzar revisión de scroll después de cargar datos
-				setTimeout(checkScroll, 300);
 			} catch (error) {
 				console.error(error);
 				setIsLoading(false);
@@ -115,38 +114,22 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 	};
 
 
-	// Función para mover el scroll horizontalmente
-	const scroll = (direction: "left" | "right") => {
-		if (containerRef.current) {
-			const scrollAmount = 200;
-			containerRef.current.scrollBy({
-				left: direction === "left" ? -scrollAmount : scrollAmount,
-				behavior: "smooth",
-			});
-			setTimeout(checkScroll, 300); // 🔥 Verificar después de hacer scroll
-		}
-	};
-
-	// Verifica si se puede hacer scroll en cada dirección
-	const checkScroll = () => {
-		if (containerRef.current) {
-			const { scrollLeft, scrollWidth, clientWidth } = containerRef.current;
-			setCanScrollLeft(scrollLeft > 0);
-			setCanScrollRight(scrollLeft < scrollWidth - clientWidth);
-		}
-	};
-
+	// Cierra el menú «Más ámbitos» al pulsar fuera o con Escape
 	useEffect(() => {
-		checkScroll();
-		if (containerRef.current) {
-			containerRef.current.addEventListener("scroll", checkScroll);
-		}
-		return () => {
-			if (containerRef.current) {
-				containerRef.current.removeEventListener("scroll", checkScroll);
-			}
+		if (!menuMas) return;
+		const alPulsar = (e: MouseEvent) => {
+			if (menuMasRef.current && !menuMasRef.current.contains(e.target as Node)) setMenuMas(null);
 		};
-	}, [ambitos]); // 🔥 Se ejecuta cada vez que cambian los ámbitos
+		const alTeclear = (e: KeyboardEvent) => {
+			if (e.key === "Escape") setMenuMas(null);
+		};
+		document.addEventListener("mousedown", alPulsar);
+		document.addEventListener("keydown", alTeclear);
+		return () => {
+			document.removeEventListener("mousedown", alPulsar);
+			document.removeEventListener("keydown", alTeclear);
+		};
+	}, [menuMas]);
 
 	// Prepara el enlace para las soluciones: cada una con su propio ámbito
 	let slugSector: string = "";
@@ -154,62 +137,93 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 		slugSector = `/sector/${sectorSlug}`;
 	}
 
+	const { carpetas, sueltas } = agruparSoluciones(soluciones);
+
+	// Barra de ámbitos: 5 a la vista en pantalla grande (el activo sustituye al quinto si no está) y el resto en «Más ámbitos»
+	const ambitoActivo = ambitos.find((ambito) => ambito.slug === selectedSlug);
+	const visibles = ambitos.slice(0, 5);
+	if (ambitoActivo && !visibles.includes(ambitoActivo)) visibles[visibles.length - 1] = ambitoActivo;
+	const restoGrande = ambitos.filter((ambito) => !visibles.includes(ambito));
+	const restoMovil = ambitos.filter((ambito) => ambito !== ambitoActivo);
+	const restoMenu = menuMas === "lg" ? restoGrande : restoMovil;
+
+	const pestana = (ambito: Ambito) => (
+		<div key={ambito.id_ambito} className="flex flex-col items-center min-w-0">
+			<button
+				onClick={() => changeParams(ambito.slug)}
+				className={`max-w-full truncate px-4 py-3 font-bold text-[14px] rounded-t-lg whitespace-nowrap transition ${selectedSlug === ambito.slug ? "bg-[#f2f2f5] text-[#010D3D]" : "bg-white text-[#010D3D] hover:bg-[#f2f2f5]"
+					}`}
+			>
+				{ambito.description} <span className="text-[12px] text-[#7F859D] opacity-50 ml-[8px]">{ambito.total_soluciones}</span>
+			</button>
+			<div
+				className={`h-[3px] w-full  ${selectedSlug === ambito.slug ? "bg-[#010D3D]" : "bg-[#f2f2f5]"
+					}`}
+			></div>
+		</div>
+	);
+
+	const botonMas = (tipo: "lg" | "sm", texto: string, total: number) => (
+		<div className="flex flex-col items-center shrink-0">
+			<button
+				type="button"
+				aria-expanded={menuMas === tipo}
+				onClick={() => setMenuMas(menuMas === tipo ? null : tipo)}
+				className="px-4 py-3 font-bold text-[14px] rounded-t-lg whitespace-nowrap transition bg-white text-[#010D3D] hover:bg-[#f2f2f5]"
+			>
+				{texto} ({total})
+				<FontAwesomeIcon icon={faChevronDown} className={`ml-2 w-3 h-3 transition ${menuMas === tipo ? "rotate-180" : ""}`} />
+			</button>
+			<div className="h-[3px] w-full bg-[#f2f2f5]"></div>
+		</div>
+	);
+
+	const filaSolucion = (sol: Solucion) => {
+		const iconParts = sol.uriIcon.split(" ");
+		const icon: IconProp = iconParts.length === 2 ? (iconParts as [IconPrefix, IconName]) : (["fas", "fa-question"] as unknown as [IconPrefix, IconName]);
+		return (
+			<Link key={sol.id_solucion} href={`/soluciones/${sol.slug_ambito ?? ambitoSlug ?? "all"}${slugSector}/${sol.slug}`} rel="noopener noreferrer">
+				<div className="py-2 px-3 bg-white shadow rounded-lg flex items-center mb-2">
+					<FontAwesomeIcon icon={icon} className="w-6 h-6 text-[#010D3D] mr-4" />
+					<div>
+						<h3 className="font-bold text-[#010D3D]">{sol.description}</h3>
+						<small>{sol.subtitle}</small>
+					</div>
+				</div>
+			</Link>
+		);
+	};
+
 	return (
 		<div className="w-full">
 			<div className="max-w-7xl mx-auto px-6">
-				{/* Contenedor de la TAB con los botones de desplazamiento */}
-				<div className="relative w-full flex items-center">
-					{/* Botón Izquierdo */}
-					{canScrollLeft && (
-						<button
-							onClick={() => scroll("left")}
-
-							className="absolute left-0 z-10 bg-white shadow-lg p-3 rounded-full transform -translate-y-1/2 top-1/2"
-						>
-							<FontAwesomeIcon icon={faChevronLeft} className="text-gray-600 w-5 h-5" />
-						</button>
-					)}
-
-					{/* Tabs con scroll horizontal */}
-					<div
-						ref={containerRef}
-						className="overflow-x-auto flex w-full scrollbar-hide"
-						style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-					>
-						{ambitos
-							//.filter((ambito) => (ambito.total_soluciones && ambito.total_soluciones > 0))
-							.map((ambito) => (
-								<div key={ambito.id_ambito} className="flex flex-col items-center">
-									<button
-										onClick={() => {
-											changeParams(ambito.slug);
-											/*
-											setSelectedSlug(ambito.slug);
-											fetchSoluciones(ambito.slug, sectorSlug);
-											fetchPacks(ambito.slug, sectorSlug);
-											*/
-										}}
-										className={`px-4 py-3 font-bold text-[14px] rounded-t-lg whitespace-nowrap transition ${selectedSlug === ambito.slug ? "bg-[#f2f2f5] text-[#010D3D]" : "bg-white text-[#010D3D] hover:bg-[#f2f2f5]"
-											}`}
-									>
-										{ambito.description} <span className="text-[12px] text-[#7F859D] opacity-50 ml-[8px]">{ambito.total_soluciones}</span>
-									</button>
-									<div
-										className={`h-[3px] w-full  ${selectedSlug === ambito.slug ? "bg-[#010D3D]" : "bg-[#f2f2f5]"
-											}`}
-									></div>
-								</div>
-							))}
+				{/* Barra de ámbitos en una fila, sin desplazamiento: lo que no cabe va a «Más ámbitos» */}
+				<div ref={menuMasRef} className="relative">
+					<div className="hidden lg:flex w-full">
+						{visibles.map(pestana)}
+						{restoGrande.length > 0 && botonMas("lg", "Más ámbitos", restoGrande.length)}
 					</div>
-
-					{/* Botón Derecho */}
-					{canScrollRight && (
-						<button
-							onClick={() => scroll("right")}
-							className="absolute right-0 z-10 bg-white shadow-lg p-3 rounded-full transform -translate-y-1/2 top-1/2"
-						>
-							<FontAwesomeIcon icon={faChevronRight} className="text-gray-600 w-5 h-5" />
-						</button>
+					<div className="flex lg:hidden w-full">
+						{ambitoActivo && pestana(ambitoActivo)}
+						{restoMovil.length > 0 && botonMas("sm", "Más", restoMovil.length)}
+					</div>
+					{menuMas && (
+						<div className="absolute right-0 top-full z-20 mt-1 w-full max-w-[360px] bg-white rounded-lg shadow-lg py-2">
+							{restoMenu.map((ambito) => (
+								<button
+									key={ambito.id_ambito}
+									type="button"
+									onClick={() => {
+										setMenuMas(null);
+										changeParams(ambito.slug);
+									}}
+									className="w-full flex justify-between items-center gap-4 px-4 py-2 text-left font-bold text-[14px] text-[#010D3D] hover:bg-[#f2f2f5]"
+								>
+									{ambito.description}
+									<span className="text-[12px] text-[#7F859D] opacity-50">{ambito.total_soluciones}</span>
+								</button>
+							))}
+						</div>
 					)}
 				</div>
 			</div>
@@ -227,27 +241,8 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 							animate={{ opacity: 1, y: 0 }}
 							exit={{ opacity: 0, y: -10 }}
 							>
-						<div className="grid grid-cols-2 md:grid-cols-21 gap-10">
-							<div className="col-span-10 mt-8">
-								<h3 className="mb-4 text-[#7F859D] font-semibold">Soluciones</h3>
-
-								{soluciones.map((sol) => {
-									const iconParts = sol.uriIcon.split(" ");
-									const icon: IconProp = iconParts.length === 2 ? (iconParts as [IconPrefix, IconName]) : (["fas", "fa-question"] as unknown as [IconPrefix, IconName]);
-									return (
-										<Link key={sol.id_solucion} href={`/soluciones/${sol.slug_ambito ?? ambitoSlug ?? "all"}${slugSector}/${sol.slug}`} rel="noopener noreferrer">
-											<div className="py-2 px-3 bg-white shadow rounded-lg flex items-center mb-2">
-												<FontAwesomeIcon icon={icon} className="w-6 h-6 text-[#010D3D] mr-4" />
-												<div>
-													<h3 className="font-bold text-[#010D3D]">{sol.description}</h3>
-													<small>{sol.subtitle}</small>
-												</div>
-											</div>
-										</Link>
-									);
-								})}
-							</div>
-							<div className="col-span-10 mt-8">
+						<div className="grid grid-cols-1 md:grid-cols-2 md:gap-10">
+							<div className="mt-8">
 								<h3 className="mb-4 text-[#7F859D] font-semibold">Packs</h3>
 								{packs.map((pack) => {
 									return (
@@ -289,6 +284,21 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 									);
 								}
 								)}
+							</div>
+							<div className="mt-8">
+								<h3 className="mb-4 text-[#7F859D] font-semibold">Soluciones <span className="font-normal">({soluciones.length})</span></h3>
+								<div className="md:max-h-[520px] md:overflow-y-auto md:pr-2">
+									{carpetas.map((carpeta, index) => (
+										<details key={carpeta.titulo} open={index === 0} className="mb-2 group">
+											<summary className="flex justify-between items-center cursor-pointer list-none py-2 px-3 font-bold text-[#010D3D]">
+												<span>{carpeta.titulo} <span className="ml-2 text-[12px] text-[#7F859D]">{carpeta.soluciones.length}</span></span>
+												<FontAwesomeIcon icon={faChevronDown} className="ml-4 transform group-open:rotate-180 transition" />
+											</summary>
+											{carpeta.soluciones.map(filaSolucion)}
+										</details>
+									))}
+									{sueltas.map(filaSolucion)}
+								</div>
 							</div>
 						</div>
 						</motion.div>
