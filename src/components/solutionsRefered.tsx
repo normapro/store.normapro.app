@@ -7,8 +7,9 @@ import { Solucion } from "@/types/solucion";
 import { ItemListPack } from "@/types/pack";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library, IconPrefix, IconName, IconProp } from "@fortawesome/fontawesome-svg-core";
-import { fas, faChevronLeft, faChevronRight, faUserTie } from "@fortawesome/free-solid-svg-icons";
+import { fas, faChevronLeft, faChevronRight, faChevronDown, faUserTie } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import { agruparSoluciones } from "@/libs/soluciones";
 
 // Agregamos los iconos a la librería
 library.add(fas, faChevronLeft, faChevronRight);
@@ -71,6 +72,24 @@ const SolutionsRefered = ({ sectorSlug, ambitoSlug }: Props) => {
         fetchSoluciones(ambitoSlug, sectorSlug);
         fetchPacks(ambitoSlug, sectorSlug);
     }, [ambitoSlug, sectorSlug]);
+
+	const { carpetas, sueltas } = agruparSoluciones(soluciones);
+
+	const filaSolucion = (sol: Solucion) => {
+		const iconParts = sol.uriIcon.split(" ") as [IconPrefix, IconName];
+		const icon: IconProp | [IconPrefix, IconName] = iconParts.length === 2 ? (iconParts as [IconPrefix, IconName]) : (["fas", "fa-question"] as unknown as [IconPrefix, IconName]);
+		return (
+			<Link key={sol.id_solucion} href={`/soluciones/${sol.slug_ambito}/${sol.slug}`} rel="noopener noreferrer">
+				<div className="py-2 px-3 bg-white shadow rounded-lg flex items-center mb-2">
+					<FontAwesomeIcon icon={icon} className="w-6 h-6 text-[#010D3D] mr-4" />
+					<div>
+						<h3 className="font-bold text-[#010D3D]">{sol.description}</h3>
+					</div>
+				</div>
+			</Link>
+		);
+	};
+
 	return (
 		<div className="w-full">
 			{/* 🔥 Lista de Soluciones debajo de la TAB */}
@@ -79,26 +98,8 @@ const SolutionsRefered = ({ sectorSlug, ambitoSlug }: Props) => {
 					{isLoading ? (						
 						<p className="text-center text-gray-500">Cargando soluciones...</p>
 					) : soluciones.length > 0 ? (
-						<div className="grid grid-cols-21 gap-10">
-							<div className="col-span-10 mt-8">
-								<h3 className="mb-4 text-[#7F859D] font-semibold">Otras soluciones que podrían interesarte</h3>
-
-								{soluciones.map((sol) => {
-									const iconParts = sol.uriIcon.split(" ") as [IconPrefix, IconName];
-									const icon: IconProp | [IconPrefix, IconName] = iconParts.length === 2 ? (iconParts as [IconPrefix, IconName]) : (["fas", "fa-question"] as unknown as [IconPrefix, IconName]);
-									return (
-										<Link key={sol.id_solucion} href={`/soluciones/${sol.slug_ambito}/${sol.slug}`} rel="noopener noreferrer">
-											<div className="py-2 px-3 bg-white shadow rounded-lg flex items-center mb-2">
-												<FontAwesomeIcon icon={icon} className="w-6 h-6 text-[#010D3D] mr-4" />
-												<div>
-													<h3 className="font-bold text-[#010D3D]">{sol.description}</h3>
-												</div>
-											</div>
-										</Link>
-									);
-								})}
-							</div>
-							<div className="col-span-10 mt-8">
+						<div className="grid grid-cols-1 md:grid-cols-2 md:gap-10">
+							<div className="mt-8">
 								<h3 className="mb-4 text-[#7F859D] font-semibold">Packs</h3>
 								{packs.map((pack) => {
 									return (
@@ -140,6 +141,21 @@ const SolutionsRefered = ({ sectorSlug, ambitoSlug }: Props) => {
 									);
 								}
 								)}
+							</div>
+							<div className="mt-8">
+								<h3 className="mb-4 text-[#7F859D] font-semibold">Otras soluciones que podrían interesarte <span className="font-normal">({soluciones.length})</span></h3>
+								<div className="md:max-h-[520px] md:overflow-y-auto md:pr-2">
+									{carpetas.map((carpeta, index) => (
+										<details key={carpeta.titulo} open={index === 0} className="mb-2 group">
+											<summary className="flex justify-between items-center cursor-pointer list-none py-2 px-3 font-bold text-[#010D3D]">
+												<span>{carpeta.titulo} <span className="ml-2 text-[12px] text-[#7F859D]">{carpeta.soluciones.length}</span></span>
+												<FontAwesomeIcon icon={faChevronDown} className="ml-4 transform group-open:rotate-180 transition" />
+											</summary>
+											{carpeta.soluciones.map(filaSolucion)}
+										</details>
+									))}
+									{sueltas.map(filaSolucion)}
+								</div>
 							</div>
 						</div>
 					) : (
