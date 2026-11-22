@@ -280,12 +280,12 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 								<h3 className="mb-4 text-[#7F859D] font-semibold">Soluciones <span className="font-normal">({soluciones.length})</span></h3>
 								<div className="md:max-h-[520px] md:overflow-y-auto md:pr-2">
 									{carpetas.map((carpeta, index) => (
-										<details key={carpeta.titulo} open={index === 0} className="mb-2 group">
-											<summary className="flex justify-between items-center cursor-pointer list-none py-2 px-3 font-bold text-[#010D3D]">
+										<details key={carpeta.titulo} open={index === 0} className="mb-2 group bg-white shadow rounded-lg">
+											<summary className="flex justify-between items-center cursor-pointer list-none py-3 px-3 font-bold text-[#010D3D]">
 												<span>{carpeta.titulo} <span className="ml-2 text-[12px] text-[#7F859D]">{carpeta.soluciones.length}</span></span>
 												<FontAwesomeIcon icon={faChevronDown} className="ml-4 transform group-open:rotate-180 transition" />
 											</summary>
-											<div className="pl-3">{carpeta.soluciones.map(filaSolucion)}</div>
+											<div className="pl-6 pr-3 pb-1 [&>a>div]:bg-[#f2f2f5] [&>a>div]:shadow-none">{carpeta.soluciones.map(filaSolucion)}</div>
 										</details>
 									))}
 									{sueltas.map(filaSolucion)}
