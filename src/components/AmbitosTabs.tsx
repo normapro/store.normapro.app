@@ -27,8 +27,7 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 	const [packs, setPacks] = useState<ItemListPack[]>([]);
 	const [selectedSlug, setSelectedSlug] = useState<string>("all");
 	const [isLoading, setIsLoading] = useState(true);
-	// Menú «Más ámbitos»: "lg" en pantallas grandes, "sm" en móvil y tableta
-	const [menuMas, setMenuMas] = useState<"lg" | "sm" | null>(null);
+	const [menuMas, setMenuMas] = useState(false);
 	const menuMasRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
@@ -118,10 +117,10 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 	useEffect(() => {
 		if (!menuMas) return;
 		const alPulsar = (e: MouseEvent) => {
-			if (menuMasRef.current && !menuMasRef.current.contains(e.target as Node)) setMenuMas(null);
+			if (menuMasRef.current && !menuMasRef.current.contains(e.target as Node)) setMenuMas(false);
 		};
 		const alTeclear = (e: KeyboardEvent) => {
-			if (e.key === "Escape") setMenuMas(null);
+			if (e.key === "Escape") setMenuMas(false);
 		};
 		document.addEventListener("mousedown", alPulsar);
 		document.addEventListener("keydown", alTeclear);
@@ -139,19 +138,17 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 
 	const { carpetas, sueltas } = agruparSoluciones(soluciones);
 
-	// Barra de ámbitos: 5 a la vista en pantalla grande (el activo sustituye al quinto si no está) y el resto en «Más ámbitos»
+	// Barra de ámbitos: 5 a la vista (el activo sustituye al quinto si no está) y el resto en «Más ámbitos». En móvil la fila se desliza de lado
 	const ambitoActivo = ambitos.find((ambito) => ambito.slug === selectedSlug);
 	const visibles = ambitos.slice(0, 5);
 	if (ambitoActivo && !visibles.includes(ambitoActivo)) visibles[visibles.length - 1] = ambitoActivo;
-	const restoGrande = ambitos.filter((ambito) => !visibles.includes(ambito));
-	const restoMovil = ambitos.filter((ambito) => ambito !== ambitoActivo);
-	const restoMenu = menuMas === "lg" ? restoGrande : restoMovil;
+	const resto = ambitos.filter((ambito) => !visibles.includes(ambito));
 
 	const pestana = (ambito: Ambito) => (
-		<div key={ambito.id_ambito} className="flex flex-col items-center min-w-0">
+		<div key={ambito.id_ambito} className="flex flex-col items-center shrink-0">
 			<button
 				onClick={() => changeParams(ambito.slug)}
-				className={`max-w-full truncate px-4 py-3 font-bold text-[14px] rounded-t-lg whitespace-nowrap transition ${selectedSlug === ambito.slug ? "bg-[#f2f2f5] text-[#010D3D]" : "bg-white text-[#010D3D] hover:bg-[#f2f2f5]"
+				className={`px-4 py-3 font-bold text-[14px] rounded-t-lg whitespace-nowrap transition ${selectedSlug === ambito.slug ? "bg-[#f2f2f5] text-[#010D3D]" : "bg-white text-[#010D3D] hover:bg-[#f2f2f5]"
 					}`}
 			>
 				{ambito.description} <span className="text-[12px] text-[#7F859D] opacity-50 ml-[8px]">{ambito.total_soluciones}</span>
@@ -160,21 +157,6 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 				className={`h-[3px] w-full  ${selectedSlug === ambito.slug ? "bg-[#010D3D]" : "bg-[#f2f2f5]"
 					}`}
 			></div>
-		</div>
-	);
-
-	const botonMas = (tipo: "lg" | "sm", texto: string, total: number) => (
-		<div className="flex flex-col items-center shrink-0">
-			<button
-				type="button"
-				aria-expanded={menuMas === tipo}
-				onClick={() => setMenuMas(menuMas === tipo ? null : tipo)}
-				className="px-4 py-3 font-bold text-[14px] rounded-t-lg whitespace-nowrap transition bg-white text-[#010D3D] hover:bg-[#f2f2f5]"
-			>
-				{texto} ({total})
-				<FontAwesomeIcon icon={faChevronDown} className={`ml-2 w-3 h-3 transition ${menuMas === tipo ? "rotate-180" : ""}`} />
-			</button>
-			<div className="h-[3px] w-full bg-[#f2f2f5]"></div>
 		</div>
 	);
 
@@ -199,22 +181,31 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 			<div className="max-w-7xl mx-auto px-6">
 				{/* Barra de ámbitos en una fila, sin desplazamiento: lo que no cabe va a «Más ámbitos» */}
 				<div ref={menuMasRef} className="relative">
-					<div className="hidden lg:flex w-full">
+					<div className="flex w-full overflow-x-auto lg:overflow-visible" style={{ scrollbarWidth: "none" }}>
 						{visibles.map(pestana)}
-						{restoGrande.length > 0 && botonMas("lg", "Más ámbitos", restoGrande.length)}
-					</div>
-					<div className="flex lg:hidden w-full">
-						{ambitoActivo && pestana(ambitoActivo)}
-						{restoMovil.length > 0 && botonMas("sm", "Más", restoMovil.length)}
+						{resto.length > 0 && (
+							<div className="flex flex-col items-center shrink-0">
+								<button
+									type="button"
+									aria-expanded={menuMas}
+									onClick={() => setMenuMas(!menuMas)}
+									className="px-4 py-3 font-bold text-[14px] rounded-t-lg whitespace-nowrap transition bg-white text-[#010D3D] hover:bg-[#f2f2f5]"
+								>
+									Más ámbitos ({resto.length})
+									<FontAwesomeIcon icon={faChevronDown} className={`ml-2 w-3 h-3 transition ${menuMas ? "rotate-180" : ""}`} />
+								</button>
+								<div className="h-[3px] w-full bg-[#f2f2f5]"></div>
+							</div>
+						)}
 					</div>
 					{menuMas && (
 						<div className="absolute right-0 top-full z-20 mt-1 w-full max-w-[360px] bg-white rounded-lg shadow-lg py-2">
-							{restoMenu.map((ambito) => (
+							{resto.map((ambito) => (
 								<button
 									key={ambito.id_ambito}
 									type="button"
 									onClick={() => {
-										setMenuMas(null);
+										setMenuMas(false);
 										changeParams(ambito.slug);
 									}}
 									className="w-full flex justify-between items-center gap-4 px-4 py-2 text-left font-bold text-[14px] text-[#010D3D] hover:bg-[#f2f2f5]"
@@ -291,10 +282,10 @@ const AmbitosTabs = ({ sectorSlug, ambitoSlug }: Props) => {
 									{carpetas.map((carpeta, index) => (
 										<details key={carpeta.titulo} open={index === 0} className="mb-2 group">
 											<summary className="flex justify-between items-center cursor-pointer list-none py-2 px-3 font-bold text-[#010D3D]">
-												<span>{carpeta.titulo} <span className="ml-2 text-[12px] text-[#7F859D]">{carpeta.soluciones.length}</span></span>
+												<span><FontAwesomeIcon icon={carpeta.icono} className="mr-3 text-[#00aae0]" />{carpeta.titulo} <span className="ml-2 text-[12px] text-[#7F859D]">{carpeta.soluciones.length}</span></span>
 												<FontAwesomeIcon icon={faChevronDown} className="ml-4 transform group-open:rotate-180 transition" />
 											</summary>
-											{carpeta.soluciones.map(filaSolucion)}
+											<div className="pl-6">{carpeta.soluciones.map(filaSolucion)}</div>
 										</details>
 									))}
 									{sueltas.map(filaSolucion)}
