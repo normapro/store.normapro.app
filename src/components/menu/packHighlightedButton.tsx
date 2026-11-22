@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserTie } from "@fortawesome/free-solid-svg-icons";
 import { Solucion } from "../../types/solucion";
 
 const PackHighlightedButton = ({ solucion }: { solucion: Solucion }) => {
@@ -28,6 +30,7 @@ const PackHighlightedButton = ({ solucion }: { solucion: Solucion }) => {
         <div className="flex-1">
           <h4 className="font-mulish text-[14px] text-[#010D3D] font-bold leading-[20px]">
             {solucion.descriptionForHighLight || solucion.description}
+            {solucion.consultoriaTitle && <FontAwesomeIcon icon={faUserTie} className="ml-2 text-[#010D3D]" title="Incluye consultoría" />}
           </h4>
         </div>
       </div>

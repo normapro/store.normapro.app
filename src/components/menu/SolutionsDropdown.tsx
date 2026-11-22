@@ -49,6 +49,9 @@ const SolutionsDropdown = ({ mobile = false, onNavigate }: Props) => {
     fetchData();
   }, []);
 
+  // La leyenda «Incluyen consultoría» solo tiene sentido si algún destacado la incluye
+  const conConsultoria = soluciones.some((solucion) => solucion.consultoriaTitle);
+
   if (isLoading) {
     return <p className={mobile ? "py-2 text-sm text-gray-500" : "text-center text-gray-700"}>Cargando...</p>;
   }
@@ -109,12 +112,14 @@ const SolutionsDropdown = ({ mobile = false, onNavigate }: Props) => {
           <div>
             <div className="flex items-center justify-between mb-2">
               <p className="text-[12px] text-[#010D3D] opacity-50 font-mulish">
-                Soluciones destacadas con servicio de consultoría
+                Packs destacados con servicio de consultoría
               </p>
-              <span className="text-[12px] text-gray-500 whitespace-nowrap ml-2 shrink-0">
-                <FontAwesomeIcon icon={faUserTie} className="mr-1 text-[#010D3D]" />
-                Incluye consultoría
-              </span>
+              {conConsultoria && (
+                <span className="text-[12px] text-gray-500 whitespace-nowrap ml-2 shrink-0">
+                  <FontAwesomeIcon icon={faUserTie} className="mr-1 text-[#010D3D]" />
+                  Incluyen consultoría
+                </span>
+              )}
             </div>
             <div className="flex flex-col gap-2">
               {soluciones.map((solucion, index) => (
@@ -129,7 +134,7 @@ const SolutionsDropdown = ({ mobile = false, onNavigate }: Props) => {
               onClick={onNavigate}
               className="block text-[#010D3D] text-[13px] font-mulish font-bold mt-3 underline text-right"
             >
-              Ver todas nuestras soluciones
+              Ver todos nuestros packs
             </Link>
           </div>
 
@@ -193,13 +198,15 @@ const SolutionsDropdown = ({ mobile = false, onNavigate }: Props) => {
             <div className="col-span-23">
               <div className="grid grid-cols-2">
                 <h3 className="mb-4 text-[14px] text-[#010D3D] opacity-50 font-mulish leading-[20px]">
-                  Soluciones destacadas con servicio de consultoría
+                  Packs destacados con servicio de consultoría
                 </h3>
                 <h3 className="mb-4 text-[14px] text-[#010D3D] opacity-50 font-mulish leading-[20px] text-right">
-                  <span className="ml-2 text-gray-500 text-sm">
-                    <FontAwesomeIcon icon={faUserTie} className="mr-2 text-[20px] text-[#010D3D] opacity-100" />
-                    Incluye consultoría
-                  </span>
+                  {conConsultoria && (
+                    <span className="ml-2 text-gray-500 text-sm">
+                      <FontAwesomeIcon icon={faUserTie} className="mr-2 text-[20px] text-[#010D3D] opacity-100" />
+                      Incluyen consultoría
+                    </span>
+                  )}
                 </h3>
               </div>
               <div className="grid grid-cols-2 gap-4">
@@ -211,7 +218,7 @@ const SolutionsDropdown = ({ mobile = false, onNavigate }: Props) => {
                 href="/soluciones/all"
                 className="block text-[#010D3D] text-[14px] font-mulish font-bold mt-4 text-right underline"
               >
-                Ver todas nuestras soluciones
+                Ver todos nuestros packs
               </Link>
             </div>
 
