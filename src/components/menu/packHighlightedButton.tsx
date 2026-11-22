@@ -27,7 +27,7 @@ const PackHighlightedButton = ({ solucion }: { solucion: Solucion }) => {
         {/* Texto de la solución */}
         <div className="flex-1">
           <h4 className="font-mulish text-[14px] text-[#010D3D] font-bold leading-[20px]">
-            {solucion.description}
+            {solucion.descriptionForHighLight || solucion.description}
           </h4>
         </div>
       </div>
