@@ -218,10 +218,12 @@ export default function NoticiaDetalle({ noticia }: Props) {
 										<div className="mt-3 h-[2px] bg-[#d7e1e9]" />
 										<div className="mt-4 grid grid-cols-2">
 											<div className="col-span-1">
-												<span className="ml-2 text-gray-500 text-sm">
-													<FontAwesomeIcon icon={faUserTie} className="mr-2 text-[20px] text-[#010D3D] opacity-100" />
-													Incluye consultoría
-												</span>
+												{packRelacionado.consultoriaTitle && (
+													<span className="ml-2 text-gray-500 text-sm">
+														<FontAwesomeIcon icon={faUserTie} className="mr-2 text-[20px] text-[#010D3D] opacity-100" />
+														Incluye consultoría
+													</span>
+												)}
 											</div>
 											<div className="col-span-1 flex justify-end pr-4">
 												<p className="text-[15px] underline font-extrabold text-[#00aae0]">Saber más</p>
