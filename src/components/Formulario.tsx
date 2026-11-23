@@ -2,6 +2,7 @@
 import React from "react";
 import API_ENDPOINTS from "@/config/api";
 import HoneypotField from "@/components/shared/HoneypotField";
+import { EMPRESA } from "@/libs/empresa";
 
 type FormularioProps = {
   onClose: () => void;
@@ -158,8 +159,14 @@ const Formulario: React.FC<FormularioProps> = ({ onClose, zIndexClass, interes }
             <h2 id="formulario-titulo" className="mb-2 text-left text-xl font-extrabold text-gray-800 sm:text-2xl">
               Reserva una sesión estratégica con nosotros
             </h2>
+            <p className="mb-1 text-left text-sm font-bold text-gray-800 sm:text-base">
+              Llámanos ahora al{" "}
+              <a href={EMPRESA.telefonoHref} className="underline">
+                {EMPRESA.telefono}
+              </a>
+            </p>
             <p className="max-w-2xl text-left text-sm text-gray-600 sm:text-base">
-              Rellena este formulario y nos pondremos en contacto contigo para
+              O rellena este formulario y nos pondremos en contacto contigo para
               hacerte una demostración gratuita y sin compromiso.
             </p>
           </div>
