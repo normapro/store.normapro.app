@@ -4,11 +4,13 @@ import ListHistoriaSection from "@/components/landings/ListHistoriaSection";
 import HistoriaTextSection2 from "@/components/historiaTextSection2";
 import AccordionSection from "@/components/AccordionSection";
 import CandidaturaFormSection from "@/components/CandidaturaFormSection";
+import HeaderSection from "@/components/HeaderSection";
 
 export const metadata: Metadata = pageMetadata({ title: "Únete a nuestro equipo y forma parte de la revolución empresarial", description: "En NormaPro, buscamos a los mejores talentos para impulsar la innovación y la eficiencia en el mundo empresarial.", path: "/trabaja" });
 
 export default function TrabajaPage() {
     return <>
+        <HeaderSection text="Trabaja en NormaPro" variant="light" />
         <div className="mt-20">
             <HistoriaTextSection2
                 title="Únete a nuestro equipo y forma parte de la revolución empresarial"

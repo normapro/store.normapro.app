@@ -21,7 +21,7 @@ export default function Politicas() {
                                 INICIE asume la responsabilidad de proveer todos los medios necesarios en productos y servicios de forma que se satisfagan las necesidades y expectativas de los clientes y Partes interesadas, y se cumplan con los requisitos legales y reglamentarios aplicables y de Gestión.
                             </p>
                             <p>
-                                INICIE apoya totalmente esta política, marco de referencia para el establecimiento de objetivos de calidad y seguridad de la información, y se compromete a ofrecer únicamente productos y servicios de alta calidad a sus clientes, para lo cual asigna el personal adecuado a cada función y puesto de trabajo, y le proporciona a éste la necesaria información y formación permanentes, con objeto de optimizar el nivel profesional de sus actividades.
+                                INICIE apoya totalmente esta política, marco de referencia para el establecimiento de objetivos de calidad y seguridad de la información, y se compromete a ofrecer únicamente productos y servicios de alta calidad a sus clientes, para lo cual asigna el personal adecuado a cada función y puesto de trabajo, y le proporciona a este la necesaria información y formación permanentes, con objeto de optimizar el nivel profesional de sus actividades.
                             </p>
                             <p>
                                 INICIE asume el compromiso de cumplir con la legislación aplicable en materia de calidad y seguridad de la información, así como otros requisitos a los que la organización se suscriba.
@@ -30,7 +30,7 @@ export default function Politicas() {
                                 El objetivo de la seguridad de la información es garantizar la calidad de la información y la prestación continuada de los servicios, actuando preventivamente, supervisando la actividad diaria y reaccionando con rapidez a los posibles incidentes que puedan ocurrir.
                             </p>
                             <p>
-                                La Dirección de INICIE designa al Comité del Sistema Integrado de Gestión (Comité del SIG) como máximo responsable encargado de revisar, mantener y difundir ésta política.
+                                La Dirección de INICIE designa al Comité del Sistema Integrado de Gestión (Comité del SIG) como máximo responsable encargado de revisar, mantener y difundir esta política.
                             </p>
                             <p>
                                 Esta Política es comunicada, difundida y seguida por todo el personal de la Organización y demás partes interesadas (clientes, colaboradores, proveedores,…) que compartan servicios y productos con INICIE o traten su información, siendo de obligado cumplimiento dentro de su ámbito de responsabilidad.
