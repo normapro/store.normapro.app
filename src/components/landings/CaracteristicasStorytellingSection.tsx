@@ -175,7 +175,7 @@ const CaracteristicasStorytellingSection = ({ data }: Props) => {
                             onClick={() => setOpenModal(true)}
                             className="w-full rounded-xl bg-[#010d3d] px-6 py-3 font-bold text-white transition hover:bg-[#04176f] sm:w-auto"
                         >
-                            Quiero una demostracion
+                            Quiero una demostración
                         </button>
                     </div>
                 </div>
@@ -251,7 +251,7 @@ const CaracteristicasStorytellingSection = ({ data }: Props) => {
                             onClick={() => setOpenModal(true)}
                             className="rounded-xl bg-[#010d3d] px-6 py-3 font-bold text-white shadow-md transition hover:bg-[#04176f]"
                         >
-                            Quiero una demostracion
+                            Quiero una demostración
                         </button>
                     </div>
                 </div>

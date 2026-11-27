@@ -29,7 +29,7 @@ const MainFormacionSection = ({ isInstituto = false}: { isInstituto?: boolean })
   return (
     <div className={theme.general}>
       <section className="max-w-7xl mx-auto px-6 py-12">
-        <div className={theme.card + " rounded-xl w-full h-[460px] mt-10 mb-10 relative overflow-hidden"}>
+        <div className={theme.card + " rounded-xl w-full md:h-[460px] mt-10 mb-10 relative overflow-hidden"}>
           <h2 className="text-center text-[32px] font-black text-[#010D3D] mb-4 mt-6">Formación</h2>
           <p className="text-center text-[#010D3D] max-w-3xl mx-auto mb-6">
             Navegamos contigo hacia una evolución tecnológica accesible, segura y sin barreras.
@@ -45,7 +45,7 @@ const MainFormacionSection = ({ isInstituto = false}: { isInstituto?: boolean })
           </div>
 
           {/* Cards en fila, alineadas abajo y centradas */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex gap-[6px] items-end">
+          <div className="flex flex-col items-center gap-[6px] px-4 pb-4 md:px-0 md:pb-0 md:absolute md:bottom-0 md:left-1/2 md:-translate-x-1/2 md:flex-row md:items-end">
             {formaciones.map((formacion) => (
               <FormacionCard key={formacion.id_curse} formacion={formacion} />
             ))}

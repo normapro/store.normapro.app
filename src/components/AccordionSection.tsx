@@ -25,18 +25,18 @@ const AccordionSection = ({
   const [openIndex, setOpenIndex] = useState<number | null>(defaultOpenIndex);
 
   return (
-    <section className="w-full bg-[#f1f1f7  ] px-6 py-16 md:px-10 md:py-20">
+    <section className="w-full bg-[#f1f1f7] px-6 py-16 md:px-10 md:py-20">
       <div className="mx-auto w-full max-w-5xl">
         {title && (
           <h2 className="text-2xl font-black text-[#797F98] md:text-[30px]">{title}</h2>
         )}
 
-        <div className="mt-10 border-t border-[#797F98]">
+        <div className="mt-6">
           {items.map((item, index) => {
             const isOpen = openIndex === index;
 
             return (
-              <article key={`${item.title}-${index}`} className="border-b border-[#AAB3C8]">
+              <article key={`${item.title}-${index}`}>
                 <button
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? null : index)}
@@ -61,7 +61,7 @@ const AccordionSection = ({
                         dangerouslySetInnerHTML={{ __html: item.content }}
                       />
                     ) : (
-                      <div className="text-lg leading-relaxed md:text-[16px] md:leading-[1.4]">{item.content}</div>
+                      <div className="pl-6 text-lg leading-relaxed md:text-[16px] md:leading-[1.4]">{item.content}</div>
                     )}
                   </div>
                 </div>
