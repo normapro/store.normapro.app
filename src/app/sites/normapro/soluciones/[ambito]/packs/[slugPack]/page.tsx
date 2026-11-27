@@ -46,7 +46,7 @@ export default async function PackPage({ params }: Props) {
   const ambitoSlug = pack.slug_ambito || ambito;
   const ambitoData = await getAmbitoBySlug(ambitoSlug);
   const steps: BreadcrumbStep[] = [
-    { name: "Home", path: "/" },
+    { name: "Inicio", path: "/" },
     { name: "Soluciones", path: "/soluciones" },
     { name: ambitoData?.description?.trim() || ambitoSlug, path: `/soluciones/${ambitoSlug}` },
     { name: pack.title, path: canonicalPath(pack, ambito, slugPack) },

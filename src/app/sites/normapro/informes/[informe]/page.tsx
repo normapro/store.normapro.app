@@ -239,7 +239,7 @@ export default async function InformeDetallePage({ params }: InformeDetallePageP
 	const textoDescarga = data.textoDescarga?.trim() || "";
 
 	const steps = [
-		{ name: "Home", path: "/" },
+		{ name: "Inicio", path: "/" },
 		{ name: "Informes", path: "/informes" },
 		{ name: titulo, path: canonicalPath(data, informe) },
 	];
@@ -254,7 +254,7 @@ export default async function InformeDetallePage({ params }: InformeDetallePageP
 					className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 text-[12px] text-[#24335f]"
 				>
 					<Link href="/" className="font-bold hover:underline">
-						Home
+						Inicio
 					</Link>
 					<span className="mx-1 text-[#6e7692]">&gt;</span>
 					<Link href="/informes" className="font-bold hover:underline">

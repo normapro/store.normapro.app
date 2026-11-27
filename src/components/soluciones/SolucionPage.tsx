@@ -25,7 +25,7 @@ async function getBreadcrumbSteps(solucion: Solucion, params: SolucionRouteParam
 	const ambitoSlug = solucion.slug_ambito || params.ambito;
 	const ambito = await getAmbitoBySlug(ambitoSlug);
 	const steps: BreadcrumbStep[] = [
-		{ name: "Home", path: "/" },
+		{ name: "Inicio", path: "/" },
 		{ name: "Soluciones", path: "/soluciones" },
 		{ name: ambito?.description?.trim() || ambitoSlug, path: `/soluciones/${ambitoSlug}` },
 	];

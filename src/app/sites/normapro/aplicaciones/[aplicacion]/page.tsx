@@ -43,7 +43,7 @@ export default async function Page({ params }: Props) {
   if (!data) redirect("/");
 
   const steps = [
-    { name: "Home", path: "/" },
+    { name: "Inicio", path: "/" },
     { name: data.description, path: `/aplicaciones/${data.slug || aplicacion}` },
   ];
 

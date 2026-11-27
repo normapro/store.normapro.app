@@ -143,7 +143,7 @@ export default function NoticiaDetalle({ noticia }: Props) {
 					className="w-[80%] mx-auto px-4 sm:px-6 lg:px-8 py-2 text-[12px] text-[#24335f] mt-2 mb-2"
 				>
 					<Link href="/" className="font-extrabold hover:underline">
-						Home
+						Inicio
 					</Link>
 					<span className="mx-1 text-[#6e7692]">&gt;</span>
 					<Link href="/actualidad" className="font-extrabold hover:underline">

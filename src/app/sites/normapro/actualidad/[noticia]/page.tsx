@@ -79,7 +79,7 @@ export default async function NoticiaPage({ params }: Props) {
 	const path = canonicalPath(noticia, slug);
 	const image = resolvePublicImage(noticia.imagen);
 	const steps = [
-		{ name: "Home", path: "/" },
+		{ name: "Inicio", path: "/" },
 		{ name: "Actualidad", path: "/actualidad" },
 		{ name: noticia.title, path },
 	];
