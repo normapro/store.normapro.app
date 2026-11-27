@@ -31,14 +31,14 @@ const AplicacionesDropdown = () => {
   return (
     <div className="absolute w-screen bg-[#f8f8fa] shadow-md z-50 p-8 w-full rounded-lg">
 
-      <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-2xl font-bold text-[#010D3D] mb-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h3 className="mb-4 pb-2 border-b border-[#CCCED7] text-[14px] text-[#010D3D] opacity-50 font-mulish leading-[20px]">
           Tecnología
-          </h2>
+          </h3>
         
 
         {isLoading ? (
-          <p className="text-white">Cargando aplicaciones...</p>
+          <p className="text-[#010D3D]">Cargando aplicaciones...</p>
         ) : (
           <div className="bg-[#ffffff40] rounded-xl p-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
             {apps.map((app) => {

@@ -109,7 +109,7 @@ const Formulario: React.FC<FormularioProps> = ({ onClose, zIndexClass }) => {
 
   return (
     <div
-      className={`fixed inset-0 ${zIndexClass || "z-50"} flex items-start justify-center overflow-y-auto bg-black/70 p-3 sm:items-center sm:p-4`}
+      className={`fixed inset-0 ${zIndexClass || "z-[110]"} flex items-start justify-center overflow-y-auto bg-black/70 p-3 sm:items-center sm:p-4`}
       onClick={onClose}
     >
       <div

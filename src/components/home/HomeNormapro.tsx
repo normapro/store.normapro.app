@@ -38,7 +38,7 @@ export default function HomeNormapro() {
             transition={{ duration: 1 }}
           >
             <h2 className="max-w-3xl text-4xl text-[#010d3d] font-bold">
-              Descubre en este <strong>video</strong> como <strong>NormaPro</strong> puede ayudar a tu empresa
+              Descubre en este <strong>vídeo</strong> cómo <strong>NormaPro</strong> puede ayudar a tu empresa
             </h2>
             <div className="w-full max-w-6xl mx-auto mt-20 md:mt-14 aspect-video rounded-xl overflow-hidden shadow-xl mb-20">
               

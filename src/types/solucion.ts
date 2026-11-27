@@ -22,6 +22,10 @@ export interface Solucion {
   title: string | null;
   subtitle: string | null;
   titleweb: string | null;
+  /** Texto corto de la tarjeta de pack destacado (solo lo trae /highlighted/packs). */
+  descriptionForHighLight?: string | null;
+  /** Título del servicio de consultoría del pack destacado; vacío si no la incluye. */
+  consultoriaTitle?: string | null;
   multimediaUri: string | null;
   multimediaTypeId: number | null;
   problemaTitle: string | null;
