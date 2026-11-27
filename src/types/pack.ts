@@ -9,8 +9,6 @@ export interface ItemListPack{
     slug_ambito?: string;
     slug_sector?: string;
     categoria?: string;
-    /** Título del servicio de consultoría; vacío si el pack no la incluye. */
-    consultoriaTitle?: string | null;
 }
 
 export interface Pack {

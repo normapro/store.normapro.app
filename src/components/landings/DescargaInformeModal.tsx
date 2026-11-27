@@ -23,7 +23,6 @@ type FormValues = {
     email: string;
     politica: boolean;
     demo: boolean;
-    marketing: boolean;
 }
 
 type FormErrors = Partial<Record<keyof FormValues, string>>;
@@ -39,7 +38,6 @@ const initialValues: FormValues = {
     email: '',
     politica: false,
     demo: false,
-    marketing: false,
 };
 
 const DescargaInformeModal = ({
@@ -77,7 +75,7 @@ const DescargaInformeModal = ({
         if (!data.empleados.trim()) nextErrors.empleados = 'Este campo es obligatorio';
         if (!data.telefono.trim()) nextErrors.telefono = 'Este campo es obligatorio';
         if (!data.email.trim()) nextErrors.email = 'Este campo es obligatorio';
-        if (!data.politica) nextErrors.politica = 'Debes aceptar la política de privacidad';
+        if (!data.politica) nextErrors.politica = 'Debes aceptar la politica de privacidad';
 
         return nextErrors;
     };
@@ -130,7 +128,7 @@ const DescargaInformeModal = ({
                     n_empleados: values.empleados,
                     telefono: values.telefono,
                     email: values.email,
-                    acepta_marketing: values.marketing,
+                    acepta_marketing: false,
                     acepta_contacto: values.demo,
                     acepta_politica: values.politica,
                     origen_ruta,
@@ -340,18 +338,7 @@ const DescargaInformeModal = ({
                                     onChange={handleFieldChange}
                                     className="mt-1 h-4 w-4 shrink-0 rounded border-[#ccd1df]"
                                 />
-                                Me gustaría que un consultor se pusiera en contacto conmigo para acordar una reunión demostrativa.
-                            </label>
-
-                            <label className="flex items-start gap-2 text-left text-sm sm:text-base text-[#1b2a53]">
-                                <input
-                                    type="checkbox"
-                                    name="marketing"
-                                    checked={values.marketing}
-                                    onChange={handleFieldChange}
-                                    className="mt-1 h-4 w-4 shrink-0 rounded border-[#ccd1df]"
-                                />
-                                Quiero recibir comunicaciones comerciales de NormaPro.
+                                Me gustaría que un técnico se pusiera en contacto conmigo para acordar una reunión demostrativa.
                             </label>
 
                             <div className="pt-2 text-center">

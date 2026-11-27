@@ -13,7 +13,6 @@ interface ActualidadGridSectionProps {
 	hideDescriptionAndReadMore?: boolean;
 	temasDisponibles?: string[];
 	isInstituto?: boolean;
-	excluirId?: number;
 }
 
 const getResumenFromContent = (content: unknown): string => {
@@ -78,14 +77,12 @@ const parseCategorias = (categoria: string | null): string[] => {
 		.filter((item) => item.length > 0);
 };
 
-/** Rejilla de noticias de Actualidad; excluirId deja fuera una noticia (la que se está leyendo) */
 export default function ActualidadGridSection({
 	onlyLatest,
 	temas,
 	hideDescriptionAndReadMore = false,
 	temasDisponibles,
-	isInstituto = false,
-	excluirId
+	isInstituto = false
 }: ActualidadGridSectionProps) {
 	const [noticias, setNoticias] = useState<Actualidad[]>([]);
 	const [isLoading, setIsLoading] = useState(true);
@@ -120,16 +117,15 @@ export default function ActualidadGridSection({
 			? (temas ?? []).map((t) => t.trim().toLowerCase()).filter(Boolean)
 			: [temaActivo.toLowerCase()];
 
-		const noticiasVisibles = noticias.filter((noticia) => noticia.id_noticia !== excluirId);
 		const noticiasFiltradas = temasActivos.length === 0
-			? noticiasVisibles
-			: noticiasVisibles.filter((noticia) => {
+			? noticias
+			: noticias.filter((noticia) => {
 				const categoriasNoticia = parseCategorias(noticia.categoria ?? null);
 				return categoriasNoticia.some((cat) => temasActivos.includes(cat));
 			});
 
 		return onlyLatest ? noticiasFiltradas.slice(0, 3) : noticiasFiltradas;
-	}, [noticias, onlyLatest, temas, temaActivo, excluirId]);
+	}, [noticias, onlyLatest, temas, temaActivo]);
 
 	const scroll = (dir: 'left' | 'right') => {
 		scrollRef.current?.scrollBy({ left: dir === 'left' ? -200 : 200, behavior: 'smooth' });
@@ -177,7 +173,7 @@ export default function ActualidadGridSection({
 
 			{/* Grid de noticias */}
 			{noticiasToShow.length === 0 ? (
-				<p className="text-[#010D3D]">{temas?.length || temaActivo !== 'todos' ? 'No hay noticias de este tema.' : 'No hay noticias publicadas.'}</p>
+				<p className="text-[#010D3D]">No hay noticias publicadas.</p>
 			) : (
 				<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
 					{noticiasToShow.map((noticia) => {
